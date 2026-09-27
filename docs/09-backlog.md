@@ -18,11 +18,13 @@ What's next, in order. **🔔 = reminder for you**, 🤖 = Claude does it, 🤝 
 
 ## Day 1
 - [x] 🤖 On-camera teleprompter script: [videos/001-on-camera-teleprompter.md](../videos/001-on-camera-teleprompter.md)
-- [ ] 🔔 Film Day 1 (phone vertical, eye level, window light, 2–3 takes per part) → give Claude the folder path.
+- [ ] 🔔 Film Day 1 (phone vertical, eye level, window light, 2–3 takes per part) → put the files in `2min-arabic/footage/day01/` (git-ignored) and tell Claude.
+- [ ] 🤖 Edit Day 1: cut pauses, even out the sound, B-roll images + text cards, Shotcut project → owner reviews; owner may edit and hand back.
 
 ## Images
 - [x] 🤖 Image model installed & tested: FLUX.2 [klein] 4B fp8 (Apache 2.0), ~15 s/image — `tools/images/generate.py`.
-- [ ] 🤖 Optional: fix your other ComfyUI custom nodes (Impact-Pack, Crystools, VideoHelperSuite, LTXVideo) in the new ComfyUI venv — they don't load yet (image generation is unaffected).
+- [x] ~~Fix other ComfyUI custom nodes~~ — not needed (owner only uses the models Claude installed).
+- [x] 🤖 Image QA rules defined ([05-style-guide.md](05-style-guide.md)); blank-dial fix verified (`audio-drafts/image-tests/klein_desk_fixed_blank_dial.png`).
 - [ ] 🤖 Character sheets for Sami and Lina → reuse for consistency.
 - [ ] 🤖 Batch-generate each video's scene images through the ComfyUI API.
 

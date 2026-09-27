@@ -64,6 +64,35 @@ Recurring visual elements:
 - On-screen text colors: Arabic in dark teal `#1F5F5B`, transliteration in terracotta `#C0633A`, English in charcoal `#333333`,
   on a cream `#FFF6E9` rounded box.
 
+## Image quality control (Claude does this — the owner has no time to check details)
+
+Nothing may look "AI-generated". Every image is checked by Claude **before** it reaches the video.
+
+**Process per scene:** generate **3 takes** (different seeds) → Claude inspects each at full resolution →
+keeps the best one that passes **every** check below → if none passes, rewrite the prompt and try again
+(up to 3 rounds) → only if it still fails, flag it to the owner with the best candidate.
+
+**Reject an image if it has:**
+- any **text, letters or numbers** — including clock/stopwatch numerals, book pages with writing, signs, screens,
+  labels, logos (all real text comes from our text cards);
+- **wrong hands or bodies**: extra/missing/merged fingers, twisted wrists, extra limbs, broken perspective;
+- **face problems**: asymmetry, odd eyes/teeth, melted features;
+- **duplicated or impossible objects**: two cups when one was asked for, floating things, a cup fused with a hand;
+- **cropped key objects** (the thing the scene is about cut off at the edge);
+- **character mismatch**: Sami/Lina not matching their reference sheet (hair, beard, clothes, skin tone);
+- **cultural mismatch**: generic/Western-looking people when the scene is Arab; odd clothing for the setting;
+- anything that breaks the **flat illustration style** (photo-like textures, 3D render look, busy background);
+- nothing calm at the **top ~15% / bottom ~25%** (text and YouTube buttons go there).
+
+**Prompt rules that prevent problems** (learned in testing):
+- Clocks/stopwatches: always *"completely blank white face, no numbers, no markings, one short hand"* —
+  the model writes wrong numerals (e.g. 15 instead of 11). The "2:00" is added by us as a text card.
+- Notebooks/books: *"blank empty pages"*. Phones/laptops: *"blank screen"* or seen from behind.
+- People: say **"olive skin"** and the character details every time; for Sami/Lina always pass the reference image.
+- Hands: prefer simple poses (holding a cup, waving with an open palm, hands on a table); avoid pointing fingers and
+  hands holding small objects.
+- One subject per scene, max two people; simple backgrounds; *"all objects fully inside the frame"*.
+
 ## Recurring characters
 
 Generate one reference sheet per character first, then reuse it for consistency.
