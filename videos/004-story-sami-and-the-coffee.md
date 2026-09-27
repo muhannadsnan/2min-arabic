@@ -5,7 +5,7 @@
 | **Format** | Story |
 | **Target length** | ~2:15 |
 | **Goal** | The viewer follows an 8-sentence story in Arabic and remembers 3 key words: coffee, sad, happy. |
-| **New words** | هَذَا (*haadhaa* — this) · طَالِب (*taalib* — student) · يُحِبُّ (*yuhibbu* — loves) · الْقَهْوَة (*al-qahwa* — the coffee) · كُلَّ يَوْم (*kulla yawm* — every day) · الْمَقْهَى (*al-maqhaa* — the café) · مُغْلَق (*mughlaq* — closed) · حَزِين (*haziin* — sad) · سَعِيد (*sa'iid* — happy) |
+| **New words** | هَلْ تُرِيدُ (*hal turiidu* — do you want?) · هَذَا (*haadhaa* — this) · طَالِب (*taalib* — student) · يُحِبُّ (*yuhibbu* — loves) · الْقَهْوَة (*al-qahwa* — the coffee) · كُلَّ يَوْم (*kulla yawm* — every day) · الْمَقْهَى (*al-maqhaa* — the café) · مُغْلَق (*mughlaq* — closed) · حَزِين (*haziin* — sad) · سَعِيد (*sa'iid* — happy) |
 | **YouTube title** | `Can You Understand This Arabic Story? (Day 4 Beginner) \| 2 Minute Arabic` |
 | **Thumbnail text** | "NO COFFEE?!" + sad Sami |
 
@@ -59,73 +59,73 @@ This is Sami.
 ```
 
 **2.** 🖼️ **Image:** Sami with a backpack and books in front of a university building + STYLE
-🔤 **On screen:** سَامِي طَالِب. · *Saamii taalib.* · Sami is a student.
+🔤 **On screen:** سَامِي طَالِبْ. · *Saamii taalib.* · Sami is a student.
 
 ```say:teacher
-سَامِي طَالِب.
+سَامِي طَالِبْ.
 ```
 ```say:narrator
 Sami is a student.
 ```
 
 **3.** 🖼️ **Image:** Sami holding a cup of coffee with both hands, eyes closed, blissful, small hearts around the cup + STYLE
-🔤 **On screen:** سَامِي يُحِبُّ الْقَهْوَة. · *Saamii yuhibbu l-qahwa.* · Sami loves coffee.
+🔤 **On screen:** سَامِي يُحِبُّ الْقَهْوَةْ. · *Saamii yuhibbu l-qahwa.* · Sami loves coffee.
 
 ```say:teacher
-سَامِي يُحِبُّ الْقَهْوَة.
+سَامِي يُحِبُّ الْقَهْوَةْ.
 ```
 ```say:narrator
 Sami loves coffee.
 ```
 
 **4.** 🖼️ **Image:** Sami walking happily toward a small cozy café on a street corner, morning sun + STYLE
-🔤 **On screen:** كُلَّ يَوْم، يَذْهَبُ إِلَى الْمَقْهَى. · *kulla yawm, yadh-habu ilaa l-maqhaa.* · Every day, he goes to the café.
+🔤 **On screen:** كُلَّ يَوْمْ، يَذْهَبُ إِلَى الْمَقْهَى. · *kulla yawm, yadh-habu ilaa l-maqhaa.* · Every day, he goes to the café.
 
 ```say:teacher
-كُلَّ يَوْم، يَذْهَبُ إِلَى الْمَقْهَى.
+كُلَّ يَوْمْ، يَذْهَبُ إِلَى الْمَقْهَى.
 ```
 ```say:narrator
 Every day, he goes to the café.
 ```
 
 **5.** 🖼️ **Image:** The café with its shutters down and lights off, Sami shocked in front of it + STYLE
-🔤 **On screen:** الْيَوْم، الْمَقْهَى مُغْلَق! · *al-yawm, al-maqhaa mughlaq!* · Today, the café is closed!
+🔤 **On screen:** الْيَوْمْ، الْمَقْهَى مُغْلَقْ! · *al-yawm, al-maqhaa mughlaq!* · Today, the café is closed!
 
 ```say:teacher
-الْيَوْم، الْمَقْهَى مُغْلَق!
+الْيَوْمْ، الْمَقْهَى مُغْلَقْ!
 ```
 ```say:narrator
 Today, the café is closed!
 ```
 
 **6.** 🖼️ **Image:** Sami sitting on the café steps, very sad, a small rain cloud above his head + STYLE
-🔤 **On screen:** سَامِي حَزِين. · *Saamii haziin.* · Sami is sad.
+🔤 **On screen:** سَامِي حَزِينْ. · *Saamii haziin.* · Sami is sad.
 
 ```say:teacher
-سَامِي حَزِين.
+سَامِي حَزِينْ.
 ```
 ```say:narrator
 Sami is sad.
 ```
 
 **7.** 🖼️ **Image:** Lina arriving with two cups of coffee, holding one out to Sami, big smile + STYLE
-🔤 **On screen:** ثُمَّ… لِينَا! «مَرْحَبًا يَا سَامِي! قَهْوَة؟» · *thumma… Liinaa! "marhaban yaa Saamii! qahwa?"* · Then… Lina! "Hi Sami! Coffee?"
+🔤 **On screen:** ثُمَّ… لِينَا! «مَرْحَبًا يَا سَامِي! هَلْ تُرِيدُ قَهْوَةْ؟» · *thumma… Liinaa! "marhaban yaa Saamii! hal turiidu qahwa?"* · Then… Lina! "Hi Sami! Do you want coffee?"
 
 ```say:teacher
 ثُمَّ... لِينَا!
 ```
 ```say:lina
-مَرْحَبًا يَا سَامِي! قَهْوَة؟
+مَرْحَبًا يَا سَامِي! هَلْ تُرِيدُ قَهْوَةْ؟
 ```
 ```say:narrator
-Then… Lina! "Hi Sami! Coffee?"
+Then… Lina! "Hi Sami! Do you want coffee?"
 ```
 
 **8.** 🖼️ **Image:** Sami beaming with joy holding the coffee, the rain cloud replaced by a small sun, Lina laughing + STYLE
-🔤 **On screen:** سَامِي سَعِيد جِدًّا. · *Saamii sa'iid jiddan.* · Sami is very happy.
+🔤 **On screen:** سَامِي سَعِيدٌ جِدًّا. · *Saamii sa'iid jiddan.* · Sami is very happy.
 
 ```say:teacher
-سَامِي سَعِيد جِدًّا.
+سَامِي سَعِيدٌ جِدًّا.
 ```
 ```say:narrator
 Sami is very happy.
@@ -140,13 +140,13 @@ Sami is very happy.
 Now the whole story, Arabic only. How much do you understand?
 ```
 ```say:teacher
-هَذَا سَامِي. سَامِي طَالِب. سَامِي يُحِبُّ الْقَهْوَة. كُلَّ يَوْم، يَذْهَبُ إِلَى الْمَقْهَى. الْيَوْم، الْمَقْهَى مُغْلَق! سَامِي حَزِين. ثُمَّ... لِينَا!
+هَذَا سَامِي. سَامِي طَالِبْ. سَامِي يُحِبُّ الْقَهْوَةْ. كُلَّ يَوْمْ، يَذْهَبُ إِلَى الْمَقْهَى. الْيَوْمْ، الْمَقْهَى مُغْلَقْ! سَامِي حَزِينْ. ثُمَّ... لِينَا!
 ```
 ```say:lina
-مَرْحَبًا يَا سَامِي! قَهْوَة؟
+مَرْحَبًا يَا سَامِي! هَلْ تُرِيدُ قَهْوَةْ؟
 ```
 ```say:teacher
-سَامِي سَعِيد جِدًّا.
+سَامِي سَعِيدٌ جِدًّا.
 ```
 
 ### 🎬 Scene 6 — Key words + teaser · 1:40–1:55
@@ -158,19 +158,19 @@ Now the whole story, Arabic only. How much do you understand?
 Three words to keep: coffee —
 ```
 ```say:teacher
-قَهْوَة
+قَهْوَةْ
 ```
 ```say:narrator
 sad —
 ```
 ```say:teacher
-حَزِين
+حَزِينْ
 ```
 ```say:narrator
 and happy —
 ```
 ```say:teacher
-سَعِيد
+سَعِيدْ
 ```
 ⏸️ **Pause 3s** — viewer repeats all three.
 ```say:narrator
@@ -202,13 +202,13 @@ Two minutes a day. Your first Arabic conversation in 30 days.
 
 📝 The story:
 هَذَا سَامِي. — This is Sami.
-سَامِي طَالِب. — Sami is a student.
-سَامِي يُحِبُّ الْقَهْوَة. — Sami loves coffee.
-كُلَّ يَوْم، يَذْهَبُ إِلَى الْمَقْهَى. — Every day, he goes to the café.
-الْيَوْم، الْمَقْهَى مُغْلَق! — Today, the café is closed!
-سَامِي حَزِين. — Sami is sad.
-ثُمَّ... لِينَا! «مَرْحَبًا يَا سَامِي! قَهْوَة؟» — Then… Lina! "Hi Sami! Coffee?"
-سَامِي سَعِيد جِدًّا. — Sami is very happy.
+سَامِي طَالِبْ. — Sami is a student.
+سَامِي يُحِبُّ الْقَهْوَةْ. — Sami loves coffee.
+كُلَّ يَوْمْ، يَذْهَبُ إِلَى الْمَقْهَى. — Every day, he goes to the café.
+الْيَوْمْ، الْمَقْهَى مُغْلَقْ! — Today, the café is closed!
+سَامِي حَزِينْ. — Sami is sad.
+ثُمَّ... لِينَا! «مَرْحَبًا يَا سَامِي! هَلْ تُرِيدُ قَهْوَةْ؟» — Then… Lina! "Hi Sami! Do you want coffee?"
+سَامِي سَعِيدٌ جِدًّا. — Sami is very happy.
 
 ▶️ Start from Day 1: <playlist link>
 🔔 Subscribe to keep your streak.

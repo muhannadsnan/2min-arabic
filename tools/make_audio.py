@@ -52,7 +52,9 @@ SCENE = re.compile(r"^### 🎬 (.+?)(?:\s+·\s+[\d:–-]+)?\s*$")
 SAY = re.compile(r"^```say:([\w-]+)\s*$")
 PAUSE = re.compile(r"⏸️ \*\*Pause (\d+(?:\.\d+)?)s\*\*")
 VIDEO = re.compile(r"^🎥 \*\*Clip:\*\*\s*([\w-]+)(?:\s*—\s*(.+))?$")
-CLIPS_DIR = pathlib.Path(__file__).resolve().parent.parent / "footage" / "clips"
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+CLIPS_DIR = ROOT / "footage" / "clips"
+ARABIC_SPEAKERS = ("teacher", "teacher-slow", "sami", "lina")
 
 
 def parse(script: pathlib.Path):
@@ -165,7 +167,7 @@ def timestamp(seconds: float, srt: bool = False) -> str:
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}" if srt else f"{m}:{s:02d}.{ms // 100}"
 
 
-def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=()):
+def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), allow_tts=False):
     events = parse(script)
     if not any(e[0] == "say" for e in events):
         print(f"{script}: no say: blocks, skipped")
@@ -176,8 +178,33 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=()):
     clips_dir.mkdir(parents=True)
     cache.mkdir(parents=True, exist_ok=True)
 
+    # the owner's own Arabic recording (tools/split_recording.py) replaces generated Arabic voices
+    rec_map_file = ROOT / "footage" / "recordings" / script.stem / "map.json"
+    recorded = {}
+    if rec_map_file.exists():
+        for r in json.loads(rec_map_file.read_text(encoding="utf-8")):
+            if r.get("file"):
+                recorded[(r["speaker"], r["text"])] = r
+    missing = [e for e in events if e[0] == "say" and e[1] in ARABIC_SPEAKERS and recorded
+               and (e[1], e[2]) not in recorded]
+    if missing and not allow_tts:
+        sys.exit("lines missing from the recording (re-record or use --allow-tts):\n" +
+                 "\n".join(f"  [{e[1]}] {e[2]}" for e in missing))
+
     def cache_path(speaker, text):
+        rec = recorded.get((speaker, text))
+        if rec:
+            digest = hashlib.sha1((ROOT / rec["file"]).read_bytes()).hexdigest()
+            return cache / f"rec-{digest}.wav"
         return cache / (hashlib.sha1(f"{VOICE_VERSIONS[speaker]}|{speaker}|{text}".encode()).hexdigest() + ".wav")
+
+    for (speaker, text), rec in recorded.items():   # recorded lines: level them into the cache
+        target = cache_path(speaker, text)
+        if not target.exists():
+            level(ROOT / rec["file"], target)
+            target.with_suffix(".json").write_text(json.dumps(
+                {"speaker": speaker, "text": text, "cer": rec["cer"], "heard": "🎙️ recorded: " + rec["heard"]},
+                ensure_ascii=False), encoding="utf-8")
 
     # 1. generate every line that isn't cached yet (--redo N forgets clip N's cached take)
     says = [e for e in events if e[0] == "say"]
@@ -278,12 +305,13 @@ def main():
     parser.add_argument("--out", type=pathlib.Path, default=pathlib.Path("audio"), help="output folder (default: audio)")
     parser.add_argument("--takes", type=int, default=3, help="takes per line (default: 3)")
     parser.add_argument("--redo", default="", help="comma-separated clip numbers to regenerate (see report.md)")
+    parser.add_argument("--allow-tts", action="store_true", help="generate Arabic lines missing from the owner's recording")
     args = parser.parse_args()
     for tool in ("ffmpeg", "ffprobe"):
         if not shutil.which(tool):
             sys.exit(f"{tool} not found — install ffmpeg first.")
     for script in args.scripts:
-        render(script, args.out, args.takes, [int(x) for x in args.redo.split(",") if x])
+        render(script, args.out, args.takes, [int(x) for x in args.redo.split(",") if x], args.allow_tts)
 
 
 if __name__ == "__main__":

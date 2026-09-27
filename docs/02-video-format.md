@@ -45,6 +45,16 @@ That's your two minutes for today. Come back tomorrow — same place, two minute
 Just before the standard outro, each script adds one short, video-specific line:
 "Day N done — tomorrow: …".
 
+## Content rules (owner, 2026-09-27)
+
+- **Easy, but not too easy.** Every video teaches **at least 5–8 new words/phrases** on top of recycled ones — the promise
+  is a real first conversation after 30 days, so each day must move the viewer forward.
+- **Days 1–5:** every Arabic line is followed by its English meaning (spoken).
+- **From Day 6:** **no spoken English translation after each Arabic line** — the meaning is on the card
+  (Arabic · transliteration · English). Spoken English is for the hook, intro, short cues ("Listen.", "Your turn."),
+  new-word explanations and the outro. This keeps videos within ~2 minutes while teaching more.
+- All Arabic is spoken by the owner (recorded); see [10-production-flow.md](10-production-flow.md).
+
 ## The 5 lesson formats
 
 The curriculum rotates through five formats. Each has a fixed internal pattern.

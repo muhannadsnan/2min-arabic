@@ -3,10 +3,10 @@
 | | |
 |---|---|
 | **Format** | Conversation |
-| **Target length** | ~2:05 |
+| **Target length** | ~2:20 |
 | **Goal** | The viewer understands a full greeting conversation and can play Sami's part. |
-| **New words** | تَشَرَّفْنَا (*tasharrafnaa* — nice to meet you) · وَأَنْتِ؟ (*wa anti?* — and you? — to a woman) |
-| **Voices** | narrator + teacher + Sami = owner's clone · Lina = Sara's clone → **AI label: Yes** |
+| **New words** | تَشَرَّفْنَا (nice to meet you) · وَأَنْتِ؟ (and you? — to a woman) · خُطَّة (plan) · الْيَوْم (today) · أَدْرُسُ (I study) · الْعَرَبِيَّة (Arabic) · أَعْمَلُ (I work) · الْمَكْتَبَة (the bookshop) |
+| **Voices** | English narrator = owner's clone · **all Arabic = the owner's own recording** (Lina's lines converted to Sara's voice) → **AI label: Yes** |
 | **YouTube title** | `Understand a Real Arabic Conversation After 2 Days \| Day 3 · 2 Minute Arabic` |
 | **Thumbnail text** | "YOU'LL UNDERSTAND THIS" + Sami & Lina |
 
@@ -45,7 +45,7 @@ I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minu
 🔤 **On screen:** Meet Sami and Lina · they're meeting for the first time
 
 ```say:narrator
-Today is Day 3. Meet Sami and Lina. They're meeting for the first time, using yesterday's phrases, plus two new ones. Listen to each line, then I'll tell you what it means.
+Today is Day 3. Meet Sami and Lina. They're meeting for the first time, using yesterday's phrases, plus a few new words. Listen to each line, then I'll tell you what it means.
 ```
 
 ### 🎬 Scene 4 — Line 1 · Lina · 0:26–0:31
@@ -130,19 +130,43 @@ Fine, thank God. And you? The new part:
 It means: what about you? — when you're talking to a woman.
 ```
 
-### 🎬 Scene 10 — Line 7 · Lina · 1:12–1:17
+### 🎬 Scene 10 — Line 7 · Lina · NEW · 1:12–1:19
 
 🖼️ **Image:** Lina smiling with a cup of coffee
-🔤 **On screen:** بِخَيْرْ، شُكْرًا · *bikhayr, shukran* · Lina: Fine, thanks.
+🔤 **On screen:** بِخَيْرْ، شُكْرًا. مَا خُطَّتُكَ الْيَوْمْ؟ · *bikhayr, shukran. maa khuttatuka l-yawm?* · Lina: Fine, thanks. What's your plan today? · NEW: khutta = plan · al-yawm = today
 
 ```say:lina
-بِخَيْرْ، شُكْرًا.
+بِخَيْرْ، شُكْرًا. مَا خُطَّتُكَ الْيَوْمْ؟
 ```
 ```say:narrator
-Fine, thanks.
+Fine, thanks. What's your plan today?
 ```
 
-### 🎬 Scene 11 — Line 8 · Sami · 1:17–1:22
+### 🎬 Scene 11 — Line 8 · Sami · NEW · 1:19–1:25
+
+🖼️ **Image:** Sami at the café table with an open notebook, happily studying
+🔤 **On screen:** أَدْرُسُ الْعَرَبِيَّةْ. وَأَنْتِ؟ · *adrusu l-'arabiyya. wa anti?* · Sami: I'm studying Arabic. And you? · NEW: adrusu = I study
+
+```say:sami
+أَدْرُسُ الْعَرَبِيَّةْ. وَأَنْتِ؟
+```
+```say:narrator
+I'm studying Arabic. What about you?
+```
+
+### 🎬 Scene 12 — Line 9 · Lina · NEW · 1:25–1:30
+
+🖼️ **Image:** Lina smiling proudly, a small stack of books next to her coffee
+🔤 **On screen:** أَعْمَلُ فِي الْمَكْتَبَةْ · *a'malu fi l-maktaba* · Lina: I work at the bookshop. · NEW: a'malu = I work · al-maktaba = the bookshop
+
+```say:lina
+أَعْمَلُ فِي الْمَكْتَبَةْ.
+```
+```say:narrator
+I work at the bookshop.
+```
+
+### 🎬 Scene 13 — Line 10 · Sami · 1:30–1:35
 
 🖼️ **Image:** Sami standing up from the table, waving goodbye
 🔤 **On screen:** مَعَ السَّلَامَةْ · *ma'a s-salaama* · Sami: Goodbye.
@@ -154,7 +178,7 @@ Fine, thanks.
 Goodbye.
 ```
 
-### 🎬 Scene 12 — Line 9 · Lina · 1:22–1:27
+### 🎬 Scene 14 — Line 11 · Lina · 1:35–1:40
 
 🖼️ **Image:** Lina waving goodbye
 🔤 **On screen:** مَعَ السَّلَامَةْ · *ma'a s-salaama* · Lina: Goodbye.
@@ -166,7 +190,7 @@ Goodbye.
 And Lina says goodbye too.
 ```
 
-### 🎬 Scene 13 — Role-play intro · 1:27–1:30
+### 🎬 Scene 15 — Role-play intro · 1:27–1:30
 
 🖼️ **Image:** Lina facing the viewer across the café table (first-person view)
 🔤 **On screen:** Now you are Sami · answer Lina!
@@ -175,9 +199,9 @@ And Lina says goodbye too.
 Now you're Sami. Lina talks — you answer.
 ```
 
-### 🎬 Scene 14 — Role-play 1 · 1:30–1:35
+### 🎬 Scene 16 — Role-play 1 · 1:30–1:35
 
-🖼️ **Image:** same as scene 13
+🖼️ **Image:** same as scene 15
 🔤 **On screen:** السَّلَامُ عَلَيْكُمْ · *as-salaamu 'alaykum* · Your answer: wa 'alaykumu s-salaam
 
 ```say:lina
@@ -185,9 +209,9 @@ Now you're Sami. Lina talks — you answer.
 ```
 ⏸️ **Pause 3s** — viewer: *wa 'alaykumu s-salaam.*
 
-### 🎬 Scene 15 — Role-play 2 · 1:35–1:42
+### 🎬 Scene 17 — Role-play 2 · 1:35–1:42
 
-🖼️ **Image:** same as scene 13
+🖼️ **Image:** same as scene 15
 🔤 **On screen:** أَنَا لِينَا. مَا اسْمُكْ؟ · *ana Liinaa. maa smuk?* · Your answer: ismii … tasharrafnaa
 
 ```say:lina
@@ -195,9 +219,9 @@ Now you're Sami. Lina talks — you answer.
 ```
 ⏸️ **Pause 3.5s** — viewer: *ismii …* (their own name) *tasharrafnaa.*
 
-### 🎬 Scene 16 — Role-play 3 · 1:42–1:50
+### 🎬 Scene 18 — Role-play 3 · 1:42–1:50
 
-🖼️ **Image:** same as scene 13
+🖼️ **Image:** same as scene 15
 🔤 **On screen:** تَشَرَّفْنَا. كَيْفَ حَالُكْ؟ · *tasharrafnaa. kayfa haaluk?* · Your answer: bikhayr, al-hamdu lillaah. wa anti?
 
 ```say:lina
@@ -205,17 +229,27 @@ Now you're Sami. Lina talks — you answer.
 ```
 ⏸️ **Pause 4s** — viewer: *bikhayr, al-hamdu lillaah. wa anti?*
 
-### 🎬 Scene 17 — Role-play 4 · 1:50–1:56
+### 🎬 Scene 19 — Role-play 4 · 1:50–1:56
 
-🖼️ **Image:** same as scene 13
-🔤 **On screen:** بِخَيْرْ، شُكْرًا. مَعَ السَّلَامَةْ · *bikhayr, shukran. ma'a s-salaama* · Your answer: ma'a s-salaama
+🖼️ **Image:** same as scene 15
+🔤 **On screen:** بِخَيْرْ، شُكْرًا. مَا خُطَّتُكَ الْيَوْمْ؟ · *bikhayr, shukran. maa khuttatuka l-yawm?* · Your answer: adrusu l-'arabiyya. wa anti?
 
 ```say:lina
-بِخَيْرْ، شُكْرًا. مَعَ السَّلَامَةْ.
+بِخَيْرْ، شُكْرًا. مَا خُطَّتُكَ الْيَوْمْ؟
+```
+⏸️ **Pause 4s** — viewer: *adrusu l-'arabiyya. wa anti?*
+
+### 🎬 Scene 20 — Role-play 5 · 1:58–2:05
+
+🖼️ **Image:** same as scene 15
+🔤 **On screen:** أَعْمَلُ فِي الْمَكْتَبَةْ. مَعَ السَّلَامَةْ · *a'malu fi l-maktaba. ma'a s-salaama* · Your answer: ma'a s-salaama
+
+```say:lina
+أَعْمَلُ فِي الْمَكْتَبَةْ. مَعَ السَّلَامَةْ.
 ```
 ⏸️ **Pause 2.5s** — viewer: *ma'a s-salaama.*
 
-### 🎬 Scene 18 — Outro · 1:56–2:10
+### 🎬 Scene 21 — Outro · 1:56–2:10
 
 🖼️ **Image:** Sami and Lina waving goodbye outside the café
 🔤 **On screen:** مَعَ السَّلَامَةْ · *ma'a s-salaama* · Goodbye — Day 3

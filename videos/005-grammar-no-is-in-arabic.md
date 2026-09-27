@@ -38,13 +38,13 @@ Welcome to 2 Minute Arabic — one tiny lesson, every day. Arabic is my mother t
 ### 🎬 Scene 3 — Today · 0:18–0:28
 
 🖼️ **Image:** Reuse the Day 4 image of Sami sitting sad on the café steps with a rain cloud + STYLE
-🔤 **On screen:** سَامِي حَزِين · *Saamii haziin* · Sami (is) sad
+🔤 **On screen:** سَامِي حَزِينْ · *Saamii haziin* · Sami (is) sad
 
 ```say:narrator
 Today is Day 5. Yesterday, we heard:
 ```
 ```say:teacher
-سَامِي حَزِين.
+سَامِي حَزِينْ.
 ```
 ```say:narrator
 Sami sad. No "is". Today you'll learn why — and build your own sentences.
@@ -54,13 +54,13 @@ Sami sad. No "is". Today you'll learn why — and build your own sentences.
 
 🖼️ **Image:** Two puzzle pieces clicking together — one showing a small person icon, the other showing a graduation cap icon + STYLE
 🔤 **On screen:** word + word = sentence ✅ · no "am/is/are" · no "a"
-　　　　　　　أَنَا طَالِب · *ana taalib* · I student → **I am a student**
+　　　　　　　أَنَا طَالِبْ · *ana taalib* · I student → **I am a student**
 
 ```say:narrator
 Here's the rule. In the present, Arabic just puts two words together. No "is". And no "a", either. Listen:
 ```
 ```say:teacher
-أَنَا طَالِب.
+أَنَا طَالِبْ.
 ```
 ```say:narrator
 Word for word: "I student". Meaning: I am a student.
@@ -116,7 +116,7 @@ She —
 🔤 **On screen:**
 هُوَ سَامِي · *huwa Saamii* · He is Sami
 هِيَ لِينَا · *hiya Liinaa* · She is Lina
-أَنَا سَعِيد · *ana sa'iid* · I am happy (man) — أَنَا سَعِيدَة · *ana sa'iida* (woman)
+أَنَا سَعِيدْ · *ana sa'iid* · I am happy (man) — أَنَا سَعِيدَةْ · *ana sa'iida* (woman)
 
 ```say:teacher
 هُوَ سَامِي.
@@ -131,13 +131,13 @@ He is Sami.
 She is Lina.
 ```
 ```say:teacher
-أَنَا سَعِيد.
+أَنَا سَعِيدْ.
 ```
 ```say:narrator
 I am happy. And if you're a woman, add an "a" sound at the end:
 ```
 ```say:teacher
-أَنَا سَعِيدَة.
+أَنَا سَعِيدَةْ.
 ```
 
 ### 🎬 Scene 7 — Your turn · 1:30–1:52
@@ -150,14 +150,14 @@ Your turn. Say it before I do. I am a student.
 ```
 ⏸️ **Pause 3s**
 ```say:teacher
-أَنَا طَالِب.
+أَنَا طَالِبْ.
 ```
 ```say:narrator
 He is happy.
 ```
 ⏸️ **Pause 3s**
 ```say:teacher
-هُوَ سَعِيد.
+هُوَ سَعِيدْ.
 ```
 ```say:narrator
 She is Lina.

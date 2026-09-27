@@ -37,6 +37,12 @@ What's next, in order. **🔔 = reminder for you**, 🤖 = Claude does it, 🤝 
 - [ ] 🤖 Auto-build a draft video / Shotcut project per day (voiceover + images at scene times + text cards + slow zoom + "your turn" labels).
 - [ ] 🤖 Weekly 16:9 compilation in one command.
 
+## New flow (2026-09-27)
+- [x] 🤖 Recording sheet + splitter + Sara voice conversion + make_audio integration — tested end-to-end.
+- [ ] 🔔 Record the Day 3 sheet (`videos/003-recording-sheet.md`) → Claude re-produces Day 3.
+- [x] 🤖 Day 3 content: plan exchange added (6 new words); Day 4: "هَلْ تُرِيدُ قَهْوَةْ؟"; sukun pass on Days 4–5.
+- [ ] 🤖 Days 4–5: restructure to the current format (hello/goodbye clips, one image per scene) at production time.
+
 ## Later
 - [ ] 🤖 Days 6–30 scripts.
 - [ ] 🤝 2 Minute Spanish rework (on hold — see that repo's README).

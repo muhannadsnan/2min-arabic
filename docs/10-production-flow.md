@@ -17,6 +17,24 @@ and upload it** (~10 minutes). Everything runs locally on the owner's PC, with f
 | 8. Approve + upload | 👤 Owner | YouTube Studio | scheduled video |
 | Weekly | 🤖 Claude | ffmpeg | 16:9 compilation of the week |
 
+## The Arabic voice = the owner's own recording (from Day 3, 2026-09-27)
+
+All Arabic is **recorded by the owner** — human, native, clear. Only the English narration is generated (his clone).
+
+1. `python3 tools/recording_sheet.py videos/NNN-….md` → `videos/NNN-recording-sheet.md`: every unique Arabic line in
+   order, marked *you* / *you — slowly* / *Lina (becomes Sara)*.
+2. The owner records the whole sheet **in one take** (≈ 2 s silence between lines; a repeated line = the last take is used)
+   and drops the file into `footage/recordings/<video>/`.
+3. `/media/msn/GamesLinux/AI/tts/venv/bin/python tools/split_recording.py videos/NNN-….md`:
+   cleans (DeepFilterNet, −20 LUFS) → splits at pauses ≥ 1 s → transcribes each piece → **order-preserving alignment**
+   to the sheet (false starts and retakes skipped, later take wins, unreadable pieces assigned by position and flagged)
+   → **Lina's lines converted to Sara's voice** (Chatterbox VC, MIT; tested: 129 Hz → 212 Hz, words intact)
+   → `lines/`, `map.json`, `report.md`.
+4. `tools/make_audio.py` uses the recorded line for every Arabic `say:` block (it stops if one is missing —
+   `--allow-tts` only on purpose). English narrator lines are generated as before.
+
+Tested end-to-end on 2026-09-27 with a noisy fake recording containing a false start: all 14 lines cut correctly.
+
 ## The voices
 
 All on **Chatterbox Multilingual v3** (MIT license — code and weights), running on the RTX 3060.
