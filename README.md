@@ -17,13 +17,14 @@ and the ready-to-produce video scripts.
 |---|---|
 | [docs/01-channel-concept.md](docs/01-channel-concept.md) | Philosophy, the founder story, the 1% math, the promise, audience, tone |
 | [docs/02-video-format.md](docs/02-video-format.md) | The fixed 2-minute structure, the standard intro/outro, the 5 lesson formats |
-| [docs/03-production-pipeline.md](docs/03-production-pipeline.md) | Voice (free TTS), images, editing, export specs — step by step |
+| [docs/03-production-pipeline.md](docs/03-production-pipeline.md) | Voice (Azure TTS, licensed for monetized use), images, editing in Shotcut, export — step by step |
 | [docs/04-curriculum-30-days.md](docs/04-curriculum-30-days.md) | Day 1 → Day 30 plan that delivers the "first conversation" promise |
 | [docs/05-style-guide.md](docs/05-style-guide.md) | Script markup, Arabic conventions (MSA, tashkeel, transliteration), visual style, characters |
 | [docs/06-publishing.md](docs/06-publishing.md) | Titles, descriptions, thumbnails, schedule, Shorts, playlists |
+| [docs/07-channel-and-monetization.md](docs/07-channel-and-monetization.md) | Which account, one vs two channels, AdSense, YPP thresholds (incl. 2027 changes), staying monetizable |
 | [templates/video-template.md](templates/video-template.md) | Copy this to start a new video script |
 | [videos/](videos/) | The video scripts, one `.md` per video |
-| [tools/make_audio.py](tools/make_audio.py) | Turns a script into numbered MP3 clips with free Edge TTS voices |
+| [tools/make_audio.py](tools/make_audio.py) | Turns a script into a finished voiceover (Azure TTS) + scene timeline + captions |
 
 ## Videos
 
@@ -41,16 +42,17 @@ Status legend: 📋 Planned → ✍️ Script ready → 🎙️ Audio done → �
 ## Producing one video (short version)
 
 1. Open the script in `videos/`.
-2. Generate the audio: `python tools/make_audio.py videos/001-why-2-minutes.md`
-   (or paste each `say:` block into your TTS service by hand).
+2. Generate the audio: `python3 tools/make_audio.py videos/001-why-2-minutes.md`
+   → `audio/001-why-2-minutes/voiceover.wav` (pauses already inserted), `timeline.md`, `captions.srt`.
 3. Generate one image per scene from the **🖼️ Image** prompts.
-4. In the editor: lay the clips in order, put each scene's image under its clips,
-   add the **🔤 On screen** text, and insert the **⏸️ Pause** gaps.
-5. Export vertical 1080×1920, upload with the title/description from the script header.
+4. In Shotcut: voiceover at 0:00, each scene's image at the time given in `timeline.md`,
+   the **🔤 On screen** text with the Text: Rich filter.
+5. Export vertical 1080×1920 (YouTube preset), upload with the title/description from the script, add `captions.srt`.
 
 Full details: [docs/03-production-pipeline.md](docs/03-production-pipeline.md).
 
 ## Sister channel
 
-**2 Minute Spanish** will mirror this exact methodology (same format, same docs structure, same tooling)
-in its own repo: `github.com/muhannadsnan/2min-spanish`.
+**2 Minute Spanish** mirrors this exact methodology (same format, same docs structure, same tooling)
+in its own repo: [github.com/muhannadsnan/2min-spanish](https://github.com/muhannadsnan/2min-spanish).
+Why two channels and not one: [docs/07](docs/07-channel-and-monetization.md#3-one-combined-channel-or-two).

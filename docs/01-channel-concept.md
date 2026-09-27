@@ -45,15 +45,15 @@ Two minutes is the "1%" of your day. Use this math in Day 1, and bring it back a
 ## The promise
 
 > "Don't make my mistake. Give me two minutes a day, and in 30 days you'll start your first
-> conversation in Arabic. No fluff. No excuses."
+> conversation in Arabic. No BS. No excuses."
 
 The promise is deliberately **concrete and checkable**: a *first* conversation — greeting, names,
 how are you, where are you from, simple wants, goodbye — not fluency.
 The [30-day curriculum](04-curriculum-30-days.md) is built backwards from exactly that goal,
 so the promise is honest.
 
-> The original wording was "no bullshit". The scripts use "No fluff. No excuses." to stay
-> family-friendly for YouTube's recommendation system; swap it back if you prefer the edgier tone.
+> Wording: "No BS" — keeps the edge of the original "no bullshit" while staying clean enough for
+> YouTube's recommendation system.
 
 ## Brand
 
@@ -92,8 +92,8 @@ in real conversation (no case endings at the end of phrases):
 - Very common everyday expressions (e.g. *al-hamdu lillaah*, *ma'a s-salaama*) are identical in MSA
   and the dialects, so viewers still sound natural.
 
-Later, a recurring "**Street version**" segment can show how a phrase sounds in Levantine / Egyptian /
-Gulf dialects — great for comments and engagement.
+**Decision: no dialects on this channel.** A true beginner needs one clean, simple standard — mixing
+in dialects early only confuses.
 
 ## Tone of voice
 

@@ -11,7 +11,7 @@ Every video script uses the same building blocks, so it can be read by a human *
 | 🖼️ **Image:** … | Prompt for the image shown during the scene. |
 | 🔤 **On screen:** … | Text to add in the editor. |
 | ` ```say:<speaker> ` … ` ``` ` | A voice clip. One block = one audio file. Speakers: `narrator`, `teacher`, `teacher-slow`, `sami`, `lina`. |
-| ⏸️ **Pause Ns** — … | Silence to insert in the editor (usually the viewer speaks). |
+| ⏸️ **Pause Ns** — … | Silence (N seconds, usually the viewer speaks). `make_audio.py` inserts it automatically — keep the exact form `⏸️ **Pause 2s**`. |
 | ✂️ **Edit:** … | Other editing instructions (sound effect, zoom, reuse a clip…). |
 
 Rules:

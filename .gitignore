@@ -1,7 +1,8 @@
 audio/
+audio-drafts/
 .venv/
 __pycache__/
 *.mp3
 *.wav
 *.mp4
-*.kdenlive
+*.mlt

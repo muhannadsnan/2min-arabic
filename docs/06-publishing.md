@@ -3,7 +3,10 @@
 ## Where
 
 Upload every video as a **vertical Short** (≤ 2:59). Shorts are where new channels get discovered.
-Every Sunday, optionally upload a **long-form compilation** of the week (16:9) for search and binge-watching.
+Every Sunday, upload a **long-form compilation** of the week (16:9, ~15 min). This is **not optional**: only
+long-form watch time counts toward the 8,000 watch hours needed for monetization
+(see [07-channel-and-monetization.md](07-channel-and-monetization.md#what-this-means-for-our-strategy)).
+Once a month, a "whole month in one video" (~1 hour) for bingeing and review.
 
 ## When
 
@@ -56,6 +59,13 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 
 - **30 Days to Your First Arabic Conversation** (Days 1–30, in order)
 - **Arabic Phrases**, **Arabic Conversations**, **Arabic Stories**, **Arabic Grammar Made Easy** (by format)
+
+## Cross-promotion with 2 Minute Spanish
+
+- Add the sister channel under **Customization → Layout → Featured channels**.
+- Day 1's story is about learning Spanish — link the Spanish channel in its description.
+- Now and then a community post: "Learning Spanish too? Same method: …".
+- Never post Spanish lessons here — keep each channel's audience clean.
 
 ## Community
 

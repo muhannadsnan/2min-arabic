@@ -76,7 +76,7 @@ Here's the math. Get one percent better every day, and after one year you're not
 🔤 **On screen:** 2 min/day → your first Arabic conversation in 30 days
 
 ```say:narrator
-So don't make my mistake. Don't wait for the perfect month — it never comes. Give me two minutes a day, and in thirty days you'll start your first conversation in Arabic. No fluff. No excuses.
+So don't make my mistake. Don't wait for the perfect month — it never comes. Give me two minutes a day, and in thirty days you'll start your first conversation in Arabic. No BS. No excuses.
 ```
 
 ### 🎬 Scene 8 — Your first word · 1:37–1:55
@@ -131,6 +131,7 @@ Two minutes a day. Your first Arabic conversation in 30 days.
 مَعَ السَّلَامَة — ma'a s-salaama — goodbye
 
 ▶️ Tomorrow: the 10 most useful Arabic phrases.
+🇪🇸 Learning Spanish too? Same method, sister channel: 2 Minute Spanish <link>
 🔔 Subscribe to keep your streak.
 
 #learnarabic #arabicforbeginners #2minutearabic
