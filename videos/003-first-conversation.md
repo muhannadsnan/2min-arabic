@@ -127,7 +127,7 @@ Fine, thank God. And you? The new part:
 وَأَنْتِ؟
 ```
 ```say:narrator
-"And you?" — when you talk to a woman.
+It means: what about you? — when you're talking to a woman.
 ```
 
 ### 🎬 Scene 10 — Line 7 · Lina · 1:12–1:17

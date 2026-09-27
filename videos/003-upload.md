@@ -42,4 +42,14 @@ Day 3 ✅ — Reply to me in Arabic like Sami would: السلام عليكم! ك
 
 ## Quality check (Claude)
 
-_filled in after production_
+- **Script:** 18 scenes; sukun endings; new words said by the Arabic teacher voice; hello + goodbye clips; answer hints.
+- **Cards:** all 18 rendered and inspected before generation — no missing glyphs; NEW/answer lines highlighted.
+- **Voice:** 31 clips, best of 4–8 takes each, all through DeepFilterNet (noise-free). Fixes: English line rephrased
+  twice ("and you?" was heard as "in you" → "what about you?"); stray made-up word after "…his coffee" found in the
+  full-video check → line redone and the checker now cuts anything after the script's last word.
+  Lina's مَا اسْمُكْ heard as "Masmuk" (clean k) on its own — the "kh" in the full transcript was context guessing.
+- **Images:** 13 unique scenes × 3 takes inspected; scene 3 redone (blank band); rejected takes include a
+  **duplicated head** (scene 11 take 0) and a two-cups-for-one-person table. Reasons: `images/003-first-conversation/picks.json`.
+- **Finished video:** 1:59.9 · −14.1 LUFS · peaks −1.9 dB · pauses are digital silence · soundtrack re-transcribed in
+  English and Arabic: correct order, no overlaps · frames checked at hello, role-play pause, goodbye + subscribe.
+- **Please listen to:** 0:37–0:41 (Lina: أَنَا لِينَا. مَا اسْمُكْ؟) — Sara's clone, the only line I'd like your ear on.

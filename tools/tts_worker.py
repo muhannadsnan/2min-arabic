@@ -73,11 +73,18 @@ def score(jobs):
             heard = " ".join(s.text for s in segments).strip()
             words = [w for s in segments for w in s.words]
             length = sf.info(take).duration
+            # extra made-up words after the sentence ("…his coffee. Aby"): cut after the script's last word
+            script_last = normalize(job["text"]).split()[-1] if normalize(job["text"]) else ""
+            match = [k for k, w in enumerate(words) if normalize(w.word) == script_last]
+            extra = len(words) - 1 - match[-1] if match else 0
+            if match and extra > 0:
+                words = words[:match[-1] + 1]
+                heard = " ".join(w.word.strip() for w in words)
             last_end = words[-1].end if words else length
             last_len = (words[-1].end - words[-1].start) if words else 0.0
             tail = length - last_end
             # penalties: a dragged last word or a long sound after it ("falling off a cliff")
-            penalty = (0.3 if tail > 0.6 else 0.1 if tail > 0.35 else 0.0) + (0.2 if last_len > 1.1 else 0.0)
+            penalty = (0.3 if tail > 0.6 else 0.1 if tail > 0.35 else 0.0) + (0.2 if last_len > 1.1 else 0.0) + 0.15 * extra
             score_k = cer(job["text"], heard) + penalty
             if best is None or score_k < best[0]:
                 best = (score_k, take, heard, last_end, tail, last_len)

@@ -99,6 +99,7 @@ before hand-over.** Nothing is skipped; a failed check is fixed and re-checked.
 5. **Voice report** (`audio/<video>/report.md`): every line heard as written; flagged lines are redone
    (`--redo N --takes 8`) or verified in context (known checker spellings: عَفْوًا → "اف 1", مَا اسْمُكْ → "مسموك").
    **Tails:** no dragged last word / long fade-out (checker penalty + trim).
+   **Extra words:** anything the voice adds after the script's last word is cut automatically (Day 3: "…his coffee. Aby").
 6. **Images:** every take inspected at full size (zoom on hands, faces, edges); best take picked and the reasons written
    to `images/<video>/picks.json`; failed scenes redone with a better prompt / new seeds.
 7. **Assembly** with `tools/assemble.py`.
