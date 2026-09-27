@@ -24,6 +24,9 @@ the channel's credibility. Rule: **nothing on this channel may sound robotic.**
 | **English narration** | **Your cloned voice** (Chatterbox, from your own sample) — Kokoro `am_michael` until then | Sounds like the person viewers met in Day 1; cloning your **own** voice needs no AI disclosure on YouTube. |
 | **Lina** (female) and any Arabic line not recorded yet | **Chatterbox v3** female voice | Stop-gap; a real female voice (someone close to you, with consent) is better. |
 
+> **Update 2026-09-27:** the owner's voice is now cloned from the Day 1 video and used for the narrator (English) and the
+> teacher (Arabic) — see [10-production-flow.md](10-production-flow.md#the-voices). Recording the Arabic lines by hand is no longer required.
+
 ### The engines (both free, both licensed for commercial use, run on your RTX 3060)
 
 | Engine | License | Used for | Settings chosen by ear |

@@ -23,6 +23,7 @@ and the ready-to-produce video scripts.
 | [docs/06-publishing.md](docs/06-publishing.md) | Titles, descriptions, thumbnails, schedule, Shorts, playlists |
 | [docs/07-channel-and-monetization.md](docs/07-channel-and-monetization.md) | Which account, one vs two channels, AdSense, YPP thresholds (incl. 2027 changes), staying monetizable |
 | [docs/08-channel-setup.md](docs/08-channel-setup.md) | Creating the channel step by step: safety checks, name, photo/banner, description, settings, features |
+| [docs/10-production-flow.md](docs/10-production-flow.md) | **How every video is produced from Day 2 on** — who does what, voices, assembly, quality check |
 | [docs/09-backlog.md](docs/09-backlog.md) | What's next, in order — including reminders for you |
 | [templates/video-template.md](templates/video-template.md) | Copy this to start a new video script |
 | [videos/](videos/) | The video scripts, one `.md` per video |

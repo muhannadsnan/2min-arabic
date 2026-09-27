@@ -6,8 +6,10 @@ What's next, in order. **🔔 = reminder for you**, 🤖 = Claude does it, 🤝 
 - [x] 🤝 Channel setup, Steps 0–5 of [08-channel-setup.md](08-channel-setup.md) — done 2026-09-27.
 
 ## Voice
-- [ ] 🔔 **Record your voice sample for cloning**: ~15–30 s, clear, natural talking pace, quiet room — once in **English**
-      (for the narrator) and once in **Arabic** (for the teacher voice). Save as WAV/MP3 and give Claude the path.
+- [x] 🤖 **Owner's voice cloned** from the Day 1 video (12 s reference, private, on the games drive) — English word-perfect,
+      Arabic almost perfect in tests. Narrator + teacher now use it ([10-production-flow.md](10-production-flow.md)).
+- [ ] 🔔 Optional: a 15 s **Arabic** voice sample for an even more natural Arabic accent.
+- [ ] 🔔 Recommended: film a reusable 3–5 s **hello clip** and **goodbye clip** of yourself once (goes in every video).
 - [ ] 🔔 Optional: a **female voice** for Lina — someone close to you records the same kind of sample (with their consent),
       or reads Lina's lines directly.
 - [x] 🤖 Local TTS moved to `/media/msn/GamesLinux/AI/tts` (12 GB: 6.5 GB PyTorch/CUDA engine, 4.8 GB models incl. 1.5 GB Whisper checker); old Chatterbox v2 removed; smoke-tested ✅
