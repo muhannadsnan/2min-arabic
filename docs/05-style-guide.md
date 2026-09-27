@@ -12,6 +12,7 @@ Every video script uses the same building blocks, so it can be read by a human *
 | 🔤 **On screen:** … | Text to add in the editor. |
 | ` ```say:<speaker> ` … ` ``` ` | A voice clip. One block = one audio file. Speakers: `narrator`, `teacher`, `teacher-slow`, `sami`, `lina`. |
 | ⏸️ **Pause Ns** — … | Silence (N seconds, usually the viewer speaks). `make_audio.py` inserts it automatically — keep the exact form `⏸️ **Pause 2s**`. |
+| 🎥 **Clip:** name — caption | A filmed clip from `footage/clips/<name>.mp4` (e.g. `hello`, `goodbye`), shown full-screen with its own sound; the caption is burned in. `make_audio.py` leaves room for it in the voiceover. |
 | ✂️ **Edit:** … | Other editing instructions (sound effect, zoom, reuse a clip…). |
 
 Rules:
@@ -24,9 +25,12 @@ Rules:
 - **Variety:** simple Modern Standard Arabic, spoken style (see [concept](01-channel-concept.md#which-arabic)).
 - **Tashkeel (vowel marks):** always full tashkeel in `say:` blocks and on screen. It helps TTS pronounce
   correctly and helps learners read.
-- **No case ending on the last word of a phrase** (pausal form, as people actually speak):
-  write كَيْفَ حَالُك not كَيْفَ حَالُكَ; مَا اسْمُك not مَا اسْمُكَ. Inside a phrase, keep the vowels needed for flow
-  (e.g. وَعَلَيْكُمُ السَّلَام).
+- **Sukun on the last letter of every phrase** (الوقف بالسكون — pausal form, as people actually speak; owner's rule):
+  write كَيْفَ حَالُكْ، مَا اسْمُكْ، لَا أَفْهَمْ، وَعَلَيْكُمُ السَّلَامْ — with an explicit **ـْ** so the voice never adds a case
+  ending. Exceptions: words ending in a long vowel (اسْمِي سَامِي), and tanween fatha on alif (شُكْرًا، عَفْوًا، مَرْحَبًا),
+  which is read as a long "-aa" at a pause. Keep feminine ـكِ when the vowel carries the meaning (كَيْفَ حَالُكِ؟).
+  Inside a phrase, keep the vowels needed for flow (وَعَلَيْكُمُ السَّلَامْ).
+- **Voice delivery:** neutral, calm intonation (no escalating pitch) and 5% slower than normal speech, for beginners.
 - If TTS mispronounces a word: first check the tashkeel, then try adding/removing the shadda or a sukun,
   then try another voice.
 

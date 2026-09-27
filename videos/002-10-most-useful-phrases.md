@@ -29,10 +29,10 @@ Ten phrases. Two minutes. Enough to survive your first Arabic chat.
 
 🖼️ **Image:** Stopwatch showing 2:00 on a cozy desk with a notebook and a cup of tea, morning light + STYLE
 🔤 **On screen:** 2 Minute Arabic · Day 2
-✂️ **Edit:** reuse the standard intro clip.
+🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-Welcome to 2 Minute Arabic — one tiny lesson, every day. Arabic is my mother tongue, and my promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
+One tiny lesson, every day. Arabic is my mother tongue, and my promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
 ```
 
 ### 🎬 Scene 3 — Today · 0:17–0:24
@@ -47,52 +47,52 @@ Today is Day 2: the ten most useful phrases in Arabic. Listen, then repeat out l
 ### 🎬 Scene 4 — Phrase 1 · 0:24–0:31
 
 🖼️ **Image:** Sami greeting an older neighbor with a hand on his chest, warm smile, doorway of a house + STYLE
-🔤 **On screen:** السَّلَامُ عَلَيْكُم · *as-salaamu 'alaykum* · Peace be upon you (= hello)
+🔤 **On screen:** السَّلَامُ عَلَيْكُمْ · *as-salaamu 'alaykum* · Peace be upon you (= hello)
 
 ```say:narrator
 Number one. The greeting you'll hear everywhere — peace be upon you.
 ```
 ```say:teacher
-السَّلَامُ عَلَيْكُم
+السَّلَامُ عَلَيْكُمْ
 ```
 ⏸️ **Pause 2s**
 
 ### 🎬 Scene 5 — Phrase 2 · 0:31–0:38
 
 🖼️ **Image:** The older neighbor smiling back and answering, hand on chest + STYLE
-🔤 **On screen:** وَعَلَيْكُمُ السَّلَام · *wa 'alaykumu s-salaam* · And upon you, peace (the reply)
+🔤 **On screen:** وَعَلَيْكُمُ السَّلَامْ · *wa 'alaykumu s-salaam* · And upon you, peace (the reply)
 
 ```say:narrator
 Number two. The reply — and upon you, peace.
 ```
 ```say:teacher
-وَعَلَيْكُمُ السَّلَام
+وَعَلَيْكُمُ السَّلَامْ
 ```
 ⏸️ **Pause 2s**
 
 ### 🎬 Scene 6 — Phrase 3 · 0:38–0:46
 
 🖼️ **Image:** Lina asking Sami a question with a curious, friendly face + STYLE
-🔤 **On screen:** كَيْفَ حَالُك؟ · *kayfa haaluk?* · How are you? — *to a woman:* كَيْفَ حَالُكِ؟ *kayfa haaluki?*
+🔤 **On screen:** كَيْفَ حَالُكْ؟ · *kayfa haaluk?* · How are you? — *to a woman:* كَيْفَ حَالُكِ؟ *kayfa haaluki?*
 
 ```say:narrator
 Number three. How are you?
 ```
 ```say:teacher
-كَيْفَ حَالُك؟
+كَيْفَ حَالُكْ؟
 ```
 ⏸️ **Pause 2s**
 
 ### 🎬 Scene 7 — Phrase 4 · 0:46–0:55
 
 🖼️ **Image:** Sami giving a thumbs up and smiling, looking relaxed + STYLE
-🔤 **On screen:** بِخَيْر، الْحَمْدُ لِلَّه · *bikhayr, al-hamdu lillaah* · Fine, thank God
+🔤 **On screen:** بِخَيْرْ، الْحَمْدُ لِلَّهْ · *bikhayr, al-hamdu lillaah* · Fine, thank God
 
 ```say:narrator
 Number four. The answer you'll hear all day long — fine, thank God.
 ```
 ```say:teacher
-بِخَيْر، الْحَمْدُ لِلَّه
+بِخَيْرْ، الْحَمْدُ لِلَّهْ
 ```
 ⏸️ **Pause 2s**
 
@@ -125,26 +125,26 @@ Number six. You're welcome.
 ### 🎬 Scene 10 — Phrase 7 · 1:07–1:13
 
 🖼️ **Image:** Sami politely pointing at a pastry in a bakery display + STYLE
-🔤 **On screen:** مِنْ فَضْلِك · *min fadlik* · Please
+🔤 **On screen:** مِنْ فَضْلِكْ · *min fadlik* · Please
 
 ```say:narrator
 Number seven. Please.
 ```
 ```say:teacher
-مِنْ فَضْلِك
+مِنْ فَضْلِكْ
 ```
 ⏸️ **Pause 2s**
 
 ### 🎬 Scene 11 — Phrase 8 · 1:13–1:20
 
 🖼️ **Image:** Lina meeting a new person at a bookshop, hand gesture as if asking a question + STYLE
-🔤 **On screen:** مَا اسْمُك؟ · *maa smuk?* · What's your name?
+🔤 **On screen:** مَا اسْمُكْ؟ · *maa smuk?* · What's your name?
 
 ```say:narrator
 Number eight. What's your name?
 ```
 ```say:teacher
-مَا اسْمُك؟
+مَا اسْمُكْ؟
 ```
 ⏸️ **Pause 2s**
 
@@ -164,13 +164,13 @@ Number nine. My name is… and then your name. Like this:
 ### 🎬 Scene 13 — Phrase 10 · 1:29–1:37
 
 🖼️ **Image:** Sami looking confused with question marks floating around his head, a person talking fast in front of him + STYLE
-🔤 **On screen:** لَا أَفْهَم · *laa afham* · I don't understand
+🔤 **On screen:** لَا أَفْهَمْ · *laa afham* · I don't understand
 
 ```say:narrator
 And number ten — the one that saves you every time. I don't understand.
 ```
 ```say:teacher
-لَا أَفْهَم
+لَا أَفْهَمْ
 ```
 ⏸️ **Pause 2s**
 
@@ -195,9 +195,7 @@ Day 2 done. Tomorrow, you'll hear these phrases in a real conversation — and y
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes. Subscribe so you don't break your streak.
 ```
-```say:teacher
-مَعَ السَّلَامَة!
-```
+🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)
 
 ---
 
@@ -211,16 +209,16 @@ Day 2 of 30 — the 10 Arabic phrases you'll use every single day.
 Two minutes a day. Your first Arabic conversation in 30 days.
 
 📝 Today's Arabic:
-1. السَّلَامُ عَلَيْكُم — as-salaamu 'alaykum — peace be upon you (hello)
-2. وَعَلَيْكُمُ السَّلَام — wa 'alaykumu s-salaam — and upon you, peace (reply)
-3. كَيْفَ حَالُك؟ — kayfa haaluk? — how are you? (to a woman: kayfa haaluki?)
-4. بِخَيْر، الْحَمْدُ لِلَّه — bikhayr, al-hamdu lillaah — fine, thank God
+1. السَّلَامُ عَلَيْكُمْ — as-salaamu 'alaykum — peace be upon you (hello)
+2. وَعَلَيْكُمُ السَّلَامْ — wa 'alaykumu s-salaam — and upon you, peace (reply)
+3. كَيْفَ حَالُكْ؟ — kayfa haaluk? — how are you? (to a woman: kayfa haaluki?)
+4. بِخَيْرْ، الْحَمْدُ لِلَّهْ — bikhayr, al-hamdu lillaah — fine, thank God
 5. شُكْرًا — shukran — thank you
 6. عَفْوًا — 'afwan — you're welcome
-7. مِنْ فَضْلِك — min fadlik — please
-8. مَا اسْمُك؟ — maa smuk? — what's your name?
+7. مِنْ فَضْلِكْ — min fadlik — please
+8. مَا اسْمُكْ؟ — maa smuk? — what's your name?
 9. اسْمِي ... — ismii ... — my name is ...
-10. لَا أَفْهَم — laa afham — I don't understand
+10. لَا أَفْهَمْ — laa afham — I don't understand
 
 ▶️ Start from Day 1: <playlist link>
 🔔 Subscribe to keep your streak.

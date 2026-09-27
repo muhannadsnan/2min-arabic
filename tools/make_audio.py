@@ -37,8 +37,8 @@ WORKER = pathlib.Path(__file__).resolve().parent / "tts_worker.py"
 
 # Bump a speaker's version when its voice reference or setting in <TTS_HOME>/local_tts.py changes,
 # so only that speaker's clips are regenerated.
-VOICE_VERSIONS = {"narrator": "owner-en-1", "teacher": "owner-ar-1", "teacher-slow": "owner-ar-1",
-                  "sami": "owner-ar-1", "lina": "sara-ar-1", "narrator-kokoro": "kokoro-1"}
+VOICE_VERSIONS = {"narrator": "owner-en-2", "teacher": "owner-ar-2", "teacher-slow": "owner-ar-2",
+                  "sami": "owner-ar-2", "lina": "sara-ar-2", "narrator-kokoro": "kokoro-1"}  # -2: neutral, 5% slower
 SPEAKERS = ("narrator", "teacher", "teacher-slow", "sami", "lina", "narrator-kokoro")
 
 GAP = 0.35          # seconds of silence between two clips when the script has no explicit pause
@@ -48,10 +48,12 @@ CLIP_LUFS = -18.0   # per-clip loudness (the final video mix is brought to -14 L
 SCENE = re.compile(r"^### 🎬 (.+?)(?:\s+·\s+[\d:–-]+)?\s*$")
 SAY = re.compile(r"^```say:([\w-]+)\s*$")
 PAUSE = re.compile(r"⏸️ \*\*Pause (\d+(?:\.\d+)?)s\*\*")
+VIDEO = re.compile(r"^🎥 \*\*Clip:\*\*\s*([\w-]+)(?:\s*—\s*(.+))?$")
+CLIPS_DIR = pathlib.Path(__file__).resolve().parent.parent / "footage" / "clips"
 
 
 def parse(script: pathlib.Path):
-    """Return the script as a list of events: ('scene', name) / ('say', speaker, text) / ('pause', seconds)."""
+    """Events: ('scene', name) / ('say', speaker, text) / ('pause', seconds) / ('video', clip name, caption)."""
     events, lines, i = [], script.read_text(encoding="utf-8").splitlines(), 0
     while i < len(lines):
         line = lines[i]
@@ -66,6 +68,10 @@ def parse(script: pathlib.Path):
                 body.append(lines[i])
                 i += 1
             events.append(("say", speaker, " ".join(" ".join(body).split())))
+        elif m := VIDEO.match(line):
+            if not (CLIPS_DIR / f"{m.group(1)}.mp4").exists():
+                sys.exit(f"{script}:{i + 1}: filmed clip {CLIPS_DIR / m.group(1)}.mp4 not found")
+            events.append(("video", m.group(1), (m.group(2) or "").strip()))
         elif m := PAUSE.search(line):
             events.append(("pause", float(m.group(1))))
         i += 1
@@ -184,13 +190,28 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=()):
     # 2. lay the clips out on a timeline
     segments, captions, report = [], [], []
     timeline = ["| Starts at | What |", "|---|---|"]
-    data = {"scenes": [], "clips": [], "pauses": []}
+    data = {"scenes": [], "clips": [], "pauses": [], "videos": []}
     t, n, pending_gap = 0.0, 0, 0.0
     for event in events:
         if event[0] == "scene":
-            start = t + ((pending_gap or GAP) if n else 0)
+            start = t + ((pending_gap or GAP) if t > 0 else 0)
             timeline.append(f"| **{timestamp(start)}** | **🎬 {event[1]}** |")
             data["scenes"].append({"name": event[1], "start": round(start, 3)})
+        elif event[0] == "video":
+            _, name, caption = event
+            if t > 0:
+                gap = pending_gap or GAP
+                segments.append(("silence", gap))
+                t += gap
+            pending_gap = 0.0
+            length = duration(CLIPS_DIR / f"{name}.mp4")
+            segments.append(("silence", length))
+            timeline.append(f"| {timestamp(t)} | 🎥 filmed clip `{name}` ({length:.1f}s) {caption} |")
+            data["videos"].append({"name": name, "caption": caption, "start": round(t, 3), "end": round(t + length, 3)})
+            if caption:
+                captions.append(f"{len(captions) + 1}\n{timestamp(t, True)} --> {timestamp(t + length, True)}\n{caption}\n")
+            t += length
+            continue
         elif event[0] == "pause":
             pending_gap = event[1]
             timeline.append(f"| {timestamp(t)} | ⏸️ pause {event[1]:g}s |")
@@ -202,7 +223,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=()):
             clip = clips_dir / f"{n:02d}-{speaker}.wav"
             shutil.copy(cached, clip)
             info = json.loads(cached.with_suffix(".json").read_text(encoding="utf-8"))
-            if n > 1:
+            if t > 0:
                 gap = pending_gap or GAP
                 segments.append(("silence", gap))
                 t += gap
@@ -210,7 +231,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=()):
             length = duration(clip)
             segments.append(("clip", clip))
             timeline.append(f"| {timestamp(t)} | `{clip.name}` {text} |")
-            captions.append(f"{n}\n{timestamp(t, True)} --> {timestamp(t + length, True)}\n{text}\n")
+            captions.append(f"{len(captions) + 1}\n{timestamp(t, True)} --> {timestamp(t + length, True)}\n{text}\n")
             data["clips"].append({"n": n, "speaker": speaker, "text": text, "start": round(t, 3),
                                   "end": round(t + length, 3), "file": clip.name})
             flag = " ⚠️" if info["cer"] > 0.25 else ""

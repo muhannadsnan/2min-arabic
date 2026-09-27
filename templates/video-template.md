@@ -26,10 +26,10 @@ One line that stops the scroll.
 
 🖼️ **Image:** Stopwatch showing 2:00 on a cozy desk with a notebook and a cup of tea, morning light + STYLE
 🔤 **On screen:** 2 Minute Arabic · Day N
-✂️ **Edit:** reuse the standard intro clip.
+🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-Welcome to 2 Minute Arabic — one tiny lesson, every day. Arabic is my mother tongue, and my promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
+One tiny lesson, every day. Arabic is my mother tongue, and my promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
 ```
 
 ### 🎬 Scene 3 — Today · 0:17–0:25
@@ -72,9 +72,7 @@ Day N done. Tomorrow: …
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes. Subscribe so you don't break your streak.
 ```
-```say:teacher
-مَعَ السَّلَامَة!
-```
+🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)
 
 ---
 

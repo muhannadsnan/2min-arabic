@@ -34,6 +34,7 @@ LATIN = FONTS / "NotoSans-Regular.ttf"
 LATIN_ITALIC = FONTS / "NotoSans-Italic.ttf"
 TEAL, TERRACOTTA, CHARCOAL, CREAM = (31, 95, 91), (192, 99, 58), (51, 51, 51), (255, 246, 233, 235)
 HERE = pathlib.Path(__file__).resolve().parent
+CLIPS_DIR = HERE.parent / "footage" / "clips"
 ARABIC = re.compile(r"[\u0600-\u06FF]")
 SCENE = re.compile(r"^### 🎬 (.+?)(?:\s+·\s+[\d:–-]+)?\s*$")
 ON_SCREEN = re.compile(r"^🔤 \*\*On screen[^:]*:\*\*\s*(.+)$")
@@ -179,11 +180,16 @@ def main():
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(seg_dir / "list.txt"), "-c", "copy",
          str(video_only)])
 
-    # 2. captions: English narration only (Arabic lines are on the cards)
-    srt_blocks = (audio_dir / "captions.srt").read_text(encoding="utf-8").strip().split("\n\n")
-    english = [b for b in srt_blocks if not ARABIC.search(b)]
+    # 2. captions: English narration + filmed-clip captions (Arabic lesson lines are on the cards)
+    def srt_time(x):
+        ms = round(x * 1000)
+        return f"{ms // 3600000:02}:{ms // 60000 % 60:02}:{ms // 1000 % 60:02},{ms % 1000:03}"
+    items = [(c["start"], c["end"], c["text"]) for c in tl["clips"] if c["speaker"].startswith("narrator")]
+    items += [(v["start"], v["end"], v["caption"]) for v in tl.get("videos", []) if v["caption"]]
+    items.sort()
     en_srt, ass = out_dir / "captions-en.srt", out_dir / "captions.ass"
-    en_srt.write_text("\n\n".join(english) + "\n", encoding="utf-8")
+    en_srt.write_text("\n".join(f"{k}\n{srt_time(a)} --> {srt_time(b)}\n{txt}\n" for k, (a, b, txt) in enumerate(items, 1)),
+                      encoding="utf-8")
     run([sys.executable, str(HERE / "captions" / "srt_to_burnin_ass.py"), str(en_srt), str(ass)])
 
     # 3. final: YOUR TURN during pauses, captions, voiceover at -14 LUFS (mono measured -17 → dual-mono -14)
@@ -194,9 +200,26 @@ def main():
     measured = float(re.search(r"I:\s+(-?[\d.]+) LUFS", out[out.rfind("Summary:"):]).group(1))
     gain = -17.0 - measured
     final = out_dir / f"{stem}.mp4"
-    run(["ffmpeg", "-v", "error", "-y", "-i", str(video_only), "-i", str(turn), "-i", str(voice), "-filter_complex",
-         f"[0:v][1:v]overlay=0:1100:enable='{enable}',subtitles={ass}[v];"
-         f"[2:a]volume={gain:.2f}dB,alimiter=limit=0.79:level=false,pan=stereo|c0=c0|c1=c0[a]",
+    inputs = ["-i", str(video_only), "-i", str(turn), "-i", str(voice)]
+    vchain = f"[0:v][1:v]overlay=0:1100:enable='{enable}'[v0]"
+    achain = f"[2:a]volume={gain:.2f}dB,aformat=channel_layouts=mono[vo]"
+    mix, last = ["[vo]"], "v0"
+    for k, v in enumerate(tl.get("videos", [])):   # filmed clips: full screen with their own sound
+        idx = 3 + k
+        inputs += ["-i", str(CLIPS_DIR / f"{v['name']}.mp4")]
+        vchain += (f";[{idx}:v]fps={FPS},scale={W}:{H},setsar=1,setpts=PTS-STARTPTS+{v['start']:.3f}/TB[c{k}];"
+                   f"[{last}][c{k}]overlay=0:0:eof_action=pass:enable='between(t,{v['start']:.3f},{v['end']:.3f})'[v{k + 1}]")
+        last = f"v{k + 1}"
+        delay = round(v["start"] * 1000)
+        achain += f";[{idx}:a]aformat=channel_layouts=mono,adelay={delay}:all=1[ca{k}]"
+        mix.append(f"[ca{k}]")
+    vchain += f";[{last}]subtitles={ass}[v]"
+    if len(mix) > 1:
+        achain += f";{''.join(mix)}amix=inputs={len(mix)}:normalize=0:duration=first[m]"
+    else:
+        achain += ";[vo]anull[m]"
+    achain += ";[m]alimiter=limit=0.79:level=false,pan=stereo|c0=c0|c1=c0[a]"
+    run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", vchain + ";" + achain,
          "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(final)])
 
