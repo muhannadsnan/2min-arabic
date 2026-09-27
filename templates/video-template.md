@@ -29,7 +29,7 @@ One line that stops the scroll.
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-One tiny lesson, every day. Arabic is my mother tongue, and my promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
+I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
 ```
 
 ### 🎬 Scene 3 — Today · 0:17–0:25

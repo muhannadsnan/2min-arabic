@@ -1,7 +1,8 @@
 # Day 2 — Upload sheet
 
 **File to upload:** `output/002-10-most-useful-phrases/002-10-most-useful-phrases.mp4`
-(2:10, vertical → published as a **Short**; −14 LUFS; captions burned in; your real hello + goodbye clips inside)
+(1:58, vertical → published as a **Short**; −14 LUFS; captions burned in; your real hello + goodbye clips inside;
+our own animated SUBSCRIBE + bell over the goodbye)
 **Thumbnail/cover:** `output/002-10-most-useful-phrases/thumbnail (vertical).jpg` — if the upload screen only allows picking
 a frame, pick **0:02** (Sami and Lina at the café).
 **Captions file:** not needed (captions are in the picture).
@@ -70,4 +71,9 @@ Day 2 ✅ — introduce yourself in Arabic below: اسْمِي … (ismii …) �
 - **Voice rules applied:** sukun on the last letter, neutral intonation, 5% slower.
 - **Images:** 3 takes per scene, every take inspected; 2 scenes redone (8, 11), 1 take rejected for an ambiguous extra hand.
   Choices and reasons: `images/002-10-most-useful-phrases/picks.json`.
-- **Final video:** 2:09.6 · −14.0 LUFS · peaks −2.0 dB · all text cards checked for missing glyphs.
+- **Final video:** 1:58.5 · −14.0 LUFS · peaks −1.9 dB · all text cards checked for missing glyphs · full soundtrack
+  re-transcribed: no overlaps.
+- **Round 2 fixes (owner's review):** Arabic noise (noisy voice reference → cleaned with DeepFilterNet; Arabic lines now
+  have less hiss than the English) · filmed clips denoised · dragged/fading sentence endings rejected and trimmed ·
+  line after the hello rewritten so it continues naturally · subscribe animation added (the supplied stock clip was an
+  iStock watermarked preview — not usable).

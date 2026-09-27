@@ -37,8 +37,9 @@ WORKER = pathlib.Path(__file__).resolve().parent / "tts_worker.py"
 
 # Bump a speaker's version when its voice reference or setting in <TTS_HOME>/local_tts.py changes,
 # so only that speaker's clips are regenerated.
-VOICE_VERSIONS = {"narrator": "owner-en-2", "teacher": "owner-ar-2", "teacher-slow": "owner-ar-2",
-                  "sami": "owner-ar-2", "lina": "sara-ar-2", "narrator-kokoro": "kokoro-1"}  # -2: neutral, 5% slower
+VOICE_VERSIONS = {"narrator": "owner-en-2", "teacher": "owner-ar-3", "teacher-slow": "owner-ar-3",
+                  "sami": "owner-ar-3", "lina": "sara-ar-3", "narrator-kokoro": "kokoro-1"}
+# -2: neutral, 5% slower · -3 (Arabic): denoised reference, cfg 0.5, tail check + trim
 SPEAKERS = ("narrator", "teacher", "teacher-slow", "sami", "lina", "narrator-kokoro")
 
 GAP = 0.35          # seconds of silence between two clips when the script has no explicit pause

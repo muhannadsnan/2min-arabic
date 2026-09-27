@@ -217,6 +217,21 @@ def main():
         delay = round(v["start"] * 1000)
         achain += f";[{idx}:a]aformat=channel_layouts=mono,adelay={delay}:all=1[ca{k}]"
         mix.append(f"[ca{k}]")
+    # our own animated SUBSCRIBE + bell (tools/make_subscribe.py) over the goodbye clip, with click sounds
+    sub_mov, click = HERE.parent / "assets" / "subscribe.mov", HERE.parent / "assets" / "click.wav"
+    goodbye = next((v for v in tl.get("videos", []) if v["name"] == "goodbye"), None)
+    if goodbye and sub_mov.exists() and click.exists():
+        sys.path.insert(0, str(HERE))
+        from make_subscribe import CLICK_TIMES
+        idx = 3 + len(tl.get("videos", []))
+        inputs += ["-i", str(sub_mov)]
+        vchain += (f";[{idx}:v]format=rgba,setpts=PTS-STARTPTS+{goodbye['start']:.3f}/TB[sub];"
+                   f"[{last}][sub]overlay=0:150:eof_action=pass:enable='between(t,{goodbye['start']:.3f},{goodbye['end']:.3f})'[vs]")
+        last = "vs"
+        for j, ct in enumerate(CLICK_TIMES):
+            inputs += ["-i", str(click)]
+            achain += f";[{idx + 1 + j}:a]volume=0.5,aformat=channel_layouts=mono,adelay={round((goodbye['start'] + ct) * 1000)}:all=1[ck{j}]"
+            mix.append(f"[ck{j}]")
     vchain += f";[{last}]subtitles={ass}[v]"
     if len(mix) > 1:
         achain += f";{''.join(mix)}amix=inputs={len(mix)}:normalize=0:duration=first[m]"

@@ -52,6 +52,17 @@ In `footage/clips/` (git-ignored), sound cleaned (centered mono, low-cut, light 
 | `goodbye.mp4` — wave + "شكرا ومع السلامة" | 3.1 s | last seconds of every video |
 | `self-presentation.mp4` — "السلام عليكم، اسمي مهند…" | 13.6 s | Arabic voice reference; "meet your teacher" moment; channel trailer/community post |
 
+## Sound quality rules (learned on Day 2)
+
+- **Voice references must be clean**: the clone copies room hiss. All references and filmed clips go through
+  **DeepFilterNet** (MIT/Apache, local, in the TTS environment) before use.
+- **No dragged endings**: the checker penalizes takes whose last word is > 1.1 s or that keep sounding > 0.35 s after
+  the last word, and every clip is trimmed 0.22 s after its last word with a short fade.
+- Arabic voices use cfg 0.5 (lower made endings drag); the 5% slowdown comes from tempo.
+- After a filmed clip, the narration must continue the thought (no second "welcome").
+- **Never use stock clips with watermarks** (e.g. iStock/Getty previews). The end-screen subscribe animation is our own:
+  `tools/make_subscribe.py` → `assets/subscribe.mov` + `assets/click.wav`, laid over the goodbye clip by `assemble.py`.
+
 ## Assembly recipe (step 5)
 
 1. Voiceover at 0:00; scene images placed at the scene times from `timeline.md`, each with a slow zoom (100 → 105%).

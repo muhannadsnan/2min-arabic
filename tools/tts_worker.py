@@ -54,6 +54,8 @@ def generate(jobs):
 def score(jobs):
     import local_tts
 
+    import numpy as np
+    import soundfile as sf
     from faster_whisper import WhisperModel
 
     model = WhisperModel("medium", device="cuda", compute_type="float16")
@@ -64,15 +66,31 @@ def score(jobs):
             take = f"{job['prefix']}-take{k}.wav"
             # neutral Arabic context: very short words are otherwise misheard (عَفْوًا "af-wan" -> "اف 1")
             prompt = "جملة عربية قصيرة:" if lang == "ar" else None
-            segments, _ = model.transcribe(take, language=lang, beam_size=5, initial_prompt=prompt)
+            segments, _ = model.transcribe(take, language=lang, beam_size=5, initial_prompt=prompt, word_timestamps=True)
+            segments = list(segments)
             heard = " ".join(s.text for s in segments).strip()
-            score_k = cer(job["text"], heard)
+            words = [w for s in segments for w in s.words]
+            length = sf.info(take).duration
+            last_end = words[-1].end if words else length
+            last_len = (words[-1].end - words[-1].start) if words else 0.0
+            tail = length - last_end
+            # penalties: a dragged last word or a long sound after it ("falling off a cliff")
+            penalty = (0.3 if tail > 0.6 else 0.1 if tail > 0.35 else 0.0) + (0.2 if last_len > 1.1 else 0.0)
+            score_k = cer(job["text"], heard) + penalty
             if best is None or score_k < best[0]:
-                best = (score_k, take, heard)
-        shutil.copy(best[1], job["target"])
-        job["cer"], job["heard"] = round(best[0], 3), best[2]
-        flag = "  ⚠️" if best[0] > 0.25 else ""
-        print(f"  best CER {best[0]:.2f}{flag}  [{job['speaker']}] {job['text'][:40]}  →  heard: {best[2][:40]}", flush=True)
+                best = (score_k, take, heard, last_end, tail, last_len)
+        score_k, take, heard, last_end, tail, last_len = best
+        audio, rate = sf.read(take)
+        cut = min(len(audio), int((last_end + 0.22) * rate))   # keep a little air after the last word
+        audio = audio[:cut].copy()
+        fade = min(len(audio), int(0.08 * rate))
+        audio[-fade:] *= np.linspace(1.0, 0.0, fade)[:, None] if audio.ndim > 1 else np.linspace(1.0, 0.0, fade)
+        sf.write(job["target"], audio, rate)
+        job["cer"], job["heard"] = round(score_k, 3), heard
+        job["tail"], job["last_word"] = round(tail, 2), round(last_len, 2)
+        flag = "  ⚠️" if score_k > 0.25 else ""
+        print(f"  best {score_k:.2f}{flag} tail {tail:.2f}s last-word {last_len:.2f}s [{job['speaker']}] "
+              f"{job['text'][:36]} → {heard[:36]}", flush=True)
 
 
 if __name__ == "__main__":
