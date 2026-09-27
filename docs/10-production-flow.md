@@ -77,35 +77,46 @@ In `footage/clips/` (git-ignored), sound cleaned (centered mono, low-cut, light 
 5. Brand: stopwatch icon + "DAY N" badge.
 6. Export: H.264 CRF 18, 30 fps, AAC 192 kb/s, **−14 LUFS**, ≤ 2:59.
 
-## Quality check before handing over (step 6)
+## Mandatory checks for every video
 
-- Every image passed the [image QA rules](05-style-guide.md) (no text/numbers, hands, faces, duplicates, crops, character match).
-- Final audio re-transcribed: every line says what the script says.
-- Loudness −14 LUFS ±1, peaks below −1 dB, length 1:45–2:20.
-- Contact sheet of the finished video checked: captions readable, nothing covers faces or text cards.
+The owner only watches the finished video once. **Every stage below is done and passed by Claude, in this order,
+before hand-over.** Nothing is skipped; a failed check is fixed and re-checked.
+
+### Before generating (script stage)
+
+1. **Script rules:** sukun on the last letter of every Arabic phrase; one image per short scene (≈ 5–10 s);
+   Arabic words spoken only by Arabic voices (never by the English narrator); `🎥 hello` in the intro and
+   `🎥 goodbye` at the end; the line after the hello continues the thought.
+2. **Text cards rendered and inspected** (all scenes, one sheet): no missing glyphs (□), no jumbled Arabic, readable
+   sizes; "NEW:" and "Your answer:" lines highlighted.
+3. **Image prompts** follow the [image QA rules](05-style-guide.md): character references, olive skin, simple hand
+   poses, no text/numbers, "fills the whole frame"; repeated shots use `"same"`.
+4. **Upload sheet + `NNN-description.txt`** written (Arabic isolated with direction markers; AI label decided:
+   Sara's voice → Yes, otherwise No).
+
+### After generating (post-checks)
+
+5. **Voice report** (`audio/<video>/report.md`): every line heard as written; flagged lines are redone
+   (`--redo N --takes 8`) or verified in context (known checker spellings: عَفْوًا → "اف 1", مَا اسْمُكْ → "مسموك").
+   **Tails:** no dragged last word / long fade-out (checker penalty + trim).
+6. **Images:** every take inspected at full size (zoom on hands, faces, edges); best take picked and the reasons written
+   to `images/<video>/picks.json`; failed scenes redone with a better prompt / new seeds.
+7. **Assembly** with `tools/assemble.py`.
+8. **Finished-video check:**
+   - full soundtrack re-transcribed with timings → correct order, **no overlaps**, nothing garbled;
+   - **noise** measured (quiet gaps of voice clips ≈ silence; filmed clips cleaned) — no audible hiss;
+   - loudness **−14 LUFS ±1**, peaks below −1 dB, length 1:45–2:20 (never over 2:59);
+   - contact sheet + frames at the hello clip, a pause ("YOUR TURN"), and the goodbye/subscribe moment: captions
+     readable, nothing covers faces or cards, every card correct.
+9. **Thumbnail** made and checked at phone size.
+10. **Hand-over** with a short report: what was checked, what was redone and why, anything the owner should listen to.
 
 ## Build status
 
 | Piece | Status |
 |---|---|
-| Local voices + owner clone | ✅ working (`/media/msn/GamesLinux/AI/tts/local_tts.py`) |
-| `make_audio.py` on local voices, best-of-3, loudness | ⏳ to build (still has the old Azure engine) |
-| Image generation + QA | ✅ working |
-| Text cards | ✅ renderer proven; batch tool ⏳ |
-| Assembly script | ⏳ to build |
-| Burned-in captions | ✅ tool saved |
-| Sound finishing for filmed videos | ✅ recipe in [03](03-production-pipeline.md) |
-
-The ⏳ pieces are built and tested end-to-end on Day 2 before it's handed over.
-
-## Things to keep in mind
-
-- **Stay human (monetization):** fully generated template videos are exactly what YouTube's "inauthentic content" policy
-  targets. The owner's real voice (cloned) and face help. **Recommended:** film one reusable 3–5 s clip of yourself
-  (a wave + "Welcome to 2 Minute Arabic") and one goodbye clip ("مع السلامة!") once — Claude puts them in every video.
-  Film a real video again now and then (e.g. every review day, Day 7/14/21/30).
-- **Buffer:** keep 5–7 finished videos scheduled so a busy week never breaks the daily streak.
-- **File names:** no `|` and no line breaks — use `day NN - title.mp4`.
-- **Space:** the games drive holds the AI tools (~40 GB); keep ≥ 20 GB free there and on the root disk.
-- **Weekly compilation** every Sunday — it's what earns the watch hours for monetization.
-- **Spanish channel** is on hold (decisions saved in its repo's README).
+| Local voices + owner/Sara clones, DeepFilterNet cleaning | ✅ |
+| `tools/make_audio.py` (best-of-N, speech-to-text check, tail trim, `--redo`, filmed clips) | ✅ |
+| `tools/images/batch.py` (+ `generate.py`, retry, resume, `same`) | ✅ |
+| `tools/assemble.py` (cards, badge, YOUR TURN, captions, clips, subscribe, −14 LUFS, contact sheet) | ✅ |
+| `tools/clean_footage.py` (filmed recordings) · `tools/make_subscribe.py` | ✅ |

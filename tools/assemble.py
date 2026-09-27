@@ -86,7 +86,10 @@ def render_card(text: str, path: pathlib.Path):
         if rest:
             lines.append((rest[0], LATIN_ITALIC, 60, TERRACOTTA, {}))
         for extra in rest[1:]:
-            lines.append((extra, LATIN, 50, CHARCOAL, {}))
+            if extra.startswith(("NEW", "Your answer")):   # learner highlights stand out
+                lines.append((extra, LATIN_BOLD, 50, TERRACOTTA if extra.startswith("NEW") else TEAL, {}))
+            else:
+                lines.append((extra, LATIN, 50, CHARCOAL, {}))
     else:
         for i, p in enumerate(parts):
             lines.append((p, LATIN_BOLD if i == 0 else LATIN, 72 if i == 0 else 54, TEAL if i == 0 else CHARCOAL, {}))
@@ -160,6 +163,11 @@ def main():
     for i, scene in enumerate(tl["scenes"], 1):
         frames = round(scene["end"] * FPS) - round(scene["start"] * FPS)
         image = img_dir / f"s{i:02d}.png"
+        prompts = img_dir / "prompts.json"
+        if not image.exists() and prompts.exists():   # "same": reuse another scene's image
+            same = {p["s"]: p["same"] for p in json.loads(prompts.read_text(encoding="utf-8")) if "same" in p}
+            if i in same:
+                image = img_dir / f"s{same[i]:02d}.png"
         if not image.exists():
             sys.exit(f"missing image {image}")
         overlays = ["-i", str(badge)]
