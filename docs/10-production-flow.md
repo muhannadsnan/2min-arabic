@@ -54,8 +54,12 @@ In `footage/clips/` (git-ignored), sound cleaned (centered mono, low-cut, light 
 
 ## Sound quality rules (learned on Day 2)
 
-- **Voice references must be clean**: the clone copies room hiss. All references and filmed clips go through
-  **DeepFilterNet** (MIT/Apache, local, in the TTS environment) before use.
+- **Voice references must be clean**: the clone copies room hiss. All references (owner EN/AR, Sara) are cleaned with
+  **DeepFilterNet** (MIT/Apache, local, in the TTS environment); originals kept in `refs/original/`.
+- **Every generated clip** also passes through DeepFilterNet after the best take is chosen → noise-free guarantee.
+- **Every filmed recording** goes through `tools/clean_footage.py src.mov out.mp4 [--start --end]` (centered mono,
+  DeepFilterNet, compression, −14 LUFS, 1080×1920/30 fps).
+- **Subscribe animation in every video**: over the goodbye clip, or over the last 3 s if there is none.
 - **No dragged endings**: the checker penalizes takes whose last word is > 1.1 s or that keep sounding > 0.35 s after
   the last word, and every clip is trimmed 0.22 s after its last word with a short fade.
 - Arabic voices use cfg 0.5 (lower made endings drag); the 5% slowdown comes from tempo.

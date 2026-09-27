@@ -59,6 +59,8 @@ def score(jobs):
     from faster_whisper import WhisperModel
 
     model = WhisperModel("medium", device="cuda", compute_type="float16")
+    from df.enhance import enhance, init_df, load_audio, save_audio   # DeepFilterNet: final noise removal
+    df_model, df_state, _ = init_df()
     for job in jobs:
         lang = local_tts.SPEAKERS[job["speaker"]][2].get("lang", "en")
         best = None
@@ -86,6 +88,8 @@ def score(jobs):
         fade = min(len(audio), int(0.08 * rate))
         audio[-fade:] *= np.linspace(1.0, 0.0, fade)[:, None] if audio.ndim > 1 else np.linspace(1.0, 0.0, fade)
         sf.write(job["target"], audio, rate)
+        clean, _ = load_audio(job["target"], sr=df_state.sr())          # guarantee a noise-free clip
+        save_audio(job["target"], enhance(df_model, df_state, clean), df_state.sr())
         job["cer"], job["heard"] = round(score_k, 3), heard
         job["tail"], job["last_word"] = round(tail, 2), round(last_len, 2)
         flag = "  ⚠️" if score_k > 0.25 else ""

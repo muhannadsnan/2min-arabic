@@ -15,6 +15,8 @@ a frame, pick **0:02** (Sami and Lina at the café).
 
 ## Description
 
+> ⚠️ Use [002-description.txt](002-description.txt) (Arabic kept in order with direction markers) instead of the block below.
+
 ```
 Day 2 of 30 — the 10 Arabic phrases you'll use every single day.
 
@@ -56,6 +58,8 @@ learn arabic, arabic phrases, arabic for beginners, basic arabic phrases, arabic
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |
 | Automatic chapters / featured places / concepts | ✅ / ❌ / ❌ |
 | Visibility | **Schedule: the day after Day 1, 16:00 Oslo time** |
+| Related video | **Day 1** |
+| Type | Concept overview |
 
 ## Pinned comment
 

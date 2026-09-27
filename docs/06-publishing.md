@@ -14,6 +14,21 @@ Once a month, a "whole month in one video" (~1 hour) for bingeing and review.
 - Build a **buffer** of 7–10 finished videos before publishing Day 1, and schedule uploads in YouTube Studio.
   A busy week must never break the streak.
 
+## Upload checklist (learned on Day 2)
+
+- **Title:** no hashtags in the title (they're already shown above it from the description).
+- **Description with Arabic:** put each Arabic phrase **at the end of its line**, wrapped in invisible direction markers
+  (U+2067 … U+2069) — otherwise YouTube jumbles the order and moves ؟ to the wrong side. Claude writes a ready-to-paste
+  `videos/NNN-description.txt` for every video.
+- **Links:** strip `?si=…` from YouTube links. Links in Shorts descriptions aren't clickable → use **Related video**.
+- **Related video:** always set it (Day 1 for early videos; later the playlist's first video or the weekly compilation).
+- **Thumbnail:** "Upload file" with Claude's `thumbnail (vertical).jpg` (not "Select from video").
+- **Title and description language:** English. **Category:** Education, **Type:** Concept overview.
+  Problems / Academic system: leave empty (they're for school subjects).
+- **Shorts remixing:** allow video and audio remixing (free exposure).
+- A "Video verification in review" pop-up means the Advanced-features verification is pending (~24 h). Click "Got it";
+  nothing else to do.
+
 ## Titles
 
 Pattern: **`<Benefit or curiosity> | Day N · 2 Minute Arabic`**

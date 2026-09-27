@@ -220,7 +220,9 @@ def main():
     # our own animated SUBSCRIBE + bell (tools/make_subscribe.py) over the goodbye clip, with click sounds
     sub_mov, click = HERE.parent / "assets" / "subscribe.mov", HERE.parent / "assets" / "click.wav"
     goodbye = next((v for v in tl.get("videos", []) if v["name"] == "goodbye"), None)
-    if goodbye and sub_mov.exists() and click.exists():
+    if goodbye is None:   # no goodbye clip: the subscribe animation plays over the last 3 seconds
+        goodbye = {"start": max(tl["duration"] - 3.0, 0.0), "end": tl["duration"]}
+    if sub_mov.exists() and click.exists():
         sys.path.insert(0, str(HERE))
         from make_subscribe import CLICK_TIMES
         idx = 3 + len(tl.get("videos", []))
