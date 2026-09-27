@@ -18,8 +18,10 @@ What's next, in order. **🔔 = reminder for you**, 🤖 = Claude does it, 🤝 
 
 ## Day 1
 - [x] 🤖 On-camera teleprompter script: [videos/001-on-camera-teleprompter.md](../videos/001-on-camera-teleprompter.md)
-- [ ] 🔔 Film Day 1 (phone vertical, eye level, window light, 2–3 takes per part) → put the files in `2min-arabic/footage/day01/` (git-ignored) and tell Claude.
-- [ ] 🤖 Edit Day 1: cut pauses, even out the sound, B-roll images + text cards, Shotcut project → owner reviews; owner may edit and hand back.
+- [x] 🔔 Filmed and edited Day 1 (owner).
+- [x] 🤖 Day 1 sound fixed (right channel → centered mono, 80 Hz low-cut, light compression, −14 LUFS, peaks −2.9 dB) and English captions made from the speech.
+- [ ] 🔔 Skim the captions once (a few unclear words were cleaned up), then upload Day 1 with [videos/001-upload.md](../videos/001-upload.md).
+- [ ] 🔔 Next time you film: turn the phone's stereo recording off or use one mic — the two built-in mics were 5 dB apart.
 
 ## Images
 - [x] 🤖 Image model installed & tested: FLUX.2 [klein] 4B fp8 (Apache 2.0), ~15 s/image — `tools/images/generate.py`.

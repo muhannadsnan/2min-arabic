@@ -125,6 +125,13 @@ right-to-left order of Arabic lines. **Don't burn in Arabic subtitles** — use 
 
 ---
 
+### Sound finishing for on-camera videos (Claude does it)
+
+Measured on Day 1: phone audio was −25 LUFS (too quiet) and the two phone mics were 5 dB apart (voice leaning to one side).
+Recipe: take the cleaner channel as mono → 80 Hz high-pass → gentle compression (−22 dB, 2.5:1) → gain to **−14 LUFS**
+(measure on mono and target −17, because mono copied to both channels reads +3 dB) → limiter → AAC 192 kb/s.
+The video stream is copied untouched. Captions: Whisper word timestamps → cleaned English `.srt`.
+
 ## 4. Export (Shotcut → Export)
 
 | Setting | Value |
