@@ -1,7 +1,9 @@
 # Day 1 — Upload sheet
 
-**File to upload:** `footage/day01/day 1 - final (sound fixed).mp4` (2:25, vertical → published as a Short)
-**Captions:** `footage/day01/day 1 - captions (English).srt`
+**File to upload:** `footage/day01/day 1 - final with captions.mp4` (2:25, vertical ≤ 3 min → published as a **Short**;
+sound fixed to −14 LUFS; captions burned into the picture)
+**Thumbnail/cover:** `footage/day01/day 1 - thumbnail (vertical).jpg` (16:9 version: `day 1 - thumbnail (16x9).jpg`)
+**Captions file:** not needed for this video — the captions are already in the picture (a CC track on top would double them).
 
 ## Title
 
@@ -45,14 +47,23 @@ learn arabic, arabic for beginners, arabic lesson, speak arabic, arabic phrases,
 | Comments | On |
 | Visibility | Schedule (see below) |
 
-## Captions
-
-Studio → the video → **Subtitles** → Add language: English → **Upload file** → "With timing" → pick the `.srt`.
-
 ## Cover (Short thumbnail)
 
-In the **YouTube mobile app** after upload (or in the upload flow on the phone): pick a frame where you smile at the
-camera and the whiteboard's "2 min daily" is visible — e.g. around 0:05 or 1:10.
+Use `day 1 - thumbnail (vertical).jpg` if the upload screen offers a custom thumbnail. If it only lets you pick a frame
+(Shorts on mobile), pick the one at **0:03** — it's the frame the thumbnail was made from.
+
+## More settings (as answered)
+
+| Setting | Value |
+|---|---|
+| Caption certification | None |
+| Recording date / location | leave empty (privacy) |
+| License | Standard YouTube License |
+| Allow embedding | ✅ |
+| Publish to subscriptions feed and notify subscribers | ✅ |
+| Automatic chapters | ✅ (harmless) |
+| Featured places | ❌ off |
+| Automatic concepts | ❌ off |
 
 ## Pinned comment
 

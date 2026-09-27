@@ -131,6 +131,11 @@ Measured on Day 1: phone audio was −25 LUFS (too quiet) and the two phone mics
 Recipe: take the cleaner channel as mono → 80 Hz high-pass → gentle compression (−22 dB, 2.5:1) → gain to **−14 LUFS**
 (measure on mono and target −17, because mono copied to both channels reads +3 dB) → limiter → AAC 192 kb/s.
 The video stream is copied untouched. Captions: Whisper word timestamps → cleaned English `.srt`.
+**Burned-in captions** (Shorts style): [tools/captions/srt_to_burnin_ass.py](../tools/captions/srt_to_burnin_ass.py) turns the `.srt` into
+one-line captions (Noto Sans Bold 84, white, black outline, on the chest area — clear of the face, the whiteboard and YouTube's
+buttons); Arabic words go on their own line above in **Noto Naskh Arabic** (Noto Sans Arabic breaks the لا ligature in libass),
+Arabic + transliteration in yellow. Render: `ffmpeg -i in.mp4 -vf "subtitles=captions.ass" -c:v libx264 -crf 18 -preset medium -c:a copy out.mp4`.
+**Thumbnails** are made from a real frame of the video (smiling, looking at the lens) + "DAY N" badge + big text — never AI.
 
 ## 4. Export (Shotcut → Export)
 
