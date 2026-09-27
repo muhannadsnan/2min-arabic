@@ -106,9 +106,19 @@ Now. Made from a **real frame (0:03)**, not AI: `day 1 - thumbnail (vertical).jp
 `day 1 - thumbnail (16x9).jpg` (search / compilations). If the upload screen only allows picking a frame, pick 0:03.
 
 **AI use question ("Was AI used to generate or edit your content…")?**
-**No.** It's you, filmed for real. The label is only for realistic fakes (a real person saying things they didn't,
-altered real events, realistic scenes that never happened). Later videos with illustrated Sami/Lina, a generic AI voice
-or your **own** cloned voice are also **No**.
+**No** for Day 1 — it's you, filmed for real. The label is for realistic synthetic content (a real person saying things
+they didn't, altered real events, realistic scenes that never happened).
+
+**Rule for all later videos (updated 2026-09-27):**
+
+| The video contains… | AI-use answer |
+|---|---|
+| only you (filmed), illustrations, and/or **your own** cloned voice | **No** |
+| **Sara's cloned voice** (Lina / any female role) — cloning *someone else's* voice | **Yes** (adds a label; no effect on monetization) |
+
+Sara (the owner's sister) gave permission on 2026-09-27 to use her cloned voice on the channel.
+If Sara later records Lina's lines for real (no cloning), those videos go back to **No**.
+Each video's upload sheet states the answer.
 
 **Automatic chapters / featured places / automatic concepts?**
 Chapters **on** (harmless; useful for long compilations). Featured places **off** (no places in the videos).

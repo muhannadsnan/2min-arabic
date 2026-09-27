@@ -50,7 +50,7 @@ Today is Day 2: the ten most useful phrases in Arabic. Listen, then repeat out l
 🔤 **On screen:** السَّلَامُ عَلَيْكُم · *as-salaamu 'alaykum* · Peace be upon you (= hello)
 
 ```say:narrator
-One. The greeting you'll hear everywhere — peace be upon you.
+Number one. The greeting you'll hear everywhere — peace be upon you.
 ```
 ```say:teacher
 السَّلَامُ عَلَيْكُم
@@ -63,7 +63,7 @@ One. The greeting you'll hear everywhere — peace be upon you.
 🔤 **On screen:** وَعَلَيْكُمُ السَّلَام · *wa 'alaykumu s-salaam* · And upon you, peace (the reply)
 
 ```say:narrator
-Two. The reply — and upon you, peace.
+Number two. The reply — and upon you, peace.
 ```
 ```say:teacher
 وَعَلَيْكُمُ السَّلَام
@@ -76,7 +76,7 @@ Two. The reply — and upon you, peace.
 🔤 **On screen:** كَيْفَ حَالُك؟ · *kayfa haaluk?* · How are you? — *to a woman:* كَيْفَ حَالُكِ؟ *kayfa haaluki?*
 
 ```say:narrator
-Three. How are you?
+Number three. How are you?
 ```
 ```say:teacher
 كَيْفَ حَالُك؟
@@ -89,7 +89,7 @@ Three. How are you?
 🔤 **On screen:** بِخَيْر، الْحَمْدُ لِلَّه · *bikhayr, al-hamdu lillaah* · Fine, thank God
 
 ```say:narrator
-Four. The answer you'll hear all day long — fine, thank God.
+Number four. The answer you'll hear all day long — fine, thank God.
 ```
 ```say:teacher
 بِخَيْر، الْحَمْدُ لِلَّه
@@ -102,7 +102,7 @@ Four. The answer you'll hear all day long — fine, thank God.
 🔤 **On screen:** شُكْرًا · *shukran* · Thank you
 
 ```say:narrator
-Five. Thank you.
+Number five. Thank you.
 ```
 ```say:teacher
 شُكْرًا
@@ -115,7 +115,7 @@ Five. Thank you.
 🔤 **On screen:** عَفْوًا · *'afwan* · You're welcome
 
 ```say:narrator
-Six. You're welcome.
+Number six. You're welcome.
 ```
 ```say:teacher
 عَفْوًا
@@ -128,7 +128,7 @@ Six. You're welcome.
 🔤 **On screen:** مِنْ فَضْلِك · *min fadlik* · Please
 
 ```say:narrator
-Seven. Please.
+Number seven. Please.
 ```
 ```say:teacher
 مِنْ فَضْلِك
@@ -141,7 +141,7 @@ Seven. Please.
 🔤 **On screen:** مَا اسْمُك؟ · *maa smuk?* · What's your name?
 
 ```say:narrator
-Eight. What's your name?
+Number eight. What's your name?
 ```
 ```say:teacher
 مَا اسْمُك؟
@@ -154,7 +154,7 @@ Eight. What's your name?
 🔤 **On screen:** اسْمِي ___ · *ismii ___* · My name is ___
 
 ```say:narrator
-Nine. My name is… and then your name. Like this:
+Number nine. My name is… and then your name. Like this:
 ```
 ```say:teacher
 اسْمِي سَامِي
@@ -167,7 +167,7 @@ Nine. My name is… and then your name. Like this:
 🔤 **On screen:** لَا أَفْهَم · *laa afham* · I don't understand
 
 ```say:narrator
-And ten — the one that saves you every time. I don't understand.
+And number ten — the one that saves you every time. I don't understand.
 ```
 ```say:teacher
 لَا أَفْهَم

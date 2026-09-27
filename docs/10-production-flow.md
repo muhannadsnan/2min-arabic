@@ -23,13 +23,17 @@ All on **Chatterbox Multilingual v3** (MIT license — code and weights), runnin
 
 | Speaker | Voice | Language |
 |---|---|---|
-| `narrator` | **the owner's cloned voice** | English |
-| `teacher`, `teacher-slow` | **the owner's cloned voice** | Arabic |
-| `sami` | synthetic male (Kokoro `am_michael` reference — not a real person) | Arabic |
-| `lina` | Chatterbox built-in female voice | Arabic |
+| `narrator` | **the owner's cloned voice** (English reference, from the Day 1 video) | English |
+| `teacher`, `teacher-slow` | **the owner's cloned voice** (Arabic reference, from his self-presentation clip) | Arabic |
+| `sami` and every male role | **the owner's cloned voice** (Arabic reference) | Arabic |
+| `lina` and every female role | **Sara's cloned voice** (owner's sister, permission given 2026-09-27) | Arabic |
 
-- **The owner's voice sample:** `/media/msn/GamesLinux/AI/tts/refs/owner_en.wav` — 12 s cut from his Day 1 video
-  (clean, loudness-fixed). **Private: never committed to git, never shared, used only for this channel.**
+**AI label:** videos with Sara's cloned voice → answer **Yes** to YouTube's AI-use question (cloning someone else's
+voice). Videos with only the owner's own voice → **No**. Later option: Sara records Lina's lines for real → **No**.
+
+- **Voice samples** (`/media/msn/GamesLinux/AI/tts/refs/`): `owner_en.wav` (12 s, Day 1 video), `owner_ar.wav`
+  (13 s, self-presentation clip, denoised), `sara_ar_1.wav` / `sara_ar_2.wav` (Sara's voice notes).
+  **Private: never committed to git, never shared, used only for this channel.**
 - Tested 2026-09-27: English came back word-perfect through speech-to-text, Arabic almost perfect
   (samples: `audio-drafts/voice-clone-tests/`).
 - **Licensing:** the voice is the owner's own + an MIT-licensed model → no license issue for monetization.
@@ -37,6 +41,16 @@ All on **Chatterbox Multilingual v3** (MIT license — code and weights), runnin
 - Every line: **3 takes → speech-to-text check → keep the best**, then loudness-normalize (bad takes happen,
   e.g. "لا أسهم" instead of "لا أفهم").
 - Optional upgrade: a 15-second **Arabic** sample from the owner for an even more natural Arabic accent.
+
+## Filmed clips (reused in every video)
+
+In `footage/clips/` (git-ignored), sound cleaned (centered mono, low-cut, light noise reduction, −14 LUFS):
+
+| Clip | Length | Used for |
+|---|---|---|
+| `hello.mp4` — "مرحبا بكم في 2 Minute Arabic" | 2.8 s | first seconds of every video (real human opening) |
+| `goodbye.mp4` — wave + "شكرا ومع السلامة" | 3.1 s | last seconds of every video |
+| `self-presentation.mp4` — "السلام عليكم، اسمي مهند…" | 13.6 s | Arabic voice reference; "meet your teacher" moment; channel trailer/community post |
 
 ## Assembly recipe (step 5)
 
