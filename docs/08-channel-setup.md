@@ -7,7 +7,13 @@ Work through the steps in order. ✅ = done.
 
 ---
 
-## Step 0 — Safety checks (10 min, once per Google account)
+## Step 0 — Safety checks ✅ done 2026-09-27
+
+Results: 2-Step Verification on since 2021 (passkeys, authenticator, backup codes) ✅ · *Glorious Victorious*:
+Standard + Intermediate enabled, Advanced eligible — no strikes ✅ · *Master Gamer Norway Old*: all three levels
+enabled — no strikes ✅ · both channels have **copyright claims** on old private videos (music / NBA clips / re-uploads;
+one "Partially blocked"). Claims are **not strikes**: they only let the rights owner monetize or block that video, they
+don't penalize the account, and on private videos nobody sees them. No action needed; deleting them is optional tidying.
 
 ### 0.1 Turn on 2-Step Verification
 1. Open [myaccount.google.com/security](https://myaccount.google.com/security) (signed in as mnd.senan@gmail.com).
@@ -34,7 +40,7 @@ Copyright **claims** (not strikes) on old gaming videos are harmless.
 
 ---
 
-## Step 1 — Create the channel
+## Step 1 — Create the channel ✅ done 2026-09-27 — **2 Minute Arabic, @2MinArabic**
 
 1. Signed in as mnd.senan@gmail.com, go to **youtube.com → Settings → Account → Create a channel**
    (the "All channels" page).

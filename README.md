@@ -17,15 +17,16 @@ and the ready-to-produce video scripts.
 |---|---|
 | [docs/01-channel-concept.md](docs/01-channel-concept.md) | Philosophy, the founder story, the 1% math, the promise, audience, tone |
 | [docs/02-video-format.md](docs/02-video-format.md) | The fixed 2-minute structure, the standard intro/outro, the 5 lesson formats |
-| [docs/03-production-pipeline.md](docs/03-production-pipeline.md) | Voice (Azure TTS, licensed for monetized use), images, editing in Shotcut, export — step by step |
+| [docs/03-production-pipeline.md](docs/03-production-pipeline.md) | Voice (your recordings + free local TTS), images on your PC, text cards, editing in Shotcut, export — step by step |
 | [docs/04-curriculum-30-days.md](docs/04-curriculum-30-days.md) | Day 1 → Day 30 plan that delivers the "first conversation" promise |
 | [docs/05-style-guide.md](docs/05-style-guide.md) | Script markup, Arabic conventions (MSA, tashkeel, transliteration), visual style, characters |
 | [docs/06-publishing.md](docs/06-publishing.md) | Titles, descriptions, thumbnails, schedule, Shorts, playlists |
 | [docs/07-channel-and-monetization.md](docs/07-channel-and-monetization.md) | Which account, one vs two channels, AdSense, YPP thresholds (incl. 2027 changes), staying monetizable |
 | [docs/08-channel-setup.md](docs/08-channel-setup.md) | Creating the channel step by step: safety checks, name, photo/banner, description, settings, features |
+| [docs/09-backlog.md](docs/09-backlog.md) | What's next, in order — including reminders for you |
 | [templates/video-template.md](templates/video-template.md) | Copy this to start a new video script |
 | [videos/](videos/) | The video scripts, one `.md` per video |
-| [tools/make_audio.py](tools/make_audio.py) | Turns a script into a finished voiceover (Azure TTS) + scene timeline + captions |
+| [tools/make_audio.py](tools/make_audio.py) | Turns a script into a finished voiceover + scene timeline + captions (being switched to local TTS) |
 
 ## Videos
 

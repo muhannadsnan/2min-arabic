@@ -59,7 +59,7 @@ so the promise is honest.
 
 | Element | Choice |
 |---|---|
-| Channel name | **2 Minute Arabic** (handle suggestion: `@2MinuteArabic` or `@2minarabic`) |
+| Channel name | **2 Minute Arabic** — handle **@2MinArabic** (created 2026-09-27 on mnd.senan@gmail.com) |
 | Tagline | "Two minutes a day. Your first Arabic conversation in 30 days." |
 | Episode label | **Day N** — every video is a numbered day, so viewers feel a streak |
 | Visual signature | A small **2:00 stopwatch** icon in the top corner of every video |

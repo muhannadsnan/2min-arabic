@@ -3,7 +3,7 @@
 From a script in `videos/` to a published video.
 
 ```
-script (.md) ──► make_audio.py (Azure TTS) ──► voiceover.wav + timeline.md + captions.srt ──┐
+script (.md) ──► make_audio.py (your recordings + local TTS) ──► voiceover.wav + timeline.md + captions.srt ──┐
              └─► scene images (AI image generator) ─────────────────────────────────────────┼─► Shotcut ──► export ──► YouTube
                                                     music (optional, YouTube Audio Library) ─┘
 ```
@@ -12,93 +12,54 @@ script (.md) ──► make_audio.py (Azure TTS) ──► voiceover.wav + timel
 
 ## 1. Voice
 
-### Decision: Azure AI Speech, paid "Standard (S0)" tier
+### Decision (2026-09-27): your own voice + free local open-source TTS — no paid service
 
-We only use voices whose license **clearly allows commercial / monetized use**:
+Azure/Edge voices were tested and **rejected**: the Arabic sounded robotic, and a robotic Arabic voice would destroy
+the channel's credibility. Rule: **nothing on this channel may sound robotic.**
 
-| Option | Commercial use | Verdict |
+| Part of the video | Who speaks | Why |
 |---|---|---|
-| Edge TTS (`edge-tts`, free) | ❌ Not granted — unofficial use of Microsoft's Read-Aloud service | **Not used for published videos.** |
-| Azure Speech **Free (F0)** tier | ❌ Microsoft's Product Terms grant output rights "for customers of the **paid tier** TTS Service only" | Not used. |
-| Azure Speech **Standard (S0)** tier | ✅ "Customer may use the audio output of prebuilt neural voices … including for commercial purposes" | **Chosen.** |
-| Your own voice | ✅ 100% yours | **Best of all** — see below. |
+| **Day 1** | **You, on camera** | The founder story must be a real person. |
+| **Arabic lines** (teacher, Sami) | **Your own recordings** — a reusable phrase library | Native, 100% authentic, legally yours. Phrases repeat across the curriculum, so each line is recorded once and reused forever. |
+| **English narration** | **Your cloned voice** (Chatterbox, from your own sample) — Kokoro `am_michael` until then | Sounds like the person viewers met in Day 1; cloning your **own** voice needs no AI disclosure on YouTube. |
+| **Lina** (female) and any Arabic line not recorded yet | **Chatterbox v3** female voice | Stop-gap; a real female voice (someone close to you, with consent) is better. |
 
-Why Azure S0:
-- **Same neural voices** as the drafts you already reviewed (Hamed, Laith, Zariyah, Andrew) — what you approved is what you get.
-- **Cheap:** ~$16 per 1 million characters. One video ≈ 2,500 characters ≈ **$0.04**.
-  A daily video on both channels (~60 videos/month) ≈ **$2.50/month**.
-- No royalties, no attribution required, when the input text is your own content.
+### The engines (both free, both licensed for commercial use, run on your RTX 3060)
 
-> ⚠️ Azure pricing and terms can change — glance at the [pricing page](https://azure.microsoft.com/en-us/pricing/details/speech/)
-> and the Product Terms once a year. Set a **budget alert** (e.g. $5/month) in the Azure portal so there are never surprises.
+| Engine | License | Used for | Settings chosen by ear |
+|---|---|---|---|
+| **Chatterbox Multilingual v3** (Resemble AI) | Code MIT, weights MIT | Arabic (and English with your clone) | **default** settings (exaggeration 0.5, cfg 0.5, temperature 0.8), **with tashkeel**. Female: built-in voice. Male: conditioned on Kokoro `am_michael` (synthetic, not a real person) until your own sample replaces it. |
+| **Kokoro-82M** | Apache 2.0 | English narration (until your clone) | `am_michael` |
 
-### Your own voice (strongly recommended, at least partly)
+Notes:
+- Chatterbox adds an **inaudible Perth watermark** marking the audio as AI-generated. It doesn't restrict use.
+- Tashkeel **stays in the scripts**: by ear it sounded best for both voices.
+- The test clips were **too quiet** → every clip gets loudness-normalized (≈ −16 LUFS per clip, final mix ≈ −14 LUFS).
+- Chatterbox has no speed setting; `teacher-slow` is slowed with ffmpeg `atempo 0.8`.
+- For each line, generate 2–3 takes and keep the best one automatically (speech-to-text check). This filters out the occasional bad take.
+- Test files: `audio-drafts/tts-tests/` (your picks: `compare/cbv3-ar-female-default-tashkeel-all6.mp3` and
+  `compare/cbv3-ar-male-michael-default-tashkeel-all6.mp3`).
 
-You're a native Arabic speaker. Recording **your own voice** — especially the Day 1 story and the Arabic lines — is:
-- the most **authentic** thing the channel can have (viewers trust a real teacher);
-- the strongest protection against YouTube's **"inauthentic content"** policy for monetization
-  (template videos with only AI narration are exactly what that policy targets — see [07-channel-and-monetization.md](07-channel-and-monetization.md#staying-monetizable-inauthentic-content-policy));
-- free, and legally 100% yours.
+### Your recordings — the phrase library
 
-A phone, a quiet room (a closet full of clothes is a great vocal booth) and Audacity's noise reduction are enough.
-A realistic plan: AI voices now → your own voice for the story/intro videos → your own voice for everything once the routine is set.
+- Claude generates a numbered **recording sheet** with every Arabic line of the next videos (lines already in the library are skipped).
+- You read it in **one session** (~10 min for a week of videos): phone or headset mic, quiet room, a 2-second pause between lines.
+- A script cuts the recording at the pauses, names each clip by its line, normalizes the volume and stores it in the library.
+- `make_audio.py` uses your recording whenever one exists for a line, and generates the line with Chatterbox otherwise.
 
-### Setting up Azure (once, ~10 minutes)
+### Status of the tool
 
-1. Create a Microsoft Azure account at [portal.azure.com](https://portal.azure.com) (needs a payment card).
-2. **Create a resource → "Speech"** (Azure AI Speech). Pick a region near you (e.g. `westeurope`),
-   pricing tier **Standard S0** (not Free F0).
-3. Open the resource → **Keys and Endpoint** → copy **KEY 1** and the **Location/Region**.
-4. Add them to your shell (e.g. in `~/.bashrc`):
-   ```bash
-   export AZURE_SPEECH_KEY="paste-key-1-here"
-   export AZURE_SPEECH_REGION="westeurope"
-   ```
-5. **Cost Management → Budgets** → create a $5/month budget with an email alert.
-
-Never commit the key to git.
-
-### Generating the audio
-
-Requirements: Python 3 and ffmpeg (`sudo apt install ffmpeg`). No Python packages needed.
-
-```bash
-python3 tools/make_audio.py videos/001-why-2-minutes.md     # one video
-python3 tools/make_audio.py videos/*.md                     # all videos
-```
-
-Output in `audio/001-why-2-minutes/` (the `audio/` folder is git-ignored):
-
-| File | Use |
-|---|---|
-| `voiceover.wav` | **The full voiceover, already assembled** — every clip in order, 0.35 s between clips, and every ⏸️ pause inserted. Put it on the timeline at 0:00. |
-| `timeline.md` | The start time of **every scene** and every clip — place the scene images at these times. |
-| `captions.srt` | Every spoken line with timings — upload to YouTube as subtitles. |
-| `clips/NN-speaker.mp3` | Single clips, if you want to move or replace one by hand. |
-
-Clips are cached (`audio/.cache`), so after fixing one line only that line is re-generated (and paid for).
-
-Voice cast (edit `SPEAKERS` at the top of [tools/make_audio.py](../tools/make_audio.py) to change):
-
-| Speaker tag | Voice | Used for |
-|---|---|---|
-| `narrator` | `en-US-AndrewNeural` | All English narration (the host) |
-| `teacher` | `ar-SA-HamedNeural` (rate −10%) | Arabic words/phrases in lessons |
-| `teacher-slow` | `ar-SA-HamedNeural` (rate −35%) | Slow "say it with me" repetitions |
-| `sami` | `ar-SY-LaithNeural` (rate −10%) | Sami's lines |
-| `lina` | `ar-SA-ZariyahNeural` (rate −10%) | Lina's lines |
-
-Replacing a clip with your own recording: record the line, export it as MP3, and use it in place of that clip on
-the timeline (or replace `clips/NN-…mp3` and re-assemble by hand).
-
----
+`tools/make_audio.py` still contains the old Azure engine and is being **switched to the local engines + your recordings**
+(see [09-backlog.md](09-backlog.md)). It keeps the same output (`voiceover.wav`, `timeline.md`, `captions.srt`, `clips/`),
+and it gets tested end-to-end on all five videos before you use it.
 
 ## 2. Images
 
 One image per scene; prompts are in each script under **🖼️ Image**.
 
-- Use whichever generator you like (local ComfyUI / Stable Diffusion / Flux, Leonardo, Bing Image Creator, Ideogram…).
-  **Check its license allows commercial use** of the images, same rule as the voices.
+- **Generated on your own PC with ComfyUI** (`/media/msn/GamesLinux/AI/ComfyUI`, RTX 3060 6 GB): Claude sends all of a
+  video's prompts in one batch. The model must have a license that allows commercial use (e.g. FLUX.1 **schnell**, Apache 2.0 —
+  *not* FLUX.1 dev). No model is installed yet (see [09-backlog.md](09-backlog.md)).
 - Every prompt ends with **`+ STYLE`** — replace it with the **shared style suffix** from the
   [style guide](05-style-guide.md#visual-style) (or save the suffix once as a template/style preset in your
   generator) so the whole channel looks consistent.
@@ -131,7 +92,9 @@ One image per scene; prompts are in each script under **🖼️ Image**.
 3. **Images:** drag the scene images onto video track V1 and trim each one to end where the next scene starts.
 4. **Slow zoom ("Ken Burns"):** on each image add the **Size, Position & Rotate** filter with two keyframes
    (100% at start → ~105% at end). Copy/paste the filter between images.
-5. **On-screen text:** add a **Text: Rich** filter on a transparent/color clip on the track above the images,
+5. **On-screen text — generated for you as transparent PNG cards** (Arabic shaped correctly right-to-left with harakat,
+   transliteration, English; tested: `audio-drafts/overlay-test.png`). Drop each card on the track above the images.
+   You never type Arabic in Shotcut. If you do want to type text yourself, the fallback is: add a **Text: Rich** filter on a transparent/color clip on the track above the images,
    and paste the 🔤 **On screen** text from the script. Layout: Arabic big (top), transliteration medium (italic),
    English small (bottom). Use **Text: Rich** for anything Arabic — it handles right-to-left and harakat.
    ⚠️ Check once, zoomed in, that the harakat (ـَ ـُ ـِ ـّ ـْ) render correctly with your font.

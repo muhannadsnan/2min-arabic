@@ -11,7 +11,7 @@ Researched September 2026 — YouTube changes its rules often, so re-check the o
 | New channel or reuse a stale one? | **New channels.** Leave the two stale channels alone. |
 | One channel for both languages, or two? | **Two separate channels:** 2 Minute Arabic and 2 Minute Spanish |
 | Getting paid from two channels | **One AdSense account** linked to both channels; one combined payment, revenue visible per channel |
-| Voice | Azure AI Speech **S0 (paid)** now → your own voice over time ([03-production-pipeline.md](03-production-pipeline.md#1-voice)) |
+| Voice | Your own recordings + your cloned voice + free local open-source TTS (Chatterbox MIT, Kokoro Apache 2.0) — no paid service ([03-production-pipeline.md](03-production-pipeline.md#1-voice)) |
 
 ---
 
