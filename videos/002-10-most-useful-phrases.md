@@ -38,7 +38,7 @@ One tiny lesson, every day. Arabic is my mother tongue, and my promise is simple
 ### 🎬 Scene 3 — Today · 0:17–0:24
 
 🖼️ **Image:** A person speaking out loud into the air with confidence, small sound waves coming from their mouth + STYLE
-🔤 **On screen:** Day 2: listen 👂 → repeat out loud 🗣️
+🔤 **On screen:** Day 2 · listen, then repeat out loud
 
 ```say:narrator
 Today is Day 2: the ten most useful phrases in Arabic. Listen, then repeat out loud. Your mouth needs the practice, not just your ears.
@@ -73,7 +73,7 @@ Number two. The reply — and upon you, peace.
 ### 🎬 Scene 6 — Phrase 3 · 0:38–0:46
 
 🖼️ **Image:** Lina asking Sami a question with a curious, friendly face + STYLE
-🔤 **On screen:** كَيْفَ حَالُكْ؟ · *kayfa haaluk?* · How are you? — *to a woman:* كَيْفَ حَالُكِ؟ *kayfa haaluki?*
+🔤 **On screen:** كَيْفَ حَالُكْ؟ · *kayfa haaluk?* · How are you? · to a woman: kayfa haaluki?
 
 ```say:narrator
 Number three. How are you?
@@ -187,7 +187,7 @@ Quick challenge: close your eyes and say three things in Arabic — hello, how a
 ### 🎬 Scene 15 — Outro · 1:48–2:02
 
 🖼️ **Image:** Stopwatch reaching 0:00 with small confetti, the same cozy desk + STYLE
-🔤 **On screen:** مَعَ السَّلَامَة · *ma'a s-salaama* · Goodbye — Day 2 ✅
+🔤 **On screen:** مَعَ السَّلَامَةْ · *ma'a s-salaama* · Goodbye — Day 2 ✅
 
 ```say:narrator
 Day 2 done. Tomorrow, you'll hear these phrases in a real conversation — and you'll understand it.

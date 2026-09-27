@@ -15,8 +15,8 @@ import argparse, json, os, random, sys, time, uuid, urllib.request, urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STYLE = ("flat vector illustration, warm pastel palette (sand, terracotta, teal, cream), soft shadows, "
-         "clean simple shapes, friendly, vertical 9:16 composition, calm empty area at top and bottom "
-         "for text, no text, no letters, no watermark")
+         "clean simple shapes, friendly, vertical 9:16 composition, the scene fills the whole frame edge to edge, "
+         "simple uncluttered background, no text, no letters, no watermark")
 
 
 def http(server, path, data=None, headers=None):

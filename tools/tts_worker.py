@@ -62,7 +62,9 @@ def score(jobs):
         best = None
         for k in range(job["takes"]):
             take = f"{job['prefix']}-take{k}.wav"
-            segments, _ = model.transcribe(take, language=lang, beam_size=5)
+            # neutral Arabic context: very short words are otherwise misheard (عَفْوًا "af-wan" -> "اف 1")
+            prompt = "جملة عربية قصيرة:" if lang == "ar" else None
+            segments, _ = model.transcribe(take, language=lang, beam_size=5, initial_prompt=prompt)
             heard = " ".join(s.text for s in segments).strip()
             score_k = cer(job["text"], heard)
             if best is None or score_k < best[0]:

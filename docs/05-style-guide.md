@@ -56,7 +56,9 @@ Words and names inside English narration are written in plain English ("Sami", "
 
 **Shared style suffix** — in the scripts, every image prompt ends with `+ STYLE`; replace that with:
 
-> `flat vector illustration, warm pastel palette (sand, terracotta, teal, cream), soft shadows, clean simple shapes, friendly, vertical 9:16 composition, calm empty area at top and bottom for text, no text, no letters, no watermark`
+> `flat vector illustration, warm pastel palette (sand, terracotta, teal, cream), soft shadows, clean simple shapes, friendly, vertical 9:16 composition, the scene fills the whole frame edge to edge, simple uncluttered background, no text, no letters, no watermark`
+>
+> (Changed 2026-09-27: asking for "calm empty area at top and bottom" made the model leave blank, unfinished-looking bands.)
 
 Negative prompt (if your generator supports it):
 

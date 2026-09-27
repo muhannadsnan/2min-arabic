@@ -32,7 +32,7 @@ AR_FONT = FONTS / "NotoNaskhArabic-Bold.ttf"
 LATIN_BOLD = FONTS / "NotoSans-Bold.ttf"
 LATIN = FONTS / "NotoSans-Regular.ttf"
 LATIN_ITALIC = FONTS / "NotoSans-Italic.ttf"
-TEAL, TERRACOTTA, CHARCOAL, CREAM = (31, 95, 91), (192, 99, 58), (51, 51, 51), (255, 246, 233, 235)
+TEAL, TERRACOTTA, CHARCOAL, CREAM = (31, 95, 91), (192, 99, 58), (51, 51, 51), (255, 246, 233, 255)
 HERE = pathlib.Path(__file__).resolve().parent
 CLIPS_DIR = HERE.parent / "footage" / "clips"
 ARABIC = re.compile(r"[\u0600-\u06FF]")
@@ -47,7 +47,10 @@ def run(cmd):
 def clean(text: str) -> str:
     """Drop markdown and characters the fonts can't draw (emoji)."""
     text = text.replace("*", "").replace("`", "")
-    return "".join(ch for ch in text if ord(ch) < 0x2190 or 0x0600 <= ord(ch) <= 0x06FF or ch in "—–·’“”…").strip()
+    text = re.sub(r"_{2,}", "…", text)  # blanks: the Arabic font has no underscore
+    text = text.replace("→", ",")      # the bold Latin font has no arrow glyph
+    keep = lambda ch: ord(ch) < 0x2190 or 0x0600 <= ord(ch) <= 0x06FF or ch in "—–·’“”…"
+    return " ".join("".join(ch for ch in text if keep(ch)).split())
 
 
 def on_screen_by_scene(script: pathlib.Path):
@@ -77,7 +80,8 @@ def render_card(text: str, path: pathlib.Path):
     d = ImageDraw.Draw(img)
     lines = []  # (text, font_path, size, color, kw)
     if parts and ARABIC.search(parts[0]) and not re.search(r"[A-Za-z]", parts[0]):
-        lines.append((parts[0], AR_FONT, 130, TEAL, {"direction": "rtl", "language": "ar"}))
+        arabic = parts[0].replace("…", "").strip()  # the Arabic font has no ellipsis: show the word only
+        lines.append((arabic, AR_FONT, 130, TEAL, {"direction": "rtl", "language": "ar"}))
         rest = parts[1:]
         if rest:
             lines.append((rest[0], LATIN_ITALIC, 60, TERRACOTTA, {}))
