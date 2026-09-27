@@ -47,6 +47,12 @@ Notes:
 - A script cuts the recording at the pauses, names each clip by its line, normalizes the volume and stores it in the library.
 - `make_audio.py` uses your recording whenever one exists for a line, and generates the line with Chatterbox otherwise.
 
+### Where it's installed
+
+`/media/msn/GamesLinux/AI/tts/` — `venv/` (Python 3.11, PyTorch + CUDA, 6.5 GB), `hf/` (models, 4.8 GB: Chatterbox v3,
+Kokoro, Whisper-medium for the automatic take check), `local_tts.py` (the voice map), `refs/` (voice reference clips).
+Models are found via `HF_HOME=/media/msn/GamesLinux/AI/tts/hf`. Speed on the RTX 3060: ~30 s to load, then 1–4 s per line.
+
 ### Status of the tool
 
 `tools/make_audio.py` still contains the old Azure engine and is being **switched to the local engines + your recordings**

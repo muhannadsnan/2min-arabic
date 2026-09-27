@@ -32,7 +32,7 @@ and the ready-to-produce video scripts.
 
 | Day | Format | Script | Status |
 |---|---|---|---|
-| 1 | Intro / story | [001-why-2-minutes.md](videos/001-why-2-minutes.md) | ✍️ Script ready |
+| 1 | Intro / story — **you on camera** | [001-why-2-minutes.md](videos/001-why-2-minutes.md) · [teleprompter](videos/001-on-camera-teleprompter.md) | 🎥 Filming |
 | 2 | Phrases | [002-10-most-useful-phrases.md](videos/002-10-most-useful-phrases.md) | ✍️ Script ready |
 | 3 | Conversation | [003-first-conversation.md](videos/003-first-conversation.md) | ✍️ Script ready |
 | 4 | Story | [004-story-sami-and-the-coffee.md](videos/004-story-sami-and-the-coffee.md) | ✍️ Script ready |
