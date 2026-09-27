@@ -18,9 +18,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
-W, H, FPS, DUR = 1080, 300, 30, 3.0
+W, H, FPS, DUR = 1080, 300, 30, 6.0
 BOLD = "/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf"
-CLICK_TIMES = (1.15, 2.05)   # seconds: subscribe click, bell click (assemble.py mixes clicks here)
+CLICK_TIMES = (1.9, 3.4)     # seconds: subscribe click, bell click (assemble.py mixes clicks here)
+DING_TIME = 3.45             # the bell "ding" right after the bell click
 
 RED, GREY, WHITE, DARK = (230, 33, 23), (150, 150, 150), (255, 255, 255), (30, 30, 30)
 
@@ -57,7 +58,7 @@ def frame(t):
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     appear = ease(t / 0.3)
-    fade = 1.0 - ease((t - 2.65) / 0.35)
+    fade = 1.0 - ease((t - 5.5) / 0.5)
     alpha = appear * fade
     if alpha <= 0:
         return img
@@ -76,22 +77,22 @@ def frame(t):
     box = d.textbbox((0, 0), label, font=font)
     d.text((bx + (bw - (box[2] - box[0])) / 2 - box[0], by + (bh - (box[3] - box[1])) / 2 - box[1]), label, font=font,
            fill=WHITE)
-    ring = 18 * math.sin((t - CLICK_TIMES[1]) * 30) * math.exp(-(t - CLICK_TIMES[1]) * 4) if t >= CLICK_TIMES[1] else 0
+    ring = 20 * math.sin((t - CLICK_TIMES[1]) * 28) * math.exp(-(t - CLICK_TIMES[1]) * 2.5) if t >= CLICK_TIMES[1] else 0
     bimg, pos = bell(d, x0 + cw - 110 * scale, y0 + ch / 2 + 5, ring)
     img.alpha_composite(bimg, pos)
     # cursor path: from bottom-right → subscribe button → bell
     sub_pt = (bx + bw * 0.6, by + bh * 0.55)
     bell_pt = (x0 + cw - 100 * scale, y0 + ch / 2 + 10)
     start = (W - 60, H - 20)
-    if t < 0.4:
+    if t < 0.6:
         cx, cy = start
     elif t < CLICK_TIMES[0]:
-        k = ease((t - 0.4) / (CLICK_TIMES[0] - 0.4))
+        k = ease((t - 0.6) / (CLICK_TIMES[0] - 0.6))
         cx, cy = lerp(start[0], sub_pt[0], k), lerp(start[1], sub_pt[1], k)
-    elif t < CLICK_TIMES[0] + 0.25:
+    elif t < CLICK_TIMES[0] + 0.5:
         cx, cy = sub_pt
     elif t < CLICK_TIMES[1]:
-        k = ease((t - CLICK_TIMES[0] - 0.25) / (CLICK_TIMES[1] - CLICK_TIMES[0] - 0.25))
+        k = ease((t - CLICK_TIMES[0] - 0.5) / (CLICK_TIMES[1] - CLICK_TIMES[0] - 0.5))
         cx, cy = lerp(sub_pt[0], bell_pt[0], k), lerp(sub_pt[1], bell_pt[1], k)
     else:
         cx, cy = bell_pt
@@ -118,6 +119,21 @@ def click_wav(path):
         w.writeframes(data.tobytes())
 
 
+def ding_wav(path):
+    """A soft notification bell: two bright partials with a gentle 1.2 s decay."""
+    rate, n = 48000, int(1.2 * 48000)
+    sig = [(0.6 * math.sin(2 * math.pi * 1568 * i / rate) + 0.3 * math.sin(2 * math.pi * 3136 * i / rate)
+            + 0.15 * math.sin(2 * math.pi * 2093 * i / rate)) * math.exp(-4.0 * i / n) * min(1.0, i / 120)
+           for i in range(n)]
+    peak = max(abs(v) for v in sig)
+    data = array.array("h", (int(v / peak * 0.45 * 32767) for v in sig))
+    with wave.open(str(path), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(rate)
+        w.writeframes(data.tobytes())
+
+
 def main():
     ASSETS.mkdir(exist_ok=True)
     tmp = pathlib.Path(tempfile.mkdtemp())
@@ -125,9 +141,10 @@ def main():
         frame(i / FPS).save(tmp / f"f{i:04d}.png")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(FPS), "-i", str(tmp / "f%04d.png"),
                     "-c:v", "png", "-pix_fmt", "rgba", str(ASSETS / "subscribe.mov")], check=True)
-    frame(1.6).save(ASSETS / "subscribe-preview.png")
+    frame(2.5).save(ASSETS / "subscribe-preview.png")
     shutil.rmtree(tmp)
     click_wav(ASSETS / "click.wav")
+    ding_wav(ASSETS / "ding.wav")
     print(f"wrote {ASSETS / 'subscribe.mov'} and {ASSETS / 'click.wav'} (clicks at {CLICK_TIMES})")
 
 

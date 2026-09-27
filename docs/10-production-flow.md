@@ -23,8 +23,9 @@ All Arabic is **recorded by the owner** — human, native, clear. Only the Engli
 
 1. `python3 tools/recording_sheet.py videos/NNN-….md` → `videos/NNN-recording-sheet.md`: every unique Arabic line in
    order, marked *you* / *you — slowly* / *Lina (becomes Sara)*.
-2. The owner records the whole sheet **in one take** (≈ 2 s silence between lines; a repeated line = the last take is used)
-   and drops the file into `footage/recordings/<video>/`.
+2. Claude sends the sheet **in the chat as WhatsApp-ready text**; the owner copies it to WhatsApp as a note, and when he
+   has a moment records the whole sheet **in one take** (≈ 2 s silence between lines; a repeated line = the last take is
+   used) and drops the file into `footage/recordings/<video>/`.
 3. `/media/msn/GamesLinux/AI/tts/venv/bin/python tools/split_recording.py videos/NNN-….md`:
    cleans (DeepFilterNet, −20 LUFS) → splits at pauses ≥ 1 s → transcribes each piece → **order-preserving alignment**
    to the sheet (false starts and retakes skipped, later take wins, unreadable pieces assigned by position and flagged)
@@ -77,7 +78,8 @@ In `footage/clips/` (git-ignored), sound cleaned (centered mono, low-cut, light 
 - **Every generated clip** also passes through DeepFilterNet after the best take is chosen → noise-free guarantee.
 - **Every filmed recording** goes through `tools/clean_footage.py src.mov out.mp4 [--start --end]` (centered mono,
   DeepFilterNet, compression, −14 LUFS, 1080×1920/30 fps).
-- **Subscribe animation in every video**: over the goodbye clip, or over the last 3 s if there is none.
+- **Subscribe animation in every video** (6 s, click on SUBSCRIBE, click + bell *ding*): it starts when the narrator says
+  "Subscribe so you don't break your streak." (its own line) — not at the very end — in the middle of the frame.
 - **No dragged endings**: the checker penalizes takes whose last word is > 1.1 s or that keep sounding > 0.35 s after
   the last word, and every clip is trimmed 0.22 s after its last word with a short fade.
 - Arabic voices use cfg 0.5 (lower made endings drag); the 5% slowdown comes from tempo.
@@ -124,7 +126,7 @@ before hand-over.** Nothing is skipped; a failed check is fixed and re-checked.
 8. **Finished-video check:**
    - full soundtrack re-transcribed with timings → correct order, **no overlaps**, nothing garbled;
    - **noise** measured (quiet gaps of voice clips ≈ silence; filmed clips cleaned) — no audible hiss;
-   - loudness **−14 LUFS ±1**, peaks below −1 dB, length 1:45–2:20 (never over 2:59);
+   - loudness **−14 LUFS ±1**, peaks below −1 dB, length **2:00–2:40** (never over 2:59);
    - contact sheet + frames at the hello clip, a pause ("YOUR TURN"), and the goodbye/subscribe moment: captions
      readable, nothing covers faces or cards, every card correct.
 9. **Thumbnail** made and checked at phone size.

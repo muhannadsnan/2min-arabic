@@ -258,6 +258,9 @@ Now you're Sami. Lina talks — you answer.
 Day 3 done — you just had your first Arabic conversation. Tomorrow: a tiny story about Sami, and his coffee.
 ```
 ```say:narrator
-That's your two minutes for today. Come back tomorrow — same place, two minutes. Subscribe so you don't break your streak.
+That's your two minutes for today. Come back tomorrow — same place, two minutes.
+```
+```say:narrator
+Subscribe so you don't break your streak.
 ```
 🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)

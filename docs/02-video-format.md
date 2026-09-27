@@ -4,8 +4,8 @@ Every video follows the same skeleton. Viewers learn the rhythm, and production 
 
 ## Target length
 
-**~2:00** (acceptable range 1:45–2:15). Hard ceiling **2:59** so every video also qualifies as a YouTube Short
-(Shorts can be up to 3 minutes).
+**2:00–2:40** (owner, 2026-09-28: still feels like "2 minutes" and gives more watch time). Hard ceiling **2:59** so
+every video also qualifies as a YouTube Short (Shorts can be up to 3 minutes).
 
 Rule of thumb for English narration: ~150 words ≈ 1 minute. Arabic lines + pauses take roughly
 the same time as their English share, so a script with **~220–260 English words** lands near 2:00.

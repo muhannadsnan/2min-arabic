@@ -70,7 +70,10 @@ Your challenge for today: …
 Day N done. Tomorrow: …
 ```
 ```say:narrator
-That's your two minutes for today. Come back tomorrow — same place, two minutes. Subscribe so you don't break your streak.
+That's your two minutes for today. Come back tomorrow — same place, two minutes.
+```
+```say:narrator
+Subscribe so you don't break your streak.
 ```
 🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)
 

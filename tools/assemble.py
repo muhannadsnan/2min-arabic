@@ -225,23 +225,28 @@ def main():
         delay = round(v["start"] * 1000)
         achain += f";[{idx}:a]aformat=channel_layouts=mono,adelay={delay}:all=1[ca{k}]"
         mix.append(f"[ca{k}]")
-    # our own animated SUBSCRIBE + bell (tools/make_subscribe.py) over the goodbye clip, with click sounds
-    sub_mov, click = HERE.parent / "assets" / "subscribe.mov", HERE.parent / "assets" / "click.wav"
-    goodbye = next((v for v in tl.get("videos", []) if v["name"] == "goodbye"), None)
-    if goodbye is None:   # no goodbye clip: the subscribe animation plays over the last 3 seconds
-        goodbye = {"start": max(tl["duration"] - 3.0, 0.0), "end": tl["duration"]}
-    if sub_mov.exists() and click.exists():
+    # our own animated SUBSCRIBE + bell (tools/make_subscribe.py), shown while the narrator asks to subscribe
+    # (not at the very end), with a click on each button and a bell "ding"
+    sub_mov = HERE.parent / "assets" / "subscribe.mov"
+    click, ding = HERE.parent / "assets" / "click.wav", HERE.parent / "assets" / "ding.wav"
+    if sub_mov.exists() and click.exists() and ding.exists():
         sys.path.insert(0, str(HERE))
-        from make_subscribe import CLICK_TIMES
+        from make_subscribe import CLICK_TIMES, DING_TIME, DUR
+        ask = next((c for c in tl["clips"] if c["speaker"].startswith("narrator") and "subscribe" in c["text"].lower()),
+                   None)
+        start = max(ask["start"] - 0.5, 0.0) if ask else max(tl["duration"] - DUR, 0.0)
+        end = min(start + DUR, tl["duration"])
         idx = 3 + len(tl.get("videos", []))
         inputs += ["-i", str(sub_mov)]
-        vchain += (f";[{idx}:v]format=rgba,setpts=PTS-STARTPTS+{goodbye['start']:.3f}/TB[sub];"
-                   f"[{last}][sub]overlay=0:150:eof_action=pass:enable='between(t,{goodbye['start']:.3f},{goodbye['end']:.3f})'[vs]")
+        vchain += (f";[{idx}:v]format=rgba,setpts=PTS-STARTPTS+{start:.3f}/TB[sub];"
+                   f"[{last}][sub]overlay=0:930:eof_action=pass:enable='between(t,{start:.3f},{end:.3f})'[vs]")
         last = "vs"
-        for j, ct in enumerate(CLICK_TIMES):
-            inputs += ["-i", str(click)]
-            achain += f";[{idx + 1 + j}:a]volume=0.5,aformat=channel_layouts=mono,adelay={round((goodbye['start'] + ct) * 1000)}:all=1[ck{j}]"
-            mix.append(f"[ck{j}]")
+        sounds = [(click, CLICK_TIMES[0], 0.5), (click, CLICK_TIMES[1], 0.5), (ding, DING_TIME, 0.35)]
+        for j, (wav, at, vol) in enumerate(sounds):
+            inputs += ["-i", str(wav)]
+            achain += (f";[{idx + 1 + j}:a]volume={vol},aformat=channel_layouts=mono,"
+                       f"adelay={round((start + at) * 1000)}:all=1[sx{j}]")
+            mix.append(f"[sx{j}]")
     vchain += f";[{last}]subtitles={ass}[v]"
     if len(mix) > 1:
         achain += f";{''.join(mix)}amix=inputs={len(mix)}:normalize=0:duration=first[m]"

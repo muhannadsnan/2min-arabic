@@ -29,10 +29,10 @@ Arabic has no word for "am", "is" or "are" in the present. And that makes your l
 
 🖼️ **Image:** Stopwatch showing 2:00 on a cozy desk with a notebook and a cup of tea, morning light + STYLE
 🔤 **On screen:** 2 Minute Arabic · Day 5
-✂️ **Edit:** reuse the standard intro clip.
+🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-Welcome to 2 Minute Arabic — one tiny lesson, every day. Arabic is my mother tongue, and my promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
+I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
 ```
 
 ### 🎬 Scene 3 — Today · 0:18–0:28
@@ -176,11 +176,12 @@ She is Lina.
 One rule: in the present, Arabic skips "is". Five days in a row — that's how it starts. Tomorrow: yes, no, and the little polite words.
 ```
 ```say:narrator
-That's your two minutes for today. Come back tomorrow — same place, two minutes. Subscribe so you don't break your streak.
+That's your two minutes for today. Come back tomorrow — same place, two minutes.
 ```
-```say:teacher
-مَعَ السَّلَامَة!
+```say:narrator
+Subscribe so you don't break your streak.
 ```
+🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)
 
 ---
 

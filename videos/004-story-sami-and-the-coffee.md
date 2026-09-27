@@ -29,10 +29,10 @@ Eight tiny sentences. One tiny story. And you'll understand it — in Arabic.
 
 🖼️ **Image:** Stopwatch showing 2:00 on a cozy desk with a notebook and a cup of tea, morning light + STYLE
 🔤 **On screen:** 2 Minute Arabic · Day 4
-✂️ **Edit:** reuse the standard intro clip.
+🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-Welcome to 2 Minute Arabic — one tiny lesson, every day. Arabic is my mother tongue, and my promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
+I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minutes a day, and in thirty days you'll have your first conversation in Arabic.
 ```
 
 ### 🎬 Scene 3 — Today · 0:17–0:24
@@ -140,7 +140,25 @@ Sami is very happy.
 Now the whole story, Arabic only. How much do you understand?
 ```
 ```say:teacher
-هَذَا سَامِي. سَامِي طَالِبْ. سَامِي يُحِبُّ الْقَهْوَةْ. كُلَّ يَوْمْ، يَذْهَبُ إِلَى الْمَقْهَى. الْيَوْمْ، الْمَقْهَى مُغْلَقْ! سَامِي حَزِينْ. ثُمَّ... لِينَا!
+هَذَا سَامِي.
+```
+```say:teacher
+سَامِي طَالِبْ.
+```
+```say:teacher
+سَامِي يُحِبُّ الْقَهْوَةْ.
+```
+```say:teacher
+كُلَّ يَوْمْ، يَذْهَبُ إِلَى الْمَقْهَى.
+```
+```say:teacher
+الْيَوْمْ، الْمَقْهَى مُغْلَقْ!
+```
+```say:teacher
+سَامِي حَزِينْ.
+```
+```say:teacher
+ثُمَّ... لِينَا!
 ```
 ```say:lina
 مَرْحَبًا يَا سَامِي! هَلْ تُرِيدُ قَهْوَةْ؟
@@ -183,11 +201,12 @@ And did you notice? Sami haziin — literally "Sami sad". Where's the "is"? Tomo
 🔤 **On screen:** مَعَ السَّلَامَة · *ma'a s-salaama* · Goodbye — Day 4 ✅
 
 ```say:narrator
-That's your two minutes for today. Come back tomorrow — same place, two minutes. Subscribe so you don't break your streak.
+That's your two minutes for today. Come back tomorrow — same place, two minutes.
 ```
-```say:teacher
-مَعَ السَّلَامَة!
+```say:narrator
+Subscribe so you don't break your streak.
 ```
+🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)
 
 ---
 
