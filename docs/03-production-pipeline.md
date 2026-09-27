@@ -63,9 +63,19 @@ and it gets tested end-to-end on all five videos before you use it.
 
 One image per scene; prompts are in each script under **🖼️ Image**.
 
-- **Generated on your own PC with ComfyUI** (`/media/msn/GamesLinux/AI/ComfyUI`, RTX 3060 6 GB): Claude sends all of a
-  video's prompts in one batch. The model must have a license that allows commercial use (e.g. FLUX.1 **schnell**, Apache 2.0 —
-  *not* FLUX.1 dev). No model is installed yet (see [09-backlog.md](09-backlog.md)).
+- **Generated on your own PC with ComfyUI** (`/media/msn/GamesLinux/AI/ComfyUI`, RTX 3060 6 GB) using
+  **FLUX.2 [klein] 4B (fp8)** — **Apache 2.0**, commercial use allowed
+  ([model card](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B)). ⚠️ Only the **4B** klein is Apache;
+  **klein 9B and FLUX.1 dev are non-commercial — never use them.**
+  - ~12–17 s per 768×1344 image, ~31 s with a reference image. 4 steps (6 steps for tricky scenes).
+  - Built-in **reference-image editing**: feed a character image back in and the same face/hair/clothes carry over —
+    this is how Sami and Lina stay consistent.
+  - Alternative installed: **Z-Image Turbo** (Apache 2.0) — slower (45–70 s), no reference editing yet.
+  - Tool: [tools/images/generate.py](../tools/images/generate.py) (stdlib only; appends the style suffix automatically;
+    `--ref img.png` for references; `--seed`, `--steps`). Start ComfyUI first: `/media/msn/GamesLinux/AI/run_comfyui.sh`.
+  - Prompt tips from the tests: say **"olive skin"** / "Arab" features explicitly (otherwise people come out generic),
+    and say **"stopwatch"** plus "no numbers on the dial" (it tends to draw an alarm clock with wrong numerals).
+  - Test images: `audio-drafts/image-tests/`.
 - Every prompt ends with **`+ STYLE`** — replace it with the **shared style suffix** from the
   [style guide](05-style-guide.md#visual-style) (or save the suffix once as a template/style preset in your
   generator) so the whole channel looks consistent.

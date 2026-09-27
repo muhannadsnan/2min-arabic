@@ -21,7 +21,8 @@ What's next, in order. **🔔 = reminder for you**, 🤖 = Claude does it, 🤝 
 - [ ] 🔔 Film Day 1 (phone vertical, eye level, window light, 2–3 takes per part) → give Claude the folder path.
 
 ## Images
-- [ ] 🤖 Install the best commercially-licensed image model that fits the RTX 3060 into ComfyUI (in progress).
+- [x] 🤖 Image model installed & tested: FLUX.2 [klein] 4B fp8 (Apache 2.0), ~15 s/image — `tools/images/generate.py`.
+- [ ] 🤖 Optional: fix your other ComfyUI custom nodes (Impact-Pack, Crystools, VideoHelperSuite, LTXVideo) in the new ComfyUI venv — they don't load yet (image generation is unaffected).
 - [ ] 🤖 Character sheets for Sami and Lina → reuse for consistency.
 - [ ] 🤖 Batch-generate each video's scene images through the ComfyUI API.
 
