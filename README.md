@@ -22,6 +22,7 @@ and the ready-to-produce video scripts.
 | [docs/05-style-guide.md](docs/05-style-guide.md) | Script markup, Arabic conventions (MSA, tashkeel, transliteration), visual style, characters |
 | [docs/06-publishing.md](docs/06-publishing.md) | Titles, descriptions, thumbnails, schedule, Shorts, playlists |
 | [docs/07-channel-and-monetization.md](docs/07-channel-and-monetization.md) | Which account, one vs two channels, AdSense, YPP thresholds (incl. 2027 changes), staying monetizable |
+| [docs/08-channel-setup.md](docs/08-channel-setup.md) | Creating the channel step by step: safety checks, name, photo/banner, description, settings, features |
 | [templates/video-template.md](templates/video-template.md) | Copy this to start a new video script |
 | [videos/](videos/) | The video scripts, one `.md` per video |
 | [tools/make_audio.py](tools/make_audio.py) | Turns a script into a finished voiceover (Azure TTS) + scene timeline + captions |
