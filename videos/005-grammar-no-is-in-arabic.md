@@ -73,7 +73,7 @@ Word for word: "I student". Meaning: I am a student.
 🔤 **On screen:** أَنَا · *ana* · I
 
 ```say:narrator
-Now five little words. I:
+Now five little words. The word for I:
 ```
 ```say:teacher
 أَنَا
@@ -85,7 +85,7 @@ Now five little words. I:
 🔤 **On screen:** أَنْتَ · *anta* · you (to a man)
 
 ```say:narrator
-You, to a man:
+You, when you talk to a man:
 ```
 ```say:teacher
 أَنْتَ
@@ -97,7 +97,7 @@ You, to a man:
 🔤 **On screen:** أَنْتِ · *anti* · you (to a woman)
 
 ```say:narrator
-You, to a woman:
+You, when you talk to a woman:
 ```
 ```say:teacher
 أَنْتِ
@@ -109,7 +109,7 @@ You, to a woman:
 🔤 **On screen:** هُوَ · *huwa* · he
 
 ```say:narrator
-He:
+The word for he:
 ```
 ```say:teacher
 هُوَ
@@ -121,7 +121,7 @@ He:
 🔤 **On screen:** هِيَ · *hiya* · she
 
 ```say:narrator
-She:
+And the word for she:
 ```
 ```say:teacher
 هِيَ
@@ -161,7 +161,10 @@ She is Lina.
 أَنَا سَعِيدْ.
 ```
 ```say:narrator
-I am happy. And if you're a woman, add an "a" sound at the end:
+I am happy.
+```
+```say:narrator
+If you're a woman, add an "a" sound at the end:
 ```
 ```say:teacher
 أَنَا سَعِيدَةْ.

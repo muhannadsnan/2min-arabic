@@ -211,10 +211,14 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
     for n in redo:
         cache_path(says[n - 1][1], says[n - 1][2]).unlink(missing_ok=True)
     todo = {}
+    PINNED = {sp for sp in VOICE_VERSIONS if sys.argv and f"{sp}=" in " ".join(sys.argv)}
     for e in events:
         if e[0] == "say" and not cache_path(e[1], e[2]).exists():
             todo[cache_path(e[1], e[2])] = (e[1], e[2])
     print(f"{script.name}: {sum(e[0] == 'say' for e in events)} clips, {len(todo)} new line(s)")
+    if any(sp in PINNED for sp, _ in todo.values()):
+        sys.exit("a pinned voice would need new takes — not allowed: " +
+                 "; ".join(t for sp, t in todo.values() if sp in PINNED))
     synthesize_missing(todo, cache, takes)
 
     # 2. lay the clips out on a timeline
@@ -306,10 +310,15 @@ def main():
     parser.add_argument("--takes", type=int, default=3, help="takes per line (default: 3)")
     parser.add_argument("--redo", default="", help="comma-separated clip numbers to regenerate (see report.md)")
     parser.add_argument("--allow-tts", action="store_true", help="generate Arabic lines missing from the owner's recording")
+    parser.add_argument("--voice", action="append", default=[],
+                        help="pin a speaker to an older voice version, e.g. --voice narrator=owner-en-2 "
+                             "(re-use a published video's takes; stops if a line would need generating)")
     args = parser.parse_args()
     for tool in ("ffmpeg", "ffprobe"):
         if not shutil.which(tool):
             sys.exit(f"{tool} not found — install ffmpeg first.")
+    pinned = dict(v.split("=", 1) for v in args.voice)
+    VOICE_VERSIONS.update(pinned)
     for script in args.scripts:
         render(script, args.out, args.takes, [int(x) for x in args.redo.split(",") if x], args.allow_tts)
 

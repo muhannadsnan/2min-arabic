@@ -81,3 +81,13 @@ Day 2 ✅ — introduce yourself in Arabic below: اسْمِي … (ismii …) �
   have less hiss than the English) · filmed clips denoised · dragged/fading sentence endings rejected and trimmed ·
   line after the hello rewritten so it continues naturally · subscribe animation added (the supplied stock clip was an
   iStock watermarked preview — not usable).
+
+## Version 2 (2026-09-28) — owner's recorded Arabic
+
+- **Only the Arabic changed:** all 10 phrases are the owner's own recording (iPhone, cleaned, presence EQ).
+- **English unchanged:** the 16 English lines are the exact published takes (`make_audio.py --voice narrator=owner-en-2`,
+  0 new lines generated).
+- Longer subscribe animation (click + ding) during the last narrator sentence.
+- Checked: 1:58.3 · −14.0 LUFS · peaks −1.9 dB · transcribed EN + AR: right order, no overlaps.
+- **AI use: No** (unchanged).
+- Replacing the published video = delete + re-upload (YouTube can't swap the file); views/comments on the old upload are lost.

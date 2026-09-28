@@ -250,7 +250,7 @@ Now the whole story, Arabic only. How much do you understand?
 🔤 **On screen:** قَهْوَةْ · *qahwa* · coffee
 
 ```say:narrator
-Three words to keep. Coffee:
+Three words to keep. The word for coffee:
 ```
 ```say:teacher
 قَهْوَةْ
@@ -262,7 +262,7 @@ Three words to keep. Coffee:
 🔤 **On screen:** حَزِينْ · *haziin* · sad
 
 ```say:narrator
-Sad:
+The word for sad:
 ```
 ```say:teacher
 حَزِينْ
@@ -274,7 +274,7 @@ Sad:
 🔤 **On screen:** سَعِيدْ · *sa'iid* · happy
 
 ```say:narrator
-And happy:
+And the word for happy:
 ```
 ```say:teacher
 سَعِيدْ
