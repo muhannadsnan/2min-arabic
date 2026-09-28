@@ -28,6 +28,7 @@ from tts_worker import cer  # noqa: E402
 
 TTS_HOME = pathlib.Path(os.environ.get("TTS_HOME", "/media/msn/GamesLinux/AI/tts"))
 SARA_VC = TTS_HOME / "refs" / "sara_ar_2.wav"   # best voice-conversion target in the 2026-09-27 test
+SARA_PITCH = 1.1225   # +2 semitones after conversion (owner's pick "B")
 AUDIO_EXT = {".m4a", ".mp3", ".wav", ".ogg", ".mov", ".mp4", ".aac", ".flac", ".opus", ".webm"}
 SR = 48000
 
@@ -48,14 +49,17 @@ def clean(src, work):
                                    "stream=channels", "-of", "csv=p=0", str(src)], capture_output=True,
                                   text=True).stdout.strip() or 1)
     mix = "pan=mono|c0=0.5*c0+0.5*c1," if channels >= 2 else ""
-    run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-map", "0:a:0", "-af", f"{mix}highpass=f=80",
+    # adeclip repairs peaks flattened by a hot mic (the Jabra's gain pushed Day 4 over full scale)
+    run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-map", "0:a:0", "-af", f"{mix}adeclip,highpass=f=80",
          "-ac", "1", "-ar", str(SR), str(raw)])
     from df.enhance import enhance, init_df, load_audio, save_audio
     model, state, _ = init_df()
     audio, _ = load_audio(str(raw), sr=state.sr())
     save_audio(str(dfn), enhance(model, state, audio), state.sr())
     gain = -20.0 - loudness(dfn)
-    run(["ffmpeg", "-v", "error", "-y", "-i", str(dfn), "-af", f"volume={gain:.2f}dB,alimiter=limit=0.8:level=false",
+    # owner's choice (2026-09-28): light presence boost for clarity, a touch less low boom
+    run(["ffmpeg", "-v", "error", "-y", "-i", str(dfn), "-af",
+         f"equalizer=f=3000:t=o:w=1.2:g=3,equalizer=f=180:t=o:w=1:g=-1.5,volume={gain:.2f}dB,alimiter=limit=0.8:level=false",
          "-ar", str(SR), str(out)])
     return out
 
@@ -145,9 +149,23 @@ def main():
                     if c < best:
                         best, pick = c, (i, j)
             f[k][p], choice[k][p] = best, pick
+    # retakes: if the owner said a line again right after it (the pieces the alignment skipped before the next
+    # line), the LAST take wins when it matches about as well
+    picks, pos = [], 0
+    for k in range(K):
+        picks.append(choice[k][pos])
+        if picks[-1]:
+            pos = picks[-1][1] + 1
+    for k, pick in enumerate(picks):
+        if not pick:
+            continue
+        nxt = next((p[0] for p in picks[k + 1:] if p), P)
+        for q in range(pick[1] + 1, nxt):
+            if score[(k, (q, q))] <= score[(k, pick)] + 0.15:
+                picks[k] = pick = (q, q)
     result, pos = [], 0
     for n, (speaker, text) in enumerate(expected, 1):
-        pick = choice[n - 1][pos]
+        pick = picks[n - 1]
         if pick is None:
             result.append({"n": n, "speaker": speaker, "text": text, "file": None, "heard": "", "cer": 1.0})
             continue
@@ -172,7 +190,12 @@ def main():
         vc = ChatterboxVC.from_pretrained("cuda")
         for r in female:
             conv = root / r["file"].replace(".wav", "-sara.wav")
-            ta.save(str(conv), vc.generate(str(root / r["file"]), target_voice_path=str(SARA_VC)), vc.sr)
+            raw_conv = conv.with_name(conv.stem + "-raw.wav")
+            ta.save(str(raw_conv), vc.generate(str(root / r["file"]), target_voice_path=str(SARA_VC)), vc.sr)
+            # owner's choice (2026-09-28): Sara 2 semitones lighter, formants kept natural (≈ 265 Hz)
+            run(["ffmpeg", "-v", "error", "-y", "-i", str(raw_conv), "-af",
+                 f"rubberband=pitch={SARA_PITCH}:formant=preserved", str(conv)])
+            raw_conv.unlink()
             r["recorded"], r["file"] = r["file"], str(conv.relative_to(root))
 
     (rec_dir / "map.json").write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
