@@ -40,16 +40,12 @@ learn arabic, arabic conversation, arabic for beginners, basic arabic conversati
 Day 3 ✅ — Reply to me in Arabic like Sami would: السلام عليكم! كيف حالك؟ 👇
 ```
 
-## Quality check (Claude)
+## Quality check (Claude) — final, 2026-09-28
 
-- **Script:** 18 scenes; sukun endings; new words said by the Arabic teacher voice; hello + goodbye clips; answer hints.
-- **Cards:** all 18 rendered and inspected before generation — no missing glyphs; NEW/answer lines highlighted.
-- **Voice:** 31 clips, best of 4–8 takes each, all through DeepFilterNet (noise-free). Fixes: English line rephrased
-  twice ("and you?" was heard as "in you" → "what about you?"); stray made-up word after "…his coffee" found in the
-  full-video check → line redone and the checker now cuts anything after the script's last word.
-  Lina's مَا اسْمُكْ heard as "Masmuk" (clean k) on its own — the "kh" in the full transcript was context guessing.
-- **Images:** 13 unique scenes × 3 takes inspected; scene 3 redone (blank band); rejected takes include a
-  **duplicated head** (scene 11 take 0) and a two-cups-for-one-person table. Reasons: `images/003-first-conversation/picks.json`.
-- **Finished video:** 1:59.9 · −14.1 LUFS · peaks −1.9 dB · pauses are digital silence · soundtrack re-transcribed in
-  English and Arabic: correct order, no overlaps · frames checked at hello, role-play pause, goodbye + subscribe.
-- **Please listen to:** 0:37–0:41 (Lina: أَنَا لِينَا. مَا اسْمُكْ؟) — Sara's clone, the only line I'd like your ear on.
+- **Arabic = the owner's own recording** (iPhone Voice Memos): cleaned (DeepFilterNet, declip), presence EQ; Lina's
+  lines converted to Sara's voice, +2 semitones (owner's picks). All 14 recorded lines placed; retake of line 9 used.
+- **English narration:** owner's clone, every line ≥ 4 takes; "Fine, thanks. What's your plan today?" redone (8 takes).
+- **Images:** 16 unique scenes inspected (new: Sami studying, Lina with books); reasons in `images/003-first-conversation/picks.json`.
+- **Finished video:** 2:20.2 · −14.2 LUFS · peaks −1.9 dB · full soundtrack re-transcribed (EN + AR): right order, no
+  overlaps · subscribe animation (click + ding) during "Subscribe so you don't break your streak", goodbye clip last.
+- **AI label: Yes** (Lina = Sara's voice via voice conversion).

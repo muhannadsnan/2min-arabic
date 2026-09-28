@@ -126,7 +126,7 @@ She:
 ```say:teacher
 هِيَ
 ```
-⏸️ **Pause 3s** — viewer repeats the five words.
+⏸️ **Pause 4s** — viewer repeats the five words.
 
 ### 🎬 Scene 10 — Example he · 0:59–1:03
 
@@ -175,7 +175,7 @@ I am happy. And if you're a woman, add an "a" sound at the end:
 ```say:narrator
 Your turn. Say it before I do. I am a student.
 ```
-⏸️ **Pause 3s**
+⏸️ **Pause 4s**
 
 ### 🎬 Scene 14 — Answer 1 · 1:22–1:24
 
@@ -194,7 +194,7 @@ Your turn. Say it before I do. I am a student.
 ```say:narrator
 He is happy.
 ```
-⏸️ **Pause 3s**
+⏸️ **Pause 4s**
 
 ### 🎬 Scene 16 — Answer 2 · 1:28–1:30
 
@@ -213,7 +213,7 @@ He is happy.
 ```say:narrator
 She is Lina.
 ```
-⏸️ **Pause 3s**
+⏸️ **Pause 4s**
 
 ### 🎬 Scene 18 — Answer 3 · 1:34–1:36
 
@@ -224,13 +224,32 @@ She is Lina.
 هِيَ لِينَا.
 ```
 
-### 🎬 Scene 19 — Outro · 1:36–1:55
+### 🎬 Scene 19 — Your turn 4 · 1:36–1:40
+
+🖼️ **Image:** same as scene 13
+🔤 **On screen:** Your turn · I am happy.
+
+```say:narrator
+And one more: I am happy.
+```
+⏸️ **Pause 4s**
+
+### 🎬 Scene 20 — Answer 4 · 1:40–1:43
+
+🖼️ **Image:** same as scene 13
+🔤 **On screen:** أَنَا سَعِيدْ · *ana sa'iid* · I am happy. · woman: ana sa'iida
+
+```say:teacher
+أَنَا سَعِيدْ.
+```
+
+### 🎬 Scene 21 — Outro · 1:43–2:05
 
 🖼️ **Image:** the desk with the stopwatch and confetti (asset)
 🔤 **On screen:** مَعَ السَّلَامَةْ · *ma'a s-salaama* · Goodbye — Day 5
 
 ```say:narrator
-One rule: in the present, Arabic skips "is". Five days in a row — that's how it starts. Tomorrow: yes, no, and the little polite words.
+Remember the rule: a pronoun plus a word — and you have a sentence. No "is" needed. Five days in a row — that's how it starts. Tomorrow: yes, no, and the little polite words.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.

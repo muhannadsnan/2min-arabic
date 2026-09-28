@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Format** | Story |
-| **Target length** | ~2:05 |
+| **Target length** | ~2:05–2:10 |
 | **Goal** | The viewer follows a 9-sentence story in Arabic and remembers the key words: coffee, sad, happy, do you want? |
 | **New words** | هَلْ تُرِيدُ (do you want?) · هَذَا (this) · طَالِب (student) · يُحِبُّ (loves) · الْقَهْوَة (the coffee) · كُلَّ يَوْم (every day) · يَذْهَبُ إِلَى (goes to) · الْمَقْهَى (the café) · مُغْلَق (closed) · حَزِين (sad) · سَعِيد (happy) · جِدًّا (very) |
 | **Voices** | English narrator = owner's clone · all Arabic = the owner's recording (Lina's line converted to Sara) → **AI label: Yes** |
@@ -281,7 +281,29 @@ And happy:
 ```
 ⏸️ **Pause 3s** — viewer repeats all three.
 
-### 🎬 Scene 26 — Teaser · 1:49–1:57
+### 🎬 Scene 26 — Quick question · 1:49–1:55
+
+🖼️ **Image:** same as scene 9
+🔤 **On screen:** Quick question · Why was Sami sad?
+
+```say:narrator
+Quick question: why was Sami sad?
+```
+⏸️ **Pause 3s** — viewer answers.
+
+### 🎬 Scene 27 — Answer · 1:55–2:00
+
+🖼️ **Image:** same as scene 8
+🔤 **On screen:** الْيَوْمْ، الْمَقْهَى مُغْلَقْ! · *al-yawm, al-maqhaa mughlaq!* · Because the café was closed!
+
+```say:teacher
+الْيَوْمْ، الْمَقْهَى مُغْلَقْ!
+```
+```say:narrator
+Because the café was closed!
+```
+
+### 🎬 Scene 28 — Teaser · 2:00–2:08
 
 🖼️ **Image:** same as scene 9
 🔤 **On screen:** سَامِي حَزِينْ · *Saamii haziin* · Sami (is) sad · where is "is"?
@@ -290,7 +312,7 @@ And happy:
 And did you notice? In Arabic, "Sami is sad" is just two words: Sami, sad. Where's the "is"? Tomorrow I'll show you why Arabic doesn't need it.
 ```
 
-### 🎬 Scene 27 — Outro · 1:57–2:10
+### 🎬 Scene 29 — Outro · 2:08–2:20
 
 🖼️ **Image:** the desk with the stopwatch and confetti (asset)
 🔤 **On screen:** مَعَ السَّلَامَةْ · *ma'a s-salaama* · Goodbye — Day 4

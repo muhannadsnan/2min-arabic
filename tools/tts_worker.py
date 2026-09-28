@@ -76,22 +76,36 @@ def score(jobs):
             # extra made-up words after the sentence ("…his coffee. Aby"): cut after the script's last word
             script_last = normalize(job["text"]).split()[-1] if normalize(job["text"]) else ""
             match = [k for k, w in enumerate(words) if normalize(w.word) == script_last]
-            extra = len(words) - 1 - match[-1] if match else 0
-            if match and extra > 0:
+            extra = 0
+            if match and len(words) - 1 - match[-1] > 0:
+                extra = len(words) - 1 - match[-1]
                 words = words[:match[-1] + 1]
                 heard = " ".join(w.word.strip() for w in words)
+            # extra made-up words before the sentence ("them. And did you notice…"): start at the script's first word
+            script_first = normalize(job["text"]).split()[0] if normalize(job["text"]) else ""
+            first = next((k for k, w in enumerate(words) if normalize(w.word) == script_first), None)
+            lead = first if first is not None and first <= 2 else 0
+            start_at = max(words[lead].start - 0.08, 0.0) if lead else 0.0
+            if lead:
+                words = words[lead:]
+                heard = " ".join(w.word.strip() for w in words)
+            extra += lead
             last_end = words[-1].end if words else length
             last_len = (words[-1].end - words[-1].start) if words else 0.0
             tail = length - last_end
             # penalties: a dragged last word or a long sound after it ("falling off a cliff")
-            penalty = (0.3 if tail > 0.6 else 0.1 if tail > 0.35 else 0.0) + (0.2 if last_len > 1.1 else 0.0) + 0.15 * extra
+            penalty = (0.3 if tail > 0.6 else 0.1 if tail > 0.35 else 0.2 if tail < 0.08 else 0.0) \
+                + (0.2 if last_len > 1.1 else 0.0) + 0.15 * extra
             score_k = cer(job["text"], heard) + penalty
             if best is None or score_k < best[0]:
-                best = (score_k, take, heard, last_end, tail, last_len)
-        score_k, take, heard, last_end, tail, last_len = best
+                best = (score_k, take, heard, last_end, tail, last_len, start_at)
+        score_k, take, heard, last_end, tail, last_len, start_at = best
         audio, rate = sf.read(take)
         cut = min(len(audio), int((last_end + 0.22) * rate))   # keep a little air after the last word
-        audio = audio[:cut].copy()
+        audio = audio[int(start_at * rate):cut].copy()
+        if start_at:
+            f_in = min(len(audio), int(0.03 * rate))
+            audio[:f_in] *= np.linspace(0.0, 1.0, f_in)[:, None] if audio.ndim > 1 else np.linspace(0.0, 1.0, f_in)
         fade = min(len(audio), int(0.08 * rate))
         audio[-fade:] *= np.linspace(1.0, 0.0, fade)[:, None] if audio.ndim > 1 else np.linspace(1.0, 0.0, fade)
         sf.write(job["target"], audio, rate)

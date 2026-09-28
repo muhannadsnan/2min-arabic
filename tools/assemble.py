@@ -164,7 +164,7 @@ def main():
         frames = round(scene["end"] * FPS) - round(scene["start"] * FPS)
         image = img_dir / f"s{i:02d}.png"
         prompts = img_dir / "prompts.json"
-        if not image.exists() and prompts.exists():   # "same": reuse another scene's image
+        if prompts.exists():   # "same" links win over any leftover file from an older numbering
             same = {p["s"]: p["same"] for p in json.loads(prompts.read_text(encoding="utf-8")) if "same" in p}
             if i in same:
                 image = img_dir / f"s{same[i]:02d}.png"
