@@ -103,7 +103,7 @@ Every day, he goes to the café.
 الْيَوْمْ، الْمَقْهَى مُغْلَقْ!
 ```
 ```say:narrator
-Today, the café is closed!
+Today, the café is closed.
 ```
 
 ### 🎬 Scene 9 — Story 6 · 0:49–0:53
@@ -300,7 +300,7 @@ Quick question: why was Sami sad?
 الْيَوْمْ، الْمَقْهَى مُغْلَقْ!
 ```
 ```say:narrator
-Because the café was closed!
+Because the café was closed.
 ```
 
 ### 🎬 Scene 28 — Teaser · 2:00–2:08

@@ -40,11 +40,12 @@ learn arabic, arabic grammar, arabic for beginners, arabic pronouns, arabic sent
 Day 5 ✅ 🔥 — Write one sentence about yourself in Arabic: أنا … (ana …) 👇
 ```
 
-## Quality check (Claude) — final, 2026-09-28
+## Quality check (Claude) — final v2, 2026-09-28 (new English voice)
 
 - **Arabic = the owner's own recording** (iPhone), cleaned, presence EQ. 12/12 lines placed.
-- **English narration:** ≥ 4 takes per line; "He:" (heard as "She") and the "Today is Day 5" line redone with 8 takes.
-- **New:** 4th "your turn" (I am happy), longer thinking pauses (4 s), clearer recap line.
-- **Images:** reuses approved Day 3–4 images (same Sami/Lina); 2 new scenes. Notebook scene redone — every first-round
-  take had numbers on a stopwatch dial; final take has no clock and a single pencil.
-- **Finished video:** 2:07.2 · −14.1 LUFS · peaks −1.9 dB · transcribed EN + AR: right order, no overlaps.
+- **English narration re-done in the approved voice** (energetic Day 1 reference) with the automatic delivery check:
+  no rushed lines, every line within ±1.7 st of the owner's voice. Short cues rephrased ("The word for he:",
+  "It means: he is Sami.") because single words came out in a different register.
+- One script mistake caught in the final transcript check (a "Your turn" prompt had become "It means: …") and fixed.
+- **Finished video:** 2:11.3 · −14.0 LUFS · transcribed: right order, no overlaps.
+- **AI use: No.**

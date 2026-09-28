@@ -137,7 +137,7 @@ And the word for she:
 هُوَ سَامِي.
 ```
 ```say:narrator
-He is Sami.
+It means: he is Sami.
 ```
 
 ### 🎬 Scene 11 — Example she · 1:03–1:07
@@ -149,7 +149,7 @@ He is Sami.
 هِيَ لِينَا.
 ```
 ```say:narrator
-She is Lina.
+It means: she is Lina.
 ```
 
 ### 🎬 Scene 12 — Example happy · NEW · 1:07–1:17
@@ -161,7 +161,7 @@ She is Lina.
 أَنَا سَعِيدْ.
 ```
 ```say:narrator
-I am happy.
+It means: I am happy.
 ```
 ```say:narrator
 If you're a woman, add an "a" sound at the end:
