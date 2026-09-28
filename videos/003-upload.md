@@ -2,13 +2,49 @@
 
 **File to upload:** `output/003-first-conversation/003-first-conversation.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/003-first-conversation/thumbnail (vertical).jpg`
-**Description:** paste [003-description.txt](003-description.txt) (Arabic kept in order with direction markers)
 **Captions file:** not needed (burned in).
 
 ## Title
 
 ```
 Understand a Real Arabic Conversation After 2 Days | Day 3 · 2 Minute Arabic
+```
+
+## Description
+
+Copy everything in the box (the Arabic has invisible direction markers so YouTube keeps it in order):
+
+```
+Day 3 of 30 — Sami meets Lina: your first full Arabic conversation (and you play Sami!).
+
+Two minutes a day. Your first Arabic conversation in 30 days.
+
+💬 The conversation:
+Lina: as-salaamu 'alaykum — Peace be upon you. — ⁧السَّلَامُ عَلَيْكُمْ⁩
+Sami: wa 'alaykumu s-salaam — And upon you, peace. — ⁧وَعَلَيْكُمُ السَّلَامْ⁩
+Lina: ana Liinaa. maa smuk? — I'm Lina. What's your name? — ⁧أَنَا لِينَا. مَا اسْمُكْ؟⁩
+Sami: ismii Saamii. tasharrafnaa — My name is Sami. Nice to meet you. — ⁧اسْمِي سَامِي. تَشَرَّفْنَا⁩
+Lina: tasharrafnaa. kayfa haaluk? — Nice to meet you. How are you? — ⁧تَشَرَّفْنَا. كَيْفَ حَالُكْ؟⁩
+Sami: bikhayr, al-hamdu lillaah. wa anti? — Fine, thank God. And you? — ⁧بِخَيْرْ، الْحَمْدُ لِلَّهْ. وَأَنْتِ؟⁩
+Lina: bikhayr, shukran. maa khuttatuka l-yawm? — Fine, thanks. What's your plan today? — ⁧بِخَيْرْ، شُكْرًا. مَا خُطَّتُكَ الْيَوْمْ؟⁩
+Sami: adrusu l-'arabiyya. wa anti? — I'm studying Arabic. And you? — ⁧أَدْرُسُ الْعَرَبِيَّةْ. وَأَنْتِ؟⁩
+Lina: a'malu fi l-maktaba — I work at the bookshop. — ⁧أَعْمَلُ فِي الْمَكْتَبَةْ⁩
+Sami: ma'a s-salaama — Goodbye. — ⁧مَعَ السَّلَامَةْ⁩
+Lina: ma'a s-salaama — Goodbye. — ⁧مَعَ السَّلَامَةْ⁩
+
+🆕 New words:
+tasharrafnaa — nice to meet you — ⁧تَشَرَّفْنَا⁩
+wa anti? — and you? (to a woman) — ⁧وَأَنْتِ؟⁩
+khutta — plan — ⁧خُطَّة⁩
+al-yawm — today — ⁧الْيَوْمْ⁩
+adrusu — I study — ⁧أَدْرُسُ⁩
+a'malu — I work — ⁧أَعْمَلُ⁩
+al-maktaba — the bookshop — ⁧الْمَكْتَبَةْ⁩
+
+▶️ Start from Day 1: https://youtu.be/XTQXhypYDLU
+🔔 Subscribe so you don't break your streak.
+
+#learnarabic #arabicconversation #2minutearabic
 ```
 
 ## Tags

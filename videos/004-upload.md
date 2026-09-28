@@ -2,13 +2,46 @@
 
 **File to upload:** `output/004-story-sami-and-the-coffee/004-story-sami-and-the-coffee.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/004-story-sami-and-the-coffee/thumbnail (vertical).jpg`
-**Description:** paste [004-description.txt](004-description.txt) (Arabic kept in order with direction markers)
 **Captions file:** not needed (burned in).
 
 ## Title
 
 ```
 Can You Understand This Arabic Story? | Day 4 · 2 Minute Arabic
+```
+
+## Description
+
+Copy everything in the box (the Arabic has invisible direction markers so YouTube keeps it in order):
+
+```
+Day 4 of 30 — a tiny Arabic story for beginners: Sami and the coffee ☕
+
+Two minutes a day. Your first Arabic conversation in 30 days.
+
+📖 The story:
+haadhaa Saamii — This is Sami. — ⁧هَذَا سَامِي⁩
+Saamii taalib — Sami is a student. — ⁧سَامِي طَالِبْ⁩
+Saamii yuhibbu l-qahwa — Sami loves coffee. — ⁧سَامِي يُحِبُّ الْقَهْوَةْ⁩
+kulla yawm, yadh-habu ilaa l-maqhaa — Every day, he goes to the café. — ⁧كُلَّ يَوْمْ، يَذْهَبُ إِلَى الْمَقْهَى⁩
+al-yawm, al-maqhaa mughlaq! — Today, the café is closed! — ⁧الْيَوْمْ، الْمَقْهَى مُغْلَقْ!⁩
+Saamii haziin — Sami is sad. — ⁧سَامِي حَزِينْ⁩
+thumma… Liinaa! — Then… Lina! — ⁧ثُمَّ... لِينَا!⁩
+marhaban yaa Saamii! hal turiidu qahwa? — Hi Sami! Do you want coffee? — ⁧مَرْحَبًا يَا سَامِي! هَلْ تُرِيدُ قَهْوَةْ؟⁩
+Saamii sa'iidun jiddan — Sami is very happy. — ⁧سَامِي سَعِيدٌ جِدًّا⁩
+
+🆕 New words:
+hal turiidu? — do you want? — ⁧هَلْ تُرِيدُ؟⁩
+qahwa — coffee — ⁧قَهْوَةْ⁩
+haziin — sad — ⁧حَزِينْ⁩
+sa'iid — happy — ⁧سَعِيدْ⁩
+mughlaq — closed — ⁧مُغْلَقْ⁩
+al-maqhaa — the café — ⁧الْمَقْهَى⁩
+
+▶️ Start from Day 1: https://youtu.be/XTQXhypYDLU
+🔔 Subscribe so you don't break your streak.
+
+#learnarabic #arabicstory #2minutearabic
 ```
 
 ## Tags

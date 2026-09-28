@@ -2,13 +2,41 @@
 
 **File to upload:** `output/005-grammar-no-is-in-arabic/005-grammar-no-is-in-arabic.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/005-grammar-no-is-in-arabic/thumbnail (vertical).jpg`
-**Description:** paste [005-description.txt](005-description.txt) (Arabic kept in order with direction markers)
 **Captions file:** not needed (burned in).
 
 ## Title
 
 ```
 Arabic Has No Word for "Is" (Easiest Grammar Ever) | Day 5 · 2 Minute Arabic
+```
+
+## Description
+
+Copy everything in the box (the Arabic has invisible direction markers so YouTube keeps it in order):
+
+```
+Day 5 of 30 — Arabic has no word for "is". Here's how to build your first sentences.
+
+Two minutes a day. Your first Arabic conversation in 30 days.
+
+📝 Today's sentences:
+ana taalib — I am a student. — ⁧أَنَا طَالِبْ⁩
+huwa Saamii — He is Sami. — ⁧هُوَ سَامِي⁩
+hiya Liinaa — She is Lina. — ⁧هِيَ لِينَا⁩
+ana sa'iid / ana sa'iida — I am happy (man / woman) — ⁧أَنَا سَعِيدْ / أَنَا سَعِيدَةْ⁩
+huwa sa'iid — He is happy. — ⁧هُوَ سَعِيدْ⁩
+
+🆕 New words:
+ana — I — ⁧أَنَا⁩
+anta — you (to a man) — ⁧أَنْتَ⁩
+anti — you (to a woman) — ⁧أَنْتِ⁩
+huwa — he — ⁧هُوَ⁩
+hiya — she — ⁧هِيَ⁩
+
+▶️ Start from Day 1: https://youtu.be/XTQXhypYDLU
+🔔 Subscribe so you don't break your streak.
+
+#learnarabic #arabicgrammar #2minutearabic
 ```
 
 ## Tags
