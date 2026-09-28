@@ -37,7 +37,7 @@ WORKER = pathlib.Path(__file__).resolve().parent / "tts_worker.py"
 
 # Bump a speaker's version when its voice reference or setting in <TTS_HOME>/local_tts.py changes,
 # so only that speaker's clips are regenerated.
-VOICE_VERSIONS = {"narrator": "owner-en-4", "teacher": "owner-ar-4", "teacher-slow": "owner-ar-4",
+VOICE_VERSIONS = {"narrator": "owner-en-5", "teacher": "owner-ar-4", "teacher-slow": "owner-ar-4",
                   "sami": "owner-ar-4", "lina": "sara-ar-5", "narrator-kokoro": "kokoro-2"}
 # -2: neutral, 5% slower · -3 (Arabic): denoised reference, cfg 0.5, tail check + trim
 # owner-en-3 / sara-ar-4: all references denoised with DeepFilterNet (2026-09-27)

@@ -175,7 +175,7 @@ I work at the bookshop.
 مَعَ السَّلَامَةْ.
 ```
 ```say:narrator
-Goodbye.
+Sami says goodbye.
 ```
 
 ### 🎬 Scene 14 — Line 11 · Lina · 1:35–1:40
@@ -196,7 +196,7 @@ And Lina says goodbye too.
 🔤 **On screen:** Now you are Sami · answer Lina!
 
 ```say:narrator
-Now you're Sami. Lina talks — you answer.
+Now it's your turn. You are Sami — answer Lina.
 ```
 
 ### 🎬 Scene 16 — Role-play 1 · 1:30–1:35

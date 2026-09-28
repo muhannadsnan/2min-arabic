@@ -119,6 +119,14 @@ before hand-over.** Nothing is skipped; a failed check is fixed and re-checked.
 5. **Voice report** (`audio/<video>/report.md`): every line heard as written; flagged lines are redone
    (`--redo N --takes 8`) or verified in context (known checker spellings: عَفْوًا → "اف 1", مَا اسْمُكْ → "مسموك").
    **Tails:** no dragged last word / long fade-out (checker penalty + trim).
+   **Delivery (added 2026-09-28 after the owner heard a flat, robotic Day 3):** the scorer measures every English take
+   against the owner's real speech and rejects **flat** (pitch movement < 8 semitones on lines ≥ 5 words; owner ≈ 10),
+   **rushed** (> 3.6 words/s; owner ≈ 2.7), **stretched words**, **long inner gaps** (> 1 s) and **pitch drift**
+   (> 1.5 st from the reference = "accent changes between sentences"). Speech-to-text only proves the *words*; these
+   checks cover *how* they are said. The owner's ear is still the final judge — send a 30-second sample of any voice change.
+   English voice: reference = the owner's energetic Day 1 intro (`refs/owner_en_energetic.wav`), exaggeration 0.5,
+   cfg 0.5, **no time-stretching, no extra noise-removal on generated speech**. Prefer full sentences over one-word lines
+   (single words like "Goodbye." come out in a different register).
    **Extra words:** anything the voice adds after the script's last word is cut automatically (Day 3: "…his coffee. Aby").
 6. **Images:** every take inspected at full size (zoom on hands, faces, edges); best take picked and the reasons written
    to `images/<video>/picks.json`; failed scenes redone with a better prompt / new seeds.

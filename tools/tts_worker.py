@@ -59,8 +59,51 @@ def score(jobs):
     from faster_whisper import WhisperModel
 
     model = WhisperModel("medium", device="cuda", compute_type="float16")
-    from df.enhance import enhance, init_df, load_audio, save_audio   # DeepFilterNet: final noise removal
-    df_model, df_state, _ = init_df()
+    import librosa
+    NUM = {"0": "zero", "1": "one", "2": "two", "3": "three", "4": "four", "5": "five", "6": "six", "7": "seven",
+           "8": "eight", "9": "nine", "10": "ten", "30": "thirty"}
+    ref_pitch = {}
+
+    def median_pitch(path):
+        y, sr = librosa.load(path, sr=16000)
+        f0, _, _ = librosa.pyin(y, fmin=65, fmax=320, sr=sr)
+        f0 = f0[~np.isnan(f0)]
+        return (float(np.median(f0)), f0) if len(f0) else (0.0, f0)
+
+    def delivery(path, words, speaker):
+        """Penalty for a take that sounds robotic: flat, rushed, stretched, pitch drifting away from the speaker."""
+        if speaker not in ref_pitch:
+            ref = local_tts.SPEAKERS[speaker][1]
+            ref_pitch[speaker] = median_pitch(ref)[0] if ref and str(ref).endswith(".wav") else 0.0
+        med, f0 = median_pitch(path)
+        notes, pen = [], 0.0
+        if len(f0) and len(words) >= 5:
+            st = 12 * np.log2(f0 / med)
+            rng = np.percentile(st, 90) - np.percentile(st, 10)
+            if rng < 8.0:
+                pen += 0.25 if rng < 6.0 else 0.12
+                notes.append(f"flat {rng:.1f}st")
+        if ref_pitch[speaker] and med and abs(12 * np.log2(med / ref_pitch[speaker])) > 1.5:
+            pen += 0.2
+            notes.append("pitch drift")
+        if len(words) >= 3:
+            speech = words[-1].end - words[0].start
+            wps = len(words) / max(speech, 0.1)
+            if wps > 3.6:
+                pen += 0.25
+                notes.append(f"rushed {wps:.1f}w/s")
+            gaps = [b.start - a.end for a, b in zip(words, words[1:])]
+            if gaps and max(gaps) > 1.0:
+                pen += 0.2
+                notes.append("long gap")
+        for w in words:
+            token = re.sub(r"\W", "", w.word)
+            letters = len(NUM.get(token, token)) or 1
+            if (w.end - w.start) / letters > 0.22 and letters >= 1 and (w.end - w.start) > 0.75:
+                pen += 0.25
+                notes.append(f"stretched '{token}'")
+                break
+        return pen, notes
     for job in jobs:
         lang = local_tts.SPEAKERS[job["speaker"]][2].get("lang", "en")
         best = None
@@ -96,10 +139,11 @@ def score(jobs):
             # penalties: a dragged last word or a long sound after it ("falling off a cliff")
             penalty = (0.3 if tail > 0.6 else 0.1 if tail > 0.35 else 0.2 if tail < 0.08 else 0.0) \
                 + (0.2 if last_len > 1.1 else 0.0) + 0.15 * extra
-            score_k = cer(job["text"], heard) + penalty
+            d_pen, d_notes = delivery(take, words, job["speaker"]) if lang == "en" else (0.0, [])
+            score_k = cer(job["text"], heard) + penalty + d_pen
             if best is None or score_k < best[0]:
-                best = (score_k, take, heard, last_end, tail, last_len, start_at)
-        score_k, take, heard, last_end, tail, last_len, start_at = best
+                best = (score_k, take, heard, last_end, tail, last_len, start_at, d_notes)
+        score_k, take, heard, last_end, tail, last_len, start_at, d_notes = best
         audio, rate = sf.read(take)
         cut = min(len(audio), int((last_end + 0.22) * rate))   # keep a little air after the last word
         audio = audio[int(start_at * rate):cut].copy()
@@ -108,13 +152,12 @@ def score(jobs):
             audio[:f_in] *= np.linspace(0.0, 1.0, f_in)[:, None] if audio.ndim > 1 else np.linspace(0.0, 1.0, f_in)
         fade = min(len(audio), int(0.08 * rate))
         audio[-fade:] *= np.linspace(1.0, 0.0, fade)[:, None] if audio.ndim > 1 else np.linspace(1.0, 0.0, fade)
-        sf.write(job["target"], audio, rate)
-        clean, _ = load_audio(job["target"], sr=df_state.sr())          # guarantee a noise-free clip
-        save_audio(job["target"], enhance(df_model, df_state, clean), df_state.sr())
+        sf.write(job["target"], audio, rate)   # generated speech is clean (clean references) - no extra processing
+        job["delivery"] = ", ".join(d_notes)
         job["cer"], job["heard"] = round(score_k, 3), heard
         job["tail"], job["last_word"] = round(tail, 2), round(last_len, 2)
         flag = "  ⚠️" if score_k > 0.25 else ""
-        print(f"  best {score_k:.2f}{flag} tail {tail:.2f}s last-word {last_len:.2f}s [{job['speaker']}] "
+        print(f"  best {score_k:.2f}{flag} {job['delivery'] or 'delivery ok'} [{job['speaker']}] "
               f"{job['text'][:36]} → {heard[:36]}", flush=True)
 
 
