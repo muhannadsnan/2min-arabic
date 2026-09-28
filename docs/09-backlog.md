@@ -43,6 +43,13 @@ What's next, in order. **🔔 = reminder for you**, 🤖 = Claude does it, 🤝 
 - [x] 🤖 Day 3 content: plan exchange added (6 new words); Day 4: "هَلْ تُرِيدُ قَهْوَةْ؟"; sukun pass on Days 4–5.
 - [ ] 🤖 Days 4–5: restructure to the current format (hello/goodbye clips, one image per scene) at production time.
 
+## Reminders for the owner
+- [ ] 🔔 **Next hello/bye (or any on-camera) recording:** use the **iPhone's built-in mic, Jabra disconnected**
+      (Bluetooth = 16 kHz call quality). Back camera ~50–80 cm, chest up, quiet room with soft furnishings;
+      upload the .mov via the cloud (no WhatsApp). Claude cleans it with `tools/clean_footage.py`.
+- [ ] 🔔 **Before long GPU jobs:** charger plugged in + power mode Balanced/Performance (on battery + power-saver the GPU runs at
+      ~1/3 speed and the battery drains in ~1 hour).
+
 ## Later
 - [ ] 🤖 Days 6–30 scripts.
 - [ ] 🤝 2 Minute Spanish rework (on hold — see that repo's README).
