@@ -22,6 +22,7 @@ and the ready-to-produce video scripts.
 | [docs/05-style-guide.md](docs/05-style-guide.md) | Script markup, Arabic conventions (MSA, tashkeel, transliteration), visual style, characters |
 | [docs/06-publishing.md](docs/06-publishing.md) | Titles, descriptions, thumbnails, schedule, Shorts, playlists |
 | [docs/07-channel-and-monetization.md](docs/07-channel-and-monetization.md) | Which account, one vs two channels, AdSense, YPP thresholds (incl. 2027 changes), staying monetizable |
+| [docs/11-monetization-policy.md](docs/11-monetization-policy.md) | YouTube's monetization policies (inauthentic / reused content…) and how this channel complies |
 | [docs/08-channel-setup.md](docs/08-channel-setup.md) | Creating the channel step by step: safety checks, name, photo/banner, description, settings, features |
 | [docs/10-production-flow.md](docs/10-production-flow.md) | **How every video is produced from Day 2 on** — who does what, voices, assembly, quality check |
 | [docs/09-backlog.md](docs/09-backlog.md) | What's next, in order — including reminders for you |
