@@ -26,6 +26,9 @@ Once a month, a "whole month in one video" (~1 hour) for bingeing and review.
 - **Title and description language:** English. **Category:** Education, **Type:** Concept overview.
   Problems / Academic system: leave empty (they're for school subjects).
 - **Shorts remixing:** allow video and audio remixing (free exposure).
+- **Automatic dubbing: OFF** (Studio → Settings → Channel → Advanced settings → uncheck "Allow automatic dubbing").
+  Since Feb 2026 YouTube auto-dubs every upload by default; a dub would also "translate" the Arabic being taught.
+  Check already-published videos under Languages and remove auto-dubbed tracks. Caption auto-translation is fine.
 - A "Video verification in review" pop-up means the Advanced-features verification is pending (~24 h). Click "Got it";
   nothing else to do.
 
