@@ -112,7 +112,7 @@ def render_badge(day: str, path: pathlib.Path):
     img = Image.new("RGBA", (W, 130), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     font = ImageFont.truetype(str(LATIN_BOLD), 46)
-    label = f"2 MINUTE ARABIC  ·  DAY {day}"
+    label = f"2 MINUTE ARABIC  ·  {day}"
     box = d.textbbox((0, 0), label, font=font)
     w = box[2] - box[0] + 80
     x = (W - w) // 2
@@ -143,7 +143,11 @@ def main():
     args = ap.parse_args()
 
     stem = args.script.stem
-    day = str(int(stem[:3]))
+    if stem[:3].isdigit():
+        badge_label = f"DAY {int(stem[:3])}"
+    else:   # part compilations: w01 = Part 1 (Days 1-5), w02 = Part 2 (Days 6-10) …
+        k = int(stem[1:3])
+        badge_label = f"PART {k} · DAYS {5 * k - 4}–{5 * k}"
     audio_dir, img_dir, out_dir = args.audio / stem, args.images / stem, args.out / stem
     tl = json.loads((audio_dir / "timeline.json").read_text(encoding="utf-8"))
     screens = on_screen_by_scene(args.script)
@@ -155,7 +159,7 @@ def main():
     seg_dir.mkdir()
 
     badge, turn = out_dir / "cards" / "badge.png", out_dir / "cards" / "your-turn.png"
-    render_badge(day, badge)
+    render_badge(badge_label, badge)
     render_your_turn(turn)
 
     # 1. one video segment per scene: image + slow zoom + badge + card
