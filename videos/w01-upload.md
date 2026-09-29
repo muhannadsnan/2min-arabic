@@ -68,6 +68,15 @@ learn arabic in 10 minutes, arabic course for beginners, arabic full lesson, ara
 After publishing: **Studio → Customization → Home tab → "Featured video for returning subscribers"** → this video.
 Also add it as the **Related video** on Days 1–5 Shorts later ("watch the full lesson"), which sends Short viewers to the long video.
 
+## Video elements (upload step 2)
+
+| Element | What to add |
+|---|---|
+| **Subtitles** | Upload file → With timing → `output/part-01-days-1-5/captions-upload.srt` (lets viewers auto-translate) |
+| **End screen** | Template "1 video, 1 subscribe": video = Best for viewer (or the 30-days playlist) + subscribe; last 20 s |
+| **Cards** | Playlist card at 0:12 → "30 Days to Your First Arabic Conversation", teaser "All daily lessons" |
+| **Quiz** | Q: How do you say "thank you" in Arabic? · ✅ شُكْرًا (shukran) · عَفْوًا ('afwan) · مِنْ فَضْلِكْ (min fadlik) · Explanation: shukran = thank you; 'afwan = you're welcome; min fadlik = please |
+
 ## Pinned comment
 
 ```
