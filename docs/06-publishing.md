@@ -78,6 +78,11 @@ No hashtags in the title; ~3 hashtags in the description.
 - Still ~0 after 48 h → delete and re-upload on another day with a new title.
 - Hook in the first 2 seconds. Later idea: a 15–20 s teaser Short per lesson that points to the full lesson.
 
+## Tag experiment: "viral shorts" (started 2026-09-29, check 2026-10-06)
+
+Days 3 and 5 got the extra tag "viral shorts"; Days 2 and 4 are the comparison (same tags otherwise).
+After 7 days compare in Studio: views, "viewed vs swiped away", impressions. Small numbers → treat as a hint only.
+
 ## Old tag list (superseded)
 
 `learn arabic, arabic for beginners, arabic lesson, speak arabic, arabic phrases, modern standard arabic,
