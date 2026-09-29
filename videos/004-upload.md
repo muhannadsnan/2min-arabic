@@ -45,8 +45,10 @@ al-maqhaa — the café — ⁧الْمَقْهَى⁩
 
 ## Tags
 
+(3 groups — video-specific · niche · broad, per Dan the Creator's formula)
+
 ```
-learn arabic, arabic story, arabic for beginners, arabic listening practice, easy arabic story, modern standard arabic, fusha, arabic vocabulary, 2 minute arabic
+easy arabic story, arabic listening practice, arabic story for beginners, coffee in arabic, learn arabic, arabic for beginners, arabic lesson, modern standard arabic, language learning, learn languages, shorts, study with me
 ```
 
 ## Settings

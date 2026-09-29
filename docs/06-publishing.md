@@ -66,7 +66,19 @@ Missed a day? No guilt — just do today's two minutes.
 #learnarabic #arabicforbeginners #2minutearabic
 ```
 
-## Tags / hashtags
+## Tags (3-group formula, from "If your shorts get under 1,000 views…" by Dan the Creator)
+
+3–4 **video-specific** tags (what this video is) + 3–4 **niche** tags (learn arabic, arabic for beginners, arabic lesson,
+modern standard arabic) + 3–4 **broad** tags (language learning, learn languages, shorts, study with me).
+No hashtags in the title; ~3 hashtags in the description.
+
+## A Short that gets no views (new channel)
+- New channels are throttled at first — **wait 48 h**. Use the channel's Google account normally (watch, like, comment).
+- After 48 h check Studio → Analytics → **Viewed vs. swiped away** (aim ≥ 70 %).
+- Still ~0 after 48 h → delete and re-upload on another day with a new title.
+- Hook in the first 2 seconds. Later idea: a 15–20 s teaser Short per lesson that points to the full lesson.
+
+## Old tag list (superseded)
 
 `learn arabic, arabic for beginners, arabic lesson, speak arabic, arabic phrases, modern standard arabic,
 fusha, arabic conversation, learn arabic fast, 2 minute arabic`

@@ -45,8 +45,10 @@ laa afham — I don't understand — ⁧لَا أَفْهَمْ⁩
 
 ## Tags
 
+(3 groups — video-specific · niche · broad, per Dan the Creator's formula)
+
 ```
-learn arabic, arabic for beginners, arabic lesson, learn arabic fast, arabic course, arabic phrases, arabic conversation, modern standard arabic, fusha, 2 minute arabic
+learn arabic in 10 minutes, arabic course for beginners, arabic full lesson, arabic phrases, learn arabic, arabic for beginners, arabic lesson, modern standard arabic, language learning, learn languages, shorts, study with me
 ```
 
 ## Settings

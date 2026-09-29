@@ -48,8 +48,10 @@ al-maktaba — the bookshop — ⁧الْمَكْتَبَةْ⁩
 
 ## Tags
 
+(3 groups — video-specific · niche · broad, per Dan the Creator's formula)
+
 ```
-learn arabic, arabic conversation, arabic for beginners, basic arabic conversation, arabic greetings, nice to meet you in arabic, modern standard arabic, fusha, speak arabic, 2 minute arabic
+arabic conversation for beginners, nice to meet you in arabic, how are you in arabic, arabic greetings, learn arabic, arabic for beginners, arabic lesson, modern standard arabic, language learning, learn languages, shorts, study with me
 ```
 
 ## Settings
