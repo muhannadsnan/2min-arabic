@@ -56,7 +56,7 @@ learn arabic, arabic story, arabic for beginners, arabic listening practice, eas
 |---|---|
 | Playlist | 30 Days to Your First Arabic Conversation |
 | Audience | No, it's not made for kids |
-| **AI use** | **Yes — Lina's line uses Sara's voice (voice conversion). Adds a label; no effect on monetization.** |
+| **AI use** | **No** — all voices are real people (you + Koki as Lina); the English narration is your own cloned voice |
 | Paid promotion | No |
 | Related video | Day 3 |
 | Category / Type | Education / Concept overview |
@@ -73,11 +73,10 @@ learn arabic, arabic story, arabic for beginners, arabic listening practice, eas
 Day 4 ✅ — How many sentences did you understand in the Arabic-only part? 1–9 👇
 ```
 
-## Quality check (Claude) — final, 2026-09-28
+## Quality check (Claude) — final, 2026-09-29
 
-- **Arabic = the owner's own recording** (iPhone), cleaned, presence EQ; Lina's line → Sara's voice (+2 st). 12/12 lines placed.
-- **English narration:** owner's clone, ≥ 4 takes per line; 1 line redone (a made-up word before it — the checker now also cuts leading extra words).
-- **New:** comprehension question ("Why was Sami sad?" → pause → "Because the café was closed!").
-- **Images:** 12 new scenes × 3 takes inspected (rejections: wrong mood, teal hoodie, open café door, closed eyes); the
-  Arabic-only replay reuses the story images. One assembly bug found and fixed (leftover image from old numbering).
-- **Finished video:** 2:06.6 · −14.2 LUFS · peaks −2.0 dB · transcribed EN + AR: right order, no overlaps.
+- **Arabic 100% human:** your recording for the teacher/Sami lines; **Koki** (your wife) for Lina (1 Lina line), used as
+  recorded (48 kHz iPhone mic, cleaned) — no voice conversion, no AI.
+- **English:** your cloned voice, approved delivery (energetic reference, delivery check).
+- **Finished video:** 2:10 · −14 LUFS · peaks −1.8/−1.9 dB · full soundtrack transcribed in English and Arabic:
+  right order, no overlaps; every Lina line heard exactly (e.g. بخير، شكرا. ما خطتك اليوم؟).

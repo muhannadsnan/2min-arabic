@@ -17,6 +17,14 @@ and upload it** (~10 minutes). Everything runs locally on the owner's PC, with f
 | 8. Approve + upload | 👤 Owner | YouTube Studio | scheduled video |
 | Weekly | 🤖 Claude | ffmpeg | 16:9 compilation of the week |
 
+## Lina's voice = Koki (the owner's wife), as recorded (2026-09-29)
+
+All female lines are recorded by **Koki** and used as recorded (no conversion): male→female conversion was rejected
+(robotic or mispronounced: VC, DSP, OpenVoice, hybrid). Her lines go into a separate sheet
+(`videos/_lina-koki.md` style) and are split with
+`split_recording.py <sheet> --as-recorded [--min-silence=0.5]` (she pauses ~0.5 s between lines); the resulting clips
+replace the `lina` entries in each day's `footage/recordings/<day>/map.json`. Videos with only real voices → AI use **No**.
+
 ## The Arabic voice = the owner's own recording (from Day 3, 2026-09-27)
 
 All Arabic is **recorded by the owner** — human, native, clear. Only the English narration is generated (his clone).

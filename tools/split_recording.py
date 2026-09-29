@@ -88,7 +88,7 @@ def pieces(wav, min_silence=1.0, threshold_db=-55):   # after DeepFilterNet, rea
 
 
 def main():
-    script = pathlib.Path(sys.argv[1])
+    script = pathlib.Path(sys.argv[1])   # add --as-recorded to keep a real woman's recording as is (no conversion)
     stem = script.stem
     root = HERE.parent
     rec_dir = root / "footage" / "recordings" / stem
@@ -103,7 +103,8 @@ def main():
     print(f"recording: {src.name}")
     wav = clean(src, work)
     y, sr = sf.read(wav)
-    segs = pieces(wav)
+    gap = float(next((a.split("=")[1] for a in sys.argv if a.startswith("--min-silence=")), 1.0))
+    segs = pieces(wav, min_silence=gap)
     print(f"{len(segs)} speech pieces found")
 
     from faster_whisper import WhisperModel
@@ -183,7 +184,7 @@ def main():
         pos = j + 1
 
     # Lina's lines → Sara's voice
-    female = [r for r in result if r["speaker"] == "lina" and r["file"]]
+    female = [r for r in result if r["speaker"] == "lina" and r["file"]] if "--as-recorded" not in sys.argv else []
     if female:
         import torchaudio as ta
         from chatterbox.vc import ChatterboxVC

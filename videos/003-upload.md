@@ -59,7 +59,7 @@ learn arabic, arabic conversation, arabic for beginners, basic arabic conversati
 |---|---|
 | Playlist | 30 Days to Your First Arabic Conversation |
 | Audience | No, it's not made for kids |
-| **AI use** | **Yes** — Lina is voiced by Sara's cloned voice (cloning someone else's voice). Adds a label; no effect on monetization. |
+| **AI use** | **No** — all voices are real people (you + Koki as Lina); the English narration is your own cloned voice |
 | Paid promotion | No |
 | Related video | Day 2 |
 | Category / Type | Education / Concept overview |
@@ -76,12 +76,10 @@ learn arabic, arabic conversation, arabic for beginners, basic arabic conversati
 Day 3 ✅ — Reply to me in Arabic like Sami would: السلام عليكم! كيف حالك؟ 👇
 ```
 
-## Quality check (Claude) — final, 2026-09-28
+## Quality check (Claude) — final, 2026-09-29
 
-- **Arabic = the owner's own recording** (iPhone Voice Memos): cleaned (DeepFilterNet, declip), presence EQ; Lina's
-  lines converted to Sara's voice, +2 semitones (owner's picks). All 14 recorded lines placed; retake of line 9 used.
-- **English narration:** owner's clone, every line ≥ 4 takes; "Fine, thanks. What's your plan today?" redone (8 takes).
-- **Images:** 16 unique scenes inspected (new: Sami studying, Lina with books); reasons in `images/003-first-conversation/picks.json`.
-- **Finished video:** 2:20.2 · −14.2 LUFS · peaks −1.9 dB · full soundtrack re-transcribed (EN + AR): right order, no
-  overlaps · subscribe animation (click + ding) during "Subscribe so you don't break your streak", goodbye clip last.
-- **AI label: Yes** (Lina = Sara's voice via voice conversion).
+- **Arabic 100% human:** your recording for the teacher/Sami lines; **Koki** (your wife) for Lina (7 Lina lines), used as
+  recorded (48 kHz iPhone mic, cleaned) — no voice conversion, no AI.
+- **English:** your cloned voice, approved delivery (energetic reference, delivery check).
+- **Finished video:** 2:24 · −14 LUFS · peaks −1.8/−1.9 dB · full soundtrack transcribed in English and Arabic:
+  right order, no overlaps; every Lina line heard exactly (e.g. بخير، شكرا. ما خطتك اليوم؟).
