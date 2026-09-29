@@ -5,7 +5,6 @@
 our own animated SUBSCRIBE + bell over the goodbye)
 **Thumbnail/cover:** `output/002-10-most-useful-phrases/thumbnail (vertical).jpg` — if the upload screen only allows picking
 a frame, pick **0:02** (Sami and Lina at the café).
-**Captions file:** not needed (captions are in the picture).
 
 ## Title
 
@@ -60,6 +59,12 @@ learn arabic, arabic phrases, arabic for beginners, basic arabic phrases, arabic
 | Visibility | **Schedule: the day after Day 1, 16:00 Oslo time** |
 | Related video | **Day 1** |
 | Type | Concept overview |
+
+## Subtitles (for auto-translation into any language)
+
+Studio → the video → **Subtitles** → **Add language: English** → **Upload file** → **With timing** →
+`output/002-10-most-useful-phrases/captions-upload.srt` → **Publish**.
+Viewers can then use CC → ⚙️ → Auto-translate (Spanish, French, …). Your audio is never changed.
 
 ## Pinned comment
 

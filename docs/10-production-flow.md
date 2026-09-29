@@ -146,6 +146,8 @@ before hand-over.** Nothing is skipped; a failed check is fixed and re-checked.
    - contact sheet + frames at the hello clip, a pause ("YOUR TURN"), and the goodbye/subscribe moment: captions
      readable, nothing covers faces or cards, every card correct.
 9. **Thumbnail** made and checked at phone size.
+9b. **Upload captions:** `python3 tools/upload_captions.py videos/NNN-….md` → `output/<video>/captions-upload.srt`
+    (exact English + every Arabic line with transliteration) — lets viewers auto-translate subtitles into any language.
 10. **Hand-over** with a short report: what was checked, what was redone and why, anything the owner should listen to.
 
 ## Build status

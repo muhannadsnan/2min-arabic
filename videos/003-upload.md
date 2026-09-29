@@ -2,7 +2,6 @@
 
 **File to upload:** `output/003-first-conversation/003-first-conversation.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/003-first-conversation/thumbnail (vertical).jpg`
-**Captions file:** not needed (burned in).
 
 ## Title
 
@@ -69,6 +68,12 @@ learn arabic, arabic conversation, arabic for beginners, basic arabic conversati
 | Shorts remixing | Allow video and audio remixing |
 | Automatic chapters / places / concepts | ✅ / ❌ / ❌ |
 | Visibility | Schedule: the day after Day 2, 16:00 Oslo time |
+
+## Subtitles (for auto-translation into any language)
+
+Studio → the video → **Subtitles** → **Add language: English** → **Upload file** → **With timing** →
+`output/003-first-conversation/captions-upload.srt` → **Publish**.
+Viewers can then use CC → ⚙️ → Auto-translate (Spanish, French, …). Your audio is never changed.
 
 ## Pinned comment
 

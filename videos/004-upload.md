@@ -2,7 +2,6 @@
 
 **File to upload:** `output/004-story-sami-and-the-coffee/004-story-sami-and-the-coffee.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/004-story-sami-and-the-coffee/thumbnail (vertical).jpg`
-**Captions file:** not needed (burned in).
 
 ## Title
 
@@ -66,6 +65,12 @@ learn arabic, arabic story, arabic for beginners, arabic listening practice, eas
 | Shorts remixing | Allow video and audio remixing |
 | Automatic chapters / places / concepts | ✅ / ❌ / ❌ |
 | Visibility | Schedule: the day after Day 3, 16:00 Oslo time |
+
+## Subtitles (for auto-translation into any language)
+
+Studio → the video → **Subtitles** → **Add language: English** → **Upload file** → **With timing** →
+`output/004-story-sami-and-the-coffee/captions-upload.srt` → **Publish**.
+Viewers can then use CC → ⚙️ → Auto-translate (Spanish, French, …). Your audio is never changed.
 
 ## Pinned comment
 
