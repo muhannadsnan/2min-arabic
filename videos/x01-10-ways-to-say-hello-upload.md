@@ -3,6 +3,9 @@
 **File to upload:** `output/x01-10-ways-to-say-hello/10-ways-to-say-hello-in-arabic-syrian-dialect.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/x01-10-ways-to-say-hello/10-ways-to-say-hello-in-arabic-syrian-dialect-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-09-30** — video id `JVFMwMJiCxo`, scheduled **3 Oct 17:00 Oslo**, in playlist Arabic Extras,
+> thumbnail + English subtitles set. Left for you: Related video = Day 1; pinned comment after it's live.
+
 ## Fast way (new: Claude fills everything)
 
 1. Studio → **Create → Upload** → `output/x01-10-ways-to-say-hello/10-ways-to-say-hello-in-arabic-syrian-dialect.mp4` → close the dialog when it's uploaded (it stays **private/draft**).
