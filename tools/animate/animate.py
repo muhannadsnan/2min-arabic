@@ -9,7 +9,8 @@ import argparse, json, os, random, subprocess, sys, threading, time, uuid, urlli
 
 NEG = ("色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，"
        "多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走, "
-       "photorealistic, 3d render, text, watermark, extra fingers, deformed hands, distorted face")
+       "text, watermark, extra fingers, deformed hands, distorted face")
+NEG_FLAT = "photorealistic, 3d render, "   # round 1 (flat vector); round 2 (3D look) uses --look 3d
 
 
 def http(server, path, data=None, headers=None):
@@ -33,7 +34,7 @@ def workflow(a, image_name, seed):
         "2": {"class_type": "CLIPLoaderGGUF", "inputs": {"clip_name": a.clip, "type": "wan"}},
         "3": {"class_type": "VAELoader", "inputs": {"vae_name": "wan2.2_vae.safetensors"}},
         "4": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["2", 0], "text": a.prompt}},
-        "5": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["2", 0], "text": NEG}},
+        "5": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["2", 0], "text": (NEG_FLAT if a.look == "flat" else "morphing face, face distortion, flickering, sudden zoom, ") + NEG}},
         "6": {"class_type": "LoadImage", "inputs": {"image": image_name}},
         "7": {"class_type": "Wan22ImageToVideoLatent", "inputs": {"vae": ["3", 0], "width": a.width, "height": a.height,
               "length": a.frames, "batch_size": 1, "start_image": ["6", 0]}},
@@ -83,6 +84,7 @@ def main():
     ap.add_argument("--steps", type=int, default=20); ap.add_argument("--cfg", type=float, default=5.0)
     ap.add_argument("--shift", type=float, default=8.0)
     ap.add_argument("--seed", type=int, default=None)
+    ap.add_argument("--look", choices=["flat", "3d"], default="flat", help="which negative prompt to use")
     a = ap.parse_args()
 
     seed = a.seed if a.seed is not None else random.randint(0, 2**31)
@@ -110,7 +112,7 @@ def main():
     open(a.output, "wb").write(http(a.server, f"/view?{q}"))
     s1 = meter.swap()
     res = {"output": a.output, "seed": seed, "width": a.width, "height": a.height, "frames": a.frames, "fps": a.fps,
-           "steps": a.steps, "unet": a.unet, "clip": a.clip, "seconds": round(dt, 1), "peak_vram_mb": meter.peak_vram,
+           "steps": a.steps, "look": a.look, "image": a.image, "unet": a.unet, "clip": a.clip, "seconds": round(dt, 1), "peak_vram_mb": meter.peak_vram,
            "min_ram_available_mb": meter.min_avail, "swap_in_pages": s1[0] - meter.swap0[0],
            "swap_out_pages": s1[1] - meter.swap0[1], "prompt": a.prompt}
     print(json.dumps(res))

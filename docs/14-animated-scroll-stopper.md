@@ -132,3 +132,133 @@ There is **no licence-clean lip-sync model that runs on this laptop today.**
   the still image in time with the voice. Then the Wan clip can do the wave, and the talking happens on the still
   after it (or on a v4-style clip where the head barely moves). Cost: ~1 hour to set up once, then seconds per video.
 - Check again in a few months for a small (≤5B) Apache-licensed speech-to-video model; this area moves fast.
+
+---
+
+# Round 2 — 3D look, three "entrances", a reusable opener library (2026-09-30)
+
+**Owner feedback on round 1:** only a "humble animation"; the v3 ending looked creepy (the face drifted); he expected
+something closer to 3D animation; v4 was the best but he was still unsure. He wants a small library of reusable,
+loopable openers, refreshed about once a month.
+
+**What changed:** the keyframe (the still the animation starts from) is now made in a **3D animated-movie look**, and
+it is built so that the animation *completes an action* (peeking → stepping out, cup → reveal, writing → looking up),
+instead of a character who is already waving. Same laptop, same Wan 2.2 TI2V-5B, and no new downloads.
+
+## R2.1 Keyframes (FLUX.2 klein 4B, Apache 2.0, already installed)
+
+`tools/images/generate.py --no-style --ref assets/characters/<sami|lina>.png` with the style *"3D animated movie
+style, soft cinematic lighting, expressive stylized characters, Pixar-like but original, rich depth, vertical 9:16, the
+scene fills the whole frame, no text…"*. 3 takes each, about 30 s per image. Prompts: `output/scroll-stopper-test/round2/keyframes.json`.
+
+| Entrance | Takes | Picked | Notes |
+|---|---|---|---|
+| A — Sami peeks from behind a Damascus stone wall | 3 + 3 retry | `A2_sami_peek_1.png` | The first prompt showed his whole face, so I made the half-hidden retry. Great 3D look; the character refs carry over well (curls, beard, hoodie). |
+| B — Sami lowers a coffee cup | 3 + 3 retry | `B2_sami_cup_0.png` | The first try had the cup too low, "steam from the beard" in 2 takes and fake sign lettering in 1. The retry covers mouth and beard as asked. |
+| C — Lina at a café table, writing | 3 | `C_lina_notebook_1.png` | Clean on the first try; hands and pen correct, no text. |
+
+The 3D keyframes look much richer than the flat-vector scenes. They are the part the owner will like most.
+
+## R2.2 Animation runs (576×1024, 20 steps, 2 seeds per entrance + 1 extra for B)
+
+| Clip | Frames | Time | Verdict |
+|---|---|---|---|
+| C seed 11 | 73 (3 s) | 10.9 min | Good: looks up, smiles, waves. In the last 0.5 s the mouth goes into an "ooh" shape as if talking. |
+| **C seed 12** | **49 (2 s)** | **6.0 min** | ✅ **Chosen.** Looks up at 0.75 s, warm closed-mouth smile, 5-finger wave, face steady to the last frame. |
+| A seed 11 | 73 | 10.3 min | Good step-out, but from ~2 s one eye half-closes (a lopsided "wink"), which is face drift. Rejected. |
+| **A seed 12** | **49** | **6.2 min** | ✅ **Chosen, the best clip of both rounds.** Hidden → steps out → big grin → big clear 5-finger wave. The face is stable, and there's one natural blink. |
+| **B seed 11** | **73** | **11.3 min** | ⚠️ **Chosen, but weakest.** The cup comes down toward the camera and the face is revealed with a surprised stare, then a big grin. The invented mouth area has a thin, painted-on moustache that looks a bit odd. |
+| B seed 12 | 49 | 7.3 min | ❌ Creepy: the beard grows into a black blob over the mouth, the eyes go huge, and the cup glows. Rejected. |
+| B seed 13 | 73 | 10.5 min | ❌ Asked for a "thick mustache" and got a giant cartoon handlebar moustache plus an unblinking stare. Rejected. |
+
+Graphics memory peaked at 5.8 of 6 GB every time. RAM stayed the tight spot: the 73-frame runs pushed 11–19 GB through
+swap, while the **49-frame runs mostly didn't** (0.7–1.8 GB, except B-12 at 13 GB) and took **~6 minutes instead of ~11**.
+
+**What we learned**
+- **49 frames (2 s) is the sweet spot.** Both 2-second clips of A and C finished the whole action *and* kept the face;
+  the 3-second versions drifted in their last second (the same problem as round 1's v3).
+- **Reveals are risky.** Anything the keyframe hides (Sami's mouth behind the cup) has to be *invented* by the model,
+  and that's where identity breaks. The peek works because half his face and his beard are already visible.
+- The 3D look animates **better** than flat vector: the motion is bigger and more "movie-like", and it's no longer a
+  humble animation.
+
+## R2.3 The opener library
+
+`output/scroll-stopper-test/library/openers/` (made by `round2/make_opener.sh CLIP NAME [start] [end]`):
+
+| Opener | Plays once (1080×1920, 30 fps) | Loop (ping-pong) | Contact sheet |
+|---|---|---|---|
+| `sami-peek-door` | 2.0 s | 4.0 s | `sami-peek-door_sheet.png` |
+| `lina-notebook-lookup` | 2.0 s | 4.0 s | `lina-notebook-lookup_sheet.png` |
+| `sami-coffee-reveal` (use with care) | 3.0 s | 6.0 s | `sami-coffee-reveal_sheet.png` |
+
+The **loop** plays the entrance forward and then backward (he steps out and waves, then steps back behind the wall),
+which joins seamlessly. It suits looping backgrounds (e.g. behind a title card). For a Short's opening, use the
+**play-once** version, then cut to (or freeze on) its last frame.
+Frame-blending up to 30 fps made a ghosted double hand during the wave, so the 30 fps versions repeat frames instead.
+
+**Would a viewer find it creepy?**
+- `sami-peek-door`: **no**. It reads as a playful Pixar-style hello, and it is the one I'd lead with.
+- `lina-notebook-lookup`: **no**. Calm and friendly, though her eyes look slightly past the camera rather than straight into it.
+- `sami-coffee-reveal`: **a little**. The stare plus the thin moustache sit close to the uncanny line. Fine as a
+  comedic "surprise" beat, but I wouldn't make it the channel's signature opener.
+
+**Consistency with the videos:** the openers are 3D while the lesson scenes are flat vector. Either accept the
+contrast (the opener becomes a recognisable "intro sting"), or switch the scene images to the 3D style too. Klein
+does it in the same ~15–30 s per image, but it is a channel-look decision for the owner.
+
+**Time per library clip:** ~6 min per 2-second clip, so 2 seeds + review ≈ **15 minutes of laptop time per opener**.
+A monthly refresh of 3–5 openers is about **1–1.5 hours of unattended laptop time**, plus 2–3 min of keyframes.
+
+**Extra disk (round 2):** about **100 MB** (keyframes 30 MB, clips 2.5 MB, library 19 MB, strips/scripts, plus copies
+in ComfyUI's `output/`). No new models.
+
+## R2.4 Research: can the bigger Wan 2.2 A14B image-to-video run here? (nothing downloaded)
+
+| Part | Licence | Size | Link |
+|---|---|---|---|
+| Wan 2.2 I2V-A14B (two 14B "experts": high-noise + low-noise) | Apache 2.0 | — | [model card](https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B) |
+| GGUF quantisations (uploader QuantStack) | Apache 2.0 | per expert: Q3_K_S 6.5 GB · Q3_K_M 7.2 GB · Q4_K_S 8.8 GB · Q4_K_M 9.7 GB | [QuantStack/Wan2.2-I2V-A14B-GGUF](https://huggingface.co/QuantStack/Wan2.2-I2V-A14B-GGUF) |
+| 4-step distill LoRAs, lightx2v "Wan2.2-Distill-Loras" (I2V, rank 64) | Apache 2.0 | 0.63 + 0.74 GB | [lightx2v/Wan2.2-Distill-Loras](https://huggingface.co/lightx2v/Wan2.2-Distill-Loras) |
+| or lightx2v "Wan2.2-Lightning" I2V 4-step LoRA (also repackaged by Comfy-Org) | Apache 2.0 | 2 × 1.23 GB | [lightx2v/Wan2.2-Lightning](https://huggingface.co/lightx2v/Wan2.2-Lightning) |
+| Wan 2.1 VAE (A14B uses it) | Apache 2.0 | 0.25 GB | Comfy-Org repackaged |
+| Text encoder | same UMT5 GGUF we already have | 0 | — |
+
+**All licence-clean.** A trial set (Q3_K_M ×2 + distill LoRAs + VAE) is about **16 GB of disk**.
+
+**Would it run?** Probably yes, slowly and on the edge:
+- Graphics memory isn't the blocker. ComfyUI streams the weights (as it already does for the 5B model at 5.8 GB).
+- **RAM is.** One Q3_K_M expert (7.2 GB) must sit in RAM while it works, and ComfyUI swaps to the other expert half-way.
+  With Chrome, VS Code and WhatsApp open, only ~1–4 GB is free, so the system would thrash the 16 GB swapfile (already
+  ~12 GB used during our runs). **Close the browser and other apps**, and it should fit at Q3_K_M. Q4 is too big for 16 GB RAM.
+- More swap (a second 16 GB swapfile on the NVMe) only prevents crashes; it doesn't make it faster. The real fix is
+  **32 GB RAM**.
+- **Rough time per clip** (my estimate from the 5B timings scaled by model size and video length, not measured): with the
+  4-step LoRA and no CFG, **~10–15 min for a 3-second 480×832 clip**, ~6–8 min for 2 seconds. It could easily double
+  if the laptop swaps heavily. The 4-step LoRA's own card warns about artifacts with very large motion.
+- **Is it worth it?** A14B is the model with clearly better motion, faces and hands, the step up toward "real 3D animation".
+  But it runs at 480p (upscaled), it is uncertain on 16 GB RAM, and it costs 16 GB of disk. I'd try it **after** the
+  cheaper fix below, or right away if the owner adds RAM.
+
+**Other licence-clean routes to better, drift-free motion on this PC**
+1. **Wan 2.2 Fun 5B InP (first + last frame).** Apache 2.0, and it is the same 5B size we already run (GGUF Q5_K_M
+   3.8 GB, QuantStack, Apache 2.0). We give it a **start** keyframe *and* an **end** keyframe (both made with klein,
+   e.g. Sami hidden → Sami waving with *his* face), and it animates between them. The end frame pins the face, which
+   directly fixes the late drift and the invented-face problem of the coffee reveal. **Recommended next test**
+   (one 3.8 GB download, same ~6–10 min per clip).
+2. **A 4-step LoRA for our 5B model** is listed as "todo" by lightx2v but not released yet. When it lands, today's
+   ~6-minute clip would drop to ~1–2 minutes.
+3. **Real 3D (Blender, GPL; the renders are yours).** Truly drift-free and perfectly loopable, but it needs rigged 3D
+   models of Sami and Lina. That's days of modelling or a commissioned artist, so it is out of scope for now.
+   AI 3D-model generators are not clean for us: **Hunyuan3D 2**'s licence "does not apply in the European Union, United
+   Kingdom and South Korea", and **TRELLIS** needs a 16 GB GPU and pulls in non-commercial rasterizers (nvdiffrast,
+   Inria's gaussian rasterizer).
+
+## R2.5 Recommendation
+
+- **Use now:** `sami-peek-door` (lead opener) and `lina-notebook-lookup`. Keep `sami-coffee-reveal` only as a spare
+  comedic beat.
+- **Settings for new openers:** 3D klein keyframe that starts *mid-action*, 576×1024, **49 frames**, 20 steps,
+  2 seeds, "static camera", one simple action, and no hidden faces to reveal.
+- **Next test:** Wan 2.2 Fun 5B InP with first + last keyframes (3.8 GB), then A14B + 4-step LoRA if RAM is upgraded.
+- **Owner decision:** keep 3D openers with flat-vector lessons (an "intro sting") or move the whole channel to the 3D look?

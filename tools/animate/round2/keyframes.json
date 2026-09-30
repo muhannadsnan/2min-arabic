@@ -1,0 +1,23 @@
+{
+ "style": "3D animated movie style, soft cinematic lighting, expressive stylized characters, Pixar-like but original, rich depth, vertical 9:16, the scene fills the whole frame, no text, no letters, no signs, no watermark",
+ "A_sami_peek": {
+  "ref": "sami",
+  "p": "The young man from the reference image (olive skin, short curly black hair, short neat black beard, olive-green hoodie) playfully peeks out from behind the edge of an old Damascus stone doorway, the left half of his face visible with one bright eye, a raised eyebrow and a mischievous half smile, his hand resting on the carved stone edge. Old Damascus alley with an ornate wooden door and jasmine vines, warm golden afternoon light. Medium close-up, he looks straight at the camera."
+ },
+ "B_sami_cup": {
+  "ref": "sami",
+  "p": "The young man from the reference image (olive skin, short curly black hair, short neat black beard, olive-green hoodie) sits in a cozy Damascus cafe holding a big ceramic coffee cup with both hands right in front of the lower half of his face, so only his curly hair, eyebrows and wide happy eyes are visible above the cup, looking straight at the camera. Warm cafe interior with mosaic tiles, brass lamps and plants, softly blurred background, steam rising from the cup. Medium close-up."
+ },
+ "C_lina_notebook": {
+  "ref": "lina",
+  "p": "The young woman from the reference image (olive skin, shoulder-length wavy dark-brown hair, mustard-yellow cardigan over a white shirt) sits at a small wooden cafe table, head tilted down, writing in an open notebook with a pen, calm focused expression, a glass of tea beside the notebook. Cozy Damascus cafe with mosaic tiles, brass lamps and plants, softly blurred background, warm window light. Medium shot from the front, table in the lower part of the frame."
+ },
+ "A2_sami_peek": {
+  "ref": "sami",
+  "p": "Close-up. A thick old Damascus stone wall edge fills the left half of the frame. From behind the right edge of the wall, the young man from the reference image (olive skin, short curly black hair, short neat full black beard, olive-green hoodie) peeks out: only the right half of his face is visible, one curious eye looking at the camera, a hint of a smile, his fingers curled around the stone edge. The rest of his body is hidden behind the wall. Background: a sunny Damascus alley with an ornate wooden door and jasmine vines, warm golden afternoon light, soft depth of field."
+ },
+ "B2_sami_cup": {
+  "ref": "sami",
+  "p": "Close-up portrait. The young man from the reference image (olive skin, short curly black hair, short neat full black beard, olive-green hoodie) is drinking from a big ceramic coffee cup held with both hands; the cup is raised to his face and covers his mouth, nose and beard completely, only his curly hair, eyebrows and wide cheerful eyes are visible above the rim, looking straight at the camera. Cozy Damascus cafe with mosaic tiles, brass lamps and green plants, softly blurred background."
+ }
+}
