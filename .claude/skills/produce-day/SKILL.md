@@ -84,6 +84,7 @@ animation, goodbye; captions don't cover faces or cards.
 
 ## 8. Hand over
 
+Run the **pre-upload-gate** skill first (SHIP / FIX / KILL); only a SHIP gets handed over.
 Commit and push (recordings, audio, images, output are git-ignored; voice references are private and never
 committed). Then hand over per the upload-handover skill with a short, honest report: what was checked, what was
 redone and why, anything worth a listen. Update the memory notes if something new was learned.

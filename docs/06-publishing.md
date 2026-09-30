@@ -101,6 +101,8 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 
 - **30 Days to Your First Arabic Conversation** (Days 1–30, in order)
 - **Arabic Phrases**, **Arabic Conversations**, **Arabic Stories**, **Arabic Grammar Made Easy** (by format)
+- **Arabic Extras** — bonus Shorts outside the 30 days (`videos/x0N-…`, e.g. 10 ways to say hello/goodbye).
+  Standard Arabic and Syrian dialect, each phrase labelled; the course itself stays standard Arabic.
 
 ## Cross-promotion with 2 Minute Spanish
 

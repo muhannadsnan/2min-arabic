@@ -86,8 +86,8 @@ def render_card(text: str, path: pathlib.Path):
         if rest:
             lines.append((rest[0], LATIN_ITALIC, 60, TERRACOTTA, {}))
         for extra in rest[1:]:
-            if extra.startswith(("NEW", "Your answer")):   # learner highlights stand out
-                lines.append((extra, LATIN_BOLD, 50, TERRACOTTA if extra.startswith("NEW") else TEAL, {}))
+            if extra.startswith(("NEW", "Your answer", "Syrian dialect", "Standard Arabic")):   # highlights stand out
+                lines.append((extra, LATIN_BOLD, 50, TERRACOTTA if extra.startswith(("NEW", "Syrian")) else TEAL, {}))
             else:
                 lines.append((extra, LATIN, 50, CHARCOAL, {}))
     else:
