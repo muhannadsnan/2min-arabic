@@ -4,7 +4,7 @@
 |---|---|
 | **Format** | Arabic Extras (bonus Short, outside the 30 days) |
 | **Target length** | 0:50–0:60 |
-| **YouTube title** | `10 Ways to Say Hello in Arabic (5 Are Pure Syrian) | Arabic Extras` |
+| **YouTube title** | `10 Ways to Say Hello in Arabic (5 Pure Syrian) | Arabic Extras` |
 | **Thumbnail text** | "10 WAYS TO SAY HELLO" + big مَرْحَبًا |
 | **Recording** | `footage/recordings/_x0102-combined` (owner, one take, 20 lines) |
 

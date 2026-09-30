@@ -12,7 +12,7 @@ course. They reuse the whole daily pipeline (see the **produce-day** skill); onl
 
 - **Stem** `videos/x0N-<slug>.md` (x01, x02, …). `assemble.py` shows the badge **ARABIC EXTRAS** for any stem
   starting with `x`, instead of "DAY N".
-- **Length 30–60 s** (with 10 phrases that means ~3 s of context per phrase at most). Short hook in the first 2 s ("10 ways to say hello in Arabic — number 7 is what Syrians
+- **Length 30–75 s** (a 10-phrase list lands around 1:05–1:10; Shorts allow up to 3 min, but keep it tight). Short hook in the first 2 s ("10 ways to say hello in Arabic — number 7 is what Syrians
   really say"). Keep the hello clip only if it doesn't eat the hook; always end with the goodbye clip + subscribe
   line.
 - **Dialect is allowed here — and only here.** The course stays Modern Standard Arabic (fusha). In Extras every

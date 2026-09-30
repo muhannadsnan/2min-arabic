@@ -108,6 +108,20 @@ def render_card(text: str, path: pathlib.Path):
     return height
 
 
+def shifted(src: pathlib.Path, frac: float, out: pathlib.Path) -> pathlib.Path:
+    """Move a scene picture down by frac of its height; the gap on top is the top edge stretched and blurred."""
+    from PIL import ImageFilter
+    im = Image.open(src).convert("RGB")
+    w, h = im.size
+    dy = int(h * frac)
+    top = im.crop((0, 0, w, max(4, h // 40))).resize((w, dy)).filter(ImageFilter.GaussianBlur(18))
+    canvas = Image.new("RGB", (w, h))
+    canvas.paste(top, (0, 0))
+    canvas.paste(im.crop((0, 0, w, h - dy)), (0, dy))
+    canvas.save(out)
+    return out
+
+
 def render_badge(day: str, path: pathlib.Path):
     img = Image.new("RGBA", (W, 130), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
@@ -176,6 +190,10 @@ def main():
                 image = img_dir / f"s{same[i]:02d}.png"
         if not image.exists():
             sys.exit(f"missing image {image}")
+        shift = {p["s"]: p["shift"] for p in json.loads(prompts.read_text(encoding="utf-8"))
+                 if "shift" in p}.get(i) if prompts.exists() else None
+        if shift:   # "shift": 0.2 → picture moved down 20 % so faces sit below the card
+            image = shifted(image, shift, seg_dir / f"s{i:02d}-shifted.png")
         overlays = ["-i", str(badge)]
         chain = (f"[0:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
                  f"zoompan=z='1+0.05*on/{max(frames, 1)}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"

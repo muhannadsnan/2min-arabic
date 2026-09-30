@@ -25,7 +25,8 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **2026-10-06:** verdict on the "viral shorts" tag experiment (Days 3/5 vs 2/4) → docs/06.
 - **48 h after each Short:** if ~0 views, re-upload with a backup title (pre-upload-gate writes them).
 - **After Day 10:** Part 2 (Days 6–10).
-- **Next up (2026-09-30):** Extras x01 hello / x02 goodbye in production; then plan Days 6–10.
+- **Next up (2026-09-30):** Extras x01/x02 ready to upload (3 Oct / 5 Oct 12:00); plan + record Days 6–10;
+  test the **animated scroll-stopper** (docs/09) — first 3 s as a generated clip.
 
 ## Rules that are easy to forget
 

@@ -4,7 +4,7 @@
 |---|---|
 | **Format** | Arabic Extras (bonus Short, outside the 30 days) |
 | **Target length** | 0:50–0:60 |
-| **YouTube title** | `10 Ways to Say Goodbye in Arabic (5 Are Pure Syrian) | Arabic Extras` |
+| **YouTube title** | `10 Ways to Say Goodbye in Arabic (5 Pure Syrian) | Arabic Extras` |
 | **Thumbnail text** | "10 WAYS TO SAY GOODBYE" + big مَعَ السَّلَامَةْ |
 | **Recording** | `footage/recordings/_x0102-combined` (owner, one take, 20 lines) |
 
@@ -39,7 +39,7 @@ One. The everyday goodbye. It means go with safety.
 🔤 **On screen:** إِلَى اللِّقَاءْ · *ilaa l-liqaa'* · Until we meet again · Standard Arabic · 2/10
 
 ```say:narrator
-Two. Until we meet again. Polite, a little formal.
+Two. Until we meet again. It sounds polite and a little formal.
 ```
 ```say:teacher
 إِلَى اللِّقَاءْ
@@ -75,7 +75,7 @@ Four. Until tomorrow. Perfect after class or work.
 🔤 **On screen:** فِي أَمَانِ اللهْ · *fii amaani llaah* · In God's protection · Standard Arabic · 5/10
 
 ```say:narrator
-Five. In God's protection. Warm and caring.
+Five. In God's protection. It sounds warm and caring.
 ```
 ```say:teacher
 فِي أَمَانِ اللهْ
