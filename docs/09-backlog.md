@@ -10,9 +10,10 @@ What's next, in order. **🔔 = reminder for you**, 🤖 = Claude does it, 🤝 
 The first ~3 s of every Short decide "viewed vs swiped away". Instead of a still image, open with a **generated video
 clip**: a character saying the hook line, or an eye-catching action (a wave that turns into a double wave, a coffee
 cup spilling, Sami bursting through a door). Longer GPU time is accepted for this.
-- [ ] 🤖 **Test** on the RTX 3060 Laptop (6 GB): image-to-video from the hook image (candidates: Wan 2.2 TI2V-5B,
-      Apache 2.0; LTX-Video — check its licence for monetized use). Measure minutes per 3-s clip, quality, faces, hands.
-- [ ] 🤖 "A person **saying** the sentence" = lip-sync: check open models whose code **and** weights allow commercial
+- [x] 🤖 **Tested 2026-09-30** → Wan 2.2 TI2V-5B (Apache 2.0) works: 576×1024, 3 s, ~10 min/clip; see docs/14,
+      scripts in `tools/animate/`. (Was: **Test** on the RTX 3060 Laptop (6 GB): image-to-video from the hook image (candidates: Wan 2.2 TI2V-5B,
+      Apache 2.0; LTX-Video — check its licence for monetized use). Measure minutes per 3-s clip, quality, faces, hands.)
+- [ ] 🤖 (tested: no clean AI option fits 6 GB — next: Rhubarb Lip Sync, MIT, with drawn mouth shapes) "A person **saying** the sentence" = lip-sync: check open models whose code **and** weights allow commercial
       use (many face tools depend on InsightFace models, which are non-commercial → not allowed).
 - [ ] 🤖 If the test passes: `assemble.py` takes `sNN.mp4` (clip) in place of `sNN.png` for scene 1; add it to the
       produce-day / arabic-extras skills; compare viewed-vs-swiped before/after in channel-review.
