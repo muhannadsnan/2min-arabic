@@ -36,6 +36,10 @@ sheet in `videos/` (e.g. `005-upload.md`, `w01-upload.md`) is the template.
 
 - Run the **pre-upload-gate** skill first: hand over only on SHIP (fix every FIX first; never hand over a KILL).
 - Open the sheet for him: `code -r "videos/<stem>-upload.md"`, and give the link in the reply as well.
+- **API fill (connected 2026-09-30):** the owner only drops the file in Studio and saves it as a draft/private. Then
+  find its id (`$Y tools/youtube_api.py videos`) and run `fill <stem> <id> [--publish-at …]` — dry run first, then
+  `--apply`. It sets title, description, tags, category, language, not-for-kids, AI label, thumbnail, captions and
+  playlist. The sheet still lists the manual bits: Related video, pinned comment, Parts' end screen/cards/quiz.
 - Uploads go **in day order** — if an earlier day isn't up yet, say so.
 - Account-level reminders when relevant: automatic dubbing must stay OFF; a Short with ~0 views gets 48 h before
   any action (then check viewed-vs-swiped, re-upload with a new title if still ~0).

@@ -8,7 +8,17 @@ description: Weekly channel review for 2 Minute Arabic from numbers or screensho
 The channel is new and the numbers are tiny. The job is to find **hints**, act on the few that are clear, and never
 pretend small numbers prove something. There is no API. Everything comes from what the owner pastes or screenshots.
 
-## 1. Ask for exactly this (a 2-minute job for the owner)
+## 0. Pull the numbers yourself first (API, connected 2026-09-30)
+
+```
+Y=~/.local/share/2min-yt/venv/bin/python
+$Y tools/youtube_api.py videos · stats --days 7 · retention <id> · search-terms · comments
+```
+Analytics lag ~2 days. If it says the login expired (Testing mode: every 7 days), run `login` and send the owner
+the printed link (pick **2 Minute Arabic** in the brand-account list). Ask for screenshots **only** for what the API
+doesn't give: Shorts "viewed vs swiped away" and "shown in feed".
+
+## 1. Ask for exactly this (only what the API can't give)
 
 Send the list, phone-friendly:
 1. Studio → **Content → Shorts** (and **Videos** for Parts): the list with views and dates. One screenshot.
