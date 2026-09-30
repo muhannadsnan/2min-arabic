@@ -145,6 +145,8 @@ def main():
     stem = args.script.stem
     if stem[:3].isdigit():
         badge_label = f"DAY {int(stem[:3])}"
+    elif stem.startswith("x"):   # extras outside the day count: x01-…, x02-…
+        badge_label = "ARABIC EXTRAS"
     else:   # part compilations: w01 = Part 1 (Days 1-5), w02 = Part 2 (Days 6-10) …
         k = int(stem[1:3])
         badge_label = f"PART {k} · DAYS {5 * k - 4}–{5 * k}"
