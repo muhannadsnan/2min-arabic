@@ -1,13 +1,13 @@
 # Arabic Extras x01 — 10 ways to say hello · Upload sheet
 
-**File to upload:** `output/x01-10-ways-to-say-hello/x01-10-ways-to-say-hello.mp4` (vertical → **Short**)
-**Thumbnail:** Upload file → `output/x01-10-ways-to-say-hello/thumbnail (vertical).jpg`
+**File to upload:** `output/x01-10-ways-to-say-hello/10-ways-to-say-hello-in-arabic-syrian-dialect.mp4` (vertical → **Short**)
+**Thumbnail:** Upload file → `output/x01-10-ways-to-say-hello/10-ways-to-say-hello-in-arabic-syrian-dialect-thumbnail.jpg`
 
 ## Fast way (new: Claude fills everything)
 
-1. Studio → **Create → Upload** → `output/x01-10-ways-to-say-hello/x01-10-ways-to-say-hello.mp4` → close the dialog when it's uploaded (it stays **private/draft**).
+1. Studio → **Create → Upload** → `output/x01-10-ways-to-say-hello/10-ways-to-say-hello-in-arabic-syrian-dialect.mp4` → close the dialog when it's uploaded (it stays **private/draft**).
 2. Tell Claude "uploaded x01". Claude fills title, description, tags, settings, thumbnail, subtitles, playlist and
-   the schedule (Saturday 3 Oct, 12:00 Oslo time (between the daily lessons)).
+   the schedule (**the day after the latest video**, same time — Claude works it out).
 3. You only add, in Studio: **Related video = Day 1**, and after it's live, the **pinned comment** below.
 
 Everything below is the manual way, if you prefer to paste it yourself.
@@ -15,7 +15,7 @@ Everything below is the manual way, if you prefer to paste it yourself.
 ## Title
 
 ```
-10 Ways to Say Hello in Arabic (5 Pure Syrian) | Arabic Extras
+10 Ways to Say Hello in Arabic (5 in Syrian dialect) | Arabic Extras
 ```
 
 ## Description
@@ -68,7 +68,7 @@ how to say hello in arabic, arabic greetings, syrian arabic, levantine arabic, l
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |
 | Shorts remixing | Allow video and audio remixing |
-| Visibility | Schedule: Saturday 3 Oct, 12:00 Oslo time (between the daily lessons) |
+| Visibility | Schedule: the day after the latest scheduled video, same time (17:00 Oslo) |
 
 Automatic dubbing stays **OFF** (channel setting).
 

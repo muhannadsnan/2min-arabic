@@ -1,13 +1,13 @@
 # Arabic Extras x02 — 10 ways to say goodbye · Upload sheet
 
-**File to upload:** `output/x02-10-ways-to-say-goodbye/x02-10-ways-to-say-goodbye.mp4` (vertical → **Short**)
-**Thumbnail:** Upload file → `output/x02-10-ways-to-say-goodbye/thumbnail (vertical).jpg`
+**File to upload:** `output/x02-10-ways-to-say-goodbye/10-ways-to-say-goodbye-in-arabic-syrian-dialect.mp4` (vertical → **Short**)
+**Thumbnail:** Upload file → `output/x02-10-ways-to-say-goodbye/10-ways-to-say-goodbye-in-arabic-syrian-dialect-thumbnail.jpg`
 
 ## Fast way (new: Claude fills everything)
 
-1. Studio → **Create → Upload** → `output/x02-10-ways-to-say-goodbye/x02-10-ways-to-say-goodbye.mp4` → close the dialog when it's uploaded (it stays **private/draft**).
+1. Studio → **Create → Upload** → `output/x02-10-ways-to-say-goodbye/10-ways-to-say-goodbye-in-arabic-syrian-dialect.mp4` → close the dialog when it's uploaded (it stays **private/draft**).
 2. Tell Claude "uploaded x02". Claude fills title, description, tags, settings, thumbnail, subtitles, playlist and
-   the schedule (Monday 5 Oct, 12:00 Oslo time (between the daily lessons)).
+   the schedule (**the day after the latest video**, same time — Claude works it out).
 3. You only add, in Studio: **Related video = Day 1**, and after it's live, the **pinned comment** below.
 
 Everything below is the manual way, if you prefer to paste it yourself.
@@ -15,7 +15,7 @@ Everything below is the manual way, if you prefer to paste it yourself.
 ## Title
 
 ```
-10 Ways to Say Goodbye in Arabic (5 Pure Syrian) | Arabic Extras
+10 Ways to Say Goodbye in Arabic (5 in Syrian dialect) | Arabic Extras
 ```
 
 ## Description
@@ -68,7 +68,7 @@ how to say goodbye in arabic, arabic goodbye phrases, syrian arabic, levantine a
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |
 | Shorts remixing | Allow video and audio remixing |
-| Visibility | Schedule: Monday 5 Oct, 12:00 Oslo time (between the daily lessons) |
+| Visibility | Schedule: the day after the latest scheduled video, same time (17:00 Oslo) |
 
 Automatic dubbing stays **OFF** (channel setting).
 

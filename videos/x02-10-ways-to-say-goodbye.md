@@ -4,7 +4,7 @@
 |---|---|
 | **Format** | Arabic Extras (bonus Short, outside the 30 days) |
 | **Target length** | 0:50–0:60 |
-| **YouTube title** | `10 Ways to Say Goodbye in Arabic (5 Pure Syrian) | Arabic Extras` |
+| **YouTube title** | `10 Ways to Say Goodbye in Arabic (5 in Syrian dialect) | Arabic Extras` |
 | **Thumbnail text** | "10 WAYS TO SAY GOODBYE" + big مَعَ السَّلَامَةْ |
 | **Recording** | `footage/recordings/_x0102-combined` (owner, one take, 20 lines) |
 

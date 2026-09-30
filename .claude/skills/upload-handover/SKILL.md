@@ -9,6 +9,17 @@ The owner uploads manually from his phone or PC and has little time. The sheet m
 never have to open another file or think — just copy, paste, tick. Rules come from `docs/06-publishing.md`; the last
 sheet in `videos/` (e.g. `005-upload.md`, `w01-upload.md`) is the template.
 
+## File names (small SEO bonus, free)
+
+Hand over the video and thumbnail under **keyword file names** (hard links next to the originals, nothing re-encoded):
+`output/<video>/<search-phrase-slug>.mp4` and `<slug>-thumbnail.jpg`, e.g. `10-ways-to-say-hello-in-arabic-syrian-dialect.mp4`
+— the main search phrase of the title, lowercase, hyphens. The sheet points at these names.
+
+## Scheduling
+
+Default: **the day after the channel's latest (scheduled) video, same time of day** — `fill <stem> <id> --publish-at next`
+works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time when the owner asks for one.
+
 ## The sheet — `videos/<stem>-upload.md`
 
 1. **File to upload** (path) and whether it's a Short (vertical) or a normal video (16:9).
@@ -37,7 +48,7 @@ sheet in `videos/` (e.g. `005-upload.md`, `w01-upload.md`) is the template.
 - Run the **pre-upload-gate** skill first: hand over only on SHIP (fix every FIX first; never hand over a KILL).
 - Open the sheet for him: `code -r "videos/<stem>-upload.md"`, and give the link in the reply as well.
 - **API fill (connected 2026-09-30):** the owner only drops the file in Studio and saves it as a draft/private. Then
-  find its id (`$Y tools/youtube_api.py videos`) and run `fill <stem> <id> [--publish-at …]` — dry run first, then
+  find its id (`$Y tools/youtube_api.py videos`) and run `fill <stem> <id> --publish-at next` — dry run first, then
   `--apply`. It sets title, description, tags, category, language, not-for-kids, AI label, thumbnail, captions and
   playlist. The sheet still lists the manual bits: Related video, pinned comment, Parts' end screen/cards/quiz.
 - Uploads go **in day order** — if an earlier day isn't up yet, say so.

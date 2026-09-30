@@ -51,7 +51,8 @@ Keep the benefit part under ~50 characters so it isn't cut off on mobile.
 
 **Parts (long-form, found by search):** search phrase first, series last —
 `Learn Arabic in 10 Minutes – Full Beginner Lesson | Part 1 · Days 1–5` (decided 2026-09-30).
-**Extras:** `<hook> | Arabic Extras`.
+**Extras:** `<hook> | Arabic Extras`, e.g. `10 Ways to Say Hello in Arabic (5 in Syrian dialect) | Arabic Extras`
+(owner's wording, 2026-09-30 — may run a few characters over 50).
 
 ## Description template
 

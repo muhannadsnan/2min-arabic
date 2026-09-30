@@ -10,7 +10,9 @@ Run with the small venv that has the Google libraries:
     $Y tools/youtube_api.py retention <video-id>       # audience retention curve (for channel-review)
     $Y tools/youtube_api.py search-terms [--days 28]   # what people typed to find us (→ tags)
     $Y tools/youtube_api.py comments [--max 50]        # latest comments (for channel-review)
-    $Y tools/youtube_api.py fill <stem> <video-id> [--publish-at 2026-10-02T16:00:00+02:00] [--apply]
+    $Y tools/youtube_api.py fill <stem> <video-id> [--publish-at next|2026-10-02T16:00:00+02:00] [--apply]
+        # --publish-at next = the day after the channel's latest (scheduled) video, same time of day
+    $Y tools/youtube_api.py title <video-id> "New title" [--apply]
         # fills title, description, tags, category, language, not-for-kids, AI label, thumbnail, captions, playlist
         # from videos/<stem>-upload.md. Without --apply it only prints what it WOULD change.
 
@@ -40,7 +42,12 @@ def creds(channel):
         sys.exit(f"not logged in for '{channel}': run  login --channel {channel}")
     c = Credentials.from_authorized_user_file(str(tok), SCOPES)
     if not c.valid:
-        c.refresh(Request())
+        from google.auth.exceptions import RefreshError
+        try:
+            c.refresh(Request())
+        except RefreshError:   # Testing-mode apps: Google expires the login after 7 days
+            sys.exit(f"login for '{channel}' expired (weekly in Testing mode): run  login --channel {channel}  and "
+                     "send the owner the link — brand account '2 Minute Arabic'")
         tok.write_text(c.to_json())
     return c
 
@@ -65,23 +72,23 @@ def login(a):
     tok = CONF / f"token-{a.channel}.json"
     tok.write_text(c.to_json())
     tok.chmod(0o600)
-    me = yt(a.channel).channels().list(part="snippet,statistics", mine=True).execute()["items"][0]
+    me = yt(a.channel).channels().list(part="snippet,statistics", mine=True).execute(num_retries=3)["items"][0]
     print(f"logged in: {me['snippet']['title']} ({me['id']}) · {me['statistics'].get('subscriberCount')} subscribers")
 
 
 def my_videos(y):
-    ch = y.channels().list(part="contentDetails", mine=True).execute()["items"][0]
+    ch = y.channels().list(part="contentDetails", mine=True).execute(num_retries=3)["items"][0]
     uploads = ch["contentDetails"]["relatedPlaylists"]["uploads"]
     ids, token = [], None
     while True:
-        r = y.playlistItems().list(part="contentDetails", playlistId=uploads, maxResults=50, pageToken=token).execute()
+        r = y.playlistItems().list(part="contentDetails", playlistId=uploads, maxResults=50, pageToken=token).execute(num_retries=3)
         ids += [i["contentDetails"]["videoId"] for i in r["items"]]
         token = r.get("nextPageToken")
         if not token:
             break
     out = []
     for k in range(0, len(ids), 50):
-        out += y.videos().list(part="snippet,status,statistics,contentDetails", id=",".join(ids[k:k + 50])).execute()["items"]
+        out += y.videos().list(part="snippet,status,statistics,contentDetails", id=",".join(ids[k:k + 50])).execute(num_retries=3)["items"]
     return out
 
 
@@ -102,7 +109,7 @@ def stats(a):
     start, end = span(a.days)
     metrics = "views,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,subscribersGained,likes,comments,shares"
     r = yta(a.channel).reports().query(ids="channel==MINE", startDate=start, endDate=end, metrics=metrics,
-                                       dimensions="video", sort="-views", maxResults=50).execute()
+                                       dimensions="video", sort="-views", maxResults=50).execute(num_retries=3)
     titles = {v["id"]: v["snippet"]["title"] for v in my_videos(yt(a.channel))}
     cols = [h["name"] for h in r["columnHeaders"]]
     print(f"{start} → {end}\n" + " | ".join(["title"] + cols[1:]))
@@ -117,7 +124,7 @@ def retention(a):
     start, end = span(365)
     r = yta(a.channel).reports().query(ids="channel==MINE", startDate=start, endDate=end, filters=f"video=={a.video}",
                                        metrics="audienceWatchRatio,relativeRetentionPerformance",
-                                       dimensions="elapsedVideoTimeRatio").execute()
+                                       dimensions="elapsedVideoTimeRatio").execute(num_retries=3)
     for t, watch, rel in r.get("rows", []):
         print(f"{t:4.2f}  {watch:5.2f}  {'#' * int(watch * 40):40}  rel {rel:4.2f}")
 
@@ -126,20 +133,50 @@ def search_terms(a):
     start, end = span(a.days)
     r = yta(a.channel).reports().query(ids="channel==MINE", startDate=start, endDate=end, metrics="views",
                                        dimensions="insightTrafficSourceDetail", filters="insightTrafficSourceType==YT_SEARCH",
-                                       sort="-views", maxResults=25).execute()
+                                       sort="-views", maxResults=25).execute(num_retries=3)
     for term, views in r.get("rows", []):
         print(f"{views:5}  {term}")
 
 
 def comments(a):
     y = yt(a.channel)
-    cid = y.channels().list(part="id", mine=True).execute()["items"][0]["id"]
+    cid = y.channels().list(part="id", mine=True).execute(num_retries=3)["items"][0]["id"]
     r = y.commentThreads().list(part="snippet", allThreadsRelatedToChannelId=cid, maxResults=a.max,
-                                order="time").execute()
+                                order="time").execute(num_retries=3)
     for t in r["items"]:
         c = t["snippet"]["topLevelComment"]["snippet"]
         print(f"[{c['publishedAt'][:10]}] {t['snippet']['videoId']} · {c['authorDisplayName']}: {c['textOriginal']}"
               f"  ({t['snippet']['totalReplyCount']} replies)")
+
+
+def next_slot(y, exclude=None):
+    """The day after the channel's latest scheduled/published video, at the same time of day (UTC ISO)."""
+    times = []
+    for v in my_videos(y):
+        if v["id"] == exclude:
+            continue
+        t = v["status"].get("publishAt") or v["snippet"]["publishedAt"]
+        times.append(dt.datetime.fromisoformat(t.replace("Z", "+00:00")))
+    last = max(times)
+    slot = last + dt.timedelta(days=1)
+    now = dt.datetime.now(dt.timezone.utc)
+    while slot < now + dt.timedelta(hours=1):
+        slot += dt.timedelta(days=1)
+    return slot.strftime("%Y-%m-%dT%H:%M:%SZ"), last
+
+
+def title(a):
+    y = yt(a.channel)
+    v = y.videos().list(part="snippet", id=a.video).execute(num_retries=3)["items"][0]
+    snip = {k: v["snippet"][k] for k in ("title", "description", "tags", "categoryId", "defaultLanguage",
+                                         "defaultAudioLanguage") if k in v["snippet"]}
+    print(f"{v['snippet']['title']}\n→ {a.title}")
+    if a.apply:
+        snip["title"] = a.title
+        y.videos().update(part="snippet", body={"id": a.video, "snippet": snip}).execute(num_retries=3)
+        print("✅ title changed")
+    else:
+        print("dry run — add --apply")
 
 
 # ---------- fill: upload sheet → video ----------
@@ -175,7 +212,7 @@ def fill(a):
     srt = next(iter(re.findall(r"`(output/[^`]+captions-upload\.srt)`", sheet)), None)
 
     y = yt(a.channel)
-    v = y.videos().list(part="snippet,status", id=a.video).execute()["items"]
+    v = y.videos().list(part="snippet,status", id=a.video).execute(num_retries=3)["items"]
     if not v:
         sys.exit(f"video {a.video} not found on this channel")
     v = v[0]
@@ -185,6 +222,9 @@ def fill(a):
     status = {k: v["status"][k] for k in ("privacyStatus", "embeddable", "license", "publicStatsViewable")
               if k in v["status"]}
     status.update(selfDeclaredMadeForKids=False, containsSyntheticMedia=ai, embeddable=True)
+    if a.publish_at == "next":   # the day after the latest video, same time of day
+        a.publish_at, last = next_slot(y, exclude=a.video)
+        print(f"  latest video goes out {last:%Y-%m-%d %H:%M} UTC → this one {a.publish_at}")
     if a.publish_at:
         status.update(privacyStatus="private", publishAt=a.publish_at)
 
@@ -197,31 +237,31 @@ def fill(a):
         print("dry run — add --apply to write it")
         return
     from googleapiclient.http import MediaFileUpload
-    y.videos().update(part="snippet,status", body={"id": a.video, "snippet": snip, "status": status}).execute()
+    y.videos().update(part="snippet,status", body={"id": a.video, "snippet": snip, "status": status}).execute(num_retries=3)
     print("  ✅ details + settings")
     if thumb and thumb.exists():
-        y.thumbnails().set(videoId=a.video, media_body=MediaFileUpload(str(thumb))).execute()
+        y.thumbnails().set(videoId=a.video, media_body=MediaFileUpload(str(thumb))).execute(num_retries=3)
         print("  ✅ thumbnail")
     if srt and (ROOT / srt).exists():
-        existing = y.captions().list(part="snippet", videoId=a.video).execute()["items"]
+        existing = y.captions().list(part="snippet", videoId=a.video).execute(num_retries=3)["items"]
         if not any(c["snippet"]["language"] == "en" and c["snippet"]["trackKind"] == "standard" for c in existing):
             y.captions().insert(part="snippet", body={"snippet": {"videoId": a.video, "language": "en",
                                                                   "name": "English", "isDraft": False}},
-                                media_body=MediaFileUpload(str(ROOT / srt), mimetype="application/octet-stream")).execute()
+                                media_body=MediaFileUpload(str(ROOT / srt), mimetype="application/octet-stream")).execute(num_retries=3)
             print("  ✅ English captions")
         else:
             print("  = English captions already there")
     if playlist:
         name = re.sub(r"\s*\(.*?\)\s*$", "", playlist).strip()
-        pls = y.playlists().list(part="snippet", mine=True, maxResults=50).execute()["items"]
+        pls = y.playlists().list(part="snippet", mine=True, maxResults=50).execute(num_retries=3)["items"]
         pl = next((p for p in pls if p["snippet"]["title"].lower() == name.lower()), None)
         if pl is None:
             print(f"  ⚠️ playlist '{name}' not found — create it in Studio once, then re-run")
         else:
-            inside = y.playlistItems().list(part="contentDetails", playlistId=pl["id"], maxResults=50).execute()["items"]
+            inside = y.playlistItems().list(part="contentDetails", playlistId=pl["id"], maxResults=50).execute(num_retries=3)["items"]
             if a.video not in {i["contentDetails"]["videoId"] for i in inside}:
                 y.playlistItems().insert(part="snippet", body={"snippet": {
-                    "playlistId": pl["id"], "resourceId": {"kind": "youtube#video", "videoId": a.video}}}).execute()
+                    "playlistId": pl["id"], "resourceId": {"kind": "youtube#video", "videoId": a.video}}}).execute(num_retries=3)
                 print(f"  ✅ added to playlist '{name}'")
             else:
                 print(f"  = already in playlist '{name}'")
@@ -238,8 +278,9 @@ def main():
     p = sub.add_parser("retention"); p.add_argument("video"); p.set_defaults(fn=retention)
     p = sub.add_parser("search-terms"); p.add_argument("--days", type=int, default=28); p.set_defaults(fn=search_terms)
     p = sub.add_parser("comments"); p.add_argument("--max", type=int, default=50); p.set_defaults(fn=comments)
+    p = sub.add_parser("title"); p.add_argument("video"); p.add_argument("title"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=title)
     p = sub.add_parser("fill"); p.add_argument("stem"); p.add_argument("video")
-    p.add_argument("--publish-at"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=fill)
+    p.add_argument("--publish-at", help="ISO time, or 'next' = the day after the latest video"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=fill)
     a = ap.parse_args()
     a.fn(a)
 
