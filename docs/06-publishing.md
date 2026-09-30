@@ -49,6 +49,10 @@ Examples:
 
 Keep the benefit part under ~50 characters so it isn't cut off on mobile.
 
+**Parts (long-form, found by search):** search phrase first, series last —
+`Learn Arabic in 10 Minutes – Full Beginner Lesson | Part 1 · Days 1–5` (decided 2026-09-30).
+**Extras:** `<hook> | Arabic Extras`.
+
 ## Description template
 
 ```

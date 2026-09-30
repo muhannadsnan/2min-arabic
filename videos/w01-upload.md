@@ -6,7 +6,7 @@
 ## Title
 
 ```
-Learn Arabic in 10 Minutes: Days 1–5 Full Beginner Lesson | 2 Minute Arabic
+Learn Arabic in 10 Minutes – Full Beginner Lesson | Part 1 · Days 1–5
 ```
 
 ## Description
