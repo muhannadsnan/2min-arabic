@@ -39,8 +39,8 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
 7. **Subtitles:** Studio → Subtitles → Add language English → Upload file → With timing →
    `output/<video>/captions-upload.srt` → Publish.
 8. **Video elements** for long videos (Parts): end screen, card, quiz — concrete values, not advice.
-9. **Pinned comment** in a code box, with a tiny task in Arabic. Note: comments can't be pinned while a video is
-   private/scheduled — pin it after it goes live.
+9. **Pinned comment** in a code box, with a tiny task in Arabic. The hourly cron job (`tools/comment_job.sh`) posts it
+   as the channel once the video is live (it matches the sheet by title) and notifies the owner to tap ⋮ → Pin.
 10. **Quality check (Claude)** — short and truthful: measured numbers, what was redone, what to listen to.
 
 ## Hand-over

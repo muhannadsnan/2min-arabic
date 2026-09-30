@@ -13,6 +13,7 @@ Run with the small venv that has the Google libraries:
     $Y tools/youtube_api.py fill <stem> <video-id> [--publish-at next|2026-10-02T16:00:00+02:00] [--apply]
         # --publish-at next = the day after the channel's latest (scheduled) video, same time of day
     $Y tools/youtube_api.py title <video-id> "New title" [--apply]
+    $Y tools/youtube_api.py post-comments              # hourly job: posts the sheet's pinned comment once a video is live
         # fills title, description, tags, category, language, not-for-kids, AI label, thumbnail, captions, playlist
         # from videos/<stem>-upload.md. Without --apply it only prints what it WOULD change.
 
@@ -179,6 +180,41 @@ def title(a):
         print("dry run — add --apply")
 
 
+def norm(t):
+    return re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
+
+
+def post_comments(a):
+    """For videos that went public in the last few days: post the sheet's pinned-comment text as the channel (once).
+    Pinning itself has no API — the owner taps ⋮ → Pin."""
+    y = yt(a.channel)
+    me = y.channels().list(part="id", mine=True).execute(num_retries=3)["items"][0]["id"]
+    sheets = {}
+    for f in (ROOT / "videos").glob("*-upload.md"):
+        sh = f.read_text(encoding="utf-8")
+        t, c = box(sh, "Title"), box(sh, "Pinned comment")
+        if t and c:
+            sheets[norm(t)] = (f.name, c.strip())
+    now = dt.datetime.now(dt.timezone.utc)
+    for v in my_videos(y):
+        if v["status"]["privacyStatus"] != "public":
+            continue
+        age = now - dt.datetime.fromisoformat(v["snippet"]["publishedAt"].replace("Z", "+00:00"))
+        if age > dt.timedelta(days=a.days):
+            continue
+        hit = sheets.get(norm(v["snippet"]["title"]))
+        if not hit:
+            print(f"–  no sheet with this title: {v['snippet']['title']}")
+            continue
+        threads = y.commentThreads().list(part="snippet", videoId=v["id"], maxResults=100).execute(num_retries=3)["items"]
+        if any(t["snippet"]["topLevelComment"]["snippet"].get("authorChannelId", {}).get("value") == me for t in threads):
+            print(f"=  already commented: {v['snippet']['title']}")
+            continue
+        y.commentThreads().insert(part="snippet", body={"snippet": {"videoId": v["id"], "topLevelComment": {
+            "snippet": {"textOriginal": hit[1]}}}}).execute(num_retries=3)
+        print(f"✅ comment posted on {v['snippet']['title']} → owner: Studio/YouTube app → ⋮ → Pin")
+
+
 # ---------- fill: upload sheet → video ----------
 
 def box(sheet, heading):
@@ -278,6 +314,7 @@ def main():
     p = sub.add_parser("retention"); p.add_argument("video"); p.set_defaults(fn=retention)
     p = sub.add_parser("search-terms"); p.add_argument("--days", type=int, default=28); p.set_defaults(fn=search_terms)
     p = sub.add_parser("comments"); p.add_argument("--max", type=int, default=50); p.set_defaults(fn=comments)
+    p = sub.add_parser("post-comments"); p.add_argument("--days", type=int, default=3); p.set_defaults(fn=post_comments)
     p = sub.add_parser("title"); p.add_argument("video"); p.add_argument("title"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=title)
     p = sub.add_parser("fill"); p.add_argument("stem"); p.add_argument("video")
     p.add_argument("--publish-at", help="ISO time, or 'next' = the day after the latest video"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=fill)

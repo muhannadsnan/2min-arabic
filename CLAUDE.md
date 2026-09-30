@@ -23,8 +23,9 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 
 - **Weekly (Sunday):** channel-review — ask for the screenshots.
 - **~2026-10-07, then weekly:** YouTube login expires (Testing mode) → run `login`, send the owner the link.
-- **3 Oct / 4 Oct (after 17:00):** x01 / x02 go live → post the pinned-comment text as the channel
-  (`commentThreads.insert`), remind the owner to pin it (⋮ → Pin); 48 h check on 5 / 6 Oct.
+- **Hourly (cron, automatic):** `tools/comment_job.sh` posts each sheet's pinned comment once its video is live and
+  pops a desktop notification; the owner taps ⋮ → Pin (no API for pinning). Log: `~/.local/share/2min-yt/comments.log`.
+- **48 h after each Short:** x01 → 5 Oct, x02 → 6 Oct.
 - **2026-10-06:** verdict on the "viral shorts" tag experiment (Days 3/5 vs 2/4) → docs/06.
 - **48 h after each Short:** if ~0 views, re-upload with a backup title (pre-upload-gate writes them).
 - **After Day 10:** Part 2 (Days 6–10).
