@@ -199,17 +199,33 @@ def main():
             image = shifted(image, o["shift"], seg_dir / f"s{i:02d}-shifted.png")
         overlays = ["-i", str(badge)]
         fit = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS}"
-        tail = LIBRARY / f"{o['clip']}-tail.mp4" if "clip" in o else None
-        if clip is not None and o.get("clip_mode") != "loop" and tail.exists():
-            # entrance once, then its eased tail pendulum repeated (the character keeps moving — no frozen frame)
+        if clip is not None and o.get("clip_mode", "once") == "once":
+            # owner's rule (2026-10-01): the opener plays once, its final pose holds 1 s, then the scene's own picture
+            # takes over with the usual slow zoom — no long freeze, no extra waving
             joined = seg_dir / f"s{i:02d}-clip.mp4"
-            reps = max(1, int(frames / FPS / 1.9) + 1)
-            run(["ffmpeg", "-v", "error", "-y", "-i", str(clip), "-stream_loop", str(reps), "-i", str(tail),
-                 "-filter_complex", "[0:v][1:v]concat=n=2:v=1[v]", "-map", "[v]", "-c:v", "libx264", "-crf", "16",
-                 "-pix_fmt", "yuv420p", str(joined)])
+            hold = float(o.get("hold", 1.0))
+            n_clip = round((float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of",
+                                                  "csv=p=0", str(clip)], capture_output=True, text=True).stdout) + hold) * FPS)
+            rest = frames - n_clip
+            if image.exists() and rest > FPS // 2:
+                run(["ffmpeg", "-v", "error", "-y", "-i", str(clip), "-loop", "1", "-i", str(image), "-filter_complex",
+                     f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS},"
+                     f"tpad=stop_mode=clone:stop_duration={hold}[a];"
+                     f"[1:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
+                     f"zoompan=z='1+0.05*on/{rest}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={rest}:s={W}x{H}:fps={FPS},"
+                     f"setsar=1[b];[a][b]concat=n=2:v=1[v]", "-map", "[v]", "-frames:v", str(frames), "-c:v", "libx264",
+                     "-crf", "16", "-pix_fmt", "yuv420p", str(joined)])
+                clip = joined
+        elif clip is not None and o.get("clip_mode") == "tail" and (LIBRARY / f"{o['clip']}-tail.mp4").exists():
+            # optional: entrance, then its eased tail pendulum repeated
+            joined = seg_dir / f"s{i:02d}-clip.mp4"
+            reps = max(1, int(frames / FPS / 1.6) + 1)
+            run(["ffmpeg", "-v", "error", "-y", "-i", str(clip), "-stream_loop", str(reps), "-i",
+                 str(LIBRARY / f"{o['clip']}-tail.mp4"), "-filter_complex", "[0:v][1:v]concat=n=2:v=1[v]", "-map", "[v]",
+                 "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", str(joined)])
             clip = joined
         if clip is not None:
-            # library clip (3D opener / loop): "once" plays it (then its tail, else holds the last frame); "loop" repeats it
+            # library clip: "once" (default) = opener + 1-s hold (+ the scene picture); "loop" repeats it
             src = (["-stream_loop", "-1"] if o.get("clip_mode") == "loop" else []) + ["-i", str(clip)]
             chain = f"[0:v]{fit},tpad=stop_mode=clone:stop_duration=600[bg];[bg][1:v]overlay=0:40[b1]"
         elif o.get("motion") in ("still", "fade"):

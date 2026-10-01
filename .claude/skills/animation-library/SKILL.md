@@ -33,6 +33,16 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
 | `backgrounds/` | 3D stills (and later short animated ones) | behind talk units, still scenes |
 | `work/` | keyframes, raw clips, takes | not used directly |
 
+**Owner's rules (2026-10-01):**
+- **Every new video (Day, Extra, Part) gets its OWN new opener**, themed to its lesson (Day 6 yes/no → Sami nods and
+  shakes his head; a story day → the story's first moment) — no repeated openers, so videos and Part compilations
+  look different. ~20 min laptop time per opener (keyframe + 2 seeds + review), accepted.
+- **The owner approves every new opener before it is used** (send the clip + its sheet, open it with `xdg-open`).
+- **Opener shape:** one simple action (e.g. a wave), the arm goes back down, the final pose holds **1 s**, then the
+  scene's own picture continues (slow zoom). No repeated waving, no long freezes.
+- **New backgrounds per video** (cheap: ~1 min each) — the talk units and stills sit on fresh scenes every time.
+- Library units (talk loops, backgrounds) are reused with rotation; openers are archived after use.
+
 `index.json` lists every unit: character, action, lengths, source, `used_in` (filled automatically by
 `assemble.py`). **Rotation:** for a new video pick the unit of the right character with the fewest / oldest
 `used_in`; never the same opener on two videos in a row. Target 6–10 openers, extend over time.
@@ -43,7 +53,8 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
    (3 takes, seeds 900+k). Start **mid-action** so the motion completes it (half-hidden behind a wall, looking down at a
    notebook). Green-screen units: "… on a perfectly flat solid chroma-key green background (pure #00B140), evenly lit,
    no shadow, no floor, no props". Check at full size: face, hands (5 fingers), no text/signs.
-2. **Animate** — `python3 tools/animate/animate.py key.png raw.mp4 --look 3d --width 576 --height 1024 --frames 49 --fps 24 --steps 20 --seed N --prompt "<gentle motion>"`
+2. **Animate** — `python3 tools/animate/animate.py key.png raw.mp4 --look 3d --width 576 --height 1024 --frames 61 --fps 24 --steps 20 --seed N --prompt "<gentle motion>"`
+   (61 frames ≈ 20 real frames per second once stretched to 3 s — smoother than 49; 73 frames drift).
    Two seeds per unit, pick the clean one. **49 frames (2 s) is the sweet spot**: 73 frames drift in the last second
    (creepy faces). Gentle words only ("smiles, waves, looks up"); never "leans into the camera", "zooms", fast moves.
    Avoid revealing a hidden mouth/face (the model invents it: painted moustaches).
@@ -66,8 +77,8 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
 
 ## Using units in a video (assemble.py, via images/<video>/prompts.json)
 
-- `{"s": 1, "clip": "openers/sami-peek-door"}` — plays the entrance once, then its tail pendulum for the rest of the
-  scene (the wave keeps waving).
+- `{"s": 1, "clip": "openers/<name>"}` — the opener once, its final pose held 1 s (`"hold"`), then the scene's
+  own picture `sNN.png` with the slow zoom. `"clip_mode": "tail"` keeps the end moving instead (rarely wanted).
 - `{"s": 4, "clip": "talk/…-on-cafe", "clip_mode": "loop"}` — repeats a loop for the whole scene.
 - `{"s": 9, "motion": "still"}` / `"fade"` — a still picture with no zoom / with a slow fade in and out (photo-only
   scenes). Default is the slow zoom.

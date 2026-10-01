@@ -50,7 +50,7 @@ def main():
     ap.add_argument("--end", type=float, default=99.0)
     ap.add_argument("--speed", type=float, default=1.0, help="0.667 = a 2-s clip becomes 3 s (smooth slow motion)")
     ap.add_argument("--loop", type=float, default=0.0, help="loop length in s (default: 2 × the clean part)")
-    ap.add_argument("--tail", type=float, default=1.0,
+    ap.add_argument("--tail", type=float, default=0.0,
                     help="also make <name>-tail.mp4: a pendulum over the last N s (keeps an entrance alive after it ends)")
     ap.add_argument("--green", action="store_true")
     a = ap.parse_args()

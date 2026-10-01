@@ -17,7 +17,7 @@ Hand over the video and thumbnail under **keyword file names** (hard links next 
 
 ## Scheduling
 
-Default: **the day after the channel's latest (scheduled) video, same time of day** — `fill <stem> <id> --publish-at next`
+Default: **the day after the latest (scheduled) video of the same kind — Shorts and long videos (Parts) have separate daily chains — same time of day** — `fill <stem> <id> --publish-at next`
 works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time when the owner asks for one.
 
 ## The sheet — `videos/<stem>-upload.md`

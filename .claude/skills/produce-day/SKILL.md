@@ -69,9 +69,9 @@ the first entry of prompts.json; batch.py then uses the 3D style and `assets/cha
 x01/x02 stay flat. Per-scene options: `"clip"` (a library unit), `"motion": "still" | "fade"` (photo-only scenes),
 `"shift"` (move the picture down so the card never hides a face).
 
-**Scroll-stopper (scene 1):** pick an opener from `library/index.json` with the **animation-library** skill (right
-character, least used, not the one the previous video used) → `{"s": 1, "clip": "openers/<name>"}`. If the library
-has nothing fitting, make a new unit (that skill) — ask the owner to close all apps for the GPU session.
+**Scroll-stopper (scene 1):** make a **new opener for this video**, themed to its lesson (animation-library skill),
+**get the owner's approval**, then `{"s": 1, "clip": "openers/<name>"}`. Also make this video's own 3D backgrounds.
+Ask the owner to close all apps for the GPU session.
 
 ## 6. Assemble + final check
 

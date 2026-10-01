@@ -323,3 +323,13 @@ turns and the big arm swings gave the loop away; wanted 3-s parts / 6-s loops; t
 - **x01/x02 v2** rebuilt with openers (Sami peek-door / Lina notebook-lookup) — v1 files kept as `*-v1-uploaded.mp4`.
 - Loudness check of every finished video: all −14.0…−14.2 LUFS, peak −1.8/−1.9 dB (= YouTube's level). A quieter
   playback on the PC is the player/system volume, not the files.
+
+## Round 5 — per-video openers (2026-10-01, approved by the owner)
+
+Owner: the peek/coffee openers looked odd; an opener should be **one simple action, arm back down, 1-s hold**, then the
+scene continues; **every new video gets its own new opener** (and new backgrounds) so videos and Part compilations
+look different; the owner approves each opener before use. Made at **61 frames** (≈20 real frames/s once stretched to
+3 s — the owner's "16 → 25 fps" wish, balanced against time and clean faces; 73 frames drift): `openers/sami-wave-alley`
+(x01) and `openers/lina-wave-cafe` (x02), seed 52 each (seed 51: Sami's arm twisted across his body / Lina's arm
+never came down). ~8.3 min per clip. Approved. `assemble.py` default for a scene-1 clip: opener → 1-s hold → the
+scene's own picture with the slow zoom. Talk units have no tail (the owner found the short tail too loopy).

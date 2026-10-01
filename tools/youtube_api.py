@@ -150,11 +150,23 @@ def comments(a):
               f"  ({t['snippet']['totalReplyCount']} replies)")
 
 
+def seconds(iso):
+    """ISO 8601 duration (PT1M4S) → seconds."""
+    m = re.fullmatch(r"P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", iso or "P")
+    d, h, mi, se = (int(x or 0) for x in m.groups()) if m else (0, 0, 0, 0)
+    return d * 86400 + h * 3600 + mi * 60 + se
+
+
 def next_slot(y, exclude=None):
-    """The day after the channel's latest scheduled/published video, at the same time of day (UTC ISO)."""
+    """The day after the latest scheduled/published video OF THE SAME KIND, at the same time of day (UTC ISO).
+    Shorts (≤ 3 min) and long videos (Parts) keep separate daily chains: a Part on 2 Oct must not push the next
+    Short to 3 Oct and leave a gap in the Shorts tab (owner, 2026-10-01)."""
+    vids = my_videos(y)
+    me = next((v for v in vids if v["id"] == exclude), None)
+    short = seconds(me["contentDetails"].get("duration")) <= 180 if me else True
     times = []
-    for v in my_videos(y):
-        if v["id"] == exclude:
+    for v in vids:
+        if v["id"] == exclude or (seconds(v["contentDetails"].get("duration")) <= 180) != short:
             continue
         t = v["status"].get("publishAt") or v["snippet"]["publishedAt"]
         times.append(dt.datetime.fromisoformat(t.replace("Z", "+00:00")))
