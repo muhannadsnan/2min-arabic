@@ -305,3 +305,21 @@ Times this round: 3D still ~30–60 s · 2-s clip 6–7 min (RAM-bound; ~2 GB fr
 **Library now:** openers 3 (sami-peek-door ★, lina-notebook-lookup, sami-coffee-reveal — comedic only) · talk 2
 (sami, lina) · backgrounds 4. Next refresh (2026-11-01): 3–5 more openers with new entrances (turn-around, walk-in,
 balcony wave, Lina-specific), a waiter unit, an animated background or two.
+
+## Round 4 — smooth loops, calm talkers (2026-10-01, owner feedback)
+
+Feedback: x01 v2's frozen wave after the entrance felt a second too long; ping-pong loops felt odd at the frozen
+turns and the big arm swings gave the loop away; wanted 3-s parts / 6-s loops; the 3D waiter looked like Sami.
+- **No freezes anywhere.** `make_loop.py --speed 0.667` stretches the 2-s Wan clip to **3 s** with ffmpeg
+  motion-compensated in-between frames (minterpolate, built in — no new model); the **loop is a 6-s pendulum** with
+  cosine easing (slows gently into each turn, no held frame); **`-tail.mp4`** = an eased mini-pendulum over the last
+  0.8 s, played by `assemble.py` after an entrance (x01: Sami keeps waving instead of freezing). Fast motion (a quick
+  arm raise) shows 2–3 smeared in-between frames — reads as motion blur at speed; RIFE (MIT) is the cleaner option if
+  it ever bothers.
+- **Calm talk units** (`talk/sami-talk-calm`, `talk/lina-talk-calm`): new keyframes with relaxed hands together at the
+  waist + prompt "hands stay relaxed and almost still… small natural head movements". Seeds 41 (Sami) / 42 (Lina)
+  kept; both faces steady. The busy `*-talk-1` units stay for lively moments only.
+- **Waiter 3D** redrawn without a reference: late fifties, grey hair, glasses, moustache, waistcoat, red apron.
+- **x01/x02 v2** rebuilt with openers (Sami peek-door / Lina notebook-lookup) — v1 files kept as `*-v1-uploaded.mp4`.
+- Loudness check of every finished video: all −14.0…−14.2 LUFS, peak −1.8/−1.9 dB (= YouTube's level). A quieter
+  playback on the PC is the player/system volume, not the files.

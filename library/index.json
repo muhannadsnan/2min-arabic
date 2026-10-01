@@ -96,6 +96,19 @@
   "used_in": []
  },
  {
+  "name": "talk/lina-talk-calm",
+  "kind": "talk",
+  "character": "lina",
+  "action": "talks calmly to the viewer, hands still, friendly expressions (no lip-sync)",
+  "green": true,
+  "once_s": 2.97,
+  "loop_s": 5.93,
+  "speed": 0.667,
+  "source": "library/work/clips/talk-lina-calm_s42.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
   "name": "talk/sami-talk-1",
   "kind": "talk",
   "character": "sami",
@@ -105,6 +118,19 @@
   "loop_s": 5.93,
   "speed": 0.667,
   "source": "library/work/clips/talk-sami_s11.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "talk/sami-talk-calm",
+  "kind": "talk",
+  "character": "sami",
+  "action": "talks calmly to the viewer, hands relaxed, small open gesture (no lip-sync)",
+  "green": true,
+  "once_s": 2.97,
+  "loop_s": 5.93,
+  "speed": 0.667,
+  "source": "library/work/clips/talk-sami-calm_s41.mp4",
   "created": "2026-10-01",
   "used_in": []
  }
