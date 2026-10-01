@@ -50,6 +50,21 @@
   "speed": 0.847,
   "source": "library/work/clips/op-d6-sami-nod_s62.mp4",
   "created": "2026-10-01",
+  "used_in": [],
+  "approved": false,
+  "note": "rejected by owner: off-theme wave (repeats x01)"
+ },
+ {
+  "name": "openers/d06-sami-yes-fists",
+  "kind": "openers",
+  "character": "sami",
+  "action": "Day 6: excited 'yes!' with both fists up at the café table, hands back down",
+  "green": false,
+  "once_s": 2.93,
+  "loop_s": 5.87,
+  "speed": 0.847,
+  "source": "library/work/clips/op-d6c-sami-yes_s82.mp4",
+  "created": "2026-10-01",
   "used_in": []
  },
  {
@@ -63,7 +78,8 @@
   "speed": 0.847,
   "source": "library/work/clips/op-d7-lina-thumb_s61.mp4",
   "created": "2026-10-01",
-  "used_in": []
+  "used_in": [],
+  "approved": "2026-10-01"
  },
  {
   "name": "openers/d08-sami-globe",
@@ -76,7 +92,8 @@
   "speed": 0.847,
   "source": "library/work/clips/op-d8-sami-globe_s62.mp4",
   "created": "2026-10-01",
-  "used_in": []
+  "used_in": [],
+  "approved": "2026-10-01"
  },
  {
   "name": "openers/d09-lina-book-classroom",
@@ -89,7 +106,8 @@
   "speed": 0.847,
   "source": "library/work/clips/op-d9-lina-book_s62.mp4",
   "created": "2026-10-01",
-  "used_in": []
+  "used_in": [],
+  "approved": "2026-10-01"
  },
  {
   "name": "openers/d10-waiter-tray",
@@ -102,7 +120,8 @@
   "speed": 0.847,
   "source": "library/work/clips/op-d10-waiter-tray_s61.mp4",
   "created": "2026-10-01",
-  "used_in": []
+  "used_in": [],
+  "approved": "2026-10-01"
  },
  {
   "name": "openers/lina-notebook-lookup",
@@ -132,18 +151,19 @@
   "created": "2026-10-01",
   "used_in": [
    "x02-10-ways-to-say-goodbye"
-  ]
+  ],
+  "approved": "2026-10-01"
  },
  {
   "name": "openers/p2-sami-lina-wave",
   "kind": "openers",
   "character": "sami+lina",
-  "action": "Part 2: Sami and Lina wave together at the café door",
+  "action": "Part 2: Sami waves, Lina smiles beside him (closer shot, redo)",
   "green": false,
   "once_s": 2.93,
   "loop_s": 5.87,
   "speed": 0.847,
-  "source": "library/work/clips/op-p2-both-wave_s62.mp4",
+  "source": "library/work/clips/op-p2b-both-wave_s72.mp4",
   "created": "2026-10-01",
   "used_in": []
  },
@@ -188,7 +208,8 @@
   "created": "2026-10-01",
   "used_in": [
    "x01-10-ways-to-say-hello"
-  ]
+  ],
+  "approved": "2026-10-01"
  },
  {
   "name": "talk/lina-talk-1",

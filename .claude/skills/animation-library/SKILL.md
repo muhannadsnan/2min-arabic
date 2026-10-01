@@ -38,6 +38,10 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
   shakes his head; a story day → the story's first moment) — no repeated openers, so videos and Part compilations
   look different. ~20 min laptop time per opener (keyframe + 2 seeds + review), accepted.
 - **The owner approves every new opener before it is used** (send the clip + its sheet, open it with `xdg-open`).
+- **Waving (hello or goodbye):** a couple of waves, then the arm goes down — that's it (owner, 2026-10-01).
+- **Model limits seen so far:** with two people, Wan 2.2 5B usually animates only ONE of them (Part 2: Sami waved,
+  Lina only smiled) — prefer one-person openers, or prompt the second person's action first and check; a head
+  **nod** is too small to see (5–15 px) — use arm actions (wave, thumbs-up, fist pump) instead.
 - **Opener shape:** one simple action (e.g. a wave), the arm goes back down, the final pose holds **1 s**, then the
   scene's own picture continues (slow zoom). No repeated waving, no long freezes.
 - **New backgrounds per video** (cheap: ~1 min each) — the talk units and stills sit on fresh scenes every time.
