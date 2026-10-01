@@ -123,6 +123,15 @@ def shifted(src: pathlib.Path, frac: float, out: pathlib.Path) -> pathlib.Path:
     return out
 
 
+def title_slug(script: pathlib.Path) -> str:
+    """The script header's YouTube title, before ' | ', as a file name: '10-ways-to-say-hello-in-arabic-…'."""
+    m = re.search(r"\*\*YouTube title\*\*\s*\|\s*`(.+?)`\s*\|", script.read_text(encoding="utf-8"))
+    if not m:
+        return ""
+    benefit = m.group(1).replace("\\|", "|").split(" | ")[0]
+    return re.sub(r"[^a-z0-9]+", "-", benefit.lower()).strip("-")
+
+
 def render_badge(day: str, path: pathlib.Path):
     img = Image.new("RGBA", (W, 130), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
@@ -284,7 +293,7 @@ def main():
                          capture_output=True, text=True).stderr
     measured = float(re.search(r"I:\s+(-?[\d.]+) LUFS", out[out.rfind("Summary:"):]).group(1))
     gain = -17.0 - measured
-    final = out_dir / f"{stem}.mp4"
+    final = out_dir / f"{title_slug(args.script) or stem}.mp4"   # owner (2026-10-01): one final file, named after its title
     inputs = ["-i", str(video_only), "-i", str(turn), "-i", str(voice)]
     vchain = f"[0:v][1:v]overlay=0:1100:enable='{enable}'[v0]"
     achain = f"[2:a]volume={gain:.2f}dB,aformat=channel_layouts=mono[vo]"
@@ -344,6 +353,9 @@ def main():
         sheet.paste(Image.open(png), ((k % cols) * 270, (k // cols) * 480))
     sheet.save(out_dir / "contact.png")
     video_only.unlink()
+    old_name = out_dir / f"{stem}.mp4"
+    if final != old_name and old_name.exists():   # no second copy under the working name
+        old_name.unlink()
     print(f"done: {final}")
 
 

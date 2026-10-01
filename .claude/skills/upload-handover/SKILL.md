@@ -9,11 +9,11 @@ The owner uploads manually from his phone or PC and has little time. The sheet m
 never have to open another file or think — just copy, paste, tick. Rules come from `docs/06-publishing.md`; the last
 sheet in `videos/` (e.g. `005-upload.md`, `w01-upload.md`) is the template.
 
-## File names (small SEO bonus, free)
+## File name (one final file, named after the title)
 
-Hand over the video and thumbnail under **keyword file names** (hard links next to the originals, nothing re-encoded):
-`output/<video>/<search-phrase-slug>.mp4` and `<slug>-thumbnail.jpg`, e.g. `10-ways-to-say-hello-in-arabic-syrian-dialect.mp4`
-— the main search phrase of the title, lowercase, hyphens. The sheet points at these names.
+`assemble.py` writes the finished video **once**, named after the title's benefit part (from the script header's
+"YouTube title" row): `output/<video>/10-ways-to-say-hello-in-arabic-5-in-syrian-dialect.mp4` — a small search bonus
+and no duplicate copies (owner, 2026-10-01). The sheet points at that file. `final_check.py` takes that path.
 
 ## Scheduling
 

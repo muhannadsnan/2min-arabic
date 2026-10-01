@@ -26,14 +26,14 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **~2026-10-07, then weekly:** YouTube login expires (Testing mode) → run `login`, send the owner the link.
 - **Hourly (cron, automatic):** `tools/comment_job.sh` posts each sheet's pinned comment once its video is live and
   pops a desktop notification; the owner taps ⋮ → Pin (no API for pinning). Log: `~/.local/share/2min-yt/comments.log`.
-- **48 h after each Short:** x01 → 5 Oct, x02 → 6 Oct.
+- **48 h after each Short:** x01 (2 Oct) → 4 Oct, x02 (3 Oct) → 5 Oct.
 - **2026-10-06:** verdict on the "viral shorts" tag experiment (Days 3/5 vs 2/4) → docs/06.
 - **48 h after each Short:** if ~0 views, re-upload with a backup title (pre-upload-gate writes them).
 - **After Day 10:** Part 2 (Days 6–10).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
-- **Next up (2026-09-30):** Extras x01/x02 ready to upload (3 Oct / 5 Oct 12:00); plan + record Days 6–10;
-  test the **animated scroll-stopper** (docs/09) — first 3 s as a generated clip.
+- **Next up (2026-10-01):** plan + record Days 6–10 — first full 3D week, a new approved opener per video.
+  Shorts are scheduled through 3 Oct; Day 6 should go out 4 Oct.
 
 ## Rules that are easy to forget
 

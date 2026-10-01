@@ -3,7 +3,7 @@
 **File to upload:** `output/x02-10-ways-to-say-goodbye/10-ways-to-say-goodbye-in-arabic-syrian-dialect.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/x02-10-ways-to-say-goodbye/10-ways-to-say-goodbye-in-arabic-syrian-dialect-thumbnail.jpg`
 
-> ✅ **Uploaded + filled by Claude 2026-09-30** — video id `L9vR45l1DnA`, scheduled **4 Oct 17:00 Oslo**, in playlist Arabic Extras,
+> ✅ **v2 (3D opener) uploaded 2026-10-01, filled by Claude** — video id `ncy-zZxkMzI`, scheduled **3 Oct 17:00 Oslo**, in playlist Arabic Extras,
 > thumbnail + English subtitles set. Left for you: Related video = Day 1; pinned comment after it's live.
 
 ## Fast way (new: Claude fills everything)

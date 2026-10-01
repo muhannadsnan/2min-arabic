@@ -61,7 +61,7 @@ def main():
     wav.unlink()
     # frames at key moments
     times = [float(x) for x in a.frames.split(",") if x]
-    tl_file = ROOT / "audio" / v.stem / "timeline.json"
+    tl_file = ROOT / "audio" / v.parent.name / "timeline.json"   # folder = script stem
     if not times and tl_file.exists():
         tl = json.loads(tl_file.read_text(encoding="utf-8"))
         vids = tl.get("videos", [])
