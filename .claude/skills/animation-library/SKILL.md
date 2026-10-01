@@ -29,7 +29,7 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
 | Folder | Unit | Used for |
 |---|---|---|
 | `openers/` | `<name>.mp4` (2-s entrance, plays once) + `<name>-loop.mp4` (5.2 s) | scene 1 of every Short |
-| `talk/` | green-screen character talking (no lip-sync), loop | narrator moments, intros, Part videos — on any background |
+| `talk/` | green-screen character talking calmly (no lip-sync), 6-s loop — prefer the `*-calm` units | narrator moments, intros, Part videos — on any background |
 | `backgrounds/` | 3D stills (and later short animated ones) | behind talk units, still scenes |
 | `work/` | keyframes, raw clips, takes | not used directly |
 
@@ -49,9 +49,14 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
    Avoid revealing a hidden mouth/face (the model invents it: painted moustaches).
 3. **Check every frame** (6-frame sheet + close-ups of face and hands). Reject: face drift, eyes changing, extra
    fingers, melting hands, sudden zoom, colour blobs. Ask: "would a viewer find this odd?" — if yes, reject.
-4. **Build** — `python3 tools/animate/make_loop.py raw.mp4 openers/<name> --character sami --action "…" [--start --end] [--green]`
-   → once + loop (forward → 0.15 s pause → back to the start pose → start pose held 1 s; begins and ends on the same
-   frame, so the repeat is invisible) + sheet, registered in `index.json`.
+4. **Build** — `python3 tools/animate/make_loop.py raw.mp4 openers/<name> --character sami --action "…" --speed 0.667 [--tail 0.8] [--green]`
+   → `<name>.mp4` (the 2-s clip stretched to **3 s** with motion-compensated in-between frames — no extra GPU time),
+   `<name>-loop.mp4` (**6-s pendulum**: start → end → start, slowing gently into each turn — no frozen frames; first
+   and last frame identical, so it repeats seamlessly), `<name>-tail.mp4` (end pose ↔ a little back, eased: plays
+   after an entrance so the character keeps moving instead of freezing), sheet, `index.json` entry.
+   Owner's rules (2026-10-01): **no freezes**; **calm, neutral gestures** for anything that loops (big arm swings
+   reveal the loop); entrances may be lively. Fast motion (a quick arm raise) shows 2–3 frames of smear after the
+   in-betweening — reads as motion blur, but check it.
 5. **Green-screen units** — `python3 tools/animate/composite.py library/talk/<name>-loop.mp4 <background> out.mp4 --seconds N [--zoom]`
    (green-dominance key: only clearly bright-green pixels go transparent, so Sami's **olive** hoodie survives — a
    chroma-distance key made it see-through; green fringe pulled down). Look at hair edges and clothes; lower
@@ -61,7 +66,8 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
 
 ## Using units in a video (assemble.py, via images/<video>/prompts.json)
 
-- `{"s": 1, "clip": "openers/sami-peek-door"}` — plays once, then holds the last frame for the rest of the scene.
+- `{"s": 1, "clip": "openers/sami-peek-door"}` — plays the entrance once, then its tail pendulum for the rest of the
+  scene (the wave keeps waving).
 - `{"s": 4, "clip": "talk/…-on-cafe", "clip_mode": "loop"}` — repeats a loop for the whole scene.
 - `{"s": 9, "motion": "still"}` / `"fade"` — a still picture with no zoom / with a slow fade in and out (photo-only
   scenes). Default is the slow zoom.
@@ -72,3 +78,10 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
 
 Make 3–5 new openers (different entrances per character: peek, look-up, turn-around, walk-in, wave from a balcony …),
 1–2 talk units, a few backgrounds. ~15 min laptop time per unit (2 seeds + review). Update docs/14 with what worked.
+
+## Characters and variety
+
+3D references: `assets/characters/{sami,lina,waiter}-3d.png` (the 3D waiter is deliberately different from Sami:
+late fifties, grey hair, glasses, moustache, waistcoat, red apron). **Future:** give Sami and Lina several outfits and
+styles (seasonal clothes, formal/casual) as extra keyframe sets, so talk units and openers don't look identical across
+months — same face, different clothes.

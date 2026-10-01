@@ -199,8 +199,17 @@ def main():
             image = shifted(image, o["shift"], seg_dir / f"s{i:02d}-shifted.png")
         overlays = ["-i", str(badge)]
         fit = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS}"
+        tail = LIBRARY / f"{o['clip']}-tail.mp4" if "clip" in o else None
+        if clip is not None and o.get("clip_mode") != "loop" and tail.exists():
+            # entrance once, then its eased tail pendulum repeated (the character keeps moving — no frozen frame)
+            joined = seg_dir / f"s{i:02d}-clip.mp4"
+            reps = max(1, int(frames / FPS / 1.9) + 1)
+            run(["ffmpeg", "-v", "error", "-y", "-i", str(clip), "-stream_loop", str(reps), "-i", str(tail),
+                 "-filter_complex", "[0:v][1:v]concat=n=2:v=1[v]", "-map", "[v]", "-c:v", "libx264", "-crf", "16",
+                 "-pix_fmt", "yuv420p", str(joined)])
+            clip = joined
         if clip is not None:
-            # library clip (3D opener / loop): "once" plays it and holds the last frame; "loop" repeats it
+            # library clip (3D opener / loop): "once" plays it (then its tail, else holds the last frame); "loop" repeats it
             src = (["-stream_loop", "-1"] if o.get("clip_mode") == "loop" else []) + ["-i", str(clip)]
             chain = f"[0:v]{fit},tpad=stop_mode=clone:stop_duration=600[bg];[bg][1:v]overlay=0:40[b1]"
         elif o.get("motion") in ("still", "fade"):
