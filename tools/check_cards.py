@@ -21,8 +21,16 @@ def main():
     out = ROOT / "output" / script.stem / "cards-check"
     out.mkdir(parents=True, exist_ok=True)
     cards = []
+    import re
     for i, text in enumerate(A.on_screen_by_scene(script), 1):
         if text:
+            parts = [A.clean(x) for x in text.split(" · ")]
+            for j, part in enumerate(parts):   # Arabic only renders in the FIRST part, without → … _
+                ar = re.search(r"[\u0600-\u06ff]", part)
+                if ar and (j > 0 or re.search(r"[A-Za-z]", part)):
+                    print(f"⚠️ card {i}: Arabic outside the first part (renders as boxes): {part}")
+                if ar and re.search(r"[→…_]", part):
+                    print(f"⚠️ card {i}: → … or _ inside Arabic (missing glyph / wrong direction): {part}")
             p = out / f"c{i:02d}.png"
             A.render_card(text, p)
             cards.append(Image.open(p))

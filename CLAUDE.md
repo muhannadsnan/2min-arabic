@@ -32,8 +32,8 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **After Day 10:** Part 2 (Days 6–10).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
-- **Next up (2026-10-01):** plan + record Days 6–10 — first full 3D week, a new approved opener per video.
-  Shorts are scheduled through 3 Oct; Day 6 should go out 4 Oct.
+- **Next up (2026-10-01):** Days 6–10 + Part 2 scripted; waiting for the owner's recording (37 lines,
+  `videos/_610-combined-recording-sheet.md`) and Koki's (4 lines). Then openers (owner approves) → produce. Day 6 → 4 Oct.
 
 ## Rules that are easy to forget
 
