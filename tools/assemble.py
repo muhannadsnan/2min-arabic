@@ -132,6 +132,17 @@ def title_slug(script: pathlib.Path) -> str:
     return re.sub(r"[^a-z0-9]+", "-", benefit.lower()).strip("-")
 
 
+def clip_fit(src: str, shift, out: str) -> str:
+    """Filter: a library clip scaled to the frame; with "shift" (e.g. 0.18) moved down so the face sits below the
+    card — the gap on top is the clip's own top edge, stretched and blurred (like shifted() for stills)."""
+    base = f"[{src}]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS}"
+    if not shift:
+        return f"{base}[{out}]"
+    dy = int(H * float(shift)) // 2 * 2
+    return (f"{base},split[{out}a][{out}b];[{out}a]crop={W}:{max(4, H // 40)}:0:0,scale={W}:{dy},boxblur=18[{out}t];"
+            f"[{out}b]crop={W}:{H - dy}:0:0[{out}m];[{out}t][{out}m]vstack[{out}]")
+
+
 def render_badge(day: str, path: pathlib.Path):
     img = Image.new("RGBA", (W, 130), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
@@ -218,7 +229,7 @@ def main():
             rest = frames - n_clip
             if image.exists() and rest > FPS // 2:
                 run(["ffmpeg", "-v", "error", "-y", "-i", str(clip), "-loop", "1", "-i", str(image), "-filter_complex",
-                     f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS},"
+                     f"{clip_fit('0:v', o.get('shift'), 'c0')};[c0]"
                      f"tpad=stop_mode=clone:stop_duration={hold}[a];"
                      f"[1:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
                      f"zoompan=z='1+0.05*on/{rest}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={rest}:s={W}x{H}:fps={FPS},"
