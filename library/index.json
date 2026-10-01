@@ -40,6 +40,71 @@
   "used_in": []
  },
  {
+  "name": "openers/d06-sami-cafe-wave",
+  "kind": "openers",
+  "character": "sami",
+  "action": "Day 6: waves happily at the café table, lowers his hand, smiles",
+  "green": false,
+  "once_s": 2.93,
+  "loop_s": 5.87,
+  "speed": 0.847,
+  "source": "library/work/clips/op-d6-sami-nod_s62.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "openers/d07-lina-rooftop-thumbsup",
+  "kind": "openers",
+  "character": "lina",
+  "action": "Day 7: thumbs-up on a Damascus rooftop, lowers her hand",
+  "green": false,
+  "once_s": 2.93,
+  "loop_s": 5.87,
+  "speed": 0.847,
+  "source": "library/work/clips/op-d7-lina-thumb_s61.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "openers/d08-sami-globe",
+  "kind": "openers",
+  "character": "sami",
+  "action": "Day 8: touches a desk globe, looks up and smiles",
+  "green": false,
+  "once_s": 2.93,
+  "loop_s": 5.87,
+  "speed": 0.847,
+  "source": "library/work/clips/op-d8-sami-globe_s62.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "openers/d09-lina-book-classroom",
+  "kind": "openers",
+  "character": "lina",
+  "action": "Day 9: closes her book in a classroom, smiles",
+  "green": false,
+  "once_s": 2.93,
+  "loop_s": 5.87,
+  "speed": 0.847,
+  "source": "library/work/clips/op-d9-lina-book_s62.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "openers/d10-waiter-tray",
+  "kind": "openers",
+  "character": "waiter",
+  "action": "Day 10: the waiter sets a tray of coffee cups on the table, smiles",
+  "green": false,
+  "once_s": 2.93,
+  "loop_s": 5.87,
+  "speed": 0.847,
+  "source": "library/work/clips/op-d10-waiter-tray_s61.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
   "name": "openers/lina-notebook-lookup",
   "kind": "openers",
   "character": "lina",
@@ -68,6 +133,19 @@
   "used_in": [
    "x02-10-ways-to-say-goodbye"
   ]
+ },
+ {
+  "name": "openers/p2-sami-lina-wave",
+  "kind": "openers",
+  "character": "sami+lina",
+  "action": "Part 2: Sami and Lina wave together at the café door",
+  "green": false,
+  "once_s": 2.93,
+  "loop_s": 5.87,
+  "speed": 0.847,
+  "source": "library/work/clips/op-p2-both-wave_s62.mp4",
+  "created": "2026-10-01",
+  "used_in": []
  },
  {
   "name": "openers/sami-coffee-reveal",
