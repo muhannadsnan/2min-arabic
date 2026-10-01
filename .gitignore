@@ -1,4 +1,4 @@
-audio/
+/audio/
 audio-drafts/
 .venv/
 __pycache__/
@@ -6,6 +6,8 @@ __pycache__/
 *.wav
 *.mp4
 *.mlt
-footage/
-images/
-output/
+/footage/
+/images/
+/output/
+library/*
+!library/index.json

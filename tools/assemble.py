@@ -28,6 +28,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 W, H, FPS = 1080, 1920, 30
 FONTS = pathlib.Path("/usr/share/fonts/truetype/noto")
+LIBRARY = pathlib.Path(__file__).resolve().parent.parent / "library"   # reusable 3D clips: openers/, loops/, units/
 AR_FONT = FONTS / "NotoNaskhArabic-Bold.ttf"
 LATIN_BOLD = FONTS / "NotoSans-Bold.ttf"
 LATIN = FONTS / "NotoSans-Regular.ttf"
@@ -180,24 +181,39 @@ def main():
 
     # 1. one video segment per scene: image + slow zoom + badge + card
     concat, contact = [], []
+    prompts = img_dir / "prompts.json"
+    opts = {p["s"]: p for p in json.loads(prompts.read_text(encoding="utf-8")) if "s" in p} if prompts.exists() else {}
     for i, scene in enumerate(tl["scenes"], 1):
         frames = round(scene["end"] * FPS) - round(scene["start"] * FPS)
+        o = opts.get(i, {})
         image = img_dir / f"s{i:02d}.png"
-        prompts = img_dir / "prompts.json"
-        if prompts.exists():   # "same" links win over any leftover file from an older numbering
-            same = {p["s"]: p["same"] for p in json.loads(prompts.read_text(encoding="utf-8")) if "same" in p}
-            if i in same:
-                image = img_dir / f"s{same[i]:02d}.png"
-        if not image.exists():
+        if "same" in o:   # "same" links win over any leftover file from an older numbering
+            image = img_dir / f"s{o['same']:02d}.png"
+            o = {**opts.get(o["same"], {}), **o}
+        clip = LIBRARY / f"{o['clip']}{'-loop' if o.get('clip_mode') == 'loop' else ''}.mp4" if "clip" in o else None
+        if clip is not None and not clip.exists():
+            sys.exit(f"missing library clip {clip}")
+        if clip is None and not image.exists():
             sys.exit(f"missing image {image}")
-        shift = {p["s"]: p["shift"] for p in json.loads(prompts.read_text(encoding="utf-8"))
-                 if "shift" in p}.get(i) if prompts.exists() else None
-        if shift:   # "shift": 0.2 → picture moved down 20 % so faces sit below the card
-            image = shifted(image, shift, seg_dir / f"s{i:02d}-shifted.png")
+        if o.get("shift") and clip is None:   # "shift": 0.2 → picture moved down 20 % so faces sit below the card
+            image = shifted(image, o["shift"], seg_dir / f"s{i:02d}-shifted.png")
         overlays = ["-i", str(badge)]
-        chain = (f"[0:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
-                 f"zoompan=z='1+0.05*on/{max(frames, 1)}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
-                 f":d={frames}:s={W}x{H}:fps={FPS},setsar=1[bg];[bg][1:v]overlay=0:40[b1]")
+        fit = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS}"
+        if clip is not None:
+            # library clip (3D opener / loop): "once" plays it and holds the last frame; "loop" repeats it
+            src = (["-stream_loop", "-1"] if o.get("clip_mode") == "loop" else []) + ["-i", str(clip)]
+            chain = f"[0:v]{fit},tpad=stop_mode=clone:stop_duration=600[bg];[bg][1:v]overlay=0:40[b1]"
+        elif o.get("motion") in ("still", "fade"):
+            # still picture (no zoom); "fade" adds a slow fade in and out (for photo-only scenes)
+            src = ["-loop", "1", "-i", str(image)]
+            fade = (f",fade=t=in:st=0:d=0.5,fade=t=out:st={max(frames / FPS - 0.5, 0):.2f}:d=0.5"
+                    if o.get("motion") == "fade" else "")
+            chain = f"[0:v]{fit}{fade}[bg];[bg][1:v]overlay=0:40[b1]"
+        else:
+            src = ["-loop", "1", "-i", str(image)]
+            chain = (f"[0:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
+                     f"zoompan=z='1+0.05*on/{max(frames, 1)}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+                     f":d={frames}:s={W}x{H}:fps={FPS},setsar=1[bg];[bg][1:v]overlay=0:40[b1]")
         last = "b1"
         if screens[i - 1]:
             card = out_dir / "cards" / f"s{i:02d}.png"
@@ -206,12 +222,20 @@ def main():
             chain += f";[b1][2:v]overlay=0:170[b2]"
             last = "b2"
         seg = seg_dir / f"s{i:02d}.mp4"
-        run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-i", str(image), *overlays, "-filter_complex", chain,
+        run(["ffmpeg", "-v", "error", "-y", *src, *overlays, "-filter_complex", chain,
              "-map", f"[{last}]", "-frames:v", str(frames), "-c:v", "libx264", "-crf", "18", "-preset", "medium",
              "-pix_fmt", "yuv420p", "-r", str(FPS), str(seg)])
         concat.append(f"file '{seg.resolve()}'")
         print(f"  scene {i:02d}  {frames / FPS:5.1f}s  {scene['name']}")
     (seg_dir / "list.txt").write_text("\n".join(concat) + "\n")
+    used = sorted({o["clip"] for o in opts.values() if "clip" in o})
+    idx_file = LIBRARY / "index.json"
+    if used and idx_file.exists() and args.out.resolve() == (LIBRARY.parent / "output").resolve():   # rotation log
+        idx = json.loads(idx_file.read_text(encoding="utf-8"))
+        for u in idx:
+            if u["name"] in used and stem not in u["used_in"]:
+                u["used_in"].append(stem)
+        idx_file.write_text(json.dumps(idx, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     video_only = out_dir / "video-only.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(seg_dir / "list.txt"), "-c", "copy",
          str(video_only)])

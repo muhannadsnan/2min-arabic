@@ -64,6 +64,15 @@ Start: `cd /media/msn/GamesLinux/AI/ComfyUI && venv/bin/python main.py --listen 
 simple hands, no text). Reuse shots with `"same"`. Inspect every candidate sheet at full size, copy the chosen take to `sNN.png`, reasons in `picks.json`.
 **Stop ComfyUI by its PID** when done (never `pkill -f` — it kills your own shell) and before the laptop sleeps.
 
+**3D look from Day 6 on** (owner, 2026-10-01 — costs the same as flat, animates far better): put `{"style": "3d"}` as
+the first entry of prompts.json; batch.py then uses the 3D style and `assets/characters/<name>-3d.png`. Days 1–5 and
+x01/x02 stay flat. Per-scene options: `"clip"` (a library unit), `"motion": "still" | "fade"` (photo-only scenes),
+`"shift"` (move the picture down so the card never hides a face).
+
+**Scroll-stopper (scene 1):** pick an opener from `library/index.json` with the **animation-library** skill (right
+character, least used, not the one the previous video used) → `{"s": 1, "clip": "openers/<name>"}`. If the library
+has nothing fitting, make a new unit (that skill) — ask the owner to close all apps for the GPU session.
+
 ## 6. Assemble + final check
 
 ```

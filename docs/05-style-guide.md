@@ -54,6 +54,20 @@ Words and names inside English narration are written in plain English ("Sami", "
 
 ## Visual style
 
+### From Day 6 on: 3D look (owner's decision, 2026-10-01)
+
+A 3D still costs the same as a flat one (~30 s per image) and animates far better, so the whole channel moves to an
+**original 3D animated-movie look** (Pixar-*like*, never copying any studio's characters). Days 1–5, Part 1 and the
+Extras x01/x02 stay flat. Style suffix (`--style 3d` / `{"style": "3d"}` in prompts.json):
+
+> `3D animated movie style, soft cinematic lighting, expressive stylized characters, Pixar-like but original, warm palette (sand, terracotta, teal, cream), rich depth, vertical 9:16 composition, the scene fills the whole frame edge to edge, no text, no letters, no signs, no watermark`
+
+Character references for this look: `assets/characters/<name>-3d.png`. Each video opens with an animated 3D
+**scroll-stopper** from the library and may use green-screen talking units on 3D backgrounds; scenes that only need
+a photo use a still 3D image (no zoom or a slow fade). See the animation-library skill and docs/14.
+
+### Days 1–5: flat vector look
+
 **Shared style suffix** — in the scripts, every image prompt ends with `+ STYLE`; replace that with:
 
 > `flat vector illustration, warm pastel palette (sand, terracotta, teal, cream), soft shadows, clean simple shapes, friendly, vertical 9:16 composition, the scene fills the whole frame edge to edge, simple uncluttered background, no text, no letters, no watermark`

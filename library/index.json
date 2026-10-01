@@ -1,0 +1,38 @@
+[
+ {
+  "name": "openers/lina-notebook-lookup",
+  "kind": "openers",
+  "character": "lina",
+  "action": "looks up from her notebook in a café, smiles, small wave",
+  "green": false,
+  "once_s": 2.03,
+  "loop_s": 5.2,
+  "source": "output/scroll-stopper-test/round2/clips/C_s12_49f.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "openers/sami-coffee-reveal",
+  "kind": "openers",
+  "character": "sami",
+  "action": "lowers coffee cup, surprised stare, big grin (comedic only: painted-on moustache)",
+  "green": false,
+  "once_s": 3.03,
+  "loop_s": 7.2,
+  "source": "output/scroll-stopper-test/round2/clips/B_s13_73f.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "openers/sami-peek-door",
+  "kind": "openers",
+  "character": "sami",
+  "action": "peeks from behind a Damascus stone wall, steps out, grins, big wave",
+  "green": false,
+  "once_s": 2.03,
+  "loop_s": 5.2,
+  "source": "output/scroll-stopper-test/round2/clips/A_s12_49f.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ }
+]

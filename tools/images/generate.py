@@ -17,6 +17,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 STYLE = ("flat vector illustration, warm pastel palette (sand, terracotta, teal, cream), soft shadows, "
          "clean simple shapes, friendly, vertical 9:16 composition, the scene fills the whole frame edge to edge, "
          "simple uncluttered background, no text, no letters, no watermark")
+# from Day 6 on (owner, 2026-10-01): 3D animated-movie look — costs the same as flat, animates far better
+STYLE_3D = ("3D animated movie style, soft cinematic lighting, expressive stylized characters, Pixar-like but original, "
+            "warm palette (sand, terracotta, teal, cream), rich depth, vertical 9:16 composition, the scene fills the "
+            "whole frame edge to edge, no text, no letters, no signs, no watermark")
+STYLES = {"flat": STYLE, "3d": STYLE_3D}
 
 
 def http(server, path, data=None, headers=None):
@@ -49,10 +54,11 @@ def main():
     ap.add_argument("--height", type=int, default=1344)
     ap.add_argument("--ref", action="append", default=[], help="reference image(s) (klein workflow only)")
     ap.add_argument("--no-style", action="store_true")
+    ap.add_argument("--style", choices=sorted(STYLES), default="flat")
     a = ap.parse_args()
 
     wf = json.load(open(a.workflow))
-    wf["4"]["inputs"]["text"] = a.prompt if a.no_style else f"{a.prompt.rstrip('. ')}. {STYLE}"
+    wf["4"]["inputs"]["text"] = a.prompt if a.no_style else f"{a.prompt.rstrip('. ')}. {STYLES[a.style]}"
     seed = a.seed if a.seed is not None else random.randint(0, 2**31)
     for nid, n in wf.items():
         i = n["inputs"]

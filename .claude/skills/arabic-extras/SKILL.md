@@ -15,6 +15,8 @@ course. They reuse the whole daily pipeline (see the **produce-day** skill); onl
 - **Length 30–75 s** (a 10-phrase list lands around 1:05–1:10; Shorts allow up to 3 min, but keep it tight). Short hook in the first 2 s ("10 ways to say hello in Arabic — number 7 is what Syrians
   really say"). Keep the hello clip only if it doesn't eat the hook; always end with the goodbye clip + subscribe
   line.
+- **Scroll-stopper + 3D:** like the days — scene 1 = a library opener (animation-library skill), 3D look via
+  `{"style": "3d"}` (x01/x02 were made before the switch and stay flat).
 - **Dialect is allowed here — and only here.** The course stays Modern Standard Arabic (fusha). In Extras every
   phrase card is labelled: `Standard Arabic` or `Syrian dialect` (e.g. a small tag line on the card), so nobody
   confuses the two. Syrian lines are written the way they're said (e.g. `كِيفَكْ`, `مْنْشُوفَكْ بَعْدَيْن`), with
