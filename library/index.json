@@ -1,5 +1,45 @@
 [
  {
+  "name": "backgrounds/alley",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "sunny old Damascus alley, jasmine, wooden balconies",
+  "green": false,
+  "file": "library/backgrounds/alley.png",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/cafe",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "Damascus café, mosaic tiles, brass lamps",
+  "green": false,
+  "file": "library/backgrounds/cafe.png",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/desk",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "study corner, desk, notebook, tea, window light",
+  "green": false,
+  "file": "library/backgrounds/desk.png",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/rooftop",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "Damascus rooftop at sunset, minarets, string lights",
+  "green": false,
+  "file": "library/backgrounds/rooftop.png",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
   "name": "openers/lina-notebook-lookup",
   "kind": "openers",
   "character": "lina",
@@ -32,6 +72,30 @@
   "once_s": 2.03,
   "loop_s": 5.2,
   "source": "output/scroll-stopper-test/round2/clips/A_s12_49f.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "talk/lina-talk-1",
+  "kind": "talk",
+  "character": "lina",
+  "action": "talks to the viewer with an explaining hand gesture (no lip-sync)",
+  "green": true,
+  "once_s": 2.03,
+  "loop_s": 5.2,
+  "source": "library/work/clips/talk-lina_s32.mp4",
+  "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "talk/sami-talk-1",
+  "kind": "talk",
+  "character": "sami",
+  "action": "talks to the viewer with an explaining hand gesture (no lip-sync)",
+  "green": true,
+  "once_s": 2.03,
+  "loop_s": 5.2,
+  "source": "library/work/clips/talk-sami_s11.mp4",
   "created": "2026-10-01",
   "used_in": []
  }

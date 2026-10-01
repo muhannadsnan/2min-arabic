@@ -53,8 +53,9 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
    → once + loop (forward → 0.15 s pause → back to the start pose → start pose held 1 s; begins and ends on the same
    frame, so the repeat is invisible) + sheet, registered in `index.json`.
 5. **Green-screen units** — `python3 tools/animate/composite.py library/talk/<name>-loop.mp4 <background> out.mp4 --seconds N [--zoom]`
-   (key colour measured from the clip, green fringe removed). Look at hair edges; raise `--similarity` if green
-   remains, lower it if the character gets holes.
+   (green-dominance key: only clearly bright-green pixels go transparent, so Sami's **olive** hoodie survives — a
+   chroma-distance key made it see-through; green fringe pulled down). Look at hair edges and clothes; lower
+   `--dominance` (default 1.3) if green remains, raise it if the character gets holes.
 6. **Longer actions** — chain 2-s parts: animate the next part from the last frame of the previous one, then check the
    join and the face across both parts (see docs/14 for the test result).
 

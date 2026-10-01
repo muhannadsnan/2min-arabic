@@ -262,3 +262,46 @@ in ComfyUI's `output/`). No new models.
   2 seeds, "static camera", one simple action, and no hidden faces to reveal.
 - **Next test:** Wan 2.2 Fun 5B InP with first + last keyframes (3.8 GB), then A14B + 4-step LoRA if RAM is upgraded.
 - **Owner decision:** keep 3D openers with flat-vector lessons (an "intro sting") or move the whole channel to the 3D look?
+
+## Round 3 — reusable library (2026-10-01)
+
+Owner's decisions: no AI label on videos · rotate a library of 6–10 openers (extend later) · whole channel moves to
+the 3D look from Day 6 · lip-sync not needed · no bigger models or PC upgrades now — the current model is enough,
+generation time is accepted (monthly or on demand) · close all apps during GPU runs.
+
+**Loops that return to the start pose.** `tools/animate/make_loop.py` builds every unit as: forward → 0.15 s pause at
+the turn → backward to the start pose → start pose held 1 s (2-s clip → 5.2-s loop). First and last frame match
+(mean pixel difference < 1), so the repeat is invisible and the held start pose reads as a natural pause.
+
+**3D character references** `assets/characters/{sami,lina,waiter}-3d.png` (FLUX.2 klein from the flat refs; one of
+nine takes failed once with a GPU memory error and was skipped). `batch.py` uses them when prompts.json starts with
+`{"style": "3d"}`.
+
+**Green-screen talking units.** Keyframe on "perfectly flat solid chroma-key green", animated 49 frames with "talks
+warmly… mouth moving… gentle gesture… green background stays unchanged". Sami: both seeds clean, seed 11 kept
+(`library/talk/sami-talk-1`). Compositing (`tools/animate/composite.py`): a chroma-distance key (ffmpeg chromakey)
+made Sami's **olive hoodie half transparent**; a strict green-dominance key (green > 1.3× red and blue, and bright)
+keeps it intact with clean edges and no fringe.
+
+**Chaining 2-s parts** (part 2 animated from part 1's last frame): the join is invisible and the face stays
+consistent, but part 2 inherits part 1's end pose — starting from a big, motion-blurred waving hand gave a twisted
+pointing hand (seed 21) or merged fingers (seed 22). Rule: chain only from a calm frame with hands at rest or out of
+shot. Demo: `library/work/clips/chain-test-peek-then-point-4s.mp4` (experimental, not for use).
+
+**Lower frame rate.** Wan has no fps setting: it always draws 24-fps motion, and time per clip depends on the number
+of frames. Playing the same 49 frames at 16 fps just turns 2 s into 3 s of slow motion
+(`library/work/clips/peek-played-at-16fps-demo.mp4`) — fine for calm talking, floaty for a wave. Generating fewer
+frames saves time but gives a shorter action. YouTube accepts anything from 24 fps up; we deliver 30.
+
+**Using units in videos.** prompts.json per scene: `"clip": "openers/<name>"` (once, last frame held), `"clip_mode":
+"loop"`, `"motion": "still" | "fade"`. `assemble.py` records each use in `library/index.json` (rotation). Test:
+`output/x01-10-ways-to-say-hello/x01-v2-with-3d-opener.mp4` (x01 with the peek-door opener in scene 1).
+
+**Lina talk unit** (`library/talk/lina-talk-1`, seed 32; seed 31 rejected: hand drifts out of frame, eyes close
+mid-gesture). **Backgrounds** (`library/backgrounds/`): alley, café, desk, rooftop at sunset — 3D, no people, no
+text. Demos: `library/work/demos/sami-talk-on-rooftop.mp4`, `lina-talk-in-cafe.mp4` (talk loops composited, 10 s).
+Times this round: 3D still ~30–60 s · 2-s clip 6–7 min (RAM-bound; ~2 GB free with apps open, 4–8 GB swap per clip).
+
+**Library now:** openers 3 (sami-peek-door ★, lina-notebook-lookup, sami-coffee-reveal — comedic only) · talk 2
+(sami, lina) · backgrounds 4. Next refresh (2026-11-01): 3–5 more openers with new entrances (turn-around, walk-in,
+balcony wave, Lina-specific), a waiter unit, an animated background or two.
