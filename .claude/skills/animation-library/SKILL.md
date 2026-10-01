@@ -42,6 +42,8 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
 - **Model limits seen so far:** with two people, Wan 2.2 5B usually animates only ONE of them (Part 2: Sami waved,
   Lina only smiled) — prefer one-person openers, or prompt the second person's action first and check; a head
   **nod** is too small to see (5–15 px) — use arm actions (wave, thumbs-up, fist pump) instead.
+- **Keep it normal, never exaggerated** (owner, 2026-10-01): seated people stay seated; prompt "stays seated, small calm
+  natural movements, does not stand up, does not lean forward"; 49 frames and trim before the model adds extra moves.
 - **Opener shape:** one simple action (e.g. a wave), the arm goes back down, the final pose holds **1 s**, then the
   scene's own picture continues (slow zoom). No repeated waving, no long freezes.
 - **New backgrounds per video** (cheap: ~1 min each) — the talk units and stills sit on fresh scenes every time.
