@@ -9,7 +9,8 @@ f# Day 7 — Upload sheet
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays private).
 2. Tell Claude "uploaded Day 7". Claude fills everything and schedules it for **6 Oct, 17:00 Oslo** (next Shorts slot).
-3. You only set **Related video = Day 6**, and pin the comment after it's live.
+3. You only set: **Education Type = Concept overview, Level = Beginner**; Automatic places/concepts **off**;
+   **Related video = Day 6**, and pin the comment after it's live.
 
 ## Title
 

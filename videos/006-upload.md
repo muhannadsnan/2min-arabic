@@ -9,7 +9,8 @@
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays private).
 2. Tell Claude "uploaded Day 6". Claude fills everything and schedules it for **4 Oct, 17:00 Oslo** (next Shorts slot).
-3. You only set **Related video = Day 5**, and pin the comment after it's live (you get a desktop reminder).
+3. You only set: **Education Type = Concept overview, Level = Beginner**; Automatic places/concepts **off**;
+   **Related video = Day 5**, and pin the comment after it's live (you get a desktop reminder).
 
 ## Title
 

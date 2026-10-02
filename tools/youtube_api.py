@@ -313,7 +313,8 @@ def fill(a):
                 print(f"  ✅ added to playlist '{name}'")
             else:
                 print(f"  = already in playlist '{name}'")
-    print("Left for Studio (no API): Related video, pinned comment, end screen / cards / quiz.")
+    print("Left for Studio (no API): Related video · Education Type = Concept overview, Level = Beginner (Academic system:\n"
+          "  Norway) · Automatic chapters ✅, places ❌, concepts ❌ · pinned comment after it's live · Parts: end screen/cards/quiz.")
 
 
 def main():

@@ -17,10 +17,10 @@
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** 3D opener — Sami spins a desk globe with one finger, looks up at the camera and smiles (new opener, owner approves)
-🔤 **On screen:** Where are you from? · 3 words
+🔤 **On screen:** Where are you from?
 
 ```say:narrator
-Where are you from? In Arabic, that's three words — and you already know one of them.
+In Arabic, where are you from is only three words, and you already know one of them.
 ```
 
 ### 🎬 Scene 2 — Channel intro
@@ -39,7 +39,7 @@ I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minu
 🔤 **On screen:** Warm-up · "you", to a man
 
 ```say:narrator
-Today is Day 8, and a new week. Warm-up from Day 5: how do you say "you" to a man?
+Today is Day 8, and a brand new week starts. Let's warm up with Day 5. How do you say you, to a man?
 ```
 ⏸️ **Pause 3s**
 
@@ -52,7 +52,7 @@ Today is Day 8, and a new week. Warm-up from Day 5: how do you say "you" to a ma
 أَنْتَ
 ```
 ```say:narrator
-Keep that word. You need it today.
+Keep that word in mind, because you'll need it today.
 ```
 
 ### 🎬 Scene 5 — The question (to a man)
@@ -61,7 +61,7 @@ Keep that word. You need it today.
 🔤 **On screen:** مِنْ أَيْنَ أَنْتَ؟ · *min ayna anta?* · Where are you from? (to a man) · word for word: from where you?
 
 ```say:narrator
-Here's the question. Word for word, it says: from where you?
+Here's the question. Word for word, it says, from where you?
 ```
 ```say:teacher
 مِنْ أَيْنَ أَنْتَ؟
@@ -86,7 +86,7 @@ To a woman, only the last word changes, just like on Day 5.
 🔤 **On screen:** أَنَا مِنْ · *ana min* · I am from + your country
 
 ```say:narrator
-The answer starts with "I, from", and then your country.
+To answer, you start with I from, and then you add your country.
 ```
 ```say:teacher
 أَنَا مِنْ
@@ -98,7 +98,7 @@ The answer starts with "I, from", and then your country.
 🔤 **On screen:** مِنْ أَيْنَ أَنْتَ يَا سَامِي؟ · *min ayna anta yaa Saamii?* · Where are you from, Sami?
 
 ```say:narrator
-Now listen to Lina and Sami.
+Now let's listen to Lina and Sami at the café.
 ```
 ```say:lina
 مِنْ أَيْنَ أَنْتَ يَا سَامِي؟
@@ -128,7 +128,7 @@ Now listen to Lina and Sami.
 🔤 **On screen:** أَمْرِيكَا · *Amriikaa* · America
 
 ```say:narrator
-Now some countries. Listen and repeat.
+Now here are a few countries. Listen, and repeat after me.
 ```
 ```say:teacher
 أَمْرِيكَا
@@ -160,7 +160,7 @@ Now some countries. Listen and repeat.
 ```say:teacher
 الْهِنْدْ
 ```
-⏸️ **Pause 3s**
+⏸️ **Pause 2s**
 
 ### 🎬 Scene 15 — Your turn 1
 
@@ -168,7 +168,7 @@ Now some countries. Listen and repeat.
 🔤 **On screen:** Your turn · Ask a man: where are you from?
 
 ```say:narrator
-Your turn. Ask a man where he's from.
+Now it's your turn. Ask a man where he's from.
 ```
 ⏸️ **Pause 4s**
 
@@ -187,7 +187,7 @@ Your turn. Ask a man where he's from.
 🔤 **On screen:** Your turn · I am from America. · or your own country!
 
 ```say:narrator
-Now answer: I am from America. Or say your own country.
+Now answer, I am from America. Or you can say your own country.
 ```
 ⏸️ **Pause 4s**
 
@@ -206,7 +206,7 @@ Now answer: I am from America. Or say your own country.
 🔤 **On screen:** Your turn · And you? (to a woman)
 
 ```say:narrator
-And from Day 3: ask her back. And you?
+And here's one from Day 3. Ask her back, and you?
 ```
 ⏸️ **Pause 3s**
 
@@ -225,7 +225,7 @@ And from Day 3: ask her back. And you?
 🔤 **On screen:** أَنَا مِنْ · *ana min* · + your country · tell me in the comments!
 
 ```say:narrator
-So, where are you from? Tell me in Arabic in the comments. Tomorrow: one little letter that turns a man into a woman.
+So, where are you from? Tell me in Arabic in the comments, I'd love to know. Tomorrow you'll meet one little letter that turns a man into a woman.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.

@@ -51,6 +51,12 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
   find its id (`$Y tools/youtube_api.py videos`) and run `fill <stem> <id> --publish-at next` — dry run first, then
   `--apply`. It sets title, description, tags, category, language, not-for-kids, AI label, thumbnail, captions and
   playlist. The sheet still lists the manual bits: Related video, pinned comment, Parts' end screen/cards/quiz.
+- **Not settable by the API — always list them as the owner's Studio checklist** (owner, 2026-10-02):
+  Related video · Education → Type **Concept overview**, Level **Beginner**, Academic system **Norway** ·
+  Automatic chapters **on**, Automatic places **off**, Automatic concepts **off**. Ask once that the owner sets them in
+  Studio → Settings → **Upload defaults** (whichever are offered there), so they're right for every upload.
+- After `fill`, audit the channel (title = sheet, isolates in the description, 10–14 tags, Education, English
+  title/audio language, not for kids, English captions, custom thumbnail, playlist) — never just trust the call.
 - Uploads go **in day order** — if an earlier day isn't up yet, say so.
 - Account-level reminders when relevant: automatic dubbing must stay OFF; a Short with ~0 views gets 48 h before
   any action (then check viewed-vs-swiped, re-upload with a new title if still ~0).
