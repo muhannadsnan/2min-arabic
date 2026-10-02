@@ -32,6 +32,13 @@ Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼
 - **Pauses fit the difficulty:** very easy words (yes, no, a number) get ~1.5 s to repeat; phrases 3 s; full
   sentences in "Your turn" 4 s. Don't bore the viewer (owner, 2026-10-02).
 
+- **The narrator is the viewer's teacher — human and natural, never robotic** (owner, 2026-10-02):
+  - no rapid-fire lists ("Yes, no, sorry, okay."): put lists inside a sentence and join the last item with "and"
+    ("So now you know four little words: yes, no, sorry and okay.");
+  - every **scene change gets a connector** so the story flows: "And later that day…", "Then…", "Now…", "Back at the
+    café…" — never jump into a new situation cold;
+  - full, relaxed sentences; listen for rushed or flat delivery in the report and re-voice it.
+
 Then render the cards: `python3 tools/check_cards.py videos/NNN-….md` → look at `output/<video>/cards-sheet.png`.
 Fonts lack `…`, `_` (Arabic font) and `→`, `▶` (bold Latin) — they show as □.
 
@@ -67,6 +74,8 @@ Start: `cd /media/msn/GamesLinux/AI/ComfyUI && venv/bin/python main.py --listen 
 --use-split-cross-attention` (background), then `python3 tools/images/batch.py images/<video>` (reads its `prompts.json`)
 (`--only`, `--seed-offset` for redos). Follow the image QA rules in docs/05 (character refs in `assets/`, olive skin,
 simple hands, no text). Reuse shots with `"same"`. Inspect every candidate sheet at full size, copy the chosen take to `sNN.png`, reasons in `picks.json`.
+**Hands:** count hands per person and look at the *edges and the lower half* too — a stray floating hand next to
+a knee slipped through on Day 6 (owner caught it). Every visible hand must belong to someone's arm.
 **Stop ComfyUI by its PID** when done (never `pkill -f` — it kills your own shell) and before the laptop sleeps.
 
 **3D look from Day 6 on** (owner, 2026-10-01 — costs the same as flat, animates far better): put `{"style": "3d"}` as
@@ -85,7 +94,9 @@ python3 tools/assemble.py videos/NNN-….md
 $TTS tools/final_check.py output/<video>/<video>.mp4
 ```
 `final_check` must show: length ✅, −14 LUFS ✅, peak < −1 dB ✅, EN and AR transcripts in the right order with
-0 overlaps. Open `check-frames.png` and `contact.png` and actually look: hello clip, YOUR TURN, subscribe
+0 overlaps. **Cards must never cover a head or face** (owner, 2026-10-02): in `contact.png`, every character's
+hair-top must sit below the card; if not, add `"shift": 0.08–0.18` to that scene (clips too) and re-assemble.
+Open `check-frames.png` and `contact.png` and actually look: hello clip, YOUR TURN, subscribe
 animation, goodbye; captions don't cover faces or cards.
 
 ## 7. Thumbnail, captions, description, upload sheet

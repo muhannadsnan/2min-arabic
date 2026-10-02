@@ -23,7 +23,7 @@ the card shows the meaning.
 🔤 **On screen:** Yes, No, Sorry, OK
 
 ```say:narrator
-Yes, no, sorry, okay. Four tiny words that make you sound polite in Arabic.
+Four tiny words can make you sound polite in Arabic. Yes, no, sorry, and okay.
 ```
 
 ### 🎬 Scene 2 — Channel intro
@@ -125,7 +125,7 @@ But after his fifth cup, even Sami says:
 🔤 **On screen:** آسِفْ · *aasif* · Sorry. (man) · NEW: a woman says aasifa
 
 ```say:narrator
-Oops. Sami bumps into Lina and spills her tea. He says sorry.
+And later that day, oops, Sami bumps into Lina and spills her tea. So he says sorry.
 ```
 ```say:sami
 آسِفْ!
@@ -240,7 +240,7 @@ And one from Day 2: thank you.
 🔤 **On screen:** مَعَ السَّلَامَةْ · *ma'a s-salaama* · Goodbye — Day 6
 
 ```say:narrator
-Yes, no, sorry, okay. Small words, big politeness. Six days done. Tomorrow is Day 7: a one-week quiz. Can you pass it?
+So now you know four little words: yes, no, sorry and okay. They're small, but people will love hearing them. That's six days done. Tomorrow is Day 7, a one-week quiz. I think you can pass it.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.

@@ -85,9 +85,10 @@ Day 6 ✅ — Lina offers you coffee ☕ What do you answer? نَعَمْ، مِ
 
 ## Quality check (Claude)
 
-- First card all bold (new convention); the yes/no repeat pause halved to 1.5 s (owner).
+- Owner's review fixes: first card one line in one style; yes/no pause halved; floating hand removed (other take);
+  "And later that day…" transition; hook and outro re-written as natural sentences; cards moved off faces (6 scenes).
 - **New 3D look** and a new opener: Sami calmly takes the coffee Lina offers (approved), 1-s hold, slow zoom — no freezes.
 - Arabic = your recording + Koki's (آسفة, لا بأس), all lines verified in context. English = your clone; 9 lines re-voiced
   for flat/rushed delivery; all pass now.
 - Images: 13 new 3D scenes, 3 takes each, picked at full size (one card was hiding a face → picture moved down).
-- Finished video: 2:10 · −14.0 LUFS · peak −1.8 dB · full transcript in order, no overlaps.
+- Finished video: 2:17 · −14.1 LUFS · peak −1.9 dB · full transcript in order, no overlaps.

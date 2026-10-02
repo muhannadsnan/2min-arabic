@@ -66,6 +66,10 @@ Character references for this look: `assets/characters/<name>-3d.png`. Each vide
 **scroll-stopper** from the library and may use green-screen talking units on 3D backgrounds; scenes that only need
 a photo use a still 3D image (no zoom or a slow fade). See the animation-library skill and docs/14.
 
+**Layout rules (owner, 2026-10-02):** the scene-1 card is one line, items comma-separated, one style; cards never
+cover a character's head or face (shift the picture down); every visible hand belongs to someone (no floating hands).
+**Narration:** natural teacher voice — no rapid lists, connectors at every scene change ("And later that day…").
+
 ### Days 1–5: flat vector look
 
 **Shared style suffix** — in the scripts, every image prompt ends with `+ STYLE`; replace that with:
