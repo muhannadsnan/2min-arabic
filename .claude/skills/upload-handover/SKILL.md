@@ -67,6 +67,9 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
   Type Concept overview · Level Beginner · Automatic places/concepts off — every time, never assume it's done.
 - After `fill`, audit the channel (title = sheet, isolates in the description, 10–14 tags, Education, English
   title/audio language, not for kids, English captions, custom thumbnail, playlist) — never just trust the call.
+- **Replacing a video:** owner uploads the new file first → delete the old one via the API (only if private and
+  0 views) → fill + schedule the new one into the old slot → remove "Deleted video" placeholders from every playlist
+  and re-order the 30-day playlist (Day 1 → … → Part after each 5th day).
 - Uploads go **in day order** — if an earlier day isn't up yet, say so.
 - Account-level reminders when relevant: automatic dubbing must stay OFF; a Short with ~0 views gets 48 h before
   any action (then check viewed-vs-swiped, re-upload with a new title if still ~0).
