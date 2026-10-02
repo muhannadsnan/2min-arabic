@@ -32,7 +32,7 @@ def main():
                 if ar and re.search(r"[→…_]", part):
                     print(f"⚠️ card {i}: → … or _ inside Arabic (missing glyph / wrong direction): {part}")
             p = out / f"c{i:02d}.png"
-            A.render_card(text, p)
+            A.render_card(text, p, all_bold=(i == 1))
             cards.append(Image.open(p))
     W, cols = 1080, 3
     rows = (len(cards) + cols - 1) // cols

@@ -74,8 +74,9 @@ def fit(draw, text, font_path, size, max_w, **kw):
     return font, box
 
 
-def render_card(text: str, path: pathlib.Path):
-    """A cream rounded card: Arabic (big) / transliteration (italic) / English — or plain title lines."""
+def render_card(text: str, path: pathlib.Path, all_bold: bool = False):
+    """A cream rounded card: Arabic (big) / transliteration (italic) / English — or plain title lines.
+    all_bold: every line bold (convention for scene 1, the card that names today's subject — owner, 2026-10-02)."""
     parts = [clean(p) for p in text.split(" · ") if clean(p)]
     img = Image.new("RGBA", (W, 700), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
@@ -93,7 +94,8 @@ def render_card(text: str, path: pathlib.Path):
                 lines.append((extra, LATIN, 50, CHARCOAL, {}))
     else:
         for i, p in enumerate(parts):
-            lines.append((p, LATIN_BOLD if i == 0 else LATIN, 72 if i == 0 else 54, TEAL if i == 0 else CHARCOAL, {}))
+            lines.append((p, LATIN_BOLD if i == 0 or all_bold else LATIN, 72 if i == 0 else 54,
+                          TEAL if i == 0 else CHARCOAL, {}))
     y, drawn = 50, []
     for txt, font_path, size, color, kw in lines:
         font, box = fit(d, txt, font_path, size, W - 200, **kw)
@@ -268,7 +270,7 @@ def main():
         last = "b1"
         if screens[i - 1]:
             card = out_dir / "cards" / f"s{i:02d}.png"
-            render_card(screens[i - 1], card)
+            render_card(screens[i - 1], card, all_bold=(i == 1))
             overlays += ["-i", str(card)]
             chain += f";[b1][2:v]overlay=0:170[b2]"
             last = "b2"

@@ -81,7 +81,7 @@ And the word for no is only two letters.
 ```say:teacher
 لَا
 ```
-⏸️ **Pause 3s** — viewer repeats yes and no.
+⏸️ **Pause 1.5s** — viewer repeats yes and no.
 
 ### 🎬 Scene 7 — Lina's question (from Day 4)
 

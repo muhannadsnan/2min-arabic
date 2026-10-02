@@ -27,6 +27,10 @@ Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼
 - Narrator lines are full sentences: one-word lines and exclamations ("Goodbye!") come out in a different register.
 - Every lesson must feel different from the others (inauthentic-content policy, docs/11).
 
+- **Scene 1's card** (today's subject) renders **all lines bold** — automatic in assemble.py (owner, 2026-10-02).
+- **Pauses fit the difficulty:** very easy words (yes, no, a number) get ~1.5 s to repeat; phrases 3 s; full
+  sentences in "Your turn" 4 s. Don't bore the viewer (owner, 2026-10-02).
+
 Then render the cards: `python3 tools/check_cards.py videos/NNN-….md` → look at `output/<video>/cards-sheet.png`.
 Fonts lack `…`, `_` (Arabic font) and `→`, `▶` (bold Latin) — they show as □.
 
