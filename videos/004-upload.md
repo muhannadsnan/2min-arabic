@@ -48,7 +48,7 @@ al-maqhaa — the café — ⁧الْمَقْهَى⁩
 (3 groups — video-specific · niche · broad, per Dan the Creator's formula)
 
 ```
-easy arabic story, arabic listening practice, arabic story for beginners, coffee in arabic, learn arabic, arabic for beginners, arabic lesson, modern standard arabic, language learning, learn languages, shorts, study with me
+easy arabic story for beginners, arabic listening practice, coffee in arabic, hal turidu qahwa, qahwa, قهوة, قصة بالعربية, learn arabic, arabic for beginners, arabic lesson, language learning, shorts
 ```
 
 ## Settings

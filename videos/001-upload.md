@@ -32,7 +32,7 @@ Two minutes a day. Your first Arabic conversation in 30 days.
 ## Tags
 
 ```
-learn arabic, arabic for beginners, arabic lesson, speak arabic, arabic phrases, modern standard arabic, fusha, arabic conversation, 2 minute arabic, how to learn a language, language learning motivation
+how to learn arabic fast, best way to learn arabic, learn arabic in 30 days, marhaba, ma'a salama, مرحبا, تعلم العربية, learn arabic, arabic for beginners, modern standard arabic, language learning tips, learn languages, shorts
 ```
 
 ## Settings

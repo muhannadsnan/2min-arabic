@@ -31,7 +31,15 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
    - transliteration — meaning — Arabic;
    - "Start from Day 1" link without `?si=…`; ~3 hashtags at the end (`#learnarabic` … `#2minutearabic`).
    Write it with Python so the invisible markers are really in the file, then print it once to verify.
-5. **Tags** in a code box, 3-group formula: 3–4 video-specific · 3–4 niche · 3–4 broad. Keep the running
+5. **Tags** in a code box, 12–14 tags, ≤ 500 characters, in this order (owner, 2026-10-02):
+   - 3 **search phrases** people really type, specific to this video ("how to say sorry in arabic", "arabic
+     conversation for beginners") — real terms from channel-review's search-terms report win;
+   - 2–4 **transliterated keywords** of today's words ("shukran", "ma ismuk", "tayyib") — learners search these;
+   - 2 **Arabic-script** tags: today's key word(s) and/or "تعلم العربية" (low weight, no risk);
+   - niche ("learn arabic", "arabic for beginners", "modern standard arabic") · broad ("language learning", "shorts").
+   Arabic script goes in tags, descriptions and the **thumbnail** (big word) — **not in titles** (it tells YouTube the
+   video is for Arabic speakers and mixed-direction titles get scrambled); titles may use transliteration.
+   Formerly: 3-group formula: 3–4 video-specific · 3–4 niche · 3–4 broad. Keep the running
    "viral shorts" experiment in mind (Days 3/5 have it, 2/4 don't; check on 2026-10-06).
 6. **Settings table:** playlist; not made for kids; **AI use** (No when only the owner's own voice clone + real
    recordings are used; Yes if anyone else's voice is cloned); paid promotion No; related video; Education / Concept
@@ -52,9 +60,11 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
   `--apply`. It sets title, description, tags, category, language, not-for-kids, AI label, thumbnail, captions and
   playlist. The sheet still lists the manual bits: Related video, pinned comment, Parts' end screen/cards/quiz.
 - **Not settable by the API — always list them as the owner's Studio checklist** (owner, 2026-10-02):
-  Related video · Education → Type **Concept overview**, Level **Beginner**, Academic system **Norway** ·
+  Related video · Education → Type **Concept overview**, Level **Beginner** (Academic system: leave empty) ·
   Automatic chapters **on**, Automatic places **off**, Automatic concepts **off**. Ask once that the owner sets them in
   Studio → Settings → **Upload defaults** (whichever are offered there), so they're right for every upload.
+- **After every fill, end the reply with the owner's Studio checklist** (the tool prints it): Related video ·
+  Type Concept overview · Level Beginner · Automatic places/concepts off — every time, never assume it's done.
 - After `fill`, audit the channel (title = sheet, isolates in the description, 10–14 tags, Education, English
   title/audio language, not for kids, English captions, custom thumbnail, playlist) — never just trust the call.
 - Uploads go **in day order** — if an earlier day isn't up yet, say so.

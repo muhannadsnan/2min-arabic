@@ -50,7 +50,7 @@ Two minutes a day. Your first Arabic conversation in 30 days.
 ## Tags
 
 ```
-learn arabic, arabic phrases, arabic for beginners, basic arabic phrases, arabic greetings, how to say thank you in arabic, modern standard arabic, fusha, speak arabic, 2 minute arabic
+basic arabic phrases, arabic phrases for beginners, how to say thank you in arabic, assalamu alaikum, shukran, kayfa haluk, السلام عليكم, شكرا, learn arabic, arabic for beginners, arabic lesson, language learning, shorts
 ```
 
 ## Settings
