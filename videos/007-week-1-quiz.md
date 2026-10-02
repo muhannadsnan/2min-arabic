@@ -160,11 +160,11 @@ Here's a quick one for you. What's the word for yes?
 
 ### 🎬 Scene 16 — Question 7
 
-🖼️ **Image:** Sami at a table full of empty coffee cups, 3D
+🖼️ **Image:** Sami at a café table with two empty coffee cups, 3D
 🔤 **On screen:** Quiz 7/10 · No, thank you.
 
 ```say:narrator
-Then Lina offers Sami a fifth coffee. How does he say no, thank you?
+Then Lina offers Sami a third coffee. How does he say no, thank you?
 ```
 ⏸️ **Pause 3s**
 

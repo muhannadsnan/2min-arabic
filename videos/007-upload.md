@@ -94,4 +94,4 @@ Day 7 ✅ — What was your score out of 10? Write it below 👇 (and one Arabic
 - Narration rewritten as a natural teacher ("Let's start with an easy one…"); 6 lines re-voiced until delivery passed.
 - All 10 answers are existing recordings (you + Koki). 6 new 3D images + 5 reused from Day 6; hands and faces checked;
   cards and the YOUR TURN label never cover a face (label moved lower for all videos).
-- Finished video: 2:02 · −14.0 LUFS · peak −1.9 dB · transcript in order, no overlaps.
+- Finished video: 2:03 · −14.0 LUFS · peak −1.9 dB · transcript in order, no overlaps.

@@ -96,4 +96,4 @@ Day 6 ✅ — Lina offers you coffee ☕ What do you answer? نَعَمْ، مِ
 - Arabic = your recording + Koki's (آسفة, لا بأس), all lines verified in context. English = your clone; 9 lines re-voiced
   for flat/rushed delivery; all pass now.
 - Images: 13 new 3D scenes, 3 takes each, picked at full size (one card was hiding a face → picture moved down).
-- Finished video: 2:14 · −14.1 LUFS · peak −1.9 dB · full transcript in order, no overlaps.
+- Finished video: 2:16 · −14.1 LUFS · peak −1.9 dB · full transcript in order, no overlaps.

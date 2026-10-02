@@ -109,11 +109,11 @@ Sami never says no to coffee.
 
 ### 🎬 Scene 9 — No, thank you
 
-🖼️ **Image:** Sami at a table full of empty coffee cups, raising a hand politely, 3D
+🖼️ **Image:** Sami at a café table with two empty coffee cups, politely raising a hand as Lina offers a third, 3D
 🔤 **On screen:** لَا، شُكْرًا · *laa, shukran* · No, thank you.
 
 ```say:narrator
-But after his fifth cup, even Sami says:
+But after two cups, when Lina offers him a third one, Sami politely says:
 ```
 ```say:sami
 لَا، شُكْرًا.
