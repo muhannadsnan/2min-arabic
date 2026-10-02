@@ -140,7 +140,7 @@ def clip_fit(src: str, shift, out: str) -> str:
         return f"{base}[{out}]"
     dy = int(H * float(shift)) // 2 * 2
     return (f"{base},split[{out}a][{out}b];[{out}a]crop={W}:{max(4, H // 40)}:0:0,scale={W}:{dy},boxblur=18[{out}t];"
-            f"[{out}b]crop={W}:{H - dy}:0:0[{out}m];[{out}t][{out}m]vstack[{out}]")
+            f"[{out}b]crop={W}:{H - dy}:0:0[{out}m];[{out}t][{out}m]vstack,setsar=1[{out}]")
 
 
 def render_badge(day: str, path: pathlib.Path):
@@ -227,6 +227,12 @@ def main():
             n_clip = round((float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of",
                                                   "csv=p=0", str(clip)], capture_output=True, text=True).stdout) + hold) * FPS)
             rest = frames - n_clip
+            if not image.exists() and rest > FPS // 2:   # no scene picture: continue from the opener's last frame
+                image = seg_dir / f"s{i:02d}-lastframe.png"
+                run(["ffmpeg", "-v", "error", "-y", "-sseof", "-0.1", "-i", str(LIBRARY / f"{o['clip']}.mp4"),
+                     "-update", "1", "-frames:v", "1", str(image)])
+                if o.get("shift"):   # match the shifted opener exactly, so the hand-over is seamless
+                    image = shifted(image, o["shift"], seg_dir / f"s{i:02d}-lastframe-shifted.png")
             if image.exists() and rest > FPS // 2:
                 run(["ffmpeg", "-v", "error", "-y", "-i", str(clip), "-loop", "1", "-i", str(image), "-filter_complex",
                      f"{clip_fit('0:v', o.get('shift'), 'c0')};[c0]"

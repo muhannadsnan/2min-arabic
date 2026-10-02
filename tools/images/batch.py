@@ -60,6 +60,9 @@ def main():
         if "same" in item:   # reuse another scene's chosen image (copied by pick/assemble time)
             print(f"s{s:02d}: same as s{item['same']:02d}")
             continue
+        if "p" not in item:   # e.g. {"s": 1, "clip": "openers/…"} — a library clip, nothing to generate
+            print(f"s{s:02d}: clip {item.get('clip', '—')}")
+            continue
         if "asset" in item:
             shutil.copy(ASSETS / item["asset"], args.dir / f"s{s:02d}.png")
             print(f"s{s:02d}: asset {item['asset']}")
