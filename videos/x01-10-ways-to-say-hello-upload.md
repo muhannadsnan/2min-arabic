@@ -55,7 +55,7 @@ Two minutes a day. Your first Arabic conversation in 30 days — this is a bonus
 (3 groups — video-specific · niche · broad)
 
 ```
-how to say hello in arabic, arabic greetings, syrian arabic greetings, marhaba, ahlan, marhabtein, kifak, مرحبا, أهلين, levantine arabic, learn arabic, arabic phrases, language learning, shorts
+ahlan, arabic greetings, arabic phrases, how to say hello in arabic, kifak, language learning, learn arabic, levantine arabic, مرحبا, أهلا وسهلا, هلا والله, كيفك, مرحبتين meaning, كيفك meaning, marhaba, marhabtein, shorts, syrian arabic greetings
 ```
 
 ## Settings

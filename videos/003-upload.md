@@ -51,7 +51,7 @@ al-maktaba — the bookshop — ⁧الْمَكْتَبَةْ⁩
 (3 groups — video-specific · niche · broad, per Dan the Creator's formula)
 
 ```
-arabic conversation for beginners, how to introduce yourself in arabic, what is your name in arabic, ma ismuk, tasharrafna, ما اسمك, تشرفنا, learn arabic, arabic for beginners, modern standard arabic, language learning, shorts, viral shorts
+arabic conversation for beginners, arabic for beginners, how to introduce yourself in arabic, language learning, learn arabic, ma ismuk, modern standard arabic, ما اسمك, تشرفنا, كيف حالك, ما اسمك in english, تشرفنا meaning, محادثة بالعربية, shorts, tasharrafna, viral shorts, what is your name in arabic
 ```
 
 ## Settings

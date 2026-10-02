@@ -55,7 +55,7 @@ Two minutes a day. Your first Arabic conversation in 30 days — this is a bonus
 (3 groups — video-specific · niche · broad)
 
 ```
-how to say goodbye in arabic, arabic goodbye phrases, ma'a salama, bkhatrak, yalla bye, مع السلامة, بخاطرك, syrian arabic, levantine arabic, learn arabic, arabic phrases, language learning, shorts
+arabic goodbye phrases, arabic phrases, bkhatrak, how to say goodbye in arabic, language learning, learn arabic, levantine arabic, مع السلامة, إلى اللقاء, بخاطرك, يلا باي, بخاطرك meaning, مع السلامة meaning, ma'a salama, shorts, syrian arabic, yalla bye
 ```
 
 ## Settings

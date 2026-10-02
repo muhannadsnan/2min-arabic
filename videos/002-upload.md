@@ -50,7 +50,7 @@ Two minutes a day. Your first Arabic conversation in 30 days.
 ## Tags
 
 ```
-basic arabic phrases, arabic phrases for beginners, how to say thank you in arabic, assalamu alaikum, shukran, kayfa haluk, السلام عليكم, شكرا, learn arabic, arabic for beginners, arabic lesson, language learning, shorts
+arabic for beginners, arabic lesson, arabic phrases for beginners, assalamu alaikum, basic arabic phrases, how to say thank you in arabic, kayfa haluk, شكرا, عفوا, من فضلك, كيف حالك, شكرا meaning, السلام عليكم meaning, language learning, learn arabic, shorts, shukran
 ```
 
 ## Settings

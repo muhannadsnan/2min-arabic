@@ -206,7 +206,7 @@ def post_comments(a):
         sh = f.read_text(encoding="utf-8")
         t, c = box(sh, "Title"), box(sh, "Pinned comment")
         if t and c:
-            sheets[norm(t)] = (f.name, c.strip())
+            sheets[norm(t)] = (f.name, c.strip(), setting(sh, "Related video"))
     now = dt.datetime.now(dt.timezone.utc)
     for v in my_videos(y):
         if v["status"]["privacyStatus"] != "public":
@@ -224,7 +224,11 @@ def post_comments(a):
             continue
         y.commentThreads().insert(part="snippet", body={"snippet": {"videoId": v["id"], "topLevelComment": {
             "snippet": {"textOriginal": hit[1]}}}}).execute(num_retries=3)
-        print(f"✅ comment posted on {v['snippet']['title']} → owner: Studio/YouTube app → ⋮ → Pin")
+        day = re.search(r"Day (\d+)|Part (\d+)|Arabic Extras", v["snippet"]["title"])
+        print(f"✅ comment posted on {v['snippet']['title']} → owner: ⋮ → Pin · Related video = {hit[2] or 'previous day'}"
+              f" (only possible now that it's live)")
+        print(f"NOTIFY {(day.group(0) if day else v['snippet']['title'][:30])} is live: pin the comment (⋮ → Pin) and set "
+              f"Related video = {hit[2] or 'the previous day'}")
 
 
 # ---------- fill: upload sheet → video ----------
@@ -313,8 +317,9 @@ def fill(a):
                 print(f"  ✅ added to playlist '{name}'")
             else:
                 print(f"  = already in playlist '{name}'")
-    print("Left for Studio (no API): Related video · Education Type = Concept overview, Level = Beginner\n"
-          "  · Automatic chapters ✅, places ❌, concepts ❌ · pinned comment after it's live · Parts: end screen/cards/quiz.")
+    print("Left for Studio (no API): Education Type = Concept overview, Level = Beginner\n"
+          "  · Automatic chapters ✅, places ❌, concepts ❌ · Parts: end screen/cards/quiz.\n"
+          "  After it goes live (desktop notification): pin the comment + set Related video.")
 
 
 def main():

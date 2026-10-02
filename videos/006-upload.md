@@ -47,7 +47,7 @@ tamaam, al-Hamdu lillaah — All good, thank God. — ⁧تَمَامْ، الْ
 ## Tags
 
 ```
-yes and no in arabic, how to say sorry in arabic, polite arabic words, naam, aasif, tayyib, la ba's, نعم, آسف, learn arabic, arabic for beginners, arabic phrases, language learning, shorts
+aasif, arabic for beginners, arabic phrases, how to say sorry in arabic, la ba's, language learning, learn arabic, naam, نعم, لا, آسف, طيب, تمام, طيب meaning, تمام meaning, polite arabic words, shorts, tayyib, yes and no in arabic
 ```
 
 ## Settings

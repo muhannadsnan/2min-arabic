@@ -31,11 +31,13 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
    - transliteration — meaning — Arabic;
    - "Start from Day 1" link without `?si=…`; ~3 hashtags at the end (`#learnarabic` … `#2minutearabic`).
    Write it with Python so the invisible markers are really in the file, then print it once to verify.
-5. **Tags** in a code box, 12–14 tags, ≤ 500 characters, in this order (owner, 2026-10-02):
+5. **Tags** in a code box, 15–19 tags, ≤ 480 characters, in this order (owner, 2026-10-02):
    - 3 **search phrases** people really type, specific to this video ("how to say sorry in arabic", "arabic
      conversation for beginners") — real terms from channel-review's search-terms report win;
    - 2–4 **transliterated keywords** of today's words ("shukran", "ma ismuk", "tayyib") — learners search these;
-   - 2 **Arabic-script** tags: today's key word(s) and/or "تعلم العربية" (low weight, no risk);
+   - 5–7 **Arabic-script** tags (owner, 2026-10-02): today's words in Arabic ("نعم", "طيب"), 2 **mixed** phrases a
+     learner pastes in after seeing a word ("طيب meaning", "من أين أنت in english"), and one topic phrase
+     ("تعلم اللغة العربية", "قصة قصيرة بالعربية");
    - niche ("learn arabic", "arabic for beginners", "modern standard arabic") · broad ("language learning", "shorts").
    Arabic script goes in tags, descriptions and the **thumbnail** (big word) — **not in titles** (it tells YouTube the
    video is for Arabic speakers and mixed-direction titles get scrambled); titles may use transliteration.
@@ -60,13 +62,19 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
   `--apply`. It sets title, description, tags, category, language, not-for-kids, AI label, thumbnail, captions and
   playlist. The sheet still lists the manual bits: Related video, pinned comment, Parts' end screen/cards/quiz.
 - **Not settable by the API — always list them as the owner's Studio checklist** (owner, 2026-10-02):
-  Related video · Education → Type **Concept overview**, Level **Beginner** (Academic system: leave empty) ·
+  Education → Type **Concept overview**, Level **Beginner** (Academic system: leave empty) ·
   Automatic chapters **on**, Automatic places **off**, Automatic concepts **off**. Ask once that the owner sets them in
   Studio → Settings → **Upload defaults** (whichever are offered there), so they're right for every upload.
-- **After every fill, end the reply with the owner's Studio checklist** (the tool prints it): Related video ·
+- **After every fill, end the reply with the owner's Studio checklist** (the tool prints it):
   Type Concept overview · Level Beginner · Automatic places/concepts off — every time, never assume it's done.
 - After `fill`, audit the channel (title = sheet, isolates in the description, 10–14 tags, Education, English
   title/audio language, not for kids, English captions, custom thumbnail, playlist) — never just trust the call.
+- **After it goes live (automatic):** the hourly job posts the pinned comment and pops one desktop notification per
+  video: "Day N is live: pin the comment and set Related video = …" — Related video **can't be set before publishing**.
+- **Playlist order after every fill/replacement:** 30-day playlist = Day 1 → … → Day 5 → Part 1 → Day 6 → … (a Part
+  right after its 5th day), Extras playlist in x-order; remove "Deleted video"/"Private video" placeholders.
+- **Problems field (Education):** leave empty — it's built for academic problem-solving (maths/physics); no
+  evidence it helps language Shorts reach people, and it costs the owner time every upload.
 - **Replacing a video:** owner uploads the new file first → delete the old one via the API (only if private and
   0 views) → fill + schedule the new one into the old slot → remove "Deleted video" placeholders from every playlist
   and re-order the 30-day playlist (Day 1 → … → Part after each 5th day).

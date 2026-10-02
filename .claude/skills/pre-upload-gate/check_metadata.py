@@ -68,10 +68,11 @@ check(desc.strip() in sheet, "description.txt matches the box in the sheet")
 # Tags
 m = re.search(r"## Tags.*?```\n(.+?)\n```", sheet, re.S)
 tags = [t.strip() for t in m.group(1).split(",")] if m else []
-check(9 <= len(tags) <= 14, f"{len(tags)} tags (3 groups × 3–4, experiment tag on top)")
+check(12 <= len(tags) <= 20, f"{len(tags)} tags (search phrases · translit · Arabic · niche · broad)")
 check(len(", ".join(tags)) <= 500, f"tags {len(', '.join(tags))} chars (≤ 500)")
 check(not any("#" in t for t in tags), "no # inside tags")
-check(any(ar.search(t) for t in tags), "at least one Arabic-script tag")
+check(sum(bool(ar.search(t)) for t in tags) >= 5, f"{sum(bool(ar.search(t)) for t in tags)} Arabic-script tags (≥ 5)")
+check(any(ar.search(t) and re.search(r"[A-Za-z]", t) for t in tags), "a mixed tag ('طيب meaning')")
 check(any(t.isascii() and " " not in t and t not in ("shorts",) for t in tags) or len(tags) >= 12, "transliterated keyword tags present")
 if "viral shorts" in tags and date.today() >= date(2026, 10, 6):
     print("NOTE  'viral shorts' tag: the experiment was due for a verdict on 2026-10-06 — check docs/06")
