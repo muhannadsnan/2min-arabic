@@ -3,6 +3,8 @@
 **File to upload:** `output/008-where-are-you-from/where-are-you-from-in-arabic-only-3-words.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/008-where-are-you-from/where-are-you-from-in-arabic-only-3-words-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-02** — video id `nYz4KkohiIc`, scheduled **7 Oct 17:00 Oslo**.
+
 ## Fast way
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays private).

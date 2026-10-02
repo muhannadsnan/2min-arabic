@@ -3,7 +3,7 @@
 **File to upload:** `output/006-yes-no-and-polite-words/yes-no-sorry-ok-4-tiny-arabic-words.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/006-yes-no-and-polite-words/yes-no-sorry-ok-4-tiny-arabic-words-thumbnail.jpg`
 
-> ✅ **Uploaded + filled by Claude 2026-10-02** — video id `veaEqTci-qw`, scheduled **4 Oct 17:00 Oslo**.
+> ✅ **Uploaded + filled by Claude 2026-10-02** — video id `7IQ0GYOC9X4`, scheduled **5 Oct 17:00 Oslo**.
 
 ## Fast way
 
