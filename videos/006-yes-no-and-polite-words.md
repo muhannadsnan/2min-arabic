@@ -20,7 +20,7 @@ the card shows the meaning.
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** 3D opener — Sami in a sunny café nods "yes" with a big smile (new opener, owner approves)
-🔤 **On screen:** Yes · No · Sorry · OK
+🔤 **On screen:** Yes, No, Sorry, OK
 
 ```say:narrator
 Yes, no, sorry, okay. Four tiny words that make you sound polite in Arabic.

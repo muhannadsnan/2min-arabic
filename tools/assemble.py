@@ -94,8 +94,10 @@ def render_card(text: str, path: pathlib.Path, all_bold: bool = False):
                 lines.append((extra, LATIN, 50, CHARCOAL, {}))
     else:
         for i, p in enumerate(parts):
-            lines.append((p, LATIN_BOLD if i == 0 or all_bold else LATIN, 72 if i == 0 else 54,
-                          TEAL if i == 0 else CHARCOAL, {}))
+            if all_bold:   # scene 1: every line the same — bold, same size, same colour
+                lines.append((p, LATIN_BOLD, 64, TEAL, {}))
+            else:
+                lines.append((p, LATIN_BOLD if i == 0 else LATIN, 72 if i == 0 else 54, TEAL if i == 0 else CHARCOAL, {}))
     y, drawn = 50, []
     for txt, font_path, size, color, kw in lines:
         font, box = fit(d, txt, font_path, size, W - 200, **kw)
