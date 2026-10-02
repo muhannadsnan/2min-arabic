@@ -14,6 +14,38 @@ running order plus the traps we already fell into.
 Python: `TTS=/media/msn/GamesLinux/AI/tts/venv/bin/python` for anything that needs Whisper/Chatterbox/DeepFilterNet
 (`split_recording.py`, `final_check.py`); plain `python3` for the rest (`make_audio.py` calls the TTS venv itself).
 
+## Never again — fixed problems (check BEFORE assembling, not after the owner watches)
+
+Every item here cost a rebuild once. Apply them while writing the script and building the audio/images.
+
+**Narration (English, owner's clone) — the narrator is the viewer's teacher, human and calm:**
+- No rapid-fire lists ("Yes, no, sorry, okay."). Put lists inside a sentence: "…four little words: yes, no, sorry and okay."
+- No short casual lines ("Keep that word in mind.") — the clone rushes them (> 3.6 words/s). Write fuller, calmer
+  sentences ("Remember this word well, because you will need it again today.").
+- No two short sentences in one line when the clone leaves a long gap between them (> 0.9 s) — join them with a comma
+  or "so" ("Now imagine someone thanks you, so how do you say you're welcome?").
+- No one-word lines or exclamations; no "Number one/two…" lists — use "Let's start with an easy one…", "Next…".
+- A connector at every scene change: "And later that day…", "Then…", "Back at the café…".
+- Numbers and maths are hard to say: "one point zero one, seven times" stumbles — say it in words of meaning.
+- Fix a flagged line by **rewording**, not just more takes.
+
+**Pauses:** "Your turn" waits are **at most 2 s** (`make_audio.py` caps them); easy single words 1.5 s.
+
+**Voices — the same level to the ear (owner approved Day 8's sound, 2026-10-02: keep this pattern):**
+- Every clip is normalised to its target both ways (quiet clips raised, loud clips lowered): narrator −18 LUFS,
+  Koki −18, owner's recorded lines −17 after the clarity EQ (`OWNER_CLARITY`, `OWNER_LIFT_DB = 1.0`).
+- The **audio gate runs automatically** at the end of `make_audio.py` (`tools/voice_balance.py`): all ✅ and
+  "narrator clips to redo: none" before assembling. Koki is naturally brighter — never EQ her.
+
+**Pictures and cards:**
+- Cards and the YOUR TURN label never cover a head or face → `"shift"` per scene (clips too); look at `contact.png`.
+- Count hands on every person, including picture edges and the lower half (a floating hand slipped through on Day 6).
+- Two-person scenes: give **both** character refs, or the model draws two Samis.
+- Scene-1 card: one line, comma-separated, one style. Pauses fit the difficulty.
+
+**Openers:** one simple, normal action (no exaggeration), arms back down, 1-s hold, then the scene picture;
+one person per opener; the owner approves each one before use.
+
 ## 1. Script — `videos/NNN-<slug>.md`
 
 Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼️ Image`, `🔤 On screen`,

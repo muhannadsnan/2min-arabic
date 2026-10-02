@@ -64,7 +64,7 @@ Today you'll learn how to answer: yes, no, and the little polite words.
 🔤 **On screen:** نَعَمْ · *na'am* · yes
 
 ```say:narrator
-Let's start with the word for yes.
+Let's start with the most important one of all, the word for yes.
 ```
 ```say:teacher
 نَعَمْ
@@ -76,7 +76,7 @@ Let's start with the word for yes.
 🔤 **On screen:** لَا · *laa* · no
 
 ```say:narrator
-And the word for no is only two letters.
+And the word for no is even shorter, it has only two letters.
 ```
 ```say:teacher
 لَا

@@ -44,6 +44,7 @@ VOICE_VERSIONS = {"narrator": "owner-en-5", "teacher": "owner-ar-4", "teacher-sl
 # -4/-5: every generated clip also passes through DeepFilterNet (noise-free guarantee)
 SPEAKERS = ("narrator", "teacher", "teacher-slow", "sami", "lina", "narrator-kokoro")
 
+MAX_PAUSE = 2.0     # seconds — longer waits bore the viewer (easy words: 1.5 s)
 GAP = 0.35          # seconds of silence between two clips when the script has no explicit pause
 SAMPLE_RATE = 24000
 CLIP_LUFS = -18.0   # per-clip loudness (the final video mix is brought to -14 LUFS)
@@ -77,8 +78,8 @@ def parse(script: pathlib.Path):
             if not (CLIPS_DIR / f"{m.group(1)}.mp4").exists():
                 sys.exit(f"{script}:{i + 1}: filmed clip {CLIPS_DIR / m.group(1)}.mp4 not found")
             events.append(("video", m.group(1), (m.group(2) or "").strip()))
-        elif m := PAUSE.search(line):
-            events.append(("pause", float(m.group(1))))
+        elif m := PAUSE.search(line):   # owner, 2026-10-02: a "your turn" wait is never longer than 2 s
+            events.append(("pause", min(float(m.group(1)), MAX_PAUSE)))
         i += 1
     return events
 
@@ -315,6 +316,11 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         "⚠️ = worth a listen.\n\n| # | Speaker | Script | Heard | CER |\n|---|---|---|---|---|\n" + "\n".join(report) + "\n",
         encoding="utf-8")
     print(f"{script.name}: {n} clips, {timestamp(t)} -> {out_dir}")
+    # audio gate (owner, 2026-10-02): voices level to the ear + every narrator line natural — runs automatically
+    gate = subprocess.run([str(TTS_HOME / "venv" / "bin" / "python"), str(ROOT / "tools" / "voice_balance.py"), str(script)],
+                          capture_output=True, text=True, env=tts_env())
+    lines = [l for l in gate.stdout.splitlines() if l.startswith("⚠️") or "loudness" in l or "clarity" in l or "redo" in l]
+    print("  audio gate:\n    " + "\n    ".join(lines))
 
 
 def main():
