@@ -60,6 +60,10 @@ python3 tools/merge_koki.py videos/NNN-….md                        # Koki's Li
 Koki's own sheet is split with `--as-recorded --min-silence=0.5` (never voice-convert her). Read
 `footage/recordings/<video>/report.md`: every line matched, CER low; listen-worthy lines flagged.
 
+**Owner's voice treatment (automatic, 2026-10-02):** `make_audio.py` gives the owner's recorded lines (teacher,
+teacher-slow, sami) a clarity EQ (−2.5 dB at 250 Hz, +3.5 dB at 2.8 kHz, +4 dB shelf from 6 kHz) and +2 dB, because his
+phone recordings sounded darker and quieter than Koki's. Koki's lines are left as they are.
+
 ## 4. Voice — `python3 tools/make_audio.py videos/NNN-….md`
 
 English narrator = the owner's clone (energetic Day 1 reference). The delivery check rejects flat, rushed,

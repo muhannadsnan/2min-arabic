@@ -101,13 +101,26 @@ def loudness(path: pathlib.Path) -> float:
     return float(m.group(1)) if m else -70.0
 
 
-def level(src: pathlib.Path, dst: pathlib.Path):
-    """Trim silence at both ends, bring the clip to CLIP_LUFS, keep peaks below -1.5 dB."""
+# the owner's own recordings (phone mic + noise removal) sound darker than Koki's and the narrator: lift clarity and
+# level them 2 dB above the other clips (owner, 2026-10-02: "my voice is lower and less clear")
+OWNER_CLARITY = ("highpass=f=90,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=2800:t=q:w=1.0:g=3.5,"
+                 "highshelf=f=6000:g=4,")
+OWNER_LIFT_DB = 2.0
+OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami"}
+
+
+def level(src: pathlib.Path, dst: pathlib.Path, owner: bool = False):
+    """Trim silence at both ends, bring the clip to CLIP_LUFS, keep peaks below -1.5 dB.
+    owner=True: the owner's recorded voice — clarity EQ and +2 dB (see OWNER_CLARITY)."""
     trimmed = dst.with_suffix(".trim.wav")
     trim = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,"
             "areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.1,areverse")
     run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af", trim, "-ac", "1", "-ar", str(SAMPLE_RATE), str(trimmed)])
-    gain = CLIP_LUFS - loudness(trimmed)
+    if owner:   # EQ before measuring, so the loudness target holds after the EQ
+        eq = dst.with_suffix(".eq.wav")
+        run(["ffmpeg", "-v", "error", "-y", "-i", str(trimmed), "-af", OWNER_CLARITY.rstrip(","), str(eq)])
+        trimmed.unlink(); eq.rename(trimmed)
+    gain = CLIP_LUFS + (OWNER_LIFT_DB if owner else 0.0) - loudness(trimmed)
     run(["ffmpeg", "-v", "error", "-y", "-i", str(trimmed), "-af",
          f"volume={gain:.2f}dB,alimiter=limit=0.84:attack=3:release=40:level=false", str(dst)])
     trimmed.unlink()
@@ -195,13 +208,14 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         rec = recorded.get((speaker, text))
         if rec:
             digest = hashlib.sha1((ROOT / rec["file"]).read_bytes()).hexdigest()
-            return cache / f"rec-{digest}.wav"
+            tag = "rec2" if speaker in OWNER_SPEAKERS else "rec"   # rec2 = with the owner clarity treatment
+            return cache / f"{tag}-{digest}.wav"
         return cache / (hashlib.sha1(f"{VOICE_VERSIONS[speaker]}|{speaker}|{text}".encode()).hexdigest() + ".wav")
 
     for (speaker, text), rec in recorded.items():   # recorded lines: level them into the cache
         target = cache_path(speaker, text)
         if not target.exists():
-            level(ROOT / rec["file"], target)
+            level(ROOT / rec["file"], target, owner=speaker in OWNER_SPEAKERS)
             target.with_suffix(".json").write_text(json.dumps(
                 {"speaker": speaker, "text": text, "cer": rec["cer"], "heard": "🎙️ recorded: " + rec["heard"]},
                 ensure_ascii=False), encoding="utf-8")
