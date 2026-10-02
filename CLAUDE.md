@@ -22,7 +22,8 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 
 ## Calendar (keep it current)
 
-- **Weekly (Sunday):** channel-review — ask for the screenshots.
+- **Weekly (Sunday):** channel-review — `audit` (fix every ⚠️), search terms → tags of matching videos, stats,
+  then ask only for the screenshots the API can't give (viewed vs swiped).
 - **~2026-10-07, then weekly:** YouTube login expires (Testing mode) → run `login`, send the owner the link.
 - **Hourly (cron, automatic):** `tools/comment_job.sh` posts each sheet's pinned comment once its video is live and
   pops a desktop notification; the owner taps ⋮ → Pin (no API for pinning). Log: `~/.local/share/2min-yt/comments.log`.

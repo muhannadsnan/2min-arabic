@@ -10,6 +10,7 @@ Run with the small venv that has the Google libraries:
     $Y tools/youtube_api.py retention <video-id>       # audience retention curve (for channel-review)
     $Y tools/youtube_api.py search-terms [--days 28]   # what people typed to find us (→ tags)
     $Y tools/youtube_api.py comments [--max 50]        # latest comments (for channel-review)
+    $Y tools/youtube_api.py audit                      # every video vs our upload + tag rules (weekly)
     $Y tools/youtube_api.py fill <stem> <video-id> [--publish-at next|2026-10-02T16:00:00+02:00] [--apply]
         # --publish-at next = the day after the channel's latest (scheduled) video, same time of day
     $Y tools/youtube_api.py title <video-id> "New title" [--apply]
@@ -231,6 +232,47 @@ def post_comments(a):
               f"Related video = {hit[2] or 'the previous day'}")
 
 
+AR = re.compile("[\u0600-\u06ff]")
+GENERIC_AR = ("شورتس", "فيرال", "ترند", "اكسبلور")   # generic Arabic reach tags → wrong audience (Arabic speakers)
+
+
+def audit(a):
+    """Every video on the channel against our upload + tag rules (weekly, in channel-review)."""
+    y = yt(a.channel)
+    vids = my_videos(y)
+    in_pl = {}
+    for p in y.playlists().list(part="snippet", mine=True, maxResults=50).execute(num_retries=3)["items"]:
+        for i in y.playlistItems().list(part="snippet", playlistId=p["id"], maxResults=50).execute(num_retries=3)["items"]:
+            if i["snippet"]["title"] in ("Deleted video", "Private video"):
+                print(f"⚠️ placeholder '{i['snippet']['title']}' in playlist {p['snippet']['title']}")
+            in_pl.setdefault(i["snippet"]["resourceId"]["videoId"], []).append(p["snippet"]["title"])
+    bad = 0
+    for v in sorted(vids, key=lambda v: v["status"].get("publishAt") or v["snippet"]["publishedAt"]):
+        sn, st = v["snippet"], v["status"]
+        tags = sn.get("tags", [])
+        ar = [t for t in tags if AR.search(t)]
+        caps = [c["snippet"]["language"] for c in y.captions().list(part="snippet", videoId=v["id"]).execute(num_retries=3)["items"]
+                if c["snippet"]["trackKind"] == "standard"]
+        issues = []
+        if "#" in sn["title"]: issues.append("hashtag in title")
+        if AR.search(sn["title"]): issues.append("Arabic script in title")
+        if not 12 <= len(tags) <= 20: issues.append(f"{len(tags)} tags")
+        if len(", ".join(tags)) > 480: issues.append("tags > 480 chars")
+        if len(ar) < 5: issues.append(f"only {len(ar)} Arabic tags")
+        if not any(AR.search(t) and re.search(r"[A-Za-z]", t) for t in tags): issues.append("no mixed 'X meaning' tag")
+        if any(g in t for t in tags for g in GENERIC_AR): issues.append("generic Arabic reach tag")
+        if AR.search(sn["description"]) and "\u2067" not in sn["description"]: issues.append("Arabic without direction isolates")
+        if sn.get("defaultLanguage") != "en": issues.append(f"title language {sn.get('defaultLanguage')}")
+        if sn["categoryId"] != EDUCATION: issues.append("not Education")
+        if st.get("selfDeclaredMadeForKids"): issues.append("made for kids")
+        if "en" not in caps: issues.append("no English captions")
+        if v["id"] not in in_pl: issues.append("in no playlist")
+        bad += bool(issues)
+        when = (st.get("publishAt") or sn["publishedAt"])[:10]
+        print(f"{'⚠️' if issues else '✅'} {when} {sn['title'][:50]:50} {', '.join(issues) or 'ok'}")
+    print(f"\n{len(vids) - bad}/{len(vids)} videos pass")
+
+
 # ---------- fill: upload sheet → video ----------
 
 def box(sheet, heading):
@@ -332,6 +374,7 @@ def main():
     p = sub.add_parser("retention"); p.add_argument("video"); p.set_defaults(fn=retention)
     p = sub.add_parser("search-terms"); p.add_argument("--days", type=int, default=28); p.set_defaults(fn=search_terms)
     p = sub.add_parser("comments"); p.add_argument("--max", type=int, default=50); p.set_defaults(fn=comments)
+    sub.add_parser("audit").set_defaults(fn=audit)
     p = sub.add_parser("post-comments"); p.add_argument("--days", type=int, default=3); p.set_defaults(fn=post_comments)
     p = sub.add_parser("title"); p.add_argument("video"); p.add_argument("title"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=title)
     p = sub.add_parser("fill"); p.add_argument("stem"); p.add_argument("video")

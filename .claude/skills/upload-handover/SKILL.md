@@ -67,7 +67,7 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
   Studio → Settings → **Upload defaults** (whichever are offered there), so they're right for every upload.
 - **After every fill, end the reply with the owner's Studio checklist** (the tool prints it):
   Type Concept overview · Level Beginner · Automatic places/concepts off — every time, never assume it's done.
-- After `fill`, audit the channel (title = sheet, isolates in the description, 10–14 tags, Education, English
+- After `fill`, run `$Y tools/youtube_api.py audit` and fix every ⚠️; also audit the channel (title = sheet, isolates in the description, 10–14 tags, Education, English
   title/audio language, not for kids, English captions, custom thumbnail, playlist) — never just trust the call.
 - **After it goes live (automatic):** the hourly job posts the pinned comment and pops one desktop notification per
   video: "Day N is live: pin the comment and set Related video = …" — Related video **can't be set before publishing**.

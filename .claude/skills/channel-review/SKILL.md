@@ -18,6 +18,26 @@ Analytics lag ~2 days. If it says the login expired (Testing mode: every 7 days)
 the printed link (pick **2 Minute Arabic** in the brand-account list). Ask for screenshots **only** for what the API
 doesn't give: Shorts "viewed vs swiped away" and "shown in feed".
 
+## 0b. Channel audit + tag maintenance (every review, and 48 h after each publish)
+
+```
+$Y tools/youtube_api.py audit          # every video vs the upload + tag rules → fix every ⚠️ via the API
+$Y tools/youtube_api.py search-terms   # what people really typed (needs a few days of data)
+```
+- **Audit** checks per video: no hashtag / no Arabic script in the title · 12–20 tags, ≤ 480 chars · ≥ 5 Arabic tags
+  incl. one mixed "X meaning" tag · no generic Arabic reach tags (شورتس, فيرال, ترند…) · Arabic in the description
+  inside direction isolates · English title language · Education · not for kids · English captions · in a playlist ·
+  no "Deleted video" placeholders. Fix ⚠️ the same day (published videos too — tags/description edits are safe).
+- **Tag maintenance (published videos):** every real search term from the report goes into the tags of the video it
+  matches (and into future video-specific tags) — real terms beat guesses. Drop tags that never bring anything after
+  4 weeks only if a better real term replaces them. Keep the structure: search phrases · transliteration · 5–7 Arabic
+  (words + mixed "X meaning" + topic) · niche · broad · "shorts".
+- **Never add:** "viral"-type tags beyond the running experiment, generic Arabic tags, unrelated trending tags
+  (misleading-metadata policy).
+- **Experiments:** decide on the date, then apply the verdict to **all** videos in one go (e.g. "viral shorts" on
+  2026-10-06: keep → add to all; drop → remove from Days 3 and 5).
+- **48 h after each Short:** views, viewed-vs-swiped (screenshot), the 48-hour rule (§3).
+
 ## 1. Ask for exactly this (only what the API can't give)
 
 Send the list, phone-friendly:
