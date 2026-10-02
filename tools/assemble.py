@@ -316,7 +316,7 @@ def main():
     gain = -17.0 - measured
     final = out_dir / f"{title_slug(args.script) or stem}.mp4"   # owner (2026-10-01): one final file, named after its title
     inputs = ["-i", str(video_only), "-i", str(turn), "-i", str(voice)]
-    vchain = f"[0:v][1:v]overlay=0:1100:enable='{enable}'[v0]"
+    vchain = f"[0:v][1:v]overlay=0:1400:enable='{enable}'[v0]"
     achain = f"[2:a]volume={gain:.2f}dB,aformat=channel_layouts=mono[vo]"
     mix, last = ["[vo]"], "v0"
     for k, v in enumerate(tl.get("videos", [])):   # filmed clips: full screen with their own sound

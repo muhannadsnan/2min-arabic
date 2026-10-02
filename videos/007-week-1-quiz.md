@@ -19,10 +19,10 @@
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** 3D opener — Lina gives a cheerful thumbs-up, lowers her hand and smiles (new opener, owner approves)
-🔤 **On screen:** Week 1 quiz · 10 questions
+🔤 **On screen:** Week 1 quiz, 10 questions
 
 ```say:narrator
-Seven days. Ten questions. Answer out loud before I do — no peeking.
+You've done a whole week, so let's see what stuck. Ten quick questions, and you answer out loud before I do.
 ```
 
 ### 🎬 Scene 2 — Channel intro
@@ -41,7 +41,7 @@ I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minu
 🔤 **On screen:** 1.01⁷ = 1.07 · one week, 7% better
 
 ```say:narrator
-Today is Day 7. Remember the math from Day 1? One point zero one, seven times, is already one point zero seven. You're seven percent better than a week ago. Let's prove it.
+Today is Day 7. Remember the idea from Day 1? Get just one percent better every day, and after one week you're already seven percent better. Let's prove it.
 ```
 
 ### 🎬 Scene 4 — Question 1
@@ -50,7 +50,7 @@ Today is Day 7. Remember the math from Day 1? One point zero one, seven times, i
 🔤 **On screen:** Quiz 1/10 · How do you say: please?
 
 ```say:narrator
-Number one. How do you say: please?
+Let's start with an easy one. How do you say please?
 ```
 ⏸️ **Pause 3s**
 
@@ -66,10 +66,10 @@ Number one. How do you say: please?
 ### 🎬 Scene 6 — Question 2
 
 🖼️ **Image:** Sami handing a book to an older neighbour, 3D
-🔤 **On screen:** Quiz 2/10 · Someone says thank you. You answer: you're welcome.
+🔤 **On screen:** Quiz 2/10 · You're welcome.
 
 ```say:narrator
-Someone thanks you. How do you say: you're welcome?
+Now someone thanks you. How do you say you're welcome?
 ```
 ⏸️ **Pause 3s**
 
@@ -88,7 +88,7 @@ Someone thanks you. How do you say: you're welcome?
 🔤 **On screen:** Quiz 3/10 · My name is Sami.
 
 ```say:narrator
-Number three. You're Sami. Say: my name is Sami.
+Next, imagine you're Sami. Tell me your name.
 ```
 ⏸️ **Pause 3s**
 
@@ -107,7 +107,7 @@ Number three. You're Sami. Say: my name is Sami.
 🔤 **On screen:** Quiz 4/10 · She is Lina.
 
 ```say:narrator
-Number four. Point at her and say: she is Lina.
+Now point at her and say, she is Lina.
 ```
 ⏸️ **Pause 3s**
 
@@ -126,7 +126,7 @@ Number four. Point at her and say: she is Lina.
 🔤 **On screen:** Quiz 5/10 · Sami is sad.
 
 ```say:narrator
-Number five, from the story. Sami is sad.
+This one is from the coffee story. How do you say, Sami is sad?
 ```
 ⏸️ **Pause 3s**
 
@@ -145,9 +145,9 @@ Number five, from the story. Sami is sad.
 🔤 **On screen:** Quiz 6/10 · yes
 
 ```say:narrator
-Number six. The word for yes.
+Here's a quick one for you. What's the word for yes?
 ```
-⏸️ **Pause 3s**
+⏸️ **Pause 2s**
 
 ### 🎬 Scene 15 — Answer 6
 
@@ -164,7 +164,7 @@ Number six. The word for yes.
 🔤 **On screen:** Quiz 7/10 · No, thank you.
 
 ```say:narrator
-Number seven. A fifth coffee? Say: no, thank you.
+Then Lina offers Sami a fifth coffee. How does he say no, thank you?
 ```
 ⏸️ **Pause 3s**
 
@@ -183,7 +183,7 @@ Number seven. A fifth coffee? Say: no, thank you.
 🔤 **On screen:** Quiz 8/10 · How does Lina say: no problem?
 
 ```say:narrator
-Number eight. Sami says sorry. How does Lina say: no problem?
+Later, Sami says sorry to Lina. How does she answer, no problem?
 ```
 ⏸️ **Pause 3s**
 
@@ -202,7 +202,7 @@ Number eight. Sami says sorry. How does Lina say: no problem?
 🔤 **On screen:** Quiz 9/10 · okay, good
 
 ```say:narrator
-Number nine. The word you hear all day: okay, good.
+Here's the word you hear all day long. How do you say okay, good?
 ```
 ⏸️ **Pause 3s**
 
@@ -221,7 +221,7 @@ Number nine. The word you hear all day: okay, good.
 🔤 **On screen:** Quiz 10/10 · Goodbye.
 
 ```say:narrator
-And the last one, of course: goodbye.
+And here's the last question, of course. How do you say goodbye?
 ```
 ⏸️ **Pause 3s**
 
@@ -240,7 +240,7 @@ And the last one, of course: goodbye.
 🔤 **On screen:** Week 1 done ✓ · tomorrow: where are you from?
 
 ```say:narrator
-How many did you get? Write your score in the comments. One week done. Tomorrow, a new week starts: where are you from?
+So, how many did you get? Write your score in the comments, I'd love to see it. That's one full week done. Tomorrow a new week starts, and you'll learn how to say where you're from.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.
