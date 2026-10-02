@@ -1,15 +1,23 @@
 # Day 2 — Upload sheet
 
-**File to upload:** `output/002-10-most-useful-phrases/002-10-most-useful-phrases.mp4`
+**File to upload:** `output/002-10-most-useful-phrases/say-these-10-arabic-phrases-every-day.mp4`
 (1:58, vertical → published as a **Short**; −14 LUFS; captions burned in; your real hello + goodbye clips inside;
 our own animated SUBSCRIBE + bell over the goodbye)
-**Thumbnail/cover:** `output/002-10-most-useful-phrases/thumbnail (vertical).jpg` — if the upload screen only allows picking
+**Thumbnail:** `output/002-10-most-useful-phrases/say-these-10-arabic-phrases-every-day-thumbnail.jpg` — if the upload screen only allows picking
 a frame, pick **0:02** (Sami and Lina at the café).
+
+## Re-upload (2026-10-02, 48-hour rule)
+
+The first upload (O8S4TLyxUFo, 28 Sep) got only 2 views from the Shorts feed in 4 days, while its viewers watched 60 %
+(the best of all days) → YouTube never tested it. Same video, new title, re-uploaded on a fresh day.
+1. Studio → Content → Shorts → old Day 2 → ⋮ → **Delete forever** (11 views, nothing to lose).
+2. Upload the file above, close the dialog. Tell Claude "uploaded Day 2" → Claude fills it, schedules it and puts it
+   back at position 2 in the 30-day playlist.
 
 ## Title
 
 ```
-10 Arabic Phrases You'll Use Every Day | Day 2 · 2 Minute Arabic
+Say These 10 Arabic Phrases Every Day | Day 2 · 2 Minute Arabic
 ```
 
 ## Description

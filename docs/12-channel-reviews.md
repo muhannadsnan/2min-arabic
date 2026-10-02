@@ -16,3 +16,7 @@ Median views 54. Day 2 is the only miss. Its few viewers watched the most (60 %)
 never entered the Shorts feed (0 feed views vs 17 / 7 for Days 1 / 3). No technical difference found (same format,
 1080×1920, Education, not-for-kids, English). Most likely: YouTube's first feed test on a 1-day-old channel showed
 it to almost nobody (and it was published by hand at a different hour). Numbers are tiny → a hint, not proof.
+
+**Studio screenshot (Day 2, Reach, since published):** 9 views in analytics — channel pages 27 %, external 27 %,
+browse 18 %, **Shorts feed 18 % (2 views)**, search 9 %; flat after day 3. → Decision: delete + re-upload the same
+video with a new title ("Say These 10 Arabic Phrases Every Day"), one retry only (48-hour rule).
