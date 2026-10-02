@@ -105,7 +105,7 @@ def loudness(path: pathlib.Path) -> float:
 # level them 2 dB above the other clips (owner, 2026-10-02: "my voice is lower and less clear")
 OWNER_CLARITY = ("highpass=f=90,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=2800:t=q:w=1.0:g=3.5,"
                  "highshelf=f=6000:g=4,")
-OWNER_LIFT_DB = 2.0
+OWNER_LIFT_DB = 1.0   # measured 2026-10-02: +2 put him 2 LU above the narrator; the EQ does most of the work
 OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami"}
 
 
@@ -208,7 +208,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         rec = recorded.get((speaker, text))
         if rec:
             digest = hashlib.sha1((ROOT / rec["file"]).read_bytes()).hexdigest()
-            tag = "rec2" if speaker in OWNER_SPEAKERS else "rec"   # rec2 = with the owner clarity treatment
+            tag = "rec3" if speaker in OWNER_SPEAKERS else "rec"   # rec3 = owner clarity EQ + 1 dB
             return cache / f"{tag}-{digest}.wav"
         return cache / (hashlib.sha1(f"{VOICE_VERSIONS[speaker]}|{speaker}|{text}".encode()).hexdigest() + ".wav")
 

@@ -52,7 +52,7 @@ Today is Day 8, and a brand new week starts. Let's warm up with Day 5. How do yo
 أَنْتَ
 ```
 ```say:narrator
-Keep that word in mind, because you'll need it today.
+Remember this word well, because you will need it again today.
 ```
 
 ### 🎬 Scene 5 — The question (to a man)
@@ -206,7 +206,7 @@ Now answer, I am from America. Or you can say your own country.
 🔤 **On screen:** Your turn · And you? (to a woman)
 
 ```say:narrator
-And here's one from Day 3. Ask her back, and you?
+And here's one from Day 3. Now ask her back: and you?
 ```
 ⏸️ **Pause 3s**
 

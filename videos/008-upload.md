@@ -84,9 +84,11 @@ Day 8 ✅ — Where are you from? Answer in Arabic: أَنَا مِنْ … (ana
 
 ## Quality check (Claude)
 
+- Audio gate: narrator, your voice and Koki within 1 LU; your clarity matches the narrator's; every narrator line passes.
+
 - Opener: Sami at his desk with the globe (approved) → 1-s hold → slow zoom. First card one line.
 - Your Arabic lines got a clarity boost (+2 dB, brighter EQ) — they sounded darker than Koki's.
 - Narration rewritten as a natural teacher; 3 lines re-voiced. Arabic = your recording + Koki's (Lina) lines.
 - 12 new 3D images; one scene redone (it showed two Samis instead of Sami and Lina). Faces clear of every card.
 - New tag formula: search phrases + transliteration (min ayna anta, ana min) + Arabic-script tags.
-- Finished video: 2:01 · −14.0 LUFS · peak −1.9 dB · transcript in order, no overlaps.
+- Finished video: 2:04 · −14.1 LUFS · peak −1.8 dB · transcript in order, no overlaps.

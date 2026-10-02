@@ -69,7 +69,7 @@ Let's start with an easy one. How do you say please?
 🔤 **On screen:** Quiz 2/10 · You're welcome.
 
 ```say:narrator
-Now someone thanks you. How do you say you're welcome?
+Now imagine someone thanks you, so how do you say you're welcome?
 ```
 ⏸️ **Pause 3s**
 
@@ -107,7 +107,7 @@ Next, imagine you're Sami. Tell me your name.
 🔤 **On screen:** Quiz 4/10 · She is Lina.
 
 ```say:narrator
-Now point at her and say, she is Lina.
+Now look at her, and tell me in Arabic: she is Lina.
 ```
 ⏸️ **Pause 3s**
 

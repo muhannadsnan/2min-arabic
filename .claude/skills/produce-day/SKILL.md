@@ -61,8 +61,16 @@ Koki's own sheet is split with `--as-recorded --min-silence=0.5` (never voice-co
 `footage/recordings/<video>/report.md`: every line matched, CER low; listen-worthy lines flagged.
 
 **Owner's voice treatment (automatic, 2026-10-02):** `make_audio.py` gives the owner's recorded lines (teacher,
-teacher-slow, sami) a clarity EQ (−2.5 dB at 250 Hz, +3.5 dB at 2.8 kHz, +4 dB shelf from 6 kHz) and +2 dB, because his
+teacher-slow, sami) a clarity EQ (−2.5 dB at 250 Hz, +3.5 dB at 2.8 kHz, +4 dB shelf from 6 kHz) and +1 dB, because his
 phone recordings sounded darker and quieter than Koki's. Koki's lines are left as they are.
+
+**Audio gate — before building any video (owner, 2026-10-02):** after `make_audio.py`, run
+`$TTS tools/voice_balance.py videos/NNN-….md`. It must show:
+- narrator / owner / Koki loudness within ±1.5 LU of each other (same level to the ear);
+- owner vs narrator clarity within ±3 dB (Koki is naturally brighter — leave her);
+- "narrator clips to redo: none" (no rushed > 3.6 w/s, flat < 6 st, or gap > 0.9 s lines).
+Fix flagged narrator lines by **rewording** into a calmer, fuller sentence (more takes alone rarely fixes a rushed
+short line — the clone hurries short casual sentences), re-run, and only then assemble.
 
 ## 4. Voice — `python3 tools/make_audio.py videos/NNN-….md`
 

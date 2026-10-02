@@ -86,6 +86,8 @@ Day 7 ✅ — What was your score out of 10? Write it below 👇 (and one Arabic
 
 ## Quality check (Claude)
 
+- **v2 (2026-10-02):** your voice clarity EQ + 1 dB; 4 narrator lines fixed (gaps/rushed) — replaces upload zpu1gLPiU4A.
+
 - Opener: Lina's rooftop thumbs-up (approved) → 1-s hold → slow zoom. First card one line, one style.
 - Narration rewritten as a natural teacher ("Let's start with an easy one…"); 6 lines re-voiced until delivery passed.
 - All 10 answers are existing recordings (you + Koki). 6 new 3D images + 5 reused from Day 6; hands and faces checked;
