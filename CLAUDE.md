@@ -32,7 +32,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **After Day 10:** Part 2 (Days 6–10).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
-- **Next up (2026-10-01):** Days 6–10 + Part 2 scripted; waiting for the owner's recording (37 lines,
+- **Next up (2026-10-01):** Day 6 scheduled 4 Oct (veaEqTci-qw). Recordings in; produce Days 7–10 + Part 2 next (
   `videos/_610-combined-recording-sheet.md`) and Koki's (4 lines). All 6 openers approved (d06–d10, p2) → produce. Day 6 → 4 Oct.
 
 ## Rules that are easy to forget

@@ -3,6 +3,8 @@
 **File to upload:** `output/006-yes-no-and-polite-words/yes-no-sorry-ok-4-tiny-arabic-words.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/006-yes-no-and-polite-words/yes-no-sorry-ok-4-tiny-arabic-words-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-02** — video id `veaEqTci-qw`, scheduled **4 Oct 17:00 Oslo**.
+
 ## Fast way
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays private).
