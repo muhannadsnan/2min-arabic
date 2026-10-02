@@ -1,7 +1,9 @@
-# Day 7 — Upload sheet
+f# Day 7 — Upload sheet
 
 **File to upload:** `output/007-week-1-quiz/can-you-pass-this-arabic-quiz-week-1.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/007-week-1-quiz/can-you-pass-this-arabic-quiz-week-1-thumbnail.jpg`
+
+> ✅ **Uploaded + filled by Claude 2026-10-02** — video id `zpu1gLPiU4A`, scheduled **6 Oct 17:00 Oslo**.
 
 ## Fast way
 
