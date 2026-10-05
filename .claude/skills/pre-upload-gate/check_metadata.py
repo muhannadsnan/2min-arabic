@@ -68,8 +68,8 @@ check(desc.strip() in sheet, "description.txt matches the box in the sheet")
 # Tags
 m = re.search(r"## Tags.*?```\n(.+?)\n```", sheet, re.S)
 tags = [t.strip() for t in m.group(1).split(",")] if m else []
-check(12 <= len(tags) <= 20, f"{len(tags)} tags (search phrases · translit · Arabic · niche · broad)")
-check(len(", ".join(tags)) <= 500, f"tags {len(', '.join(tags))} chars (≤ 500)")
+check(12 <= len(tags) <= 28, f"{len(tags)} tags (search phrases · translit · Arabic · niche · broad)")
+check(len(", ".join(tags)) <= 480, f"tags {len(', '.join(tags))} chars (≤ 500)")
 check(not any("#" in t for t in tags), "no # inside tags")
 check(sum(bool(ar.search(t)) for t in tags) >= 5, f"{sum(bool(ar.search(t)) for t in tags)} Arabic-script tags (≥ 5)")
 check(any(ar.search(t) and re.search(r"[A-Za-z]", t) for t in tags), "a mixed tag ('طيب meaning')")

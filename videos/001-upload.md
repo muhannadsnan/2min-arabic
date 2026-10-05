@@ -32,7 +32,7 @@ Two minutes a day. Your first Arabic conversation in 30 days.
 ## Tags
 
 ```
-arabic for beginners, best way to learn arabic, how to learn arabic fast, language learning tips, learn arabic, learn arabic in 30 days, learn languages, مرحبا, مع السلامة, مرحبا meaning, تعلم اللغة العربية, العربية للمبتدئين, ma'a salama, marhaba, modern standard arabic, shorts
+arabic for beginners, best way to learn arabic, how to learn arabic fast, arabic for beginners step by step, how long to learn arabic, is arabic hard to learn, language learning tips, learn arabic, learn arabic in 30 days, learn languages, ma'a salama, marhaba, modern standard arabic, shorts, العربية للمبتدئين, تعلم اللغة العربية, مرحبا, مرحبا meaning, مع السلامة
 ```
 
 ## Settings

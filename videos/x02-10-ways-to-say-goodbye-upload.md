@@ -37,7 +37,7 @@ Two minutes a day. Your first Arabic conversation in 30 days — this is a bonus
 4. ilaa l-ghad — Until tomorrow — ⁧إِلَى الْغَدْ⁩
 5. fii amaani llaah — In God's protection — ⁧فِي أَمَانِ اللهْ⁩
 
-🇸🇾 Syrian dialect (everyday speech in Syria):
+🗣️ Syrian dialect (everyday speech in Syria):
 6. bkhaatrak — Bye (said by the one leaving) — ⁧بْخَاطْرَكْ⁩
 7. allaah ma'ak — God be with you (the reply) — ⁧اللهْ مَعَكْ⁩
 8. mnshuufak ba'dein — See you later — ⁧مْنْشُوفَكْ بَعْدَيْن⁩
@@ -55,7 +55,7 @@ Two minutes a day. Your first Arabic conversation in 30 days — this is a bonus
 (3 groups — video-specific · niche · broad)
 
 ```
-arabic goodbye phrases, arabic phrases, bkhatrak, how to say goodbye in arabic, language learning, learn arabic, levantine arabic, مع السلامة, إلى اللقاء, بخاطرك, يلا باي, بخاطرك meaning, مع السلامة meaning, ma'a salama, shorts, syrian arabic, yalla bye
+arabic goodbye phrases, arabic phrases, bkhatrak, good night in arabic, see you later in arabic, what is goodbye in arabic, ways to say goodbye in arabic, how to say goodbye in arabic, language learning, learn arabic, levantine arabic, ma'a salama, shorts, syrian arabic, yalla bye, إلى اللقاء, بخاطرك, بخاطرك meaning, مع السلامة, مع السلامة meaning, يلا باي, bye in arabic, good bye in arabic, hwo to say bye in arabic, take care in arabic, how to talk to people in arabic
 ```
 
 ## Settings

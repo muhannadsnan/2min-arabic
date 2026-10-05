@@ -27,13 +27,16 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
 3. **Title** in a code box. Pattern `<benefit or curiosity> | Day N · 2 Minute Arabic` (Parts: `… | Part N · Days a–b`;
    Extras: `… | Arabic Extras`). Benefit part under ~50 characters. No hashtags in the title.
 4. **Description** embedded in a code box (also saved as `videos/<stem>-description.txt`):
+   - **no flag emojis** (🇸🇾 renders the old Syrian flag; flags are political) — use 🗣️ / 📍 for regions;
    - every Arabic phrase at the **end** of its line, wrapped in U+2067 … U+2069 (otherwise YouTube scrambles it);
    - transliteration — meaning — Arabic;
    - "Start from Day 1" link without `?si=…`; ~3 hashtags at the end (`#learnarabic` … `#2minutearabic`).
    Write it with Python so the invisible markers are really in the file, then print it once to verify.
-5. **Tags** in a code box, 15–19 tags, ≤ 480 characters, in this order (owner, 2026-10-02):
+5. **Tags** in a code box, 18–26 tags, ≤ 480 characters, in this order (owner, 2026-10-02/05):
    - 3 **search phrases** people really type, specific to this video ("how to say sorry in arabic", "arabic
      conversation for beginners") — real terms from channel-review's search-terms report win;
+   - 3 **question-form / synonym searches** in the owner's style (2026-10-05): "what is greeting in arabic",
+     "welcome in arabic", "sorry in arabic", "how to talk to arabic people", "ways to say hello in arabic";
    - 2–4 **transliterated keywords** of today's words ("shukran", "ma ismuk", "tayyib") — learners search these;
    - 5–7 **Arabic-script** tags (owner, 2026-10-02): today's words in Arabic ("نعم", "طيب"), 2 **mixed** phrases a
      learner pastes in after seeing a word ("طيب meaning", "من أين أنت in english"), and one topic phrase

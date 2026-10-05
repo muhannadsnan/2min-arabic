@@ -45,7 +45,7 @@ al-Hind — India — ⁧الْهِنْدْ⁩
 ## Tags
 
 ```
-ana min, arabic for beginners, arabic phrases, countries in arabic, how to say where are you from in arabic, language learning, learn arabic, من أين أنت, أنا من, سوريا, لبنان, من أين أنت in english, الدول بالعربية, min ayna anta, shorts, suriya, where are you from in arabic
+ana min, arabic for beginners, arabic phrases, how to talk to arabic people, i am from in arabic, what is where are you from in arabic, countries in arabic, how to say where are you from in arabic, language learning, learn arabic, min ayna anta, shorts, suriya, where are you from in arabic, أنا من, الدول بالعربية, سوريا, لبنان, من أين أنت, من أين أنت in english
 ```
 
 ## Settings

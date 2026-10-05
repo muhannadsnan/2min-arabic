@@ -24,10 +24,12 @@ doesn't give: Shorts "viewed vs swiped away" and "shown in feed".
 $Y tools/youtube_api.py audit          # every video vs the upload + tag rules → fix every ⚠️ via the API
 $Y tools/youtube_api.py search-terms   # what people really typed (needs a few days of data)
 ```
-- **Audit** checks per video: no hashtag / no Arabic script in the title · 12–20 tags, ≤ 480 chars · ≥ 5 Arabic tags
+- **Audit** checks per video: no hashtag / no Arabic script in the title · no flag emojis · 12–28 tags, ≤ 480 chars · ≥ 5 Arabic tags
   incl. one mixed "X meaning" tag · no generic Arabic reach tags (شورتس, فيرال, ترند…) · Arabic in the description
   inside direction isolates · English title language · Education · not for kids · English captions · in a playlist ·
   no "Deleted video" placeholders. Fix ⚠️ the same day (published videos too — tags/description edits are safe).
+- **The owner adds tags in Studio sometimes** — read them on every review (`audit` shows counts) and copy the good
+  patterns to the other videos (2026-10-05: question-form searches like "what is greeting in arabic").
 - **Tag maintenance (published videos):** every real search term from the report goes into the tags of the video it
   matches (and into future video-specific tags) — real terms beat guesses. Drop tags that never bring anything after
   4 weeks only if a better real term replaces them. Keep the structure: search phrases · transliteration · 5–7 Arabic

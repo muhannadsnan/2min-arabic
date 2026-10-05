@@ -17,10 +17,10 @@
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** 3D opener — Lina in a bright classroom closes a book and smiles at the camera (new opener, owner approves)
-🔤 **On screen:** One letter · man or woman
+🔤 **On screen:** One letter, man or woman
 
 ```say:narrator
-In Arabic, one little letter turns a man into a woman. Let me show you.
+In Arabic, one little letter can turn a man into a woman, and today I'll show you how.
 ```
 
 ### 🎬 Scene 2 — Channel intro
@@ -39,7 +39,7 @@ I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minu
 🔤 **On screen:** Warm-up · Ask a woman: where are you from?
 
 ```say:narrator
-Today is Day 9. Warm-up from yesterday: ask a woman where she's from.
+Today is Day 9. Let's warm up with yesterday's question. How do you ask a woman where she's from?
 ```
 ⏸️ **Pause 3s**
 
@@ -58,7 +58,7 @@ Today is Day 9. Warm-up from yesterday: ask a woman where she's from.
 🔤 **On screen:** ة · *-a* · the "woman" ending: a soft a
 
 ```say:narrator
-Here is today's letter. It looks like a small round h with two dots on top, and it sounds like a soft "a". Add it to the end of a word, and the word becomes feminine.
+Here is today's letter. It looks like a small round h with two dots on top, and it sounds like a soft a. When you add it to the end of a word, the word becomes feminine.
 ```
 
 ### 🎬 Scene 6 — Student
@@ -67,7 +67,7 @@ Here is today's letter. It looks like a small round h with two dots on top, and 
 🔤 **On screen:** طَالِبْ، طَالِبَةْ · *taalib, taaliba* · student: man, woman
 
 ```say:narrator
-A student. First a man, then a woman.
+Let's start with the word student. First for a man, and then for a woman.
 ```
 ```say:teacher
 طَالِبْ
@@ -82,7 +82,7 @@ A student. First a man, then a woman.
 🔤 **On screen:** مُعَلِّمْ، مُعَلِّمَةْ · *mu'allim, mu'allima* · teacher: man, woman
 
 ```say:narrator
-A teacher. Man, then woman.
+Now the word teacher, again for a man and then for a woman.
 ```
 ```say:teacher
 مُعَلِّمْ
@@ -97,7 +97,7 @@ A teacher. Man, then woman.
 🔤 **On screen:** صَدِيقْ، صَدِيقَةْ · *Sadiiq, Sadiiqa* · friend: man, woman
 
 ```say:narrator
-And a friend.
+And here's the word friend, the same way.
 ```
 ```say:teacher
 صَدِيقْ
@@ -113,13 +113,13 @@ And a friend.
 🔤 **On screen:** سَعِيدَةْ، آسِفَةْ · *sa'iida, aasifa* · happy, sorry (said by a woman) · you already know it!
 
 ```say:narrator
-You already used this letter twice. Happy, said by a woman:
+And you've already used this letter twice. Here's happy, when a woman says it.
 ```
 ```say:teacher
 أَنَا سَعِيدَةْ.
 ```
 ```say:narrator
-And sorry, said by a woman:
+Now let's hear the word sorry, but this time the way a woman says it.
 ```
 ```say:lina
 آسِفَةْ.
@@ -131,7 +131,7 @@ And sorry, said by a woman:
 🔤 **On screen:** لِينَا طَالِبَةْ · *Liinaa taaliba* · Lina is a student.
 
 ```say:narrator
-Now in sentences. And remember: no "is" in Arabic.
+Now let's use it in sentences, and remember, Arabic doesn't need a word for is.
 ```
 ```say:teacher
 لِينَا طَالِبَةْ.
@@ -152,7 +152,7 @@ Now in sentences. And remember: no "is" in Arabic.
 🔤 **On screen:** Man or woman? · listen to the ending
 
 ```say:narrator
-Game time. Man or woman? Listen to the ending.
+Now it's game time. Listen to the ending, and tell me, is it a man or a woman?
 ```
 ```say:teacher
 حَزِينَةْ
@@ -165,7 +165,7 @@ Game time. Man or woman? Listen to the ending.
 🔤 **On screen:** حَزِينَةْ · *haziina* · sad (woman) · you heard the "a"!
 
 ```say:narrator
-A woman. You heard the soft "a" at the end.
+It's a woman, because you heard the soft a at the end.
 ```
 
 ### 🎬 Scene 14 — Your turn 1
@@ -174,7 +174,7 @@ A woman. You heard the soft "a" at the end.
 🔤 **On screen:** Your turn · She is a student.
 
 ```say:narrator
-Your turn. Say: she is a student.
+Now it's your turn. How do you say, she is a student?
 ```
 ⏸️ **Pause 4s**
 
@@ -193,7 +193,7 @@ Your turn. Say: she is a student.
 🔤 **On screen:** Your turn · Lina is happy.
 
 ```say:narrator
-Now: Lina is happy.
+And now tell me, how would you say that Lina is happy?
 ```
 ⏸️ **Pause 4s**
 
@@ -212,7 +212,7 @@ Now: Lina is happy.
 🔤 **On screen:** Your turn · No problem.
 
 ```say:narrator
-And from Day 6: no problem.
+And here's one from Day 6. How do you say no problem?
 ```
 ⏸️ **Pause 3s**
 
@@ -231,7 +231,7 @@ And from Day 6: no problem.
 🔤 **On screen:** ة · *-a* · the woman ending · tomorrow: numbers 1–10
 
 ```say:narrator
-One little letter, and the word becomes feminine. Tomorrow: numbers from one to ten, and you'll meet this letter again.
+So with one little letter, a word becomes feminine. Tomorrow you'll learn the numbers from one to ten, and you'll meet this letter again.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.

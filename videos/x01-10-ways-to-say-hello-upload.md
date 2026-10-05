@@ -37,7 +37,7 @@ Two minutes a day. Your first Arabic conversation in 30 days — this is a bonus
 4. sabaah al-khayr — Good morning — ⁧صَبَاحُ الْخَيْرْ⁩
 5. masaa' al-khayr — Good evening — ⁧مَسَاءُ الْخَيْرْ⁩
 
-🇸🇾 Syrian dialect (everyday speech in Syria):
+🗣️ Syrian dialect (everyday speech in Syria):
 6. ahleen — Hi — ⁧أَهْلِين⁩
 7. marhabtein — Two hellos (hi there) — ⁧مَرْحَبْتَين⁩
 8. hala wallah — Hey, so good to see you — ⁧هَلَا وَاللهْ⁩
@@ -55,7 +55,7 @@ Two minutes a day. Your first Arabic conversation in 30 days — this is a bonus
 (3 groups — video-specific · niche · broad)
 
 ```
-ahlan, arabic greetings, arabic phrases, how to say hello in arabic, kifak, language learning, learn arabic, levantine arabic, مرحبا, أهلا وسهلا, هلا والله, كيفك, مرحبتين meaning, كيفك meaning, marhaba, marhabtein, shorts, syrian arabic greetings
+ahlan, arabic greetings, arabic phrases, how to say hello in arabic, kifak, language learning, learn arabic, levantine arabic, marhaba, marhabtein, shorts, syrian arabic greetings, أهلا وسهلا, كيفك, كيفك meaning, مرحبا, مرحبتين meaning, هلا والله, ways to say hello in arabic, what is greeting in arabic, welcome in arabic, how to talk to arabic people, arabic conversation
 ```
 
 ## Settings

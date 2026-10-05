@@ -19,10 +19,10 @@ Images: the same café table, with 1, 2, 3 … 10 coffee cups (count them carefu
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** 3D opener — the café waiter (grey hair, glasses, moustache, red apron) sets a tray of coffee cups on the table and smiles (new opener, owner approves)
-🔤 **On screen:** Count to 10 in Arabic · + one easy pattern
+🔤 **On screen:** Count to 10 in Arabic
 
 ```say:narrator
-Count to ten in Arabic, and spot yesterday's letter hiding inside the numbers.
+Let's count to ten in Arabic, and see if you can spot yesterday's letter hiding inside the numbers.
 ```
 
 ### 🎬 Scene 2 — Channel intro
@@ -41,7 +41,7 @@ I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minu
 🔤 **On screen:** Warm-up · a friend (woman)
 
 ```say:narrator
-Today is Day 10. Warm-up from yesterday: say "friend", for a woman.
+Today is Day 10. Let's warm up with yesterday. How do you say friend, when the friend is a woman?
 ```
 ⏸️ **Pause 3s**
 
@@ -54,7 +54,7 @@ Today is Day 10. Warm-up from yesterday: say "friend", for a woman.
 صَدِيقَةْ
 ```
 ```say:narrator
-That soft "a" at the end. Listen for it in today's numbers. The waiter is bringing coffee, one cup at a time.
+Remember that soft a at the end, because you will hear it again today, while the waiter brings coffee for a group of friends.
 ```
 
 ### 🎬 Scene 5 — One
@@ -141,7 +141,7 @@ That soft "a" at the end. Listen for it in today's numbers. The waiter is bringi
 
 ### 🎬 Scene 14 — Ten
 
-🖼️ **Image:** ten coffee cups crowding the café table, Sami looking at them amazed, 3D
+🖼️ **Image:** ten coffee cups on a long café table for a group of friends, 3D
 🔤 **On screen:** عَشَرَةْ · *'ashara* · 10
 
 ```say:teacher
@@ -155,7 +155,7 @@ That soft "a" at the end. Listen for it in today's numbers. The waiter is bringi
 🔤 **On screen:** ثَلَاثَةْ، خَمْسَةْ، عَشَرَةْ · *thalaatha, khamsa, 'ashara* · 3 to 10 end in the soft "a"
 
 ```say:narrator
-Did you hear it? From three to ten, every number ends with the soft "a" sound. Yesterday's letter.
+Did you hear it? From three to ten, every number ends with that soft a sound, which is yesterday's letter.
 ```
 
 ### 🎬 Scene 16 — Game 1
@@ -164,7 +164,7 @@ Did you hear it? From three to ten, every number ends with the soft "a" sound. Y
 🔤 **On screen:** How many cups?
 
 ```say:narrator
-Game time. How many cups?
+Now it's game time. How many cups can you see on the table?
 ```
 ⏸️ **Pause 3s**
 
@@ -183,7 +183,7 @@ Game time. How many cups?
 🔤 **On screen:** How many cups?
 
 ```say:narrator
-Next round. How many cups now?
+And here is the next round, so how many cups do you see now?
 ```
 ⏸️ **Pause 3s**
 
@@ -198,11 +198,11 @@ Next round. How many cups now?
 
 ### 🎬 Scene 20 — Your turn (recall Day 2)
 
-🖼️ **Image:** the waiter setting down the last cup, Sami smiling up at him, 3D
-🔤 **On screen:** Your turn · The waiter brings ten coffees. Say: thank you.
+🖼️ **Image:** the waiter setting down the last cup for a group of friends, all smiling, 3D
+🔤 **On screen:** Your turn · Thank you.
 
 ```say:narrator
-Your turn. The waiter brings you ten coffees. Say thank you.
+Now it's your turn, the waiter brings coffee for your friends, so how do you say thank you?
 ```
 ⏸️ **Pause 3s**
 
@@ -221,7 +221,7 @@ Your turn. The waiter brings you ten coffees. Say thank you.
 🔤 **On screen:** Day 10 · 1.01¹⁰ = 1.10
 
 ```say:narrator
-Ten days, ten numbers. You're already ten percent better. This week's full lesson, Part 2, is on the channel next. And tomorrow, Lina meets a tourist.
+That's ten days and ten numbers, so you're already ten percent better, and Part 2, with this whole week in one lesson, is coming next, and tomorrow Lina meets a tourist.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.
