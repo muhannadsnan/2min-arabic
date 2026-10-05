@@ -37,10 +37,12 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
   Words that invite a British vowel can be swapped ("next day" for "tomorrow" if it keeps slipping).
 - **American spelling everywhere** viewers read it (narration → burned-in captions, cards, descriptions): favorite,
   color, neighbor, gray, practice (verb), center — never the British forms (x02 shipped with "favourite").
+- **Same accent in every sentence (owner, 2026-10-05: keep the narrator, keep it consistent):** the audio gate compares
+  each narrator line with all the other lines of the same video (`CONSIST = 0.92`; normal lines score 0.93–0.96)
+  and flags "accent differs from the other lines" — re-voice or reword those. Don't change the narrator voice.
 - **What the accent check really measures:** closeness to the owner's own English recording, not "American-ness".
   The owner is not a native English speaker (2026-10-05), so his clone inherits his accent; the check only catches
-  drift away from him. Test pending: Kokoro am_michael (native American TTS) converted to his timbre with
-  Chatterbox VC (`output/voice-test/`, A = clone, B = Kokoro, C = Kokoro → his voice, similarity 0.92).
+  drift away from him. Owner decided (2026-10-05): keep his cloned narrator; enforce consistency between sentences instead.
 - **Accent:** the narrator is the owner's relaxed American accent. The take picker now scores each take's voice
   against his reference (Chatterbox voice encoder) and the audio gate flags "voice/accent drift" below 0.88 —
   redo those lines. Very short lines drift most ("Subscribe so you don't break your streak." scored lowest).
@@ -213,7 +215,11 @@ animation, goodbye; captions don't cover faces or cards.
 - Thumbnail from one of the video's own images (the caption-free original in `images/`, not a frame with burned-in
   captions): `python3 tools/thumbnail.py images/<video>/sNN.png "output/<video>/thumbnail (vertical).jpg"
   --badge "DAY N" --line1 … --line2 … --arabic …` → check the `-phone-size.png`.
-- `python3 tools/upload_captions.py videos/NNN-….md` → `output/<video>/captions-upload.srt`.
+- **Captions (owner, 2026-10-05: sync problems with CC/auto-translate):** `$TTS tools/sync_captions.py videos/NNN-….md`
+  on the FINAL video file → `output/<video>/captions-upload.srt` — script text, timed against the video's own audio
+  (Whisper word times, in-order alignment), short captions ≤ 42 characters, Arabic as "Arabic (transliteration)".
+  The report must say "0 with weak sync"; rerun it whenever the video is rebuilt (never reuse an older .srt).
+  (`upload_captions.py` = the old timeline-based version; don't use it for uploads.)
 - `videos/NNN-description.txt` + `videos/NNN-upload.md` → follow the **upload-handover** skill.
 
 ## 8. Hand over

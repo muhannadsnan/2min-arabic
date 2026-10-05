@@ -18,6 +18,7 @@ import librosa
 import numpy as np
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+CONSIST = 0.92   # line vs. the video's other narrator lines; Days 6–10 scored 0.907–0.96 (median 0.95) — below 0.92 = noticeably different
 GROUP = {"narrator": "narrator", "teacher": "owner", "teacher-slow": "owner", "sami": "owner", "lina": "koki"}
 
 
@@ -41,6 +42,14 @@ def clarity(y, sr):
 _VE = {}
 
 
+def voice_emb(y, sr):
+    """Speaker embedding of a clip (Chatterbox voice encoder), for sentence-to-sentence consistency."""
+    voice_sim(y[: int(sr * 0.5)] if len(y) > sr else y, sr)   # loads the encoder once
+    w = librosa.resample(y, orig_sr=sr, target_sr=16000)
+    e = _VE["ve"].embeds_from_wavs([w], sample_rate=16000, as_spk=True)
+    return e / np.linalg.norm(e)
+
+
 def voice_sim(y, sr):
     """Similarity of a narrator clip to the owner's English reference (Chatterbox voice encoder)."""
     import glob
@@ -60,7 +69,7 @@ def voice_sim(y, sr):
 def main():
     stem = pathlib.Path(sys.argv[1]).stem
     tl = json.loads((ROOT / "audio" / stem / "timeline.json").read_text(encoding="utf-8"))
-    groups, problems = {}, []
+    groups, problems, narr_embs = {}, [], []
     for c in tl["clips"]:
         g = GROUP.get(c["speaker"])
         if not g:
@@ -97,6 +106,19 @@ def main():
                     notes.append(f"accent slip {worst:.2f} at {k:.1f}–{k + 1.6:.1f} s")
             print(f"{'⚠️ ' if notes else '✅ '}{c['n']:>3} {', '.join(notes) or 'ok':22} {c['text'][:70]}")
             if notes: problems.append(c["n"])
+            if dur >= 2.6: narr_embs.append((c["n"], voice_emb(y, sr)))
+    # sentence-to-sentence consistency (owner, 2026-10-05: the accent must not change between sentences — keep it
+    # American): each narrator line vs. the centre of all OTHER narrator lines of this video
+    embs = {n: e for n, e in narr_embs}
+    if len(embs) >= 4:
+        for n, e in embs.items():
+            others = [v for k, v in embs.items() if k != n]
+            centre = np.mean(others, axis=0); centre /= np.linalg.norm(centre)
+            sim = float(np.dot(e, centre))
+            if sim < CONSIST:
+                text = next(c["text"] for c in tl["clips"] if c["n"] == n)
+                print(f"⚠️ {n:>3} accent differs from the other lines ({sim:.2f})  {text[:70]}")
+                if n not in problems: problems.append(n)
     print()
     ref = np.median([l for l, _ in groups["narrator"]])
     for g, vals in groups.items():

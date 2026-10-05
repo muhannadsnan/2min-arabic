@@ -17,7 +17,7 @@ Template: Part 1 = `videos/w01-review.md` + `parts/part-01.json` + `videos/w01-u
    days' `footage/recordings/<day>/map.json`, then build `footage/recordings/wNN-review/map.json` pointing at those
    files. Nothing new to record. Images: `"same"`/`"from"` links to the days' images.
 2. `python3 tools/make_audio.py videos/wNN-review.md` → `python3 tools/assemble.py videos/wNN-review.md`
-   (badge becomes "PART N · DAYS a–b") → `python3 tools/upload_captions.py videos/wNN-review.md`.
+   (badge becomes "PART N · DAYS a–b") → `$TTS tools/sync_captions.py videos/wNN-review.md --video output/wNN-review/wNN-review.mp4`.
 3. **`parts/part-NN.json`**: segments in order — welcome (review 0 → quiz start), each day cut from its "Today…"
    scene to before its outro/subscribe/goodbye (find the times in `audio/<day>/timeline.json`), then the quiz and
    outro. Each segment has `title`, `file`, `start`, `end`, `words` for the side panel; add `"srt"` when the source
@@ -31,3 +31,8 @@ Template: Part 1 = `videos/w01-review.md` + `parts/part-01.json` + `videos/w01-u
    --line1 … --line2 … --line3 … --arabic …` and check the phone-size preview.
 7. **Upload sheet** via the upload-handover skill, including chapters from `chapters.txt` in the description and the
    **Video elements** section (end screen, playlist card, quiz). Playlist: "Full Lessons".
+
+## Captions
+
+Every segment's `.srt` must be the synced one (`sync_captions.py`, run on the exact file the Part uses; a filmed day
+uses `--text-srt` with its own caption text). Then `python3 tools/part_captions.py parts/part-NN.json`.

@@ -274,6 +274,25 @@ def audit(a):
     print(f"\n{len(vids) - bad}/{len(vids)} videos pass")
 
 
+def captions(a):
+    """List a video's caption tracks, or replace its standard English track with a new .srt (--replace FILE)."""
+    from googleapiclient.http import MediaFileUpload
+    y = yt(a.channel)
+    tracks = y.captions().list(part="snippet", videoId=a.video).execute(num_retries=3)["items"]
+    for t in tracks:
+        print(f"  {t['snippet']['language']:3} {t['snippet']['trackKind']:9} {t['snippet'].get('name', '')!r} {t['id']}")
+    if a.replace:
+        for t in tracks:   # every non-automatic English track (any name/variant) — otherwise insert hits "captionExists"
+            sn = t["snippet"]
+            if sn["trackKind"] != "asr" and (sn["language"].lower().startswith("en") or sn.get("name") == "English"):
+                y.captions().delete(id=t["id"]).execute(num_retries=3)
+                print(f"  - removed old track {sn['language']} {sn.get('name')!r}")
+        y.captions().insert(part="snippet", body={"snippet": {"videoId": a.video, "language": "en", "name": "English",
+                                                              "isDraft": False}},
+                            media_body=MediaFileUpload(a.replace, mimetype="application/octet-stream")).execute(num_retries=3)
+        print(f"  ✅ English captions replaced with {a.replace}")
+
+
 # ---------- fill: upload sheet → video ----------
 
 def box(sheet, heading):
@@ -376,6 +395,7 @@ def main():
     p = sub.add_parser("search-terms"); p.add_argument("--days", type=int, default=28); p.set_defaults(fn=search_terms)
     p = sub.add_parser("comments"); p.add_argument("--max", type=int, default=50); p.set_defaults(fn=comments)
     sub.add_parser("audit").set_defaults(fn=audit)
+    p = sub.add_parser("captions"); p.add_argument("video"); p.add_argument("--replace"); p.set_defaults(fn=captions)
     p = sub.add_parser("post-comments"); p.add_argument("--days", type=int, default=3); p.set_defaults(fn=post_comments)
     p = sub.add_parser("title"); p.add_argument("video"); p.add_argument("title"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=title)
     p = sub.add_parser("fill"); p.add_argument("stem"); p.add_argument("video")

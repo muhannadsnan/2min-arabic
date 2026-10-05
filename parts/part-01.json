@@ -36,11 +36,11 @@
      "goodbye"
     ]
    ],
-   "srt": "footage/day01/day 1 - captions (English).srt"
+   "srt": "output/day01-captions-upload.srt"
   },
   {
    "title": "Day 2 · 10 useful phrases",
-   "file": "output/002-10-most-useful-phrases/002-10-most-useful-phrases.mp4",
+   "file": "output/002-10-most-useful-phrases/say-these-10-arabic-phrases-every-day.mp4",
    "start": 16.841,
    "end": 102.177,
    "words": [
