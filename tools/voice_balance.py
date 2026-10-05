@@ -34,6 +34,25 @@ def clarity(y, sr):
     return 10 * np.log10(S[f > 2000].sum() / S.sum() + 1e-12)
 
 
+_VE = {}
+
+
+def voice_sim(y, sr):
+    """Similarity of a narrator clip to the owner's English reference (Chatterbox voice encoder)."""
+    import glob
+    import torch
+    from chatterbox.models.voice_encoder import VoiceEncoder
+    if "ve" not in _VE:
+        ve = VoiceEncoder()
+        ve.load_state_dict(torch.load(glob.glob("/media/msn/GamesLinux/AI/tts/hf/hub/models--ResembleAI--chatterbox/snapshots/*/ve.pt")[0], map_location="cpu"))
+        ve.eval(); _VE["ve"] = ve
+        w, _ = librosa.load("/media/msn/GamesLinux/AI/tts/refs/owner_en_energetic.wav", sr=16000)
+        _VE["ref"] = ve.embeds_from_wavs([w], sample_rate=16000, as_spk=True)
+    w = librosa.resample(y, orig_sr=sr, target_sr=16000)
+    e = _VE["ve"].embeds_from_wavs([w], sample_rate=16000, as_spk=True)
+    return float(np.dot(_VE["ref"], e) / (np.linalg.norm(_VE["ref"]) * np.linalg.norm(e)))
+
+
 def main():
     stem = pathlib.Path(sys.argv[1]).stem
     tl = json.loads((ROOT / "audio" / stem / "timeline.json").read_text(encoding="utf-8"))
@@ -59,6 +78,8 @@ def main():
             if dur and words / dur > 3.6: notes.append(f"rushed {words / dur:.1f} w/s")
             if words >= 5 and semis < 6: notes.append(f"flat {semis:.1f} st")
             if gaps and max(gaps) > 0.9: notes.append(f"gap {max(gaps):.1f} s")
+            sim = voice_sim(y, sr) if dur >= 2.6 else 1.0   # under ~2.5 s the voice embedding is unreliable
+            if sim < 0.88: notes.append(f"voice/accent drift {sim:.2f}")
             print(f"{'⚠️ ' if notes else '✅ '}{c['n']:>3} {', '.join(notes) or 'ok':22} {c['text'][:70]}")
             if notes: problems.append(c["n"])
     print()

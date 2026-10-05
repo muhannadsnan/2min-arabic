@@ -54,7 +54,7 @@ Today is Day 10. Let's warm up with yesterday. How do you say friend, when the f
 صَدِيقَةْ
 ```
 ```say:narrator
-Remember that soft a at the end, because you will hear it again today, while the waiter brings coffee for a group of friends.
+Remember that soft ah ending, because you will hear it again today, while the waiter brings coffee for a group of friends.
 ```
 
 ### 🎬 Scene 5 — One
@@ -155,7 +155,7 @@ Remember that soft a at the end, because you will hear it again today, while the
 🔤 **On screen:** ثَلَاثَةْ، خَمْسَةْ، عَشَرَةْ · *thalaatha, khamsa, 'ashara* · 3 to 10 end in the soft "a"
 
 ```say:narrator
-Did you hear it? From three to ten, every number ends with that soft a sound, which is yesterday's letter.
+Did you hear it? From three to ten, every number ends with that soft ah, which is yesterday's letter.
 ```
 
 ### 🎬 Scene 16 — Game 1

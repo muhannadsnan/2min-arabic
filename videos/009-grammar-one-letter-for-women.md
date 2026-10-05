@@ -58,7 +58,10 @@ Today is Day 9. Let's warm up with yesterday's question. How do you ask a woman 
 🔤 **On screen:** ة · *-a* · the "woman" ending: a soft a
 
 ```say:narrator
-Here is today's letter. It looks like a small round h with two dots on top, and it sounds like a soft a. When you add it to the end of a word, the word becomes feminine.
+Here is today's letter. It looks like a small round h, with two dots on top.
+```
+```say:narrator
+It sounds like a soft ah, and when you add it to the end of a word, the word becomes feminine.
 ```
 
 ### 🎬 Scene 6 — Student
@@ -97,7 +100,7 @@ Now the word teacher, again for a man and then for a woman.
 🔤 **On screen:** صَدِيقْ، صَدِيقَةْ · *Sadiiq, Sadiiqa* · friend: man, woman
 
 ```say:narrator
-And here's the word friend, the same way.
+Our last word is friend, and you'll hear it for a man first, then for a woman.
 ```
 ```say:teacher
 صَدِيقْ
@@ -165,7 +168,7 @@ Now it's game time. Listen to the ending, and tell me, is it a man or a woman?
 🔤 **On screen:** حَزِينَةْ · *haziina* · sad (woman) · you heard the "a"!
 
 ```say:narrator
-It's a woman, because you heard the soft a at the end.
+It's a woman, because you heard that soft ah at the end.
 ```
 
 ### 🎬 Scene 14 — Your turn 1

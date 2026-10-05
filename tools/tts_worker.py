@@ -70,8 +70,30 @@ def score(jobs):
         f0 = f0[~np.isnan(f0)]
         return (float(np.median(f0)), f0) if len(f0) else (0.0, f0)
 
+    ve_cache = {}
+
+    def voice_match(path, speaker):
+        """Cosine similarity of the take's speaker embedding to the speaker's reference (Chatterbox's own voice
+        encoder). Low = the clone drifted to another voice/accent (owner, 2026-10-05: keep the relaxed American accent)."""
+        import glob
+        import torch
+        from chatterbox.models.voice_encoder import VoiceEncoder
+        if "ve" not in ve_cache:
+            ve = VoiceEncoder()
+            ck = glob.glob(str(pathlib.Path(os.environ.get("HF_HOME", "")) / "hub/models--ResembleAI--chatterbox/snapshots/*/ve.pt"))
+            ve.load_state_dict(torch.load(ck[0], map_location="cpu")); ve.eval(); ve_cache["ve"] = ve
+        ve = ve_cache["ve"]
+        def emb(f):
+            w, _ = librosa.load(str(f), sr=16000)
+            return ve.embeds_from_wavs([w], sample_rate=16000, as_spk=True)
+        if speaker not in ve_cache:
+            ve_cache[speaker] = emb(local_tts.SPEAKERS[speaker][1])
+        r, e = ve_cache[speaker], emb(path)
+        return float(np.dot(r, e) / (np.linalg.norm(r) * np.linalg.norm(e)))
+
     def delivery(path, words, speaker):
-        """Penalty for a take that sounds robotic: flat, rushed, stretched, pitch drifting away from the speaker."""
+        """Penalty for a take that sounds robotic: flat, rushed, stretched, pitch drifting away from the speaker,
+        or a voice/accent that drifts away from the reference."""
         if speaker not in ref_pitch:
             ref = local_tts.SPEAKERS[speaker][1]
             ref_pitch[speaker] = median_pitch(ref)[0] if ref and str(ref).endswith(".wav") else 0.0
@@ -96,6 +118,13 @@ def score(jobs):
             if gaps and max(gaps) > 1.0:
                 pen += 0.2
                 notes.append("long gap")
+        try:
+            sim = voice_match(path, speaker) if sf.info(path).duration >= 2.6 else 1.0   # short clips: unreliable
+            if sim < 0.90:
+                pen += 0.3 if sim < 0.87 else 0.12
+                notes.append(f"voice/accent drift {sim:.2f}")
+        except Exception as ex:   # never block generation on the check itself
+            notes.append(f"voice check failed: {ex.__class__.__name__}")
         for w in words:
             token = re.sub(r"\W", "", w.word)
             letters = len(NUM.get(token, token)) or 1
