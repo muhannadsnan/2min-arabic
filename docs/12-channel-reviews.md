@@ -1,5 +1,23 @@
 # 12 — Channel reviews (newest on top)
 
+## 2026-10-05 (3-day check)
+
+Channel: **319 views · 7 subscribers** (from 4 on 30 Sep). Analytics lag ~2 days, so x01/x02 have no breakdown yet.
+
+| Video | Format | Published | Views (2 Oct → 5 Oct) | Avg % viewed | Subs | Shorts feed | Search | Notes |
+|---|---|---|---|---|---|---|---|---|
+| Day 1 | Intro (filmed) | 27 Sep | 54 → 58 | 52 % | 3 | 17 | 17 | steady, search + channel page |
+| Day 2 (re-upload) | Phrases | 2 Oct | — → **31** | **75 %** | 0 | **12** | 2 | the retry works: already 3× the old one (11 in 4 days) |
+| Day 3 | Conversation | 29 Sep | 55 → 57 | 41 % | 0 | 43 | 6 | "viral shorts" tag |
+| Day 4 | Story | 30 Sep | 82 → **86** | **120 %** (re-watched) | 1 | **63** | 13 | best: viewers watch it more than once |
+| Day 5 | Grammar | 1 Oct | 17 → 38 | 51 % | 0 | 13 | 6 | "viral shorts" tag; 6 from notifications |
+| Part 1 | Long (16:9) | 2 Oct | — → 8 | 50 % (5 min) | 0 | — | — | long videos start slowly; normal |
+| x01 hello | Extra | 3 Oct | — → **56** | n/a yet | n/a | n/a | n/a | strong start for 2 days |
+| x02 goodbye | Extra | 4 Oct | — → 28 | n/a yet | n/a | n/a | n/a | 1 day old |
+
+Search terms (first ones): "arabic conversation", "voice arabic", "لينو" (Lina?). Comments: 1 new — "كيفك شو اخبارك"
+(Syrian dialect, on x01) — dialect Extras attract native-ish viewers too.
+
 ## 2026-10-02 (ad hoc: Day 2 investigation)
 
 Views from the channel list today; analytics (watch %, sources) lag ~2 days, so Days 4–5 have no analytics yet.
