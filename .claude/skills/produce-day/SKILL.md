@@ -58,6 +58,13 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
 - Thumbnails: `thumbnail.py` refuses → ▶ … _ (missing glyphs) — write "MAN OR WOMAN?", not "MAN → WOMAN".
 - Scene-1 card: one line, comma-separated, one style. Pauses fit the difficulty.
 
+**Modest, culturally respectful people (owner, 2026-10-05) — check every picture and opener:** no exposed body parts on
+women (no bare legs or shoulders, no slit dresses), no tight jeans / tight tops / visible chest shape — loose long
+skirts or wide trousers, loose tops with high necklines, sleeves at least to the elbow. Hijab is optional. Men and
+women who aren't family don't touch (no hand-holding, no arms around each other). Lina's standard outfit is now the
+loose mustard cardigan + white high-neck blouse + long dark-teal skirt (`assets/characters/lina-3d.png`). The 3D
+style suffix in generate.py asks for this automatically, but **look** at every take: a slit or tight jeans = reject.
+
 **Openers:** one simple, normal action (no exaggeration), arms back down, 1-s hold, then the scene picture;
 one person per opener; the owner approves each one before use.
 
@@ -135,7 +142,8 @@ Start: `cd /media/msn/GamesLinux/AI/ComfyUI && venv/bin/python main.py --listen 
 simple hands, no text). Reuse shots with `"same"`. Inspect every candidate sheet at full size, copy the chosen take to `sNN.png`, reasons in `picks.json`.
 **Hands:** count hands per person and look at the *edges and the lower half* too — a stray floating hand next to
 a knee slipped through on Day 6 (owner caught it). Every visible hand must belong to someone's arm.
-**Stop ComfyUI by its PID** when done (never `pkill -f` — it kills your own shell) and before the laptop sleeps.
+**Stop ComfyUI by its PID** when done (never `pkill -f`, and never `kill $(pgrep -f "main.py --listen…")` inside a longer
+command — the pattern matches that command's own shell and kills it; stop ComfyUI in a separate, short command) and before the laptop sleeps.
 
 **3D look from Day 6 on** (owner, 2026-10-01 — costs the same as flat, animates far better): put `{"style": "3d"}` as
 the first entry of prompts.json; batch.py then uses the 3D style and `assets/characters/<name>-3d.png`. Days 1–5 and

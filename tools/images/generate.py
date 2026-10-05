@@ -20,7 +20,10 @@ STYLE = ("flat vector illustration, warm pastel palette (sand, terracotta, teal,
 # from Day 6 on (owner, 2026-10-01): 3D animated-movie look — costs the same as flat, animates far better
 STYLE_3D = ("3D animated movie style, soft cinematic lighting, expressive stylized characters, Pixar-like but original, "
             "warm palette (sand, terracotta, teal, cream), rich depth, vertical 9:16 composition, the scene fills the "
-            "whole frame edge to edge, no text, no letters, no signs, no watermark")
+            "whole frame edge to edge, no text, no letters, no signs, no watermark, "
+            "every woman dressed modestly in loose-fitting clothes: long loose skirt or wide loose trousers to the ankle, "
+            "loose tops with high necklines, sleeves at least to the elbow, nothing tight, no bare legs, no bare shoulders")
+# owner, 2026-10-05: no exposed body parts, no tight jeans or tight tops on women (Arab audience); hijab optional
 STYLES = {"flat": STYLE, "3d": STYLE_3D}
 
 

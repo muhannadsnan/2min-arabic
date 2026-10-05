@@ -66,6 +66,13 @@ Character references for this look: `assets/characters/<name>-3d.png`. Each vide
 **scroll-stopper** from the library and may use green-screen talking units on 3D backgrounds; scenes that only need
 a photo use a still 3D image (no zoom or a slow fade). See the animation-library skill and docs/14.
 
+**Modest, culturally respectful people (owner, 2026-10-05) — check every picture and opener:** no exposed body parts on
+women (no bare legs or shoulders, no slit dresses), no tight jeans / tight tops / visible chest shape — loose long
+skirts or wide trousers, loose tops with high necklines, sleeves at least to the elbow. Hijab is optional. Men and
+women who aren't family don't touch (no hand-holding, no arms around each other). Lina's standard outfit is now the
+loose mustard cardigan + white high-neck blouse + long dark-teal skirt (`assets/characters/lina-3d.png`). The 3D
+style suffix in generate.py asks for this automatically, but **look** at every take: a slit or tight jeans = reject.
+
 **Layout rules (owner, 2026-10-02):** the scene-1 card is one line, items comma-separated, one style; cards never
 cover a character's head or face (shift the picture down); every visible hand belongs to someone (no floating hands).
 **Narration:** natural teacher voice — no rapid lists, connectors at every scene change ("And later that day…").

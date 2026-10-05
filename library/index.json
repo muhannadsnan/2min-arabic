@@ -65,7 +65,9 @@
   "speed": 0.75,
   "source": "library/work/clips/op-d6e-sami-calm_s103.mp4",
   "created": "2026-10-01",
-  "used_in": [],
+  "used_in": [
+   "006-yes-no-and-polite-words"
+  ],
   "approved": "2026-10-01"
  },
  {
@@ -92,7 +94,9 @@
   "speed": 0.847,
   "source": "library/work/clips/op-d7-lina-thumb_s61.mp4",
   "created": "2026-10-01",
-  "used_in": [],
+  "used_in": [
+   "007-week-1-quiz"
+  ],
   "approved": "2026-10-01"
  },
  {
@@ -106,7 +110,9 @@
   "speed": 0.847,
   "source": "library/work/clips/op-d8-sami-globe_s62.mp4",
   "created": "2026-10-01",
-  "used_in": [],
+  "used_in": [
+   "008-where-are-you-from"
+  ],
   "approved": "2026-10-01"
  },
  {
@@ -120,8 +126,26 @@
   "speed": 0.847,
   "source": "library/work/clips/op-d9-lina-book_s62.mp4",
   "created": "2026-10-01",
-  "used_in": [],
-  "approved": "2026-10-01"
+  "used_in": [
+   "009-grammar-one-letter-for-women"
+  ],
+  "approved": false,
+  "note": "retired 2026-10-05: tight jeans (modesty rule)"
+ },
+ {
+  "name": "openers/d09-lina-book-modest",
+  "kind": "openers",
+  "character": "lina",
+  "action": "Day 9 (modest outfit): Lina with an open book in the classroom smiles at the camera",
+  "green": false,
+  "once_s": 2.93,
+  "loop_s": 5.87,
+  "speed": 0.847,
+  "source": "library/work/clips/op-d9b-lina-book_s112.mp4",
+  "created": "2026-10-05",
+  "used_in": [
+   "009-grammar-one-letter-for-women"
+  ]
  },
  {
   "name": "openers/d10-waiter-tray",
@@ -134,7 +158,9 @@
   "speed": 0.847,
   "source": "library/work/clips/op-d10-waiter-tray_s61.mp4",
   "created": "2026-10-01",
-  "used_in": [],
+  "used_in": [
+   "010-numbers-1-to-10"
+  ],
   "approved": "2026-10-01"
  },
  {

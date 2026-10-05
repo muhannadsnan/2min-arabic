@@ -98,6 +98,13 @@ Make 3–5 new openers (different entrances per character: peek, look-up, turn-a
 
 ## Characters and variety
 
+**Modest, culturally respectful people (owner, 2026-10-05) — check every picture and opener:** no exposed body parts on
+women (no bare legs or shoulders, no slit dresses), no tight jeans / tight tops / visible chest shape — loose long
+skirts or wide trousers, loose tops with high necklines, sleeves at least to the elbow. Hijab is optional. Men and
+women who aren't family don't touch (no hand-holding, no arms around each other). Lina's standard outfit is now the
+loose mustard cardigan + white high-neck blouse + long dark-teal skirt (`assets/characters/lina-3d.png`). The 3D
+style suffix in generate.py asks for this automatically, but **look** at every take: a slit or tight jeans = reject.
+
 3D references: `assets/characters/{sami,lina,waiter}-3d.png` (the 3D waiter is deliberately different from Sami:
 late fifties, grey hair, glasses, moustache, waistcoat, red apron). **Future:** give Sami and Lina several outfits and
 styles (seasonal clothes, formal/casual) as extra keyframe sets, so talk units and openers don't look identical across
