@@ -35,6 +35,12 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
   reworded. Also **listen to the approval preview for single words that sound British** ("tomorrow", "can't",
   "water", "bottle", "schedule", "either") — numbers can't catch everything; the owner's ear is the final check.
   Words that invite a British vowel can be swapped ("next day" for "tomorrow" if it keeps slipping).
+- **American spelling everywhere** viewers read it (narration → burned-in captions, cards, descriptions): favorite,
+  color, neighbor, gray, practice (verb), center — never the British forms (x02 shipped with "favourite").
+- **What the accent check really measures:** closeness to the owner's own English recording, not "American-ness".
+  The owner is not a native English speaker (2026-10-05), so his clone inherits his accent; the check only catches
+  drift away from him. Test pending: Kokoro am_michael (native American TTS) converted to his timbre with
+  Chatterbox VC (`output/voice-test/`, A = clone, B = Kokoro, C = Kokoro → his voice, similarity 0.92).
 - **Accent:** the narrator is the owner's relaxed American accent. The take picker now scores each take's voice
   against his reference (Chatterbox voice encoder) and the audio gate flags "voice/accent drift" below 0.88 —
   redo those lines. Very short lines drift most ("Subscribe so you don't break your streak." scored lowest).
