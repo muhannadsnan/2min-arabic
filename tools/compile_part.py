@@ -92,6 +92,9 @@ def panel_image(part, segments, idx, out):
     img.save(out)
 
 
+MISSING_IN_ARABIC_FONT = "/…_"   # render as □ in Noto Naskh Arabic
+
+
 def main():
     spec = json.loads(pathlib.Path(sys.argv[1]).read_text(encoding="utf-8"))
     name = spec["name"]

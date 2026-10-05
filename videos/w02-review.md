@@ -6,7 +6,7 @@ for Part 2 (owner approves): Sami and Lina wave together at the café door, lowe
 
 | | |
 |---|---|
-| **YouTube title** | `Learn Arabic in 12 Minutes – Beginner Lesson 2 \| Part 2 · Days 6–10` |
+| **YouTube title** | `Learn Arabic in 9 Minutes – Beginner Lesson 2 \| Part 2 · Days 6–10` |
 
 ---
 

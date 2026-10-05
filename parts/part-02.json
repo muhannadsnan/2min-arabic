@@ -1,0 +1,224 @@
+{
+ "name": "part-02-days-6-10",
+ "title": "Part 2",
+ "subtitle": "Days 6–10 · the full lesson",
+ "segments": [
+  {
+   "title": "Welcome",
+   "file": "output/w02-review/learn-arabic-in-12-minutes-beginner-lesson-2.mp4",
+   "start": 0,
+   "end": 15.203,
+   "panel_title": "Your 30-day plan",
+   "panel_text": [
+    "Two minutes a day.",
+    "Your first Arabic conversation",
+    "in 30 days.",
+    "",
+    "Part 1: Days 1–5",
+    "Part 2: Days 6–10",
+    "Part 3: Days 11–15 (next)"
+   ],
+   "srt": "output/w02-review/captions-upload.srt"
+  },
+  {
+   "title": "Day 6 · Yes, no, sorry, OK",
+   "file": "output/006-yes-no-and-polite-words/yes-no-sorry-ok-4-tiny-arabic-words.mp4",
+   "start": 18.4,
+   "end": 110.91,
+   "words": [
+    [
+     "نَعَمْ",
+     "na'am",
+     "yes"
+    ],
+    [
+     "لَا",
+     "laa",
+     "no"
+    ],
+    [
+     "آسِفْ، آسِفَةْ",
+     "aasif / aasifa",
+     "sorry (m / f)"
+    ],
+    [
+     "لَا بَأْسْ",
+     "laa ba's",
+     "no problem"
+    ],
+    [
+     "طَيِّبْ",
+     "Tayyib",
+     "okay, good"
+    ],
+    [
+     "تَمَامْ",
+     "tamaam",
+     "all good"
+    ]
+   ]
+  },
+  {
+   "title": "Day 7 · Week 1 quiz",
+   "file": "output/007-week-1-quiz/can-you-pass-this-arabic-quiz-week-1.mp4",
+   "start": 18.76,
+   "end": 101.05,
+   "words": [
+    [
+     "مِنْ فَضْلِكْ",
+     "min faDlik",
+     "please"
+    ],
+    [
+     "عَفْوًا",
+     "'afwan",
+     "you're welcome"
+    ],
+    [
+     "اسْمِي سَامِي",
+     "ismii Saamii",
+     "my name is Sami"
+    ],
+    [
+     "سَامِي حَزِينْ",
+     "Saamii haziin",
+     "Sami is sad"
+    ],
+    [
+     "لَا بَأْسْ",
+     "laa ba's",
+     "no problem"
+    ],
+    [
+     "مَعَ السَّلَامَةْ",
+     "ma'a s-salaama",
+     "goodbye"
+    ]
+   ]
+  },
+  {
+   "title": "Day 8 · Where are you from?",
+   "file": "output/008-where-are-you-from/where-are-you-from-in-arabic-only-3-words.mp4",
+   "start": 17.6,
+   "end": 96.59,
+   "words": [
+    [
+     "مِنْ أَيْنَ أَنْتَ؟",
+     "min ayna anta?",
+     "where are you from? (m)"
+    ],
+    [
+     "مِنْ أَيْنَ أَنْتِ؟",
+     "min ayna anti?",
+     "where are you from? (f)"
+    ],
+    [
+     "أَنَا مِنْ",
+     "ana min",
+     "I am from"
+    ],
+    [
+     "سُورِيَا",
+     "Suuriyaa",
+     "Syria"
+    ],
+    [
+     "أَمْرِيكَا",
+     "Amriikaa",
+     "America"
+    ],
+    [
+     "أَلْمَانِيَا",
+     "Almaaniyaa",
+     "Germany"
+    ]
+   ]
+  },
+  {
+   "title": "Day 9 · One letter: man or woman",
+   "file": "output/009-grammar-one-letter-for-women/one-letter-changes-everything-in-arabic.mp4",
+   "start": 17.98,
+   "end": 119.41,
+   "words": [
+    [
+     "طَالِبْ، طَالِبَةْ",
+     "taalib / taaliba",
+     "student (m / f)"
+    ],
+    [
+     "مُعَلِّمْ، مُعَلِّمَةْ",
+     "mu'allim / mu'allima",
+     "teacher (m / f)"
+    ],
+    [
+     "صَدِيقْ، صَدِيقَةْ",
+     "Sadiiq / Sadiiqa",
+     "friend (m / f)"
+    ],
+    [
+     "حَزِينَةْ",
+     "haziina",
+     "sad (f)"
+    ],
+    [
+     "لِينَا طَالِبَةْ",
+     "Liinaa taaliba",
+     "Lina is a student"
+    ]
+   ]
+  },
+  {
+   "title": "Day 10 · Numbers 1–10",
+   "file": "output/010-numbers-1-to-10/count-to-10-in-arabic-one-easy-pattern.mp4",
+   "start": 18.08,
+   "end": 78.89,
+   "words": [
+    [
+     "وَاحِدْ",
+     "waaHid",
+     "1"
+    ],
+    [
+     "اِثْنَانْ",
+     "ithnaan",
+     "2"
+    ],
+    [
+     "ثَلَاثَةْ",
+     "thalaatha",
+     "3"
+    ],
+    [
+     "خَمْسَةْ",
+     "khamsa",
+     "5"
+    ],
+    [
+     "سَبْعَةْ",
+     "sab'a",
+     "7"
+    ],
+    [
+     "عَشَرَةْ",
+     "'ashara",
+     "10"
+    ]
+   ]
+  },
+  {
+   "title": "Review quiz",
+   "file": "output/w02-review/learn-arabic-in-12-minutes-beginner-lesson-2.mp4",
+   "start": 15.203,
+   "end": null,
+   "panel_title": "Review quiz",
+   "panel_text": [
+    "12 questions",
+    "from Days 6–10.",
+    "",
+    "Say it out loud",
+    "before you hear it!"
+   ],
+   "srt": "output/w02-review/captions-upload.srt"
+  }
+ ]
+}
