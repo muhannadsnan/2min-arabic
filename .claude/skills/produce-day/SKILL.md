@@ -52,6 +52,10 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
 - Cards and the YOUR TURN label never cover a head or face → `"shift"` per scene (clips too); look at `contact.png`.
 - Count hands on every person, including picture edges and the lower half (a floating hand slipped through on Day 6).
 - Two-person scenes: give **both** character refs, or the model draws two Samis.
+- **Counting scenes** ("three cups"): the image model can't count — composite with `tools/images/cups.py` (an empty
+  table + one object on green, N copies placed exactly, table zoomed so the objects sit mid-frame, clear of the
+  card above and the subtitles / YOUR TURN label below).
+- Thumbnails: `thumbnail.py` refuses → ▶ … _ (missing glyphs) — write "MAN OR WOMAN?", not "MAN → WOMAN".
 - Scene-1 card: one line, comma-separated, one style. Pauses fit the difficulty.
 
 **Openers:** one simple, normal action (no exaggeration), arms back down, 1-s hold, then the scene picture;

@@ -80,6 +80,9 @@ def wide(a):
     return im
 
 
+MISSING_GLYPHS = "→▶…_"   # not in Noto Sans Bold / Naskh Bold → would render as empty boxes
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("image")
@@ -91,6 +94,9 @@ def main():
     ap.add_argument("--arabic", default="")
     ap.add_argument("--wide", action="store_true")
     a = ap.parse_args()
+    for t in (a.badge, a.line1, a.line2, a.line3, a.arabic):
+        if any(ch in MISSING_GLYPHS for ch in t or ""):
+            raise SystemExit(f"'{t}' contains a character the fonts don't have ({MISSING_GLYPHS}) — rephrase")
     im = wide(a) if a.wide else vertical(a)
     im.save(a.out, quality=92)
     im.resize((im.width // 3, im.height // 3)).save(a.out.rsplit(".", 1)[0] + "-phone-size.png")

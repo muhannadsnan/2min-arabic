@@ -9,7 +9,7 @@
 | **Re-used (due)** | مِنْ أَيْنَ أَنْتِ؟ (Day 8) · طَالِبْ · سَعِيدَةْ (Days 4–5) · آسِفَةْ · لَا بَأْسْ (Day 6) |
 | **Voices** | English narrator = owner's clone · Arabic = the owner (teacher) + Koki (Lina) → **AI label: No** |
 | **Look** | 3D · opener: Lina in a bright classroom closes a book and smiles at the camera |
-| **YouTube title** | `One Letter Changes Everything in Arabic (ة) \| Day 9 · 2 Minute Arabic` |
+| **YouTube title** | `One Letter Changes Everything in Arabic \| Day 9 · 2 Minute Arabic` |
 | **Thumbnail text** | "ONE LETTER" + big ة |
 
 ---
