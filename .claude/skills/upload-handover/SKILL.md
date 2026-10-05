@@ -86,6 +86,9 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
 - **Captions on the channel:** `$Y tools/youtube_api.py captions <id> --replace <srt>` swaps the English track. API
   quota is 10,000 units/day (a caption upload = 450, a fill ≈ 600): for big batches put the rest in
   `~/.local/share/2min-yt/captions-pending.txt` — `tools/caption_backlog.sh` (cron, 10:30 daily) uploads them.
+- **Quota out?** Queue the command line (e.g. `fill w02 <id> --publish-at … --apply`) in
+  `~/.local/share/2min-yt/pending-commands.txt`; `tools/pending_jobs.sh` (cron 09:15, after the reset) runs it.
+- **Parts are published after their last day** (Part 2 after Day 10) — never before, it would spoil the days.
 - **Replacing a video:** owner uploads the new file first → delete the old one via the API (only if private and
   0 views) → fill + schedule the new one into the old slot → remove "Deleted video" placeholders from every playlist
   and re-order the 30-day playlist (Day 1 → … → Part after each 5th day).
