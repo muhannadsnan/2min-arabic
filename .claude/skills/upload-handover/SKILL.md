@@ -32,13 +32,13 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
    - transliteration — meaning — Arabic;
    - "Start from Day 1" link without `?si=…`; ~3 hashtags at the end (`#learnarabic` … `#2minutearabic`).
    Write it with Python so the invisible markers are really in the file, then print it once to verify.
-5. **Tags** in a code box, 18–26 tags, ≤ 480 characters, in this order (owner, 2026-10-02/05):
+5. **Tags** in a code box, 20–26 tags, use the room up to ~470 characters, most important first, in this order (owner, 2026-10-02/05):
    - 3 **search phrases** people really type, specific to this video ("how to say sorry in arabic", "arabic
      conversation for beginners") — real terms from channel-review's search-terms report win;
    - 3 **question-form / synonym searches** in the owner's style (2026-10-05): "what is greeting in arabic",
      "welcome in arabic", "sorry in arabic", "how to talk to arabic people", "ways to say hello in arabic";
    - 2–4 **transliterated keywords** of today's words ("shukran", "ma ismuk", "tayyib") — learners search these;
-   - **Research first:** `python3 tools/suggest.py "<topic> in arabic" "<Arabic topic>"` = YouTube's own
+   - **Research first** (log the picks in `docs/15-tag-research.md`): `python3 tools/suggest.py "<topic> in arabic" "<Arabic topic>"` = YouTube's own
      autocomplete (what people really type, most-searched first). Pick learner phrases only (drop songs, kids,
      perfumes, games, everyday-life Arabic like "كيف تعتذر من شخص" — that's Arabic speakers, not learners);
    - 2 **learner Arabic** tags on every video: "تعليم اللغة العربية لغير الناطقين بها", "تعليم عربي للاجانب"

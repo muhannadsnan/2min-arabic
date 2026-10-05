@@ -46,7 +46,7 @@ Two minutes a day. Your first Arabic conversation in 30 days.
 ## Tags
 
 ```
-afwan, arabic for beginners, arabic lesson, arabic phrases review, arabic quiz for beginners, arabic vocabulary test, arabic words for beginners, language learning, learn arabic, min fadlak, please in arabic, shorts, shukran, test your arabic, اختبار العربية, طيب, عفوا, لا بأس, لا بأس meaning, من فضلك, كيف اطور مستواي بالعربي, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب
+afwan, arabic for beginners, arabic lesson, arabic phrases to know, arabic phrases review, arabic quiz for beginners, arabic vocabulary test, arabic words for beginners, language learning, learn arabic, min fadlak, please in arabic, shorts, shukran, test your arabic, اختبار العربية, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب, طيب, عفوا, كيف اطور مستواي بالعربي, لا بأس, لا بأس meaning, من فضلك, تعلم العربية الفصحى
 ```
 
 ## Settings
