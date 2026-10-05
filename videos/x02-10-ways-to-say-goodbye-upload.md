@@ -55,7 +55,7 @@ Two minutes a day. Your first Arabic conversation in 30 days — this is a bonus
 (3 groups — video-specific · niche · broad)
 
 ```
-arabic goodbye phrases, bkhatrak, bye in arabic, goodbye in arabic language, arabic phrases levantine, good bye in arabic, good night in arabic, hwo to say bye in arabic, levantine arabic, ma'a salama, see you later in arabic, shorts, syrian arabic, take care in arabic, what is goodbye in arabic, yalla bye, إلى اللقاء, استماع لهجات عربية, بخاطرك, بخاطرك meaning, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب, مع السلامة, مع السلامة meaning, يلا باي
+arabic goodbye phrases, arabic phrases levantine, bkhatrak, bye in arabic, good bye in arabic, good night in arabic, goodbye in arabic language, how to say bye in arabic, levantine arabic, ma'a salama, see you later in arabic, shorts, syrian arabic, take care in arabic, what is goodbye in arabic, yalla bye, إلى اللقاء, استماع لهجات عربية, بخاطرك, بخاطرك meaning, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب, مع السلامة, مع السلامة meaning, يلا باي
 ```
 
 ## Settings
