@@ -208,9 +208,17 @@ def main():
     # 1. one video segment per scene: image + slow zoom + badge + card
     concat, contact = [], []
     prompts = img_dir / "prompts.json"
-    opts = {p["s"]: p for p in json.loads(prompts.read_text(encoding="utf-8")) if "s" in p} if prompts.exists() else {}
+    entries = json.loads(prompts.read_text(encoding="utf-8")) if prompts.exists() else []
+    opts = {p["s"]: p for p in entries if "s" in p}
+    # 3D videos (Day 6+, owner 2026-10-05): only the opener moves; every other scene is a clear still picture and
+    # consecutive scenes cross-fade softly (XF s). Older flat videos keep the slow zoom and hard cuts.
+    style3d = any(p.get("style") == "3d" for p in entries)
+    XF = 0.3 if style3d else 0.0
+    xf_frames = round(XF * FPS)
+    n_scenes = len(tl["scenes"])
     for i, scene in enumerate(tl["scenes"], 1):
         frames = round(scene["end"] * FPS) - round(scene["start"] * FPS)
+        extra = xf_frames if i < n_scenes else 0   # each segment runs XF longer: the next one fades in over it
         o = opts.get(i, {})
         image = img_dir / f"s{i:02d}.png"
         if "same" in o:   # "same" links win over any leftover file from an older numbering
@@ -240,12 +248,14 @@ def main():
                 if o.get("shift"):   # match the shifted opener exactly, so the hand-over is seamless
                     image = shifted(image, o["shift"], seg_dir / f"s{i:02d}-lastframe-shifted.png")
             if image.exists() and rest > FPS // 2:
+                rest_chain = (f"[1:v]{fit}[b]" if style3d else
+                              f"[1:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
+                              f"zoompan=z='1+0.05*on/{rest}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={rest}:s={W}x{H}:fps={FPS},"
+                              f"setsar=1[b]")
                 run(["ffmpeg", "-v", "error", "-y", "-i", str(clip), "-loop", "1", "-i", str(image), "-filter_complex",
                      f"{clip_fit('0:v', o.get('shift'), 'c0')};[c0]"
                      f"tpad=stop_mode=clone:stop_duration={hold}[a];"
-                     f"[1:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
-                     f"zoompan=z='1+0.05*on/{rest}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={rest}:s={W}x{H}:fps={FPS},"
-                     f"setsar=1[b];[a][b]concat=n=2:v=1[v]", "-map", "[v]", "-frames:v", str(frames), "-c:v", "libx264",
+                     f"{rest_chain};[a][b]concat=n=2:v=1[v]", "-map", "[v]", "-frames:v", str(frames + extra), "-c:v", "libx264",
                      "-crf", "16", "-pix_fmt", "yuv420p", str(joined)])
                 clip = joined
         elif clip is not None and o.get("clip_mode") == "tail" and (LIBRARY / f"{o['clip']}-tail.mp4").exists():
@@ -260,11 +270,11 @@ def main():
             # library clip: "once" (default) = opener + 1-s hold (+ the scene picture); "loop" repeats it
             src = (["-stream_loop", "-1"] if o.get("clip_mode") == "loop" else []) + ["-i", str(clip)]
             chain = f"[0:v]{fit},tpad=stop_mode=clone:stop_duration=600[bg];[bg][1:v]overlay=0:40[b1]"
-        elif o.get("motion") in ("still", "fade"):
+        elif o.get("motion", "still" if style3d else "zoom") in ("still", "fade"):
             # still picture (no zoom); "fade" adds a slow fade in and out (for photo-only scenes)
             src = ["-loop", "1", "-i", str(image)]
             fade = (f",fade=t=in:st=0:d=0.5,fade=t=out:st={max(frames / FPS - 0.5, 0):.2f}:d=0.5"
-                    if o.get("motion") == "fade" else "")
+                    if o.get("motion") == "fade" and not style3d else "")   # 3D: the cross-fade does this
             chain = f"[0:v]{fit}{fade}[bg];[bg][1:v]overlay=0:40[b1]"
         else:
             src = ["-loop", "1", "-i", str(image)]
@@ -280,7 +290,7 @@ def main():
             last = "b2"
         seg = seg_dir / f"s{i:02d}.mp4"
         run(["ffmpeg", "-v", "error", "-y", *src, *overlays, "-filter_complex", chain,
-             "-map", f"[{last}]", "-frames:v", str(frames), "-c:v", "libx264", "-crf", "18", "-preset", "medium",
+             "-map", f"[{last}]", "-frames:v", str(frames + extra), "-c:v", "libx264", "-crf", "18", "-preset", "medium",
              "-pix_fmt", "yuv420p", "-r", str(FPS), str(seg)])
         concat.append(f"file '{seg.resolve()}'")
         print(f"  scene {i:02d}  {frames / FPS:5.1f}s  {scene['name']}")
@@ -294,8 +304,21 @@ def main():
                 u["used_in"].append(stem)
         idx_file.write_text(json.dumps(idx, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     video_only = out_dir / "video-only.mp4"
-    run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(seg_dir / "list.txt"), "-c", "copy",
-         str(video_only)])
+    if XF:   # soft cross-fade into every scene, starting exactly at the scene's start (timing unchanged)
+        segs = [ln.split("'")[1] for ln in concat]
+        ins = sum((["-i", s_] for s_ in segs), [])
+        chain = ";".join(f"[{k}:v]settb=AVTB,fps={FPS},setsar=1[i{k}]" for k in range(len(segs)))
+        prev = "i0"
+        for k in range(1, len(segs)):
+            off = round(tl["scenes"][k]["start"] * FPS) / FPS
+            chain += f";[{prev}][i{k}]xfade=transition=fade:duration={XF}:offset={off:.4f}[x{k}]"
+            prev = f"x{k}"
+        total = round(tl["scenes"][-1]["end"] * FPS)
+        run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", chain, "-map", f"[{prev}]", "-frames:v", str(total),
+             "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p", "-r", str(FPS), str(video_only)])
+    else:
+        run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(seg_dir / "list.txt"), "-c", "copy",
+             str(video_only)])
 
     # 2. captions: English narration + filmed-clip captions (Arabic lesson lines are on the cards)
     def srt_time(x):

@@ -45,6 +45,7 @@ VOICE_VERSIONS = {"narrator": "owner-en-5", "teacher": "owner-ar-4", "teacher-sl
 SPEAKERS = ("narrator", "teacher", "teacher-slow", "sami", "lina", "narrator-kokoro")
 
 MAX_PAUSE = 2.0     # seconds — longer waits bore the viewer (easy words: 1.5 s)
+AFTER_FILMED = 0.6   # s of air after a filmed clip (hello) before the next line
 GAP = 0.35          # seconds of silence between two clips when the script has no explicit pause
 SAMPLE_RATE = 24000
 CLIP_LUFS = -18.0   # per-clip loudness (the final video mix is brought to -14 LUFS)
@@ -117,7 +118,9 @@ def level(src: pathlib.Path, dst: pathlib.Path, owner=None):
     """Trim silence at both ends, bring the clip to CLIP_LUFS, keep peaks below -1.5 dB.
     owner=True: the owner's recorded voice — clarity EQ and +2 dB (see OWNER_CLARITY)."""
     trimmed = dst.with_suffix(".trim.wav")
-    trim = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,"
+    # gentle onset trim (owner, 2026-10-05: "I'm your teacher" sounded cut after the hello clip): -55 dB threshold and
+    # 0.12 s kept before the first sound, so soft starts ("I…", "and…") are never clipped
+    trim = ("silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.12,"
             "areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.1,areverse")
     run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af", trim, "-ac", "1", "-ar", str(SAMPLE_RATE), str(trimmed)])
     if owner is not None:   # a recorded line (owner=True/False): denoise + gate; the owner's also gets the EQ
@@ -213,7 +216,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         rec = recorded.get((speaker, text))
         if rec:
             digest = hashlib.sha1((ROOT / rec["file"]).read_bytes()).hexdigest()
-            tag = "rec7" if speaker in OWNER_SPEAKERS else "reck2"   # rec4/reck2 = denoise + gate (+ owner EQ)
+            tag = "rec8" if speaker in OWNER_SPEAKERS else "reck3"   # rec4/reck2 = denoise + gate (+ owner EQ)
             return cache / f"{tag}-{digest}.wav"
         return cache / (hashlib.sha1(f"{VOICE_VERSIONS[speaker]}|{speaker}|{text}".encode()).hexdigest() + ".wav")
 
@@ -256,7 +259,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
                 gap = pending_gap or GAP
                 segments.append(("silence", gap))
                 t += gap
-            pending_gap = 0.0
+            pending_gap = AFTER_FILMED   # a breath after the owner's filmed clip before the narrator speaks
             length = duration(CLIPS_DIR / f"{name}.mp4")
             segments.append(("silence", length))
             timeline.append(f"| {timestamp(t)} | 🎥 filmed clip `{name}` ({length:.1f}s) {caption} |")

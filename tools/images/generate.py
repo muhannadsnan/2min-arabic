@@ -21,9 +21,9 @@ STYLE = ("flat vector illustration, warm pastel palette (sand, terracotta, teal,
 STYLE_3D = ("3D animated movie style, soft cinematic lighting, expressive stylized characters, Pixar-like but original, "
             "warm palette (sand, terracotta, teal, cream), rich depth, vertical 9:16 composition, the scene fills the "
             "whole frame edge to edge, no text, no letters, no signs, no watermark, "
-            "every woman dressed modestly in loose-fitting clothes: long loose skirt or wide loose trousers to the ankle, "
+            "every woman dressed modestly in loose-fitting clothes: long loose skirt, wide trousers or loose straight-leg jeans, "
             "loose tops with high necklines, sleeves at least to the elbow, nothing tight, no bare legs, no bare shoulders")
-# owner, 2026-10-05: no exposed body parts, no tight jeans or tight tops on women (Arab audience); hijab optional
+# owner, 2026-10-05: no exposed body parts, nothing tight on women (loose jeans are fine — not too conservative); hijab optional
 STYLES = {"flat": STYLE, "3d": STYLE_3D}
 
 
@@ -61,7 +61,10 @@ def main():
     a = ap.parse_args()
 
     wf = json.load(open(a.workflow))
-    wf["4"]["inputs"]["text"] = a.prompt if a.no_style else f"{a.prompt.rstrip('. ')}. {STYLES[a.style]}"
+    style = STYLES[a.style]
+    if "no people" in a.prompt.lower():   # the modesty clause made the model ADD a woman to empty scenes (2026-10-05)
+        style = style.split(", every woman dressed")[0]
+    wf["4"]["inputs"]["text"] = a.prompt if a.no_style else f"{a.prompt.rstrip('. ')}. {style}"
     seed = a.seed if a.seed is not None else random.randint(0, 2**31)
     for nid, n in wf.items():
         i = n["inputs"]

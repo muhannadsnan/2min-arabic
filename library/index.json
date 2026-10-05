@@ -145,6 +145,23 @@
   "created": "2026-10-05",
   "used_in": [
    "009-grammar-one-letter-for-women"
+  ],
+  "approved": false,
+  "note": "rejected: standing still, not a scroll-stopper"
+ },
+ {
+  "name": "openers/d09-lina-one-finger",
+  "kind": "openers",
+  "character": "lina",
+  "action": "Day 9: Lina in the classroom raises one finger ('just one thing!'), knowing smile, lowers her hand",
+  "green": false,
+  "once_s": 2.93,
+  "loop_s": 5.87,
+  "speed": 0.847,
+  "source": "library/work/clips/op-d9c-lina-finger_s122.mp4",
+  "created": "2026-10-05",
+  "used_in": [
+   "009-grammar-one-letter-for-women"
   ]
  },
  {

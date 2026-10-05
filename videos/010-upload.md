@@ -88,4 +88,4 @@ Day 10 ✅ — What's your lucky number? Write it in Arabic below 👇 (sab'a? '
 - Audio approved by you: voices level, narrator checked, noise-cleaned recordings; coffee for a group of friends (not for Sami).
 - Cup scenes are composited, so every number shows exactly the right count; the table sits mid-frame so cards,
   subtitles and the YOUR TURN label never cover the cups.
-- Finished video: 1:39 · −14.1 LUFS · peak −1.7 dB · transcript in order, no overlaps.
+- Finished video: 1:41 · −14.0 LUFS · peak −1.5 dB · transcript in order, no overlaps.

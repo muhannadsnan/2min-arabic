@@ -80,8 +80,8 @@ Day 9 ✅ — Make it feminine! Write the woman's version of صَدِيقْ (fri
 
 ## Quality check (Claude)
 
-- Opener: Lina closes her book in the classroom (approved) → 1-s hold → slow zoom.
+- Opener: Lina raises one finger, "just one thing!" (modest outfit) → 1-s hold. Still pictures with soft cross-fades.
 - Audio approved by you: voices level, narrator checked for rushing, gaps and accent drift; "soft ah" wording; noise-cleaned recordings.
 - 9 new 3D images (classroom, students, teachers, friends) + 2 reused; faces clear of every card.
 - Title without Arabic script (ة is on the thumbnail and in the description instead).
-- Finished video: 2:18 · −14.0 LUFS · peak −1.8 dB · transcript in order, no overlaps.
+- Finished video: 2:20 · −14.1 LUFS · peak −1.9 dB · transcript in order, no overlaps.

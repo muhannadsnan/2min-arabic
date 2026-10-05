@@ -98,9 +98,21 @@ Make 3–5 new openers (different entrances per character: peek, look-up, turn-a
 
 ## Characters and variety
 
+**Image check — every picture, thumbnail and opener frame, at full size, BEFORE it's used (owner, 2026-10-05):**
+1. **Eyes:** both eyes look the same direction, same size, natural; no squint, drift or "dead" stare. In openers, check
+   the first, middle and last frame.
+2. **Arms and hands:** count arms per person (exactly two, one on each side, attached at the shoulders); count hands
+   and fingers; no half arms, no extra or floating hands, no arm growing from the wrong side.
+3. **Clothing:** modest per the rule below; sleeves, hems and collars continuous (no clothing melting into skin).
+4. **Objects complete:** spiral wires, cup handles, chair legs, clock faces, books — whole and believable (prefer
+   objects without fiddly details: a hardcover notebook instead of a spiral one).
+5. **No text, letters or fake writing** on boards, signs, screens or book covers.
+6. **Two-person scenes:** both characters correct (refs for both), no touching between unrelated men and women.
+Reject the take if any item fails — a clear still beats an odd one.
+
 **Modest, culturally respectful people (owner, 2026-10-05) — check every picture and opener:** no exposed body parts on
-women (no bare legs or shoulders, no slit dresses), no tight jeans / tight tops / visible chest shape — loose long
-skirts or wide trousers, loose tops with high necklines, sleeves at least to the elbow. Hijab is optional. Men and
+women (no bare legs or shoulders, no slit dresses), nothing tight (tight jeans/tops, visible chest shape) — loose long skirts, wide
+trousers or loose jeans (not too conservative), loose tops with high necklines, sleeves at least to the elbow. Hijab is optional. Men and
 women who aren't family don't touch (no hand-holding, no arms around each other). Lina's standard outfit is now the
 loose mustard cardigan + white high-neck blouse + long dark-teal skirt (`assets/characters/lina-3d.png`). The 3D
 style suffix in generate.py asks for this automatically, but **look** at every take: a slit or tight jeans = reject.
