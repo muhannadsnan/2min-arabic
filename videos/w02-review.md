@@ -227,7 +227,7 @@ Now some numbers. How do you say the number three?
 🔤 **On screen:** Quiz 11/12 · the number 8
 
 ```say:narrator
-And what about the number eight?
+And now, can you tell me the number eight?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 

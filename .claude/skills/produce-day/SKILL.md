@@ -37,6 +37,11 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
   Words that invite a British vowel can be swapped ("next day" for "tomorrow" if it keeps slipping).
 - **American spelling everywhere** viewers read it (narration → burned-in captions, cards, descriptions): favorite,
   color, neighbor, gray, practice (verb), center — never the British forms (x02 shipped with "favourite").
+- **Never change how the voice is made without the owner's OK (2026-10-05):** the approved sound = the Day 9/10 audio
+  (take picker with the overall voice-match score, onset trim −45 dB / 0.05 s, Day-8 EQ + denoise on recordings).
+  New accent checks are **report-only** in the audio gate — they flag lines for a normal re-take (more takes /
+  rewording), they never change the take picker or the processing. A `--redo` of a line that's shared across
+  videos ("Subscribe…", "I'm your teacher…") replaces the approved take — restore it from an earlier video instead.
 - **Same accent in every sentence (owner, 2026-10-05: keep the narrator, keep it consistent):** the audio gate compares
   each narrator line with all the other lines of the same video (`CONSIST = 0.92`; normal lines score 0.93–0.96)
   and flags "accent differs from the other lines" — re-voice or reword those. Don't change the narrator voice.

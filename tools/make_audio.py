@@ -120,7 +120,7 @@ def level(src: pathlib.Path, dst: pathlib.Path, owner=None):
     trimmed = dst.with_suffix(".trim.wav")
     # gentle onset trim (owner, 2026-10-05: "I'm your teacher" sounded cut after the hello clip): -55 dB threshold and
     # 0.12 s kept before the first sound, so soft starts ("I…", "and…") are never clipped
-    trim = ("silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.12,"
+    trim = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,"
             "areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.1,areverse")
     run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af", trim, "-ac", "1", "-ar", str(SAMPLE_RATE), str(trimmed)])
     if owner is not None:   # a recorded line (owner=True/False): denoise + gate; the owner's also gets the EQ
@@ -216,7 +216,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         rec = recorded.get((speaker, text))
         if rec:
             digest = hashlib.sha1((ROOT / rec["file"]).read_bytes()).hexdigest()
-            tag = "rec8" if speaker in OWNER_SPEAKERS else "reck3"   # rec4/reck2 = denoise + gate (+ owner EQ)
+            tag = "rec7" if speaker in OWNER_SPEAKERS else "reck2"   # rec4/reck2 = denoise + gate (+ owner EQ)
             return cache / f"{tag}-{digest}.wav"
         return cache / (hashlib.sha1(f"{VOICE_VERSIONS[speaker]}|{speaker}|{text}".encode()).hexdigest() + ".wav")
 
