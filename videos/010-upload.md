@@ -3,6 +3,8 @@
 **File to upload:** `output/010-numbers-1-to-10/count-to-10-in-arabic-one-easy-pattern.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/010-numbers-1-to-10/count-to-10-in-arabic-one-easy-pattern-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-05** — video id `5kaDplowig4`, scheduled **9 Oct 17:00 Oslo**.
+
 ## Fast way
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays private).

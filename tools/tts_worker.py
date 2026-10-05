@@ -123,6 +123,19 @@ def score(jobs):
             if sim < 0.90:
                 pen += 0.3 if sim < 0.87 else 0.12
                 notes.append(f"voice/accent drift {sim:.2f}")
+            # a few words in another accent: score 1.6-s windows, penalise the worst (owner: American only)
+            if sf.info(path).duration >= 2.6:
+                yy, srr = librosa.load(path, sr=16000)
+                win = int(1.6 * srr)
+                worst = 1.0
+                for i in range(0, len(yy) - win + 1, int(0.4 * srr)):
+                    seg = path + ".win.wav"
+                    sf.write(seg, yy[i:i + win], srr)
+                    worst = min(worst, voice_match(seg, speaker))
+                pathlib.Path(path + ".win.wav").unlink(missing_ok=True)
+                if worst < 0.70:   # calibrated on the owner's real voice (windows 0.47–0.87, median 0.84)
+                    pen += 0.25
+                    notes.append(f"accent slip {worst:.2f}")
         except Exception as ex:   # never block generation on the check itself
             notes.append(f"voice check failed: {ex.__class__.__name__}")
         for w in words:

@@ -3,6 +3,8 @@
 **File to upload:** `output/009-grammar-one-letter-for-women/one-letter-changes-everything-in-arabic.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/009-grammar-one-letter-for-women/one-letter-changes-everything-in-arabic-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-05** — video id `KiwR8OU3aeQ`, scheduled **8 Oct 17:00 Oslo**.
+
 ## Fast way
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays private).

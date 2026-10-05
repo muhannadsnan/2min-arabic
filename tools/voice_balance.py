@@ -84,6 +84,17 @@ def main():
             if gaps and max(gaps) > 0.9: notes.append(f"gap {max(gaps):.1f} s")
             sim = voice_sim(y, sr) if dur >= 2.6 else 1.0   # under ~2.5 s the voice embedding is unreliable
             if sim < 0.88: notes.append(f"voice/accent drift {sim:.2f}")
+            # accent can slip for just a few words (British-sounding vowels) while the whole-line score stays fine:
+            # also score 1.6-s windows and flag the worst one (owner, 2026-10-05: "all American")
+            win, hop = int(1.6 * sr), int(0.4 * sr)
+            if dur >= 2.6:
+                sims = [voice_sim(y[i:i + win], sr) for i in range(0, len(y) - win + 1, hop)]
+                worst = min(sims) if sims else 1.0
+                # calibrated 2026-10-05: windows of the owner's REAL voice score 0.47–0.87 (median 0.84), so only a
+                # clear dip well below his normal range counts as a slip
+                if worst < 0.70:
+                    k = sims.index(worst) * 0.4
+                    notes.append(f"accent slip {worst:.2f} at {k:.1f}–{k + 1.6:.1f} s")
             print(f"{'⚠️ ' if notes else '✅ '}{c['n']:>3} {', '.join(notes) or 'ok':22} {c['text'][:70]}")
             if notes: problems.append(c["n"])
     print()

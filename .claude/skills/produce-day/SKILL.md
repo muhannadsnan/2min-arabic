@@ -28,6 +28,13 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
 - A connector at every scene change: "And later that day…", "Then…", "Back at the café…".
 - **Sounds are written the way they sound, never as a single letter:** "a soft ah", "an ee sound" — not "a soft a"
   (the clone glues a lone letter to the next word: "soft a sound" → "soft-a sound"; owner, 2026-10-05).
+- **Accent — American only, every word (owner, 2026-10-05):** the clone sometimes slips a few words into a British-
+  sounding accent. Two automatic checks: the whole line vs. the owner's reference ("voice/accent drift" < 0.88) and
+  **1.6-s windows** across the line ("accent slip" < 0.70 at a time range — calibrated on the owner's real voice,
+  whose windows score 0.47–0.87). Both run in the take picker and in the audio gate; a flagged line is re-voiced or
+  reworded. Also **listen to the approval preview for single words that sound British** ("tomorrow", "can't",
+  "water", "bottle", "schedule", "either") — numbers can't catch everything; the owner's ear is the final check.
+  Words that invite a British vowel can be swapped ("next day" for "tomorrow" if it keeps slipping).
 - **Accent:** the narrator is the owner's relaxed American accent. The take picker now scores each take's voice
   against his reference (Chatterbox voice encoder) and the audio gate flags "voice/accent drift" below 0.88 —
   redo those lines. Very short lines drift most ("Subscribe so you don't break your streak." scored lowest).
