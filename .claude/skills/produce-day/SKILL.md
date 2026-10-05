@@ -86,6 +86,11 @@ style suffix in generate.py asks for this automatically, but **look** at every t
 real gesture or event — standing still and smiling is NOT a scroll-stopper). All other scenes are clear still pictures
 with a soft 0.3 s cross-fade between scenes (assemble.py default for 3D videos). Animating every scene would cost
 ~8 min of GPU per scene (~2–3 h per video) and odd motion is worse than a clean still.
+**Filmed clips (fixed 2026-10-05):** `footage/clips/hello.mp4` now says "Welcome to 2 Minute Arabic" (the "s" of
+"minutes" cut, 37 ms); `goodbye.mp4` ends at 2.73 s, before the owner reaches for the camera. Originals kept as
+`*-original.mp4`. The channel name is **2 Minute Arabic** (singular) everywhere — never "2 Minutes". Desk scenes:
+the intro desk (`desk-intro-3d.png`) is used for both intro and outro.
+**Counting scenes:** cups.py lays objects out without overlap across the full width (≤ 4 per row).
 **Hello-clip join:** the narrator line after the filmed hello starts 0.6 s after it ends (`AFTER_FILMED`) and the
 onset trim keeps 0.12 s before the first sound — listen to that join in the approval preview; nothing may sound cut.
 

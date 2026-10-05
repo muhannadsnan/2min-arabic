@@ -84,6 +84,8 @@ Day 10 ✅ — What's your lucky number? Write it in Arabic below 👇 (sab'a? '
 
 ## Quality check (Claude)
 
+- **2026-10-05 fixes:** hello clip without the "s" ("2 Minute Arabic"), goodbye clip ends before the camera reach, intro desk reused as outro, opener close-up with a quick finger raise (Day 9), cups never overlap (Day 10).
+
 - Opener: the waiter sets down a tray of coffee (approved) → 1-s hold → slow zoom.
 - Audio approved by you: voices level, narrator checked, noise-cleaned recordings; coffee for a group of friends (not for Sami).
 - Cup scenes are composited, so every number shows exactly the right count; the table sits mid-frame so cards,

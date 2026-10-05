@@ -47,13 +47,16 @@ def cutout(path):
 
 
 def layout(n, row=False):
-    """(x centre, y bottom, scale) per cup, as fractions of the table area."""
+    """(x centre, y bottom, width as a share of the frame) per cup — never overlapping, using the full width
+    (owner, 2026-10-05: from 3 cups on they overlapped). Up to 4 in one row; more = two rows (back row smaller)."""
+    def row_of(k, y, scale):
+        step = 0.94 / k
+        w = min(0.24, 0.80 * step) * scale
+        return [(0.03 + step * (j + 0.5), y, w) for j in range(k)]
     if n <= 4:
-        return [(0.05 + 0.9 * (k + 1) / (n + 1), 0.585, 1.0) for k in range(n)]
+        return row_of(n, 0.585, 1.0)
     back = n // 2
-    front = n - back
-    return ([(0.12 + 0.76 * (k + 1) / (back + 1), 0.52, 0.85) for k in range(back)] +
-            [(0.03 + 0.94 * (k + 1) / (front + 1), 0.645, 1.0) for k in range(front)])
+    return row_of(back, 0.52, 0.85) + row_of(n - back, 0.645, 1.0)
 
 
 def main():
@@ -69,9 +72,8 @@ def main():
         if "cups" not in e:
             continue
         n, img = e["cups"], table.copy()
-        base_w = int(W * (0.17 if n > 6 else 0.24))
-        for x, y, sc in layout(n, e.get("row")):
-            cw = int(base_w * sc)
+        for x, y, wf in layout(n, e.get("row")):
+            cw = int(W * wf)
             c = cup.resize((cw, int(cup.height * cw / cup.width)))
             sh = Image.new("L", (cw, max(6, cw // 5)), 0)   # soft contact shadow under the saucer (alpha mask)
             ImageDraw.Draw(sh).ellipse((cw // 10, 0, cw - cw // 10, sh.height - 1), fill=70)

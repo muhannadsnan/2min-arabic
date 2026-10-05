@@ -150,6 +150,21 @@
   "note": "rejected: standing still, not a scroll-stopper"
  },
  {
+  "name": "openers/d09-lina-finger-close",
+  "kind": "openers",
+  "character": "lina",
+  "action": "Day 9: close-up, Lina quickly raises one finger beside her face with a knowing smile and holds",
+  "green": false,
+  "once_s": 1.97,
+  "loop_s": 3.93,
+  "speed": 1.0,
+  "source": "library/work/clips/op-d9e_s141.mp4",
+  "created": "2026-10-05",
+  "used_in": [
+   "009-grammar-one-letter-for-women"
+  ]
+ },
+ {
   "name": "openers/d09-lina-one-finger",
   "kind": "openers",
   "character": "lina",
@@ -162,7 +177,9 @@
   "created": "2026-10-05",
   "used_in": [
    "009-grammar-one-letter-for-women"
-  ]
+  ],
+  "approved": false,
+  "note": "rejected: odd eyes/last frame (owner)"
  },
  {
   "name": "openers/d10-waiter-tray",

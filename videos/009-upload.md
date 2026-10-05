@@ -80,6 +80,8 @@ Day 9 ✅ — Make it feminine! Write the woman's version of صَدِيقْ (fri
 
 ## Quality check (Claude)
 
+- **2026-10-05 fixes:** hello clip without the "s" ("2 Minute Arabic"), goodbye clip ends before the camera reach, intro desk reused as outro, opener close-up with a quick finger raise (Day 9), cups never overlap (Day 10).
+
 - Opener: Lina raises one finger, "just one thing!" (modest outfit) → 1-s hold. Still pictures with soft cross-fades.
 - Audio approved by you: voices level, narrator checked for rushing, gaps and accent drift; "soft ah" wording; noise-cleaned recordings.
 - 9 new 3D images (classroom, students, teachers, friends) + 2 reused; faces clear of every card.
