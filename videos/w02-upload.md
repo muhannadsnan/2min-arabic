@@ -57,7 +57,7 @@ learn arabic for beginners full lesson, arabic for beginners course, learn arabi
 
 | Setting | Value |
 |---|---|
-| Playlist | 30 Days to Your First Arabic Conversation **and** Full Lessons (create it once if it doesn't exist) |
+| Playlist | 30 Days to Your First Arabic Conversation |
 | Audience | No, it's not made for kids |
 | **AI use** | **No — your own recorded Arabic, Koki's recorded Lina lines, your own cloned English voice, illustrations.** |
 | Paid promotion | No |
