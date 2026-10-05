@@ -34,3 +34,19 @@ course. They reuse the whole daily pipeline (see the **produce-day** skill); onl
 
 Short scenes with the owner on camera (filmed, cleaned with `tools/clean_footage.py`), Arabic lines subtitled with
 transliteration + English. Real people on camera also strengthen the channel against the inauthentic-content rule.
+
+## Vocab Shorts (owner, 2026-10-05) — the second weekly bonus
+
+Same pipeline, stem `videos/v0N-<place>.md`, badge **ARABIC VOCAB**, playlist **Arabic Vocabulary**.
+- **Top 10 words for one situation:** café, street, market/store, school, home, kitchen, family, transport, weather,
+  body, colours, clothes … — Modern Standard Arabic (dialect only in the Extras), each word with its article where
+  natural (الْقَهْوَةْ), one 3D picture per word in that place, and a closing "now say them all" round.
+- Length 60–90 s. Narrator gives the English, the owner's recording gives the Arabic; ⏸️ 1.5 s to repeat each word.
+- Re-use course words where they fit (spaced repetition) and keep a running list in docs/13 (vocabulary ledger).
+- Batch the 10 words into the next combined recording sheet.
+
+## Weekly rhythm (owner, 2026-10-05)
+
+Shorts chain: Day N … Day N+4 → **Arabic Extra** → **Vocab** (7 Shorts a week, one per day).
+Long chain: the **Part** (Days N–N+4) the day after Day N+4; **monthly** "whole month in one video".
+Occasional **filmed** videos by the owner (sketches, on-camera tips) slot in as Extras.

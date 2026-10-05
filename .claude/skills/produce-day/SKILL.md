@@ -26,6 +26,13 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
   or "so" ("Now imagine someone thanks you, so how do you say you're welcome?").
 - No one-word lines or exclamations; no "Number one/two…" lists — use "Let's start with an easy one…", "Next…".
 - A connector at every scene change: "And later that day…", "Then…", "Back at the café…".
+- **Sounds are written the way they sound, never as a single letter:** "a soft ah", "an ee sound" — not "a soft a"
+  (the clone glues a lone letter to the next word: "soft a sound" → "soft-a sound"; owner, 2026-10-05).
+- **Accent:** the narrator is the owner's relaxed American accent. The take picker now scores each take's voice
+  against his reference (Chatterbox voice encoder) and the audio gate flags "voice/accent drift" below 0.88 —
+  redo those lines. Very short lines drift most ("Subscribe so you don't break your streak." scored lowest).
+- **The approval preview includes the filmed hello/goodbye clips** (`tools/preview_audio.py`), otherwise their
+  slots sound like silent gaps.
 - Numbers and maths are hard to say: "one point zero one, seven times" stumbles — say it in words of meaning.
 - Fix a flagged line by **rewording**, not just more takes.
 

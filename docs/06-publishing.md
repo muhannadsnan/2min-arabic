@@ -106,6 +106,7 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 
 - **30 Days to Your First Arabic Conversation** (Days 1–30, in order)
 - **Arabic Phrases**, **Arabic Conversations**, **Arabic Stories**, **Arabic Grammar Made Easy** (by format)
+- **Arabic Vocabulary** — top-10 words per situation (`videos/v0N-…`, café, street, store, school, home, kitchen, family…).
 - **Arabic Extras** — bonus Shorts outside the 30 days (`videos/x0N-…`, e.g. 10 ways to say hello/goodbye).
   Standard Arabic and Syrian dialect, each phrase labelled; the course itself stays standard Arabic.
 
@@ -130,3 +131,12 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 | Returning viewers | Is the streak idea working? |
 | Subscribers per video | Which formats convert? |
 | Top comments/questions | Future episode ideas |
+
+## Weekly rhythm (from Week 3, owner 2026-10-05)
+
+| Slot | Shorts chain (17:00 Oslo, one a day) | Long chain |
+|---|---|---|
+| Mon–Fri | 5 course days | |
+| Sat | Arabic Extra (phrases, dialect, filmed sketch by the owner) | Part (the 5 days + quiz) |
+| Sun | Arabic Vocab (top 10 words in one place) | |
+| Monthly | — | "The whole month in one video" |

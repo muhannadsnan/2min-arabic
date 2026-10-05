@@ -31,7 +31,8 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **48 h checks:** Day 2 (re-upload) 4 Oct · x01 5 Oct · x02 6 Oct.
 - **2026-10-06:** verdict on the "viral shorts" tag experiment (Days 3/5 vs 2/4) → docs/06.
 - **48 h after each Short:** if ~0 views, re-upload with a backup title (pre-upload-gate writes them).
-- **After Day 10:** Part 2 (Days 6–10).
+- **After Day 10:** Part 2 (Days 6–10), then Extra x03 + Vocab v01 (new weekly rhythm: 5 days → Extra → Vocab;
+  Part on the long chain; monthly long video — docs/06).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
 - **Next up (2026-10-01):** Day 6 scheduled 4 Oct (veaEqTci-qw). Recordings in; produce Days 7–10 + Part 2 next (
