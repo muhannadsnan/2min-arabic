@@ -13,13 +13,13 @@ for Part 2 (owner approves): Sami and Lina wave together at the café door, lowe
 ### 🎬 Scene 1 — Part intro (opener)
 
 🖼️ **Image:** 3D opener — Sami and Lina wave together at the café door, lower their hands and smile (new opener, owner approves)
-🔤 **On screen:** Part 2 · Days 6–10 · the full lesson
+🔤 **On screen:** Part 2, Days 6 to 10
 
 ```say:narrator
-This is part two of your thirty days: Day 6 to Day 10, in one lesson.
+Welcome to part two of your thirty days, with Day 6 to Day 10 together in one lesson.
 ```
 ```say:narrator
-Yes and no, where you're from, one magic letter, and the numbers from one to ten. Use the chapters to jump to any day.
+You'll practice yes and no, where you're from, one magic letter, and the numbers from one to ten, and you can use the chapters to jump to any day.
 ```
 
 ### 🎬 Scene 2 — Quiz intro
@@ -28,16 +28,16 @@ Yes and no, where you're from, one magic letter, and the numbers from one to ten
 🔤 **On screen:** Review quiz · say it in Arabic
 
 ```say:narrator
-Now, the review quiz. I say it in English, you say it in Arabic. Then listen and check.
+Now it's time for the review quiz. I'll say it in English, you say it in Arabic, and then you listen and check.
 ```
 
 ### 🎬 Scene 3 — Quiz 1
 
 🖼️ **Image:** Sami bumping into Lina, 3D street
-🔤 **On screen:** Quiz 1/12 · How do you say: sorry? (as a man)
+🔤 **On screen:** Quiz 1/12 · Sorry (a man says it)
 
 ```say:narrator
-How do you say: sorry? (as a man)
+Let's begin with a man who bumps into someone, so how does he say sorry?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -53,10 +53,10 @@ How do you say: sorry? (as a man)
 ### 🎬 Scene 5 — Quiz 2
 
 🖼️ **Image:** Lina and Sami chatting happily at the café, 3D
-🔤 **On screen:** Quiz 2/12 · How do you answer: all good, thank God?
+🔤 **On screen:** Quiz 2/12 · All good, thank God.
 
 ```say:narrator
-How do you answer: all good, thank God?
+Someone asks how you are. How do you answer, all good, thank God?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -72,10 +72,10 @@ How do you answer: all good, thank God?
 ### 🎬 Scene 7 — Quiz 3
 
 🖼️ **Image:** Lina holding out a cup of coffee, 3D
-🔤 **On screen:** Quiz 3/12 · Lina offers you coffee. How do you say: yes, please?
+🔤 **On screen:** Quiz 3/12 · Yes, please.
 
 ```say:narrator
-Lina offers you coffee. How do you say: yes, please?
+Then Lina offers you a coffee. How do you say yes, please?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -91,10 +91,10 @@ Lina offers you coffee. How do you say: yes, please?
 ### 🎬 Scene 9 — Quiz 4
 
 🖼️ **Image:** Sami asking Lina a question at the café, 3D
-🔤 **On screen:** Quiz 4/12 · How do you ask a woman: where are you from?
+🔤 **On screen:** Quiz 4/12 · Where are you from? (to a woman)
 
 ```say:narrator
-How do you ask a woman: where are you from?
+Next question, how would you ask a woman where she is from?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -110,10 +110,10 @@ How do you ask a woman: where are you from?
 ### 🎬 Scene 11 — Quiz 5
 
 🖼️ **Image:** Sami answering proudly at the café, 3D
-🔤 **On screen:** Quiz 5/12 · How does Sami say: I'm from Syria. And you?
+🔤 **On screen:** Quiz 5/12 · I'm from Syria. And you?
 
 ```say:narrator
-How does Sami say: I'm from Syria. And you?
+And how does Sami say, I'm from Syria, and you?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -129,10 +129,10 @@ How does Sami say: I'm from Syria. And you?
 ### 🎬 Scene 13 — Quiz 6
 
 🖼️ **Image:** a German old town with timber-framed houses, 3D
-🔤 **On screen:** Quiz 6/12 · What is Germany in Arabic?
+🔤 **On screen:** Quiz 6/12 · Germany
 
 ```say:narrator
-What is Germany in Arabic?
+Here's a country for you. What is Germany in Arabic?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -148,10 +148,10 @@ What is Germany in Arabic?
 ### 🎬 Scene 15 — Quiz 7
 
 🖼️ **Image:** a female teacher at the chalkboard, 3D
-🔤 **On screen:** Quiz 7/12 · A teacher who is a woman?
+🔤 **On screen:** Quiz 7/12 · teacher (woman)
 
 ```say:narrator
-A teacher who is a woman?
+What is the word for teacher, when we talk about a woman?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -167,10 +167,10 @@ A teacher who is a woman?
 ### 🎬 Scene 17 — Quiz 8
 
 🖼️ **Image:** Lina with her backpack at the university, 3D
-🔤 **On screen:** Quiz 8/12 · How do you say: Lina is a student?
+🔤 **On screen:** Quiz 8/12 · Lina is a student.
 
 ```say:narrator
-How do you say: Lina is a student?
+Now make a sentence. How do you say, Lina is a student?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -186,10 +186,10 @@ How do you say: Lina is a student?
 ### 🎬 Scene 19 — Quiz 9
 
 🖼️ **Image:** two friends laughing on a sunny street, 3D
-🔤 **On screen:** Quiz 9/12 · A friend who is a man?
+🔤 **On screen:** Quiz 9/12 · friend (man)
 
 ```say:narrator
-A friend who is a man?
+And now think of a friend who is a man. How would you say friend for him?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -205,10 +205,10 @@ A friend who is a man?
 ### 🎬 Scene 21 — Quiz 10
 
 🖼️ **Image:** three coffee cups on the café table, 3D
-🔤 **On screen:** Quiz 10/12 · Say the number three.
+🔤 **On screen:** Quiz 10/12 · the number 3
 
 ```say:narrator
-Say the number three.
+Now some numbers. How do you say the number three?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -224,10 +224,10 @@ Say the number three.
 ### 🎬 Scene 23 — Quiz 11
 
 🖼️ **Image:** eight coffee cups on the café table, 3D
-🔤 **On screen:** Quiz 11/12 · Now the number eight.
+🔤 **On screen:** Quiz 11/12 · the number 8
 
 ```say:narrator
-Now the number eight.
+And what about the number eight?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -243,10 +243,10 @@ Now the number eight.
 ### 🎬 Scene 25 — Quiz 12
 
 🖼️ **Image:** ten coffee cups crowding the café table, 3D
-🔤 **On screen:** Quiz 12/12 · And the number ten.
+🔤 **On screen:** Quiz 12/12 · the number 10
 
 ```say:narrator
-And the number ten.
+And for the very last question, how do you say the number ten?
 ```
 ⏸️ **Pause 3s** — viewer answers in Arabic.
 
@@ -265,7 +265,7 @@ And the number ten.
 🔤 **On screen:** مَعَ السَّلَامَةْ · *ma'a s-salaama* · See you in Part 3 (Days 11–15)
 
 ```say:narrator
-That's part two. Ten days, and you can answer politely, say where you're from, talk about men and women, and count to ten. Next: Days 11 to 15.
+That's part two. After ten days you can answer politely, say where you're from, talk about men and women, and count to ten, and next come Days 11 to 15.
 ```
 ```say:narrator
 Subscribe so you don't break your streak.
