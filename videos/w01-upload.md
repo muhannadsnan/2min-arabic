@@ -48,7 +48,7 @@ laa afham — I don't understand — ⁧لَا أَفْهَمْ⁩
 (3 groups — video-specific · niche · broad, per Dan the Creator's formula)
 
 ```
-arabic conversation for beginners, arabic for beginners, basic arabic phrases, arabic conversation, arabic for beginners full course, how to talk to arabic people, language learning, learn arabic, learn arabic for beginners full lesson, learn arabic in 10 minutes, marhaba, modern standard arabic, shukran, تعلم العربية للمبتدئين, دروس العربية, شكرا, شكرا meaning, ما اسمك, مرحبا
+arabic conversation, arabic conversation for beginners, arabic for beginners, arabic for beginners full course, basic arabic phrases, how to talk to arabic people, learn arabic, learn arabic for beginners full lesson, learn arabic in 10 minutes, marhaba, modern standard arabic, shukran, تعلم العربية للمبتدئين, دروس العربية, شكرا, شكرا meaning, ما اسمك, مرحبا, محادثة بالعربية لغير الناطقين بها, كيف اتكلم بالعربي, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب
 ```
 
 ## Settings

@@ -38,6 +38,11 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
    - 3 **question-form / synonym searches** in the owner's style (2026-10-05): "what is greeting in arabic",
      "welcome in arabic", "sorry in arabic", "how to talk to arabic people", "ways to say hello in arabic";
    - 2–4 **transliterated keywords** of today's words ("shukran", "ma ismuk", "tayyib") — learners search these;
+   - **Research first:** `python3 tools/suggest.py "<topic> in arabic" "<Arabic topic>"` = YouTube's own
+     autocomplete (what people really type, most-searched first). Pick learner phrases only (drop songs, kids,
+     perfumes, games, everyday-life Arabic like "كيف تعتذر من شخص" — that's Arabic speakers, not learners);
+   - 2 **learner Arabic** tags on every video: "تعليم اللغة العربية لغير الناطقين بها", "تعليم عربي للاجانب"
+     (+ topic ones: "محادثة تعارف بالعربية", "قصة قصيرة بالعربي", "الاعتذار بالعربية" — owner, 2026-10-05);
    - 5–7 **Arabic-script** tags (owner, 2026-10-02): today's words in Arabic ("نعم", "طيب"), 2 **mixed** phrases a
      learner pastes in after seeing a word ("طيب meaning", "من أين أنت in english"), and one topic phrase
      ("تعلم اللغة العربية", "قصة قصيرة بالعربية");
