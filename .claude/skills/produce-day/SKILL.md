@@ -41,6 +41,10 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
 **Voices — the same level to the ear (owner approved Day 8's sound, 2026-10-02: keep this pattern):**
 - Every clip is normalised to its target both ways (quiet clips raised, loud clips lowered): narrator −18 LUFS,
   Koki −18, owner's recorded lines −17 after the clarity EQ (`OWNER_CLARITY`, `OWNER_LIFT_DB = 1.0`).
+- **No hiss in recorded lines** (owner heard noise, 2026-10-05): every recorded line (owner + Koki) gets a light
+  spectral denoise + a soft gate in the pauses (`RECORDED_CLEAN` in make_audio.py) — pause noise ≈ −70…−82 dB, like
+  the narrator's −78. The owner's EQ is still the Day-8 one he approved. Loudness: −14 LUFS target, true peak
+  ≤ −1 dB (YouTube normalises louder videos down, never clips them).
 - The **audio gate runs automatically** at the end of `make_audio.py` (`tools/voice_balance.py`): all ✅ and
   "narrator clips to redo: none" before assembling. Koki is naturally brighter — never EQ her.
 

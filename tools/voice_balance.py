@@ -29,8 +29,12 @@ def lufs(path):
 
 
 def clarity(y, sr):
-    S = np.abs(librosa.stft(y, n_fft=2048)) ** 2
+    """Share of energy above 2 kHz, on speech frames only (within 25 dB of the loudest frame)."""
+    S = np.abs(librosa.stft(y, n_fft=2048, hop_length=512)) ** 2
     f = librosa.fft_frequencies(sr=sr, n_fft=2048)
+    e = S.sum(axis=0)
+    speech = e > e.max() * 10 ** (-25 / 10)
+    S = S[:, speech]
     return 10 * np.log10(S[f > 2000].sum() / S.sum() + 1e-12)
 
 

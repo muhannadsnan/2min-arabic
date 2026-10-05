@@ -105,23 +105,27 @@ def loudness(path: pathlib.Path) -> float:
 # the owner's own recordings (phone mic + noise removal) sound darker than Koki's and the narrator: lift clarity and
 # level them 2 dB above the other clips (owner, 2026-10-02: "my voice is lower and less clear")
 OWNER_CLARITY = ("highpass=f=90,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=2800:t=q:w=1.0:g=3.5,"
-                 "highshelf=f=6000:g=4,")
+                 "highshelf=f=6000:g=4,")   # the EQ the owner approved on Day 8 (hiss is now handled by RECORDED_CLEAN)
+# recorded lines (owner + Koki): light spectral denoise + a soft gate in the pauses — the treble boost had lifted the
+# phone's hiss to ~-55 dB, audible on headphones next to the narrator's silent pauses (owner, 2026-10-05)
+RECORDED_CLEAN = "afftdn=nr=12:nf=-50:tn=1,agate=threshold=0.012:ratio=3:attack=5:release=150:range=0.06"
 OWNER_LIFT_DB = 1.0   # measured 2026-10-02: +2 put him 2 LU above the narrator; the EQ does most of the work
 OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami"}
 
 
-def level(src: pathlib.Path, dst: pathlib.Path, owner: bool = False):
+def level(src: pathlib.Path, dst: pathlib.Path, owner=None):
     """Trim silence at both ends, bring the clip to CLIP_LUFS, keep peaks below -1.5 dB.
     owner=True: the owner's recorded voice — clarity EQ and +2 dB (see OWNER_CLARITY)."""
     trimmed = dst.with_suffix(".trim.wav")
     trim = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,"
             "areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.1,areverse")
     run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af", trim, "-ac", "1", "-ar", str(SAMPLE_RATE), str(trimmed)])
-    if owner:   # EQ before measuring, so the loudness target holds after the EQ
+    if owner is not None:   # a recorded line (owner=True/False): denoise + gate; the owner's also gets the EQ
         eq = dst.with_suffix(".eq.wav")
-        run(["ffmpeg", "-v", "error", "-y", "-i", str(trimmed), "-af", OWNER_CLARITY.rstrip(","), str(eq)])
+        chain = (OWNER_CLARITY if owner else "") + RECORDED_CLEAN
+        run(["ffmpeg", "-v", "error", "-y", "-i", str(trimmed), "-af", chain, str(eq)])
         trimmed.unlink(); eq.rename(trimmed)
-    gain = CLIP_LUFS + (OWNER_LIFT_DB if owner else 0.0) - loudness(trimmed)
+    gain = CLIP_LUFS + (OWNER_LIFT_DB if owner else 0.0) - loudness(trimmed)   # owner=None: generated speech
     run(["ffmpeg", "-v", "error", "-y", "-i", str(trimmed), "-af",
          f"volume={gain:.2f}dB,alimiter=limit=0.84:attack=3:release=40:level=false", str(dst)])
     trimmed.unlink()
@@ -209,7 +213,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         rec = recorded.get((speaker, text))
         if rec:
             digest = hashlib.sha1((ROOT / rec["file"]).read_bytes()).hexdigest()
-            tag = "rec3" if speaker in OWNER_SPEAKERS else "rec"   # rec3 = owner clarity EQ + 1 dB
+            tag = "rec7" if speaker in OWNER_SPEAKERS else "reck2"   # rec4/reck2 = denoise + gate (+ owner EQ)
             return cache / f"{tag}-{digest}.wav"
         return cache / (hashlib.sha1(f"{VOICE_VERSIONS[speaker]}|{speaker}|{text}".encode()).hexdigest() + ".wav")
 
