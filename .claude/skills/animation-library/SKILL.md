@@ -108,6 +108,11 @@ Make 3–5 new openers (different entrances per character: peek, look-up, turn-a
    objects without fiddly details: a hardcover notebook instead of a spiral one).
 5. **No text, letters or fake writing** on boards, signs, screens or book covers.
 6. **Two-person scenes:** both characters correct (refs for both), no touching between unrelated men and women.
+7. **Poses that break arms — avoid them in prompts:** a hand on the chest, holding a bag strap, a hand near the face
+   at rest. The model then draws a second sleeve hanging down on the same side (three arms; Day 9, twice). Prefer
+   arms relaxed at the sides, both hands holding one object, or one clear gesture.
+8. **Openers:** start pose = arms down at the sides; check the first, middle, last frame AND the held last frame at
+   full size (arms, hands, eyes); the action must be real and readable (a raised finger, a wave), never standing still.
 Reject the take if any item fails — a clear still beats an odd one.
 
 **Modest, culturally respectful people (owner, 2026-10-05) — check every picture and opener:** no exposed body parts on
