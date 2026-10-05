@@ -50,7 +50,7 @@ waaHid … 'ashara — 1 … 10 — ⁧وَاحِدْ … عَشَرَةْ⁩
 ## Tags
 
 ```
-learn arabic for beginners full lesson, arabic for beginners course, learn arabic conversation, numbers 1 to 10 in arabic, where are you from in arabic, masculine and feminine in arabic, yes no in arabic, arabic phrases for travel, naam, tayyib, تعلم العربية من الصفر, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب, الأرقام بالعربي, من أين أنت, محادثة بالعربية لغير الناطقين بها, learn arabic, arabic for beginners, modern standard arabic, language learning
+learn arabic for beginners full lesson, arabic for beginners course, learn arabic conversation, numbers 1 to 10 in arabic, where are you from in arabic, masculine and feminine in arabic, yes no in arabic, arabic phrases for travel, naam, tayyib, تعلم العربية من الصفر, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب, الأرقام بالعربي, من أين أنت, طيب meaning, محادثة بالعربية لغير الناطقين بها, learn arabic, arabic for beginners, modern standard arabic, language learning
 ```
 
 ## Settings
