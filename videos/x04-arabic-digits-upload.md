@@ -3,6 +3,9 @@
 **File to upload:** `output/x04-arabic-digits/arabic-numbers-look-different-learn-to-read-them.mp4` (vertical → **Short**, 1:41)
 **Thumbnail:** Upload file → `output/x04-arabic-digits/arabic-numbers-look-different-learn-to-read-them-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-06** — video id `fbHfwdMExss`, scheduled **11 Oct 17:00 Oslo**, playlist Arabic Extras,
+> thumbnail + English subtitles set. Left for you: Education Type/Level in Studio; after it's live: pin the comment + Related video.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

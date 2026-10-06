@@ -3,6 +3,9 @@
 **File to upload:** `output/x03-introduce-yourself-in-arabic/introduce-yourself-in-arabic-you-know-every-word.mp4` (vertical → **Short**, 1:44)
 **Thumbnail:** Upload file → `output/x03-introduce-yourself-in-arabic/introduce-yourself-in-arabic-you-know-every-word-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-06** — video id `pbIY5duEYzE`, scheduled **10 Oct 17:00 Oslo**, playlist Arabic Extras,
+> thumbnail + English subtitles set. Left for you: Education Type/Level in Studio; after it's live: pin the comment + Related video.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

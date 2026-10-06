@@ -27,12 +27,11 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **~2026-10-07, then weekly:** YouTube login expires (Testing mode) → run `login`, send the owner the link.
 - **Hourly (cron, automatic):** `tools/comment_job.sh` posts each sheet's pinned comment once its video is live and
   pops a desktop notification; the owner taps ⋮ → Pin (no API for pinning). Log: `~/.local/share/2min-yt/comments.log`.
-- **Schedule (Shorts, 17:00 Oslo):** Day 2 re-upload 2 Oct · x01 3 Oct · x02 4 Oct · Day 6 5 Oct (7IQ0GYOC9X4) · Day 7 6 Oct (QuLTZ42HMxs) · Day 8 7 Oct (nYz4KkohiIc) · Days 9–10 next.
+- **Schedule (Shorts, 17:00 Oslo):** Day 2 re-upload 2 Oct · x01 3 Oct · x02 4 Oct · Day 6 5 Oct (7IQ0GYOC9X4) · Day 7 6 Oct (QuLTZ42HMxs) · Day 8 7 Oct (nYz4KkohiIc) · Day 9 8 Oct (KiwR8OU3aeQ) · Day 10 9 Oct (5kaDplowig4) · x03 10 Oct (pbIY5duEYzE) · x04 11 Oct (fbHfwdMExss) · **Day 11 → 12 Oct**. Long chain: Part 2 10 Oct (lYgjF0MTaYo).
 - **48 h checks:** Day 2 (re-upload) 4 Oct · x01 5 Oct · x02 6 Oct.
 - ~~2026-10-06: viral shorts verdict~~ → dropped (docs/06 Learnings).
 - **48 h after each Short:** if ~0 views, re-upload with a backup title (pre-upload-gate writes them).
-- **After Day 10 (2026-10-06):** Part 2 scheduled. Extras **x03** (introduce yourself) + **x04** (Arabic digits) built from
-  existing recordings — ready to upload → Shorts slots ~10 + 11 Oct. **Day 11 is due ~12 Oct**: plan Days 11–15 +
+- **After Day 10 (2026-10-06):** Part 2 scheduled. Extras **x03** + **x04** (from existing recordings) uploaded + scheduled 10/11 Oct. **Day 11 is due ~12 Oct**: plan Days 11–15 +
   record them together with **v01 café words** (`videos/v01-cafe-words-recording-sheet.md`, 9 words) now.
   Weekly rhythm: 5 days → Extra → Vocab; Part on the long chain; monthly long video (docs/06).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
