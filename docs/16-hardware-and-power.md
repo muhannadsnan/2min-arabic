@@ -76,8 +76,39 @@ everything", runs you can leave going while you work. It does **not** fix GPU-me
 size, resolution) — only a new GPU does that. With a new GPU later, 32 GB is still needed: offloaded model parts and
 bigger models live in RAM.
 
-**For this laptop:** DDR4-3200 SO-DIMM, 2 slots. Lenovo's spec sheet (PSREF) should be checked for the official
-maximum; 2 × 16 GB is the usual upgrade. Buy a matched 2 × 16 GB kit (dual channel), ~400–700 NOK *estimate*.
+**For this laptop:** DDR4-3200 SO-DIMM, 2 slots (both get replaced — today's 16 GB is most likely 2 × 8 GB). Lenovo
+lists 16 GB max (only what they sold); the i5-12500H supports 64 GB and shops sell this model with 64 GB, so 2 × 32 GB
+is the practical max. The ~400–700 NOK guess above was **too low** — see the prices below (2026 memory shortage).
+
+## What can be upgraded on this laptop (owner's research, 2026-10-06)
+
+| Part | Upgradable? |
+|---|---|
+| RAM | yes — 2 × DDR4-3200 SO-DIMM, practical max 2 × 32 GB |
+| SSD | yes — 2 × M.2 PCIe 4.0 x4 (one 2280, one 2242), single-sided drives |
+| GPU, CPU | no — soldered |
+| External GPU | no Thunderbolt on the RTX 3060 version; only a DIY M.2-to-OCuLink adapter (cable out through the bottom cover) |
+
+## Prices checked 2026-10-06 (used = finn.no asking prices; re-check before buying)
+
+| Item | Used | New |
+|---|---|---|
+| 32 GB (2 × 16 GB) DDR4-3200 SO-DIMM | ~1 250–1 500 kr (a 2666 MHz kit ~1 000 kr) | from ~4 230 kr |
+| 64 GB (2 × 32 GB) DDR4-3200 SO-DIMM | ~3 400–3 900 kr | from ~8 340 kr |
+| Old 2 × 8 GB DDR4-3200, sold | ~800 kr back | — |
+| RTX 5060 Ti 16 GB | ~5 500–6 000 kr | from ~6 900 kr |
+| OCuLink kit: M.2 adapter ~750–800 + dock ~1 150 + ATX PSU ~700–1 000 | — | ~2 600–2 950 kr |
+
+## The 3 upgrade paths (value for money)
+
+| Path | Net cost | What you get |
+|---|---|---|
+| **A. 32 GB RAM (used 2 × 16 GB 3200)** | **~500–700 kr** after selling the old sticks | no more "close all apps", fewer stalls, ~10–20 % faster |
+| **B. A + RTX 5060 Ti 16 GB via OCuLink (DIY)** | A + ~8 100–8 950 kr | ~2.5–3× faster openers, room for bigger/better models — but a DIY mod |
+| **C. 64 GB RAM (used 2 × 32 GB)** | ~2 600–3 100 kr after selling the old sticks | same as A today (~5 % more); only pays off with bigger models (i.e. after path B) |
+
+Order: **A now (when the owner wants), B when the channel earns, C only together with B.** Instead of B, a small used
+desktop with the same card is the cleaner route (no mod, no warranty risk) — price it when the time comes.
 
 ## CPU and disk
 
