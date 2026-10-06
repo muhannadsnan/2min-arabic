@@ -22,3 +22,13 @@ other dialects (Egyptian/Moroccan) unless the video teaches them, everyday-life 
 | **Day 9 (ة)** | masculine and feminine in arabic · male and female in arabic · how to identify masculine and feminine in arabic |
 | **Day 10 (numbers)** | numbers 1 to 10 in arabic · number names 1 to 10 in arabic · arabic numbers 1 to 10 in english |
 | Arabic script | تعلم العربية من الصفر · تعلم العربية الفصحى · العربية لغير الناطقين بها · المحادثة العربية لغير الناطقين بها · تعليم اللغة العربية لغير الناطقين بها · تعليم عربي للاجانب |
+
+## 2026-10-06 — x03 (introduce yourself) + x04 (Arabic digits)
+
+`suggest.py` picks (learner phrases only):
+- x03: "introduce yourself in arabic", "how to introduce yourself in arabic", "introduce myself in arabic",
+  "tell me about yourself in arabic", "my name is in arabic", "how to say my name is in arabic",
+  "what's your name in arabic"; Arabic: "تعريف عن النفس بالعربية".
+- x04: "arabic numbers", "arabic numbers 1-10", "arabic numerals 1-10", "how to read arabic numbers",
+  "how to read arabic eastern numbers", "eastern arabic numerals", "how to write arabic numbers 1 to 10";
+  Arabic: "الارقام العربية". Dropped: "arabic numerals" alone (memes/politics), kids' songs ("للاطفال").

@@ -239,7 +239,9 @@
   "speed": 0.847,
   "source": "library/work/clips/op-p2b-both-wave_s72.mp4",
   "created": "2026-10-01",
-  "used_in": [],
+  "used_in": [
+   "w02-review"
+  ],
   "approved": "2026-10-01"
  },
  {
@@ -285,6 +287,36 @@
    "x01-10-ways-to-say-hello"
   ],
   "approved": "2026-10-01"
+ },
+ {
+  "name": "openers/x03-sami-hi-close",
+  "kind": "openers",
+  "character": "sami",
+  "action": "x03: close-up, Sami quickly raises an open hand beside his face in a friendly hi, smiles and holds",
+  "green": false,
+  "once_s": 1.97,
+  "loop_s": 3.93,
+  "speed": 1.0,
+  "source": "library/work/clips/op-x03-sami-hi_s161.mp4",
+  "created": "2026-10-06",
+  "used_in": [
+   "x03-introduce-yourself-in-arabic"
+  ]
+ },
+ {
+  "name": "openers/x04-lina-menu-close",
+  "kind": "openers",
+  "character": "lina",
+  "action": "x04: close-up in a café, Lina looks up from the menu at the camera, surprised smile, holds",
+  "green": false,
+  "once_s": 1.97,
+  "loop_s": 3.93,
+  "speed": 1.0,
+  "source": "library/work/clips/op-x04-lina-menu_s161.mp4",
+  "created": "2026-10-06",
+  "used_in": [
+   "x04-arabic-digits"
+  ]
  },
  {
   "name": "talk/lina-talk-1",

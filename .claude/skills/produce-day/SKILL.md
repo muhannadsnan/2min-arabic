@@ -77,6 +77,9 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
   card above and the subtitles / YOUR TURN label below).
 - Thumbnails: `thumbnail.py` refuses → ▶ … _ (missing glyphs) — write "MAN OR WOMAN?", not "MAN → WOMAN".
 - Scene-1 card: one line, comma-separated, one style. Pauses fit the difficulty.
+- **Card text is phone-size readable (owner, 2026-10-06 — Instagram too):** English lines 60 px with a 1-px stroke
+  (semi-bold), transliteration bold italic 66 px, titles 76 px; a long line wraps onto two lines instead of
+  shrinking (scene 1 stays one line). Set in `render_card` (assemble.py) — don't go back to thin small text.
 
 **Image check — every picture, thumbnail and opener frame, at full size, BEFORE it's used (owner, 2026-10-05):**
 1. **Eyes:** both eyes look the same direction, same size, natural; no squint, drift or "dead" stare. In openers, check

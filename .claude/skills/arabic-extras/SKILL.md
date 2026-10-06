@@ -50,3 +50,13 @@ Same pipeline, stem `videos/v0N-<place>.md`, badge **ARABIC VOCAB**, playlist **
 Shorts chain: Day N … Day N+4 → **Arabic Extra** → **Vocab** (7 Shorts a week, one per day).
 Long chain: the **Part** (Days N–N+4) the day after Day N+4; **monthly** "whole month in one video".
 Occasional **filmed** videos by the owner (sketches, on-camera tips) slot in as Extras.
+
+## Extras from recordings we already have (2026-10-06)
+
+An Extra can be finished with **no new recording**: write it around lines that already exist (same speaker, exact
+same text — e.g. "اسْمِي سَامِي" from Day 2, the Day 10 numbers), then
+`python3 tools/reuse_recordings.py videos/x0N-….md` builds `footage/recordings/<video>/map.json` and lists any line
+that is still missing (those go on the next sheet). x03 (introduce yourself, Days 1–10 recombined) and x04 (Arabic
+digits ١–١٠ on a chalkboard, `tools/images/digits.py`) were made this way. Good Extras for viewers who walk with the
+course: "you can already do this" recaps, and practical extras that reuse the words (reading digits, prices).
+Vocab Shorts need new words → they wait for a recording session (v01 café words script is ready).

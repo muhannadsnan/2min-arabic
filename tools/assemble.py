@@ -33,6 +33,11 @@ AR_FONT = FONTS / "NotoNaskhArabic-Bold.ttf"
 LATIN_BOLD = FONTS / "NotoSans-Bold.ttf"
 LATIN = FONTS / "NotoSans-Regular.ttf"
 LATIN_ITALIC = FONTS / "NotoSans-Italic.ttf"
+LATIN_BOLD_ITALIC = FONTS / "NotoSans-BoldItalic.ttf"
+# Readable on a phone (Instagram too — owner, 2026-10-06): the thin lines got bigger and a little thicker. Regular
+# text gets a 1-px stroke in its own colour (a "semibold" — the system has no Noto Sans SemiBold), the
+# transliteration is bold italic, and a long line wraps onto two lines instead of shrinking.
+THICK = 1
 TEAL, TERRACOTTA, CHARCOAL, CREAM = (31, 95, 91), (192, 99, 58), (51, 51, 51), (255, 246, 233, 255)
 HERE = pathlib.Path(__file__).resolve().parent
 CLIPS_DIR = HERE.parent / "footage" / "clips"
@@ -64,14 +69,25 @@ def on_screen_by_scene(script: pathlib.Path):
     return texts
 
 
-def fit(draw, text, font_path, size, max_w, **kw):
+def fit(draw, text, font_path, size, max_w, stroke=0, **kw):
     while size > 20:
         font = ImageFont.truetype(str(font_path), size)
-        box = draw.textbbox((0, 0), text, font=font, **kw)
+        box = draw.textbbox((0, 0), text, font=font, stroke_width=stroke, **kw)
         if box[2] - box[0] <= max_w:
             return font, box
         size -= 4
     return font, box
+
+
+def wrap_long(draw, line, max_w):
+    """A Latin line that would have to shrink below 85 % of its size is split at the space nearest the middle."""
+    txt, font_path, size, color, kw, stroke = line
+    font, _ = fit(draw, txt, font_path, size, max_w, stroke, **kw)
+    if font.size >= size * 0.85 or " " not in txt or kw:
+        return [line]
+    mid = len(txt) / 2
+    cut = min((i for i, ch in enumerate(txt) if ch == " "), key=lambda i: abs(i - mid))
+    return [(txt[:cut], font_path, size, color, kw, stroke), (txt[cut + 1:], font_path, size, color, kw, stroke)]
 
 
 def render_card(text: str, path: pathlib.Path, all_bold: bool = False):
@@ -80,35 +96,40 @@ def render_card(text: str, path: pathlib.Path, all_bold: bool = False):
     parts = [clean(p) for p in text.split(" · ") if clean(p)]
     img = Image.new("RGBA", (W, 700), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    lines = []  # (text, font_path, size, color, kw)
+    lines = []  # (text, font_path, size, color, kw, stroke)
     if parts and ARABIC.search(parts[0]) and not re.search(r"[A-Za-z]", parts[0]):
         arabic = parts[0].replace("…", "").strip()  # the Arabic font has no ellipsis: show the word only
-        lines.append((arabic, AR_FONT, 130, TEAL, {"direction": "rtl", "language": "ar"}))
+        digits = all("\u0660" <= ch <= "\u0669" for ch in arabic)   # a digit card (x04): show the digit big
+        lines.append((arabic, AR_FONT, 200 if digits else 130, TEAL, {"direction": "rtl", "language": "ar"}, 0))
         rest = parts[1:]
         if rest:
-            lines.append((rest[0], LATIN_ITALIC, 60, TERRACOTTA, {}))
+            lines.append((rest[0], LATIN_BOLD_ITALIC, 66, TERRACOTTA, {}, 0))
         for extra in rest[1:]:
             if extra.startswith(("NEW", "Your answer", "Syrian dialect", "Standard Arabic")):   # highlights stand out
-                lines.append((extra, LATIN_BOLD, 50, TERRACOTTA if extra.startswith(("NEW", "Syrian")) else TEAL, {}))
+                lines.append((extra, LATIN_BOLD, 56, TERRACOTTA if extra.startswith(("NEW", "Syrian")) else TEAL, {}, 0))
             else:
-                lines.append((extra, LATIN, 50, CHARCOAL, {}))
+                lines.append((extra, LATIN, 60, CHARCOAL, {}, THICK))
     else:
         for i, p in enumerate(parts):
             if all_bold:   # scene 1: every line the same — bold, same size, same colour
-                lines.append((p, LATIN_BOLD, 64, TEAL, {}))
+                lines.append((p, LATIN_BOLD, 70, TEAL, {}, 0))
             else:
-                lines.append((p, LATIN_BOLD if i == 0 else LATIN, 72 if i == 0 else 54, TEAL if i == 0 else CHARCOAL, {}))
+                lines.append((p, LATIN_BOLD if i == 0 else LATIN, 76 if i == 0 else 60, TEAL if i == 0 else CHARCOAL, {},
+                              0 if i == 0 else THICK))
+    if not all_bold:   # scene 1 stays one line (owner, 2026-10-02): it shrinks instead
+        lines = [part for line in lines for part in wrap_long(d, line, W - 200)]
     y, drawn = 50, []
-    for txt, font_path, size, color, kw in lines:
-        font, box = fit(d, txt, font_path, size, W - 200, **kw)
-        drawn.append((txt, font, box, color, kw, y))
-        y += (box[3] - box[1]) + 38
-    height = y + 12
+    for txt, font_path, size, color, kw, stroke in lines:
+        font, box = fit(d, txt, font_path, size, W - 200, stroke, **kw)
+        drawn.append((txt, font, box, color, kw, y, stroke))
+        y += (box[3] - box[1]) + 34
+    height = y + 16
     card = Image.new("RGBA", (W, height), (0, 0, 0, 0))
     d = ImageDraw.Draw(card)
     d.rounded_rectangle((60, 10, W - 60, height - 10), radius=40, fill=CREAM)
-    for txt, font, box, color, kw, ty in drawn:
-        d.text(((W - (box[2] - box[0])) / 2 - box[0], ty - box[1]), txt, font=font, fill=color, **kw)
+    for txt, font, box, color, kw, ty, stroke in drawn:
+        d.text(((W - (box[2] - box[0])) / 2 - box[0], ty - box[1]), txt, font=font, fill=color,
+               stroke_width=stroke, stroke_fill=color, **kw)
     card.save(path)
     return height
 
