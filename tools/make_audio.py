@@ -38,11 +38,11 @@ WORKER = pathlib.Path(__file__).resolve().parent / "tts_worker.py"
 # Bump a speaker's version when its voice reference or setting in <TTS_HOME>/local_tts.py changes,
 # so only that speaker's clips are regenerated.
 VOICE_VERSIONS = {"narrator": "owner-en-5", "teacher": "owner-ar-4", "teacher-slow": "owner-ar-4",
-                  "sami": "owner-ar-4", "lina": "sara-ar-5", "narrator-kokoro": "kokoro-2"}
+                  "sami": "owner-ar-4", "tom": "owner-ar-4", "lina": "sara-ar-5", "narrator-kokoro": "kokoro-2"}
 # -2: neutral, 5% slower · -3 (Arabic): denoised reference, cfg 0.5, tail check + trim
 # owner-en-3 / sara-ar-4: all references denoised with DeepFilterNet (2026-09-27)
 # -4/-5: every generated clip also passes through DeepFilterNet (noise-free guarantee)
-SPEAKERS = ("narrator", "teacher", "teacher-slow", "sami", "lina", "narrator-kokoro")
+SPEAKERS = ("narrator", "teacher", "teacher-slow", "sami", "tom", "lina", "narrator-kokoro")
 
 MAX_PAUSE = 2.0     # seconds — longer waits bore the viewer (easy words: 1.5 s)
 AFTER_FILMED = 0.6   # s of air after a filmed clip (hello) before the next line
@@ -56,7 +56,7 @@ PAUSE = re.compile(r"⏸️ \*\*Pause (\d+(?:\.\d+)?)s\*\*")
 VIDEO = re.compile(r"^🎥 \*\*Clip:\*\*\s*([\w-]+)(?:\s*—\s*(.+))?$")
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CLIPS_DIR = ROOT / "footage" / "clips"
-ARABIC_SPEAKERS = ("teacher", "teacher-slow", "sami", "lina")
+ARABIC_SPEAKERS = ("teacher", "teacher-slow", "sami", "tom", "lina")   # tom = Day 11 tourist, voiced by the owner
 
 
 def parse(script: pathlib.Path):
@@ -111,7 +111,7 @@ OWNER_CLARITY = ("highpass=f=90,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=280
 # phone's hiss to ~-55 dB, audible on headphones next to the narrator's silent pauses (owner, 2026-10-05)
 RECORDED_CLEAN = "afftdn=nr=12:nf=-50:tn=1,agate=threshold=0.012:ratio=3:attack=5:release=150:range=0.06"
 OWNER_LIFT_DB = 1.0   # measured 2026-10-02: +2 put him 2 LU above the narrator; the EQ does most of the work
-OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami"}
+OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami", "tom"}
 
 
 def level(src: pathlib.Path, dst: pathlib.Path, owner=None):

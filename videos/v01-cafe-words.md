@@ -5,8 +5,8 @@
 | **Format** | Vocab Short (ARABIC VOCAB badge) · top 10 words for one place: the café |
 | **Target length** | 1:10–1:25 |
 | **Goal** | The viewer knows the 10 things they see and order in a café, can name 3 of them from a picture in the closing round, and is ready for Week 3 (Day 15 "I want…", Day 16 ordering at the café). |
-| **New words** | شَايْ · مَاءْ · حَلِيبْ · سُكَّرْ · فِنْجَانْ · كَعْكَةْ · عَصِيرْ · نَادِلْ · حِسَابْ (9) |
-| **Re-used** | قَهْوَةْ (Day 4) · شُكْرًا (Day 2) |
+| **New words** | حَلِيبْ · سُكَّرْ · فِنْجَانْ · كَعْكَةْ · نَادِلْ · حِسَابْ (6) |
+| **Re-used** | قَهْوَةْ (Day 4) · شَايْ · مَاءْ · عَصِيرْ (Day 15) · شُكْرًا (Day 2) |
 | **Voices** | English narrator = owner's clone · Arabic = the owner (teacher) → **AI label: No** |
 | **Look** | 3D · one picture per word in the same Damascus café · opener: the café waiter, close-up, lifts a small Arabic coffee cup towards the camera and holds (new opener, owner approves) |
 | **YouTube title** | `10 Arabic Words You Need in a Café \| Arabic Vocab` |
@@ -43,10 +43,10 @@ We start with an old friend from Day 4, the reason we all come here.
 ### 🎬 Scene 3 — Tea
 
 🖼️ **Image:** a small clear glass of red tea with a sprig of fresh mint on a saucer on the café table, nobody there, 3D
-🔤 **On screen:** شَايْ · *shaay* · tea
+🔤 **On screen:** شَايْ · *shaay* · tea · Day 15
 
 ```say:narrator
-If you'd rather have tea, which comes in a small glass in Syria, you ask for this.
+Then comes tea, which you met on Day 15, served in a small glass in Syria.
 ```
 ```say:teacher
 شَايْ
@@ -56,10 +56,10 @@ If you'd rather have tea, which comes in a small glass in Syria, you ask for thi
 ### 🎬 Scene 4 — Water
 
 🖼️ **Image:** a clear glass of water next to a glass carafe on the café table, nobody there, 3D
-🔤 **On screen:** مَاءْ · *maa'* · water
+🔤 **On screen:** مَاءْ · *maa'* · water · Day 15
 
 ```say:narrator
-Next is the word for water, and it's a short one with a little stop at the end.
+Next is water, also from Day 15, a short word with a little stop at the end.
 ```
 ```say:teacher
 مَاءْ
@@ -121,7 +121,7 @@ If you're hungry, there is cake, and you can hear the soft ah ending from Day 9.
 ### 🎬 Scene 9 — Juice
 
 🖼️ **Image:** a tall glass of fresh orange juice with half an orange beside it on the café table, nobody there, 3D
-🔤 **On screen:** عَصِيرْ · *'aSiir* · juice
+🔤 **On screen:** عَصِيرْ · *'aSiir* · juice · Day 15
 
 ```say:narrator
 On a hot day, people in Damascus love a glass of fresh juice.
@@ -170,7 +170,7 @@ Now let's see what stayed with you, so what is this in Arabic?
 ### 🎬 Scene 13 — Quiz answer 1
 
 🖼️ **Image:** same as scene 3
-🔤 **On screen:** شَايْ · *shaay* · tea
+🔤 **On screen:** شَايْ · *shaay* · tea · Day 15
 
 ```say:teacher
 شَايْ
@@ -226,7 +226,7 @@ And don't forget to thank the waiter, with the word you learned on Day 2.
 شُكْرًا
 ```
 ```say:narrator
-Which café word was new for you? Tell me in the comments, and we'll use them all in Week 3.
+Which café word was new for you? Tell me in the comments, because next time we order at the café.
 ```
 ```say:narrator
 Subscribe so you don't break your streak.

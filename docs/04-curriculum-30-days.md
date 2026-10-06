@@ -27,9 +27,9 @@ what the audience responds to.
 | 8 | Phrases | Where are you from? | مِنْ أَيْنَ أَنْتَ؟ · أَنَا مِنْ … · countries |
 | 9 | Grammar | Masculine & feminine: the magic "-a" (ة) | سَعِيد → سَعِيدَة · طَالِب → طَالِبَة |
 | 10 | Phrases | Numbers 1–10 | وَاحِد … عَشَرَة |
-| 11 | Conversation | Lina meets a tourist | where from, how are you, numbers |
-| 12 | Grammar | "My" and "your": ـِي / ـُك / ـُكِ | اسْمِي · اسْمُك · بَيْتِي |
-| 13 | Story | Lina's family | أُمّ · أَب · أَخ · أُخْت |
+| 11 | Conversation | Lina meets a tourist (Tom) | أَهْلًا وَسَهْلًا · سَائِح · عَفْوًا (excuse me) · دِمَشْقُ جَمِيلَة |
+| 12 | Grammar | "My" and "your": ـِي / ـُكَ / ـُكِ | اسْمِي · اسْمُكَ · اسْمُكِ · كِتَابِي · بَيْتِي · قَهْوَتِي |
+| 13 | Story | Lina's family (photo album, cat twist) | أُمّ · أَب · أَخ · أُخْت · عَائِلَة · هَذِهِ · قِطّ |
 | 14 | Review | Week 2 quiz + "1.01¹⁴" milestone | — |
 
 ## Week 3 — Everyday life

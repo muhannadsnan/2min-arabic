@@ -13,7 +13,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from make_audio import parse  # noqa: E402
 
-ARABIC_SPEAKERS = {"teacher": "you", "teacher-slow": "you — slowly", "sami": "you (Sami)",
+ARABIC_SPEAKERS = {"teacher": "you", "teacher-slow": "you — slowly", "sami": "you (Sami)", "tom": "you (Tom, the tourist — a learner, a bit slower)",
                    "lina": "Lina — recorded by Koki"}
 
 

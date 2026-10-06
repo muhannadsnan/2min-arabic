@@ -19,7 +19,7 @@ import numpy as np
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CONSIST = 0.92   # line vs. the video's other narrator lines; Days 6–10 scored 0.907–0.96 (median 0.95) — below 0.92 = noticeably different
-GROUP = {"narrator": "narrator", "teacher": "owner", "teacher-slow": "owner", "sami": "owner", "lina": "koki"}
+GROUP = {"narrator": "narrator", "teacher": "owner", "teacher-slow": "owner", "sami": "owner", "tom": "owner", "lina": "koki"}
 
 
 def lufs(path):

@@ -42,3 +42,18 @@ Maintained by the plan-lessons skill. A word introduced on Day d is due on d+1, 
 | صَدِيقْ / صَدِيقَةْ | Sadiiq / Sadiiqa | friend m / f | Day 9 | 10, P2 | Day 12 |
 | طَالِبَةْ · حَزِينَةْ | taaliba · haziina | student f · sad f | Day 9 | — | Day 12 |
 | وَاحِدْ … عَشَرَةْ | waaHid … 'ashara | 1–10 | Day 10 | — | Day 11 |
+| أَهْلًا وَسَهْلًا | ahlan wa sahlan | welcome | Day 11 | 12, 14 | Day 18 |
+| سَائِحْ | saa'iH | tourist | Day 11 | — | Day 12 |
+| عَفْوًا (excuse me) | 'afwan | excuse me | Day 11 | — | Day 14 |
+| دِمَشْقُ جَمِيلَةْ | dimashqu jamiila | Damascus is beautiful | Day 11 | 13, 14 | Day 18 |
+| ـِي / ـُكَ / ـُكِ | -ii / -uka / -uki | my / your (m) / your (f) | Day 12 | 13, 14 | Day 15 |
+| كِتَابْ · بَيْتْ | kitaab · bayt | book · house | Day 12 | 13, 14 | Day 19 |
+| قَهْوَتِي · صَدِيقَتِي | qahwatii · Sadiiqatii | my coffee · my friend (f) | Day 12 | — | Day 15 |
+| أَبْ · أُمّ · أَخْ · أُخْتْ | ab · umm · akh · ukht | father · mother · brother · sister | Day 13 | 14, 15 | Day 16 |
+| عَائِلَةْ | 'aa'ila | family | Day 13 | — | Day 16 |
+| هَذِهِ | haadhihi | this (f) | Day 13 | — | Day 14 |
+| قِطّ | qiTT | cat | Day 13 | — | Day 16 |
+| أُرِيدُ / لَا أُرِيدُ | uriidu / laa uriidu | I want / I don't want | Day 15 | x05, 16 | Day 16 |
+| مَاءْ · شَايْ · عَصِيرْ | maa' · shaay · 'aSiir | water · tea · juice | Day 15 | v01, 16 | Day 16 |
+| بِدِّي · مَا بِدِّي · شُو بِدَّكْ/بِدِّكْ؟ (Syrian) | biddi · ma biddi · shu biddak/biddik | I want · I don't want · what do you want? | x05 | — | — |
+| حَلِيبْ · سُكَّرْ · فِنْجَانْ · كَعْكَةْ · نَادِلْ · حِسَابْ | Haliib · sukkar · finjaan · ka'ka · naadil · Hisaab | milk · sugar · cup · cake · waiter · bill | v01 | — | Day 16 |
