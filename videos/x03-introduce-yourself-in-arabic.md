@@ -45,7 +45,7 @@ Let's build it together, one line at a time, and we start with the friendly hell
 🔤 **On screen:** اسْمِي سَامِي · *ismii Saamii* · My name is Sami (now: your name) · Day 2
 
 ```say:narrator
-Next comes your name, so you say ismii, and then you simply add your own name, just like Sami does.
+Next comes your name, so you say ismee, and then you simply add your own name, just like Sami does.
 ```
 ```say:teacher
 اسْمِي سَامِي

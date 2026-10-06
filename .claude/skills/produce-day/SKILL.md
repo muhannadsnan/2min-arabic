@@ -239,3 +239,9 @@ Run the **pre-upload-gate** skill first (SHIP / FIX / KILL); only a SHIP gets ha
 Commit and push (recordings, audio, images, output are git-ignored; voice references are private and never
 committed). Then hand over per the upload-handover skill with a short, honest report: what was checked, what was
 redone and why, anything worth a listen. Update the memory notes if something new was learned.
+
+**Narrator saying a transliterated word (owner, 2026-10-06):** the clone splits double vowels ("ismii" → "ismi-i").
+In `say:narrator` text write it the English way ("ismee", "shookran"); the cards and captions keep the course
+spelling (fix the .srt after sync_captions if needed).
+**What the owner liked (x03, 2026-10-06):** a smooth line-by-line flow, then a short real conversation shown on a
+few good images (one strong two-person picture reused across the conversation lines) — not a new picture per line.
