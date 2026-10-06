@@ -8,7 +8,7 @@
 | **New** | the digit shapes ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ١٠ (no new spoken words) |
 | **Re-used** | وَاحِدْ … عَشَرَةْ (Day 10, spaced repetition d+1/d+3) |
 | **Voices** | English narrator = owner's clone · Arabic = the owner (teacher), **re-used Day 10 recordings** → **AI label: No** |
-| **Look** | 3D · each digit drawn big in chalk on an empty café chalkboard (digit composited by `tools/images/digits.py` — the image model can't write) · opener: Lina, close-up, looks up from a café menu at the camera, surprised, and holds (new opener, owner approves) |
+| **Look** | 3D · each digit drawn big in chalk on an empty café chalkboard (digit composited by `tools/images/digits.py` — the image model can't write) · opener: Lina by an empty café chalkboard, close-up, raises one finger beside the board with a calm smile and holds (new opener, owner approves) |
 | **YouTube title** | `Arabic Numbers Look Different! Learn to Read Them \| Arabic Extras` |
 | **Thumbnail text** | "ARABIC NUMBERS" + big ٥ (= 5, not 0!) |
 | **Recording** | nothing new — `map.json` points at the Day 10 numbers (`tools/reuse_recordings.py`) |
@@ -17,7 +17,7 @@
 
 ### 🎬 Scene 1 — Hook (opener)
 
-🖼️ **Image:** 3D opener — Lina, close-up in a café, looks up from the menu in her hands at the camera with a surprised smile and holds (new opener, owner approves)
+🖼️ **Image:** 3D opener — Lina, close-up by an empty café chalkboard, raises one finger beside the board with a calm smile and holds (new opener, owner approves)
 🔤 **On screen:** Arabic numbers look different
 
 ```say:narrator
@@ -42,7 +42,7 @@ We will start with the easiest one, because the Arabic number one, looks just li
 🔤 **On screen:** ٢ · *ithnaan* · 2
 
 ```say:narrator
-Two is a tall line with one little hook at the top.
+Two is a fun one, because it looks like our seven, flipped around the other way.
 ```
 ```say:teacher
 اِثْنَانْ

@@ -15,7 +15,8 @@ import sys
 
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
-AR_FONT = "/usr/share/fonts/truetype/noto/NotoNaskhArabic-Bold.ttf"
+# Kufi digits: ٢ with a straight top (a 7 facing the other way) — the curly Naskh ٢ confused beginners (owner, 2026-10-06)
+AR_FONT = "/usr/share/fonts/truetype/noto/NotoKufiArabic-Bold.ttf"
 
 
 def board_box(im):

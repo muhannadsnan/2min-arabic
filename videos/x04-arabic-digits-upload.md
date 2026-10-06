@@ -1,6 +1,6 @@
 # Arabic Extras x04 — Arabic digits · Upload sheet
 
-**File to upload:** `output/x04-arabic-digits/arabic-numbers-look-different-learn-to-read-them.mp4` (vertical → **Short**, 1:40)
+**File to upload:** `output/x04-arabic-digits/arabic-numbers-look-different-learn-to-read-them.mp4` (vertical → **Short**, 1:41)
 **Thumbnail:** Upload file → `output/x04-arabic-digits/arabic-numbers-look-different-learn-to-read-them-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -100,7 +100,10 @@ Quick test 👇 What is ٥ + ٣ ? Answer in Arabic (hint: it's one of the Day 10
 - **Digits drawn by us** (`tools/images/digits.py`) in chalk on an empty 3D café chalkboard — the image model can't
   write. Moved up after the first build so the captions never cross the digit.
 - English = your clone; 9 rushed lines + 1 accent-drift line reworded over three rounds → all ✅; clarity +0.3 dB.
-- **New opener** (Lina, close-up, looks up from a café menu, surprised smile, holds) — picked from 2 seeds;
-  last frame checked: hands, eyes, modest outfit. **Needs your OK.**
-- 1:40, −14.1 LUFS, peak −1.7 dB, 0 overlaps. Captions synced (53, 0 weak), number captions with transliteration.
+- **Opener redone (owner, 2026-10-06: Lina's eyes looked odd):** Lina by an empty café chalkboard raises one finger
+  beside the board with a calm smile — she starts already looking at the camera (no eyes opening mid-clip). 41 frames;
+  picked from 8 takes (49/41/37-frame test); first, middle and held last frame checked with the face zoomed 2×. **Needs your OK.**
+- **Digits in Kufi style** (owner): ٢ with a straight top (a mirrored 7), same font on the board and on the card;
+  narration for 2 reworded ("looks like our seven, flipped around the other way").
+- 1:41, −14.1 LUFS, peak −1.8 dB, 0 overlaps. Captions synced (54, 0 weak), number captions with transliteration.
 - **Longer than the 75-s Extras target** (10 digits + tips + 3-question quiz). Say if you want it cut to ~1:15.

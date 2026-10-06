@@ -119,6 +119,20 @@ Make 3–5 new openers (different entrances per character: peek, look-up, turn-a
    full size (arms, hands, eyes); the action must be real and readable (a raised finger, a wave), never standing still.
 Reject the take if any item fails — a clear still beats an odd one.
 
+**Openers — the double check (owner, 2026-10-06, after Lina's odd eyes in x04 slipped through):**
+- Always a **close-up** (head and shoulders) **with a real movement/action** — never a still pose.
+- **Start from a keyframe where the eyes are already open and looking at the camera.** Actions that open the eyes
+  or turn the face up from looking down ("looks up from the menu") make the model invent the eyes mid-clip → odd eyes.
+- Check **at full size** (not the 6-frame strip): the first frame, 3 middle frames and the held last frame — eyes
+  (same size, same direction, round pupils, no drift/squint), arms (two, attached), fingers (five, not merged).
+  Zoom into the face (crop ~2×) on the last frame: it is on screen for 1–1.5 s.
+- Make 3–4 seeds and compare them side by side; when in doubt, reject and run another seed.
+- **41 frames is the default for openers (test 2026-10-06, same keyframe + prompt, 2 seeds each):** 49 frames
+  ~6.5 min, 0/2 usable (a red cuff / a glowing fingertip appeared); **41 frames ~5 min, 2/2 clean**; 37 frames
+  ~4.4 min, 0/2 (the arm overshot out of frame, a pink object appeared). Wan only takes 4k+1 frames (33, 37, 41, 45, 49).
+  Resolution stays 576×1024 (Wan 2.2 5B trained at 720p; 6 GB can't go higher) — close-ups give the face the pixels.
+- **Avoid objects in front of the face:** "lifts the menu" made the model hide her mouth/face 4 times out of 4.
+
 **Modest, culturally respectful people (owner, 2026-10-05) — check every picture and opener:** no exposed body parts on
 women (no bare legs or shoulders, no slit dresses), nothing tight (tight jeans/tops, visible chest shape) — loose long skirts, wide
 trousers or loose jeans (not too conservative), loose tops with high necklines, sleeves at least to the elbow. Hijab is optional. Men and

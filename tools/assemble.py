@@ -30,6 +30,7 @@ W, H, FPS = 1080, 1920, 30
 FONTS = pathlib.Path("/usr/share/fonts/truetype/noto")
 LIBRARY = pathlib.Path(__file__).resolve().parent.parent / "library"   # reusable 3D clips: openers/, loops/, units/
 AR_FONT = FONTS / "NotoNaskhArabic-Bold.ttf"
+KUFI = FONTS / "NotoKufiArabic-Bold.ttf"   # digits: ٢ with a straight top (owner, 2026-10-06)
 LATIN_BOLD = FONTS / "NotoSans-Bold.ttf"
 LATIN = FONTS / "NotoSans-Regular.ttf"
 LATIN_ITALIC = FONTS / "NotoSans-Italic.ttf"
@@ -99,8 +100,8 @@ def render_card(text: str, path: pathlib.Path, all_bold: bool = False):
     lines = []  # (text, font_path, size, color, kw, stroke)
     if parts and ARABIC.search(parts[0]) and not re.search(r"[A-Za-z]", parts[0]):
         arabic = parts[0].replace("…", "").strip()  # the Arabic font has no ellipsis: show the word only
-        digits = all("\u0660" <= ch <= "\u0669" for ch in arabic)   # a digit card (x04): show the digit big
-        lines.append((arabic, AR_FONT, 200 if digits else 130, TEAL, {"direction": "rtl", "language": "ar"}, 0))
+        digits = all("\u0660" <= ch <= "\u0669" for ch in arabic)   # a digit card (x04): big, straight Kufi digits
+        lines.append((arabic, KUFI if digits else AR_FONT, 150 if digits else 130, TEAL, {"direction": "rtl", "language": "ar"}, 0))
         rest = parts[1:]
         if rest:
             lines.append((rest[0], LATIN_BOLD_ITALIC, 66, TERRACOTTA, {}, 0))

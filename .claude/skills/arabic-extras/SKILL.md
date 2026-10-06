@@ -60,3 +60,17 @@ that is still missing (those go on the next sheet). x03 (introduce yourself, Day
 digits ١–١٠ on a chalkboard, `tools/images/digits.py`) were made this way. Good Extras for viewers who walk with the
 course: "you can already do this" recaps, and practical extras that reuse the words (reading digits, prices).
 Vocab Shorts need new words → they wait for a recording session (v01 café words script is ready).
+
+## Board style — the default for quizzes and word Extras (owner, 2026-10-06: "I liked this style")
+
+x04 put each item **big on a chalkboard** (written by us with `tools/images/digits.py`, never by the image model) and
+the owner liked it: **quizzes and word/number Extras use the board style by default.**
+- One empty 3D chalkboard per video (`{"key": "board"}` prompt → `board.png`), the item drawn in chalk, the card
+  above with Arabic · transliteration · English, quiz rounds = the board alone + "Which … is this?" card, then the answer.
+- **Change the decoration around the board every video** so they don't look the same: café wall with brass lamps
+  (x04), classroom with a wooden frame and plants, a market stall's blackboard, a rooftop easel, a kitchen menu board,
+  a school corridor noticeboard … keep the board itself clean, dark green or black, seen straight from the front.
+- Keep the item in the upper-middle of the board (clear of the card above and the captions below — digits.py does it).
+- Digits use **Noto Kufi Arabic** (straight-topped ٢ like a mirrored 7, the clearest for beginners — the curly Naskh ٢
+  confused them, owner 2026-10-06); words use the normal Arabic font. Same font on the board and on the card.
+

@@ -97,6 +97,7 @@ Your turn 👇 Introduce yourself: مَرْحَبًا! اسْمِي … أَنَ
   Owner-vs-narrator clarity +3.1 dB (just over the ±3 report line — it comes from the older Day 2–5 recordings).
 - **New opener** (Sami, close-up, friendly "hi" hand, holds) — picked from 2 seeds (the other blurred the hand);
   last frame checked at full size: 5 fingers, both eyes steady. **Needs your OK.**
-- Cards: new bigger/thicker text. Scenes 3 and 6 shifted so the card never touches a head.
+- Cards: new bigger/thicker text. Scenes 3 and 6 shifted so the card never touches a head. Lina's answer
+  "أَنَا مِنْ لُبْنَانْ" now has its own card (owner, 2026-10-06 — at 1:21 only the voice was there).
 - 1:44, −14.2 LUFS, peak −1.9 dB, 0 overlaps. Captions synced (48, 0 weak).
 - **Longer than our 75-s Extras target** on purpose: it's a full speak-along recap. Say if you want it cut to ~1:15.

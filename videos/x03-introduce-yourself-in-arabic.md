@@ -146,7 +146,7 @@ Now listen to Sami and Lina, who meet for the first time and use exactly these l
 مِنْ أَيْنَ أَنْتَ يَا سَامِي؟
 ```
 
-### 🎬 Scene 12 — Syria and Lebanon
+### 🎬 Scene 12 — Sami from Syria
 
 🖼️ **Image:** same as scene 9
 🔤 **On screen:** أَنَا مِنْ سُورِيَا. وَأَنْتِ؟ · *ana min suuriyaa. wa-anti?* · I'm from Syria. And you?
@@ -154,11 +154,17 @@ Now listen to Sami and Lina, who meet for the first time and use exactly these l
 ```say:sami
 أَنَا مِنْ سُورِيَا. وَأَنْتِ؟
 ```
+
+### 🎬 Scene 13 — Lina's answer
+
+🖼️ **Image:** same as scene 9
+🔤 **On screen:** أَنَا مِنْ لُبْنَانْ. · *ana min lubnaan.* · I'm from Lebanon.
+
 ```say:lina
 أَنَا مِنْ لُبْنَانْ.
 ```
 
-### 🎬 Scene 13 — Your turn
+### 🎬 Scene 14 — Your turn
 
 🖼️ **Image:** same as scene 3
 🔤 **On screen:** Your turn · say your own introduction out loud
@@ -168,7 +174,7 @@ Now it's your turn, so say your whole introduction out loud, with your own name 
 ```
 ⏸️ **Pause 2s**
 
-### 🎬 Scene 14 — Comments
+### 🎬 Scene 15 — Comments
 
 🖼️ **Image:** the desk with the stopwatch (asset)
 🔤 **On screen:** Write your introduction in the comments · Arabic or English letters

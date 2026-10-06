@@ -119,6 +119,9 @@ onset trim keeps 0.12 s before the first sound — listen to that join in the ap
 
 **Openers:** one simple, normal action (no exaggeration), arms back down, 1-s hold, then the scene picture;
 one person per opener; the owner approves each one before use.
+Double-check every opener (owner, 2026-10-06): close-up + a real action; start from open eyes looking at the camera;
+eyes / arms / fingers at full size on the first, middle and held last frame (zoomed 2× on the face) — see the
+animation-library skill.
 
 ## 1. Script — `videos/NNN-<slug>.md`
 

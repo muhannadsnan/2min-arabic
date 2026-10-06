@@ -304,6 +304,21 @@
   ]
  },
  {
+  "name": "openers/x04-lina-board-point",
+  "kind": "openers",
+  "character": "lina",
+  "action": "x04: close-up by an empty café chalkboard, Lina raises one finger beside the board with a calm smile and holds (41 frames)",
+  "green": false,
+  "once_s": 1.63,
+  "loop_s": 3.27,
+  "speed": 1.0,
+  "source": "library/work/clips/op-x04c-lina-board-f41_s181.mp4",
+  "created": "2026-10-06",
+  "used_in": [
+   "x04-arabic-digits"
+  ]
+ },
+ {
   "name": "openers/x04-lina-menu-close",
   "kind": "openers",
   "character": "lina",
@@ -316,7 +331,9 @@
   "created": "2026-10-06",
   "used_in": [
    "x04-arabic-digits"
-  ]
+  ],
+  "approved": false,
+  "note": "rejected by owner 2026-10-06: Lina's eyes odd (eyes open mid-clip after looking down)"
  },
  {
   "name": "talk/lina-talk-1",
