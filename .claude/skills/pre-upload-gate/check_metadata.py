@@ -74,8 +74,7 @@ check(not any("#" in t for t in tags), "no # inside tags")
 check(sum(bool(ar.search(t)) for t in tags) >= 5, f"{sum(bool(ar.search(t)) for t in tags)} Arabic-script tags (≥ 5)")
 check(any(ar.search(t) and re.search(r"[A-Za-z]", t) for t in tags), "a mixed tag ('طيب meaning')")
 check(any(t.isascii() and " " not in t and t not in ("shorts",) for t in tags) or len(tags) >= 12, "transliterated keyword tags present")
-if "viral shorts" in tags and date.today() >= date(2026, 10, 6):
-    print("NOTE  'viral shorts' tag: the experiment was due for a verdict on 2026-10-06 — check docs/06")
+check("viral shorts" not in tags, "no 'viral shorts' tag (tested and dropped 2026-10-06)")
 
 # Settings the owner must not miss
 for needed in ("AI use", "Related video", "Playlist", "not made for kids"):

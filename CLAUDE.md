@@ -29,7 +29,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   pops a desktop notification; the owner taps ⋮ → Pin (no API for pinning). Log: `~/.local/share/2min-yt/comments.log`.
 - **Schedule (Shorts, 17:00 Oslo):** Day 2 re-upload 2 Oct · x01 3 Oct · x02 4 Oct · Day 6 5 Oct (7IQ0GYOC9X4) · Day 7 6 Oct (QuLTZ42HMxs) · Day 8 7 Oct (nYz4KkohiIc) · Days 9–10 next.
 - **48 h checks:** Day 2 (re-upload) 4 Oct · x01 5 Oct · x02 6 Oct.
-- **2026-10-06:** verdict on the "viral shorts" tag experiment (Days 3/5 vs 2/4) → docs/06.
+- ~~2026-10-06: viral shorts verdict~~ → dropped (docs/06 Learnings).
 - **48 h after each Short:** if ~0 views, re-upload with a backup title (pre-upload-gate writes them).
 - **After Day 10:** Part 2 (Days 6–10), then Extra x03 + Vocab v01 (new weekly rhythm: 5 days → Extra → Vocab;
   Part on the long chain; monthly long video — docs/06).

@@ -83,7 +83,7 @@ No hashtags in the title; ~3 hashtags in the description.
 - Still ~0 after 48 h → delete and re-upload on another day with a new title.
 - Hook in the first 2 seconds. Later idea: a 15–20 s teaser Short per lesson that points to the full lesson.
 
-## Tag experiment: "viral shorts" (started 2026-09-29, check 2026-10-06)
+## Tag experiment: "viral shorts" (started 2026-09-29, CLOSED 2026-10-06: dropped — see Learnings)
 
 Days 3 and 5 got the extra tag "viral shorts"; Days 2 and 4 are the comparison (same tags otherwise).
 After 7 days compare in Studio: views, "viewed vs swiped away", impressions. Small numbers → treat as a hint only.
@@ -140,3 +140,8 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 | Sat | Arabic Extra (phrases, dialect, filmed sketch by the owner) | Part (the 5 days + quiz) |
 | Sun | Arabic Vocab (top 10 words in one place) | |
 | Monthly | — | "The whole month in one video" |
+
+## Learnings (dated)
+- 2026-10-06: "viral shorts" tag experiment → **dropped**. Tagged Day 3 (55 views, 38 % viewed) and Day 5 (38, 40 %) did not
+  beat untagged Day 4 (86, 109 %) or the Day 2 re-upload (26 in 4 days, 61 %); content and hook matter, the tag doesn't
+  (evidence: YouTube Analytics 20 Sep–6 Oct). Removed from Days 3 and 5; never add it again.

@@ -43,7 +43,7 @@ hiya — she — ⁧هِيَ⁩
 (3 groups — video-specific · niche · broad, per Dan the Creator's formula)
 
 ```
-ana anta huwa hiya, arabic for beginners, arabic grammar for beginners, arabic pronouns for beginners, arabic pronouns in english, pronouns arabic grammar, arabic grammar masculine feminine, arabic pronouns, basic arabic grammar, he and she in arabic, how to say i am in arabic, i am in arabic, learn arabic, modern standard arabic, shorts, viral shorts, أنا, أنا meaning, أنت, الضمائر في العربية, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب, هو, هي
+ana anta huwa hiya, arabic for beginners, arabic grammar for beginners, arabic grammar masculine feminine, arabic pronouns, arabic pronouns for beginners, arabic pronouns in english, basic arabic grammar, he and she in arabic, how to say i am in arabic, i am in arabic, learn arabic, modern standard arabic, pronouns arabic grammar, shorts, أنا, أنا meaning, أنت, الضمائر في العربية, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب, هو, هي
 ```
 
 ## Settings

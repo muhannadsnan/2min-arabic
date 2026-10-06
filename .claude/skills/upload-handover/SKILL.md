@@ -49,8 +49,7 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
    - niche ("learn arabic", "arabic for beginners", "modern standard arabic") · broad ("language learning", "shorts").
    Arabic script goes in tags, descriptions and the **thumbnail** (big word) — **not in titles** (it tells YouTube the
    video is for Arabic speakers and mixed-direction titles get scrambled); titles may use transliteration.
-   Formerly: 3-group formula: 3–4 video-specific · 3–4 niche · 3–4 broad. Keep the running
-   "viral shorts" experiment in mind (Days 3/5 have it, 2/4 don't; check on 2026-10-06).
+   Formerly: 3-group formula: 3–4 video-specific · 3–4 niche · 3–4 broad. "viral shorts": tested and dropped 2026-10-06 — never use it.
 6. **Settings table:** playlist; not made for kids; **AI use** (No when only the owner's own voice clone + real
    recordings are used; Yes if anyone else's voice is cloned); paid promotion No; related video; Education / Concept
    overview; English; standard license; Shorts remixing allowed; visibility / schedule time.
