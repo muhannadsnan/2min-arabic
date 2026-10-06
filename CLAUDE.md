@@ -49,4 +49,4 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - Never buy views/subs or use engagement groups; never use third-party or watermarked footage (docs/11).
 - From Day 6: 3D look + library opener in scene 1. No AI label on videos (owner). No PC upgrades / bigger models for now.
 - Stop ComfyUI by PID; set LD_LIBRARY_PATH for Whisper (final_check.py does it itself).
-- Details: docs/02 format · 04 curriculum · 05 style · 06 publishing · 07 monetization · 10 production · 11 policy.
+- Details: docs/02 format · 04 curriculum · 05 style · 06 publishing · 07 monetization · 10 production · 11 policy · 16 hardware, speed + power.
