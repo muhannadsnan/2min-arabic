@@ -8,7 +8,7 @@
 | **New words** | حَلِيبْ · سُكَّرْ · فِنْجَانْ · كَعْكَةْ · نَادِلْ · حِسَابْ (6) |
 | **Re-used** | قَهْوَةْ (Day 4) · شَايْ · مَاءْ · عَصِيرْ (Day 15) · شُكْرًا (Day 2) |
 | **Voices** | English narrator = owner's clone · Arabic = the owner (teacher) → **AI label: No** |
-| **Look** | 3D · one picture per word in the same Damascus café · opener: the café waiter, close-up, lifts a small Arabic coffee cup towards the camera and holds (new opener, owner approves) |
+| **Look** | 3D · one picture per word in the same Damascus café · opener: Lina, close-up at a café table, raises one hand to call the waiter with a warm smile and holds (new opener, owner approves) |
 | **YouTube title** | `10 Arabic Words You Need in a Café \| Arabic Vocab` |
 | **Thumbnail text** | "10 CAFÉ WORDS" + big قَهْوَةْ |
 | **Recording** | `footage/recordings/_x03v01-combined` (owner) |
@@ -20,7 +20,7 @@ with the sun letters (الشَّاي = ash-shaay) is Day 17's lesson — showing
 
 ### 🎬 Scene 1 — Hook (opener)
 
-🖼️ **Image:** 3D opener — the café waiter, close-up, lifts a small Arabic coffee cup towards the camera with a warm smile and holds (new opener, owner approves)
+🖼️ **Image:** 3D opener — Lina, close-up at a café table, raises one hand to call the waiter with a warm smile and holds (new opener, owner approves)
 🔤 **On screen:** 10 Arabic words for the café
 
 ```say:narrator

@@ -54,6 +54,9 @@ def main():
         if only and s not in only:
             continue
         if "from" in item:   # reuse an approved image from another video: {"from": "004-…/s09.png"}
+            if not (ROOT / "images" / item["from"]).exists():   # not picked yet (same batch week): run again later
+                print(f"s{s:02d}: from {item['from']} — not there yet, skipped")
+                continue
             shutil.copy(ROOT / "images" / item["from"], args.dir / f"s{s:02d}.png")
             print(f"s{s:02d}: from {item['from']}")
             continue

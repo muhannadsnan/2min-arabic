@@ -8,7 +8,7 @@
 | **New (dialect)** | بِدِّي · مَا بِدِّي · شُو بِدَّكْ؟ · شُو بِدِّكْ؟ · قَهْوِة (ahwe) · تِكْرَمْ |
 | **Re-used** | أُرِيدُ · شَايْ (Day 15) · شُكْرًا (Day 2) |
 | **Voices** | English narrator = owner's clone · Arabic = the owner, in his own Syrian voice (teacher, Sami, the juice seller) → **AI label: No** |
-| **Look** | 3D · an old Damascus market (souq) with a juice stand · opener: Sami, close-up in the souq, quickly points at something just off-screen beside him with a big smile and holds (new opener, owner approves) |
+| **Look** | 3D · an old Damascus market (souq) with a juice stand · opener: Sami, close-up in the souq, raises one hand in a friendly hello with a big smile and holds (new opener, owner approves) |
 | **YouTube title** | `How to Say "I Want" Like a Syrian \| Arabic Extras` |
 | **Thumbnail text** | "IN SYRIA SAY" + big بِدِّي |
 
@@ -18,7 +18,7 @@ Every card is labelled **Standard Arabic** or **Syrian dialect**. Syrian lines a
 
 ### 🎬 Scene 1 — Hook (opener)
 
-🖼️ **Image:** 3D opener — Sami, close-up in an old Damascus souq, quickly points at something just off-screen beside him with a big smile and holds (new opener, owner approves)
+🖼️ **Image:** 3D opener — Sami, close-up in an old Damascus souq, raises one hand in a friendly hello with a big smile and holds (new opener, owner approves)
 🔤 **On screen:** How Syrians say "I want"
 
 ```say:narrator

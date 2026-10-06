@@ -198,6 +198,71 @@
   "approved": "2026-10-01"
  },
  {
+  "name": "openers/d11-tom-excuse-me",
+  "kind": "openers",
+  "character": "tom",
+  "action": "Day 11: close-up on a Damascus street, Tom raises one hand politely (excuse me) and holds (41 frames)",
+  "green": false,
+  "once_s": 1.63,
+  "loop_s": 3.27,
+  "speed": 1.0,
+  "source": "library/work/clips/op-d11-tom_s191.mp4",
+  "created": "2026-10-06",
+  "used_in": []
+ },
+ {
+  "name": "openers/d12-sami-book-thumb",
+  "kind": "openers",
+  "character": "sami",
+  "action": "Day 12: close-up in a library, Sami holds a book at his chest and gives a thumbs-up (41 frames)",
+  "green": false,
+  "once_s": 1.63,
+  "loop_s": 3.27,
+  "speed": 1.0,
+  "source": "library/work/clips/op-d12-sami_s191.mp4",
+  "created": "2026-10-06",
+  "used_in": []
+ },
+ {
+  "name": "openers/d13-lina-photo-frame",
+  "kind": "openers",
+  "character": "lina",
+  "action": "Day 13: close-up in a living room, Lina holds a family photo frame and waves with the other hand (41 frames)",
+  "green": false,
+  "once_s": 1.63,
+  "loop_s": 3.27,
+  "speed": 1.0,
+  "source": "library/work/clips/op-d13-lina_s192.mp4",
+  "created": "2026-10-06",
+  "used_in": []
+ },
+ {
+  "name": "openers/d14-sami-chalk-point",
+  "kind": "openers",
+  "character": "sami",
+  "action": "Day 14: close-up at a classroom chalkboard, Sami reaches the chalk to the board while smiling at the camera (41 frames)",
+  "green": false,
+  "once_s": 1.63,
+  "loop_s": 3.27,
+  "speed": 1.0,
+  "source": "library/work/clips/op-d14-sami_s192.mp4",
+  "created": "2026-10-06",
+  "used_in": []
+ },
+ {
+  "name": "openers/d15-waiter-tea",
+  "kind": "openers",
+  "character": "waiter",
+  "action": "Day 15: close-up in the café, the waiter offers a glass of tea toward the camera (41 frames)",
+  "green": false,
+  "once_s": 1.63,
+  "loop_s": 3.27,
+  "speed": 1.0,
+  "source": "library/work/clips/op-d15-waiter_s192.mp4",
+  "created": "2026-10-06",
+  "used_in": []
+ },
+ {
   "name": "openers/lina-notebook-lookup",
   "kind": "openers",
   "character": "lina",
@@ -289,6 +354,19 @@
   "approved": "2026-10-01"
  },
  {
+  "name": "openers/v01-lina-call-waiter",
+  "kind": "openers",
+  "character": "lina",
+  "action": "v01: close-up in the café, Lina raises one hand politely to call the waiter and holds (41 frames)",
+  "green": false,
+  "once_s": 1.63,
+  "loop_s": 3.27,
+  "speed": 1.0,
+  "source": "library/work/clips/op-v01b-lina_s202.mp4",
+  "created": "2026-10-06",
+  "used_in": []
+ },
+ {
   "name": "openers/x03-sami-hi-close",
   "kind": "openers",
   "character": "sami",
@@ -334,6 +412,19 @@
   ],
   "approved": false,
   "note": "rejected by owner 2026-10-06: Lina's eyes odd (eyes open mid-clip after looking down)"
+ },
+ {
+  "name": "openers/x05-sami-souq-wave",
+  "kind": "openers",
+  "character": "sami",
+  "action": "x05: close-up in a Damascus souq, Sami raises one hand in a friendly hello and holds (41 frames)",
+  "green": false,
+  "once_s": 1.63,
+  "loop_s": 3.27,
+  "speed": 1.0,
+  "source": "library/work/clips/op-x05c-sami_s197.mp4",
+  "created": "2026-10-06",
+  "used_in": []
  },
  {
   "name": "talk/lina-talk-1",

@@ -132,6 +132,15 @@ Reject the take if any item fails — a clear still beats an odd one.
   ~4.4 min, 0/2 (the arm overshot out of frame, a pink object appeared). Wan only takes 4k+1 frames (33, 37, 41, 45, 49).
   Resolution stays 576×1024 (Wan 2.2 5B trained at 720p; 6 GB can't go higher) — close-ups give the face the pixels.
 - **Avoid objects in front of the face:** "lifts the menu" made the model hide her mouth/face 4 times out of 4.
+- **What works / what fails (Week 3, 2026-10-06, 26 takes):**
+  - ✅ reliable: one open hand raised beside the shoulder ("excuse me", hello) from a **standing** pose with arms
+    down — 1st or 2nd seed works; a thumbs-up while the other hand keeps holding an object; offering a held glass a
+    little forward; a wave with the free hand while the other hand keeps a frame.
+  - ❌ unreliable: **pointing** (sideways or at a board — 5 of 6 failed: the arm leaves the frame, points at the
+    camera, the face turns away), **seated at a table** with a cup (extra arms, a spoon or a bag appears), waving
+    with the hand that holds the object (the object floats), anything that turns the head toward a board.
+  - Start every opener from a keyframe with **nobody else in the background** (copy-pasted crowd faces drift).
+  - Say in the prompt which hand does what ("keeps holding the frame with one hand, waves with the other").
 
 **Modest, culturally respectful people (owner, 2026-10-05) — check every picture and opener:** no exposed body parts on
 women (no bare legs or shoulders, no slit dresses), nothing tight (tight jeans/tops, visible chest shape) — loose long skirts, wide
