@@ -127,6 +127,16 @@ Reject the take if any item fails — a clear still beats an odd one.
   (same size, same direction, round pupils, no drift/squint), arms (two, attached), fingers (five, not merged).
   Zoom into the face (crop ~2×) on the last frame: it is on screen for 1–1.5 s.
 - Make 3–4 seeds and compare them side by side; when in doubt, reject and run another seed.
+- **Three more checks the owner caught (2026-10-07, d12/d15/v01) — do them on every opener before showing it:**
+  1. **Which arm does what:** trace each hand back to its shoulder. Two hands from the **same** side (a thumbs-up and
+     a book-holding hand both on the left) = two arms on one side → reject. In the keyframe prompt, say which side
+     holds the object ("holds the book with the hand on the right side of the picture") and keep the free arm on the
+     other side.
+  2. **One hand, one job:** a hand holding a glass **and** its saucer, or an object plus a gesture, looks wrong →
+     drop the extra object (tea glass without a saucer).
+  3. **Natural speed:** play the clip at real speed (not only the strip) — a quick, jerky or "stressed" wave reads as
+     unnatural. Prompt "slowly and calmly"; build with `make_loop.py --speed 0.8` (slower) when the move is fast.
+  Objects held near the body need **contrast** with the clothes (a red book on the olive hoodie, not a green one).
 - **41 frames is the default for openers (test 2026-10-06, same keyframe + prompt, 2 seeds each):** 49 frames
   ~6.5 min, 0/2 usable (a red cuff / a glowing fingertip appeared); **41 frames ~5 min, 2/2 clean**; 37 frames
   ~4.4 min, 0/2 (the arm overshot out of frame, a pink object appeared). Wan only takes 4k+1 frames (33, 37, 41, 45, 49).

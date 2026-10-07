@@ -56,6 +56,10 @@ def clean(src, work):
     model, state, _ = init_df()
     audio, _ = load_audio(str(raw), sr=state.sr())
     save_audio(str(dfn), enhance(model, state, audio), state.sr())
+    del model, state   # free the GPU for Whisper: a 4-min recording left DeepFilterNet's cache filling 6 GB (2026-10-07)
+    import gc, torch
+    gc.collect()
+    torch.cuda.empty_cache()
     gain = -20.0 - loudness(dfn)
     # owner's choice (2026-09-28): light presence boost for clarity, a touch less low boom
     run(["ffmpeg", "-v", "error", "-y", "-i", str(dfn), "-af",
