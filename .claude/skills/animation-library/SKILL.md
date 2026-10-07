@@ -141,6 +141,8 @@ Reject the take if any item fails — a clear still beats an odd one.
   ~6.5 min, 0/2 usable (a red cuff / a glowing fingertip appeared); **41 frames ~5 min, 2/2 clean**; 37 frames
   ~4.4 min, 0/2 (the arm overshot out of frame, a pink object appeared). Wan only takes 4k+1 frames (33, 37, 41, 45, 49).
   Resolution stays 576×1024 (Wan 2.2 5B trained at 720p; 6 GB can't go higher) — close-ups give the face the pixels.
+- **Scene 1's still (`s01.png`) = the opener's last frame** (`ffmpeg -sseof -0.05 -i library/openers/<name>.mp4 -vframes 1`):
+  the full-length keyframe put heads under the card after the clip (Week 3); the last frame makes the hold seamless.
 - **Avoid objects in front of the face:** "lifts the menu" made the model hide her mouth/face 4 times out of 4.
 - **What works / what fails (Week 3, 2026-10-06, 26 takes):**
   - ✅ reliable: one open hand raised beside the shoulder ("excuse me", hello) from a **standing** pose with arms

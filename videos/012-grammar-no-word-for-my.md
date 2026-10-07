@@ -58,7 +58,7 @@ Today is Day 12, so let's warm up with yesterday. How did Lina welcome the touri
 🔤 **On screen:** ـِي · *-ii* · my · NEW
 
 ```say:narrator
-Here's the trick. To say my, you add a long ee sound to the end of the word, and you already know one example from Day 2.
+So here is the trick: to say my, you simply add a long ee sound at the end of the word, and you already know one example from Day 2.
 ```
 
 ### 🎬 Scene 6 — Name
@@ -82,7 +82,7 @@ Listen to the word name first, and then to my name.
 🔤 **On screen:** كِتَابْ، كِتَابِي · *kitaab, kitaabii* · a book, my book · NEW
 
 ```say:narrator
-It works with every word. Here's book, and then my book.
+This works with almost every word, so listen to book, and then to my book.
 ```
 ```say:teacher
 كِتَابْ
@@ -97,7 +97,7 @@ It works with every word. Here's book, and then my book.
 🔤 **On screen:** بَيْتْ، بَيْتِي · *bayt, baytii* · a house, my house · NEW
 
 ```say:narrator
-And the same with house, so listen for the ee at the end of my house.
+The same thing happens with house, so listen carefully for the ee at the end of my house.
 ```
 ```say:teacher
 بَيْتْ
@@ -183,7 +183,7 @@ Now watch Sami and Lina at the library, because they both want the same book.
 🔤 **On screen:** Your turn · my friend (a woman)
 
 ```say:narrator
-Now it's your turn, and this one is tricky. How do you say my friend, when your friend is a woman?
+Now it's your turn with a tricky one: how do you say my friend, when your friend is a woman?
 ```
 ⏸️ **Pause 2s**
 

@@ -41,7 +41,7 @@ I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minu
 🔤 **On screen:** Warm-up · my book
 
 ```say:narrator
-Today is Day 13, so let's warm up with yesterday's ending. How do you say my book?
+Today is Day 13, and we will warm up with yesterday's little ending, so how would you say my book?
 ```
 ⏸️ **Pause 2s**
 
@@ -169,7 +169,7 @@ Did you follow the story? Here are the four family words again, so say each one 
 🔤 **On screen:** Your turn · my mother
 
 ```say:narrator
-Now it's your turn, so use yesterday's ending. How do you say my mother?
+Now it's your turn, using yesterday's ending, so how would you say my mother?
 ```
 ⏸️ **Pause 2s**
 

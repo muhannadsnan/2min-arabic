@@ -155,6 +155,8 @@ def title_slug(script: pathlib.Path) -> str:
     if not m:
         return ""
     benefit = m.group(1).replace("\\|", "|").split(" | ")[0]
+    import unicodedata   # "Café" → "cafe", not "caf" (v01 lost its é, 2026-10-07)
+    benefit = unicodedata.normalize("NFKD", benefit).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "-", benefit.lower()).strip("-")
 
 

@@ -208,7 +208,9 @@
   "speed": 1.0,
   "source": "library/work/clips/op-d11-tom_s191.mp4",
   "created": "2026-10-06",
-  "used_in": []
+  "used_in": [
+   "011-lina-meets-a-tourist"
+  ]
  },
  {
   "name": "openers/d12-sami-book-thumb",
@@ -221,7 +223,9 @@
   "speed": 0.9,
   "source": "library/work/clips/op-d12b-sami_s211.mp4",
   "created": "2026-10-07",
-  "used_in": []
+  "used_in": [
+   "012-grammar-no-word-for-my"
+  ]
  },
  {
   "name": "openers/d13-lina-photo-frame",
@@ -234,7 +238,9 @@
   "speed": 1.0,
   "source": "library/work/clips/op-d13-lina_s192.mp4",
   "created": "2026-10-06",
-  "used_in": []
+  "used_in": [
+   "013-story-linas-family"
+  ]
  },
  {
   "name": "openers/d14-sami-chalk-point",
@@ -247,7 +253,9 @@
   "speed": 1.0,
   "source": "library/work/clips/op-d14-sami_s192.mp4",
   "created": "2026-10-06",
-  "used_in": []
+  "used_in": [
+   "014-week-2-quiz"
+  ]
  },
  {
   "name": "openers/d15-waiter-tea",
@@ -260,7 +268,9 @@
   "speed": 0.9,
   "source": "library/work/clips/op-d15b-waiter_s211.mp4",
   "created": "2026-10-07",
-  "used_in": []
+  "used_in": [
+   "015-i-want-i-dont-want"
+  ]
  },
  {
   "name": "openers/lina-notebook-lookup",
@@ -364,7 +374,9 @@
   "speed": 0.8,
   "source": "library/work/clips/op-v01c-lina_s212.mp4",
   "created": "2026-10-07",
-  "used_in": []
+  "used_in": [
+   "v01-cafe-words"
+  ]
  },
  {
   "name": "openers/x03-sami-hi-close",
@@ -424,7 +436,9 @@
   "speed": 1.0,
   "source": "library/work/clips/op-x05c-sami_s197.mp4",
   "created": "2026-10-06",
-  "used_in": []
+  "used_in": [
+   "x05-syrians-say-biddi"
+  ]
  },
  {
   "name": "talk/lina-talk-1",

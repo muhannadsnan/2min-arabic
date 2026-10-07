@@ -9,7 +9,7 @@
 | **Re-used (due)** | مِنْ أَيْنَ أَنْتَ؟ · أَنَا مِنْ أَمْرِيكَا (Day 8) · مُعَلِّمَةْ · صَدِيقَةْ (Day 9) · ٧ ٩ (Day 10 + x04) · أَهْلًا وَسَهْلًا · دِمَشْقُ جَمِيلَةْ (Day 11) · كِتَابِي · اسْمُكِ (Day 12) · أُمِّي · هَذَا أَخِي (Day 13) |
 | **Voices** | English narrator = owner's clone · every answer is an existing recording (Days 8–13) → **nothing new to record** · **AI label: No** |
 | **Look** | 3D · one empty chalkboard in a **classroom** this time (different decoration from x04's café), questions chalked by `tools/images/digits.py` (chalk text) · opener: Sami, close-up next to the classroom chalkboard, holds up a piece of chalk beside his face with a confident smile and holds (new opener, owner approves) |
-| **YouTube title** | `12 Questions: How Much Arabic Do You Know After 2 Weeks? \| Day 14 · 2 Minute Arabic` |
+| **YouTube title** | `12 Questions After 2 Weeks of Arabic \| Day 14 · 2 Minute Arabic` |
 | **Thumbnail text** | "12 QUESTIONS" + big ؟ |
 
 **Pattern:** the board shows the question → narrator asks → ⏸️ pause (answer out loud) → the Arabic answer with its card.
@@ -51,7 +51,7 @@ Today is Day 14. The rule is simple: when you see a question on the board, say y
 🔤 **On screen:** Question 1 · say it in Arabic
 
 ```say:narrator
-We start with an easy one. How do you ask a man where he's from?
+For the first question, how would you ask a man, where are you from?
 ```
 ⏸️ **Pause 2s**
 
@@ -89,7 +89,7 @@ Next, which number is written on the board?
 🔤 **On screen:** Question 3 · say it in Arabic
 
 ```say:narrator
-And how do you say teacher, when the teacher is a woman?
+Next, how would you say teacher, when the teacher is a woman?
 ```
 ⏸️ **Pause 2s**
 
@@ -108,7 +108,7 @@ And how do you say teacher, when the teacher is a woman?
 🔤 **On screen:** Question 4 · what does it mean?
 
 ```say:narrator
-Now the other way around. What does this mean, and when do you say it?
+Now let's turn it around, so what does this phrase mean, and when would you say it?
 ```
 ⏸️ **Pause 2s**
 
@@ -146,7 +146,7 @@ Next, how do you say my book?
 🔤 **On screen:** Question 6 · what does it mean?
 
 ```say:narrator
-And what does this word on the board mean? Look closely at its ending.
+Look closely at the ending, and tell me, what does this word mean?
 ```
 ⏸️ **Pause 2s**
 
@@ -174,7 +174,7 @@ We're halfway through the quiz, and halfway through the course. One percent bett
 🔤 **On screen:** Question 7 · say it in Arabic
 
 ```say:narrator
-Let's keep going. How does Tom say that he's from America?
+Now, how does Tom say, I am from America?
 ```
 ⏸️ **Pause 2s**
 
@@ -212,7 +212,7 @@ Here's another number, so which one is this?
 🔤 **On screen:** Question 9 · say it in Arabic
 
 ```say:narrator
-Now a tricky one from Day 12. How do you say your name, when you're talking to a woman?
+Here is a tricky one from Day 12: how would you say, your name, to a woman?
 ```
 ⏸️ **Pause 2s**
 
@@ -231,7 +231,7 @@ Now a tricky one from Day 12. How do you say your name, when you're talking to a
 🔤 **On screen:** Question 10 · what does it mean?
 
 ```say:narrator
-And what does this one mean? You heard it in Lina's story.
+What does this word mean, which you heard in Lina's story?
 ```
 ⏸️ **Pause 2s**
 
@@ -250,7 +250,7 @@ And what does this one mean? You heard it in Lina's story.
 🔤 **On screen:** Question 11 · say it in Arabic
 
 ```say:narrator
-Almost done. How do you say, this is my brother?
+We are almost done, so how would you say, this is my brother?
 ```
 ⏸️ **Pause 2s**
 
@@ -269,7 +269,7 @@ Almost done. How do you say, this is my brother?
 🔤 **On screen:** Question 12 · what does it mean?
 
 ```say:narrator
-And the last question is a whole sentence. What does it mean?
+The last question is a whole sentence, so what does it mean?
 ```
 ⏸️ **Pause 2s**
 
@@ -288,7 +288,7 @@ And the last question is a whole sentence. What does it mean?
 🔤 **On screen:** How many did you get? · tell me in the comments
 
 ```say:narrator
-So how many did you get out of twelve? Tell me in the comments. Tomorrow you'll learn the two words that get you anything in a café.
+Write your score out of twelve in the comments, and tomorrow, you will learn two words to order anything in a café.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.

@@ -126,7 +126,7 @@ Now let's go to the market with Sami.
 🔤 **On screen:** تِكْرَمْ! · *tikram!* · Sure, my pleasure! (you're honored) · Syrian dialect
 
 ```say:narrator
-And here is the friendliest answer in Syria, which means you are honored.
+And the seller answers with the friendliest word in Syria, which means you are honored.
 ```
 ```say:teacher
 تِكْرَمْ!
@@ -157,7 +157,7 @@ Now it's your turn. Order a coffee the Syrian way, and don't forget the silent q
 🔤 **On screen:** uriidu or biddi? · tell me in the comments
 
 ```say:narrator
-So which one will you use, the textbook word or the Syrian one? Tell me in the comments.
+Which one will you use, uriidu from the textbook, or the Syrian biddi? Tell me in the comments.
 ```
 ```say:narrator
 Subscribe so you don't break your streak.

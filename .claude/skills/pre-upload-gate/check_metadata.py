@@ -50,7 +50,7 @@ check(bool(title), "title found in a code box")
 benefit, _, series = title.partition(" | ")
 check("#" not in title, "no hashtags in the title")
 check(len(benefit) <= 50, f"benefit part {len(benefit)} chars (≤ 50)")
-check(bool(re.fullmatch(r"(Day \d+ · 2 Minute Arabic|Part \d+ · Days \d+–\d+|Arabic Extras)", series)),
+check(bool(re.fullmatch(r"(Day \d+ · 2 Minute Arabic|Part \d+ · Days \d+–\d+|Arabic Extras|Arabic Vocab)", series)),
       f"series suffix: '{series}'")
 caps = [w for w in re.findall(r"[A-Za-z']+", benefit) if len(w) > 2 and w.isupper()]
 check(len(caps) <= 1, f"at most one ALL-CAPS word (found {caps or 'none'})")

@@ -41,7 +41,7 @@ I'm your teacher, and Arabic is my mother tongue. My promise is simple: two minu
 🔤 **On screen:** Warm-up · my mother
 
 ```say:narrator
-Today is Day 15, so let's warm up with Lina's family. How do you say my mother?
+Today is Day 15, and we will warm up with Lina's family, so how would you say my mother?
 ```
 ⏸️ **Pause 2s**
 
@@ -121,7 +121,7 @@ Next is tea, which comes in a small glass in Syria.
 🔤 **On screen:** عَصِيرْ · *'aSiir* · juice · NEW
 
 ```say:narrator
-And on a hot day, you'll want a fresh juice.
+And when the day is really hot, nothing beats a glass of fresh juice!
 ```
 ```say:teacher
 عَصِيرْ
@@ -146,7 +146,7 @@ To sound polite, add the please from Day 2 at the end.
 🔤 **On screen:** لَا أُرِيدُ · *laa uriidu* · I don't want · NEW
 
 ```say:narrator
-And to say you don't want something, just put the no from Day 6 in front of it.
+For I don't want, you put the little no from Day 6, in front.
 ```
 ```say:teacher
 لَا أُرِيدُ
@@ -158,7 +158,7 @@ And to say you don't want something, just put the no from Day 6 in front of it.
 🔤 **On screen:** هَلْ تُرِيدُ قَهْوَةْ؟ · *hal turiidu qahwa?* · Do you want coffee?
 
 ```say:narrator
-Now let's watch. Sami sits down at the café, and the waiter comes over to his table.
+Now, Sami sits down at the café, and the waiter walks over to him.
 ```
 ```say:teacher
 هَلْ تُرِيدُ قَهْوَةْ؟
@@ -207,7 +207,7 @@ Now it's your turn. You're thirsty, so ask the waiter for water, and be polite.
 🔤 **On screen:** Your turn · I don't want coffee.
 
 ```say:narrator
-And how do you tell someone that you don't want coffee?
+Next, how would you tell someone that you don't want any coffee?
 ```
 ⏸️ **Pause 2s**
 
@@ -245,7 +245,7 @@ And here's one from Day 6. Lina offers you a coffee, so how do you say no, thank
 🔤 **On screen:** Day 15 · 1.01¹⁵ = 1.16 · next: how Syrians say "I want"
 
 ```say:narrator
-And here's a secret for next time: in Syria, people almost never say this word, so I'll show you what they say instead.
+And here is a little secret: in Syria, people almost never say this word, so next time, I will show you what they say instead.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.

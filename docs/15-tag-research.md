@@ -32,3 +32,12 @@ other dialects (Egyptian/Moroccan) unless the video teaches them, everyday-life 
 - x04: "arabic numbers", "arabic numbers 1-10", "arabic numerals 1-10", "how to read arabic numbers",
   "how to read arabic eastern numbers", "eastern arabic numerals", "how to write arabic numbers 1 to 10";
   Arabic: "الارقام العربية". Dropped: "arabic numerals" alone (memes/politics), kids' songs ("للاطفال").
+
+## 2026-10-07 — Days 11–15, x05, v01
+
+`suggest.py` picks: "arabic conversation for beginners", "arabic conversation between two friends", "welcome in arabic"
+(D11) · "my in arabic", "my name/friend in arabic" (D12) · "family in arabic", "my family in arabic", "family members
+in arabic", "my mother in arabic" (D13) · "arabic quiz", "arabic test for beginners", "arabic level test" (D14) ·
+"i want in arabic", "i want water in arabic", "do you want in arabic", "how to say tea in arabic" (D15) · "i want in
+levantine arabic", "syrian arabic for beginners/dialect/lessons" (x05) · "arabic words/vocabulary for beginners",
+"coffee in arabic pronunciation", "tea in arabic" (v01). Dropped: songs, kids, "arabica" plants, Kerala quiz terms.

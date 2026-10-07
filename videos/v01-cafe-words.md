@@ -33,7 +33,7 @@ Here are ten Arabic words you will need the moment you sit down in a café, so s
 🔤 **On screen:** قَهْوَةْ · *qahwa* · coffee · you know it from Day 4
 
 ```say:narrator
-We start with an old friend from Day 4, the reason we all come here.
+We will start with an old friend from Day 4, which is the reason we all come here.
 ```
 ```say:teacher
 قَهْوَةْ
@@ -46,7 +46,7 @@ We start with an old friend from Day 4, the reason we all come here.
 🔤 **On screen:** شَايْ · *shaay* · tea · Day 15
 
 ```say:narrator
-Then comes tea, which you met on Day 15, served in a small glass in Syria.
+Next comes tea, which you met on Day 15, and in Syria it is served in a small glass.
 ```
 ```say:teacher
 شَايْ
@@ -72,7 +72,7 @@ Next is water, also from Day 15, a short word with a little stop at the end.
 🔤 **On screen:** حَلِيبْ · *Haliib* · milk
 
 ```say:narrator
-For your coffee you might want some milk, so listen for the breathy H at the start.
+With your coffee, you might want some milk, so listen carefully for the breathy H at the start.
 ```
 ```say:teacher
 حَلِيبْ
@@ -98,7 +98,7 @@ And here is one you can almost guess, because sugar sounds very close in Arabic.
 🔤 **On screen:** فِنْجَانْ · *finjaan* · a coffee cup
 
 ```say:narrator
-The little cup your coffee comes in has its own name, and it's a fun one to say.
+The little cup that your coffee comes in has its very own name, and it is fun to say.
 ```
 ```say:teacher
 فِنْجَانْ
@@ -137,7 +137,7 @@ On a hot day, people in Damascus love a glass of fresh juice.
 🔤 **On screen:** نَادِلْ · *naadil* · waiter
 
 ```say:narrator
-The man who brings all of this is our friend from Day 10, the waiter.
+The man who brings it all, is our friend from Day 10, the waiter.
 ```
 ```say:teacher
 نَادِلْ
@@ -150,7 +150,7 @@ The man who brings all of this is our friend from Day 10, the waiter.
 🔤 **On screen:** حِسَابْ · *Hisaab* · the bill
 
 ```say:narrator
-And when you're done, you ask for the bill, which is the last word on our list.
+And finally, when it is time to pay, you will ask for the bill.
 ```
 ```say:teacher
 حِسَابْ
@@ -182,7 +182,7 @@ Now let's see what stayed with you, so what is this in Arabic?
 🔤 **On screen:** What's this?
 
 ```say:narrator
-And what about this sweet one on the table?
+Next, what do you call this sweet thing on the table?
 ```
 ⏸️ **Pause 2s**
 
@@ -201,7 +201,7 @@ And what about this sweet one on the table?
 🔤 **On screen:** Who is he?
 
 ```say:narrator
-And the last one, who is this smiling man?
+And for the last question, who is this man?
 ```
 ⏸️ **Pause 2s**
 
@@ -220,13 +220,13 @@ And the last one, who is this smiling man?
 🔤 **On screen:** شُكْرًا · *shukran* · and say thank you to the waiter
 
 ```say:narrator
-And don't forget to thank the waiter, with the word you learned on Day 2.
+And please don't forget to thank the waiter, using the word that you learned on Day 2.
 ```
 ```say:teacher
 شُكْرًا
 ```
 ```say:narrator
-Which café word was new for you? Tell me in the comments, because next time we order at the café.
+Which café word was new for you? Tell me in the comments, because next time, we will order at the café.
 ```
 ```say:narrator
 Subscribe so you don't break your streak.

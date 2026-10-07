@@ -9,7 +9,7 @@
 | **Re-used (due)** | أَنَا مِنْ + countries (Day 8) · كَيْفَ حَالُكْ؟ · شُكْرًا (Day 2) · تَشَرَّفْنَا (Day 3) · numbers (Day 10, warm-up) |
 | **Voices** | English narrator = owner's clone · Arabic = the owner (teacher, Tom) + Koki (Lina) → **AI label: No** |
 | **Look** | 3D · new character **Tom** (young American tourist: light-brown short hair, light-blue shirt, beige trousers, a backpack) · opener: Tom, close-up on a Damascus street, raises one hand politely ("excuse me") with a friendly smile and holds (new opener, owner approves) |
-| **YouTube title** | `Understand Your First Street Conversation in Arabic \| Day 11 · 2 Minute Arabic` |
+| **YouTube title** | `Understand a Real Street Conversation in Arabic \| Day 11 · 2 Minute Arabic` |
 | **Thumbnail text** | "CAN YOU FOLLOW?" + big أَهْلًا وَسَهْلًا |
 
 ---
@@ -20,7 +20,7 @@
 🔤 **On screen:** Your first street conversation
 
 ```say:narrator
-A tourist walks up to Lina in Damascus, and by the end of this video, you'll understand every word they say.
+Imagine a tourist walking up to Lina in Damascus. By the end of this video, you will understand every single word!
 ```
 
 ### 🎬 Scene 2 — Channel intro
@@ -171,7 +171,7 @@ Now let's listen. The tourist walks up to Lina, and notice the word he starts wi
 🔤 **On screen:** 8 lines · you understood all of them
 
 ```say:narrator
-And that was a real conversation, eight lines long, and you know almost every word in it from the last ten days.
+That was a real conversation, eight lines long, and you already knew almost every word in it.
 ```
 
 ### 🎬 Scene 17 — Your turn 1
@@ -199,7 +199,7 @@ Now it's your turn. A guest walks into your home, so how do you welcome them?
 🔤 **On screen:** Your turn · I'm from America.
 
 ```say:narrator
-And how did Tom tell Lina that he's from America?
+Next, can you say the line Tom used to tell Lina his country?
 ```
 ⏸️ **Pause 2s**
 
@@ -237,7 +237,7 @@ And here's one from Day 3. How do you say, nice to meet you?
 🔤 **On screen:** Day 11 · 1.01¹¹ = 1.12 · tomorrow: no word for "my"
 
 ```say:narrator
-Tomorrow you'll find out why Arabic doesn't need a word for my, and it's easier than you think.
+Tomorrow, you will learn why Arabic doesn't need a word for my, and it is easier than you think.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.
