@@ -3,6 +3,8 @@
 **File to upload:** `output/v01-cafe-words/10-arabic-words-you-need-in-a-cafe.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/v01-cafe-words/10-arabic-words-you-need-in-a-cafe-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-07** — video id `W5tlsFXCjyY`, scheduled **18 Oct 17:00 Oslo**; thumbnail, English subtitles, playlist set.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

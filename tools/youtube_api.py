@@ -43,7 +43,7 @@ def creds(channel):
     if not tok.exists():
         sys.exit(f"not logged in for '{channel}': run  login --channel {channel}")
     c = Credentials.from_authorized_user_file(str(tok), SCOPES)
-    if not c.valid:
+    if True:   # always refresh: the saved expiry was sometimes wrong → intermittent 401s mid-batch (2026-10-07)
         from google.auth.exceptions import RefreshError
         try:
             c.refresh(Request())

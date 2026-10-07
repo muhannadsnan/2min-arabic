@@ -3,6 +3,8 @@
 **File to upload:** `output/014-week-2-quiz/12-questions-after-2-weeks-of-arabic.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/014-week-2-quiz/12-questions-after-2-weeks-of-arabic-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-07** — video id `nXRwJBqOPy0`, scheduled **15 Oct 17:00 Oslo**; thumbnail, English subtitles, playlist set.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

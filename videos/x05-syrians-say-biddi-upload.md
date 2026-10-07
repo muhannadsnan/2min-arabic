@@ -3,6 +3,8 @@
 **File to upload:** `output/x05-syrians-say-biddi/how-to-say-i-want-like-a-syrian.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/x05-syrians-say-biddi/how-to-say-i-want-like-a-syrian-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-07** — video id `-ju67hph1EI`, scheduled **17 Oct 17:00 Oslo**; thumbnail, English subtitles, playlist set.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

@@ -94,3 +94,8 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
 - Uploads go **in day order** — if an earlier day isn't up yet, say so.
 - Account-level reminders when relevant: automatic dubbing must stay OFF; a Short with ~0 views gets 48 h before
   any action (then check viewed-vs-swiped, re-upload with a new title if still ~0).
+- **Batch fills (2026-10-07):** fill a batch with **fixed dates** (`--publish-at 2026-10-14T15:00:00Z`), not `next` —
+  one failed call made `next` skip ahead and scheduled Day 15 before Days 13–14. Fill is safe to re-run; retry a 401.
+  A video ID starting with "-" needs the options first: `fill --publish-at … --apply -- <stem> -ju67…`.
+  Afterwards re-sort the 30-day playlist (Day 1 → … → Part after each 5th day) and run `audit`.
+

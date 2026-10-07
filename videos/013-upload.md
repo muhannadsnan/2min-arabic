@@ -3,6 +3,8 @@
 **File to upload:** `output/013-story-linas-family/meet-lina-s-family-a-short-story-in-arabic.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/013-story-linas-family/meet-lina-s-family-a-short-story-in-arabic-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-07** — video id `_iPKgHfT_b4`, scheduled **14 Oct 17:00 Oslo**; thumbnail, English subtitles, playlist set.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

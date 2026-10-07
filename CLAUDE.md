@@ -38,7 +38,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **YouTube login renewed 2026-10-07 12:46 → expires ~2026-10-14 midday** (Testing mode, weekly). After the trip: set up "In production" (needs a homepage + privacy-policy page on an owned domain, e.g. GitHub Pages) so it stops expiring.
 - **Hourly (cron, automatic):** `tools/comment_job.sh` posts each sheet's pinned comment once its video is live and
   pops a desktop notification; the owner taps ⋮ → Pin (no API for pinning). Log: `~/.local/share/2min-yt/comments.log`.
-- **Schedule (Shorts, 17:00 Oslo):** Day 2 re-upload 2 Oct · x01 3 Oct · x02 4 Oct · Day 6 5 Oct (7IQ0GYOC9X4) · Day 7 6 Oct (QuLTZ42HMxs) · Day 8 7 Oct (nYz4KkohiIc) · Day 9 8 Oct (KiwR8OU3aeQ) · Day 10 9 Oct (5kaDplowig4) · x03 10 Oct (pbIY5duEYzE) · x04 11 Oct (fbHfwdMExss) · **Day 11 → 12 Oct**. Long chain: Part 2 10 Oct (lYgjF0MTaYo).
+- **Schedule (Shorts, 17:00 Oslo):** Day 2 re-upload 2 Oct · x01 3 Oct · x02 4 Oct · Day 6 5 Oct (7IQ0GYOC9X4) · Day 7 6 Oct (QuLTZ42HMxs) · Day 8 7 Oct (nYz4KkohiIc) · Day 9 8 Oct (KiwR8OU3aeQ) · Day 10 9 Oct (5kaDplowig4) · x03 10 Oct (pbIY5duEYzE) · x04 11 Oct (fbHfwdMExss) · Day 11 12 Oct (eX2rqmZpd34) · Day 12 13 Oct (9LaQeya3gbw) · Day 13 14 Oct (_iPKgHfT_b4) · Day 14 15 Oct (nXRwJBqOPy0) · Day 15 16 Oct (7hZTq8KtA1I) · x05 17 Oct (-ju67hph1EI) · v01 18 Oct (W5tlsFXCjyY) · **Day 16 → 19 Oct**. Long chain: Part 2 10 Oct (lYgjF0MTaYo).
 - **48 h checks:** Day 2 (re-upload) 4 Oct · x01 5 Oct · x02 6 Oct.
 - ~~2026-10-06: viral shorts verdict~~ → dropped (docs/06 Learnings).
 - **48 h after each Short:** if ~0 views, re-upload with a backup title (pre-upload-gate writes them).
@@ -47,7 +47,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   Weekly rhythm: 5 days → Extra → Vocab; Part on the long chain; monthly long video (docs/06).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
-- **Next up (2026-10-06):** scripts for Days 11–15, x05 (Syrian بِدِّي) and v01 ready. Waiting for the recordings:
+- **Next up (2026-10-07):** Days 11–15 + x05 + v01 produced and scheduled to 18 Oct. Next: Part 3 (Days 11–15, long chain, after 16 Oct) and plan Days 16–20 after the trip. (Old note:
   owner `videos/_1115-whatsapp.txt` (51 lines) + Koki `videos/_lina-koki-3-whatsapp.txt` (11 lines), due ~9 Oct.
   Then: split → new characters (Tom; Lina's family + cat) → openers (41 frames) → produce in day order.
   Schedule: Day 11 12 Oct · 12 13 · 13 14 · 14 15 · 15 16 · x05 17 · v01 18 · Day 16 19 Oct; Part 3 (11–15) 17 Oct.
