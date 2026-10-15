@@ -30,6 +30,8 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
    - **no flag emojis** (🇸🇾 renders the old Syrian flag; flags are political) — use 🗣️ / 📍 for regions;
    - every Arabic phrase at the **end** of its line, wrapped in U+2067 … U+2069 (otherwise YouTube scrambles it);
    - transliteration — meaning — Arabic;
+   - **the 5-language line** before the hashtags (`tools/description_languages.json`: Farsi, Indonesian, Urdu/Hindi,
+     Turkish, French — the biggest learner searches + our #1 search term, owner 2026-10-15);
    - "Start from Day 1" link without `?si=…`; ~3 hashtags at the end (`#learnarabic` … `#2minutearabic`).
    Write it with Python so the invisible markers are really in the file, then print it once to verify.
 5. **Tags** in a code box, 20–26 tags, use the room up to ~470 characters, most important first, in this order (owner, 2026-10-02/05):
