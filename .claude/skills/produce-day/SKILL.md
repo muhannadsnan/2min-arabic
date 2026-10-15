@@ -123,6 +123,17 @@ Double-check every opener (owner, 2026-10-06): close-up + a real action; start f
 eyes / arms / fingers at full size on the first, middle and held last frame (zoomed 2× on the face) — see the
 animation-library skill.
 
+## Lesson shape from Day 16 on (owner approved 2026-10-15 — source: learning/notes/2026-10-15-danny-why-easiest-way-monetized.md)
+
+Our retention lost 35–50 % at 7–18 s on every Day (the channel intro), and the warm-up recall talked to returning
+viewers right where new ones were leaving. So:
+1. **Short intro:** scene 2 = the owner's hello clip + **one** short line ("Day 16 — let's go."). The
+   "I'm your teacher… my promise is simple…" line is only for Day 1 and the Parts.
+2. **Quests, visible:** the hook names the quests ("3 new words, 1 game and a twist"); cards show progress
+   ("Word 2/3", "Round 1/2"); something pays off every 20–30 s (a new word, a game answer, a story beat).
+3. **Works for a stranger:** from the hook go **straight to the first new word**. The "recall yesterday" warm-up moves
+   into the "Your turn" block at the end (it still recalls due words — spaced repetition stays).
+
 ## 1. Script — `videos/NNN-<slug>.md`
 
 Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼️ Image`, `🔤 On screen`,

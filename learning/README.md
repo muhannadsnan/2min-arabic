@@ -14,9 +14,9 @@ in a source are never adopted just because they're mentioned (licence rule, docs
 
 | Date | Source | Note | Adopted |
 |---|---|---|---|
-| 2026-10-15 | Danny Why — "The Easiest Way To Get Monetized on YouTube" (19 min, audio) | [note](notes/2026-10-15-danny-why-easiest-way-monetized.md) | see note (owner decides 2 items) |
+| 2026-10-15 | Danny Why — "The Easiest Way To Get Monetized on YouTube" (19 min, audio) | [note](notes/2026-10-15-danny-why-easiest-way-monetized.md) | 3 changes approved, in produce-day from Day 16 |
 
 ## Ideas adopted from sources (running list)
 
-- *(pending owner OK, 2026-10-15)* Short "tutorial" intro — corroborates our own intro-drop finding (docs/06 Learnings).
-- *(pending owner OK, 2026-10-15)* "Quests": several visible mini-payoffs per lesson, announced in the hook.
+- **2026-10-15 (approved):** short intro (no teacher/promise line on daily lessons) · visible "quests" (hook names them,
+  cards show progress, a payoff every 20–30 s) · hook → first new word directly, recall moves to "Your turn". In produce-day.

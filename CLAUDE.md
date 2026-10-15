@@ -52,8 +52,8 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
 - **Next up (2026-10-15):** Days 16–20 + x06 (numbers 11–20, search "arabic numbers 1 to 20") + v02 (10 body words,
   real search "parts of body in arabic") planned; sheets `videos/_1620-whatsapp.txt` (71) + `_lina-koki-4-whatsapp.txt` (8).
-  Schedule: Day 16 19 Oct … Day 20 23 Oct · x06 24 · v02 25 · Day 21 (board quiz, no recording) 26. Pending owner: shorten
-  the channel intro (retention drop 7–18 s)? · his idea for reusable videos · Part 3.
+  Schedule: Day 16 19 Oct … Day 20 23 Oct · x06 24 · v02 25 · Day 21 (board quiz, no recording) 26. Approved 15 Oct: short intro,
+  visible quests, recall moved to "Your turn" (produce-day). Pending: reusable-video upgrade (style/model test) · Part 3.
 - (older) **Next up (2026-10-07):** Days 11–15 + x05 + v01 produced and scheduled to 18 Oct. Next: Part 3 (Days 11–15, long chain, after 16 Oct) and plan Days 16–20 after the trip. (Old note:
   owner `videos/_1115-whatsapp.txt` (51 lines) + Koki `videos/_lina-koki-3-whatsapp.txt` (11 lines), due ~9 Oct.
   Then: split → new characters (Tom; Lina's family + cat) → openers (41 frames) → produce in day order.
