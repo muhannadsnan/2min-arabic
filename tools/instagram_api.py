@@ -24,6 +24,9 @@ API = "https://graph.instagram.com/v23.0/"
 
 
 def token():
+    import os
+    if os.environ.get("IG_TOKEN"):   # GitHub Actions: the token comes from the repo's encrypted secrets
+        return {"access_token": os.environ["IG_TOKEN"], "user_id": os.environ["IG_USER_ID"]}
     return json.loads((CONF / "token.json").read_text())
 
 

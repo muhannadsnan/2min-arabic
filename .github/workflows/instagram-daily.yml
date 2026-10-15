@@ -1,0 +1,34 @@
+# Daily Instagram Reel at 15:00 Oslo, posted from GitHub's servers — the laptop can be off (owner, 2026-10-15).
+# 13:05 + 14:05 UTC cover summer and winter time; tools/ig_cloud_post.py waits for 15:00 Oslo and never posts twice a day.
+name: Instagram daily Reel
+on:
+  schedule:
+    - cron: "5 13 * * *"
+    - cron: "5 14 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (Instagram processes the video, nothing is published)"
+        type: boolean
+        default: true
+permissions:
+  contents: write   # the ig-temp link and the ig-queue release of this repo
+concurrency: instagram-daily
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post the next Reel
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_QUEUE_KEY: ${{ secrets.IG_QUEUE_KEY }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python3 tools/ig_cloud_post.py --dry-run --force
+          else
+            python3 tools/ig_cloud_post.py
+          fi
