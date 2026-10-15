@@ -14,7 +14,7 @@ pretend small numbers prove something. There is no API. Everything comes from wh
 Y=~/.local/share/2min-yt/venv/bin/python
 $Y tools/youtube_api.py videos · stats --days 7 · retention <id> · search-terms · comments
 ```
-Analytics lag ~2 days. If it says the login expired (Testing mode: every 7 days), run `login` and send the owner
+Analytics lag ~2 days. The login no longer expires weekly (app in production since 2026-10-15); if it ever fails, run `login` and send the owner
 the printed link (pick **2 Minute Arabic** in the brand-account list). Ask for screenshots **only** for what the API
 doesn't give: Shorts "viewed vs swiped away" and "shown in feed".
 

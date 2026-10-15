@@ -35,7 +35,9 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   "close all apps"; measure the real speed gain at the next session and update docs/16.
 - **Weekly (Sunday):** channel-review — `audit` (fix every ⚠️), search terms → tags of matching videos, stats,
   then ask only for the screenshots the API can't give (viewed vs swiped).
-- **YouTube login renewed 2026-10-07 12:46 → expires ~2026-10-14 midday** (Testing mode, weekly). After the trip: set up "In production" (needs a homepage + privacy-policy page on an owned domain, e.g. GitHub Pages) so it stops expiring.
+- **YouTube login: permanent since 2026-10-15** — Google app "In production" (unverified, personal use; login shows
+  "Google hasn't verified this app" → Advanced → Go to 2min tools). Home + privacy pages on the `gh-pages` branch:
+  https://muhannadsnan.github.io/2min-arabic/ (verified in Search Console — keep `google413904a81875b8fb.html`).
 - **Hourly (cron, automatic):** `tools/comment_job.sh` posts each sheet's pinned comment once its video is live and
   pops a desktop notification; the owner taps ⋮ → Pin (no API for pinning). Log: `~/.local/share/2min-yt/comments.log`.
 - **Schedule (Shorts, 17:00 Oslo):** Day 2 re-upload 2 Oct · x01 3 Oct · x02 4 Oct · Day 6 5 Oct (7IQ0GYOC9X4) · Day 7 6 Oct (QuLTZ42HMxs) · Day 8 7 Oct (nYz4KkohiIc) · Day 9 8 Oct (KiwR8OU3aeQ) · Day 10 9 Oct (5kaDplowig4) · x03 10 Oct (pbIY5duEYzE) · x04 11 Oct (fbHfwdMExss) · Day 11 12 Oct (eX2rqmZpd34) · Day 12 13 Oct (9LaQeya3gbw) · Day 13 14 Oct (_iPKgHfT_b4) · Day 14 15 Oct (nXRwJBqOPy0) · Day 15 16 Oct (7hZTq8KtA1I) · x05 17 Oct (-ju67hph1EI) · v01 18 Oct (W5tlsFXCjyY) · **Day 16 → 19 Oct**. Long chain: Part 2 10 Oct (lYgjF0MTaYo).
