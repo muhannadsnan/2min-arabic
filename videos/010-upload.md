@@ -15,7 +15,7 @@
 ## Title
 
 ```
-Count to 10 in Arabic (+ One Easy Pattern) | Day 10 · 2 Minute Arabic
+Arabic Numbers 1 to 10 (One Easy Pattern) | Day 10 · 2 Minute Arabic
 ```
 
 ## Description

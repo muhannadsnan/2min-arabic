@@ -15,7 +15,7 @@ f# Day 7 — Upload sheet
 ## Title
 
 ```
-Can You Pass This Arabic Quiz? (Week 1) | Day 7 · 2 Minute Arabic
+Arabic Quiz for Beginners: Can You Pass? | Day 7 · 2 Minute Arabic
 ```
 
 ## Description

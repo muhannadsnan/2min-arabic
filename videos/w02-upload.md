@@ -13,7 +13,7 @@
 ## Title
 
 ```
-Learn Arabic in 9 Minutes – Beginner Lesson 2 | Part 2 · Days 6–10
+Learn Arabic for Beginners – Full Lesson 2 | Part 2 · Days 6–10
 ```
 
 ## Description
