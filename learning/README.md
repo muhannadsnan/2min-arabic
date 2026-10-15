@@ -14,6 +14,7 @@ in a source are never adopted just because they're mentioned (licence rule, docs
 
 | Date | Source | Note | Adopted |
 |---|---|---|---|
+| 2026-10-15 | أكاديمية نمو — "لماذا قناتك على يوتيوب لا تنجح؟ (5 أخطاء قاتلة)" (24 min, audio, Arabic) | [note](notes/2026-10-15-numuw-academy-5-deadly-mistakes.md) | niche research applied; 3 proposals |
 | 2026-10-15 | Danny Why — "The Easiest Way To Get Monetized on YouTube" (19 min, audio) | [note](notes/2026-10-15-danny-why-easiest-way-monetized.md) | 3 changes approved, in produce-day from Day 16 |
 
 ## Ideas adopted from sources (running list)

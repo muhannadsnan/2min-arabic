@@ -384,6 +384,28 @@ def fill(a):
           "  After it goes live (desktop notification): pin the comment + set Related video.")
 
 
+def niche(a):
+    """What already gets views in our niche (source: learning/notes/…-numuw-academy): top videos for each query,
+    most-viewed first, with views/day so old evergreen hits and fresh risers both show. ~100 quota units per query."""
+    y = yt(a.channel)
+    since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=a.days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    for q in a.queries:
+        r = y.search().list(part="snippet", q=q, type="video", order="viewCount", maxResults=a.max,
+                            publishedAfter=since, relevanceLanguage="en").execute(num_retries=3)
+        ids = [i["id"]["videoId"] for i in r.get("items", [])]
+        if not ids:
+            continue
+        vs = y.videos().list(part="snippet,statistics,contentDetails", id=",".join(ids)).execute(num_retries=3)["items"]
+        print(f"== {q}  (published in the last {a.days} days)")
+        now = dt.datetime.now(dt.timezone.utc)
+        for v in vs:
+            views = int(v["statistics"].get("viewCount", 0))
+            age = max(1, (now - dt.datetime.fromisoformat(v["snippet"]["publishedAt"].replace("Z", "+00:00"))).days)
+            sec = seconds(v["contentDetails"]["duration"])
+            kind = "Short" if sec <= 180 else f"{sec // 60} min"
+            print(f"{views:>9,}  {views // age:>7,}/day  {kind:>6}  {v['snippet']['channelTitle'][:22]:<22}  {v['snippet']['title'][:80]}")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--channel", default="arabic", help="token name: arabic (default) or spanish")
@@ -395,6 +417,7 @@ def main():
     p = sub.add_parser("search-terms"); p.add_argument("--days", type=int, default=28); p.set_defaults(fn=search_terms)
     p = sub.add_parser("comments"); p.add_argument("--max", type=int, default=50); p.set_defaults(fn=comments)
     sub.add_parser("audit").set_defaults(fn=audit)
+    p = sub.add_parser("niche"); p.add_argument("queries", nargs="+"); p.add_argument("--days", type=int, default=365); p.add_argument("--max", type=int, default=10); p.set_defaults(fn=niche)
     p = sub.add_parser("captions"); p.add_argument("video"); p.add_argument("--replace"); p.set_defaults(fn=captions)
     p = sub.add_parser("post-comments"); p.add_argument("--days", type=int, default=3); p.set_defaults(fn=post_comments)
     p = sub.add_parser("title"); p.add_argument("video"); p.add_argument("title"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=title)

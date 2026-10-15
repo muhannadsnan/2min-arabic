@@ -10,6 +10,13 @@ owner's OK. This skill adds three things the table doesn't have: **which old wor
 stays different**, and **when the Extras go out**. Plan 3–5 days at a time. That also batches the owner's recording
 into one session.
 
+## 0. What people already watch (niche research — source: learning/notes/2026-10-15-numuw-academy-5-deadly-mistakes.md)
+
+Before choosing Extras/Vocab topics (and when a Day can lean towards a popular angle), run
+`$Y tools/youtube_api.py niche "<topic> in arabic" "<format idea>"` (≈100 quota units per query) and
+`python3 tools/suggest.py "<topic> in arabic"`. Prefer topics where learner videos (not kids' songs) already get views;
+note the hook/format of the top ones. Log the picks in docs/15.
+
 ## 1. The vocabulary ledger — `docs/13-vocabulary-ledger.md`
 
 One row per word or phrase:
