@@ -37,10 +37,10 @@ what the audience responds to.
 | Day | Format | Topic | New language |
 |---|---|---|---|
 | 15 | Phrases | I want… / I don't want… | أُرِيد · لَا أُرِيد · مَاء · شَاي · قَهْوَة |
-| 16 | Conversation | Ordering at the café | أُرِيدُ قَهْوَةً مِنْ فَضْلِك · بِكَمْ؟ |
+| 16 | Conversation | Ordering at the café (with / without, how much?) | تَفَضَّلْ · بِكَمْ هَذَا؟ · مَعَ · بِدُونِ |
 | 17 | Grammar | "The": al- (الـ) and the sun letters | الْقَهْوَة · الشَّاي |
 | 18 | Phrases | Question words | مَا · مَنْ · أَيْنَ · كَمْ · مَتَى |
-| 19 | Story | Sami gets lost | أَيْنَ …؟ · يَمِين · يَسَار |
+| 19 | Story | Sami gets lost (Lina is at the café all along) | أَيْنَ الْمَقْهَى؟ · يَمِين · يَسَار · هُنَا · هُنَاكَ · ثُمَّ |
 | 20 | Grammar | Present verbs: I go, I drink, I eat, I like | أَذْهَب · أَشْرَب · آكُل · أُحِبّ |
 | 21 | Review | Week 3 quiz + "1.01²¹" milestone | — |
 

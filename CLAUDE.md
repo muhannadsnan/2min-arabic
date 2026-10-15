@@ -49,7 +49,11 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   Weekly rhythm: 5 days → Extra → Vocab; Part on the long chain; monthly long video (docs/06).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
-- **Next up (2026-10-07):** Days 11–15 + x05 + v01 produced and scheduled to 18 Oct. Next: Part 3 (Days 11–15, long chain, after 16 Oct) and plan Days 16–20 after the trip. (Old note:
+- **Next up (2026-10-15):** Days 16–20 + x06 (numbers 11–20, search "arabic numbers 1 to 20") + v02 (10 body words,
+  real search "parts of body in arabic") planned; sheets `videos/_1620-whatsapp.txt` (71) + `_lina-koki-4-whatsapp.txt` (8).
+  Schedule: Day 16 19 Oct … Day 20 23 Oct · x06 24 · v02 25 · Day 21 (board quiz, no recording) 26. Pending owner: shorten
+  the channel intro (retention drop 7–18 s)? · his idea for reusable videos · Part 3.
+- (older) **Next up (2026-10-07):** Days 11–15 + x05 + v01 produced and scheduled to 18 Oct. Next: Part 3 (Days 11–15, long chain, after 16 Oct) and plan Days 16–20 after the trip. (Old note:
   owner `videos/_1115-whatsapp.txt` (51 lines) + Koki `videos/_lina-koki-3-whatsapp.txt` (11 lines), due ~9 Oct.
   Then: split → new characters (Tom; Lina's family + cat) → openers (41 frames) → produce in day order.
   Schedule: Day 11 12 Oct · 12 13 · 13 14 · 14 15 · 15 16 · x05 17 · v01 18 · Day 16 19 Oct; Part 3 (11–15) 17 Oct.
