@@ -1,0 +1,23 @@
+:root{--bg:#fff6e9;--card:#ffffff;--ink:#2b2b2b;--muted:#6b6258;--teal:#1f5f5b;--terra:#c0633a;--gold:#f2c14e;--line:#efe2cf}
+@media (prefers-color-scheme:dark){:root{--bg:#141a19;--card:#1d2523;--ink:#ece6dc;--muted:#a59c90;--teal:#6fc3bb;--terra:#e8895f;--gold:#f2c14e;--line:#2c3734}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans",system-ui,sans-serif;line-height:1.65}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header{background:linear-gradient(135deg,#1f5f5b,#2e7c76);color:#fff6e9;padding:56px 0 64px;text-align:center;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;inset:auto -10% -40px -10%;height:80px;background:var(--bg);border-radius:50% 50% 0 0}
+.badge{display:inline-block;background:var(--gold);color:#2b2b2b;font-weight:700;font-size:.8rem;letter-spacing:.06em;padding:4px 14px;border-radius:999px}
+h1{font-size:clamp(2rem,6vw,3rem);margin:14px 0 4px;line-height:1.15}
+.ar{font-family:"Noto Naskh Arabic",serif;font-size:clamp(2.2rem,7vw,3.2rem);margin:0;color:var(--gold)}
+.tag{margin:6px 0 0;opacity:.9}
+main{padding:8px 0 48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:18px 0;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.card h2{margin:0 0 8px;color:var(--teal);font-size:1.25rem}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:12px;background:var(--terra);color:#fff;transition:transform .15s}
+.btn.alt{background:transparent;color:var(--terra);border:2px solid var(--terra)}
+.btn:hover{transform:translateY(-2px)}
+a{color:var(--terra)}
+ul{padding-left:20px}li{margin:6px 0}
+.muted{color:var(--muted);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;text-align:center;font-size:.9rem;color:var(--muted)}
+footer a{margin:0 8px}
