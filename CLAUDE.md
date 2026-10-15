@@ -22,9 +22,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 
 ## Calendar (keep it current)
 
-- **AFTER THE OWNER'S VACATION (left 2026-10-08):** restore sleep-on-power — it was set to never for the trip:
-  `gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'suspend'` (timeout 900 s was kept).
-  Remind the owner on the first message after the trip.
+- ~~After the vacation: restore sleep-on-power~~ → done 2026-10-15.
 - **After the trip (14 Oct), Instagram:** account 2minutearabic (Creator, Education, bio + YouTube link set). Reels
   01–14 scheduled by hand in the app 8–21 Oct (folder `../instagram-reels-oct`, SCHEDULE.txt). Still to do: link the
   Facebook Page "2-Minute Arabic" (rename to "2 Minute Arabic") to Instagram — connection failed on 7 Oct (new-account
@@ -33,6 +31,8 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   instagram_content_publish, pages_show_list, pages_read_engagement, business_management) + App ID/secret →
   long-lived token → build the posting tool. Then: "Share to Facebook" for Reels. Also: Google OAuth "In production"
   (needs homepage + privacy policy page).
+- **2026-10-15: RAM upgraded to 40 GB** (8 GB SK Hynix + 32 GB Samsung, both 3200). GPU sessions no longer need
+  "close all apps"; measure the real speed gain at the next session and update docs/16.
 - **Weekly (Sunday):** channel-review — `audit` (fix every ⚠️), search terms → tags of matching videos, stats,
   then ask only for the screenshots the API can't give (viewed vs swiped).
 - **YouTube login renewed 2026-10-07 12:46 → expires ~2026-10-14 midday** (Testing mode, weekly). After the trip: set up "In production" (needs a homepage + privacy-policy page on an owned domain, e.g. GitHub Pages) so it stops expiring.

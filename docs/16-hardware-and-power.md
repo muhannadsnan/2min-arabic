@@ -122,3 +122,9 @@ desktop with the same card is the cleaner route (no mod, no warranty risk) — p
 2. **RTX 5060-class GPU (8 GB)** — ~2× faster (laptop ~35 min/video, desktop ~25 min).
 3. **RTX 5060 Ti 16 GB** — the best GPU upgrade: speed **and** better-looking video (bigger models, higher resolution).
 4. **CPU** — last; hardly any effect.
+
+## Done: RAM upgrade (2026-10-15)
+
+Now **40 GB**: the original 8 GB SK Hynix + a new **32 GB Samsung** (M471A4G43AB1-CWE), both DDR4-3200, running at
+3200 MT/s (16 GB dual-channel, 24 GB single-channel). Swap use 0 B at idle. Real speed gain: measure at the next GPU
+session (opener clip was 5.4 min, picture batch ~12 min with 16 GB). A second 32 GB stick later = 64 GB, full dual-channel.
