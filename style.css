@@ -21,3 +21,4 @@ ul{padding-left:20px}li{margin:6px 0}
 .muted{color:var(--muted);font-size:.9rem}
 footer{border-top:1px solid var(--line);padding:20px 0 40px;text-align:center;font-size:.9rem;color:var(--muted)}
 footer a{margin:0 8px}
+.nw{white-space:nowrap}
