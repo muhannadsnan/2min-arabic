@@ -165,3 +165,20 @@ style suffix in generate.py asks for this automatically, but **look** at every t
 late fifties, grey hair, glasses, moustache, waistcoat, red apron). **Future:** give Sami and Lina several outfits and
 styles (seasonal clothes, formal/casual) as extra keyframe sets, so talk units and openers don't look identical across
 months — same face, different clothes.
+
+## Livelier videos (owner, 2026-10-15) — the direction for new units
+
+- **Style A "semi-realistic 3D"** (owner's pick 2026-10-15; sample: `library/work/styletest/a_semi_*`): realistic
+  proportions, detailed skin/fabric, painterly light, still clearly animated → no AI label needed (never drift to
+  photoreal). Same models (FLUX.2 klein 4B, Wan 2.2 5B — both Apache 2.0) and same speed; only the style text changes.
+  New character refs in style A before the switch. Keep the current model (owner: no slower bigger model if results are good).
+- **Complete actions:** every gesture finishes — wave → arm comes down → relaxed pose. Never stop mid-gesture.
+- **No frozen hold:** after the action, play an **idle clip** (a 2nd 41-frame clip from the last frame: "stays in the
+  pose, breathes gently, blinks, tiny natural movement") instead of a still last frame; cross-fade into the scene.
+- **Invitation openers** (the viewer feels addressed): "come, follow me" hand wave, "sit with me" at the café table,
+  "come in" at a door, leaning forward with a secret, pointing at the board → the lesson starts.
+- **Presenter units:** green-screen characters (upper body or full shot) talking calmly to the viewer with natural
+  gestures (open hands, pointing, counting on fingers), several characters, 5-s loops (no lip-sync; loop only the calm
+  parts) — composited next to the board/cards so narrator scenes aren't static.
+- **~7-s openers:** chain two 41-frame clips (2nd starts from the 1st's last frame) = two connected actions.
+
