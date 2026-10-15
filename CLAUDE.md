@@ -13,6 +13,7 @@ the owner never has to name a skill. At the start of a session, check the **cale
 | every 5th day done | **compile-part** (Part N, 16:9, quiz from recorded lines) |
 | Studio screenshots, comments, "how are we doing" | **channel-review** → report + max 5 next actions |
 | openers, loops, green screen, 3D, monthly refresh | **animation-library** → 3D units in `library/`, rotation via `index.json` |
+| a video/audio/article "to learn from" | **learn-from-source** → transcript, claims vs our data, proposals · `learning/` |
 
 YouTube API: `~/.local/share/2min-yt/venv/bin/python tools/youtube_api.py` (videos, stats, retention, search-terms,
 comments, fill). Secrets in `~/.config/2min-youtube/` (never in git). Testing mode → login expires weekly: re-run

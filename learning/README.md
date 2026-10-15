@@ -1,0 +1,22 @@
+# Learning library — what the owner gives Claude to learn from
+
+The owner drops videos, podcasts, articles or screenshots about YouTube growth, teaching or production into the repo
+root (or here). Claude processes each one with the **learn-from-source** skill:
+
+- `sources/` — the original files (audio/video are git-ignored; transcripts `*.transcript.txt` are kept).
+- `notes/` — one note per source: claims → checked against **our own numbers** → what we change (or why we don't).
+- This index — newest on top, one line per source, plus the running list of **ideas we adopted**.
+
+Rule: a source is advice, not proof. Our own analytics (docs/12) win when they disagree. Sponsored tools mentioned
+in a source are never adopted just because they're mentioned (licence rule, docs/14; no-paid-tools rule).
+
+## Sources (newest on top)
+
+| Date | Source | Note | Adopted |
+|---|---|---|---|
+| 2026-10-15 | Danny Why — "The Easiest Way To Get Monetized on YouTube" (19 min, audio) | [note](notes/2026-10-15-danny-why-easiest-way-monetized.md) | see note (owner decides 2 items) |
+
+## Ideas adopted from sources (running list)
+
+- *(pending owner OK, 2026-10-15)* Short "tutorial" intro — corroborates our own intro-drop finding (docs/06 Learnings).
+- *(pending owner OK, 2026-10-15)* "Quests": several visible mini-payoffs per lesson, announced in the hook.

@@ -11,3 +11,8 @@ __pycache__/
 /output/
 library/*
 !library/index.json
+
+# owner-provided learning files (audio/video): not in git, transcripts are
+learning/sources/*.mp3
+learning/sources/*.mp4
+learning/sources/*.m4a
