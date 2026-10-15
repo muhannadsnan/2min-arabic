@@ -145,3 +145,5 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 - 2026-10-06: "viral shorts" tag experiment → **dropped**. Tagged Day 3 (55 views, 38 % viewed) and Day 5 (38, 40 %) did not
   beat untagged Day 4 (86, 109 %) or the Day 2 re-upload (26 in 4 days, 61 %); content and hook matter, the tag doesn't
   (evidence: YouTube Analytics 20 Sep–6 Oct). Removed from Days 3 and 5; never add it again.
+- 2026-10-15: The channel-intro scene (≈7–18 s: hello clip + "I'm your teacher… my promise") loses 35–50 % of viewers on every Day measured (Days 6, 8, 9: 0.86→0.50, 0.88→0.62, 0.96→0.48); x03 without the intro holds 0.98→0.77 (evidence: YouTube Analytics retention, 15 Oct).
+

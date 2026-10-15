@@ -1,5 +1,30 @@
 # 12 — Channel reviews (newest on top)
 
+## 2026-10-15 (after the owner's week away, 8–14 Oct)
+
+Channel: **1 289 views · 20 subscribers** (from 319 views · 7 subs on 5 Oct). Daily views: ~35–85 before → **95–179/day**
+8–12 Oct (analytics lag: 13–15 Oct not in yet). The laptop was off all week → no channel comments were posted on
+Days 9, 10, Part 2, x03, x04 (posted on 15 Oct, owner to pin).
+
+| Video | Format | Published | Views | Avg % viewed | Subs | Main source | Notes |
+|---|---|---|---|---|---|---|---|
+| **x03 Introduce yourself** | Extra (recap) | 10 Oct | **294** | **49 %** | **5** | **YouTube search 181**, Shorts 92 | outlier (> 3× median); searches "introduce yourself in arabic", "introduction in arabic" |
+| Day 12 "No word for my" | Grammar | 13 Oct | **125** (2 days) | n/a yet | n/a | n/a yet | best start of any day |
+| Day 8 | Phrases | 7 Oct | 82 | 43 % | 0 | — | |
+| Day 9 | Grammar | 8 Oct | 68 | 20 % | 0 | Shorts 53 | intro drop (see below) |
+| x04 Arabic digits | Extra | 11 Oct | 54 | 24 % | 0 | Shorts 34, search 11 | |
+| Day 11 | Conversation | 12 Oct | 36 | 17 % | 0 | n/a | |
+| Day 13 | Story | 14 Oct | 30 (1 day) | n/a | n/a | n/a | <48 h |
+| Day 10 | Numbers | 9 Oct | **19** | 71 % | 0 | — | miss (< 0.5× median); few saw it, those who did stayed |
+| Part 2 | Long | 10 Oct | 17 | 41 % (3:45) | 0 | — | Parts start slowly (Part 1 now 45) |
+
+Median of the week's videos ≈ 54. **Retention:** every Day loses 35–50 % of viewers between ~7 and ~18 s — exactly the
+channel-intro scene (hello clip + "I'm your teacher… my promise…"): Day 6 0.86→0.50, Day 8 0.88→0.62, Day 9 0.96→0.48.
+x03 (no channel intro) holds 0.98→0.77 over the same span.
+Search terms (new): "introduce yourself in arabic" 2, "introduction in arabic" 2, "اموزش زبان عربی از صفر" (Persian:
+learn Arabic from zero) 5, "1 to 10 in arabic", "parts of body in arabic", "sabah el kheir syria" → added to tags.
+Comments: 1 learner comment — @danygranger-ny on x03: "مرحبا، اسمي سامي، ما اسمك" (unanswered).
+
 ## 2026-10-05 (3-day check)
 
 Channel: **319 views · 7 subscribers** (from 4 on 30 Sep). Analytics lag ~2 days, so x01/x02 have no breakdown yet.
