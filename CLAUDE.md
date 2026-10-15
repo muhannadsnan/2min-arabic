@@ -53,7 +53,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
 - **PAUSED 2026-10-15 ~23:00 (owner needed the PC) — resume here:** style A approved with wave 1 (smooth join =
-  scratchpad join.sh logic: frame-exact + 0.125 s blend + tmix 1-3-1 + 60→30 fps); Sami's hoodie now RED
+  tools/animate/join_idle.sh: frame-exact + 0.125 s blend + tmix 1-3-1 + 60→30 fps); Sami's hoodie now RED
   (assets/characters/sami-semi.png; olive kept as sami-semi-olive.png). Openers picked: d17 s301, x06 s302 (both Lina).
   To do: red keyframes d19 (check _1/_2), d20, v02-sami-door (queue-w4k2.sh) → crop → queue-w4s.sh (d18 redo seeds
   303/304 with the open-hand hello, Sami anims d16/d19/d20/v02 = wave-1 prompt) → idle clips for the picked seeds →
