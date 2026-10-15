@@ -14,6 +14,9 @@ in a source are never adopted just because they're mentioned (licence rule, docs
 
 | Date | Source | Note | Adopted |
 |---|---|---|---|
+| 2026-10-15 | YouTube Studio: how viewers find us (10 screenshots) | [note](notes/2026-10-15-studio-how-viewers-find-us.md) | 52 % Shorts feed · 28 % search · 10 % Home |
+| 2026-10-15 | YouTube official — Search & Discovery FAQ (7 min) | [note](notes/2026-10-15-youtube-official-search-discovery-faq.md) | tags matter little; re-package losers; daily not required |
+| 2026-10-15 | "This Will Get Your Channel Monetized Faster" (15 min) | [note](notes/2026-10-15-monetized-faster.md) | long videos = watch hours; Reddit topics; next-video chain |
 | 2026-10-15 | أكاديمية نمو — "لماذا قناتك على يوتيوب لا تنجح؟ (5 أخطاء قاتلة)" (24 min, audio, Arabic) | [note](notes/2026-10-15-numuw-academy-5-deadly-mistakes.md) | niche research applied; 3 proposals |
 | 2026-10-15 | Danny Why — "The Easiest Way To Get Monetized on YouTube" (19 min, audio) | [note](notes/2026-10-15-danny-why-easiest-way-monetized.md) | 3 changes approved, in produce-day from Day 16 |
 

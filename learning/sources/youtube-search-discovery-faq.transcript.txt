@@ -1,0 +1,154 @@
+[00:03] As a creator, you've probably asked yourself questions like,
+[00:06] how does YouTube choose what videos to promote?
+[00:09] Does getting a yellow icon impact my video discovery?
+[00:13] And how important are tags?
+[00:15] In this video, we'll walk you through all those questions
+[00:18] and more about YouTube's search and discovery system
+[00:21] and give you some video discovery tips.
+[00:23] Let's dive in.
+[00:25] First, how does YouTube choose what videos to promote?
+[00:28] Whether it's on the YouTube homepage, search, or suggested,
+[00:33] YouTube's recommendation system actually finds videos for viewers
+[00:37] rather than viewers for videos.
+[00:39] Videos don't get pushed out or promoted by the algorithm,
+[00:43] but rather pulled for each user when they visit YouTube.
+[00:47] The goal of the search and discovery system
+[00:48] is to match each viewer with the videos
+[00:51] they're most likely to watch and enjoy.
+[00:53] So every viewer's recommendations
+[00:55] will look a little bit different.
+[00:56] Videos are ranked based on hundreds of signals
+[00:59] that largely fall under two categories.
+[01:02] Viewer personalization and video performance.
+[01:05] Viewer personalization is based on signals
+[01:08] about a given user's preferences,
+[01:10] such as what videos they choose to watch,
+[01:13] what videos they ignore, what videos they dismiss,
+[01:17] how often someone watches a channel or topic, and much more.
+[01:21] Our systems also consider video performance,
+[01:24] which is how well the content engaged viewers
+[01:26] when it was offered to them.
+[01:28] For example, do viewers choose to watch the video?
+[01:31] Ignore it or click not interested?
+[01:34] If they choose to watch it,
+[01:35] how long and how much of the video do they watch?
+[01:39] Here, our systems use the video's average view duration
+[01:42] and average percent viewed as signals to inform ranking.
+[01:46] And finally, did the viewer enjoy the video?
+[01:49] We measure satisfaction using a variety of signals,
+[01:52] such as user surveys and likes.
+[01:55] Using these signals helps our systems narrow down
+[01:57] the best set of videos to offer each viewer.
+[02:01] Creators often ask,
+[02:02] what kind of videos does the algorithm like best?
+[02:06] But our systems have no opinion
+[02:07] about what type of video you make
+[02:09] and don't favor any particular format.
+[02:12] Rather, they try to follow the audience.
+[02:14] So instead of worrying about being an expert
+[02:16] in algorithms or analytics,
+[02:18] focus on knowing your audience and what they like.
+[02:21] Next, does changing a video's title or thumbnail
+[02:24] re-rank the video in the algorithm?
+[02:26] Yes, it can, but it's only because our systems
+[02:29] are responding to how viewers are interacting
+[02:32] with your video differently,
+[02:33] rather than the act of changing the video title or thumbnail.
+[02:37] When your video looks different to viewers,
+[02:39] it changes how viewers interact with it
+[02:41] when it's offered to them.
+[02:43] Changing your video title and thumbnail
+[02:45] can be an effective way to get more views,
+[02:47] but if your video's already doing well,
+[02:49] don't change what's working.
+[02:51] If one of my videos underperforms,
+[02:53] is that going to hurt my channel?
+[02:55] What matters is how viewers respond to each video
+[02:58] when it's recommended to them.
+[02:59] Our systems rely more on video and audience level signals
+[03:03] to decide which videos are the best recommendations
+[03:05] for your audience.
+[03:06] What can lead to a decline in overall channel views
+[03:10] is people's interests changing over time,
+[03:13] or when viewers stop watching most of your videos
+[03:15] when they're recommended to them.
+[03:17] Does monetization status like the yellow icon
+[03:20] impact my video discovery?
+[03:23] No.
+[03:23] Our search and recommendation system
+[03:25] doesn't know which videos are monetized and which are not.
+[03:29] We focus on recommending videos your audience
+[03:31] will find satisfying, regardless of whether they're monetized.
+[03:35] But if your video contains racy, violent,
+[03:39] or other graphic content, it could
+[03:41] be demonetized as it's not suitable for all advertisers.
+[03:45] It may also not be recommended to as many viewers
+[03:47] because it's not appropriate for all audiences.
+[03:51] Do I need to upload daily or at least once a week?
+[03:55] No.
+[03:55] We've done analyses over the years
+[03:57] and find that growth in views across uploads
+[04:00] is not correlated with time between uploads.
+[04:04] Many creators have established reliable connections
+[04:07] with their audience through quality over quantity.
+[04:10] We encourage you to take care of yourself
+[04:12] to prevent burnout, which is important for your audience
+[04:15] and your well-being.
+[04:17] Why are my views lower than my subscriber count?
+[04:21] The number of people subscribed to your channel
+[04:24] doesn't represent the number of viewers
+[04:26] choosing to watch your videos.
+[04:29] On average, viewers subscribe to dozens of channels
+[04:32] and may not return for every new upload for every channel
+[04:35] they're subscribed to.
+[04:37] It's also common for viewers to be subscribed to channels
+[04:40] they no longer watch.
+[04:42] So instead, focus on the audience that's actually
+[04:44] watching your content using YouTube Analytics, which
+[04:48] can help you find out who's watching
+[04:50] and what's working well or not.
+[04:53] What other factors influence how many people
+[04:55] see my videos?
+[04:57] There are three major factors that
+[04:58] explain where your audience is coming from.
+[05:01] Topic interest, competition, and seasonality.
+[05:05] Topic interest is how many people worldwide
+[05:08] are interested in and watching videos about a given topic.
+[05:11] Some topics have more broad appeal than others,
+[05:14] and that appeal can change over time
+[05:17] as certain subjects become more or less popular.
+[05:20] Google Trends is a tool you can use
+[05:23] to see how the world's interest is changing over time.
+[05:26] And you can even filter down to YouTube Search Interest.
+[05:31] Just go to trends.google.com.
+[05:34] Next, competition.
+[05:36] YouTube systems have to sort through and rank
+[05:39] all videos a viewer might be most willing to watch.
+[05:43] Even if you have great performance and metrics
+[05:45] on your video, you may get fewer impressions
+[05:48] if videos from other channels or creators
+[05:50] are performing even better.
+[05:53] And finally, seasonality.
+[05:56] YouTube traffic can change during different times
+[05:59] of the year.
+[06:00] Think about your audience, like which country they live in
+[06:03] or what's going on in their lives,
+[06:05] and expect fluctuations in viewership
+[06:08] during major holidays.
+[06:10] And finally, how important are tags?
+[06:13] Well, not very important.
+[06:15] Tags are mainly used to help correct
+[06:17] for common spelling mistakes.
+[06:19] For example, YouTube versus YouTube versus U2.
+[06:26] Remember, YouTube systems are personalized to each viewer
+[06:30] and recommend content based on audience interests.
+[06:34] They are also influenced by a video's performance
+[06:36] and engagement and external factors
+[06:39] that influence what people are interested in over time.
+[06:42] Focus on what your audience likes.
+[06:45] If you do that and people watch,
+[06:47] then the recommendations will follow.
+[06:50] For more information on YouTube's recommendation system
+[06:53] and video discovery tips,
+[06:55] check out the resources linked below.
+[06:57] Thanks for watching.
