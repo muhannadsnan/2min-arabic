@@ -126,5 +126,8 @@ desktop with the same card is the cleaner route (no mod, no warranty risk) — p
 ## Done: RAM upgrade (2026-10-15)
 
 Now **40 GB**: the original 8 GB SK Hynix + a new **32 GB Samsung** (M471A4G43AB1-CWE), both DDR4-3200, running at
-3200 MT/s (16 GB dual-channel, 24 GB single-channel). Swap use 0 B at idle. Real speed gain: measure at the next GPU
-session (opener clip was 5.4 min, picture batch ~12 min with 16 GB). A second 32 GB stick later = 64 GB, full dual-channel.
+3200 MT/s (16 GB dual-channel, 24 GB single-channel). Swap use 0 B at idle. Measured 2026-10-15 (same keyframe, seed,
+41 frames, 576×1024): **344.7 s vs 382.7 s with 16 GB → ~10 % faster**, with other apps open and 0 B swap. Same
+output quality (same model + seed = same result). **704×1248 still fails: GPU out of memory (6 GB VRAM)** — RAM can't fix
+that. What RAM *does* unlock: loading bigger models (offloaded), e.g. Wan 2.2 A14B — slower per clip, better motion.
+A second 32 GB stick later = 64 GB, full dual-channel.
