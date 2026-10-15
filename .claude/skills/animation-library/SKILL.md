@@ -181,4 +181,10 @@ months — same face, different clothes.
   gestures (open hands, pointing, counting on fingers), several characters, 5-s loops (no lip-sync; loop only the calm
   parts) — composited next to the board/cards so narrator scenes aren't static.
 - **~7-s openers:** chain two 41-frame clips (2nd starts from the 1st's last frame) = two connected actions.
+- **Style-A test results (2026-10-15, `output/openers-for-approval/style-a-test.mp4`):** references
+  `assets/characters/{sami,lina,waiter,tom}-semi.png` (text-only + style "semi"; a 3D ref pulls the look back to
+  Pixar). Full-body keyframes come out full-body even when asked for "upper body" → **crop to waist-up** (faces get the
+  pixels). Wan 5B animates style A fine: wave → arm down (complete) 2/2 usable; talking presenter with open-palm
+  gestures 1/2 usable (the other merged hands); idle clip from the last frame = subtle sway + smile, no freeze.
+  Check clips with `python3 tools/animate/check_clip.py clip.mp4 out.png` (strip + held frame + face 2×).
 
