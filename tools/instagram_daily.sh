@@ -4,6 +4,8 @@
 cd "$(dirname "$0")/.." || exit 1
 Q="${IG_QUEUE:-/home/msn/Documents/Youtube channels/instagram-reels-oct}"
 STATE=~/.local/share/2min-yt/ig-last.txt; LOG=~/.local/share/2min-yt/instagram.log
+# one Reel per day: skip if one was already posted today (by hand via this tool, or a re-run)
+grep -q "^\[$(date +%F) .*published:" "$LOG" 2>/dev/null && exit 0
 last=$(cat "$STATE" 2>/dev/null || echo 0); next=$(printf "%02d" $((10#$last + 1)))
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
 vid=$(ls "$Q"/${next}_*.mp4 2>/dev/null | head -1)
