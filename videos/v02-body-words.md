@@ -8,7 +8,7 @@
 | **New words** | رَأْسْ · شَعْرْ · عَيْنْ · أُذُنْ · أَنْفْ · فَمْ · يَدْ · رِجْلْ · صَدْرْ · قَلْبْ (10) |
 | **Re-used** | أُحِبُّ (Day 20, at the end) |
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher) → **AI label: No** |
-| **Look** | Sami in a plain T-shirt and jeans in front of a calm, empty background, waist-up or full body, showing each part with one hand (one hand, one job); modesty: chest = his hand flat on his T-shirt · opener: Sami waves, arm down, idle (library wave, owner approves) |
+| **Look** | Sami (red hoodie from Day 16) in front of a calm, plain background, waist-up or full body, showing each part with one hand (one hand, one job); chest = chest out, proud breath (a hand on the chest breaks arms in the image model) · opener: style-A wave in the café doorway + idle (the style test, after the fixes) |
 | **Real search** | "parts of body in arabic" (owner's search 2026-10-15) · صَدْرْ (chest) instead of بَطْنْ (owner) |
 | **YouTube title** | `10 Parts of the Body in Arabic \| Arabic Vocab` |
 | **Thumbnail text** | "10 BODY WORDS" + big عَيْنْ |
@@ -49,7 +49,7 @@ Here are ten Arabic words for your body, from your head down to your heart, so p
 
 ### 🎬 Scene 4 — Eye
 
-🖼️ **Image:** Sami, close-up, one finger beside (not on) his eye, the other eye winking
+🖼️ **Image:** Sami, close-up, pointing with one finger at his eye from a little distance, both eyes open
 🔤 **On screen:** عَيْنْ · *'ayn* · eye · 3/10
 
 ```say:narrator
@@ -118,7 +118,7 @@ And this one means your leg, and your foot too.
 
 ### 🎬 Scene 10 — Chest
 
-🖼️ **Image:** Sami, waist-up, one hand flat on the middle of his T-shirt, taking a deep, proud breath
+🖼️ **Image:** Sami, waist-up, standing tall, chest out, taking a deep, proud breath, arms at his sides
 🔤 **On screen:** صَدْرْ · *Sadr* · chest · 9/10
 
 ```say:teacher

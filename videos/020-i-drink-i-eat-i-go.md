@@ -181,7 +181,7 @@ Now it's your turn, from yesterday's story. How did Lina say right, then left?
 
 ### 🎬 Scene 16 — Answer
 
-🖼️ **Image:** Sami holding his phone to his ear on the old street; small round inset of Lina on her phone, smiling
+🖼️ **Image:** Day 19's phone picture (Sami listening to Lina)
 🔤 **On screen:** يَمِينْ، ثُمَّ يَسَارْ · *yamiin, thumma yasaar* · Right, then left.
 
 ```say:lina

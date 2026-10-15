@@ -35,6 +35,9 @@ def main():
     ap.add_argument("--y", choices=["bottom", "center"], default="bottom")
     ap.add_argument("--zoom", action="store_true", help="slow zoom on a still background")
     ap.add_argument("--dominance", type=float, default=1.3, help="green must exceed red and blue by this factor")
+    ap.add_argument("--yellow", action="store_true",
+                    help="Lina's mustard cardigan: the green screen's bounce light turns its edges lime; pixels where "
+                         "green beats red and blue is low get the cardigan's own green/red ratio back (never for Sami's olive hoodie)")
     a = ap.parse_args()
 
     key = corner_colour(a.unit)   # reported only (sanity check that the corners really are green)
@@ -51,9 +54,12 @@ def main():
     # strict green-dominance key: only pixels that are clearly, brightly green go transparent — a chroma-distance key
     # made Sami's olive hoodie half see-through. Green fringe on edges is pulled down to the red/blue level.
     k = a.dominance
+    gexpr = "min(g(X,Y),1.12*max(r(X,Y),b(X,Y)))"
+    if a.yellow:
+        gexpr = f"if(gt(g(X,Y),0.84*r(X,Y))*lt(b(X,Y),0.5*g(X,Y)),0.84*r(X,Y)+0.25*(g(X,Y)-0.84*r(X,Y)),{gexpr})"   # smooth: only the excess green is compressed
     key_px = f"gt(g(X,Y),{k}*r(X,Y))*gt(g(X,Y),{k}*b(X,Y))*gt(g(X,Y),90)"
     chain = (f"{bg};[1:v]fps=30,scale=-2:{h},format=rgba,"
-             f"geq=r='r(X,Y)':g='min(g(X,Y),1.12*max(r(X,Y),b(X,Y)))':b='b(X,Y)':a='if({key_px},0,255)'[fg];"
+             f"geq=r='r(X,Y)':g='{gexpr}':b='b(X,Y)':a='if({key_px},0,255)'[fg];"
              f"[bg][fg]overlay=(W-w)/2:{y}:shortest=0[v]")
     subprocess.run(["ffmpeg", "-v", "error", "-y", *bg_in, "-stream_loop", "-1", "-i", a.unit, "-filter_complex", chain,
                     "-map", "[v]", "-frames:v", str(frames), "-c:v", "libx264", "-crf", "18", "-preset", "medium",

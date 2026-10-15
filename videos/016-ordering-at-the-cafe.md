@@ -16,7 +16,7 @@
 
 ### 🎬 Scene 1 — Hook (opener)
 
-🖼️ **Image:** opener — Sami at a café table raises one hand to the waiter with a smile (new opener, owner approves)
+🖼️ **Image:** opener — Sami standing beside a café table raises one open hand to call the waiter, arm down, idle (new opener, owner approves)
 🔤 **On screen:** Order coffee your way
 
 ```say:narrator

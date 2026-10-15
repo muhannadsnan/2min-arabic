@@ -43,7 +43,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   https://muhannadsnan.github.io/2min-arabic/ (verified in Search Console — keep `google413904a81875b8fb.html`).
 - **Hourly (cron, automatic):** `tools/comment_job.sh` posts each sheet's pinned comment once its video is live and
   pops a desktop notification; the owner taps ⋮ → Pin (no API for pinning). Log: `~/.local/share/2min-yt/comments.log`.
-- **Schedule (Shorts, 17:00 Oslo):** Day 2 re-upload 2 Oct · x01 3 Oct · x02 4 Oct · Day 6 5 Oct (7IQ0GYOC9X4) · Day 7 6 Oct (QuLTZ42HMxs) · Day 8 7 Oct (nYz4KkohiIc) · Day 9 8 Oct (KiwR8OU3aeQ) · Day 10 9 Oct (5kaDplowig4) · x03 10 Oct (pbIY5duEYzE) · x04 11 Oct (fbHfwdMExss) · Day 11 12 Oct (eX2rqmZpd34) · Day 12 13 Oct (9LaQeya3gbw) · Day 13 14 Oct (_iPKgHfT_b4) · Day 14 15 Oct (nXRwJBqOPy0) · Day 15 16 Oct (7hZTq8KtA1I) · x05 17 Oct (-ju67hph1EI) · v01 18 Oct (W5tlsFXCjyY) · **Day 16 → 19 Oct**. Long chain: Part 2 10 Oct (lYgjF0MTaYo).
+- **Schedule (Shorts, 17:00 Oslo):** Day 2 re-upload 2 Oct · x01 3 Oct · x02 4 Oct · Day 6 5 Oct (7IQ0GYOC9X4) · Day 7 6 Oct (QuLTZ42HMxs) · Day 8 7 Oct (nYz4KkohiIc) · Day 9 8 Oct (KiwR8OU3aeQ) · Day 10 9 Oct (5kaDplowig4) · x03 10 Oct (pbIY5duEYzE) · x04 11 Oct (fbHfwdMExss) · Day 11 12 Oct (eX2rqmZpd34) · Day 12 13 Oct (9LaQeya3gbw) · Day 13 14 Oct (_iPKgHfT_b4) · Day 14 15 Oct (nXRwJBqOPy0) · Day 15 16 Oct (7hZTq8KtA1I) · x05 17 Oct (-ju67hph1EI) · v01 18 Oct (W5tlsFXCjyY) · **Day 16 → 19 Oct**. Long chain: Part 2 10 Oct (lYgjF0MTaYo) · Part 3 17 Oct (_xqKbGy66dY, filled + scheduled 15 Oct).
 - **48 h checks:** Day 2 (re-upload) 4 Oct · x01 5 Oct · x02 6 Oct.
 - ~~2026-10-06: viral shorts verdict~~ → dropped (docs/06 Learnings).
 - **48 h after each Short:** if ~0 views, re-upload with a backup title (pre-upload-gate writes them).
@@ -52,6 +52,13 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   Weekly rhythm: 5 days → Extra → Vocab; Part on the long chain; monthly long video (docs/06).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
+- **PAUSED 2026-10-15 ~23:00 (owner needed the PC) — resume here:** style A approved with wave 1 (smooth join =
+  scratchpad join.sh logic: frame-exact + 0.125 s blend + tmix 1-3-1 + 60→30 fps); Sami's hoodie now RED
+  (assets/characters/sami-semi.png; olive kept as sami-semi-olive.png). Openers picked: d17 s301, x06 s302 (both Lina).
+  To do: red keyframes d19 (check _1/_2), d20, v02-sami-door (queue-w4k2.sh) → crop → queue-w4s.sh (d18 redo seeds
+  303/304 with the open-hand hello, Sami anims d16/d19/d20/v02 = wave-1 prompt) → idle clips for the picked seeds →
+  images (queue-w4s.sh second half) → stop ComfyUI → make_audio for 016–020, x06, v02 → assemble → checks → sheets.
+  Part 3 filled + scheduled 17 Oct (owner still: Studio end screen/card/quiz, Education type).
 - **Next up (2026-10-15):** scripts written 15 Oct (videos/016–020, x06, v02; all lines mapped, 0 missing). Next: images + openers + produce. Days 16–20 + x06 (numbers 11–20, search "arabic numbers 1 to 20") + v02 (10 body words incl. صَدْرْ chest, not بَطْنْ — owner,
   real search "parts of body in arabic") planned; sheets `videos/_1620-whatsapp.txt` (71) + `_lina-koki-4-whatsapp.txt` (8).
   Schedule: Day 16 19 Oct … Day 20 23 Oct · x06 24 · v02 25 · Day 21 (board quiz, no recording) 26. Approved 15 Oct: short intro,

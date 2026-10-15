@@ -109,7 +109,7 @@ Number three, the most useful one when you travel: where.
 
 ### 🎬 Scene 10 — Where is the cat?
 
-🖼️ **Image:** Lina looking around the living room, hands open, puzzled; Sami lifting a cushion where Lina's grey cat peeks out
+🖼️ **Image:** Sami lifting a sofa cushion, Lina's grey cat peeks out, Lina a step away, surprised
 🔤 **On screen:** أَيْنَ الْقِطّ؟ · *ayna l-qiTT?* · Where is the cat?
 
 ```say:lina
@@ -139,7 +139,7 @@ Number four is how many, which you met inside how much on Day 16.
 
 ### 🎬 Scene 13 — How many cups?
 
-🖼️ **Image:** a low living-room table with three small coffee cups on a tray, Lina pointing at the tray, Sami counting on his fingers
+🖼️ **Image:** exactly three coffee cups on a low living-room table (composited with tools/images/cups.py — the model can't count)
 🔤 **On screen:** كَمْ فِنْجَانًا؟ · *kam finjaanan?* · How many cups?
 
 ```say:lina

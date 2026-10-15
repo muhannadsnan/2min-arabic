@@ -8,7 +8,7 @@
 | **New words** | أَحَدَ عَشَرْ … تِسْعَةَ عَشَرْ (11–19) · عِشْرُونْ (20) |
 | **Re-used** | ثَلَاثَةْ · عَشَرَةْ (Day 10, for the pattern) · the Arabic digit shapes (x04) |
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher) → **AI label: No** |
-| **Look** | board style: each number in chalk on the empty café chalkboard, Arabic digit (Kufi) big + Western digit small (`tools/images/digits.py`) · opener: Lina by the café chalkboard (x04 opener, approved, re-used) |
+| **Look** | board style: each number in chalk on the empty café chalkboard, Arabic digit (Kufi) big + Western digit small (`tools/images/digits.py`) · opener: Lina at a classroom chalkboard, raises one finger (new, owner approves) |
 | **Real search** | "arabic numbers 1 to 20", "arabic numbers 11 to 20" (plan-lessons step 0) |
 | **YouTube title** | `Arabic Numbers 11 to 20 (Easy Pattern) \| Arabic Extras` |
 | **Thumbnail text** | "11 TO 20" + big ١٥ |
@@ -18,7 +18,7 @@
 
 ### 🎬 Scene 1 — Hook (opener)
 
-🖼️ **Image:** opener — Lina by the empty café chalkboard, close-up, raises one finger beside the board with a calm smile and holds (x04 opener, re-used)
+🖼️ **Image:** opener — Lina in front of a classroom chalkboard, waist-up, raises one finger beside her shoulder, arm down, idle (new opener, owner approves)
 🔤 **On screen:** Count to 20 in Arabic
 
 ```say:narrator

@@ -18,7 +18,7 @@
 
 ### 🎬 Scene 1 — Hook (opener)
 
-🖼️ **Image:** opener — Sami on an old Damascus street, waist-up, looks left, then right, scratches his head, arm down, then idle (new opener, owner approves)
+🖼️ **Image:** opener — Sami on an old Damascus street, waist-up, looks to the side and back, a puzzled open-palm shrug with one hand, arm down, then idle (new opener, owner approves)
 🔤 **On screen:** Sami is lost!
 
 ```say:narrator
@@ -49,7 +49,7 @@ The first word is right.
 
 ### 🎬 Scene 4 — Word 2: left
 
-🖼️ **Image:** the same street corner, the painted arrow now pointing left, nobody there
+🖼️ **Image:** scene 3 mirrored (the arrow points left)
 🔤 **On screen:** يَسَارْ · *yasaar* · left · Word 2/5
 
 ```say:narrator
@@ -61,7 +61,7 @@ And the second is left.
 
 ### 🎬 Scene 5 — Word 3: then
 
-🖼️ **Image:** board — chalk text "→ then ←" (English) on the café chalkboard
+🖼️ **Image:** board — chalk text "right, THEN left" (English) on the café chalkboard
 🔤 **On screen:** ثُمَّ · *thumma* · then · Word 3/5
 
 ```say:narrator
@@ -142,7 +142,7 @@ The old man just waves… somewhere.
 
 ### 🎬 Scene 12 — Story 4: Lina on the phone
 
-🖼️ **Image:** Sami holding his phone to his ear on the street; small round inset of Lina on her phone, smiling
+🖼️ **Image:** Sami holding his phone to his ear on the street, listening, a hopeful smile
 🔤 **On screen:** يَمِينْ، ثُمَّ يَسَارْ. · *yamiin, thumma yasaar.* · Right, then left.
 
 ```say:narrator
