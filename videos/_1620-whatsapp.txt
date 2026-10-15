@@ -85,5 +85,5 @@ One recording, top to bottom. ~2 s silence between lines, don't say the numbers.
 67. فَمْ
 68. يَدْ
 69. رِجْلْ
-70. بَطْنْ
+70. صَدْرْ
 71. قَلْبْ
