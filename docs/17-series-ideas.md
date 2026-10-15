@@ -13,7 +13,7 @@ arabic-extras) so episodes are cheap to repeat. Pick by niche research (`youtube
 | 6 | **Curiosity words** | "The Arabic word for X is fascinating" shape | Short | niche: 420 k–1.1 M |
 | … | *(more to come from the owner)* | | | |
 
-## How series run together (proposal 2026-10-15)
+## How series run together (owner approved 2026-10-15)
 
 Finish the 30-day course first (it's the channel's promise; Days 16–30 ≈ 2 weeks). Meanwhile the **Extra slot**
 alternates: letters ↔ other Extras. After Day 30: a weekday rhythm, e.g. Mon/Wed/Fri course "Month 2", Tue/Thu
