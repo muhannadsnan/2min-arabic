@@ -1,0 +1,187 @@
+{
+ "name": "part-03-days-11-15",
+ "title": "Part 3",
+ "subtitle": "Days 11–15 · the full lesson",
+ "segments": [
+  {
+   "title": "Welcome",
+   "file": "output/w03-review/learn-arabic-in-11-minutes-beginner-lesson-3.mp4",
+   "start": 0,
+   "end": 17.873,
+   "panel_title": "Your 30-day plan",
+   "panel_text": [
+    "Two minutes a day.",
+    "Your first Arabic conversation",
+    "in 30 days.",
+    "",
+    "Part 1: Days 1–5",
+    "Part 2: Days 6–10",
+    "Part 3: Days 11–15",
+    "Part 4: Days 16–20 (next)"
+   ],
+   "srt": "output/w03-review/captions-upload.srt"
+  },
+  {
+   "title": "Day 11 · Lina meets a tourist",
+   "file": "output/011-lina-meets-a-tourist/understand-a-real-street-conversation-in-arabic.mp4",
+   "start": 20.5,
+   "end": 118.07,
+   "words": [
+    [
+     "أَهْلًا وَسَهْلًا",
+     "ahlan wa sahlan",
+     "welcome"
+    ],
+    [
+     "سَائِحْ",
+     "saa'iH",
+     "a tourist"
+    ],
+    [
+     "عَفْوًا",
+     "'afwan",
+     "excuse me"
+    ],
+    [
+     "دِمَشْقُ جَمِيلَةْ",
+     "dimashqu jamiila",
+     "Damascus is beautiful"
+    ]
+   ]
+  },
+  {
+   "title": "Day 12 · No word for \"my\"",
+   "file": "output/012-grammar-no-word-for-my/arabic-has-no-word-for-my.mp4",
+   "start": 19.78,
+   "end": 121.7,
+   "words": [
+    [
+     "ـِي",
+     "-ii",
+     "my"
+    ],
+    [
+     "ـُكَ / ـُكِ",
+     "-uka / -uki",
+     "your (m / f)"
+    ],
+    [
+     "كِتَابِي",
+     "kitaabii",
+     "my book"
+    ],
+    [
+     "بَيْتِي",
+     "baytii",
+     "my house"
+    ],
+    [
+     "قَهْوَتِي",
+     "qahwatii",
+     "my coffee"
+    ]
+   ]
+  },
+  {
+   "title": "Day 13 · Lina's family",
+   "file": "output/013-story-linas-family/meet-lina-s-family-a-short-story-in-arabic.mp4",
+   "start": 17.86,
+   "end": 99.59,
+   "words": [
+    [
+     "أَبْ، أُمّ",
+     "ab, umm",
+     "father, mother"
+    ],
+    [
+     "أَخْ، أُخْتْ",
+     "akh, ukht",
+     "brother, sister"
+    ],
+    [
+     "عَائِلَةْ",
+     "'aa'ila",
+     "family"
+    ],
+    [
+     "هَذِهِ",
+     "haadhihi",
+     "this (f)"
+    ],
+    [
+     "قِطّ",
+     "qiTT",
+     "cat"
+    ]
+   ]
+  },
+  {
+   "title": "Day 14 · Week 2 quiz",
+   "file": "output/014-week-2-quiz/12-questions-after-2-weeks-of-arabic.mp4",
+   "start": 18.78,
+   "end": 117.96,
+   "words": [
+    [
+     "مُعَلِّمَةْ",
+     "mu'allima",
+     "teacher (f)"
+    ],
+    [
+     "كِتَابِي",
+     "kitaabii",
+     "my book"
+    ],
+    [
+     "أُمِّي",
+     "ummii",
+     "my mother"
+    ],
+    [
+     "هَذَا أَخِي",
+     "haadhaa akhii",
+     "this is my brother"
+    ]
+   ]
+  },
+  {
+   "title": "Day 15 · I want, I don't want",
+   "file": "output/015-i-want-i-dont-want/order-anything-in-arabic-with-these-2-words.mp4",
+   "start": 20.34,
+   "end": 126.9,
+   "words": [
+    [
+     "أُرِيدُ",
+     "uriidu",
+     "I want"
+    ],
+    [
+     "لَا أُرِيدُ",
+     "laa uriidu",
+     "I don't want"
+    ],
+    [
+     "مَاءْ",
+     "maa'",
+     "water"
+    ],
+    [
+     "شَايْ",
+     "shaay",
+     "tea"
+    ],
+    [
+     "عَصِيرْ",
+     "'aSiir",
+     "juice"
+    ]
+   ]
+  },
+  {
+   "title": "Review quiz",
+   "file": "output/w03-review/learn-arabic-in-11-minutes-beginner-lesson-3.mp4",
+   "start": 17.873,
+   "end": null,
+   "srt": "output/w03-review/captions-upload.srt"
+  }
+ ]
+}

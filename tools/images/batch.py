@@ -73,8 +73,10 @@ def main():
         refs = []
         for name in item.get("ref", []):
             ref = ASSETS / "characters" / f"{name}.png"
-            if style == "3d" and (ASSETS / "characters" / f"{name}-3d.png").exists():
-                ref = ASSETS / "characters" / f"{name}-3d.png"   # 3D reference keeps the 3D look consistent
+            if style in ("3d", "semi") and (ASSETS / "characters" / f"{name}-{style}.png").exists():
+                ref = ASSETS / "characters" / f"{name}-{style}.png"   # per-style reference keeps the look consistent
+            elif style == "semi" and (ASSETS / "characters" / f"{name}-3d.png").exists():
+                ref = ASSETS / "characters" / f"{name}-3d.png"
             if not ref.exists():
                 sys.exit(f"missing character reference {ref}")
             refs += ["--ref", str(ref)]

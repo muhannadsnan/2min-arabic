@@ -24,7 +24,12 @@ STYLE_3D = ("3D animated movie style, soft cinematic lighting, expressive styliz
             "every woman dressed modestly in loose-fitting clothes: long loose skirt, wide trousers or loose straight-leg jeans, "
             "loose tops with high necklines, sleeves at least to the elbow, nothing tight, no bare legs, no bare shoulders")
 # owner, 2026-10-05: no exposed body parts, nothing tight on women (loose jeans are fine — not too conservative); hijab optional
-STYLES = {"flat": STYLE, "3d": STYLE_3D}
+# owner's pick 2026-10-15 ("style A"): semi-realistic 3D — realistic proportions and textures, still clearly animated
+# (never photoreal: realistic synthetic people would need YouTube's AI label). Same models, same speed.
+STYLE_SEMI = ("semi-realistic stylized 3D like a high-end animated feature film, realistic proportions, detailed skin "
+              "and fabric textures, painterly cinematic lighting, slightly stylized friendly faces, clearly an animated "
+              "film and not a photograph, " + STYLE_3D.split("expressive stylized characters, Pixar-like but original, ")[1])
+STYLES = {"flat": STYLE, "3d": STYLE_3D, "semi": STYLE_SEMI}
 
 
 def http(server, path, data=None, headers=None):
