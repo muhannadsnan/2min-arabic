@@ -56,6 +56,10 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
 - Numbers and maths are hard to say: "one point zero one, seven times" stumbles — say it in words of meaning.
 - Fix a flagged line by **rewording**, not just more takes.
 
+**Narrator pace (owner, 2026-10-15):** narrator generated at **tempo 0.9** (local_tts.py, voice version owner-en-6):
+~3.3 words/s, calmer for beginners and non-native English speakers, same voice and accent. The owner rejected
+phrase-by-phrase generation (a "shhh" at some starts, a robotic echo). Accent improvements = later (a new reference).
+
 **Pauses:** "Your turn" waits are **at most 2 s** (`make_audio.py` caps them); easy single words 1.5 s.
 
 **Voices — the same level to the ear (owner approved Day 8's sound, 2026-10-02: keep this pattern):**
