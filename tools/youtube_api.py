@@ -339,6 +339,14 @@ def fill(a):
     if a.publish_at == "next":   # the day after the latest video, same time of day
         a.publish_at, last = next_slot(y, exclude=a.video)
         print(f"  latest video goes out {last:%Y-%m-%d %H:%M} UTC → this one {a.publish_at}")
+    if a.publish_at and not a.publish_at.endswith("Z") and "+" not in a.publish_at[10:]:
+        # Oslo wall-clock time ("2026-10-26 17:00"): converted here, so summer/winter time can't shift it
+        # (2026-10-16: v02 was given 15:00Z = 16:00 Oslo on the day the clocks changed)
+        import datetime as _dt
+        from zoneinfo import ZoneInfo
+        local = _dt.datetime.fromisoformat(a.publish_at.replace("T", " ")).replace(tzinfo=ZoneInfo("Europe/Oslo"))
+        a.publish_at = local.astimezone(_dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        print(f"  Oslo {local:%Y-%m-%d %H:%M} = {a.publish_at}")
     if a.publish_at:
         status.update(privacyStatus="private", publishAt=a.publish_at)
 

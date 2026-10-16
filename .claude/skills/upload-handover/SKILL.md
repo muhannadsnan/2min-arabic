@@ -126,3 +126,7 @@ a Real Street Conversation") got 37–57. Shorts thumbnails are shown in a **16:
 - **The first ~1.5 s of a Short looks like the thumbnail** (owner, 2026-10-16): the same big subject words + small
   Arabic word over the moving opener, narrator already speaking from 0.0 s — the first frame doubles as the thumbnail in
   the feed, and the motion behind it still stops the scroll. Then the normal scene-1 card.
+
+**Schedule in Oslo time (2026-10-16):** `fill --publish-at "2026-10-26 17:00"` (no Z) — the tool converts to UTC itself.
+Never type a fixed `T15:00:00Z`: 17:00 Oslo is 15:00Z in summer but 16:00Z from the last Sunday of October (v02 was
+almost published at 16:00). After filling, read the times back (`videos`) and check each is 17:00 Oslo.
