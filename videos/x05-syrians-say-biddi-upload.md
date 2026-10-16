@@ -16,7 +16,7 @@
 ## Title
 
 ```
-How to Say "I Want" Like a Syrian | Arabic Extras
+"I Want" in Syrian Arabic: Say Biddi | Syrian Dialect
 ```
 
 ## Description

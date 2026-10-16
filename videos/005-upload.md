@@ -6,7 +6,7 @@
 ## Title
 
 ```
-Arabic Has No Word for "Is" (Easiest Grammar Ever) | Day 5 · 2 Minute Arabic
+I, You, He, She in Arabic (No Word for "Is") | Grammar · Day 5
 ```
 
 ## Description

@@ -16,7 +16,7 @@
 ## Title
 
 ```
-Arabic Has No Word for "My" | Day 12 · 2 Minute Arabic
+Arabic Has No Word for "My" | Grammar · Day 12
 ```
 
 ## Description

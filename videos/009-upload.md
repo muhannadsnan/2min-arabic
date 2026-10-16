@@ -15,7 +15,7 @@
 ## Title
 
 ```
-One Letter Changes Everything in Arabic | Day 9 · 2 Minute Arabic
+Masculine and Feminine in Arabic (One Letter) | Grammar · Day 9
 ```
 
 ## Description

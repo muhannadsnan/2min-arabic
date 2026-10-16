@@ -15,7 +15,7 @@
 ## Title
 
 ```
-"Where Are You From?" in Arabic (Only 3 Words) | Day 8 · 2 Minute Arabic
+"Where Are You From?" in Arabic | Phrases · Day 8
 ```
 
 ## Description

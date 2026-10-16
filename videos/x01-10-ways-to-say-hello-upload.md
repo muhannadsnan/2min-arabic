@@ -18,7 +18,7 @@ Everything below is the manual way, if you prefer to paste it yourself.
 ## Title
 
 ```
-10 Ways to Say Hello in Arabic (5 in Syrian dialect) | Arabic Extras
+10 Ways to Say Hello in Arabic (5 in Syrian Dialect) | Greetings
 ```
 
 ## Description

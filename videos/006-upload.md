@@ -15,7 +15,7 @@
 ## Title
 
 ```
-Yes, No, Sorry, OK: 4 Tiny Arabic Words | Day 6 · 2 Minute Arabic
+Yes, No, Sorry, OK in Arabic | Phrases · Day 6
 ```
 
 ## Description

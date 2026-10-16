@@ -19,7 +19,7 @@ Everything below is the manual way.
 ## Title
 
 ```
-Introduce Yourself in Arabic (You Know Every Word) | Arabic Extras
+Introduce Yourself in Arabic (You Know Every Word) | Phrases
 ```
 
 ## Description

@@ -17,7 +17,7 @@ The first upload (O8S4TLyxUFo, 28 Sep) got only 2 views from the Shorts feed in 
 ## Title
 
 ```
-Say These 10 Arabic Phrases Every Day | Day 2 · 2 Minute Arabic
+10 Basic Arabic Phrases for Beginners | Phrases · Day 2
 ```
 
 ## Description

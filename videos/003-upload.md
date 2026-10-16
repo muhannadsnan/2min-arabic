@@ -6,7 +6,7 @@
 ## Title
 
 ```
-Understand a Real Arabic Conversation After 2 Days | Day 3 · 2 Minute Arabic
+Your First Conversation in Arabic | Conversation · Day 3
 ```
 
 ## Description

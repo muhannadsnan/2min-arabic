@@ -16,7 +16,7 @@
 ## Title
 
 ```
-Order Anything in Arabic With These 2 Words | Day 15 · 2 Minute Arabic
+"I Want" in Arabic: Order Anything | Phrases · Day 15
 ```
 
 ## Description

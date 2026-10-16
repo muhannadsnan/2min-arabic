@@ -8,7 +8,7 @@ sound fixed to −14 LUFS; captions burned into the picture)
 ## Title
 
 ```
-Don't Make This Mistake When Learning Arabic | Day 1 · 2 Minute Arabic
+Learn Arabic in 2 Minutes a Day (Start Here) | Intro · Day 1
 ```
 
 ## Description

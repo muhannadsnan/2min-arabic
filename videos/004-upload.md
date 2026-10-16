@@ -6,7 +6,7 @@
 ## Title
 
 ```
-Can You Understand This Arabic Story? | Day 4 · 2 Minute Arabic
+Easy Arabic Story: Sami and the Coffee | Story · Day 4
 ```
 
 ## Description

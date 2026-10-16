@@ -19,7 +19,7 @@ Everything below is the manual way.
 ## Title
 
 ```
-Arabic Numbers Look Different! Learn to Read Them | Arabic Extras
+How to Read Arabic Numbers (They Look Different) | Numbers
 ```
 
 ## Description

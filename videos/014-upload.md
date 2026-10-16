@@ -18,7 +18,7 @@
 ## Title
 
 ```
-Can You Pass This Arabic Quiz? (Beginner Level) | Day 14 · 2 Minute Arabic
+Can You Pass This Arabic Quiz? (Beginner Level) | Quiz · Day 14
 ```
 
 ## Description

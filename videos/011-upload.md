@@ -16,7 +16,7 @@
 ## Title
 
 ```
-Understand a Real Street Conversation in Arabic | Day 11 · 2 Minute Arabic
+Basic Arabic Conversation: Meeting a Tourist | Conversation · Day 11
 ```
 
 ## Description

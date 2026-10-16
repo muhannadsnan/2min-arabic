@@ -16,7 +16,7 @@
 ## Title
 
 ```
-10 Arabic Words You Need in a Café | Arabic Vocab
+10 Arabic Words You Need in a Café | Vocabulary
 ```
 
 ## Description

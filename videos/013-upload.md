@@ -16,7 +16,7 @@
 ## Title
 
 ```
-Meet Lina's Family (A Short Story in Arabic) | Day 13 · 2 Minute Arabic
+Family Words in Arabic: Mother, Father, Sister | Story · Day 13
 ```
 
 ## Description
