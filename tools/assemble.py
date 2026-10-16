@@ -310,7 +310,8 @@ def main():
             card = out_dir / "cards" / f"s{i:02d}.png"
             render_card(screens[i - 1], card, all_bold=(i == 1))
             overlays += ["-i", str(card)]
-            chain += f";[b1][2:v]overlay=0:170[b2]"
+            hook_s = float(o.get("hook", {}).get("seconds", 1.5)) if (i == 1 and o.get("hook")) else 0
+            chain += f";[b1][2:v]overlay=0:170" + (f":enable='gte(t,{hook_s:.2f})'" if hook_s else "") + "[b2]"
             last = "b2"
         seg = seg_dir / f"s{i:02d}.mp4"
         run(["ffmpeg", "-v", "error", "-y", *src, *overlays, "-filter_complex", chain,
@@ -399,7 +400,19 @@ def main():
             achain += (f";[{idx + 1 + j}:a]volume={vol},aformat=channel_layouts=mono,"
                        f"adelay={round((start + at) * 1000)}:all=1[sx{j}]")
             mix.append(f"[sx{j}]")
-    vchain += f";[{last}]subtitles={ass}[v]"
+    hook = opts.get(1, {}).get("hook")   # thumbnail look for the first ~1.5 s (owner, 2026-10-16), over the caption too
+    if hook:
+        sys.path.insert(0, str(HERE))
+        from thumbnail import hook_overlay
+        hook_png = out_dir / "cards" / "hook.png"
+        hook_overlay(hook["line1"], hook["line2"], hook.get("arabic", ""), hook_png)
+        inputs += ["-loop", "1", "-i", str(hook_png)]
+        hk_idx = inputs.count("-i") - 1
+        hs = float(hook.get("seconds", 1.5))
+        vchain += (f";[{last}]subtitles={ass}[vt];[{hk_idx}:v]format=rgba[hk];"
+                   f"[vt][hk]overlay=0:0:shortest=1:enable='lt(t,{hs:.2f})'[v]")
+    else:
+        vchain += f";[{last}]subtitles={ass}[v]"
     if len(mix) > 1:
         achain += f";{''.join(mix)}amix=inputs={len(mix)}:normalize=0:duration=first[m]"
     else:

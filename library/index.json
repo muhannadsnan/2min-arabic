@@ -375,7 +375,8 @@
   "source": "library/work/clips/op-v01c-lina_s212.mp4",
   "created": "2026-10-07",
   "used_in": [
-   "v01-cafe-words"
+   "v01-cafe-words",
+   "w03-review"
   ]
  },
  {
@@ -490,6 +491,69 @@
   "speed": 0.667,
   "source": "library/work/clips/talk-sami-calm_s41.mp4",
   "created": "2026-10-01",
+  "used_in": []
+ },
+ {
+  "name": "d16-sami-calls-waiter",
+  "type": "opener",
+  "character": "sami",
+  "style": "semi",
+  "seconds": 3.73,
+  "source": "library/work/joined/d16.mp4",
+  "used_in": []
+ },
+ {
+  "name": "d17-lina-board-wave",
+  "type": "opener",
+  "character": "lina",
+  "style": "semi",
+  "seconds": 4.9,
+  "source": "library/work/joined/d17.mp4",
+  "used_in": []
+ },
+ {
+  "name": "d18-lina-home-hello",
+  "type": "opener",
+  "character": "lina",
+  "style": "semi",
+  "seconds": 5.03,
+  "source": "library/work/joined/d18.mp4",
+  "used_in": []
+ },
+ {
+  "name": "d19-sami-lost-street",
+  "type": "opener",
+  "character": "sami",
+  "style": "semi",
+  "seconds": 4.9,
+  "source": "library/work/joined/d19.mp4",
+  "used_in": []
+ },
+ {
+  "name": "d20-sami-thumbs-up",
+  "type": "opener",
+  "character": "sami",
+  "style": "semi",
+  "seconds": 5.03,
+  "source": "library/work/joined/d20.mp4",
+  "used_in": []
+ },
+ {
+  "name": "x06-lina-one-finger",
+  "type": "opener",
+  "character": "lina",
+  "style": "semi",
+  "seconds": 5.03,
+  "source": "library/work/joined/x06.mp4",
+  "used_in": []
+ },
+ {
+  "name": "v02-sami-door-wave",
+  "type": "opener",
+  "character": "sami",
+  "style": "semi",
+  "seconds": 4.9,
+  "source": "library/work/joined/v02.mp4",
   "used_in": []
  }
 ]

@@ -76,6 +76,28 @@ def vertical(a):
     return im
 
 
+def hook_overlay(line1, line2, arabic, out):
+    """The first ~1.5 s of a Short (owner, 2026-10-16): the thumbnail's big subject words + small Arabic word on a dark
+    bottom band, transparent above — laid over the moving opener (and over the burned-in caption) by assemble.py."""
+    W, H = 1080, 1920
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    band = Image.new("L", (1, H))
+    for y in range(H):
+        band.putpixel((0, y), int(min(1, max(0, (y - H * 0.48) / (H * 0.14))) * 205))
+    im.paste(Image.new("RGBA", (W, H), (15, 15, 25, 255)), (0, 0), band.resize((W, H)))
+    d = ImageDraw.Draw(im)
+
+    def center(y, t, f, fill, stroke=16, **kw):
+        b = d.textbbox((0, 0), t, font=f, stroke_width=stroke, **kw)
+        d.text(((W - (b[2] - b[0])) / 2 - b[0], y), t, font=f, fill=fill, stroke_width=stroke, stroke_fill=DARK, **kw)
+    center(1130, line1, fit(d, line1, BOLD, 230, 1020), WHITE)
+    center(1390, line2, fit(d, line2, BOLD, 230, 1020), YELLOW)
+    if arabic:
+        center(1680, arabic, fit(d, arabic, AR, 95, 700, direction="rtl", language="ar"), WHITE, stroke=8,
+               direction="rtl", language="ar")
+    im.save(out)
+
+
 def wide(a):
     W, H = 1280, 720
     im = Image.new("RGB", (W, H), (255, 246, 233))
