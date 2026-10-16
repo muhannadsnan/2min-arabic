@@ -3,6 +3,8 @@
 **File to upload:** `output/x06-arabic-numbers-11-to-20/arabic-numbers-11-to-20-one-easy-pattern.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/x06-arabic-numbers-11-to-20/arabic-numbers-11-to-20-one-easy-pattern-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-16** — video id `LWlgINnlAk0`, scheduled **24 Oct 17:00 Oslo**.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

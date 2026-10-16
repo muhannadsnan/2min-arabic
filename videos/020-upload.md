@@ -3,6 +3,8 @@
 **File to upload:** `output/020-i-drink-i-eat-i-go/arabic-verbs-for-beginners-i-drink-i-eat-i-go.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/020-i-drink-i-eat-i-go/arabic-verbs-for-beginners-i-drink-i-eat-i-go-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-16** — video id `zfXQKp1XWUY`, scheduled **23 Oct 17:00 Oslo**.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

@@ -3,6 +3,8 @@
 **File to upload:** `output/v02-body-words/parts-of-the-body-in-arabic-10-words.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/v02-body-words/parts-of-the-body-in-arabic-10-words-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-16** — video id `pYM-T12xe6s`, scheduled **25 Oct 17:00 Oslo** (captions + playlist: queued for 17 Oct 09:15, API quota).
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).
