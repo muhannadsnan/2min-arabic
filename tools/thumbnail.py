@@ -83,7 +83,7 @@ def hook_overlay(line1, line2, arabic, out):
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     band = Image.new("L", (1, H))
     for y in range(H):
-        band.putpixel((0, y), int(min(1, max(0, (y - H * 0.48) / (H * 0.14))) * 205))
+        band.putpixel((0, y), int(min(1, max(0, (y - H * 0.48) / (H * 0.14))) * 238))
     im.paste(Image.new("RGBA", (W, H), (15, 15, 25, 255)), (0, 0), band.resize((W, H)))
     d = ImageDraw.Draw(im)
 
