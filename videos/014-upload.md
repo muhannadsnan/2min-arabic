@@ -13,10 +13,12 @@
 3. You only set in Studio: **Education Type = Concept overview, Level = Beginner**; Automatic places/concepts **off**.
    After it's live (desktop notification): pin the comment and set **Related video = Day 13**.
 
+> 🔁 **Re-packaged 2026-10-16 (owner):** title + thumbnail "CAN YOU PASS?" (output/repackage-2026-10-16/). Old: "12 Questions After 2 Weeks of Arabic | Day 14 · 2 Minute Arabic" — compare on 22 Oct.
+
 ## Title
 
 ```
-12 Questions After 2 Weeks of Arabic | Day 14 · 2 Minute Arabic
+Can You Pass This Arabic Quiz? (Beginner Level) | Day 14 · 2 Minute Arabic
 ```
 
 ## Description

@@ -34,7 +34,8 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   (needs homepage + privacy policy page).
 - **2026-10-15: RAM upgraded to 40 GB** (8 GB SK Hynix + 32 GB Samsung, both 3200). GPU sessions no longer need
   "close all apps"; measure the real speed gain at the next session and update docs/16.
-- **2026-10-22: re-packaging check** — Day 10, Day 7, Part 2 got new titles + thumbnails on 15 Oct (official advice:
+- **2026-10-22: re-packaging check** — Day 10, Day 7, Part 2 got new titles + thumbnails on 15 Oct, Day 14 on 16 Oct
+  (owner: "Can You Pass This Arabic Quiz? (Beginner Level)"; old title ≈ Day 7's old one — compare both; log in output/repackage-2026-10-16/) (official advice:
   re-package good-but-unclicked videos). Compare views/day before vs after; revert from output/repackage-2026-10-15/log.json if worse.
 - **Weekly (Sunday):** channel-review — `audit` (fix every ⚠️), search terms → tags of matching videos, stats,
   then ask only for the screenshots the API can't give (viewed vs swiped).
