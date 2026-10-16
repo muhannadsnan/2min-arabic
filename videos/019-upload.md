@@ -3,6 +3,8 @@
 **File to upload:** `output/019-story-sami-gets-lost/how-to-ask-for-directions-in-arabic.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/019-story-sami-gets-lost/how-to-ask-for-directions-in-arabic-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-16** — video id `hF3mP86tixw`, scheduled **22 Oct 17:00 Oslo**; thumbnail, English subtitles, playlist set.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

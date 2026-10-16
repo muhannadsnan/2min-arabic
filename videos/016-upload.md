@@ -3,6 +3,8 @@
 **File to upload:** `output/016-ordering-at-the-cafe/order-coffee-in-arabic-with-milk-no-sugar.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/016-ordering-at-the-cafe/order-coffee-in-arabic-with-milk-no-sugar-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-16** — video id `PEsT02c8BE4`, scheduled **19 Oct 17:00 Oslo**; thumbnail, English subtitles, playlist set.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

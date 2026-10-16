@@ -3,6 +3,8 @@
 **File to upload:** `output/018-question-words/arabic-question-words-what-who-where-when.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/018-question-words/arabic-question-words-what-who-where-when-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude 2026-10-16** — video id `h_TbkPZZlgw`, scheduled **21 Oct 17:00 Oslo**; thumbnail, English subtitles, playlist set.
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).
