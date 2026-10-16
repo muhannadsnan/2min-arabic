@@ -27,8 +27,21 @@ def fit(d, text, path, size, max_w, **kw):
     return f
 
 
+def load(a):
+    im = Image.open(a.image).convert("RGB")
+    if a.crop:   # zoom into the object: "x,y,w,h" as fractions of the image (keeps 9:16 / 16:9 by widening as needed)
+        x, y, w, h = map(float, a.crop.split(","))
+        W0, H0 = im.size
+        im = im.crop((int(x * W0), int(y * H0), int((x + w) * W0), int((y + h) * H0)))
+    return im
+
+
 def vertical(a):
-    im = Image.open(a.image).convert("RGB").resize((1080, 1890))
+    im = load(a)
+    tw, th = 1080, 1890   # cover-fit (no stretching) after an optional crop
+    s = max(tw / im.width, th / im.height)
+    im = im.resize((int(im.width * s + 0.5), int(im.height * s + 0.5)))
+    im = im.crop(((im.width - tw) // 2, (im.height - th) // 2, (im.width - tw) // 2 + tw, (im.height - th) // 2 + th))
     bg = Image.new("RGB", (1080, 1920), (245, 230, 210))
     bg.paste(im, (0, 15))
     im, (W, H) = bg, bg.size
@@ -48,6 +61,13 @@ def vertical(a):
     x0 = (W - bw) // 2
     d.rounded_rectangle((x0, 70, x0 + bw, 190), radius=60, fill=YELLOW)
     d.text((x0 + 50 - b[0], 130 - (b[3] + b[1]) / 2), a.badge, font=bf, fill=(20, 20, 20))
+    if a.style == "subject":   # packaging rules 2026-10-16: 2 big English lines naming the subject + a SMALL Arabic word
+        center(1130, a.line1, fit(d, a.line1, BOLD, 230, 1020), WHITE, stroke=16)
+        center(1390, a.line2, fit(d, a.line2, BOLD, 230, 1020), YELLOW, stroke=16)
+        if a.arabic:
+            center(1680, a.arabic, fit(d, a.arabic, AR, 95, 700, direction="rtl", language="ar"), WHITE, stroke=8,
+                   direction="rtl", language="ar")
+        return im
     center(1230, a.line1, fit(d, a.line1, BOLD, 170, 1000), WHITE)
     center(1440, a.line2, fit(d, a.line2, BOLD, 170, 1000), YELLOW)
     if a.arabic:
@@ -93,6 +113,9 @@ def main():
     ap.add_argument("--line3", default="")
     ap.add_argument("--arabic", default="")
     ap.add_argument("--wide", action="store_true")
+    ap.add_argument("--crop", default="", help="zoom into the object: x,y,w,h as fractions of the source image")
+    ap.add_argument("--style", choices=["subject", "classic"], default="subject",
+                    help="subject (default, 2026-10-16): big English subject words + small Arabic; classic: the old layout")
     a = ap.parse_args()
     for t in (a.badge, a.line1, a.line2, a.line3, a.arabic):
         if any(ch in MISSING_GLYPHS for ch in t or ""):

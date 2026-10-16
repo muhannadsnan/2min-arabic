@@ -60,13 +60,13 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   Weekly rhythm: 5 days → Extra → Vocab; Part on the long chain; monthly long video (docs/06).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
-- **PAUSED 2026-10-15 ~23:00 (owner needed the PC) — resume here:** style A approved with wave 1 (smooth join =
-  tools/animate/join_idle.sh: frame-exact + 0.125 s blend + tmix 1-3-1 + 60→30 fps); Sami's hoodie now RED
-  (assets/characters/sami-semi.png; olive kept as sami-semi-olive.png). Openers picked: d17 s301, x06 s302 (both Lina).
-  To do: red keyframes d19 (check _1/_2), d20, v02-sami-door (queue-w4k2.sh) → crop → queue-w4s.sh (d18 redo seeds
-  303/304 with the open-hand hello, Sami anims d16/d19/d20/v02 = wave-1 prompt) → idle clips for the picked seeds →
-  images (queue-w4s.sh second half) → stop ComfyUI → make_audio for 016–020, x06, v02 → assemble → checks → sheets.
-  Part 3 filled + scheduled 17 Oct (owner still: Studio end screen/card/quiz, Education type).
+- **PAUSED 2026-10-16 ~16:40 (owner) — resume here:** openers all picked (library/work/keys/w4/PICKS.txt; joined
+  clips in library/work/joined/: d17 (AI idle), d18 + d20 + x06 (tools/animate/join_tail.sh — held hands smear in AI idles)).
+  Rerun `library/work/queue-w4t.sh` (skips finished clips; starts its own ComfyUI): images resume at Day 16 s12 (keys
+  board/table done), then stops ComfyUI and makes audio for all 7. Then `queue-w4u.sh` (idle clips d16/d19/v02) →
+  join_idle.sh → assemble → checks → sheets (titles/thumbnails per the 2026-10-16 packaging rules, categories).
+  **Re-packaging (owner chose option a: all published Shorts incl. the 4 in the 22 Oct test):** proposals in
+  output/repackage-proposals-2026-10-16/ (proposals.json + thumbnails) — owner reviews the folder, then apply via API.
 - **Next up (2026-10-15):** scripts written 15 Oct (videos/016–020, x06, v02; all lines mapped, 0 missing). Next: images + openers + produce. Days 16–20 + x06 (numbers 11–20, search "arabic numbers 1 to 20") + v02 (10 body words incl. صَدْرْ chest, not بَطْنْ — owner,
   real search "parts of body in arabic") planned; sheets `videos/_1620-whatsapp.txt` (71) + `_lina-koki-4-whatsapp.txt` (8).
   Schedule: Day 16 19 Oct … Day 20 23 Oct · x06 24 · v02 25 · Day 21 (board quiz, no recording) 26. Approved 15 Oct: short intro,
