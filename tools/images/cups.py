@@ -64,11 +64,16 @@ def main():
     table = Image.open(d / "table.png").convert("RGBA")
     # zoom into the lower part so the table top sits mid-frame — the lower third is reserved for burned-in captions
     # and the YOUR TURN label (they covered the cups on the first build)
+    entries = json.loads((d / "prompts.json").read_text(encoding="utf-8"))
+    # "surface": where the table top is in table.png (fraction of its height, default 0.75 = Day 10's café table);
+    # the crop puts that line where the cups stand (a low coffee table sits higher in the frame — Day 18)
+    surface = next((e.get("surface") for e in entries if "cups" in e and e.get("surface")), 0.75)
     tw, th = table.size
-    table = table.crop((int(tw * 0.2), int(th * 0.4), int(tw * 0.8), th)).resize((tw, th), Image.LANCZOS)
+    top = min(0.4, max(0.0, surface - 0.585 * 0.6))
+    table = table.crop((int(tw * 0.2), int(th * top), int(tw * 0.8), int(th * (top + 0.6)))).resize((tw, th), Image.LANCZOS)
     cup = cutout(d / "cup.png")
     W, H = table.size
-    for e in json.loads((d / "prompts.json").read_text(encoding="utf-8")):
+    for e in entries:
         if "cups" not in e:
             continue
         n, img = e["cups"], table.copy()
