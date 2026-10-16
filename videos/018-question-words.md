@@ -10,7 +10,7 @@
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher, Sami) + Koki (Lina) → **AI label: No** |
 | **Setting** | Sami visits Lina's family home (living room from Day 13): Lina and Sami sit a step apart, never touching |
 | **Shape (new rules)** | short intro · quests on the cards ("Question 1/5") · a payoff every ~20 s (word → question → answer) · recall in "Your turn" |
-| **YouTube title** | `Arabic Question Words: What, Who, Where, When \| Day 18` |
+| **YouTube title** | `Arabic Question Words: What, Who, Where, When \| Phrases · Day 18` |
 | **Thumbnail text** | "QUESTION WORDS" on a chalkboard with a big ? (no Arabic) |
 | **Recording** | owner `_1620-combined` · Lina `_lina-koki-4` · كِتَابِي re-used from Day 13 |
 

@@ -9,7 +9,7 @@
 | **Re-used (due)** | الشَّايْ · الْقَهْوَةْ (Day 17) · كَعْكَةْ (v01) · الْمَقْهَى (Day 19) · يَذْهَبُ "he goes" (Day 4) · دِمَشْقْ · يَمِينْ، ثُمَّ يَسَارْ (Day 19, "Your turn") |
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher, Sami) + Koki (Lina, re-used Day 19 line) → **AI label: No** |
 | **Shape (new rules)** | short intro · quests on the cards ("Verb 1/4", "Round 1/2") · recall in "Your turn" |
-| **YouTube title** | `Arabic Verbs for Beginners: I Drink, I Eat, I Go \| Day 20` |
+| **YouTube title** | `Arabic Verbs for Beginners: I Drink, I Eat, I Go \| Grammar · Day 20` |
 | **Thumbnail text** | "I DRINK, I EAT" on the tea glass + cake (no Arabic) |
 | **Recording** | owner `_1620-combined` · Lina `_lina-koki-4` |
 

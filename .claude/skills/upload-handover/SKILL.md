@@ -24,8 +24,9 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
 
 1. **File to upload** (path) and whether it's a Short (vertical) or a normal video (16:9).
 2. **Thumbnail:** "Upload file" → `output/<video>/thumbnail (vertical).jpg` (never "Select from video").
-3. **Title** in a code box. Pattern `<subject in search words> (+ hook) | Day N` (Parts: `… | Part N · Days a–b`;
-   Extras: `… | Arabic Extras`; vocab: `… | Arabic Vocab`). No channel name, subject part ≤ 50 characters, no hashtags —
+3. **Title** in a code box. Pattern `<subject in search words> (+ hook) | <Category> · Day N` — Category = Phrases,
+   Grammar, Story, Conversation, Quiz, Numbers, Greetings, Vocabulary, Syrian Dialect, Intro (owner, 2026-10-16: "Arabic
+   Extras" is the series name, not what the video is). Extras/vocab: `… | <Category>` (no day). Parts: `… | Part N · Days a–b`. No channel name, subject part ≤ 50 characters, no hashtags —
    see **Packaging rules** below.
 4. **Description** embedded in a code box (also saved as `videos/<stem>-description.txt`):
    - **no flag emojis** (🇸🇾 renders the old Syrian flag; flags are political) — use 🗣️ / 📍 for regions;
@@ -110,13 +111,18 @@ a Real Street Conversation") got 37–57. Shorts thumbnails are shown in a **16:
 (our 9:16 image becomes a narrow centre strip with blurred sides), so small people and small Arabic text are unreadable.
 - **Title = the subject first, in the words people search for, then the series:** `<subject in Arabic> (+ short hook) | Day N`
   — e.g. `How to Order Coffee in Arabic (With Milk, No Sugar) | Day 16`, `Arabic Question Words: What, Who, Where | Day 18`.
-  Extras end `| Arabic Extras`, vocab videos `| Arabic Vocab`, Parts `| Part N · Days a–b`. **No channel name** in the
+  then the **category** (`| Grammar · Day 17`, `| Numbers`, `| Syrian Dialect` — never "Arabic Extras"/"Arabic Vocab", which
+  are series names), Parts `| Part N · Days a–b`. **No channel name** in the
   title (YouTube shows it under the title; it cost 19 characters that phones cut). Subject part ≤ 50 characters.
   Avoid story/teaser-only titles ("Meet Lina's Family") — say what the viewer learns ("Family Words in Arabic: …").
-- **Thumbnail text = English only**, 2–3 big words naming the subject ("ORDER COFFEE", "FAMILY WORDS", "BODY PARTS"),
-  + the DAY N badge. **No Arabic script** on thumbnails (beginners can't read it; at thumbnail size it's squiggles).
+- **Thumbnail text = big English words** naming the subject ("ORDER COFFEE", "FAMILY WORDS", "BODY PARTS"), the DAY N
+  (or category) badge, and **one small Arabic word** under them — it tells the viewer which language the lesson is for
+  (owner, 2026-10-16); never a big Arabic word. `tools/thumbnail.py` default style "subject" does exactly this; `--crop`
+  zooms into an object inside one of the video's own images.
   The words may repeat the title's subject — clarity beats cleverness.
 - **Thumbnail picture = one big object or place that IS the subject** (a coffee cup, a family photo frame, a street with
   an arrow, a chalkboard, a hand) rather than small characters; a person only when the person is the subject, and then
   close-up. Check the `-phone-size.png` AND a 16:9 mock (centre strip) — both must read at a glance.
-- **Scene 1's card says the same subject words** (the Shorts feed shows the first frame, not the thumbnail).
+- **The first ~1.5 s of a Short looks like the thumbnail** (owner, 2026-10-16): the same big subject words + small
+  Arabic word over the moving opener, narrator already speaking from 0.0 s — the first frame doubles as the thumbnail in
+  the feed, and the motion behind it still stops the scroll. Then the normal scene-1 card.

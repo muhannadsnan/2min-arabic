@@ -10,7 +10,7 @@
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher, Sami) + Koki (Lina) → **AI label: No** |
 | **Setting** | an old Damascus street with a small café on the corner; the café is always somewhere in the background of the street pictures (the viewer can spot it before Sami does) |
 | **Shape (new rules)** | short intro · quests on the cards ("Word 1/5", then "Story") · recall in "Your turn" |
-| **YouTube title** | `How to Ask for Directions in Arabic \| Day 19` |
+| **YouTube title** | `How to Ask for Directions in Arabic \| Story · Day 19` |
 | **Thumbnail text** | "ASK FOR DIRECTIONS" on the street corner with the arrow (no Arabic) |
 | **Recording** | owner `_1620-combined` · Lina `_lina-koki-4` |
 

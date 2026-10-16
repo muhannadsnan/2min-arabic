@@ -25,12 +25,12 @@ Each gate is PASS or FAIL. Every FAIL gets **one fix, written as a command** ("R
    Fix without the owner: re-voice line 1 (`make_audio.py --redo 1`) and re-assemble. It's the English narrator, so no
    new recording is needed.
 2. **Title + thumbnail pair** (Packaging rules in the upload-handover skill, 2026-10-16). The title starts with the
-   **subject in search words** — `<subject> (+ hook) | Day N` (Parts `… | Part N · Days a–b`, Extras `… | Arabic Extras`,
-   vocab `… | Arabic Vocab`), no channel name, subject ≤ 50 characters. FAIL a story/teaser-only title that doesn't say
-   what the viewer learns. The thumbnail: **English only**, 2–3 big words naming the subject, the DAY N badge, **one big
-   object/place that is the subject** (people only close-up and only when they are the subject), **no Arabic script**,
-   readable in the phone-size preview **and** as the centre strip of a 16:9 box (Studio/search). Scene 1's card says
-   the same subject words.
+   **subject in search words** — `<subject> (+ hook) | <Category> · Day N` (Extras/vocab `… | <Category>`; Parts `… | Part N · Days a–b`;
+   never "Arabic Extras" as the category), no channel name, subject ≤ 50 characters. FAIL a story/teaser-only title that doesn't say
+   what the viewer learns. The thumbnail: 2–3 big **English** words naming the subject, the badge, **one small Arabic word** (never big),
+   **one big object/place that is the subject** (people only close-up and only when they are the subject),
+   readable in the phone-size preview **and** as the centre strip of a 16:9 box (Studio/search). The first ~1.5 s of the
+   video shows the same big words (thumbnail look) while the narrator already speaks.
 3. **Promise kept.** Everything the title, thumbnail and hook claim happens in the video, and the payoff starts within
    ~20 s (the "Today…" scene). The thumbnail image is a scene from this video, and its emotion matches. No shock, no
    fake stakes, no "fluent in 2 minutes". If a claim is only half true, change the words, not the video.

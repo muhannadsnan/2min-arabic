@@ -238,8 +238,9 @@ animation, goodbye; captions don't cover faces or cards.
 
 ## 7. Thumbnail, captions, description, upload sheet
 
-- **Packaging rules (2026-10-16, upload-handover skill):** title = subject first in search words + `| Day N`;
-  thumbnail = English only, 2–3 big subject words, one big object/place, no Arabic; scene 1's card = same words.
+- **Packaging rules (2026-10-16, upload-handover skill):** title = subject first in search words + `| <Category> · Day N`;
+  thumbnail = big English subject words + one small Arabic word + badge, one big object/place (`thumbnail.py --crop`);
+  the first ~1.5 s of the video = the same big words over the opener (thumbnail look), narrator from 0.0 s.
 - Thumbnail from one of the video's own images (the caption-free original in `images/`, not a frame with burned-in
   captions): `python3 tools/thumbnail.py images/<video>/sNN.png "output/<video>/thumbnail (vertical).jpg"
   --badge "DAY N" --line1 … --line2 … --arabic …` → check the `-phone-size.png`.

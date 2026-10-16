@@ -10,7 +10,7 @@
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher) → **AI label: No** |
 | **Look** | Sami (red hoodie from Day 16) in front of a calm, plain background, waist-up or full body, showing each part with one hand (one hand, one job); chest = chest out, proud breath (a hand on the chest breaks arms in the image model) · opener: style-A wave in the café doorway + idle (the style test, after the fixes) |
 | **Real search** | "parts of body in arabic" (owner's search 2026-10-15) · صَدْرْ (chest) instead of بَطْنْ (owner) |
-| **YouTube title** | `Parts of the Body in Arabic (10 Words) \| Arabic Vocab` |
+| **YouTube title** | `Parts of the Body in Arabic (10 Words) \| Vocabulary` |
 | **Thumbnail text** | "BODY PARTS" on the open-hand close-up (no Arabic) |
 | **Recording** | owner `_1620-combined` · أُحِبُّ is the Day 20 take |
 
