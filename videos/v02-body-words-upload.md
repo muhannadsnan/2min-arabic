@@ -92,4 +92,8 @@ Which body word was the hardest to say? 👇 (صَدْرْ, عَيْنْ or قَ
 
 ## Quality check (Claude)
 
-- (filled in after final_check)
+- Arabic = your recording of 15 Oct (tone-matched to your published sound) + Koki where used. English = your clone at
+  tempo 0.9; every flagged narrator line reworded until the audio gate passed.
+- New style-A opener, double-checked (eyes, arms, fingers, no smear); first 1.5 s = thumbnail look.
+- Pictures checked one by one; cards never cover a head (v02: every body picture moved below its card).
+- final_check: length 1:19.4 ✅, −14 LUFS, peak < −1 dB, 0 overlaps · captions synced.
