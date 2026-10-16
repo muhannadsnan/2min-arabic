@@ -10,15 +10,15 @@
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher) → **AI label: No** |
 | **Look** | style of the week · the moon/sun idea as two chalk boards (`tools/images/digits.py` board style, Arabic in Naskh) · opener: Lina by an empty café chalkboard, waist-up, small wave, arm down, idle (library or new, owner approves) |
 | **Shape (new rules)** | short intro · quests on the cards ("Step 1/3", "Round 1/3") · recall in "Your turn" |
-| **YouTube title** | `How to Say "The" in Arabic (Sun and Moon Letters) \| Day 17 · 2 Minute Arabic` |
-| **Thumbnail text** | "WHERE DID THE L GO?" + big الشَّايْ |
+| **YouTube title** | `How to Say "The" in Arabic: Sun and Moon Letters \| Day 17` |
+| **Thumbnail text** | "SUN & MOON LETTERS" on the chalkboard (no Arabic) |
 
 ---
 
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** opener — Lina by an empty café chalkboard, waist-up, small wave, arm down, then idle (owner approves)
-🔤 **On screen:** The word you can't hear
+🔤 **On screen:** Say "the" in Arabic
 
 ```say:narrator
 Today you'll learn the most common word in Arabic, and then play a game: sometimes you can hear it, and sometimes it simply disappears.

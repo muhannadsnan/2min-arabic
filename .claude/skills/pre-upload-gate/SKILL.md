@@ -24,10 +24,13 @@ Each gate is PASS or FAIL. Every FAIL gets **one fix, written as a command** ("R
    Pass: *"Arabic has no word for 'is'."* Fail: *"In this lesson we'll look at pronouns."*
    Fix without the owner: re-voice line 1 (`make_audio.py --redo 1`) and re-assemble. It's the English narrator, so no
    new recording is needed.
-2. **Title + thumbnail pair.** The title follows the pattern `<benefit> | Day N · 2 Minute Arabic` (Parts
-   `… | Part N · Days a–b`, Extras `… | Arabic Extras`). The benefit part is ≤ 50 characters and has a concrete noun or
-   number. The thumbnail has 3–4 words max, **adds** to the title instead of repeating its words, has one focal
-   point, a big Arabic word and the DAY N badge, and is readable in the phone-size preview.
+2. **Title + thumbnail pair** (Packaging rules in the upload-handover skill, 2026-10-16). The title starts with the
+   **subject in search words** — `<subject> (+ hook) | Day N` (Parts `… | Part N · Days a–b`, Extras `… | Arabic Extras`,
+   vocab `… | Arabic Vocab`), no channel name, subject ≤ 50 characters. FAIL a story/teaser-only title that doesn't say
+   what the viewer learns. The thumbnail: **English only**, 2–3 big words naming the subject, the DAY N badge, **one big
+   object/place that is the subject** (people only close-up and only when they are the subject), **no Arabic script**,
+   readable in the phone-size preview **and** as the centre strip of a 16:9 box (Studio/search). Scene 1's card says
+   the same subject words.
 3. **Promise kept.** Everything the title, thumbnail and hook claim happens in the video, and the payoff starts within
    ~20 s (the "Today…" scene). The thumbnail image is a scene from this video, and its emotion matches. No shock, no
    fake stakes, no "fluent in 2 minutes". If a claim is only half true, change the words, not the video.

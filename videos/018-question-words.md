@@ -10,8 +10,8 @@
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher, Sami) + Koki (Lina) → **AI label: No** |
 | **Setting** | Sami visits Lina's family home (living room from Day 13): Lina and Sami sit a step apart, never touching |
 | **Shape (new rules)** | short intro · quests on the cards ("Question 1/5") · a payoff every ~20 s (word → question → answer) · recall in "Your turn" |
-| **YouTube title** | `Arabic Question Words: What, Who, Where, When \| Day 18 · 2 Minute Arabic` |
-| **Thumbnail text** | "5 QUESTION WORDS" + big أَيْنَ؟ |
+| **YouTube title** | `Arabic Question Words: What, Who, Where, When \| Day 18` |
+| **Thumbnail text** | "QUESTION WORDS" on a chalkboard with a big ? (no Arabic) |
 | **Recording** | owner `_1620-combined` · Lina `_lina-koki-4` · كِتَابِي re-used from Day 13 |
 
 ---
@@ -19,7 +19,7 @@
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** opener — Lina in her living room, waist-up, tilts her head with a curious smile, a small "hmm?" shrug, then idle (new opener, owner approves)
-🔤 **On screen:** 5 questions in 5 words
+🔤 **On screen:** Arabic question words
 
 ```say:narrator
 Five little words let you ask almost anything in Arabic, and today Lina uses all five of them on Sami.

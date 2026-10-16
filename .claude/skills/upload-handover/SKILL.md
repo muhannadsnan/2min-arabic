@@ -24,8 +24,9 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
 
 1. **File to upload** (path) and whether it's a Short (vertical) or a normal video (16:9).
 2. **Thumbnail:** "Upload file" → `output/<video>/thumbnail (vertical).jpg` (never "Select from video").
-3. **Title** in a code box. Pattern `<benefit or curiosity> | Day N · 2 Minute Arabic` (Parts: `… | Part N · Days a–b`;
-   Extras: `… | Arabic Extras`). Benefit part under ~50 characters. No hashtags in the title.
+3. **Title** in a code box. Pattern `<subject in search words> (+ hook) | Day N` (Parts: `… | Part N · Days a–b`;
+   Extras: `… | Arabic Extras`; vocab: `… | Arabic Vocab`). No channel name, subject part ≤ 50 characters, no hashtags —
+   see **Packaging rules** below.
 4. **Description** embedded in a code box (also saved as `videos/<stem>-description.txt`):
    - **no flag emojis** (🇸🇾 renders the old Syrian flag; flags are political) — use 🗣️ / 📍 for regions;
    - every Arabic phrase at the **end** of its line, wrapped in U+2067 … U+2069 (otherwise YouTube scrambles it);
@@ -49,7 +50,7 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
      learner pastes in after seeing a word ("طيب meaning", "من أين أنت in english"), and one topic phrase
      ("تعلم اللغة العربية", "قصة قصيرة بالعربية");
    - niche ("learn arabic", "arabic for beginners", "modern standard arabic") · broad ("language learning", "shorts").
-   Arabic script goes in tags, descriptions and the **thumbnail** (big word) — **not in titles** (it tells YouTube the
+   Arabic script goes in tags and descriptions — **not in titles and not on thumbnails** (2026-10-16) (it tells YouTube the
    video is for Arabic speakers and mixed-direction titles get scrambled); titles may use transliteration.
    Formerly: 3-group formula: 3–4 video-specific · 3–4 niche · 3–4 broad. "viral shorts": tested and dropped 2026-10-06 — never use it.
 6. **Settings table:** playlist; not made for kids; **AI use** (No when only the owner's own voice clone + real
@@ -101,3 +102,21 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
   A video ID starting with "-" needs the options first: `fill --publish-at … --apply -- <stem> -ju67…`.
   Afterwards re-sort the 30-day playlist (Day 1 → … → Part after each 5th day) and run `audit`.
 
+## Packaging rules (owner + channel data, 2026-10-16) — titles and thumbnails
+
+Why: 28 % of our views come from YouTube **search**, and search matches the title's words. Our best long-tail video is
+the plain subject title "Introduce Yourself in Arabic…" (303 views); story/teaser titles ("Meet Lina's Family", "Understand
+a Real Street Conversation") got 37–57. Shorts thumbnails are shown in a **16:9 box** in Studio, search and suggested
+(our 9:16 image becomes a narrow centre strip with blurred sides), so small people and small Arabic text are unreadable.
+- **Title = the subject first, in the words people search for, then the series:** `<subject in Arabic> (+ short hook) | Day N`
+  — e.g. `How to Order Coffee in Arabic (With Milk, No Sugar) | Day 16`, `Arabic Question Words: What, Who, Where | Day 18`.
+  Extras end `| Arabic Extras`, vocab videos `| Arabic Vocab`, Parts `| Part N · Days a–b`. **No channel name** in the
+  title (YouTube shows it under the title; it cost 19 characters that phones cut). Subject part ≤ 50 characters.
+  Avoid story/teaser-only titles ("Meet Lina's Family") — say what the viewer learns ("Family Words in Arabic: …").
+- **Thumbnail text = English only**, 2–3 big words naming the subject ("ORDER COFFEE", "FAMILY WORDS", "BODY PARTS"),
+  + the DAY N badge. **No Arabic script** on thumbnails (beginners can't read it; at thumbnail size it's squiggles).
+  The words may repeat the title's subject — clarity beats cleverness.
+- **Thumbnail picture = one big object or place that IS the subject** (a coffee cup, a family photo frame, a street with
+  an arrow, a chalkboard, a hand) rather than small characters; a person only when the person is the subject, and then
+  close-up. Check the `-phone-size.png` AND a 16:9 mock (centre strip) — both must read at a glance.
+- **Scene 1's card says the same subject words** (the Shorts feed shows the first frame, not the thumbnail).

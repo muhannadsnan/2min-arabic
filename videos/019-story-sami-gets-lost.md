@@ -10,8 +10,8 @@
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher, Sami) + Koki (Lina) → **AI label: No** |
 | **Setting** | an old Damascus street with a small café on the corner; the café is always somewhere in the background of the street pictures (the viewer can spot it before Sami does) |
 | **Shape (new rules)** | short intro · quests on the cards ("Word 1/5", then "Story") · recall in "Your turn" |
-| **YouTube title** | `How to Ask for Directions in Arabic (Right, Left, Here) \| Day 19 · 2 Minute Arabic` |
-| **Thumbnail text** | "SAMI IS LOST!" + big أَيْنَ الْمَقْهَى؟ |
+| **YouTube title** | `How to Ask for Directions in Arabic \| Day 19` |
+| **Thumbnail text** | "ASK FOR DIRECTIONS" on the street corner with the arrow (no Arabic) |
 | **Recording** | owner `_1620-combined` · Lina `_lina-koki-4` |
 
 ---
@@ -19,7 +19,7 @@
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** opener — Sami on an old Damascus street, waist-up, looks to the side and back, a puzzled open-palm shrug with one hand, arm down, then idle (new opener, owner approves)
-🔤 **On screen:** Sami is lost!
+🔤 **On screen:** Ask for directions in Arabic
 
 ```say:narrator
 Sami is lost in Damascus, and he's late to meet Lina. Five little words will get him to the café, and watch out for the twist at the end.

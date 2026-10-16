@@ -10,8 +10,8 @@
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher) → **AI label: No** |
 | **Look** | board style: each number in chalk on the empty café chalkboard, Arabic digit (Kufi) big + Western digit small (`tools/images/digits.py`) · opener: Lina at a classroom chalkboard, raises one finger (new, owner approves) |
 | **Real search** | "arabic numbers 1 to 20", "arabic numbers 11 to 20" (plan-lessons step 0) |
-| **YouTube title** | `Arabic Numbers 11 to 20 (Easy Pattern) \| Arabic Extras` |
-| **Thumbnail text** | "11 TO 20" + big ١٥ |
+| **YouTube title** | `Arabic Numbers 11 to 20 (One Easy Pattern) \| Arabic Extras` |
+| **Thumbnail text** | "NUMBERS 11 TO 20" on the chalkboard (no Arabic) |
 | **Recording** | owner `_1620-combined` · ثَلَاثَةْ, عَشَرَةْ re-used from Day 10 |
 
 ---

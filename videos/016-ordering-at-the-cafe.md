@@ -9,15 +9,15 @@
 | **Re-used (due)** | أُرِيدُ · مِنْ فَضْلِكْ · قَهْوَةْ · شَايْ (Day 15) · حَلِيبْ · سُكَّرْ (v01) · خَمْسَةْ (Day 10) · أُخْتِي (Day 13, "Your turn") |
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher, the waiter's lines, Sami) → **AI label: No** |
 | **Shape (new rules, 2026-10-15)** | short intro · 4 quests shown on the cards ("Word 1/4") · recall moved to "Your turn" |
-| **YouTube title** | `How to Order Coffee in Arabic (With Milk, No Sugar) \| Day 16 · 2 Minute Arabic` |
-| **Thumbnail text** | "WITH MILK, NO SUGAR" + big بِدُونِ سُكَّرْ |
+| **YouTube title** | `How to Order Coffee in Arabic (With Milk, No Sugar) \| Day 16` |
+| **Thumbnail text** | "ORDER COFFEE" on a big cup of coffee with a milk jug (no Arabic) |
 
 ---
 
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** opener — Sami standing beside a café table raises one open hand to call the waiter, arm down, idle (new opener, owner approves)
-🔤 **On screen:** Order coffee your way
+🔤 **On screen:** Order coffee in Arabic
 
 ```say:narrator
 Today Sami orders his coffee exactly the way he likes it: four little words, one real café order, and then he pays.

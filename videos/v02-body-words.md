@@ -10,8 +10,8 @@
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher) → **AI label: No** |
 | **Look** | Sami (red hoodie from Day 16) in front of a calm, plain background, waist-up or full body, showing each part with one hand (one hand, one job); chest = chest out, proud breath (a hand on the chest breaks arms in the image model) · opener: style-A wave in the café doorway + idle (the style test, after the fixes) |
 | **Real search** | "parts of body in arabic" (owner's search 2026-10-15) · صَدْرْ (chest) instead of بَطْنْ (owner) |
-| **YouTube title** | `10 Parts of the Body in Arabic \| Arabic Vocab` |
-| **Thumbnail text** | "10 BODY WORDS" + big عَيْنْ |
+| **YouTube title** | `Parts of the Body in Arabic (10 Words) \| Arabic Vocab` |
+| **Thumbnail text** | "BODY PARTS" on the open-hand close-up (no Arabic) |
 | **Recording** | owner `_1620-combined` · أُحِبُّ is the Day 20 take |
 
 Words are shown **without "al-"**, as single words, the way you'd point and name them.
@@ -21,7 +21,7 @@ Words are shown **without "al-"**, as single words, the way you'd point and name
 ### 🎬 Scene 1 — Hook (opener)
 
 🖼️ **Image:** opener — Sami, waist-up, a friendly wave, arm down, then idle (library wave, owner approves)
-🔤 **On screen:** 10 body words, head to heart
+🔤 **On screen:** Parts of the body in Arabic
 
 ```say:narrator
 Here are ten Arabic words for your body, from your head down to your heart, so point and say each one with me.
