@@ -111,11 +111,18 @@ OWNER_CLARITY = ("highpass=f=90,equalizer=f=250:t=q:w=1.2:g=-2.5,equalizer=f=280
 # recorded lines (owner + Koki): light spectral denoise + a soft gate in the pauses — the treble boost had lifted the
 # phone's hiss to ~-55 dB, audible on headphones next to the narrator's silent pauses (owner, 2026-10-05)
 RECORDED_CLEAN = "afftdn=nr=12:nf=-50:tn=1,agate=threshold=0.012:ratio=3:attack=5:release=150:range=0.06"
+# Per-recording tone match (2026-10-16, owner: "the old recording sounds good, decide"): the owner's _1620 recording
+# ("my recording.mp4", a phone video) came in ~11 dB brighter (strong 5-8 kHz, less bass) than his Voice Memos takes.
+# This pre-EQ brings it back to his old tone BEFORE the Day-8 chain, so the result matches the published videos
+# (median clarity -21.2 dB, 10-90 % -26.3..-17.9 vs published -22.1, -25.5..-17.0, 84 lines). Older recordings are untouched.
+RECORDING_MATCH = {
+    "_1620-combined": "lowshelf=f=250:g=2,highshelf=f=1800:g=-10,equalizer=f=6300:t=q:w=0.9:g=-9,",
+}
 OWNER_LIFT_DB = 1.0   # measured 2026-10-02: +2 put him 2 LU above the narrator; the EQ does most of the work
 OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami", "tom"}
 
 
-def level(src: pathlib.Path, dst: pathlib.Path, owner=None):
+def level(src: pathlib.Path, dst: pathlib.Path, owner=None, match=""):
     """Trim silence at both ends, bring the clip to CLIP_LUFS, keep peaks below -1.5 dB.
     owner=True: the owner's recorded voice — clarity EQ and +2 dB (see OWNER_CLARITY)."""
     trimmed = dst.with_suffix(".trim.wav")
@@ -126,7 +133,7 @@ def level(src: pathlib.Path, dst: pathlib.Path, owner=None):
     run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-af", trim, "-ac", "1", "-ar", str(SAMPLE_RATE), str(trimmed)])
     if owner is not None:   # a recorded line (owner=True/False): denoise + gate; the owner's also gets the EQ
         eq = dst.with_suffix(".eq.wav")
-        chain = (OWNER_CLARITY if owner else "") + RECORDED_CLEAN
+        chain = match + (OWNER_CLARITY if owner else "") + RECORDED_CLEAN
         run(["ffmpeg", "-v", "error", "-y", "-i", str(trimmed), "-af", chain, str(eq)])
         trimmed.unlink(); eq.rename(trimmed)
     gain = CLIP_LUFS + (OWNER_LIFT_DB if owner else 0.0) - loudness(trimmed)   # owner=None: generated speech
@@ -218,13 +225,16 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         if rec:
             digest = hashlib.sha1((ROOT / rec["file"]).read_bytes()).hexdigest()
             tag = "rec7" if speaker in OWNER_SPEAKERS else "reck2"   # rec4/reck2 = denoise + gate (+ owner EQ)
+            if any(f"/{k}/" in f"/{rec['file']}" for k in RECORDING_MATCH):
+                tag += "-m2"   # tone-matched recording (RECORDING_MATCH) — never reuse the unmatched cache
             return cache / f"{tag}-{digest}.wav"
         return cache / (hashlib.sha1(f"{VOICE_VERSIONS[speaker]}|{speaker}|{text}".encode()).hexdigest() + ".wav")
 
     for (speaker, text), rec in recorded.items():   # recorded lines: level them into the cache
         target = cache_path(speaker, text)
         if not target.exists():
-            level(ROOT / rec["file"], target, owner=speaker in OWNER_SPEAKERS)
+            level(ROOT / rec["file"], target, owner=speaker in OWNER_SPEAKERS,
+                  match=next((m for k, m in RECORDING_MATCH.items() if f"/{k}/" in f"/{rec['file']}"), ""))
             target.with_suffix(".json").write_text(json.dumps(
                 {"speaker": speaker, "text": text, "cer": rec["cer"], "heard": "🎙️ recorded: " + rec["heard"]},
                 ensure_ascii=False), encoding="utf-8")
