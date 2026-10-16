@@ -31,7 +31,7 @@ Today you'll learn the most common word in Arabic, and then play a game: sometim
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-It's Day 17, so let's go.
+Welcome to Day 17, and today we start with one tiny word.
 ```
 
 ### 🎬 Scene 3 — Step 1: the word "the"
@@ -64,7 +64,7 @@ So coffee becomes the coffee.
 🔤 **On screen:** الْكِتَابْ، الْبَيْتْ · *al-kitaab, al-bayt* · the book, the house
 
 ```say:narrator
-And here's the book, and the house. Can you hear the L every time?
+And here are the book and the house, so listen closely, can you hear the L every time?
 ```
 ```say:teacher
 الْكِتَابْ
@@ -91,7 +91,7 @@ These are called moon letters, and with them you always hear the L clearly, like
 🔤 **On screen:** الشَّايْ · *ash-shaay* · the tea · Sun letters · Step 3/3
 
 ```say:narrator
-But now listen to the tea. The L is gone, and the sh sound is said twice as long.
+Now listen closely to the tea, because this time the L is gone, and you hear a long sh sound instead.
 ```
 ```say:teacher
 الشَّايْ
@@ -138,7 +138,7 @@ Round one: the waiter. The word starts with an N.
 النَّادِلْ
 ```
 ```say:narrator
-Sun! No L, and a double N.
+It is a sun letter, so there is no L, just a long double N.
 ```
 
 ### 🎬 Scene 12 — Round 2: the juice
@@ -160,7 +160,7 @@ Round two: the juice.
 الْعَصِيرْ
 ```
 ```say:narrator
-Moon! You can hear the L.
+It is a moon letter, so this time you can clearly hear the L.
 ```
 
 ### 🎬 Scene 14 — Round 3: the sugar again

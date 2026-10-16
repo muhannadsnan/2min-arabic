@@ -78,7 +78,7 @@ learn arabic for beginners full lesson, arabic for beginners course, arabic conv
 ## Pinned comment
 
 ```
-Part 3 ✅ — Which was your favourite: Tom in Damascus, Lina's family or the café? Answer with one Arabic sentence you learned 👇
+Part 3 ✅ — Which was your favorite: Tom in Damascus, Lina's family or the café? Answer with one Arabic sentence you learned 👇
 ```
 
 ## Quality check (Claude)

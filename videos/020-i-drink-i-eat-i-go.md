@@ -31,7 +31,7 @@ Four verbs today, and all four hide the same secret letter. Find it, and you can
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-It's Day 20. Let's go.
+Welcome to Day 20 where we learn four very useful verbs today.
 ```
 
 ### 🎬 Scene 3 — Verb 1: I drink
@@ -115,7 +115,7 @@ And the last verb is the nicest one: I love, or I like.
 🔤 **On screen:** أ · *a- / u-* · = I
 
 ```say:narrator
-Did you spot the secret? All four verbs start with the same letter, an alif. That alif means I, so you don't even need the word for I.
+Here is the secret: all four verbs start with the same letter, an alif, and that alif means I, so you do not even need a word for I.
 ```
 ⏸️ **Pause 1s**
 
@@ -163,7 +163,7 @@ And now: I eat cake.
 🔤 **On screen:** أُحِبُّ دِمَشْقْ! · *uHibbu dimashq!* · I love Damascus!
 
 ```say:narrator
-And here's Sami's favourite sentence of the week.
+And here's Sami's favorite sentence of the week.
 ```
 ```say:sami
 أُحِبُّ دِمَشْقْ!

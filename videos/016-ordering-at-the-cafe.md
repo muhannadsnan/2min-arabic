@@ -9,7 +9,7 @@
 | **Re-used (due)** | أُرِيدُ · مِنْ فَضْلِكْ · قَهْوَةْ · شَايْ (Day 15) · حَلِيبْ · سُكَّرْ (v01) · خَمْسَةْ (Day 10) · أُخْتِي (Day 13, "Your turn") |
 | **Voices** | English narrator = owner's clone (tempo 0.9) · Arabic = the owner (teacher, the waiter's lines, Sami) → **AI label: No** |
 | **Shape (new rules, 2026-10-15)** | short intro · 4 quests shown on the cards ("Word 1/4") · recall moved to "Your turn" |
-| **YouTube title** | `How to Order Coffee in Arabic (With Milk, No Sugar) \| Conversation · Day 16` |
+| **YouTube title** | `Order Coffee in Arabic (With Milk, No Sugar) \| Conversation · Day 16` |
 | **Thumbnail text** | "ORDER COFFEE" on a big cup of coffee with a milk jug (no Arabic) |
 
 ---
@@ -30,7 +30,7 @@ Today Sami orders his coffee exactly the way he likes it: four little words, one
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-It's Day 16, so let's go to the café.
+Welcome to Day 16, and today we are going to the café.
 ```
 
 ### 🎬 Scene 3 — Word 1: here you go
@@ -63,7 +63,7 @@ And to a woman it ends with an ee sound, just like you from Day 5.
 🔤 **On screen:** مَعَ · *ma'a* · with · Word 2/4
 
 ```say:narrator
-The second word means with, and you know it already from goodbye, ma'a s-salaama.
+The second word means with, and you already know it from the way we say goodbye.
 ```
 ```say:teacher
 مَعَ
@@ -78,7 +78,7 @@ The second word means with, and you know it already from goodbye, ma'a s-salaama
 🔤 **On screen:** بِدُونِ · *biduun* · without · Word 3/4
 
 ```say:narrator
-The third word is the opposite, without, so here is coffee without sugar.
+The third word means without, and here it is in a coffee with no sugar at all.
 ```
 ```say:teacher
 بِدُونِ
@@ -94,7 +94,7 @@ The third word is the opposite, without, so here is coffee without sugar.
 🔤 **On screen:** بِكَمْ هَذَا؟ · *bikam haadhaa?* · How much is this? · Word 4/4
 
 ```say:narrator
-And the last word is the one you need at the end: how much is this?
+And the last one is a little question that you will need when it is time to pay: how much is this?
 ```
 ```say:teacher
 بِكَمْ هَذَا؟
@@ -219,7 +219,7 @@ And one from Lina's family on Day 13. How do you say my sister?
 🔤 **On screen:** Day 16 · 1.01¹⁶ = 1.17 · tomorrow: the little word "the"
 
 ```say:narrator
-Tomorrow you'll learn the little word for the, and why you sometimes can't even hear it.
+Tomorrow you will learn the little Arabic word for the, which you sometimes cannot even hear.
 ```
 ```say:narrator
 That's your two minutes for today. Come back tomorrow — same place, two minutes.

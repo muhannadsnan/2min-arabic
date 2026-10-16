@@ -27,11 +27,11 @@ You can already count to ten in Arabic. Today we go all the way to twenty, and o
 
 ### 🎬 Scene 2 — Eleven
 
-🖼️ **Image:** board — chalk ١١ (Kufi, big) with "11" small underneath
+🖼️ **Image:** board — chalk ١١ (Kufi, big)
 🔤 **On screen:** ١١ · *aHada 'ashar* · 11 · special
 
 ```say:narrator
-Eleven is a special one, so just learn it by heart.
+We will start with eleven, which is a special number, so just learn it by heart.
 ```
 ```say:teacher
 أَحَدَ عَشَرْ
@@ -39,7 +39,7 @@ Eleven is a special one, so just learn it by heart.
 
 ### 🎬 Scene 3 — Twelve
 
-🖼️ **Image:** board — chalk ١٢ with "12"
+🖼️ **Image:** board — chalk ١٢
 🔤 **On screen:** ١٢ · *ithnaa 'ashar* · 12 · special
 
 ```say:narrator
@@ -52,7 +52,7 @@ Twelve sounds like two, ithnaan, with ten at the end.
 ### 🎬 Scene 4 — The pattern
 
 🖼️ **Image:** board — chalk text "3 + 10 = 13" (English digits) on the café chalkboard
-🔤 **On screen:** ثَلَاثَةْ + عَشَرَةْ → ثَلَاثَةَ عَشَرْ · three + ten = 13
+🔤 **On screen:** ثَلَاثَةَ عَشَرْ · *thalaathata 'ashar* · three + ten = 13
 
 ```say:narrator
 And now the pattern. Take three, add ten, and glue them together.
@@ -69,11 +69,11 @@ And now the pattern. Take three, add ten, and glue them together.
 
 ### 🎬 Scene 5 — Fourteen
 
-🖼️ **Image:** board — chalk ١٤ with "14"
+🖼️ **Image:** board — chalk ١٤
 🔤 **On screen:** ١٤ · *arba'ata 'ashar* · 14
 
 ```say:narrator
-It works all the way to nineteen, so say each one with me.
+This pattern works all the way up to nineteen, so please say each number along with me.
 ```
 ```say:teacher
 أَرْبَعَةَ عَشَرْ
@@ -81,7 +81,7 @@ It works all the way to nineteen, so say each one with me.
 
 ### 🎬 Scene 6 — Fifteen
 
-🖼️ **Image:** board — chalk ١٥ with "15"
+🖼️ **Image:** board — chalk ١٥
 🔤 **On screen:** ١٥ · *khamsata 'ashar* · 15
 
 ```say:teacher
@@ -91,7 +91,7 @@ It works all the way to nineteen, so say each one with me.
 
 ### 🎬 Scene 7 — Sixteen
 
-🖼️ **Image:** board — chalk ١٦ with "16"
+🖼️ **Image:** board — chalk ١٦
 🔤 **On screen:** ١٦ · *sittata 'ashar* · 16
 
 ```say:teacher
@@ -101,7 +101,7 @@ It works all the way to nineteen, so say each one with me.
 
 ### 🎬 Scene 8 — Seventeen
 
-🖼️ **Image:** board — chalk ١٧ with "17"
+🖼️ **Image:** board — chalk ١٧
 🔤 **On screen:** ١٧ · *sab'ata 'ashar* · 17
 
 ```say:teacher
@@ -111,7 +111,7 @@ It works all the way to nineteen, so say each one with me.
 
 ### 🎬 Scene 9 — Eighteen
 
-🖼️ **Image:** board — chalk ١٨ with "18"
+🖼️ **Image:** board — chalk ١٨
 🔤 **On screen:** ١٨ · *thamaaniyata 'ashar* · 18
 
 ```say:teacher
@@ -121,7 +121,7 @@ It works all the way to nineteen, so say each one with me.
 
 ### 🎬 Scene 10 — Nineteen
 
-🖼️ **Image:** board — chalk ١٩ with "19"
+🖼️ **Image:** board — chalk ١٩
 🔤 **On screen:** ١٩ · *tis'ata 'ashar* · 19
 
 ```say:teacher
@@ -131,7 +131,7 @@ It works all the way to nineteen, so say each one with me.
 
 ### 🎬 Scene 11 — Twenty
 
-🖼️ **Image:** board — chalk ٢٠ with "20"
+🖼️ **Image:** board — chalk ٢٠
 🔤 **On screen:** ٢٠ · *'ishruun* · 20 · a new word
 
 ```say:narrator
@@ -185,7 +185,7 @@ Next one.
 🔤 **On screen:** Quiz 3/3 · which number is this?
 
 ```say:narrator
-And the last one is a special one.
+And now for the very last one, which is one of the two special numbers that we learned at the start.
 ```
 ⏸️ **Pause 2s**
 
@@ -201,10 +201,10 @@ And the last one is a special one.
 ### 🎬 Scene 18 — Outro
 
 🖼️ **Image:** the desk with the stopwatch (asset)
-🔤 **On screen:** Your favourite number? · write it in Arabic in the comments
+🔤 **On screen:** Your favorite number? · write it in Arabic in the comments
 
 ```say:narrator
-Now you can count to twenty. Is your favourite number in there? Write it in Arabic in the comments.
+Now you can count to twenty. Is your favorite number in there? Write it in Arabic in the comments.
 ```
 ```say:narrator
 Subscribe so you don't break your streak.

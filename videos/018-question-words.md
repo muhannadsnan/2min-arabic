@@ -101,7 +101,7 @@ The second one is who.
 🔤 **On screen:** أَيْنَ · *ayna* · where? · Question 3/5
 
 ```say:narrator
-Number three, the most useful one when you travel: where.
+The third one is the most useful word when you travel, and it means where.
 ```
 ```say:teacher
 أَيْنَ
@@ -191,7 +191,7 @@ And the last one is when.
 🔤 **On screen:** الدَّرْسْ · *ad-dars* · Day 17's sun letter!
 
 ```say:narrator
-And did you notice? In the lesson, the L disappeared: that's a sun letter from yesterday.
+And here is a small surprise for you, the L in the word for lesson went silent, because it is a sun letter from yesterday.
 ```
 
 ### 🎬 Scene 19 — Your turn 1

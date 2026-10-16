@@ -65,7 +65,7 @@ And the second is left.
 🔤 **On screen:** ثُمَّ · *thumma* · then · Word 3/5
 
 ```say:narrator
-To join two directions, you need then.
+And when you want to join two directions together, you need the word for then.
 ```
 ```say:teacher
 ثُمَّ
@@ -113,7 +113,7 @@ And here's the question Sami needs, with where from yesterday.
 🔤 **On screen:** سَامِي فِي دِمَشْقْ. · *saamii fii dimashq.* · Sami is in Damascus. · Story
 
 ```say:narrator
-Now the story. Listen first, and read second.
+Now here comes the story, so try to listen first and read the words second.
 ```
 ```say:teacher
 سَامِي فِي دِمَشْقْ.
@@ -134,7 +134,7 @@ Now the story. Listen first, and read second.
 🔤 **On screen:** يَمِينْ؟ يَسَارْ؟ · *yamiin? yasaar?* · Right? Left?
 
 ```say:narrator
-The old man just waves… somewhere.
+The kind old man just waves his hand somewhere down the street.
 ```
 ```say:sami
 يَمِينْ؟ يَسَارْ؟

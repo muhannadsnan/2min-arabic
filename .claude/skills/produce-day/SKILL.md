@@ -138,6 +138,12 @@ viewers right where new ones were leaving. So:
 3. **Works for a stranger:** from the hook go **straight to the first new word**. The "recall yesterday" warm-up moves
    into the "Your turn" block at the end (it still recalls due words — spaced repetition stays).
 
+**One GPU job at a time (2026-10-16, three crashes in one session):** ComfyUI (images/animation), `make_audio.py`
+(Chatterbox + Whisper), `final_check.py` and `sync_captions.py` (Whisper) each need most of the 6 GB card. Run them in
+ONE serial queue; never start a check while audio or ComfyUI runs (the owner's own ComfyUI counts too — use the PID
+that owns port 8188). Two `make_audio.py` runs at once also clash on `audio/.cache/work/generate.json`.
+Never edit a shell script while it is running (bash reads it as it goes) — write a new queue file instead.
+
 ## 1. Script — `videos/NNN-<slug>.md`
 
 Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼️ Image`, `🔤 On screen`,

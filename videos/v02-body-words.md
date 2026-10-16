@@ -144,7 +144,7 @@ And last, the one that's inside your chest: your heart.
 🔤 **On screen:** Quiz 1/3 · what's this?
 
 ```say:narrator
-Quick game. Look at the picture, and say the word.
+Now it is time for a little game, so look at each picture, and then say the Arabic word out loud.
 ```
 ⏸️ **Pause 2s**
 
@@ -201,7 +201,7 @@ And the last one.
 🔤 **On screen:** أُحِبُّ · *uHibbu* · I love · which word was the hardest?
 
 ```say:narrator
-And from Day 20, with your hand on your heart: I love.
+And here is a word from Day 20 to say with your hand on your heart, which means I love.
 ```
 ```say:teacher
 أُحِبُّ
