@@ -1,10 +1,10 @@
 # Daily Instagram Reel at 15:00 Oslo, posted from GitHub's servers — the laptop can be off (owner, 2026-10-15).
-# 13:05 + 14:05 UTC cover summer and winter time; tools/ig_cloud_post.py waits for 15:00 Oslo and never posts twice a day.
+# Every 15 min 13–15 UTC (summer + winter time) + a laptop nudge at 15:00 (2min-ig-trigger timer → workflow_dispatch,
+# which starts at once); tools/ig_cloud_post.py waits for 15:00 Oslo and never posts twice a day.
 name: Instagram daily Reel
 on:
-  schedule:
-    - cron: "5 13 * * *"
-    - cron: "5 14 * * *"
+  schedule:   # GitHub starts scheduled runs late or skips them under load (17 Oct: 3 h late) → many chances;
+    - cron: "7,22,37,52 13,14,15 * * *"   # the script posts only after 15:00 Oslo and only once a day
   workflow_dispatch:
     inputs:
       dry_run:
