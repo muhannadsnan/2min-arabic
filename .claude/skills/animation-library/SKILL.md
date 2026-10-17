@@ -188,3 +188,8 @@ months — same face, different clothes.
   gestures 1/2 usable (the other merged hands); idle clip from the last frame = subtle sway + smile, no freeze.
   Check clips with `python3 tools/animate/check_clip.py clip.mp4 out.png` (strip + held frame + face 2×).
 
+**Talking/idle loops = constant speed (owner, 2026-10-17):** the pendulum loop (make_loop.py: forward → back, eased
+turns) looked "too fast, then suddenly too slow". For talk units use `tools/animate/loop_xfade.sh raw.mp4 out-loop.mp4
+[0.85] [0.6]`: forward only at one steady speed (85 %), last 0.6 s cross-faded into the first → seamless and natural.
+Characters who wear green → blue screen (`composite.py --key blue --dominance 1.6`); the owner's clay presenter:
+library/talk/owner-close-talk-loop.mp4 + owner-wide-talk-loop.mp4.
