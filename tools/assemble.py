@@ -236,6 +236,10 @@ def main():
     # progress stars need a row at the top: badge and cards move down by TOP (owner, 2026-10-17)
     TOP = 175 if any(isinstance(e, dict) and "stars" in e for e in entries) else 0
     opts = {p["s"]: p for p in entries if "s" in p}
+    if TOP:   # the cards sit TOP px lower → every picture moves down as much, so faces and chalk stay below the card
+        for o in opts.values():
+            if not o.get("asset") or o.get("shift"):
+                o["shift"] = round(o.get("shift", 0) + TOP / H, 3)
     # 3D videos (Day 6+, owner 2026-10-05): only the opener moves; every other scene is a clear still picture and
     # consecutive scenes cross-fade softly (XF s). Older flat videos keep the slow zoom and hard cuts.
     style3d = any(p.get("style") == "3d" for p in entries)
@@ -418,6 +422,9 @@ def main():
         base = inputs.count("-i")   # index of the next input
         inputs += ["-loop", "1", "-i", str(star_dir / "grey.png"), "-loop", "1", "-i", str(star_dir / "gold.png")]
         gi, oi = base, base + 1
+        # a soft dark fade at the top: the stars sit ON the picture, not on a band (owner, 2026-10-17)
+        fi = inputs.count("-i"); inputs += ["-loop", "1", "-i", str(star_dir / "top-fade.png")]
+        vchain += f";[{last}][{fi}:v]overlay=0:0:shortest=1[tf]"; last = "tf"
         vchain += f";[{gi}:v]scale={size}:-1,format=rgba,split={len(xs)}" + "".join(f"[g{i}]" for i in range(len(xs)))
         vchain += f";[{oi}:v]scale={gsz}:-1,format=rgba,split={len(xs)}" + "".join(f"[o{i}]" for i in range(len(xs)))
         for i, (x, ts) in enumerate(zip(xs, times)):
