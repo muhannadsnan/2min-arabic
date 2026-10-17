@@ -193,3 +193,12 @@ turns) looked "too fast, then suddenly too slow". For talk units use `tools/anim
 [0.85] [0.6]`: forward only at one steady speed (85 %), last 0.6 s cross-faded into the first → seamless and natural.
 Characters who wear green → blue screen (`composite.py --key blue --dominance 1.6`); the owner's clay presenter:
 library/talk/owner-close-talk-loop.mp4 + owner-wide-talk-loop.mp4.
+
+**Talking presenter = continuous takes, not loops (owner, 2026-10-17, after rejecting both the pendulum and the
+cross-fade loop):** chain 3 parts of 69 frames, each animated from the previous part's last frame
+(`ffmpeg -sseof -0.3 -i part.mp4 -update 1 -q:v 1 last.png`), then `tools/animate/join_chain.sh out.mp4 p1 p2 p3`
+(drops the duplicate frame, one 60→30-fps pass at real speed) → ~8.6 s with no visible join. Prompt for real talking:
+"lips and jaw move continuously with every word … steady natural rhythm"; frame wide shots to the hips (a face at
+knee framing is too small to animate the mouth). Check each part — reject stray objects (a yellow sleeve appeared once),
+tongue-out, body turning. Longer videos cut between the close and wide take on sentences.
+Owner presenter: library/talk/owner-close-take.mp4 + owner-wide-take.mp4 (blue screen).
