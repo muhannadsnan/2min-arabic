@@ -61,7 +61,7 @@ def main():
         gexpr = f"if(gt(g(X,Y),0.84*r(X,Y))*lt(b(X,Y),0.5*g(X,Y)),0.84*r(X,Y)+0.25*(g(X,Y)-0.84*r(X,Y)),{gexpr})"   # smooth: only the excess green is compressed
     key_px = f"gt(g(X,Y),{k}*r(X,Y))*gt(g(X,Y),{k}*b(X,Y))*gt(g(X,Y),90)"
     if a.key == "blue":   # blue dominance; blue fringe pulled down instead of green
-        key_px = f"gt(b(X,Y),{k}*r(X,Y))*gt(b(X,Y),{k}*g(X,Y))*gt(b(X,Y),90)"
+        key_px = f"gt(b(X,Y),{k}*r(X,Y))*gt(b(X,Y),{k}*g(X,Y))*gt(b(X,Y),150)"   # bright screen blue only: navy trousers stay
     geq = (f"geq=r='r(X,Y)':g='{gexpr}':b='b(X,Y)':a='if({key_px},0,255)'[fg];" if a.key == "green" else
            f"geq=r='r(X,Y)':g='g(X,Y)':b='min(b(X,Y),1.12*max(r(X,Y),g(X,Y)))':a='if({key_px},0,255)'[fg];")
     chain = (f"{bg};[1:v]fps=30,scale=-2:{h},format=rgba," + geq +

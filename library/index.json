@@ -40,6 +40,51 @@
   "used_in": []
  },
  {
+  "name": "d16-sami-calls-waiter",
+  "type": "opener",
+  "character": "sami",
+  "style": "semi",
+  "seconds": 3.73,
+  "source": "library/work/joined/d16.mp4",
+  "used_in": []
+ },
+ {
+  "name": "d17-lina-board-wave",
+  "type": "opener",
+  "character": "lina",
+  "style": "semi",
+  "seconds": 4.9,
+  "source": "library/work/joined/d17.mp4",
+  "used_in": []
+ },
+ {
+  "name": "d18-lina-home-hello",
+  "type": "opener",
+  "character": "lina",
+  "style": "semi",
+  "seconds": 5.03,
+  "source": "library/work/joined/d18.mp4",
+  "used_in": []
+ },
+ {
+  "name": "d19-sami-lost-street",
+  "type": "opener",
+  "character": "sami",
+  "style": "semi",
+  "seconds": 4.9,
+  "source": "library/work/joined/d19.mp4",
+  "used_in": []
+ },
+ {
+  "name": "d20-sami-thumbs-up",
+  "type": "opener",
+  "character": "sami",
+  "style": "semi",
+  "seconds": 5.03,
+  "source": "library/work/joined/d20.mp4",
+  "used_in": []
+ },
+ {
   "name": "openers/d06-sami-cafe-wave",
   "kind": "openers",
   "character": "sami",
@@ -468,6 +513,32 @@
   "used_in": []
  },
  {
+  "name": "talk/owner-close-talk",
+  "kind": "talk",
+  "character": "owner",
+  "action": "clay owner (dark-green 2min Arabic sweater) talks to camera, chest up, BLUE screen",
+  "green": false,
+  "once_s": 2.8,
+  "loop_s": 5.6,
+  "speed": 1.0,
+  "source": "library/work/clips/owner-close_s1.mp4",
+  "created": "2026-10-17",
+  "used_in": []
+ },
+ {
+  "name": "talk/owner-wide-talk",
+  "kind": "talk",
+  "character": "owner",
+  "action": "clay owner talks to camera, to the knees, open-hand gestures, BLUE screen",
+  "green": false,
+  "once_s": 2.8,
+  "loop_s": 5.6,
+  "speed": 1.0,
+  "source": "library/work/clips/owner-wide_s2.mp4",
+  "created": "2026-10-17",
+  "used_in": []
+ },
+ {
   "name": "talk/sami-talk-1",
   "kind": "talk",
   "character": "sami",
@@ -494,48 +565,12 @@
   "used_in": []
  },
  {
-  "name": "d16-sami-calls-waiter",
-  "type": "opener",
-  "character": "sami",
-  "style": "semi",
-  "seconds": 3.73,
-  "source": "library/work/joined/d16.mp4",
-  "used_in": []
- },
- {
-  "name": "d17-lina-board-wave",
-  "type": "opener",
-  "character": "lina",
-  "style": "semi",
-  "seconds": 4.9,
-  "source": "library/work/joined/d17.mp4",
-  "used_in": []
- },
- {
-  "name": "d18-lina-home-hello",
-  "type": "opener",
-  "character": "lina",
-  "style": "semi",
-  "seconds": 5.03,
-  "source": "library/work/joined/d18.mp4",
-  "used_in": []
- },
- {
-  "name": "d19-sami-lost-street",
+  "name": "v02-sami-door-wave",
   "type": "opener",
   "character": "sami",
   "style": "semi",
   "seconds": 4.9,
-  "source": "library/work/joined/d19.mp4",
-  "used_in": []
- },
- {
-  "name": "d20-sami-thumbs-up",
-  "type": "opener",
-  "character": "sami",
-  "style": "semi",
-  "seconds": 5.03,
-  "source": "library/work/joined/d20.mp4",
+  "source": "library/work/joined/v02.mp4",
   "used_in": []
  },
  {
@@ -545,15 +580,6 @@
   "style": "semi",
   "seconds": 5.03,
   "source": "library/work/joined/x06.mp4",
-  "used_in": []
- },
- {
-  "name": "v02-sami-door-wave",
-  "type": "opener",
-  "character": "sami",
-  "style": "semi",
-  "seconds": 4.9,
-  "source": "library/work/joined/v02.mp4",
   "used_in": []
  }
 ]
