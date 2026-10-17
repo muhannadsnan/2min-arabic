@@ -81,7 +81,7 @@ For each day, write 2–3 hook lines (English narrator, ≤ 2 s to the point, no
 
 30–60 s bonus Shorts (arabic-extras skill, `x0N-` stems). They go **between** days and never replace a day. The daily
 17:00 Oslo slot stays the lesson's.
-- **2 per week from the week of 26 Oct** (owner, 2026-10-17), every one a **searched topic** — check the real search
+- **1 per week** (owner, 2026-10-17: two a week is too tight — decided, don't propose it again), every one a **searched topic** — check the real search
   phrase first (`tools/suggest.py`, search-terms report) and use its words in the title. List: I love you · How are you
   (10 ways) · Thank you / you're welcome · Happy birthday · days / colors / food · travel (taxi, hotel, airport) · the 5
   questions every Arab will ask you (name, country, age, job, married?) · a 5-min long version of Introduce Yourself ·
@@ -89,8 +89,7 @@ For each day, write 2–3 hook lines (English narrator, ≤ 2 s to the point, no
   how Syrians use it — the easiest to share).
 - **Seasonal, published early:** Ramadan phrases mid-January (Ramadan 2027 ≈ 8 Feb) · Happy New Year late December ·
   Eid al-Fitr ≈ 10 Mar 2027.
-- **Open question — ASK the owner before changing it:** course Days daily, or five a week to make room for the second
-  Extra. Don't change the Days' cadence on your own.
+- Course Days stay daily; the Extra list above is worked through one per week, searched topics first.
 - The cadence must be one the owner can hold for months: sustainable beats ambitious. Each Extra points back to the course (related video = Day 1,
   or the day whose words it re-uses).
 - Pick topics that **re-use the week's due words** (a free review), evergreen search phrases ("how to say thank you

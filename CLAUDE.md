@@ -42,8 +42,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   `youtube_api.py localize`). Studio → Analytics → Research: search terms in those languages + views from IR, AF, PK, TR, ID, FR
   before vs after. Up → localize all older videos too.
 - **From 2026-10-17 (owner, growth plan):** Day 21 = real-situation challenge · share hook on every new video (compare
-  with 8 shares total) · 2 Extras/week from the week of 26 Oct (searched topics list in plan-lessons; ASK the owner:
-  Days daily or 5/week) · 1 Instagram carousel/week from the week of 20 Oct (best word list, own cards; needs a
+  with 8 shares total) · 1 Extra/week (owner: 2/week too tight), always a searched topic from the plan-lessons list; Days stay daily · 1 Instagram carousel/week from the week of 20 Oct (best word list, own cards; needs a
   carousel option in tools/instagram_api.py) · from 26 Oct: search share per video (Extras > 30 %) + saves per carousel.
 - **Weekly (Sunday):** channel-review — `audit` (fix every ⚠️), search terms → tags of matching videos, stats,
   then ask only for the screenshots the API can't give (viewed vs swiped).
