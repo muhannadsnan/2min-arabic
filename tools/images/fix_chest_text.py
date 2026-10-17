@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ap = argparse.ArgumentParser()
 ap.add_argument("inp"); ap.add_argument("out")
-ap.add_argument("--text", default="2min|arabic")
+ap.add_argument("--text", default="2min|Arabic")
 ap.add_argument("--region", default="0.2,0.3,0.85,0.75", help="where to look for the old writing (fractions)")
 a = ap.parse_args()
 im = Image.open(a.inp).convert("RGB"); W, H = im.size

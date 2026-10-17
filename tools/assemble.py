@@ -233,6 +233,8 @@ def main():
     concat, contact = [], []
     prompts = img_dir / "prompts.json"
     entries = json.loads(prompts.read_text(encoding="utf-8")) if prompts.exists() else []
+    # progress stars need a row at the top: badge and cards move down by TOP (owner, 2026-10-17)
+    TOP = 175 if any(isinstance(e, dict) and "stars" in e for e in entries) else 0
     opts = {p["s"]: p for p in entries if "s" in p}
     # 3D videos (Day 6+, owner 2026-10-05): only the opener moves; every other scene is a clear still picture and
     # consecutive scenes cross-fade softly (XF s). Older flat videos keep the slow zoom and hard cuts.
@@ -293,25 +295,25 @@ def main():
         if clip is not None:
             # library clip: "once" (default) = opener + 1-s hold (+ the scene picture); "loop" repeats it
             src = (["-stream_loop", "-1"] if o.get("clip_mode") == "loop" else []) + ["-i", str(clip)]
-            chain = f"[0:v]{fit},tpad=stop_mode=clone:stop_duration=600[bg];[bg][1:v]overlay=0:40[b1]"
+            chain = f"[0:v]{fit},tpad=stop_mode=clone:stop_duration=600[bg];[bg][1:v]overlay=0:{40 + TOP}[b1]"
         elif o.get("motion", "still" if style3d else "zoom") in ("still", "fade"):
             # still picture (no zoom); "fade" adds a slow fade in and out (for photo-only scenes)
             src = ["-loop", "1", "-i", str(image)]
             fade = (f",fade=t=in:st=0:d=0.5,fade=t=out:st={max(frames / FPS - 0.5, 0):.2f}:d=0.5"
                     if o.get("motion") == "fade" and not style3d else "")   # 3D: the cross-fade does this
-            chain = f"[0:v]{fit}{fade}[bg];[bg][1:v]overlay=0:40[b1]"
+            chain = f"[0:v]{fit}{fade}[bg];[bg][1:v]overlay=0:{40 + TOP}[b1]"
         else:
             src = ["-loop", "1", "-i", str(image)]
             chain = (f"[0:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
                      f"zoompan=z='1+0.05*on/{max(frames, 1)}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
-                     f":d={frames}:s={W}x{H}:fps={FPS},setsar=1[bg];[bg][1:v]overlay=0:40[b1]")
+                     f":d={frames}:s={W}x{H}:fps={FPS},setsar=1[bg];[bg][1:v]overlay=0:{40 + TOP}[b1]")
         last = "b1"
         if screens[i - 1]:
             card = out_dir / "cards" / f"s{i:02d}.png"
             render_card(screens[i - 1], card, all_bold=(i == 1))
             overlays += ["-i", str(card)]
             hook_s = float(o.get("hook", {}).get("seconds", 1.5)) if (i == 1 and o.get("hook")) else 0
-            chain += f";[b1][2:v]overlay=0:170" + (f":enable='gte(t,{hook_s:.2f})'" if hook_s else "") + "[b2]"
+            chain += f";[b1][2:v]overlay=0:{170 + TOP}" + (f":enable='gte(t,{hook_s:.2f})'" if hook_s else "") + "[b2]"
             last = "b2"
         seg = seg_dir / f"s{i:02d}.mp4"
         run(["ffmpeg", "-v", "error", "-y", *src, *overlays, "-filter_complex", chain,
@@ -406,24 +408,28 @@ def main():
     star_scenes = next((e["stars"] for e in entries if isinstance(e, dict) and "stars" in e), None)
     star_dir = HERE.parent / "assets" / "stars"
     if star_scenes and (star_dir / "pop.mov").exists():
-        size, gap, sy = 62, 78, 6   # a row above the badge (the badge sits at ~y 70–150)
+        size, gap, sy = 150, 205, 20   # grey size; gold grows to GOLD_K × size once earned
+        GOLD_K = 1.23
+        bx0, by0, bx1, by1 = map(int, (star_dir / "bbox.txt").read_text().split())   # gold/grey = this crop of the 160-px canvas
+        k = size * GOLD_K / (bx1 - bx0); pop_px = int(320 * k); gsz = int(size * GOLD_K); gdx = (gsz - size) // 2
+        pdx, pdy = int((bx0 + 80) * k) + gdx, int((by0 + 80) * k) + gdx   # pop canvas = 320 (star centred, +80)
         xs = [W // 2 + (i - (len(star_scenes) - 1) / 2) * gap - size // 2 for i in range(len(star_scenes))]
         times = [max(0.5, tl["scenes"][s - 1]["end"] - 0.35) for s in star_scenes]
         base = inputs.count("-i")   # index of the next input
         inputs += ["-loop", "1", "-i", str(star_dir / "grey.png"), "-loop", "1", "-i", str(star_dir / "gold.png")]
         gi, oi = base, base + 1
-        vchain += f";[{gi}:v]scale={size}:{size},format=rgba,split={len(xs)}" + "".join(f"[g{i}]" for i in range(len(xs)))
-        vchain += f";[{oi}:v]scale={size}:{size},format=rgba,split={len(xs)}" + "".join(f"[o{i}]" for i in range(len(xs)))
+        vchain += f";[{gi}:v]scale={size}:-1,format=rgba,split={len(xs)}" + "".join(f"[g{i}]" for i in range(len(xs)))
+        vchain += f";[{oi}:v]scale={gsz}:-1,format=rgba,split={len(xs)}" + "".join(f"[o{i}]" for i in range(len(xs)))
         for i, (x, ts) in enumerate(zip(xs, times)):
             vchain += (f";[{last}][g{i}]overlay={x:.0f}:{sy}:shortest=1:enable='lt(t,{ts + 0.38:.2f})'[sg{i}]"
-                       f";[sg{i}][o{i}]overlay={x:.0f}:{sy}:shortest=1:enable='gte(t,{ts + 0.38:.2f})'[so{i}]")
+                       f";[sg{i}][o{i}]overlay={x - gdx:.0f}:{max(0, sy - gdx)}:shortest=1:enable='gte(t,{ts + 0.38:.2f})'[so{i}]")
             last = f"so{i}"
             pidx = inputs.count("-i"); inputs += ["-i", str(star_dir / "pop.mov")]
-            vchain += (f";[{pidx}:v]scale={int(size * 2.4)}:{int(size * 2.4)},format=rgba,setpts=PTS-STARTPTS+{ts:.3f}/TB[pp{i}]"
-                       f";[{last}][pp{i}]overlay={x - size * 0.7:.0f}:{max(0, sy - size * 0.7):.0f}:eof_action=pass:enable='between(t,{ts:.2f},{ts + 0.4:.2f})'[sp{i}]")
+            vchain += (f";[{pidx}:v]scale={pop_px}:{pop_px},format=rgba,setpts=PTS-STARTPTS+{ts:.3f}/TB[pp{i}]"
+                       f";[{last}][pp{i}]overlay={x - pdx:.0f}:{sy - pdy:.0f}:eof_action=pass:enable='between(t,{ts:.2f},{ts + 0.4:.2f})'[sp{i}]")
             last = f"sp{i}"
             cidx = inputs.count("-i"); inputs += ["-i", str(star_dir / "chime.wav")]
-            achain += f";[{cidx}:a]volume=0.35,aformat=channel_layouts=mono,adelay={round(ts * 1000)}:all=1[ch{i}]"
+            achain += f";[{cidx}:a]volume=0.8,aformat=channel_layouts=mono,adelay={round(ts * 1000)}:all=1[ch{i}]"
             mix.append(f"[ch{i}]")
         print(f"  stars at {', '.join(f'{x:.1f}s' for x in times)} (scenes {star_scenes})")
     hook = opts.get(1, {}).get("hook")   # thumbnail look for the first ~1.5 s (owner, 2026-10-16), over the caption too
