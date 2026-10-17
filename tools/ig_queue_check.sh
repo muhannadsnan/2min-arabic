@@ -4,6 +4,8 @@
 # owner 2026-10-15: "Claude just goes ahead and does that"). The owner only hears about it when there is nothing new
 # to refill (= time to produce videos) or when something fails.
 cd "$(dirname "$0")/.." || exit 1
+# wait for the network (up to 5 min): after a wake-up, a catch-up run starts before Wi-Fi is back (17 Oct)
+for _ in $(seq 60); do getent hosts oauth2.googleapis.com >/dev/null 2>&1 && break; sleep 5; done
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
 LOG=~/.local/share/2min-yt/instagram.log; PY=~/.local/share/2min-yt/venv/bin/python
 note(){ echo "[$(date '+%F %T')] $1" >> "$LOG"; }
