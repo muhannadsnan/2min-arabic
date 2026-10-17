@@ -147,3 +147,16 @@ Translated titles + description openers in **Persian (fa), Urdu (ur), Turkish (t
 3. Report video × language done/failed (the tool reads it back after a short wait — YouTube shows it with a delay).
 Check on 2026-10-31: Studio → Analytics → Research — search terms in those languages + views from Iran, Afghanistan,
 Pakistan, Turkey, Indonesia, France, before vs after.
+
+**Other languages — rules (owner, 2026-10-17):** ONE video with translated titles/descriptions (localizations) —
+never re-upload the same video per language (duplicate content, split views). Tags are shared by all languages, so
+each language's search terms go into the tags. A native speaker check of Persian/Urdu is welcome when one is available
+(the owner can't read them; Claude writes them in the approved style). Narration in another language later = an extra
+audio track on the SAME video. New content made for one language audience gets its own upload (e.g. "Arabic words you
+already know in Persian").
+
+## Instagram (owner, 2026-10-17)
+- **Saves decide reach:** word lists and clear rules get saved (Day 3: 65 saves, Day 5: 50); quizzes and greetings don't.
+- **One carousel a week** from the week's best word list, built from the video's own cards, one word per slide.
+- Captions keep the consistent style (first line of the description · word lists · fixed footer · 5 hashtags —
+  tools/ig_refill.py builds them).

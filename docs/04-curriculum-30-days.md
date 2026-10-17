@@ -42,7 +42,7 @@ what the audience responds to.
 | 18 | Phrases | Question words | مَا · مَنْ · أَيْنَ · كَمْ · مَتَى |
 | 19 | Story | Sami gets lost (Lina is at the café all along) | أَيْنَ الْمَقْهَى؟ · يَمِين · يَسَار · هُنَا · هُنَاكَ · ثُمَّ |
 | 20 | Grammar | Present verbs: I go, I drink, I eat, I like | أَذْهَب · أَشْرَب · آكُل · أُحِبّ |
-| 21 | Review | Week 3 quiz + "1.01²¹" milestone | — |
+| 21 | Challenge | Can you answer what a waiter asks you? (Week 3 words in real situations) + "1.01²¹" | — |
 
 ## Week 4 — Your first conversation
 

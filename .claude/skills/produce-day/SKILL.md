@@ -150,6 +150,15 @@ milestone (new words learned · story/game/conversation done · "Your turn" done
 `images/<video>/prompts.json` add `{"stars": [s1, s2, s3]}` (scene numbers); assemble.py does the rest. Not for the
 talking/trailer videos (no milestones). Check `contact.png` and listen: the chime never covers a word.
 
+**Content rules from the analytics (owner, 2026-10-17):**
+- **Mini story:** one place, two characters, one twist, ≤ 4 new words. Shape: play the story → replay it with the new
+  words on screen → end on ONE line the viewer can use.
+- **Grammar:** open with an example the viewer can picture; the rule comes second.
+- **Review day = a real-situation challenge** ("Can you answer what a waiter asks you?"), never "Week N quiz".
+- **Share hook** as the last narrator line before "Subscribe…", one per video, varied: "Send this to the friend you'll
+  say it to" · "Tag someone who can't answer this" · "Say this to your Arab friend and watch their face". (Baseline:
+  8 shares in total by 14 Oct — channel-review compares.)
+
 ## 1. Script — `videos/NNN-<slug>.md`
 
 Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼️ Image`, `🔤 On screen`,

@@ -45,6 +45,9 @@ Each gate is PASS or FAIL. Every FAIL gets **one fix, written as a command** ("R
    topic, a different hook shape, a different title formula and different thumbnail wording. FAIL if it would feel
    like "the same video again", e.g. a third "X?!" thumbnail in a row, or the same list shape two days running.
    Real voices (owner, Koki) carry all the Arabic.
+6b. **Content shape (2026-10-17).** FAIL: a quiz framed as "Week N quiz" (make it a real-situation challenge); a
+   story with more than one place, two characters or 4 new words; grammar that opens with the rule; a mid-course title
+   that tells a stranger they missed the start; no share hook at the end.
 7. **Metadata rules.** Run the helper:
    ```
    python3 .claude/skills/pre-upload-gate/check_metadata.py <stem>     # e.g. 006, w02, x01

@@ -45,13 +45,21 @@ d+1, d+3, d+7 and d+14**, and every core word comes back on Day 30.
 
 - Every day's **Your turn** asks for at least one **earlier** word: an English prompt → ⏸️ pause → the Arabic answer.
   The viewer retrieves before hearing it.
-- **Review days (7, 14, 21)** and **Part quizzes** (after Days 5, 10, 15 …) draw on the words that are due, **mixed
+- **Review days (7, 14, 21 …) are real-situation CHALLENGES, not "Week N quiz"** (analytics 2026-10-17: quizzes are
+  the weakest format — Day 7: 29 views): "Can you answer what a waiter asks you?", "Could you survive a taxi ride?"
+  — a scene, then the viewer answers. They and the **Part quizzes** (after Days 5, 10, 15 …) draw on the words that are due, **mixed
   across days and formats**, not in day order. The Part quiz takes answers that have a recorded clip (compile-part
   rule). The review Short and the Part quiz covering the same days use **different questions**.
 
 ## 4. Keep every lesson different (inauthentic-content policy, docs/11)
 
 For each planned day, check against the previous 3:
+- **What works (channel data to 14 Oct — docs: growth-plan artifact dc5ecd6f):** practical searchable topics
+  (Introduce Yourself: 295 views, 64 % from search, most subs), **mini stories** (Day 4: 92 % watched — one place, two
+  characters, one twist, ≤ 4 new words; Day 13's busy family story: 17 %), **numbers and lists** (Day 10: 73 %),
+  **"start here" entry points** (Day 1 +3 subs, Part 1 +4 — every series needs one). Weak: quizzes (→ challenges),
+  rule-first grammar (Day 9: 21 % → open with an example people can picture), busy stories, mid-course titles that
+  tell a stranger "you missed the start". Long Parts keep subscribers + watch hours but don't bring new people.
 - **Format** (phrases / conversation / story / grammar / review / challenge): never the same twice in a row. Where
   docs/04 has two in a row (Days 22–23 Phrases, 28–29 Conversation), give the second a different inner shape, e.g. a
   mini-game, "wrong vs right", or a situation with Sami or Lina.
@@ -72,9 +80,18 @@ For each day, write 2–3 hook lines (English narrator, ≤ 2 s to the point, no
 ## 6. Extras calendar
 
 30–60 s bonus Shorts (arabic-extras skill, `x0N-` stems). They go **between** days and never replace a day. The daily
-16:00 Oslo slot stays the lesson's.
-- **1 per week** to start (2 at most while the channel is new). The course is the core, and the cadence must be one the
-  owner can hold for months: sustainable beats ambitious. Each Extra points back to the course (related video = Day 1,
+17:00 Oslo slot stays the lesson's.
+- **2 per week from the week of 26 Oct** (owner, 2026-10-17), every one a **searched topic** — check the real search
+  phrase first (`tools/suggest.py`, search-terms report) and use its words in the title. List: I love you · How are you
+  (10 ways) · Thank you / you're welcome · Happy birthday · days / colors / food · travel (taxi, hotel, airport) · the 5
+  questions every Arab will ask you (name, country, age, job, married?) · a 5-min long version of Introduce Yourself ·
+  **"What does it mean?"** word Shorts (inshallah, mashallah, habibi, yalla, wallah, khalas: the word, its meaning,
+  how Syrians use it — the easiest to share).
+- **Seasonal, published early:** Ramadan phrases mid-January (Ramadan 2027 ≈ 8 Feb) · Happy New Year late December ·
+  Eid al-Fitr ≈ 10 Mar 2027.
+- **Open question — ASK the owner before changing it:** course Days daily, or five a week to make room for the second
+  Extra. Don't change the Days' cadence on your own.
+- The cadence must be one the owner can hold for months: sustainable beats ambitious. Each Extra points back to the course (related video = Day 1,
   or the day whose words it re-uses).
 - Pick topics that **re-use the week's due words** (a free review), evergreen search phrases ("how to say thank you
   in Arabic"), or a comment idea with a quoted comment behind it (channel-review §5).
@@ -102,3 +119,12 @@ After the OK:
 Credits: spacing and active-recall ideas adapted from m98/fluent (SM-2, fluent-review); calendar, series and hook ideas
 from AgriciDaniel/claude-youtube (calendar, hook) and sergebulaev/youtube-skills (yt-hook-scripter,
 yt-content-planner) — all MIT.
+
+## Checklist for every planned piece (owner, 2026-10-17)
+- [ ] Title starts with a searched task (Day N / Part N only at the end)
+- [ ] Story, list or practical topic — not a quiz, not abstract grammar
+- [ ] Story: one place, two characters, one twist, ≤ 4 new words
+- [ ] Grammar opens with an example
+- [ ] Share hook at the end
+- [ ] Translated title + description (Persian first) and language tags (upload-handover → Localize)
+- [ ] Instagram: worth saving, with a carousel version

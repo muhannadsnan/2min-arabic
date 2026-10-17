@@ -41,6 +41,10 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **2026-10-31: translations check** — 5 videos got fa/ur/tr/id/fr titles + descriptions on 17 Oct (tools/localizations.json,
   `youtube_api.py localize`). Studio → Analytics → Research: search terms in those languages + views from IR, AF, PK, TR, ID, FR
   before vs after. Up → localize all older videos too.
+- **From 2026-10-17 (owner, growth plan):** Day 21 = real-situation challenge · share hook on every new video (compare
+  with 8 shares total) · 2 Extras/week from the week of 26 Oct (searched topics list in plan-lessons; ASK the owner:
+  Days daily or 5/week) · 1 Instagram carousel/week from the week of 20 Oct (best word list, own cards; needs a
+  carousel option in tools/instagram_api.py) · from 26 Oct: search share per video (Extras > 30 %) + saves per carousel.
 - **Weekly (Sunday):** channel-review — `audit` (fix every ⚠️), search terms → tags of matching videos, stats,
   then ask only for the screenshots the API can't give (viewed vs swiped).
 - **YouTube login: permanent since 2026-10-15** — Google app "In production" (unverified, personal use; login shows
@@ -73,7 +77,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   output/repackage-proposals-2026-10-16/ (proposals.json + thumbnails) — owner reviews the folder, then apply via API.
 - **Next up (2026-10-15):** scripts written 15 Oct (videos/016–020, x06, v02; all lines mapped, 0 missing). Next: images + openers + produce. Days 16–20 + x06 (numbers 11–20, search "arabic numbers 1 to 20") + v02 (10 body words incl. صَدْرْ chest, not بَطْنْ — owner,
   real search "parts of body in arabic") planned; sheets `videos/_1620-whatsapp.txt` (71) + `_lina-koki-4-whatsapp.txt` (8).
-  Schedule: Day 16 19 Oct … Day 20 23 Oct · x06 24 · v02 25 · Day 21 (board quiz, no recording) 26. Approved 15 Oct: short intro,
+  Schedule: Day 16 19 Oct … Day 20 23 Oct · x06 24 · v02 25 · Day 21 (real-situation challenge, re-used recordings) 26. Approved 15 Oct: short intro,
   visible quests, recall moved to "Your turn" (produce-day). Pending: reusable-video upgrade (style/model test) · Part 3.
 - (older) **Next up (2026-10-07):** Days 11–15 + x05 + v01 produced and scheduled to 18 Oct. Next: Part 3 (Days 11–15, long chain, after 16 Oct) and plan Days 16–20 after the trip. (Old note:
   owner `videos/_1115-whatsapp.txt` (51 lines) + Koki `videos/_lina-koki-3-whatsapp.txt` (11 lines), due ~9 Oct.

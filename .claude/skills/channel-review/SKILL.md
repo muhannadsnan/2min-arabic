@@ -134,3 +134,13 @@ week can compare. Update the memory notes when a rule changes.
 Credits: adapted from AgriciDaniel/claude-youtube (analyze, audit, shorts), ravsau/youtuber-skills
 (youtube-retention, youtube-comments-to-ideas, youtube-channel-audit) and sergebulaev/youtube-skills
 (yt-audience-insights) — all MIT; their API/OAuth parts left out on purpose.
+
+## Baseline + standing checks (owner, 2026-10-17)
+Baseline to 14 Oct: 1,503 views, 24 subscribers, 222 Instagram followers; ~60 → ~128 views/day (week 2); YouTube search
+28 % → 44 % of views; **8 shares in total**. Every review compares with this and checks:
+- **Search share per video** — target: every Extra above 30 %.
+- **Shares** on videos with a share hook vs the 8-share baseline.
+- **Instagram:** saves per carousel vs the Reels average.
+- Comments: every comment answered within a day, in Arabic + transliteration.
+- Dated checks: 23 Oct re-packaging (views/day before vs after, per video + channel) · 31 Oct translations (search
+  terms in fa/ur/tr/id/fr, views from IR, AF, PK, TR, ID, FR; up → localize all older videos).
