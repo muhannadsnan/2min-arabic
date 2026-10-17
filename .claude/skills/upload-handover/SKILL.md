@@ -130,3 +130,20 @@ a Real Street Conversation") got 37–57. Shorts thumbnails are shown in a **16:
 **Schedule in Oslo time (2026-10-16):** `fill --publish-at "2026-10-26 17:00"` (no Z) — the tool converts to UTC itself.
 Never type a fixed `T15:00:00Z`: 17:00 Oslo is 15:00Z in summer but 16:00Z from the last Sunday of October (v02 was
 almost published at 16:00). After filling, read the times back (`videos`) and check each is 17:00 Oslo.
+
+## Localize — every video, right after `fill` (owner, 2026-10-17)
+
+Translated titles + description openers in **Persian (fa), Urdu (ur), Turkish (tr), Indonesian (id), French (fr)**:
+1. Write them into `tools/localizations.json` (`{"<video id>": {"name": …, "fa": [title, opener], …}}`): titles use the
+   words people search ("آموزش زبان عربی از صفر", "عربی سیکھیں", "Arapça öğren", "belajar bahasa Arab", "apprendre
+   l'arabe"), Day/Part numbers the local way (روز ۱۰ · دن 10 · 10. Gün · Hari 10 · Jour 10), max 100 characters; the
+   opener = 1–2 plain sentences. Keep the wording close to the approved ones already in the file.
+2. `$Y tools/youtube_api.py localize <id>` = dry run (prints every title/description; fa + ur marked "needs native
+   check" = written by Claude, not checked by a native speaker) → `--apply`.
+   It keeps the English title/description, sets defaultLanguage en, merges existing localizations (never deletes),
+   builds each description as opener + the English links/language block/hashtags unchanged, and adds the 7 shared
+   language tags, removing the most generic tags one by one (LOC_GENERIC order) until they fit 500 characters.
+   It never touches the file or the thumbnail (YouTube has one thumbnail for all languages).
+3. Report video × language done/failed (the tool reads it back after a short wait — YouTube shows it with a delay).
+Check on 2026-10-31: Studio → Analytics → Research — search terms in those languages + views from Iran, Afghanistan,
+Pakistan, Turkey, Indonesia, France, before vs after.

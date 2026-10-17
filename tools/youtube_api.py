@@ -25,6 +25,7 @@ unaudited API project private, so the owner drops the file in Studio and this to
 import argparse
 import datetime as dt
 import json
+import time
 import pathlib
 import re
 import sys
@@ -257,7 +258,7 @@ def audit(a):
         if "#" in sn["title"]: issues.append("hashtag in title")
         if AR.search(sn["title"]): issues.append("Arabic script in title")
         if not 12 <= len(tags) <= 28: issues.append(f"{len(tags)} tags")
-        if len(", ".join(tags)) > 480: issues.append("tags > 480 chars")
+        if len(", ".join(tags)) > 500: issues.append("tags > 500 chars")
         if len(ar) < 5: issues.append(f"only {len(ar)} Arabic tags")
         if not any(AR.search(t) and re.search(r"[A-Za-z]", t) for t in tags): issues.append("no mixed 'X meaning' tag")
         if any(g in t for t in tags for g in GENERIC_AR): issues.append("generic Arabic reach tag")
@@ -308,6 +309,82 @@ def setting(sheet, name):
 def find(stem, suffix):
     hits = sorted((ROOT / "videos").glob(f"{stem}*{suffix}"))
     return hits[0] if hits else None
+
+
+LOC_LANGS = ["fa", "ur", "tr", "id", "fr"]   # owner, 2026-10-17: Persian, Urdu, Turkish, Indonesian, French
+LOC_NATIVE_CHECK = {"fa", "ur"}
+# most generic first — removed one by one only when the new tags would not fit in YouTube's 500 characters
+LOC_GENERIC = ["shorts", "language learning", "اموزش زبان عربی از صفر", "تعليم عربي للاجانب",
+               "تعليم اللغة العربية لغير الناطقين بها", "learn arabic", "arabic for beginners", "learn arabic online",
+               "arabic language", "arabic lessons", "تعلم اللغة العربية", "تعلم العربية من الصفر", "arabic phrases",
+               "arabic phrases for beginners", "دروس العربية", "arabic vocabulary", "syrian arabic",
+               "modern standard arabic", "levantine arabic", "arabic phrases levantine", "استماع لهجات عربية",
+               "arabic conversation for beginners"]
+LOC_TAGS = ["آموزش زبان عربی", "آموزش زبان عربی از صفر", "زبان عربی", "عربی سیکھیں", "arapça öğren",
+            "belajar bahasa arab", "apprendre l'arabe"]
+
+
+def localize(a):
+    """Translated titles + descriptions (videos.update part=snippet,localizations). Dry run unless --apply.
+    Text per video in tools/localizations.json: {"<id>": {"name": …, "fa": [title, opener], …}}. Each localized
+    description = the opener + the English description's links/hashtags part (from the first ▶️/🔔/🌍 line) unchanged.
+    Keeps the English title/description, merges existing localizations (never deletes one), adds the shared tags."""
+    data = json.loads((ROOT / "tools" / "localizations.json").read_text(encoding="utf-8"))
+    ids = [a.video] if a.video else list(data)
+    y = yt(a.channel); results = {}
+    for vid in ids:
+        if vid not in data:
+            sys.exit(f"{vid}: no translations in tools/localizations.json")
+        v = y.videos().list(part="snippet,localizations", id=vid).execute(num_retries=3)["items"][0]
+        sn, locs = v["snippet"], dict(v.get("localizations") or {})
+        lines = sn["description"].split("\n")
+        start = next((i for i, l in enumerate(lines) if l.startswith(("▶️", "🔔", "🌍", "#"))), len(lines))
+        tail = "\n".join(lines[start:]).strip()
+        tags = list(sn.get("tags", [])); added = [t for t in LOC_TAGS if t.lower() not in {x.lower() for x in tags}]
+        chars = lambda ts: sum(len(t) + (2 if " " in t else 0) for t in ts) + len(ts) - 1
+        dropped = []   # owner (2026-10-17): remove the most generic tags, one by one, until all new tags fit
+        for g in LOC_GENERIC:
+            if chars(tags + added) <= 500:
+                break
+            hit = next((x for x in tags if x.lower() == g.lower()), None)
+            if hit:
+                tags.remove(hit); dropped.append(hit)
+        new_tags = tags + added
+        tag_chars = chars(new_tags)
+        if dropped:
+            print(f"tags removed (most generic first): {dropped}")
+        print(f"\n=== {data[vid]['name']} ({vid}) — {sn['title']}")
+        for lang in LOC_LANGS:
+            ttl, opener = data[vid][lang]
+            if len(ttl) > 100:
+                sys.exit(f"{vid} {lang}: title over 100 characters")
+            desc = opener + ("\n\n" + tail if tail else "")
+            flag = "  ⚠️ needs native check" if lang in LOC_NATIVE_CHECK else ""
+            print(f"[{lang}]{flag}\n  title: {ttl}\n  description:\n    " + desc.replace("\n", "\n    "))
+            locs[lang] = {"title": ttl, "description": desc}
+        print(f"tags: +{len(added)} → {len(new_tags)} tags, {tag_chars} chars" + ("  ⚠️ over 500" if tag_chars > 500 else ""))
+        if not a.apply:
+            continue
+        if tag_chars > 500:
+            results[vid] = "failed (tags over 500 chars)"; continue
+        body = {"id": vid, "snippet": {"title": sn["title"], "description": sn["description"], "categoryId": sn["categoryId"],
+                                       "tags": new_tags, "defaultLanguage": "en",
+                                       "defaultAudioLanguage": sn.get("defaultAudioLanguage", "en")},
+                "localizations": locs}
+        try:
+            y.videos().update(part="snippet,localizations", body=body).execute(num_retries=3)
+            for _ in range(6):   # YouTube shows new localizations with a delay (17 Oct: empty right after the update)
+                time.sleep(10)
+                back = y.videos().list(part="localizations", id=vid).execute()["items"][0].get("localizations", {})
+                if all(lang in back for lang in LOC_LANGS):
+                    break
+            results[vid] = {lang: ("done" if back.get(lang, {}).get("title") == data[vid][lang][0] else "failed") for lang in LOC_LANGS}
+        except Exception as e:
+            results[vid] = f"failed ({str(e)[:120]})"
+    if a.apply:
+        print("\nRESULTS"); [print(vid, data[vid]["name"], r) for vid, r in results.items()]
+    else:
+        print("\ndry run — nothing changed. Add --apply to publish.")
 
 
 def fill(a):
@@ -428,6 +505,7 @@ def main():
     p = sub.add_parser("niche"); p.add_argument("queries", nargs="+"); p.add_argument("--days", type=int, default=365); p.add_argument("--max", type=int, default=10); p.set_defaults(fn=niche)
     p = sub.add_parser("captions"); p.add_argument("video"); p.add_argument("--replace"); p.set_defaults(fn=captions)
     p = sub.add_parser("post-comments"); p.add_argument("--days", type=int, default=3); p.set_defaults(fn=post_comments)
+    p = sub.add_parser("localize"); p.add_argument("video", nargs="?"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=localize)
     p = sub.add_parser("title"); p.add_argument("video"); p.add_argument("title"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=title)
     p = sub.add_parser("fill"); p.add_argument("stem"); p.add_argument("video")
     p.add_argument("--publish-at", help="ISO time, or 'next' = the day after the latest video"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=fill)
