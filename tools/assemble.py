@@ -400,6 +400,32 @@ def main():
             achain += (f";[{idx + 1 + j}:a]volume={vol},aformat=channel_layouts=mono,"
                        f"adelay={round((start + at) * 1000)}:all=1[sx{j}]")
             mix.append(f"[sx{j}]")
+    # progress stars (owner, 2026-10-17): 3 grey stars under the badge; each turns gold with a pop + soft chime at the
+    # end of its milestone scene. prompts.json {"stars": [s1, s2, s3]} = scene numbers (a third of the lesson each,
+    # snapped to a real milestone: words learned, the story/game done, "Your turn" done).
+    star_scenes = next((e["stars"] for e in entries if isinstance(e, dict) and "stars" in e), None)
+    star_dir = HERE.parent / "assets" / "stars"
+    if star_scenes and (star_dir / "pop.mov").exists():
+        size, gap, sy = 62, 78, 6   # a row above the badge (the badge sits at ~y 70–150)
+        xs = [W // 2 + (i - (len(star_scenes) - 1) / 2) * gap - size // 2 for i in range(len(star_scenes))]
+        times = [max(0.5, tl["scenes"][s - 1]["end"] - 0.35) for s in star_scenes]
+        base = inputs.count("-i")   # index of the next input
+        inputs += ["-loop", "1", "-i", str(star_dir / "grey.png"), "-loop", "1", "-i", str(star_dir / "gold.png")]
+        gi, oi = base, base + 1
+        vchain += f";[{gi}:v]scale={size}:{size},format=rgba,split={len(xs)}" + "".join(f"[g{i}]" for i in range(len(xs)))
+        vchain += f";[{oi}:v]scale={size}:{size},format=rgba,split={len(xs)}" + "".join(f"[o{i}]" for i in range(len(xs)))
+        for i, (x, ts) in enumerate(zip(xs, times)):
+            vchain += (f";[{last}][g{i}]overlay={x:.0f}:{sy}:shortest=1:enable='lt(t,{ts + 0.38:.2f})'[sg{i}]"
+                       f";[sg{i}][o{i}]overlay={x:.0f}:{sy}:shortest=1:enable='gte(t,{ts + 0.38:.2f})'[so{i}]")
+            last = f"so{i}"
+            pidx = inputs.count("-i"); inputs += ["-i", str(star_dir / "pop.mov")]
+            vchain += (f";[{pidx}:v]scale={int(size * 2.4)}:{int(size * 2.4)},format=rgba,setpts=PTS-STARTPTS+{ts:.3f}/TB[pp{i}]"
+                       f";[{last}][pp{i}]overlay={x - size * 0.7:.0f}:{max(0, sy - size * 0.7):.0f}:eof_action=pass:enable='between(t,{ts:.2f},{ts + 0.4:.2f})'[sp{i}]")
+            last = f"sp{i}"
+            cidx = inputs.count("-i"); inputs += ["-i", str(star_dir / "chime.wav")]
+            achain += f";[{cidx}:a]volume=0.35,aformat=channel_layouts=mono,adelay={round(ts * 1000)}:all=1[ch{i}]"
+            mix.append(f"[ch{i}]")
+        print(f"  stars at {', '.join(f'{x:.1f}s' for x in times)} (scenes {star_scenes})")
     hook = opts.get(1, {}).get("hook")   # thumbnail look for the first ~1.5 s (owner, 2026-10-16), over the caption too
     if hook:
         sys.path.insert(0, str(HERE))

@@ -144,6 +144,12 @@ ONE serial queue; never start a check while audio or ComfyUI runs (the owner's o
 that owns port 8188). Two `make_audio.py` runs at once also clash on `audio/.cache/work/generate.json`.
 Never edit a shell script while it is running (bash reads it as it goes) — write a new queue file instead.
 
+**Progress stars (owner, 2026-10-17 — from Day 21 on):** three grey stars above the badge; each turns gold with a
+pop + soft chime (`assets/stars/`) at the end of a milestone scene. One star per third of the lesson, snapped to a REAL
+milestone (new words learned · story/game/conversation done · "Your turn" done) — never on a timer. In
+`images/<video>/prompts.json` add `{"stars": [s1, s2, s3]}` (scene numbers); assemble.py does the rest. Not for the
+talking/trailer videos (no milestones). Check `contact.png` and listen: the chime never covers a word.
+
 ## 1. Script — `videos/NNN-<slug>.md`
 
 Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼️ Image`, `🔤 On screen`,

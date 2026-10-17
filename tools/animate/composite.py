@@ -35,6 +35,8 @@ def main():
     ap.add_argument("--y", choices=["bottom", "center"], default="bottom")
     ap.add_argument("--zoom", action="store_true", help="slow zoom on a still background")
     ap.add_argument("--dominance", type=float, default=1.3, help="green must exceed red and blue by this factor")
+    ap.add_argument("--key", choices=["green", "blue"], default="green",
+                    help="screen colour; blue for characters who wear green (the owner's dark-green sweater, 2026-10-17)")
     ap.add_argument("--yellow", action="store_true",
                     help="Lina's mustard cardigan: the green screen's bounce light turns its edges lime; pixels where "
                          "green beats red and blue is low get the cardigan's own green/red ratio back (never for Sami's olive hoodie)")
@@ -58,8 +60,11 @@ def main():
     if a.yellow:
         gexpr = f"if(gt(g(X,Y),0.84*r(X,Y))*lt(b(X,Y),0.5*g(X,Y)),0.84*r(X,Y)+0.25*(g(X,Y)-0.84*r(X,Y)),{gexpr})"   # smooth: only the excess green is compressed
     key_px = f"gt(g(X,Y),{k}*r(X,Y))*gt(g(X,Y),{k}*b(X,Y))*gt(g(X,Y),90)"
-    chain = (f"{bg};[1:v]fps=30,scale=-2:{h},format=rgba,"
-             f"geq=r='r(X,Y)':g='{gexpr}':b='b(X,Y)':a='if({key_px},0,255)'[fg];"
+    if a.key == "blue":   # blue dominance; blue fringe pulled down instead of green
+        key_px = f"gt(b(X,Y),{k}*r(X,Y))*gt(b(X,Y),{k}*g(X,Y))*gt(b(X,Y),90)"
+    geq = (f"geq=r='r(X,Y)':g='{gexpr}':b='b(X,Y)':a='if({key_px},0,255)'[fg];" if a.key == "green" else
+           f"geq=r='r(X,Y)':g='g(X,Y)':b='min(b(X,Y),1.12*max(r(X,Y),g(X,Y)))':a='if({key_px},0,255)'[fg];")
+    chain = (f"{bg};[1:v]fps=30,scale=-2:{h},format=rgba," + geq +
              f"[bg][fg]overlay=(W-w)/2:{y}:shortest=0[v]")
     subprocess.run(["ffmpeg", "-v", "error", "-y", *bg_in, "-stream_loop", "-1", "-i", a.unit, "-filter_complex", chain,
                     "-map", "[v]", "-frames:v", str(frames), "-c:v", "libx264", "-crf", "18", "-preset", "medium",
