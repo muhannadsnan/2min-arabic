@@ -52,7 +52,12 @@ def main():
             out = T / f"{c['n']}-0.wav"
             run("ffmpeg", "-y", "-i", str(pathlib.Path(a.src) / f"{c['n']}.wav"), "-af", "silenceremove=start_periods=1:start_threshold=-40dB:start_silence=0.03,"
                 "areverse,silenceremove=start_periods=1:start_threshold=-40dB:start_silence=0.08,areverse", "-ar", "24000", str(out))
-            heard = " ".join(s.text for s in asr.transcribe(str(out), language=a.lang)[0]); e = cer(text, heard); d = dur(out)
+            d = dur(out)
+            if d > slot:   # too long: shorten the voice's pauses inside the sentence (commas, colons) to 80 ms first
+                tight = T / f"{c['n']}-tight.wav"
+                run("ffmpeg", "-y", "-i", str(out), "-af", "silenceremove=stop_periods=-1:stop_duration=0.12:stop_threshold=-40dB:stop_silence=0.08", str(tight))
+                if dur(tight) < d: out = tight; d = dur(out)
+            heard = " ".join(s.text for s in asr.transcribe(str(out), language=a.lang)[0]); e = cer(text, heard)
             speed = max(1.0, d / slot)
             run("ffmpeg", "-y", "-i", str(out), "-af", f"atempo={min(speed, 1.3):.3f},loudnorm=I=-18:TP=-2", "-ar", "48000", "-ac", "1", str(fit))
             flag = "TOO LONG — shorten" if speed > 1.3 else ("sped up %.2f×" % speed if speed > 1.0 else "fits")
