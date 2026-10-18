@@ -168,8 +168,8 @@ channel (`subtitle-backlog`) → 4. **audio tracks** for the selected top videos
 | Tier | Which videos | Subtitles (text, no owner work) | Audio tracks (owner adds in Studio) |
 |---|---|---|---|
 | All | every video, from now on + backfill | 13, in priority order: hi ur id bn tr fa ms · fr ru de so sw · es | — |
-| Top | top 6 by views + the first video of each week | same | fr, tr, es, hi (= Hindi + Urdu), id (= Indonesian + Malay) |
-| Star | > 2× the channel median views (now x03, Day 12) | same | Top + ru, sw (German = subtitles only, owner) |
+| Top | top 6 by views + the first video of each week | same | fr, tr, es, hi (= Hindi + Urdu), id (= Indonesian + Malay), ru (owner 2026-10-18) |
+| Star | > 2× the channel median views (now x03, Day 12) | same | Top + sw (German = subtitles only, owner) |
 Portuguese + Chinese dropped (owner 2026-10-18: small Arabic-learning interest; YouTube blocked in China). Re-check the
 tiers at every weekly review (`videos`); on 31 Oct compare with Studio → Audience → Top geographies and cut languages
 that bring nothing. Not filmed videos (Day 1: lips on camera), not Parts yet
