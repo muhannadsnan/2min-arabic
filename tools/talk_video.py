@@ -85,9 +85,27 @@ def main():
         ev.append(f"Dialogue: 0,{ts(s)},{ts(min(max(en, s + 0.5), nxt))},Default,,0,0,0,,{txt}")
     ass = tmp / "captions.ass"; ass.write_text(head + "\n".join(ev) + "\n", encoding="utf-8")
     out = out_dir / f"{a.name}.mp4"
+    # progress bar + star (owner 2026-10-18): a thin red bar fills along the very top; a big grey star waits at its end
+    # and pops gold (with the lesson chime) when the owner says "hit like and subscribe" — a small reward for staying
+    S = ROOT / "assets/stars"; sw, sh = 140, 135; sx, sy = 1080 - sw - 14, 8; cx, cy = sx + sw // 2, sy + sh // 2
+    bw, bh = sx - 10, 12; by = cy - bh // 2
+    hits = [w.start for w in words if w.word.strip(" ,.!").lower() == "hit"]
+    T = hits[0] if hits else total - 3.0
+    fc = (f"[0:v]ass={ass}[v0];"
+          f"color=c=0x000000@0.35:s={bw}x{bh}:r=30:d={total:.2f},format=rgba[trk];"
+          f"color=c=0xFF2020:s={bw}x{bh}:r=30:d={total:.2f},format=rgba[bar];"
+          f"[v0][trk]overlay=0:{by}[v1];"
+          f"[v1][bar]overlay=x='-{bw}+{bw}*t/{total:.3f}':y={by}[v2];"
+          f"[v2][2:v]overlay={sx}:{sy}:enable='lt(t,{T:.2f})'[v3];"
+          f"[4:v]setpts=PTS+{T:.2f}/TB[pop];[v3][pop]overlay={cx - 160}:{cy - 160}:eof_action=pass[v4];"
+          f"[v4][3:v]overlay={sx}:{sy}:enable='gte(t,{T + 14 / 30 - 0.03:.2f})',format=yuv420p[vout];"
+          f"[5:a]adelay={int(T * 1000)}|{int(T * 1000)},volume=0.7[ch];[1:a][ch]amix=inputs=2:normalize=0:duration=first,"
+          f"loudnorm=I=-14:TP=-1.5[aout]")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(tmp / "list.txt"), "-i", str(voice),
-                    "-vf", f"ass={ass}", "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-pix_fmt", "yuv420p",
-                    "-c:a", "aac", "-b:a", "192k", "-af", "loudnorm=I=-14:TP=-1.5", "-shortest", str(out)], check=True)
+                    "-i", str(S / "grey.png"), "-i", str(S / "gold.png"), "-i", str(S / "pop.mov"), "-i", str(S / "chime.wav"),
+                    "-filter_complex", fc, "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-crf", "19", "-preset", "medium",
+                    "-c:a", "aac", "-b:a", "192k", "-t", f"{total:.2f}", str(out)], check=True)
+    print(f"star turns gold at {T:.2f}s")
     print(f"{out}  {dur(out):.1f}s · {len(shots)} shots: " + ", ".join(f"{pathlib.Path(f).stem}@{o:.1f}+{d:.1f}" for f, o, d in shots))
 
 if __name__ == "__main__":

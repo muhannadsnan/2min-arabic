@@ -24,6 +24,7 @@ def dur(p): return float(subprocess.run(["ffprobe", "-v", "error", "-show_entrie
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("spec"); ap.add_argument("lang"); ap.add_argument("--takes", type=int, default=3)
+    ap.add_argument("--from", dest="src", help="ready lines <dir>/<n>.wav (tools/dub_lines.py: Persian, Bengali)")
     a = ap.parse_args()
     spec = json.loads(pathlib.Path(a.spec).read_text(encoding="utf-8")); stem = spec["video"]; lines = spec[a.lang]
     tl = json.loads((ROOT / "audio" / stem / "timeline.json").read_text()); clips = tl["clips"]
@@ -47,6 +48,17 @@ def main():
         if c["speaker"] != "narrator" or str(c["n"]) not in lines: continue
         text = lines[str(c["n"])]; slot = (clips[i + 1]["start"] if i + 1 < len(clips) else tl["duration"]) - c["start"] - 0.2
         fit = T / f"{c['n']}-fit.wav"
+        if a.src:   # a ready line (no takes to choose from): trim, check, fit with a little more speed-up allowed
+            out = T / f"{c['n']}-0.wav"
+            run("ffmpeg", "-y", "-i", str(pathlib.Path(a.src) / f"{c['n']}.wav"), "-af", "silenceremove=start_periods=1:start_threshold=-40dB:start_silence=0.03,"
+                "areverse,silenceremove=start_periods=1:start_threshold=-40dB:start_silence=0.08,areverse", "-ar", "24000", str(out))
+            heard = " ".join(s.text for s in asr.transcribe(str(out), language=a.lang)[0]); e = cer(text, heard); d = dur(out)
+            speed = max(1.0, d / slot)
+            run("ffmpeg", "-y", "-i", str(out), "-af", f"atempo={min(speed, 1.3):.3f},loudnorm=I=-18:TP=-2", "-ar", "48000", "-ac", "1", str(fit))
+            flag = "TOO LONG — shorten" if speed > 1.3 else ("sped up %.2f×" % speed if speed > 1.0 else "fits")
+            if speed > 1.3: long_lines.append({"n": c["n"], "text": text, "seconds": round(d, 2), "slot": round(slot, 2), "ratio": round(speed, 2)})
+            report.append(f"{c['n']:>3} {d:5.2f}s / slot {slot:5.2f}s  CER {e:.2f}  {flag} | {text}")
+            placed.append((c["start"], c["end"], fit)); continue
         key = cache / (hashlib.sha1(f"{text}|{TEMPO.get(a.lang, 0.95)}|{slot:.2f}".encode()).hexdigest()[:12] + ".wav")
         if key.exists():   # this exact line already fitted on an earlier run → reuse it (re-runs only redo changed lines)
             shutil.copy(key, fit); report.append(f"{c['n']:>3} cached {dur(fit):5.2f}s / slot {slot:5.2f}s  fits | {text}")
