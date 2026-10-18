@@ -25,7 +25,7 @@ $Y tools/youtube_api.py audit          # every video vs the upload + tag rules �
 $Y tools/youtube_api.py search-terms   # what people really typed to find US (needs a few days of data)
 python3 tools/suggest.py "<topic>"      # what people type on YouTube in general (autocomplete = trending searches)
 ```
-- **Audit** checks per video: no hashtag / no Arabic script in the title · no flag emojis · 12–28 tags, ≤ 480 chars · ≥ 5 Arabic tags
+- **Audit** checks per video: no hashtag / no Arabic script in the title · no flag emojis · 12–34 tags (10 of them short language tags), ≤ 500 chars · ≥ 5 Arabic tags
   incl. one mixed "X meaning" tag · no generic Arabic reach tags (شورتس, فيرال, ترند…) · Arabic in the description
   inside direction isolates · English title language · Education · not for kids · English captions · in a playlist ·
   no "Deleted video" placeholders. Fix ⚠️ the same day (published videos too — tags/description edits are safe).

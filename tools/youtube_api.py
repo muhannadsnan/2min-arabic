@@ -257,7 +257,7 @@ def audit(a):
         issues = []
         if "#" in sn["title"]: issues.append("hashtag in title")
         if AR.search(sn["title"]): issues.append("Arabic script in title")
-        if not 12 <= len(tags) <= 28: issues.append(f"{len(tags)} tags")
+        if not 12 <= len(tags) <= 34: issues.append(f"{len(tags)} tags")   # 28 → 34 (2026-10-18): +10 short language tags; YouTube only limits 500 chars
         if len(", ".join(tags)) > 500: issues.append("tags > 500 chars")
         if len(ar) < 5: issues.append(f"only {len(ar)} Arabic tags")
         if not any(AR.search(t) and re.search(r"[A-Za-z]", t) for t in tags): issues.append("no mixed 'X meaning' tag")
@@ -375,6 +375,9 @@ LOC_GENERIC = ["shorts", "language learning", "اموزش زبان عربی از
 # shared search tags of the top languages (owner 2026-10-18: hi ur id bn tr fa ms; ms = "belajar bahasa arab" too)
 LOC_TAGS = ["آموزش زبان عربی", "آموزش زبان عربی از صفر", "زبان عربی", "عربی سیکھیں", "arapça öğren",
             "belajar bahasa arab", "apprendre l'arabe", "अरबी सीखें", "আরবি শিখুন", "arabi seekhein"]
+# still over 500 after LOC_GENERIC: these language tags go next (covered by a longer tag, or not a top language)
+LOC_LAST = ["زبان عربی", "آموزش زبان عربی", "apprendre l'arabe", "محادثة بالعربية",   # + near-duplicates
+            "where are you from in arabic language", "countries in arabic language"]
 
 
 def localize(a):
@@ -402,6 +405,13 @@ def localize(a):
             hit = next((x for x in tags if x.lower() == g.lower()), None)
             if hit:
                 tags.remove(hit); dropped.append(hit)
+        for g in LOC_LAST:
+            if chars(tags + added) <= 500:
+                break
+            for lst in (added, tags):
+                hit = next((x for x in lst if x.lower() == g.lower()), None)
+                if hit:
+                    lst.remove(hit); dropped.append(hit)
         new_tags = tags + added
         tag_chars = chars(new_tags)
         if dropped:
