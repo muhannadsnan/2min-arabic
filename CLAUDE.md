@@ -38,7 +38,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   (big English words + small Arabic) on 16 Oct (owner, option a; log + views at change: output/repackage-proposals-2026-10-16/
   applied-log.json; earlier 15 Oct changes: output/repackage-2026-10-15/). Compare views/day for 7 days before vs after,
   channel-wide and per video; search-traffic share; revert single videos that clearly lost.
-- **YouTube API quota extension requested 2026-10-18** (50,000/day, form evidence output/api-quota-form/) — watch the email for Google's questions; when granted, raise `subtitle-backlog --max` in tools/caption_backlog.sh.
+- **YouTube API quota extension SUBMITTED 2026-10-18 afternoon** (50,000/day; answers + evidence in output/api-quota-form/). Once granted: (50,000/day, form evidence output/api-quota-form/) — watch the email for Google's questions; when granted, raise `subtitle-backlog --max` in tools/caption_backlog.sh.
 - **2026-10-31: translations + subtitles check** (also: Studio → Audience → Top geographies → cut subtitle languages that bring nothing; 13 now) — 5 videos got fa/ur/tr/id/fr titles + descriptions on 17 Oct (tools/localizations.json,
   `youtube_api.py localize`). Studio → Analytics → Research: search terms in those languages + views from IR, AF, PK, TR, ID, FR
   before vs after. Up → localize all older videos too.
