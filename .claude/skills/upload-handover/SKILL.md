@@ -74,8 +74,8 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
   playlist. The sheet still lists the manual bits: Related video, pinned comment, Parts' end screen/cards/quiz.
 - **Not settable by the API — always list them as the owner's Studio checklist** (owner, 2026-10-02):
   Education → Type **Concept overview**, Level **Beginner** (Academic system: leave empty) ·
-  Automatic chapters **on**, Automatic places **off**, Automatic concepts **off**. Ask once that the owner sets them in
-  Studio → Settings → **Upload defaults** (whichever are offered there), so they're right for every upload.
+  Automatic chapters **on**, Automatic places **off**, Automatic concepts **off**. Studio → Settings → Upload defaults
+  does NOT offer these (owner checked 2026-10-18) — they stay a per-video step in Studio → the video → Details.
 - **After every fill, end the reply with the owner's Studio checklist** (the tool prints it):
   Type Concept overview · Level Beginner · Automatic places/concepts off — every time, never assume it's done.
 - After `fill`, run `$Y tools/youtube_api.py audit` and fix every ⚠️; also audit the channel (title = sheet, isolates in the description, 10–14 tags, Education, English

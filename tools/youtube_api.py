@@ -520,6 +520,10 @@ def fill(a):
         local = _dt.datetime.fromisoformat(a.publish_at.replace("T", " ")).replace(tzinfo=ZoneInfo("Europe/Oslo"))
         a.publish_at = local.astimezone(_dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         print(f"  Oslo {local:%Y-%m-%d %H:%M} = {a.publish_at}")
+    if a.publish_at and dt.datetime.strptime(a.publish_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc) <= dt.datetime.now(dt.timezone.utc) + dt.timedelta(minutes=2):
+        # the time has passed (e.g. a queued fill ran late after the laptop slept): publish now instead of failing
+        print(f"  ⚠️ {a.publish_at} has passed — publishing now"); a.publish_at = None
+        status.pop("publishAt", None); status.update(privacyStatus="public")
     if a.publish_at:
         status.update(privacyStatus="private", publishAt=a.publish_at)
 
