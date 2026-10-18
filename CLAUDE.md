@@ -38,7 +38,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   (big English words + small Arabic) on 16 Oct (owner, option a; log + views at change: output/repackage-proposals-2026-10-16/
   applied-log.json; earlier 15 Oct changes: output/repackage-2026-10-15/). Compare views/day for 7 days before vs after,
   channel-wide and per video; search-traffic share; revert single videos that clearly lost.
-- **2026-10-31: translations check** — 5 videos got fa/ur/tr/id/fr titles + descriptions on 17 Oct (tools/localizations.json,
+- **2026-10-31: translations + subtitles check** (also: Studio → Audience → Top geographies → cut subtitle languages that bring nothing; 13 now) — 5 videos got fa/ur/tr/id/fr titles + descriptions on 17 Oct (tools/localizations.json,
   `youtube_api.py localize`). Studio → Analytics → Research: search terms in those languages + views from IR, AF, PK, TR, ID, FR
   before vs after. Up → localize all older videos too.
 - **From 2026-10-17 (owner, growth plan):** Day 21 = real-situation challenge · share hook on every new video (compare

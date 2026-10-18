@@ -294,6 +294,57 @@ def captions(a):
         print(f"  ✅ English captions replaced with {a.replace}")
 
 
+def subtitle(a):
+    """Add (or replace) a translated subtitle track: subtitle <video id> <lang> <file.srt> (tools/dub_subs.py makes them)."""
+    from googleapiclient.http import MediaFileUpload
+    y = yt(a.channel)
+    for t in y.captions().list(part="snippet", videoId=a.video).execute(num_retries=3)["items"]:
+        if t["snippet"]["trackKind"] == "standard" and t["snippet"]["language"] == YT_LANG.get(a.lang, a.lang):
+            y.captions().delete(id=t["id"]).execute(num_retries=3)
+    y.captions().insert(part="snippet", body={"snippet": {"videoId": a.video, "language": YT_LANG.get(a.lang, a.lang), "name": "", "isDraft": False}},
+                        media_body=MediaFileUpload(a.srt, mimetype="application/octet-stream")).execute(num_retries=3)
+    print(f"  ✅ {a.lang} subtitles on {a.video} ({a.srt})")
+    stem = next((k for k, v in json.loads((ROOT / "dubs" / "ids.json").read_text()).items() if v == a.video), None)
+    rec = json.loads(SUBS_DONE.read_text()) if SUBS_DONE.exists() else []
+    if stem and f"{stem}:{a.lang}" not in rec: SUBS_DONE.write_text(json.dumps(rec + [f"{stem}:{a.lang}"], indent=0))
+
+
+# owner 2026-10-18: 13 languages in priority order (pt, zh dropped); the backlog does each language on all videos first
+SUB_LANGS = ["hi", "ur", "id", "bn", "tr", "fa", "ms", "fr", "ru", "de", "so", "sw", "es"]
+YT_LANG = {"zh": "zh-Hans"}
+SUBS_DONE = pathlib.Path.home() / ".local/share/2min-yt/subs-done.json"   # "stem:lang" already on YouTube
+
+
+def subtitle_backlog(a):
+    """Daily (caption_backlog.sh): upload missing translated subtitle tracks — language by language in SUB_LANGS
+    priority, each on every video (most-viewed first), at most --max tracks (400 units each; the rest waits for
+    tomorrow). Builds subs-<lang>.srt from dubs/<stem>.json. Uploaded tracks are recorded in SUBS_DONE (no list calls)."""
+    import subprocess
+    from googleapiclient.errors import HttpError
+    from googleapiclient.http import MediaFileUpload
+    y = yt(a.channel); ids = json.loads((ROOT / "dubs" / "ids.json").read_text())
+    rec = json.loads(SUBS_DONE.read_text()) if SUBS_DONE.exists() else []
+    stems = [p.stem for p in (ROOT / "dubs").glob("*.json") if p.stem in ids]
+    views = {v["id"]: int(v["statistics"].get("viewCount", 0)) for i in range(0, len(stems), 50) for v in
+             y.videos().list(part="statistics", id=",".join(ids[s] for s in stems[i:i + 50])).execute(num_retries=3)["items"]}
+    stems.sort(key=lambda s: -views.get(ids[s], 0)); specs = {}; done = 0
+    for l in SUB_LANGS:
+        for stem in stems:
+            spec = specs.setdefault(stem, json.loads((ROOT / "dubs" / f"{stem}.json").read_text(encoding="utf-8")))
+            if l not in spec or f"{stem}:{l}" in rec: continue
+            if done >= a.max: print(f"stopped at --max {a.max}"); return
+            subprocess.run([sys.executable, str(ROOT / "tools" / "dub_subs.py"), f"dubs/{stem}.json", l], cwd=ROOT, check=True, capture_output=True)
+            try:
+                y.captions().insert(part="snippet", body={"snippet": {"videoId": ids[stem], "language": YT_LANG.get(l, l), "name": "", "isDraft": False}},
+                                    media_body=MediaFileUpload(str(ROOT / "output" / stem / f"subs-{l}.srt"), mimetype="application/octet-stream")).execute(num_retries=3)
+            except HttpError as e:
+                if "quota" in str(e).lower(): print("quota used up — the rest tomorrow"); return
+                raise
+            rec.append(f"{stem}:{l}"); SUBS_DONE.write_text(json.dumps(rec, indent=0)); done += 1
+            print(f"  ✅ {stem} {l}")
+    print(f"all translated subtitles are up ({done} added)")
+
+
 # ---------- fill: upload sheet → video ----------
 
 def box(sheet, heading):
@@ -504,6 +555,8 @@ def main():
     sub.add_parser("audit").set_defaults(fn=audit)
     p = sub.add_parser("niche"); p.add_argument("queries", nargs="+"); p.add_argument("--days", type=int, default=365); p.add_argument("--max", type=int, default=10); p.set_defaults(fn=niche)
     p = sub.add_parser("captions"); p.add_argument("video"); p.add_argument("--replace"); p.set_defaults(fn=captions)
+    p = sub.add_parser("subtitle"); p.add_argument("video"); p.add_argument("lang"); p.add_argument("srt"); p.set_defaults(fn=subtitle)
+    p = sub.add_parser("subtitle-backlog"); p.add_argument("--max", type=int, default=12); p.set_defaults(fn=subtitle_backlog)
     p = sub.add_parser("post-comments"); p.add_argument("--days", type=int, default=3); p.set_defaults(fn=post_comments)
     p = sub.add_parser("localize"); p.add_argument("video", nargs="?"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=localize)
     p = sub.add_parser("title"); p.add_argument("video"); p.add_argument("title"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=title)

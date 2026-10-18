@@ -155,6 +155,37 @@ each language's search terms go into the tags. A native speaker check of Persian
 audio track on the SAME video. New content made for one language audience gets its own upload (e.g. "Arabic words you
 already know in Persian").
 
+## Subtitles + audio tracks in other languages (owner, 2026-10-18)
+
+**Three tiers (owner, 2026-10-18):**
+| Tier | Which videos | Subtitles (text, no owner work) | Audio tracks (owner adds in Studio) |
+|---|---|---|---|
+| All | every video, from now on + backfill | 13, in priority order: hi ur id bn tr fa ms · fr ru de so sw · es | — |
+| Top | top 6 by views + the first video of each week | same | fr, tr, es, hi (= Hindi + Urdu), id (= Indonesian + Malay) |
+| Star | > 2× the channel median views (now x03, Day 12) | same | Top + de, ru, sw |
+Portuguese + Chinese dropped (owner 2026-10-18: small Arabic-learning interest; YouTube blocked in China). Re-check the
+tiers at every weekly review (`videos`); on 31 Oct compare with Studio → Audience → Top geographies and cut languages
+that bring nothing. Not filmed videos (Day 1: lips on camera), not Parts yet
+(compiled from several timelines). YouTube's own auto-dubbing stays OFF (it would re-voice the Arabic too).
+New video: write its `dubs/<stem>.json` (13 languages) with the sheet; `caption_backlog.sh` (10:30 daily) uploads
+missing tracks itself, language by language in priority order, most-viewed first, max 20 a day (a new video = 13 tracks) (`youtube_api.py subtitle-backlog`; IDs in `dubs/ids.json`). **Free, commercial-OK models only** (owner: "we only use free licenced models everywhere").
+1. **Translations** `dubs/<stem>.json`: every narrator clip (`audio/<stem>/timeline.json`, speaker narrator, key = n)
+   in the 13 languages of the table (audio languages: fr, tr, es, hi, id + star de, ru, sw; ur/ms = proper Urdu/Malay text). Same or fewer syllables than the English
+   (the line must fit its slot). Arabic words stay transliterated (ismi). hi = plain spoken Hindustani that Urdu
+   speakers understand too (lafz, zaroori, sawaal; ख़/ग़/क़ kept); id = everyday Indonesian (read by the Malay voice).
+2. **Audio** (GPU, one at a time): `$TTS tools/dub_track.py dubs/<stem>.json <lang>` for fr, tr, es, hi, id →
+   `output/<stem>/dub-<lang>.m4a` + `-preview.mp4`. The owner's clone speaks the language; all Arabic stays the
+   owner's/Koki's real voice. Check the report: every line "fits"/"sped up ≤ 1.18×", CER ≤ 0.15 (hi ≤ 0.3: Whisper writes English loanwords in Latin letters); "TOO LONG" → shorten
+   the line and re-run. Persian: no free model → no audio. Indonesian = Chatterbox `ms` voice (VOICE map in the tool).
+3. **Subtitles** (API, 400 units each): `python3 tools/dub_subs.py dubs/<stem>.json` → `subs-<lang>.srt` (Arabic cues
+   with transliteration kept) → `$Y tools/youtube_api.py subtitle <id> <lang> output/<stem>/subs-<lang>.srt` for all 8.
+   More than ~20 tracks in a day → put the rest in `~/.local/share/2min-yt/pending-commands.txt`
+   (`subtitle <id> <lang> <srt>`, runs at 09:15).
+4. **Owner (no API for audio tracks):** Studio → the video → Languages → add language → Audio → Add → the m4a.
+   Language labels: French · Turkish · Spanish · **Hindi AND Urdu (the same dub-hi.m4a twice)** · **Indonesian AND
+   Malay (the same dub-id.m4a twice)** — spoken, these pairs are understood both ways; YouTube plays the track that
+   matches the viewer's language (owner, 2026-10-18). The hand-over lists the files per video. Automatic dubbing stays OFF.
+
 ## Instagram (owner, 2026-10-17)
 - **Saves decide reach:** word lists and clear rules get saved (Day 3: 65 saves, Day 5: 50); quizzes and greetings don't.
 - **One carousel a week** from the week's best word list, built from the video's own cards, one word per slide.
