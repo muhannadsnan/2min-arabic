@@ -451,11 +451,43 @@ def localize(a):
         print("\ndry run — nothing changed. Add --apply to publish.")
 
 
+def resolve_video(y, ref):
+    """'title:<draft name>' → the id of the upload with that title (a fresh upload is named after its file), so a
+    fill can be queued before the id is known (owner 2026-10-18). Anything else is returned as an id."""
+    if not ref.startswith("title:"):
+        return ref
+    want = ref[6:].strip().lower()
+    up = y.channels().list(part="contentDetails", mine=True).execute(num_retries=3)["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    items = y.playlistItems().list(part="snippet", playlistId=up, maxResults=50).execute(num_retries=3)["items"]
+    hit = [i["snippet"]["resourceId"]["videoId"] for i in items if i["snippet"]["title"].strip().lower() == want]
+    if len(hit) != 1:
+        sys.exit(f"{ref}: found {len(hit)} uploads with that title")
+    return hit[0]
+
+
+def adopt_localizations(stem, vid):
+    """Move a video's 13-language titles from localizations-pending.json (keyed by stem) to localizations.json (by id)."""
+    pend_f = ROOT / "tools" / "localizations-pending.json"
+    if not pend_f.exists(): return
+    pend = json.loads(pend_f.read_text(encoding="utf-8"))
+    if stem not in pend: return
+    loc_f = ROOT / "tools" / "localizations.json"; loc = json.loads(loc_f.read_text(encoding="utf-8"))
+    loc[vid] = pend.pop(stem)
+    loc_f.write_text(json.dumps(loc, ensure_ascii=False, indent=1), encoding="utf-8")
+    pend_f.write_text(json.dumps(pend, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"  13-language titles for {stem} → {vid}")
+
+
 def fill(a):
     sheet_file = find(a.stem, "-upload.md")
     if not sheet_file:
         sys.exit(f"no upload sheet for {a.stem}")
     sheet = sheet_file.read_text(encoding="utf-8")
+    if a.video.startswith("title:"):
+        a.video = resolve_video(yt(a.channel), a.video)
+        print(f"  {a.stem}: upload found → {a.video}")
+    if a.apply:
+        adopt_localizations(a.stem, a.video)
     desc_file = find(a.stem, "-description.txt")
     title = box(sheet, "Title")
     desc = desc_file.read_text(encoding="utf-8").strip() if desc_file else box(sheet, "Description")
