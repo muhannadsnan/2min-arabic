@@ -34,6 +34,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   (needs homepage + privacy policy page).
 - **2026-10-15: RAM upgraded to 40 GB** (8 GB SK Hynix + 32 GB Samsung, both 3200). GPU sessions no longer need
   "close all apps"; measure the real speed gain at the next session and update docs/16.
+- **2026-10-22: Instagram Trial Reels check** — x03 dubbed in Indonesian (Deo_WECFWx5) + Hindi (Deo_ffDDMBX), posted 18 Oct as Trial Reels (non-followers only). Compare reach/plays with normal Reels (`instagram_api.py media`); if better → one more language a day (tr, fa, bn, ru, es, fr, sw from x03), captions pointing to YouTube for their language. Also: which rotating language hashtags bring reach.
 - **2026-10-23: re-packaging check** — ALL published Shorts got new titles (subject first + category) and thumbnails
   (big English words + small Arabic) on 16 Oct (owner, option a; log + views at change: output/repackage-proposals-2026-10-16/
   applied-log.json; earlier 15 Oct changes: output/repackage-2026-10-15/). Compare views/day for 7 days before vs after,
