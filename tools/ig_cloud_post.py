@@ -75,13 +75,15 @@ def main():
 # owner 2026-10-18: every Reel also speaks to two other language audiences — one short line each above the hashtags and
 # one hashtag each (3 fixed + 2 rotating = 5). Rotates daily through the top languages so each gets regular reach.
 FIXED_TAGS = "#learnarabic #arabicforbeginners #2minutearabic"
-LANG_ROT = [("Belajar bahasa Arab, 2 menit sehari.", "#belajarbahasaarab"),          # Indonesian
-            ("Arabi seekhein, roz sirf 2 minute.", "#learnarabicinurdu"),            # Urdu / Hindi (Latin letters)
-            ("Günde 2 dakikada sıfırdan Arapça.", "#arapçaöğren"),                   # Turkish
-            ("آموزش زبان عربی از صفر، روزی ۲ دقیقه.", "#آموزش_زبان_عربی"),            # Persian
-            ("প্রতিদিন ২ মিনিটে আরবি শিখুন।", "#আরবি_শিক্ষা"),                        # Bengali
-            ("Belajar bahasa Arab, 2 minit sehari.", "#belajarbahasaarab"),           # Malay
-            ("Apprendre l'arabe, 2 minutes par jour.", "#apprendrelarabe")]           # French
+LANG_ROT = [("Belajar bahasa Arab 2 menit sehari — dengan subtitle bahasa Indonesia di YouTube.", "#belajarbahasaarab"),
+            ("Arabi seekhein, roz sirf 2 minute — YouTube par Urdu / Hindi subtitles ke saath.", "#learnarabicinurdu"),
+            ("Günde 2 dakikada Arapça — YouTube'da Türkçe altyazıyla.", "#arapçaöğren"),
+            ("آموزش عربی، روزی ۲ دقیقه — با زیرنویس فارسی در یوتیوب.", "#آموزش_زبان_عربی"),
+            ("প্রতিদিন ২ মিনিটে আরবি — ইউটিউবে বাংলা সাবটাইটেলসহ।", "#আরবি_শিক্ষা"),
+            ("Belajar bahasa Arab 2 minit sehari — dengan sari kata Bahasa Melayu di YouTube.", "#belajarbahasaarab"),
+            ("L'arabe en 2 minutes par jour — sous-titres français sur YouTube.", "#apprendrelarabe")]
+# (owner 2026-10-18: the line must not promise lessons in their language on Instagram — it points to YouTube, where
+#  every video has subtitles in it and the top videos audio too; the YouTube link is in the bio)
 
 def add_languages(caption, day):
     """Two languages a day: their line goes above the hashtags, their hashtag replaces the kind-specific ones."""

@@ -201,7 +201,8 @@ missing tracks itself, language by language in priority order, most-viewed first
 - **Other languages on Instagram (owner, 2026-10-18):** no extra audio tracks there (Instagram has no upload for them;
   Meta's AI voice translation would re-voice the Arabic → stays off). Instead, at posting time `ig_cloud_post.py`
   (`add_languages`) adds **two rotating language lines** above the hashtags ("Belajar bahasa Arab, 2 menit sehari.",
-  "Arabi seekhein, roz sirf 2 minute." …) and **two rotating language hashtags** next to the 3 fixed ones
+  "Arabi seekhein, roz sirf 2 minute." …) that point to YouTube ("…with Bengali subtitles on YouTube" — never promise
+  lessons in their language on Instagram) and **two rotating language hashtags** next to the 3 fixed ones
   (#learnarabic #arabicforbeginners #2minutearabic + e.g. #belajarbahasaarab #learnarabicinurdu = 5). Rotation:
   Indonesian, Urdu/Hindi, Turkish, Persian, Bengali, Malay, French (LANG_ROT, by day of the year). Instagram search
   reads caption words; "See translation" covers the rest. Check which language hashtags bring views at the review.
