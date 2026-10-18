@@ -90,7 +90,10 @@ def main():
     S = ROOT / "assets/stars"; sw, sh = 140, 135; sx, sy = 1080 - sw - 14, 8; cx, cy = sx + sw // 2, sy + sh // 2
     bw, bh = sx - 10, 12; by = cy - bh // 2
     hits = [w.start for w in words if w.word.strip(" ,.!").lower() == "hit"]
-    T = hits[0] if hits else total - 3.0
+    H = hits[0] if hits else total - 3.0
+    T = max(1.0, H - 2.0)   # owner 2026-10-18: the star pops 2 s BEFORE "hit like and subscribe", then the subscribe animation
+    import sys; sys.path.insert(0, str(ROOT / "tools")); from make_subscribe import CLICK_TIMES, DING_TIME, DUR
+    SUB = max(T + 0.6, H - 0.5)   # the lessons' SUBSCRIBE + bell animation (y=930), clicks + bell "ding"
     fc = (f"[0:v]ass={ass}[v0];"
           f"color=c=0x000000@0.35:s={bw}x{bh}:r=30:d={total:.2f},format=rgba[trk];"
           f"color=c=0xFF2020:s={bw}x{bh}:r=30:d={total:.2f},format=rgba[bar];"
@@ -98,14 +101,21 @@ def main():
           f"[v1][bar]overlay=x='-{bw}+{bw}*t/{total:.3f}':y={by}[v2];"
           f"[v2][2:v]overlay={sx}:{sy}:enable='lt(t,{T:.2f})'[v3];"
           f"[4:v]setpts=PTS+{T:.2f}/TB[pop];[v3][pop]overlay={cx - 160}:{cy - 160}:eof_action=pass[v4];"
-          f"[v4][3:v]overlay={sx}:{sy}:enable='gte(t,{T + 14 / 30 - 0.03:.2f})',format=yuv420p[vout];"
-          f"[5:a]adelay={int(T * 1000)}|{int(T * 1000)},volume=0.7[ch];[1:a][ch]amix=inputs=2:normalize=0:duration=first,"
-          f"loudnorm=I=-14:TP=-1.5[aout]")
+          f"[v4][3:v]overlay={sx}:{sy}:enable='gte(t,{T + 14 / 30 - 0.03:.2f})'[v5];"
+          f"[6:v]format=rgba,setpts=PTS-STARTPTS+{SUB:.2f}/TB[sub];"
+          f"[v5][sub]overlay=0:930:eof_action=pass:enable='between(t,{SUB:.2f},{SUB + DUR:.2f})',format=yuv420p[vout];"
+          f"[5:a]adelay={int(T * 1000)}|{int(T * 1000)},volume=0.7[ch];"
+          f"[7:a]volume=0.5,asplit=2[c1][c2];"
+          f"[c1]adelay={int((SUB + CLICK_TIMES[0]) * 1000)}|{int((SUB + CLICK_TIMES[0]) * 1000)}[k1];"
+          f"[c2]adelay={int((SUB + CLICK_TIMES[1]) * 1000)}|{int((SUB + CLICK_TIMES[1]) * 1000)}[k2];"
+          f"[8:a]volume=0.35,adelay={int((SUB + DING_TIME) * 1000)}|{int((SUB + DING_TIME) * 1000)}[dg];"
+          f"[1:a][ch][k1][k2][dg]amix=inputs=5:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5[aout]")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(tmp / "list.txt"), "-i", str(voice),
                     "-i", str(S / "grey.png"), "-i", str(S / "gold.png"), "-i", str(S / "pop.mov"), "-i", str(S / "chime.wav"),
+                    "-i", str(ROOT / "assets/subscribe.mov"), "-i", str(ROOT / "assets/click.wav"), "-i", str(ROOT / "assets/ding.wav"),
                     "-filter_complex", fc, "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-crf", "19", "-preset", "medium",
                     "-c:a", "aac", "-b:a", "192k", "-t", f"{total:.2f}", str(out)], check=True)
-    print(f"star turns gold at {T:.2f}s")
+    print(f"star turns gold at {T:.2f}s · subscribe animation {SUB:.2f}–{SUB + DUR:.2f}s (\"hit\" at {H:.2f}s)")
     print(f"{out}  {dur(out):.1f}s · {len(shots)} shots: " + ", ".join(f"{pathlib.Path(f).stem}@{o:.1f}+{d:.1f}" for f, o, d in shots))
 
 if __name__ == "__main__":
