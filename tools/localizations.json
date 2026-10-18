@@ -1,117 +1,1707 @@
 {
  "pbIY5duEYzE": {
   "name": "Introduce Yourself in Arabic",
-  "fa": [
-   "معرفی خود به زبان عربی | آموزش زبان عربی از صفر",
-   "یاد بگیرید چطور به زبان عربی خودتان را معرفی کنید. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  "hi": [
+   "अरबी में अपना परिचय कैसे दें | अरबी सीखें",
+   "अरबी में अपना परिचय देना सीखें। शुरुआती लोगों के लिए रोज़ सिर्फ़ 2 मिनट में अरबी।"
   ],
   "ur": [
    "عربی میں اپنا تعارف کیسے کروائیں | عربی سیکھیں",
    "عربی میں اپنا تعارف کروانا سیکھیں۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
   ],
-  "tr": [
-   "Arapça Kendini Tanıtma | Sıfırdan Arapça",
-   "Arapça kendini tanıtmayı öğren. Yeni başlayanlar için günde 2 dakikada Arapça."
-  ],
   "id": [
    "Cara Memperkenalkan Diri dalam Bahasa Arab | Belajar Bahasa Arab",
    "Belajar memperkenalkan diri dalam bahasa Arab. Bahasa Arab 2 menit sehari untuk pemula."
   ],
+  "bn": [
+   "আরবিতে নিজের পরিচয় দেওয়া | আরবি শিখুন",
+   "আরবিতে নিজের পরিচয় দিতে শিখুন। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça Kendini Tanıtma | Sıfırdan Arapça",
+   "Arapça kendini tanıtmayı öğren. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "معرفی خود به زبان عربی | آموزش زبان عربی از صفر",
+   "یاد بگیرید چطور به زبان عربی خودتان را معرفی کنید. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "Cara Memperkenalkan Diri dalam Bahasa Arab | Belajar Bahasa Arab",
+   "Belajar memperkenalkan diri dalam bahasa Arab. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
   "fr": [
    "Se présenter en arabe | Apprendre l'arabe pour débutants",
    "Apprenez à vous présenter en arabe. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Как представиться на арабском | Арабский язык с нуля",
+   "Научитесь представляться на арабском языке. Арабский для начинающих — всего 2 минуты в день."
+  ],
+  "de": [
+   "Sich auf Arabisch vorstellen | Arabisch lernen für Anfänger",
+   "Lerne, dich auf Arabisch vorzustellen. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Sida Naftaada Loogu Soo Bandhigo Af-Carabi | Baro Af-Carabi",
+   "Baro sida aad naftaada ugu soo bandhigto af-Carabi. Af-Carabi 2 daqiiqo maalintii, dadka bilowga ah."
+  ],
+  "sw": [
+   "Jinsi ya Kujitambulisha kwa Kiarabu | Jifunze Kiarabu",
+   "Jifunze kujitambulisha kwa Kiarabu. Kiarabu kwa dakika 2 kwa siku kwa wanaoanza."
+  ],
+  "es": [
+   "Cómo presentarte en árabe | Aprender árabe para principiantes",
+   "Aprende a presentarte en árabe. Árabe para principiantes en solo 2 minutos al día."
   ]
  },
  "XTQXhypYDLU": {
   "name": "Learn Arabic in 2 Minutes a Day · Day 1",
-  "fa": [
-   "یادگیری عربی در ۲ دقیقه در روز · روز ۱ | آموزش زبان عربی از صفر",
-   "روز اول دوره: آموزش زبان عربی از صفر، فقط ۲ دقیقه در روز. از اینجا شروع کنید."
+  "hi": [
+   "रोज़ 2 मिनट में अरबी सीखें · दिन 1",
+   "कोर्स का पहला दिन: शुरू से अरबी, रोज़ सिर्फ़ 2 मिनट। यहीं से शुरू करें।"
   ],
   "ur": [
    "روزانہ 2 منٹ میں عربی سیکھیں · دن 1",
    "کورس کا پہلا دن: صفر سے عربی، روزانہ صرف 2 منٹ۔ یہیں سے شروع کریں۔"
   ],
-  "tr": [
-   "Günde 2 Dakikada Arapça Öğren · 1. Gün",
-   "Kursun ilk günü: sıfırdan Arapça, günde sadece 2 dakika. Buradan başla."
-  ],
   "id": [
    "Belajar Bahasa Arab 2 Menit Sehari · Hari 1",
    "Hari pertama kursus: bahasa Arab dari nol, hanya 2 menit sehari. Mulai dari sini."
   ],
+  "bn": [
+   "প্রতিদিন ২ মিনিটে আরবি শিখুন · দিন ১",
+   "কোর্সের প্রথম দিন: একদম শুরু থেকে আরবি, প্রতিদিন মাত্র ২ মিনিট। এখান থেকেই শুরু করুন।"
+  ],
+  "tr": [
+   "Günde 2 Dakikada Arapça Öğren · 1. Gün",
+   "Kursun ilk günü: sıfırdan Arapça, günde sadece 2 dakika. Buradan başla."
+  ],
+  "fa": [
+   "یادگیری عربی در ۲ دقیقه در روز · روز ۱ | آموزش زبان عربی از صفر",
+   "روز اول دوره: آموزش زبان عربی از صفر، فقط ۲ دقیقه در روز. از اینجا شروع کنید."
+  ],
+  "ms": [
+   "Belajar Bahasa Arab 2 Minit Sehari · Hari 1",
+   "Hari pertama kursus: bahasa Arab dari kosong, hanya 2 minit sehari. Mula di sini."
+  ],
   "fr": [
    "Apprendre l'arabe en 2 minutes par jour · Jour 1",
    "Premier jour du cours : l'arabe à partir de zéro, 2 minutes par jour. Commencez ici."
+  ],
+  "ru": [
+   "Учим арабский по 2 минуты в день · День 1",
+   "Первый день курса: арабский язык с нуля, всего 2 минуты в день. Начните отсюда."
+  ],
+  "de": [
+   "Arabisch lernen in 2 Minuten am Tag · Tag 1",
+   "Tag 1 des Kurses: Arabisch von null, nur 2 Minuten am Tag. Fang hier an."
+  ],
+  "so": [
+   "Baro Af-Carabi 2 Daqiiqo Maalintii · Maalinta 1",
+   "Maalinta koowaad ee koorsada: af-Carabi laga bilaabo eber, 2 daqiiqo oo keliya maalintii. Halkan ka bilow."
+  ],
+  "sw": [
+   "Jifunze Kiarabu kwa Dakika 2 kwa Siku · Siku ya 1",
+   "Siku ya kwanza ya kozi: Kiarabu kuanzia mwanzo, dakika 2 tu kwa siku. Anza hapa."
+  ],
+  "es": [
+   "Aprender árabe en 2 minutos al día · Día 1",
+   "Primer día del curso: árabe desde cero, solo 2 minutos al día. Empieza aquí."
   ]
  },
  "b5WrJegZuRg": {
   "name": "Full Beginner Lesson · Part 1",
-  "fa": [
-   "درس کامل عربی برای مبتدی‌ها · قسمت ۱ | آموزش زبان عربی از صفر",
-   "یک درس کامل برای شروع زبان عربی از صفر: کلمات و جمله‌های پایه در یک ویدیو."
+  "hi": [
+   "शुरुआती लोगों के लिए पूरा अरबी पाठ · भाग 1 | अरबी सीखें",
+   "शुरू से अरबी सीखने के लिए पूरा पाठ: बुनियादी शब्द और वाक्य एक ही वीडियो में।"
   ],
   "ur": [
    "مبتدیوں کے لیے مکمل عربی سبق · حصہ 1",
    "صفر سے عربی شروع کرنے کے لیے مکمل سبق: بنیادی الفاظ اور جملے ایک ہی ویڈیو میں۔"
   ],
-  "tr": [
-   "Yeni Başlayanlar İçin Tam Arapça Ders · Bölüm 1",
-   "Sıfırdan Arapçaya başlamak için tam ders: temel kelimeler ve cümleler tek videoda."
-  ],
   "id": [
    "Pelajaran Bahasa Arab Lengkap untuk Pemula · Bagian 1",
    "Pelajaran lengkap untuk mulai bahasa Arab dari nol: kosakata dan kalimat dasar dalam satu video."
   ],
+  "bn": [
+   "নতুনদের জন্য পূর্ণ আরবি পাঠ · পর্ব ১ | আরবি শিখুন",
+   "একদম শুরু থেকে আরবি শেখার পূর্ণ পাঠ: মৌলিক শব্দ আর বাক্য এক ভিডিওতে।"
+  ],
+  "tr": [
+   "Yeni Başlayanlar İçin Tam Arapça Ders · Bölüm 1",
+   "Sıfırdan Arapçaya başlamak için tam ders: temel kelimeler ve cümleler tek videoda."
+  ],
+  "fa": [
+   "درس کامل عربی برای مبتدی‌ها · قسمت ۱ | آموزش زبان عربی از صفر",
+   "یک درس کامل برای شروع زبان عربی از صفر: کلمات و جمله‌های پایه در یک ویدیو."
+  ],
+  "ms": [
+   "Pelajaran Bahasa Arab Lengkap untuk Pemula · Bahagian 1",
+   "Pelajaran lengkap untuk mula belajar bahasa Arab dari kosong: perkataan dan ayat asas dalam satu video."
+  ],
   "fr": [
    "Cours complet d'arabe pour débutants · Partie 1",
    "Un cours complet pour commencer l'arabe à partir de zéro : mots et phrases de base en une seule vidéo."
+  ],
+  "ru": [
+   "Полный урок арабского для начинающих · Часть 1 | Арабский язык с нуля",
+   "Полный урок, чтобы начать арабский с нуля: базовые слова и фразы в одном видео."
+  ],
+  "de": [
+   "Arabisch für Anfänger: komplette Lektion · Teil 1 | Arabisch lernen",
+   "Eine komplette Lektion für den Einstieg ins Arabische: Grundwörter und einfache Sätze in einem Video."
+  ],
+  "so": [
+   "Cashar Af-Carabi oo Dhammaystiran · Qaybta 1 | Baro Af-Carabi",
+   "Cashar dhammaystiran oo aad af-Carabi kaga bilaabi karto eber: erayo iyo jumlado aasaasi ah hal muuqaal."
+  ],
+  "sw": [
+   "Somo Kamili la Kiarabu kwa Wanaoanza · Sehemu ya 1 | Jifunze Kiarabu",
+   "Somo kamili la kuanza Kiarabu kutoka mwanzo: maneno na sentensi za msingi katika video moja."
+  ],
+  "es": [
+   "Clase completa de árabe para principiantes · Parte 1 | Aprender árabe",
+   "Una clase completa para empezar árabe desde cero: palabras y frases básicas en un solo video."
   ]
  },
  "EFuNQX9oPHA": {
   "name": "10 Ways to Say Hello",
-  "fa": [
-   "۱۰ روش برای سلام کردن به عربی",
-   "۱۰ روش سلام کردن به زبان عربی برای گفتگوهای روزمره. آموزش زبان عربی از صفر."
+  "hi": [
+   "अरबी में हैलो कहने के 10 तरीके | अरबी सीखें",
+   "रोज़मर्रा की बातचीत के लिए अरबी में अभिवादन करने के 10 तरीके।"
   ],
   "ur": [
    "عربی میں ہیلو کہنے کے 10 طریقے",
    "روزمرہ کی گفتگو کے لیے عربی میں سلام کرنے کے 10 طریقے۔"
   ],
-  "tr": [
-   "Arapçada Merhaba Demenin 10 Yolu",
-   "Günlük konuşmalar için Arapçada selam vermenin 10 yolu."
-  ],
   "id": [
    "10 Cara Mengucapkan Halo dalam Bahasa Arab",
    "10 cara menyapa dalam bahasa Arab untuk percakapan sehari-hari."
   ],
+  "bn": [
+   "আরবিতে হ্যালো বলার ১০টি উপায় | আরবি শিখুন",
+   "প্রতিদিনের কথোপকথনের জন্য আরবিতে অভিবাদন জানানোর ১০টি উপায়।"
+  ],
+  "tr": [
+   "Arapçada Merhaba Demenin 10 Yolu",
+   "Günlük konuşmalar için Arapçada selam vermenin 10 yolu."
+  ],
+  "fa": [
+   "۱۰ روش برای سلام کردن به عربی",
+   "۱۰ روش سلام کردن به زبان عربی برای گفتگوهای روزمره. آموزش زبان عربی از صفر."
+  ],
+  "ms": [
+   "10 Cara Ucap Helo dalam Bahasa Arab",
+   "10 cara memberi salam dalam bahasa Arab untuk perbualan harian."
+  ],
   "fr": [
    "10 façons de dire bonjour en arabe",
    "10 façons de saluer en arabe pour les conversations de tous les jours."
+  ],
+  "ru": [
+   "10 способов сказать «привет» по-арабски",
+   "10 способов поздороваться по-арабски для повседневного общения."
+  ],
+  "de": [
+   "10 Arten, auf Arabisch Hallo zu sagen",
+   "10 Begrüßungen auf Arabisch für Gespräche im Alltag."
+  ],
+  "so": [
+   "10 Siyaabood oo Af-Carabi Lagu Salaamo",
+   "10 siyaabood oo af-Carabi lagu salaamo, wadahadallada maalin kasta."
+  ],
+  "sw": [
+   "Njia 10 za Kusema Habari kwa Kiarabu",
+   "Njia 10 za kusalimia kwa Kiarabu kwa mazungumzo ya kila siku."
+  ],
+  "es": [
+   "10 formas de decir hola en árabe",
+   "10 formas de saludar en árabe para las conversaciones del día a día."
   ]
  },
  "5kaDplowig4": {
   "name": "Arabic Numbers 1 to 10 · Day 10",
-  "fa": [
-   "اعداد عربی از ۱ تا ۱۰ · روز ۱۰",
-   "شمارش از ۱ تا ۱۰ به زبان عربی را در ۲ دقیقه یاد بگیرید."
+  "hi": [
+   "अरबी गिनती 1 से 10 तक · दिन 10",
+   "2 मिनट में अरबी में 1 से 10 तक गिनना सीखें।"
   ],
   "ur": [
    "عربی گنتی 1 سے 10 تک · دن 10",
    "2 منٹ میں عربی میں 1 سے 10 تک گنتی سیکھیں۔"
   ],
-  "tr": [
-   "Arapça Sayılar 1'den 10'a · 10. Gün",
-   "Arapçada 1'den 10'a kadar saymayı 2 dakikada öğren."
-  ],
   "id": [
    "Angka Bahasa Arab 1 sampai 10 · Hari 10",
    "Belajar berhitung 1 sampai 10 dalam bahasa Arab dalam 2 menit."
   ],
+  "bn": [
+   "আরবি সংখ্যা ১ থেকে ১০ · দিন ১০",
+   "২ মিনিটে আরবিতে ১ থেকে ১০ পর্যন্ত গুনতে শিখুন।"
+  ],
+  "tr": [
+   "Arapça Sayılar 1'den 10'a · 10. Gün",
+   "Arapçada 1'den 10'a kadar saymayı 2 dakikada öğren."
+  ],
+  "fa": [
+   "اعداد عربی از ۱ تا ۱۰ · روز ۱۰",
+   "شمارش از ۱ تا ۱۰ به زبان عربی را در ۲ دقیقه یاد بگیرید."
+  ],
+  "ms": [
+   "Nombor Bahasa Arab 1 hingga 10 · Hari 10",
+   "Belajar mengira 1 hingga 10 dalam bahasa Arab dalam 2 minit."
+  ],
   "fr": [
    "Compter de 1 à 10 en arabe · Jour 10",
    "Apprenez à compter de 1 à 10 en arabe en 2 minutes."
+  ],
+  "ru": [
+   "Арабские числа от 1 до 10 · День 10",
+   "Научитесь считать от 1 до 10 по-арабски за 2 минуты."
+  ],
+  "de": [
+   "Arabische Zahlen 1 bis 10 · Tag 10",
+   "Lerne in 2 Minuten, auf Arabisch von 1 bis 10 zu zählen."
+  ],
+  "so": [
+   "Tirooyinka Af-Carabiga 1 ilaa 10 · Maalinta 10",
+   "Baro tirinta 1 ilaa 10 af-Carabi 2 daqiiqo gudahood."
+  ],
+  "sw": [
+   "Namba za Kiarabu 1 hadi 10 · Siku ya 10",
+   "Jifunze kuhesabu 1 hadi 10 kwa Kiarabu kwa dakika 2."
+  ],
+  "es": [
+   "Números en árabe del 1 al 10 · Día 10",
+   "Aprende a contar del 1 al 10 en árabe en 2 minutos."
+  ]
+ },
+ "mpF21N1UATk": {
+  "name": "10 Basic Arabic Phrases · Day 2",
+  "hi": [
+   "शुरुआती लोगों के लिए 10 आसान अरबी वाक्य · दिन 2 | अरबी सीखें",
+   "रोज़ काम आने वाले 10 अरबी वाक्य सीखें: अभिवादन, शुक्रिया, कृपया और अपना नाम बताना। रोज़ सिर्फ़ 2 मिनट।"
+  ],
+  "ur": [
+   "مبتدیوں کے لیے عربی کے 10 بنیادی جملے · دن 2 | عربی سیکھیں",
+   "روزمرہ کے 10 عربی جملے سیکھیں: سلام، شکریہ، مہربانی اور اپنا نام بتانا۔ روزانہ صرف 2 منٹ۔"
+  ],
+  "id": [
+   "10 Kalimat Dasar Bahasa Arab untuk Pemula · Hari 2 | Belajar Bahasa Arab",
+   "Belajar 10 kalimat bahasa Arab sehari-hari: menyapa, berterima kasih, minta tolong, dan menyebut nama. Hanya 2 menit sehari."
+  ],
+  "bn": [
+   "নতুনদের জন্য ১০টি সহজ আরবি বাক্য · দিন ২ | আরবি শিখুন",
+   "প্রতিদিনের ১০টি আরবি বাক্য শিখুন: সালাম, ধন্যবাদ, অনুগ্রহ করে আর নিজের নাম বলা। প্রতিদিন মাত্র ২ মিনিট।"
+  ],
+  "tr": [
+   "Yeni Başlayanlar İçin 10 Temel Arapça Kalıp · 2. Gün | Arapça Öğren",
+   "Her gün kullanacağın 10 Arapça kalıbı öğren: selamlaşma, teşekkür, lütfen ve adını söyleme. Günde sadece 2 dakika."
+  ],
+  "fa": [
+   "۱۰ جمله پایه عربی برای مبتدی‌ها · روز ۲ | آموزش زبان عربی از صفر",
+   "۱۰ جمله روزمره عربی را یاد بگیرید: سلام، تشکر، لطفاً و گفتن اسمتان. فقط ۲ دقیقه در روز."
+  ],
+  "ms": [
+   "10 Frasa Asas Bahasa Arab untuk Pemula · Hari 2 | Belajar Bahasa Arab",
+   "Belajar 10 frasa bahasa Arab harian: memberi salam, berterima kasih, minta tolong dan menyebut nama. Hanya 2 minit sehari."
+  ],
+  "fr": [
+   "10 phrases de base en arabe pour débutants · Jour 2",
+   "Apprenez 10 phrases arabes du quotidien : saluer, remercier, dire s'il vous plaît et donner votre nom. 2 minutes par jour."
+  ],
+  "ru": [
+   "10 базовых фраз на арабском для начинающих · День 2",
+   "Выучите 10 повседневных арабских фраз: поздороваться, сказать спасибо и пожалуйста, назвать своё имя. Всего 2 минуты в день."
+  ],
+  "de": [
+   "10 einfache arabische Sätze für Anfänger · Tag 2 | Arabisch lernen",
+   "Lerne 10 arabische Sätze für jeden Tag: grüßen, danke, bitte und deinen Namen sagen. Nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "10 Weedood oo Aasaasi ah oo Af-Carabi · Maalinta 2 | Baro Af-Carabi",
+   "Baro 10 weedood oo af-Carabi ah oo maalin kasta la isticmaalo: salaan, mahadnaq, fadlan iyo sheegidda magacaaga. 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Sentensi 10 za Msingi za Kiarabu kwa Wanaoanza · Siku ya 2",
+   "Jifunze sentensi 10 za Kiarabu za kila siku: kusalimia, kushukuru, tafadhali na kusema jina lako. Dakika 2 tu kwa siku."
+  ],
+  "es": [
+   "10 frases básicas en árabe para principiantes · Día 2",
+   "Aprende 10 frases en árabe para el día a día: saludar, dar las gracias, pedir por favor y decir tu nombre. Solo 2 minutos al día."
+  ]
+ },
+ "CDQbSlalYtk": {
+  "name": "Your First Conversation in Arabic · Day 3",
+  "hi": [
+   "अरबी में आपकी पहली बातचीत · दिन 3 | अरबी सीखें",
+   "एक पूरी अरबी बातचीत समझें और खुद बोलकर अभ्यास करें। रोज़ सिर्फ़ 2 मिनट।"
+  ],
+  "ur": [
+   "عربی میں آپ کی پہلی گفتگو · دن 3 | عربی سیکھیں",
+   "عربی کی ایک مکمل گفتگو سمجھیں اور خود بول کر مشق کریں۔ روزانہ صرف 2 منٹ۔"
+  ],
+  "id": [
+   "Percakapan Pertamamu dalam Bahasa Arab · Hari 3 | Belajar Bahasa Arab",
+   "Pahami satu percakapan bahasa Arab yang lengkap, lalu latih sendiri. Hanya 2 menit sehari."
+  ],
+  "bn": [
+   "আরবিতে আপনার প্রথম কথোপকথন · দিন ৩ | আরবি শিখুন",
+   "একটি পূর্ণ আরবি কথোপকথন বুঝুন এবং নিজে বলে অনুশীলন করুন। প্রতিদিন মাত্র ২ মিনিট।"
+  ],
+  "tr": [
+   "Arapça İlk Sohbetin · 3. Gün | Sıfırdan Arapça",
+   "Tam bir Arapça sohbeti anla ve kendin söyleyerek pratik yap. Günde sadece 2 dakika."
+  ],
+  "fa": [
+   "اولین گفتگوی شما به زبان عربی · روز ۳ | آموزش زبان عربی از صفر",
+   "یک گفتگوی کامل عربی را بفهمید و خودتان آن را تمرین کنید. فقط ۲ دقیقه در روز."
+  ],
+  "ms": [
+   "Perbualan Pertama Anda dalam Bahasa Arab · Hari 3 | Belajar Bahasa Arab",
+   "Fahami satu perbualan bahasa Arab yang lengkap dan berlatih sendiri. Hanya 2 minit sehari."
+  ],
+  "fr": [
+   "Votre première conversation en arabe · Jour 3 | Apprendre l'arabe",
+   "Comprenez une conversation complète en arabe et entraînez-vous à la dire. 2 minutes par jour."
+  ],
+  "ru": [
+   "Ваш первый диалог на арабском · День 3 | Арабский язык с нуля",
+   "Поймите целый диалог на арабском и потренируйтесь говорить сами. Всего 2 минуты в день."
+  ],
+  "de": [
+   "Dein erstes Gespräch auf Arabisch · Tag 3 | Arabisch lernen",
+   "Verstehe ein ganzes Gespräch auf Arabisch und übe es selbst. Nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Wadahadalkaaga Ugu Horreeya ee Af-Carabi · Maalinta 3 | Baro Af-Carabi",
+   "Fahan wadahadal af-Carabi ah oo dhammaystiran, kadibna adigu ku celceli. 2 daqiiqo oo keliya maalintii."
+  ],
+  "sw": [
+   "Mazungumzo Yako ya Kwanza kwa Kiarabu · Siku ya 3 | Jifunze Kiarabu",
+   "Elewa mazungumzo kamili ya Kiarabu na ujizoeze mwenyewe. Dakika 2 tu kwa siku."
+  ],
+  "es": [
+   "Tu primera conversación en árabe · Día 3 | Aprender árabe",
+   "Entiende una conversación completa en árabe y practícala tú mismo. Solo 2 minutos al día."
+  ]
+ },
+ "x9N7iPgyfzY": {
+  "name": "Easy Arabic Story: Sami and the Coffee · Day 4",
+  "hi": [
+   "आसान अरबी कहानी: सामी और कॉफ़ी · दिन 4 | अरबी सीखें",
+   "अरबी में एक छोटी कहानी सुनें और समझें, और कॉफ़ी, उदास, खुश जैसे शब्द याद करें। रोज़ सिर्फ़ 2 मिनट।"
+  ],
+  "ur": [
+   "آسان عربی کہانی: سامی اور کافی · دن 4 | عربی سیکھیں",
+   "عربی میں ایک چھوٹی سی کہانی سنیں اور سمجھیں، اور کافی، اداس اور خوش جیسے الفاظ یاد کریں۔ روزانہ صرف 2 منٹ۔"
+  ],
+  "id": [
+   "Cerita Bahasa Arab Mudah: Sami dan Kopi · Hari 4 | Belajar Bahasa Arab",
+   "Dengarkan dan pahami cerita pendek dalam bahasa Arab, lalu ingat kata kopi, sedih, dan senang. Hanya 2 menit sehari."
+  ],
+  "bn": [
+   "সহজ আরবি গল্প: সামি আর কফি · দিন ৪ | আরবি শিখুন",
+   "আরবিতে একটি ছোট গল্প শুনুন ও বুঝুন, আর কফি, দুঃখী, খুশি শব্দগুলো মনে রাখুন। প্রতিদিন মাত্র ২ মিনিট।"
+  ],
+  "tr": [
+   "Kolay Arapça Hikâye: Sami ve Kahve · 4. Gün | Arapça Öğren",
+   "Arapça kısa bir hikâyeyi dinle ve anla; kahve, üzgün ve mutlu kelimelerini aklında tut. Günde sadece 2 dakika."
+  ],
+  "fa": [
+   "داستان ساده عربی: سامی و قهوه · روز ۴ | آموزش زبان عربی از صفر",
+   "یک داستان کوتاه عربی را بشنوید و بفهمید و کلمه‌های قهوه، غمگین و خوشحال را به خاطر بسپارید. فقط ۲ دقیقه در روز."
+  ],
+  "ms": [
+   "Cerita Bahasa Arab Mudah: Sami dan Kopi · Hari 4 | Belajar Bahasa Arab",
+   "Dengar dan fahami cerita pendek dalam bahasa Arab, dan ingat perkataan kopi, sedih dan gembira. Hanya 2 minit sehari."
+  ],
+  "fr": [
+   "Histoire facile en arabe : Sami et le café · Jour 4",
+   "Écoutez et comprenez une petite histoire en arabe, et retenez les mots café, triste et content. 2 minutes par jour."
+  ],
+  "ru": [
+   "Простой рассказ на арабском: Сами и кофе · День 4",
+   "Послушайте и поймите короткую историю на арабском и запомните слова «кофе», «грустный» и «счастливый». Всего 2 минуты в день."
+  ],
+  "de": [
+   "Einfache arabische Geschichte: Sami und der Kaffee · Tag 4",
+   "Hör eine kurze Geschichte auf Arabisch, versteh sie und merk dir die Wörter Kaffee, traurig und glücklich. Nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Sheeko Af-Carabi ah oo Fudud: Saami iyo Qaxwaha · Maalinta 4",
+   "Dhegayso oo fahan sheeko gaaban oo af-Carabi ah, kadibna xasuuso erayada qaxwe, murugaysan iyo faraxsan. 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Hadithi Rahisi ya Kiarabu: Sami na Kahawa · Siku ya 4",
+   "Sikiliza na uelewe hadithi fupi kwa Kiarabu, na ukumbuke maneno kama kahawa, huzuni na furaha. Dakika 2 tu kwa siku."
+  ],
+  "es": [
+   "Historia fácil en árabe: Sami y el café · Día 4 | Aprender árabe",
+   "Escucha y entiende una historia corta en árabe, y recuerda las palabras café, triste y feliz. Solo 2 minutos al día."
+  ]
+ },
+ "2i1wlcBWWcw": {
+  "name": "I, You, He, She in Arabic · Day 5",
+  "hi": [
+   "अरबी सर्वनाम: मैं, तुम, वह – \"है\" के बिना वाक्य · दिन 5",
+   "अरबी के 5 बुनियादी सर्वनाम सीखें और \"मैं छात्र हूँ\" जैसे वाक्य बनाएँ – वर्तमान काल में अरबी में \"है\" जैसा कोई शब्द नहीं होता। रोज़ सिर्फ़ 2 मिनट।"
+  ],
+  "ur": [
+   "عربی ضمیر: میں، تم، وہ – \"ہے\" کے بغیر جملے · دن 5",
+   "عربی کے 5 بنیادی ضمیر سیکھیں اور \"میں طالب علم ہوں\" جیسے جملے بنائیں – حال میں عربی میں \"ہے\" جیسا کوئی لفظ نہیں ہوتا۔ روزانہ صرف 2 منٹ۔"
+  ],
+  "id": [
+   "Saya, Kamu, Dia dalam Bahasa Arab (Tanpa \"Adalah\") · Hari 5",
+   "Belajar 5 kata ganti dasar bahasa Arab dan membuat kalimat seperti \"Saya pelajar\" tanpa kata \"adalah\". Hanya 2 menit sehari."
+  ],
+  "bn": [
+   "আরবিতে আমি, তুমি, সে · দিন ৫ | আরবি শিখুন",
+   "আরবির ৫টি মৌলিক সর্বনাম শিখুন আর \"আমি ছাত্র\" এর মতো বাক্য বানান – বর্তমান কালে আরবিতে ইংরেজি \"is\" এর মতো কোনো শব্দ লাগে না। প্রতিদিন মাত্র ২ মিনিট।"
+  ],
+  "tr": [
+   "Arapça Zamirler: Ben, Sen, O · 5. Gün | Sıfırdan Arapça",
+   "Arapçanın 5 temel zamirini öğren ve \"Ben öğrenciyim\" gibi cümleler kur; Arapçada şimdiki zamanda \"is\" gibi bir kelime yok. Günde sadece 2 dakika."
+  ],
+  "fa": [
+   "ضمیرهای عربی: من، تو، او · روز ۵ | آموزش زبان عربی از صفر",
+   "۵ ضمیر پایه عربی را یاد بگیرید و جمله‌هایی مثل «من دانشجو هستم» بسازید؛ در زمان حال، عربی کلمه‌ای برای «است» ندارد. فقط ۲ دقیقه در روز."
+  ],
+  "ms": [
+   "Saya, Awak, Dia dalam Bahasa Arab · Hari 5 | Belajar Bahasa Arab",
+   "Belajar 5 kata ganti nama asas bahasa Arab dan bina ayat seperti \"Saya pelajar\" tanpa perkataan \"ialah\". Hanya 2 minit sehari."
+  ],
+  "fr": [
+   "Je, tu, il, elle en arabe : pas de verbe « être » · Jour 5",
+   "Apprenez les 5 pronoms de base en arabe et formez des phrases comme « je suis étudiant » : au présent, l'arabe n'a pas de verbe « être ». 2 minutes par jour."
+  ],
+  "ru": [
+   "Я, ты, он, она на арабском · День 5 | Арабский язык с нуля",
+   "Выучите 5 основных местоимений и стройте фразы вроде «я студент»: в настоящем времени в арабском, как и в русском, слово «есть» не нужно. Всего 2 минуты в день."
+  ],
+  "de": [
+   "Ich, du, er, sie auf Arabisch – ohne „ist“ · Tag 5 | Arabisch lernen",
+   "Lerne die 5 wichtigsten Pronomen und bilde Sätze wie „Ich bin Student“ – im Präsens hat Arabisch kein Wort für „ist“. Nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Aniga, Adiga, Isaga, Iyada Af-Carabi · Maalinta 5 | Baro Af-Carabi",
+   "Baro 5-ta magac-u-yaal ee aasaasiga ah ee af-Carabiga oo samee jumlado sida \"Waxaan ahay arday\"; waqtiga joogtada af-Carabigu uma baahna erayga \"is\". 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Mimi, Wewe, Yeye kwa Kiarabu · Siku ya 5 | Jifunze Kiarabu",
+   "Jifunze viwakilishi 5 vya msingi vya Kiarabu na utunge sentensi kama \"Mimi ni mwanafunzi\" bila neno \"ni\". Dakika 2 tu kwa siku."
+  ],
+  "es": [
+   "Yo, tú, él, ella en árabe (sin verbo \"ser\") · Día 5 | Aprender árabe",
+   "Aprende los 5 pronombres básicos en árabe y forma frases como \"yo soy estudiante\" sin el verbo \"ser\". Solo 2 minutos al día."
+  ]
+ },
+ "7IQ0GYOC9X4": {
+  "name": "Yes, No, Sorry, OK in Arabic · Day 6",
+  "hi": [
+   "अरबी में हाँ, नहीं, सॉरी, ठीक है · दिन 6 | अरबी सीखें",
+   "अरबी के छोटे विनम्र शब्द सीखें: हाँ, नहीं, माफ़ कीजिए, कोई बात नहीं और ठीक है। रोज़ सिर्फ़ 2 मिनट।"
+  ],
+  "ur": [
+   "عربی میں ہاں، نہیں، معاف کیجیے، ٹھیک ہے · دن 6 | عربی سیکھیں",
+   "عربی کے چھوٹے شائستہ الفاظ سیکھیں: ہاں، نہیں، معاف کیجیے، کوئی بات نہیں اور ٹھیک ہے۔ روزانہ صرف 2 منٹ۔"
+  ],
+  "id": [
+   "Ya, Tidak, Maaf, Oke dalam Bahasa Arab · Hari 6 | Belajar Bahasa Arab",
+   "Belajar kata-kata sopan sederhana dalam bahasa Arab: ya, tidak, maaf, tidak apa-apa, dan oke. Hanya 2 menit sehari."
+  ],
+  "bn": [
+   "আরবিতে হ্যাঁ, না, দুঃখিত, ঠিক আছে · দিন ৬ | আরবি শিখুন",
+   "আরবির ছোট ছোট ভদ্র শব্দ শিখুন: হ্যাঁ, না, দুঃখিত, কোনো সমস্যা নেই আর ঠিক আছে। প্রতিদিন মাত্র ২ মিনিট।"
+  ],
+  "tr": [
+   "Arapça Evet, Hayır, Özür Dilerim, Tamam · 6. Gün | Arapça Öğren",
+   "Arapçanın küçük kibar kelimelerini öğren: evet, hayır, özür dilerim, sorun değil ve tamam. Günde sadece 2 dakika."
+  ],
+  "fa": [
+   "بله، نه، ببخشید، باشه به عربی · روز ۶ | آموزش زبان عربی از صفر",
+   "کلمه‌های کوچک و مؤدبانه عربی را یاد بگیرید: بله، نه، ببخشید، اشکالی ندارد و باشه. فقط ۲ دقیقه در روز."
+  ],
+  "ms": [
+   "Ya, Tidak, Maaf, OK dalam Bahasa Arab · Hari 6 | Belajar Bahasa Arab",
+   "Belajar perkataan sopan yang ringkas dalam bahasa Arab: ya, tidak, maaf, tidak mengapa dan okey. Hanya 2 minit sehari."
+  ],
+  "fr": [
+   "Oui, non, pardon, d'accord en arabe · Jour 6 | Apprendre l'arabe",
+   "Apprenez les petits mots polis en arabe : oui, non, pardon, pas de problème et d'accord. 2 minutes par jour."
+  ],
+  "ru": [
+   "Да, нет, извините, хорошо на арабском · День 6 | Арабский язык с нуля",
+   "Выучите маленькие вежливые слова на арабском: да, нет, извините, ничего страшного и хорошо. Всего 2 минуты в день."
+  ],
+  "de": [
+   "Ja, Nein, Entschuldigung, OK auf Arabisch · Tag 6 | Arabisch lernen",
+   "Lerne die kleinen höflichen Wörter auf Arabisch: ja, nein, Entschuldigung, kein Problem und okay. Nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Haa, Maya, Raali Ahow, Hagaag Af-Carabi · Maalinta 6 | Baro Af-Carabi",
+   "Baro erayada yaryar ee edebta leh ee af-Carabiga: haa, maya, raali ahow, dhib ma leh iyo hagaag. 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Ndiyo, Hapana, Samahani, Sawa kwa Kiarabu · Siku ya 6 | Jifunze Kiarabu",
+   "Jifunze maneno madogo ya adabu kwa Kiarabu: ndiyo, hapana, samahani, hakuna shida na sawa. Dakika 2 tu kwa siku."
+  ],
+  "es": [
+   "Sí, no, perdón y ok en árabe · Día 6 | Aprender árabe",
+   "Aprende las palabras de cortesía más cortas en árabe: sí, no, perdón, no hay problema y está bien. Solo 2 minutos al día."
+  ]
+ },
+ "QuLTZ42HMxs": {
+  "name": "Week 1 Arabic Quiz · Day 7",
+  "hi": [
+   "शुरुआती लोगों के लिए अरबी क्विज़: क्या आप पास होंगे? · दिन 7",
+   "पहले हफ़्ते के 10 सवाल: जवाब सुनने से पहले खुद ज़ोर से बोलें। रोज़ सिर्फ़ 2 मिनट।"
+  ],
+  "ur": [
+   "مبتدیوں کے لیے عربی کوئز: کیا آپ پاس ہو سکتے ہیں؟ · دن 7",
+   "پہلے ہفتے کے 10 سوال: جواب سننے سے پہلے خود بلند آواز سے بولیں۔ روزانہ صرف 2 منٹ۔"
+  ],
+  "id": [
+   "Kuis Bahasa Arab untuk Pemula: Bisakah Kamu Lulus? · Hari 7",
+   "10 pertanyaan dari minggu pertama: jawab dengan suara keras sebelum mendengar jawabannya. Hanya 2 menit sehari."
+  ],
+  "bn": [
+   "নতুনদের জন্য আরবি কুইজ: আপনি কি পাস করবেন? · দিন ৭",
+   "প্রথম সপ্তাহের ১০টি প্রশ্ন: উত্তর শোনার আগে নিজে জোরে বলুন। প্রতিদিন মাত্র ২ মিনিট।"
+  ],
+  "tr": [
+   "Yeni Başlayanlar İçin Arapça Test: Geçebilir misin? · 7. Gün",
+   "İlk haftadan 10 soru: cevabı duymadan önce sesli söyle. Günde sadece 2 dakika."
+  ],
+  "fa": [
+   "آزمون عربی برای مبتدی‌ها: می‌توانید قبول شوید؟ · روز ۷",
+   "۱۰ سؤال از هفته اول: قبل از شنیدن جواب، آن را بلند بگویید. فقط ۲ دقیقه در روز."
+  ],
+  "ms": [
+   "Kuiz Bahasa Arab untuk Pemula: Boleh Anda Lulus? · Hari 7",
+   "10 soalan daripada minggu pertama: jawab dengan kuat sebelum mendengar jawapannya. Hanya 2 minit sehari."
+  ],
+  "fr": [
+   "Quiz d'arabe pour débutants : allez-vous réussir ? · Jour 7",
+   "10 questions sur la première semaine : répondez à voix haute avant d'entendre la réponse. 2 minutes par jour."
+  ],
+  "ru": [
+   "Тест по арабскому для начинающих: сможете пройти? · День 7",
+   "10 вопросов по первой неделе: отвечайте вслух, прежде чем услышите ответ. Всего 2 минуты в день."
+  ],
+  "de": [
+   "Arabisch-Quiz für Anfänger: Schaffst du es? · Tag 7",
+   "10 Fragen zur ersten Woche: Antworte laut, bevor du die Lösung hörst. Nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Imtixaanka Af-Carabiga ee Bilowga: Ma Ku Guulaysan Kartaa? · Maalinta 7",
+   "10 su'aalood oo toddobaadka koowaad ah: si cod dheer uga jawaab ka hor intaadan maqlin jawaabta. 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Jaribio la Kiarabu kwa Wanaoanza: Unaweza Kufaulu? · Siku ya 7",
+   "Maswali 10 ya wiki ya kwanza: jibu kwa sauti kabla ya kusikia jibu. Dakika 2 tu kwa siku."
+  ],
+  "es": [
+   "Quiz de árabe para principiantes: ¿puedes aprobar? · Día 7",
+   "10 preguntas de la primera semana: responde en voz alta antes de escuchar la respuesta. Solo 2 minutos al día."
+  ]
+ },
+ "nYz4KkohiIc": {
+  "name": "Where Are You From? in Arabic · Day 8",
+  "hi": [
+   "अरबी में 'आप कहाँ से हैं?' कैसे पूछें · दिन 8 | अरबी सीखें",
+   "अरबी में पूछना सीखें कि कोई कहाँ से है, जवाब दें 'मैं ... से हूँ', और छह देशों के नाम जानें। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں 'آپ کہاں سے ہیں؟' کیسے پوچھیں · دن 8 | عربی سیکھیں",
+   "عربی میں پوچھنا سیکھیں کہ کوئی کہاں سے ہے، جواب دیں 'میں ... سے ہوں'، اور چھ ملکوں کے نام جانیں۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "\"Dari Mana Asalmu?\" dalam Bahasa Arab · Hari 8 | Belajar Bahasa Arab",
+   "Belajar menanyakan asal seseorang dalam bahasa Arab, menjawab \"saya dari ...\", dan enam nama negara. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে 'আপনি কোথা থেকে এসেছেন?' · দিন ৮ | আরবি শিখুন",
+   "আরবিতে কেউ কোথা থেকে এসেছে জিজ্ঞেস করা, 'আমি ... থেকে' বলে উত্তর দেওয়া আর ছয়টি দেশের নাম শিখুন। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça \"Nerelisin?\" Nasıl Denir · 8. Gün | Arapça Öğren",
+   "Arapçada birine nereli olduğunu sormayı, nereli olduğunu söylemeyi ve altı ülke adını öğren. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "«اهل کجایی؟» به عربی · روز ۸ | آموزش زبان عربی از صفر",
+   "یاد بگیرید به عربی بپرسید کسی اهل کجاست، بگویید اهل کجا هستید و نام شش کشور را. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "\"Anda Dari Mana?\" dalam Bahasa Arab · Hari 8 | Belajar Bahasa Arab",
+   "Belajar bertanya asal seseorang dalam bahasa Arab, menjawab \"saya dari ...\", dan enam nama negara. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "« D'où viens-tu ? » en arabe · Jour 8 | Apprendre l'arabe",
+   "Apprenez à demander à quelqu'un d'où il vient en arabe, à répondre « je viens de... » et six noms de pays. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "«Откуда ты?» на арабском · День 8 | Арабский язык с нуля",
+   "Научитесь спрашивать по-арабски, откуда человек, отвечать «я из…» и называть шесть стран. Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "„Woher kommst du?“ auf Arabisch · Tag 8 | Arabisch lernen",
+   "Lerne, auf Arabisch zu fragen, woher jemand kommt, mit „Ich komme aus …“ zu antworten, und sechs Ländernamen. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "\"Halkee baad ka timid?\" af Carabi ahaan · Maalinta 8 | Baro Af-Carabi",
+   "Baro sida af Carabi loogu weydiiyo qof meesha uu ka yimid, sida looga jawaabo, iyo magacyada lix waddan. Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "\"Unatoka Wapi?\" kwa Kiarabu · Siku ya 8 | Jifunze Kiarabu",
+   "Jifunze kuuliza mtu anatoka wapi kwa Kiarabu, kujibu \"Mimi natoka ...\" na majina ya nchi sita. Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "«¿De dónde eres?» en árabe · Día 8 | Aprender árabe",
+   "Aprende a preguntar de dónde es alguien en árabe, a responder «soy de...» y seis nombres de países. Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "KiwR8OU3aeQ": {
+  "name": "Masculine and Feminine in Arabic (One Letter) · Day 9",
+  "hi": [
+   "अरबी में पुल्लिंग और स्त्रीलिंग (सिर्फ एक अक्षर) · दिन 9 | अरबी सीखें",
+   "जानें कि अरबी में एक छोटा सा अक्षर (ة) पुल्लिंग शब्द को स्त्रीलिंग कैसे बनाता है: शिक्षक, दोस्त, छात्र। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں مذکر اور مؤنث (صرف ایک حرف) · دن 9 | عربی سیکھیں",
+   "جانیں کہ عربی میں ایک چھوٹا سا حرف (ة) مذکر لفظ کو مؤنث کیسے بناتا ہے: استاد، دوست، طالب علم۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Mudzakkar dan Muannats dalam Bahasa Arab (Satu Huruf) · Hari 9",
+   "Pelajari bagaimana satu huruf kecil (ta marbutah) mengubah kata mudzakkar menjadi muannats: guru, teman, pelajar. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে পুংলিঙ্গ ও স্ত্রীলিঙ্গ (মাত্র একটি অক্ষর) · দিন ৯ | আরবি শিখুন",
+   "দেখুন কীভাবে আরবিতে একটি ছোট অক্ষর (ة) পুংলিঙ্গ শব্দকে স্ত্রীলিঙ্গ করে দেয়: শিক্ষক, বন্ধু, ছাত্র। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapçada Müzekker ve Müennes (Tek Harf) · 9. Gün | Arapça Öğren",
+   "Arapçada tek bir harfin (ة) eril kelimeyi nasıl dişil yaptığını öğren: öğretmen, arkadaş, öğrenci. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "مذکر و مؤنث در عربی (فقط یک حرف) · روز ۹ | آموزش زبان عربی از صفر",
+   "یاد بگیرید چطور در عربی یک حرف کوچک (ة) کلمه مذکر را مؤنث می‌کند: معلم، دوست، دانش‌آموز. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "Muzakkar dan Muannas dalam Bahasa Arab (Satu Huruf) · Hari 9",
+   "Pelajari bagaimana satu huruf kecil (ta marbutah) menukar perkataan muzakkar kepada muannas: guru, kawan, pelajar. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Masculin et féminin en arabe (une seule lettre) · Jour 9 | Apprendre l'arabe",
+   "Découvrez comment une seule lettre (ة) met un mot arabe au féminin : professeur, ami, étudiant. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Мужской и женский род в арабском (одна буква) · День 9 | Арабский язык с нуля",
+   "Узнайте, как одна буква (ة) делает арабское слово женского рода: учитель, друг, студент. Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Männlich und weiblich im Arabischen (ein Buchstabe) · Tag 9 | Arabisch lernen",
+   "Lerne, wie ein einziger Buchstabe (ة) ein arabisches Wort weiblich macht: Lehrer, Freund, Student. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Lab iyo dheddig Af-Carabiga (hal xaraf) · Maalinta 9 | Baro Af-Carabi",
+   "Baro sida hal xaraf (ة) uga dhigo eray lab mid dheddig ah: macallin, saaxiib, arday. Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "Kiume na Kike katika Kiarabu (Herufi Moja) · Siku ya 9 | Jifunze Kiarabu",
+   "Jifunze jinsi herufi moja (ة) inavyogeuza neno la kiume kuwa la kike: mwalimu, rafiki, mwanafunzi. Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "Masculino y femenino en árabe (una sola letra) · Día 9 | Aprender árabe",
+   "Descubre cómo una sola letra (ة) pasa una palabra árabe al femenino: maestro, amigo, estudiante. Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "eX2rqmZpd34": {
+  "name": "Basic Arabic Conversation: Meeting a Tourist · Day 11",
+  "hi": [
+   "अरबी में आसान बातचीत: एक पर्यटक से मुलाकात · दिन 11 | अरबी सीखें",
+   "दमिश्क की एक गली में लीना और एक पर्यटक की छोटी सी बातचीत समझें, और 'स्वागत है' और 'मैं पर्यटक हूँ' कहना सीखें। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں آسان گفتگو: ایک سیاح سے ملاقات · دن 11 | عربی سیکھیں",
+   "دمشق کی ایک گلی میں لینا اور ایک سیاح کی مختصر گفتگو سمجھیں، اور 'خوش آمدید' اور 'میں سیاح ہوں' کہنا سیکھیں۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Percakapan Bahasa Arab Dasar: Bertemu Turis · Hari 11 | Belajar Bahasa Arab",
+   "Ikuti percakapan singkat Lina dengan seorang turis di jalanan Damaskus, dan belajar mengucapkan \"selamat datang\" dan \"saya turis\". Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে সহজ কথোপকথন: এক পর্যটকের সাথে দেখা · দিন ১১ | আরবি শিখুন",
+   "দামেস্কের রাস্তায় লিনা আর এক পর্যটকের ছোট কথোপকথন বুঝুন, আর শিখুন 'স্বাগতম' ও 'আমি পর্যটক' বলা। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Basit Arapça Konuşma: Bir Turistle Tanışma · 11. Gün | Arapça Öğren",
+   "Şam'da bir sokakta Lina ile bir turistin kısa konuşmasını takip et; \"hoş geldiniz\" ve \"ben turistim\" demeyi öğren. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "مکالمه ساده عربی: آشنایی با یک توریست · روز ۱۱ | آموزش زبان عربی از صفر",
+   "یک گفتگوی کوتاه بین لینا و یک توریست در خیابانی در دمشق را بفهمید و یاد بگیرید بگویید «خوش آمدید» و «من توریست هستم». هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "Perbualan Asas Bahasa Arab: Bertemu Pelancong · Hari 11 | Belajar Bahasa Arab",
+   "Ikuti perbualan ringkas Lina dengan seorang pelancong di jalan Damsyik, dan belajar menyebut \"selamat datang\" dan \"saya pelancong\". Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Conversation simple en arabe : rencontre avec un touriste · Jour 11",
+   "Suivez une courte conversation entre Lina et un touriste dans une rue de Damas, et apprenez à dire « bienvenue » et « je suis touriste ». 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Простой диалог на арабском: встреча с туристом · День 11 | Арабский язык с нуля",
+   "Поймите короткий разговор Лины с туристом на улице Дамаска и научитесь говорить «добро пожаловать» и «я турист». Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Einfaches Gespräch auf Arabisch: Treffen mit einem Touristen · Tag 11",
+   "Verstehe ein kurzes Gespräch zwischen Lina und einem Touristen in einer Straße in Damaskus und lerne „Willkommen“ und „Ich bin Tourist“. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Wada-hadal fudud oo Af-Carabi ah: la kulanka dalxiise · Maalinta 11",
+   "Fahan wada-hadal gaaban oo u dhexeeya Lina iyo dalxiise ku sugan waddo Dimishiq ah, oo baro sida loo yiraahdo \"soo dhowow\" iyo \"waxaan ahay dalxiise\". Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "Mazungumzo Rahisi kwa Kiarabu: Kukutana na Mtalii · Siku ya 11 | Jifunze Kiarabu",
+   "Fuatilia mazungumzo mafupi kati ya Lina na mtalii kwenye mtaa wa Damascus, na ujifunze kusema \"karibu\" na \"mimi ni mtalii\". Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "Conversación básica en árabe: conociendo a un turista · Día 11 | Aprender árabe",
+   "Sigue una conversación corta entre Lina y un turista en una calle de Damasco, y aprende a decir «bienvenido» y «soy turista». Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "9LaQeya3gbw": {
+  "name": "Arabic Has No Word for My · Day 12",
+  "hi": [
+   "अरबी में 'मेरा' के लिए कोई शब्द नहीं · दिन 12 | अरबी सीखें",
+   "अरबी में 'मेरा' और 'तुम्हारा' अलग शब्द नहीं, बल्कि शब्द के अंत में जुड़ते हैं: किताबी यानी मेरी किताब। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں 'میرا' کے لیے کوئی لفظ نہیں · دن 12 | عربی سیکھیں",
+   "عربی میں 'میرا' اور 'تمہارا' الگ لفظ نہیں بلکہ لفظ کے آخر میں لگتے ہیں: کتابی یعنی میری کتاب۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Kata Ganti Milik Bahasa Arab: Kitabi = Bukuku · Hari 12 | Belajar Bahasa Arab",
+   "Dalam bahasa Arab, \"-ku\" dan \"-mu\" ditempelkan di akhir kata: kitabi berarti bukuku. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে 'আমার' বলার আলাদা কোনো শব্দ নেই · দিন ১২ | আরবি শিখুন",
+   "আরবিতে 'আমার' আর 'তোমার' আলাদা শব্দ নয়, শব্দের শেষে যোগ হয়: কিতাবি মানে আমার বই। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapçada İyelik Ekleri: Kitabım, Kitabın · 12. Gün | Arapça Öğren",
+   "Arapçada \"benim\" ve \"senin\" ayrı kelime değil, kelimenin sonuna eklenir: kitabi, yani kitabım. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "ضمیر ملکی در عربی: کتابی یعنی کتابم · روز ۱۲ | آموزش زبان عربی از صفر",
+   "در عربی «مال من» و «مال تو» به آخر کلمه می‌چسبند: کتابی یعنی کتابم. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "Kata Ganti Nama Milik Bahasa Arab: Kitabi = Buku Saya · Hari 12",
+   "Dalam bahasa Arab, \"saya\" dan \"awak\" sebagai pemilik disambung di hujung perkataan: kitabi bermaksud buku saya. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "L'arabe n'a pas de mot pour dire « mon » · Jour 12 | Apprendre l'arabe",
+   "En arabe, « mon » et « ton » se collent à la fin du mot : kitabi veut dire « mon livre ». 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "В арабском нет слова «мой» · День 12 | Арабский язык с нуля",
+   "В арабском «мой» и «твой» не отдельные слова, а окончания: китаби значит «моя книга». Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Im Arabischen gibt es kein Wort für „mein“ · Tag 12 | Arabisch lernen",
+   "Im Arabischen sind „mein“ und „dein“ keine eigenen Wörter, sondern Endungen: kitabi heißt „mein Buch“. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Sida loo yiraahdo \"kayga\" iyo \"kaaga\" af Carabi ahaan · Maalinta 12",
+   "Af-Carabiga, \"kayga\" iyo \"kaaga\" eray gaar ah ma aha ee waxay ku dhegaan dhammaadka erayga: kitabi waa buuggayga. Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "Jinsi ya Kusema \"Yangu\" na \"Yako\" kwa Kiarabu · Siku ya 12 | Jifunze Kiarabu",
+   "Kwa Kiarabu, \"yangu\" na \"yako\" si maneno tofauti bali huongezwa mwishoni mwa neno: kitabi maana yake kitabu changu. Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "El árabe no tiene una palabra para «mi» · Día 12 | Aprender árabe",
+   "En árabe, «mi» y «tu» no son palabras aparte, se pegan al final de la palabra: kitabi significa «mi libro». Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "_iPKgHfT_b4": {
+  "name": "Family Words in Arabic: Mother, Father, Sister · Day 13",
+  "hi": [
+   "अरबी में परिवार के शब्द: माँ, पिता, बहन · दिन 13 | अरबी सीखें",
+   "लीना की एक छोटी कहानी से अरबी में परिवार के शब्द सीखें: माँ, पिता, भाई, बहन और परिवार। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں خاندان کے الفاظ: ماں، باپ، بہن · دن 13 | عربی سیکھیں",
+   "لینا کی ایک مختصر کہانی سے عربی میں خاندان کے الفاظ سیکھیں: ماں، باپ، بھائی، بہن اور خاندان۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Kosakata Keluarga Bahasa Arab: Ibu, Ayah, Saudari · Hari 13",
+   "Belajar kosakata keluarga dalam bahasa Arab lewat cerita singkat Lina: ibu, ayah, saudara, saudari, dan keluarga. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে পরিবারের শব্দ: মা, বাবা, বোন · দিন ১৩ | আরবি শিখুন",
+   "লিনার ছোট একটি গল্পে আরবিতে পরিবারের শব্দ শিখুন: মা, বাবা, ভাই, বোন আর পরিবার। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça Aile Kelimeleri: Anne, Baba, Kız Kardeş · 13. Gün | Arapça Öğren",
+   "Lina'nın kısa hikâyesiyle Arapça aile kelimelerini öğren: anne, baba, erkek kardeş, kız kardeş ve aile. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "کلمات خانواده به عربی: مادر، پدر، خواهر · روز ۱۳ | آموزش زبان عربی از صفر",
+   "با داستان کوتاه لینا کلمات خانواده را به عربی یاد بگیرید: مادر، پدر، برادر، خواهر و خانواده. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "Perkataan Keluarga dalam Bahasa Arab: Ibu, Bapa, Saudara Perempuan · Hari 13",
+   "Belajar perkataan keluarga dalam bahasa Arab melalui cerita pendek Lina: ibu, bapa, saudara lelaki, saudara perempuan dan keluarga. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "La famille en arabe : mère, père, sœur · Jour 13 | Apprendre l'arabe",
+   "Apprenez les mots de la famille en arabe avec la petite histoire de Lina : mère, père, frère, sœur et famille. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Семья на арабском: мама, папа, сестра · День 13 | Арабский язык с нуля",
+   "Выучите слова о семье на арабском по короткому рассказу Лины: мама, папа, брат, сестра и семья. Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Familie auf Arabisch: Mutter, Vater, Schwester · Tag 13 | Arabisch lernen",
+   "Lerne die Familienwörter auf Arabisch mit Linas kurzer Geschichte: Mutter, Vater, Bruder, Schwester und Familie. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Erayada qoyska Af-Carabiga: hooyo, aabbe, walaasha · Maalinta 13",
+   "Ku baro erayada qoyska af Carabi sheeko gaaban oo Lina ah: hooyo, aabbe, walaal wiil, walaal gabar iyo qoys. Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "Maneno ya Familia kwa Kiarabu: Mama, Baba, Dada · Siku ya 13 | Jifunze Kiarabu",
+   "Jifunze maneno ya familia kwa Kiarabu kupitia hadithi fupi ya Lina: mama, baba, kaka, dada na familia. Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "La familia en árabe: madre, padre, hermana · Día 13 | Aprender árabe",
+   "Aprende las palabras de la familia en árabe con la historia corta de Lina: madre, padre, hermano, hermana y familia. Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "nXRwJBqOPy0": {
+  "name": "Beginner Arabic Quiz · Day 14",
+  "hi": [
+   "क्या आप यह अरबी क्विज़ पास कर सकते हैं? (शुरुआती स्तर) · दिन 14 | अरबी सीखें",
+   "दूसरे हफ़्ते के पाठों से 12 सवाल: जवाब सुनने से पहले खुद बोलकर बताएँ। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "کیا آپ یہ عربی کوئز پاس کر سکتے ہیں؟ (مبتدی سطح) · دن 14 | عربی سیکھیں",
+   "دوسرے ہفتے کے اسباق سے 12 سوال: جواب سننے سے پہلے خود بول کر بتائیں۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Bisakah Kamu Lulus Kuis Bahasa Arab Ini? (Pemula) · Hari 14",
+   "12 pertanyaan dari pelajaran minggu kedua: jawab dengan suara keras sebelum mendengar jawabannya. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আপনি কি এই আরবি কুইজে পাস করতে পারবেন? (শুরুর স্তর) · দিন ১৪ | আরবি শিখুন",
+   "দ্বিতীয় সপ্তাহের পাঠ থেকে ১২টি প্রশ্ন: উত্তর শোনার আগে নিজে জোরে বলুন। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Bu Arapça Testi Geçebilir misin? (Başlangıç Seviyesi) · 14. Gün | Arapça Öğren",
+   "İkinci haftanın derslerinden 12 soru: cevabı duymadan önce sesli söyle. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "می‌توانی در این آزمون عربی قبول شوی؟ (سطح مبتدی) · روز ۱۴",
+   "۱۲ سؤال از درس‌های هفته دوم: قبل از شنیدن جواب، آن را بلند بگویید. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "Bolehkah Anda Lulus Kuiz Bahasa Arab Ini? (Tahap Asas) · Hari 14",
+   "12 soalan daripada pelajaran minggu kedua: jawab dengan kuat sebelum mendengar jawapannya. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Réussirez-vous ce quiz d'arabe ? (niveau débutant) · Jour 14 | Apprendre l'arabe",
+   "12 questions sur les leçons de la deuxième semaine : répondez à voix haute avant d'entendre la réponse. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Тест по арабскому для начинающих: сможете пройти? · День 14",
+   "12 вопросов по урокам второй недели: ответьте вслух, прежде чем услышать ответ. Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Schaffst du dieses Arabisch-Quiz? (Anfänger) · Tag 14 | Arabisch lernen",
+   "12 Fragen zu den Lektionen der zweiten Woche: Antworte laut, bevor du die Lösung hörst. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Ma ka gudbi kartaa imtixaankan Af-Carabiga? (heerka bilowga) · Maalinta 14",
+   "12 su'aalood oo ka mid ah casharradii toddobaadka labaad: si cod dheer ugu jawaab ka hor intaadan maqlin jawaabta. Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "Je, Unaweza Kufaulu Jaribio Hili la Kiarabu? (Wanaoanza) · Siku ya 14",
+   "Maswali 12 kutoka masomo ya wiki ya pili: jibu kwa sauti kabla ya kusikia jibu. Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "¿Puedes pasar esta prueba de árabe? (nivel principiante) · Día 14",
+   "12 preguntas de las lecciones de la segunda semana: responde en voz alta antes de oír la respuesta. Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "7hZTq8KtA1I": {
+  "name": "I Want in Arabic: Order Anything · Day 15",
+  "hi": [
+   "अरबी में 'मुझे चाहिए': कुछ भी ऑर्डर करें · दिन 15 | अरबी सीखें",
+   "अरबी में 'मुझे चाहिए' और 'मुझे नहीं चाहिए' कहकर पानी, चाय या जूस ऑर्डर करना सीखें। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں 'مجھے چاہیے': کچھ بھی آرڈر کریں · دن 15 | عربی سیکھیں",
+   "عربی میں 'مجھے چاہیے' اور 'مجھے نہیں چاہیے' کہہ کر پانی، چائے یا جوس آرڈر کرنا سیکھیں۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "\"Saya Mau\" dalam Bahasa Arab: Pesan Apa Saja · Hari 15 | Belajar Bahasa Arab",
+   "Belajar memesan air, teh, atau jus dengan \"saya mau\" dan \"saya tidak mau\" dalam bahasa Arab. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে 'আমি চাই': যেকোনো কিছু অর্ডার করুন · দিন ১৫ | আরবি শিখুন",
+   "আরবিতে 'আমি চাই' আর 'আমি চাই না' বলে পানি, চা বা জুস অর্ডার করতে শিখুন। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça \"İstiyorum\": İstediğini Sipariş Et · 15. Gün | Arapça Öğren",
+   "Arapçada \"istiyorum\" ve \"istemiyorum\" diyerek su, çay ya da meyve suyu sipariş etmeyi öğren. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "«می‌خواهم» به عربی: هر چیزی را سفارش بده · روز ۱۵ | آموزش زبان عربی از صفر",
+   "یاد بگیرید با «می‌خواهم» و «نمی‌خواهم» به عربی آب، چای یا آبمیوه سفارش دهید. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "\"Saya Mahu\" dalam Bahasa Arab: Pesan Apa Sahaja · Hari 15 | Belajar Bahasa Arab",
+   "Belajar memesan air, teh atau jus dengan \"saya mahu\" dan \"saya tidak mahu\" dalam bahasa Arab. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "« Je veux » en arabe : commander ce que vous voulez · Jour 15",
+   "Apprenez à commander de l'eau, du thé ou un jus en arabe avec « je veux » et « je ne veux pas ». 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "«Я хочу» на арабском: закажите что угодно · День 15 | Арабский язык с нуля",
+   "Научитесь заказывать воду, чай или сок по-арабски со словами «я хочу» и «я не хочу». Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "„Ich möchte“ auf Arabisch: alles bestellen · Tag 15 | Arabisch lernen",
+   "Lerne, auf Arabisch Wasser, Tee oder Saft zu bestellen, mit „ich möchte“ und „ich möchte nicht“. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "\"Waxaan rabaa\" af Carabi ahaan: dalbo wax kasta · Maalinta 15 | Baro Af-Carabi",
+   "Baro sida af Carabi loogu dalbado biyo, shaah ama casiir adigoo leh \"waxaan rabaa\" iyo \"ma rabo\". Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "\"Nataka\" kwa Kiarabu: Agiza Chochote · Siku ya 15 | Jifunze Kiarabu",
+   "Jifunze kuagiza maji, chai au juisi kwa Kiarabu ukisema \"nataka\" na \"sitaki\". Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "«Quiero» en árabe: pide lo que sea · Día 15 | Aprender árabe",
+   "Aprende a pedir agua, té o jugo en árabe con «quiero» y «no quiero». Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "PEsT02c8BE4": {
+  "name": "Order Coffee in Arabic (With Milk, No Sugar) · Day 16",
+  "hi": [
+   "अरबी में कॉफ़ी ऑर्डर करें (दूध के साथ, बिना चीनी) · दिन 16 | अरबी सीखें",
+   "अरबी में 'के साथ' और 'बिना' कहकर कॉफ़ी ऑर्डर करें, दाम पूछें और कैफ़े की पूरी बातचीत समझें। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں کافی آرڈر کریں (دودھ کے ساتھ، بغیر چینی) · دن 16 | عربی سیکھیں",
+   "عربی میں 'کے ساتھ' اور 'بغیر' کہہ کر کافی آرڈر کریں، قیمت پوچھیں اور کیفے کی پوری گفتگو سمجھیں۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Pesan Kopi dalam Bahasa Arab (Pakai Susu, Tanpa Gula) · Hari 16",
+   "Belajar memesan kopi pakai atau tanpa sesuatu, menanyakan harga, dan mengikuti percakapan lengkap di kafe dalam bahasa Arab. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে কফি অর্ডার করুন (দুধসহ, চিনি ছাড়া) · দিন ১৬ | আরবি শিখুন",
+   "আরবিতে 'সহ' আর 'ছাড়া' বলে কফি অর্ডার করুন, দাম জিজ্ঞেস করুন আর ক্যাফের পুরো কথোপকথন বুঝুন। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça Kahve Siparişi (Sütlü, Şekersiz) · 16. Gün | Arapça Öğren",
+   "Arapçada sütlü ya da şekersiz kahve sipariş etmeyi, fiyat sormayı ve kafede geçen tam bir konuşmayı öğren. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "سفارش قهوه به عربی (با شیر، بدون شکر) · روز ۱۶ | آموزش زبان عربی از صفر",
+   "یاد بگیرید به عربی قهوه را «با» یا «بدون» چیزی سفارش دهید، قیمت را بپرسید و یک گفتگوی کامل در کافه را بفهمید. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "Pesan Kopi dalam Bahasa Arab (Dengan Susu, Tanpa Gula) · Hari 16",
+   "Belajar memesan kopi dengan atau tanpa sesuatu, bertanya harga, dan ikuti perbualan penuh di kafe dalam bahasa Arab. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Commander un café en arabe (avec du lait, sans sucre) · Jour 16",
+   "Apprenez à commander un café « avec » ou « sans » en arabe, à demander le prix et à suivre une vraie commande au café. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Как заказать кофе на арабском (с молоком, без сахара) · День 16",
+   "Научитесь заказывать кофе по-арабски «с» и «без», спрашивать цену и понимать весь разговор в кафе. Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Kaffee auf Arabisch bestellen (mit Milch, ohne Zucker) · Tag 16",
+   "Lerne, auf Arabisch Kaffee „mit“ oder „ohne“ zu bestellen, nach dem Preis zu fragen und ein ganzes Gespräch im Café zu verstehen. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Dalbo bun af Carabi ahaan (caano leh, sonkor la'aan) · Maalinta 16",
+   "Baro sida af Carabi loogu dalbado bun \"leh\" ama \"la'aan\", loo weydiiyo qiimaha, oo fahan wada-hadal dhan oo maqaaxi ka dhaca. Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "Agiza Kahawa kwa Kiarabu (Na Maziwa, Bila Sukari) · Siku ya 16 | Jifunze Kiarabu",
+   "Jifunze kuagiza kahawa \"na\" au \"bila\" kitu kwa Kiarabu, kuuliza bei na kufuatilia mazungumzo kamili mkahawani. Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "Pide un café en árabe (con leche, sin azúcar) · Día 16 | Aprender árabe",
+   "Aprende a pedir un café «con» o «sin» algo en árabe, a preguntar el precio y a seguir un pedido completo en la cafetería. Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "ecqKTY00R14": {
+  "name": "\"The\" in Arabic: Sun and Moon Letters · Day 17",
+  "hi": [
+   "अरबी में 'अल' (the): शम्सी और क़मरी अक्षर · दिन 17 | अरबी सीखें",
+   "अरबी में 'the' के लिए शब्द के आगे 'अल' लगता है, और शम्सी अक्षरों के साथ 'ल' की आवाज़ गायब हो जाती है। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں 'ال': حروف شمسی اور قمری · دن 17 | عربی سیکھیں",
+   "عربی میں 'ال' لفظ کے شروع میں لگتا ہے، اور حروف شمسی کے ساتھ 'ل' کی آواز غائب ہو جاتی ہے۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Alif Lam: Huruf Syamsiyah dan Qamariyah · Hari 17 | Belajar Bahasa Arab",
+   "Pelajari \"al\" di awal kata bahasa Arab, dan kenapa huruf lam tidak dibaca sebelum huruf syamsiyah. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে 'আল': শামসি ও কামারি হরফ · দিন ১৭ | আরবি শিখুন",
+   "আরবিতে শব্দের শুরুতে 'আল' বসে, আর শামসি হরফের আগে 'ল'-এর আওয়াজ হারিয়ে যায়। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapçada \"El\" Takısı: Şemsi ve Kameri Harfler · 17. Gün | Arapça Öğren",
+   "Arapçada kelimenin başına gelen \"el\" takısını ve şemsi harflerde \"l\" sesinin neden kaybolduğunu öğren. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "«ال» در عربی: حروف شمسی و قمری · روز ۱۷ | آموزش زبان عربی از صفر",
+   "یاد بگیرید «ال» چطور به اول کلمه عربی می‌چسبد و چرا قبل از حروف شمسی صدای «ل» خوانده نمی‌شود. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "Alif Lam: Huruf Syamsiah dan Qamariah · Hari 17 | Belajar Bahasa Arab",
+   "Pelajari \"al\" di awal perkataan Arab, dan kenapa huruf lam tidak dibaca sebelum huruf syamsiah. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Dire « le » en arabe : lettres solaires et lunaires · Jour 17",
+   "En arabe, « le » se dit al- et se colle au mot ; avec les lettres solaires, le L disparaît. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Артикль «аль» в арабском: солнечные и лунные буквы · День 17",
+   "Узнайте, как арабский артикль «аль» присоединяется к слову и почему перед солнечными буквами звук «л» исчезает. Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "„Der, die, das“ auf Arabisch: Sonnen- und Mondbuchstaben · Tag 17",
+   "Auf Arabisch heißt „der, die, das“ einfach al- vor dem Wort, und bei Sonnenbuchstaben verschwindet das L. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "\"Al\" Af-Carabiga: xarfaha qorraxda iyo dayaxa · Maalinta 17 | Baro Af-Carabi",
+   "Baro sida \"al\" loogu daro bilowga erayga Carabiga, iyo sababta xarafka \"l\" uusan ugu dhawaaqmin xarfaha qorraxda ka hor. Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "\"Al\" kwa Kiarabu: Herufi za Jua na za Mwezi · Siku ya 17 | Jifunze Kiarabu",
+   "Jifunze jinsi \"al\" inavyowekwa mwanzoni mwa neno la Kiarabu, na kwa nini sauti ya \"l\" inapotea kabla ya herufi za jua. Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "Cómo decir «el» en árabe: letras solares y lunares · Día 17 | Aprender árabe",
+   "En árabe, «el» se dice al- y va pegado a la palabra; con las letras solares, la L desaparece. Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "h_TbkPZZlgw": {
+  "name": "Arabic Question Words: What, Who, Where, When · Day 18",
+  "hi": [
+   "अरबी के प्रश्न शब्द: क्या, कौन, कहाँ, कब · दिन 18 | अरबी सीखें",
+   "अरबी के पाँच प्रश्न शब्द सीखें: क्या, कौन, कहाँ, कितने और कब, हर एक असली सवाल के साथ। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی کے سوالیہ الفاظ: کیا، کون، کہاں، کب · دن 18 | عربی سیکھیں",
+   "عربی کے پانچ سوالیہ الفاظ سیکھیں: کیا، کون، کہاں، کتنے اور کب، ہر ایک اصل سوال کے ساتھ۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Kata Tanya Bahasa Arab: Apa, Siapa, Di Mana, Kapan · Hari 18",
+   "Belajar lima kata tanya bahasa Arab: apa, siapa, di mana, berapa, dan kapan, masing-masing dalam pertanyaan nyata. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবি প্রশ্নবোধক শব্দ: কী, কে, কোথায়, কখন · দিন ১৮ | আরবি শিখুন",
+   "আরবির পাঁচটি প্রশ্নবোধক শব্দ শিখুন: কী, কে, কোথায়, কত আর কখন, প্রতিটি একটি আসল প্রশ্নে। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça Soru Kelimeleri: Ne, Kim, Nerede, Ne Zaman · 18. Gün | Arapça Öğren",
+   "Arapçanın beş soru kelimesini öğren: ne, kim, nerede, kaç ve ne zaman, her biri gerçek bir soruda. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "کلمات پرسشی عربی: چه، چه کسی، کجا، چه زمانی · روز ۱۸ | آموزش زبان عربی از صفر",
+   "پنج کلمه پرسشی عربی را یاد بگیرید: چه، چه کسی، کجا، چند و چه زمانی، هر کدام در یک سؤال واقعی. هر روز ۲ دقیقه آموزش زبان عربی از صفر برای مبتدی‌ها."
+  ],
+  "ms": [
+   "Kata Tanya Bahasa Arab: Apa, Siapa, Di Mana, Bila · Hari 18",
+   "Belajar lima kata tanya bahasa Arab: apa, siapa, di mana, berapa dan bila, setiap satu dalam soalan sebenar. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Les mots interrogatifs en arabe : quoi, qui, où, quand · Jour 18",
+   "Apprenez les cinq mots interrogatifs de l'arabe : quoi, qui, où, combien et quand, chacun dans une vraie question. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Вопросительные слова в арабском: что, кто, где, когда · День 18",
+   "Выучите пять арабских вопросительных слов: что, кто, где, сколько и когда, каждое в настоящем вопросе. Арабский с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Fragewörter auf Arabisch: was, wer, wo, wann · Tag 18 | Arabisch lernen",
+   "Lerne die fünf arabischen Fragewörter: was, wer, wo, wie viele und wann, jedes in einer echten Frage. Arabisch für Anfänger in nur 2 Minuten am Tag."
+  ],
+  "so": [
+   "Erayada su'aalaha Af-Carabiga: maxaa, yaa, halkee, goorma · Maalinta 18",
+   "Baro shanta eray ee su'aalaha af Carabiga: maxaa, yaa, halkee, immisa iyo goorma, mid walba oo su'aal dhab ah ku jira. Af-Carabi bilow ah, 2 daqiiqo maalin kasta."
+  ],
+  "sw": [
+   "Maneno ya Kuuliza kwa Kiarabu: Nini, Nani, Wapi, Lini · Siku ya 18",
+   "Jifunze maneno matano ya kuuliza kwa Kiarabu: nini, nani, wapi, ngapi na lini, kila moja katika swali halisi. Kiarabu kwa wanaoanza, dakika 2 kwa siku."
+  ],
+  "es": [
+   "Palabras interrogativas en árabe: qué, quién, dónde, cuándo · Día 18",
+   "Aprende las cinco palabras interrogativas del árabe: qué, quién, dónde, cuántos y cuándo, cada una en una pregunta real. Árabe para principiantes en solo 2 minutos al día."
+  ]
+ },
+ "hF3mP86tixw": {
+  "name": "Asking for Directions in Arabic · Day 19",
+  "hi": [
+   "अरबी में रास्ता कैसे पूछें · दिन 19 | अरबी सीखें",
+   "एक छोटी कहानी के साथ अरबी में रास्ता पूछना सीखें: दाएँ, बाएँ, फिर, यहाँ और वहाँ। शुरुआती लोगों के लिए रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں راستہ کیسے پوچھیں · دن 19 | عربی سیکھیں",
+   "ایک مختصر کہانی کے ساتھ عربی میں راستہ پوچھنا سیکھیں: دائیں، بائیں، پھر، یہاں اور وہاں۔ مبتدیوں کے لیے روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Cara Bertanya Arah dalam Bahasa Arab · Hari 19 | Belajar Bahasa Arab",
+   "Belajar bertanya arah dalam bahasa Arab lewat sebuah cerita pendek: kanan, kiri, lalu, di sini, di sana. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে কীভাবে রাস্তা জিজ্ঞেস করবেন · দিন ১৯ | আরবি শিখুন",
+   "একটি ছোট গল্পের মাধ্যমে আরবিতে রাস্তা জিজ্ঞেস করতে শিখুন: ডানে, বামে, তারপর, এখানে, ওখানে। নতুনদের জন্য প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça Yol Sorma · 19. Gün | Sıfırdan Arapça",
+   "Kısa bir hikâyeyle Arapçada yol sormayı öğren: sağ, sol, sonra, burada, orada. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "چطور به عربی آدرس بپرسیم · روز ۱۹ | آموزش زبان عربی از صفر",
+   "با یک داستان کوتاه یاد بگیرید به عربی آدرس بپرسید: راست، چپ، بعد، اینجا و آنجا. هر روز ۲ دقیقه آموزش زبان عربی از صفر."
+  ],
+  "ms": [
+   "Cara Bertanya Arah dalam Bahasa Arab · Hari 19 | Belajar Bahasa Arab",
+   "Belajar bertanya arah dalam bahasa Arab melalui satu cerita pendek: kanan, kiri, kemudian, sini, sana. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Demander son chemin en arabe · Jour 19 | Apprendre l'arabe",
+   "Apprenez à demander votre chemin en arabe avec une courte histoire : droite, gauche, puis, ici, là-bas. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Как спросить дорогу на арабском · День 19 | Арабский язык с нуля",
+   "Научитесь спрашивать дорогу на арабском в короткой истории: направо, налево, потом, здесь, там. Арабский язык с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Nach dem Weg fragen auf Arabisch · Tag 19 | Arabisch lernen",
+   "Lerne mit einer kurzen Geschichte, auf Arabisch nach dem Weg zu fragen: rechts, links, dann, hier, dort. Arabisch in 2 Minuten am Tag für Anfänger."
+  ],
+  "so": [
+   "Sida Loo Weydiiyo Jihada Af-Carabi · Maalinta 19 | Baro Af-Carabi",
+   "Sheeko gaaban ku baro sida jihada loo weydiiyo af-Carabi: midig, bidix, kadib, halkan iyo halkaas. Af-Carabi 2 daqiiqo maalintii oo loogu talagalay dadka bilowga ah."
+  ],
+  "sw": [
+   "Jinsi ya Kuuliza Njia kwa Kiarabu · Siku ya 19 | Jifunze Kiarabu",
+   "Jifunze kuuliza njia kwa Kiarabu kupitia hadithi fupi: kulia, kushoto, kisha, hapa na pale. Kiarabu dakika 2 kwa siku kwa wanaoanza."
+  ],
+  "es": [
+   "Cómo pedir direcciones en árabe · Día 19 | Aprender árabe",
+   "Aprende a pedir direcciones en árabe con una historia corta: derecha, izquierda, luego, aquí y allí. Árabe en 2 minutos al día para principiantes."
+  ]
+ },
+ "zfXQKp1XWUY": {
+  "name": "Arabic Verbs: I Drink, I Eat, I Go · Day 20",
+  "hi": [
+   "अरबी क्रियाएँ: मैं पीता हूँ, खाता हूँ, जाता हूँ · दिन 20 | अरबी सीखें",
+   "अरबी की 4 क्रियाएँ सीखें: मैं पीता हूँ, खाता हूँ, जाता हूँ, पसंद करता हूँ, और वह अक्षर जिसका मतलब है “मैं”। रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی افعال: میں پیتا ہوں، کھاتا ہوں، جاتا ہوں · دن 20 | عربی سیکھیں",
+   "عربی کے 4 افعال سیکھیں: میں پیتا ہوں، کھاتا ہوں، جاتا ہوں، پسند کرتا ہوں، اور وہ حرف جس کا مطلب ہے “میں”۔ روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Kata Kerja Bahasa Arab: Saya Minum, Saya Makan, Saya Pergi · Hari 20",
+   "Belajar 4 kata kerja bahasa Arab: saya minum, makan, pergi, dan suka, serta satu huruf yang berarti “saya”. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবি ক্রিয়া: আমি পান করি, খাই, যাই · দিন ২০ | আরবি শিখুন",
+   "আরবির ৪টি ক্রিয়া শিখুন: আমি পান করি, খাই, যাই, ভালোবাসি, আর সেই অক্ষর যার মানে “আমি”। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça Fiiller: İçerim, Yerim, Giderim · 20. Gün | Sıfırdan Arapça",
+   "4 Arapça fiil öğren: içerim, yerim, giderim, severim; ve “ben” anlamına gelen o tek harf. Yeni başlayanlar için günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "افعال عربی: می‌نوشم، می‌خورم، می‌روم · روز ۲۰ | آموزش زبان عربی از صفر",
+   "۴ فعل عربی یاد بگیرید: می‌نوشم، می‌خورم، می‌روم، دوست دارم؛ و حرفی که یعنی «من». هر روز ۲ دقیقه آموزش زبان عربی از صفر."
+  ],
+  "ms": [
+   "Kata Kerja Bahasa Arab: Saya Minum, Saya Makan, Saya Pergi · Hari 20",
+   "Belajar 4 kata kerja bahasa Arab: saya minum, makan, pergi dan suka, serta satu huruf yang bermaksud “saya”. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Verbes arabes : je bois, je mange, je vais · Jour 20 | Apprendre l'arabe",
+   "Apprenez 4 verbes arabes : je bois, je mange, je vais, j'aime, et la lettre qui veut dire « je ». 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Арабские глаголы: я пью, я ем, я иду · День 20 | Арабский язык с нуля",
+   "Выучите 4 арабских глагола: я пью, я ем, я иду, я люблю, и букву, которая означает «я». Арабский язык с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Arabische Verben: ich trinke, ich esse, ich gehe · Tag 20 | Arabisch lernen",
+   "Lerne 4 arabische Verben: ich trinke, ich esse, ich gehe, ich mag, und den Buchstaben, der „ich“ bedeutet. Arabisch in 2 Minuten am Tag für Anfänger."
+  ],
+  "so": [
+   "Ficillada Af-Carabiga: Waan Cabbaa, Waan Cunaa, Waan Tagaa · Maalinta 20",
+   "Baro 4 fal oo af-Carabi ah: waan cabbaa, waan cunaa, waan tagaa, waan jeclahay, iyo xarafka macnihiisu yahay “aniga”. Af-Carabi 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Vitenzi vya Kiarabu: Ninakunywa, Ninakula, Ninaenda · Siku ya 20",
+   "Jifunze vitenzi 4 vya Kiarabu: ninakunywa, ninakula, ninaenda, ninapenda, na herufi moja yenye maana ya “mimi”. Kiarabu dakika 2 kwa siku kwa wanaoanza."
+  ],
+  "es": [
+   "Verbos en árabe: yo bebo, yo como, yo voy · Día 20 | Aprender árabe",
+   "Aprende 4 verbos en árabe: bebo, como, voy y me gusta, y la letra que significa “yo”. Árabe en 2 minutos al día para principiantes."
+  ]
+ },
+ "W5tlsFXCjyY": {
+  "name": "10 Café Words in Arabic",
+  "hi": [
+   "कैफ़े के 10 ज़रूरी अरबी शब्द | अरबी सीखें",
+   "कैफ़े में काम आने वाले 10 अरबी शब्द: कॉफ़ी, चाय, पानी, दूध, चीनी, बिल और भी। रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "کیفے کے 10 ضروری عربی الفاظ | عربی سیکھیں",
+   "کیفے میں کام آنے والے 10 عربی الفاظ: کافی، چائے، پانی، دودھ، چینی، بل اور مزید۔ روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "10 Kosakata Bahasa Arab di Kafe | Belajar Bahasa Arab",
+   "10 kata bahasa Arab yang kamu perlukan di kafe: kopi, teh, air, susu, gula, tagihan, dan lainnya. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "ক্যাফেতে দরকারি ১০টি আরবি শব্দ | আরবি শিখুন",
+   "ক্যাফেতে বসলেই যে ১০টি আরবি শব্দ লাগবে: কফি, চা, পানি, দুধ, চিনি, বিল আর আরও। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Kafede Lazım Olan 10 Arapça Kelime | Arapça Öğren",
+   "Kafede ihtiyacın olan 10 Arapça kelime: kahve, çay, su, süt, şeker, hesap ve dahası. Günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "۱۰ کلمه ضروری عربی در کافه | آموزش زبان عربی از صفر",
+   "۱۰ کلمه عربی که در کافه لازم دارید: قهوه، چای، آب، شیر، شکر، صورت‌حساب و بیشتر. هر روز ۲ دقیقه آموزش زبان عربی."
+  ],
+  "ms": [
+   "10 Perkataan Bahasa Arab di Kafe | Belajar Bahasa Arab",
+   "10 perkataan bahasa Arab yang anda perlukan di kafe: kopi, teh, air, susu, gula, bil dan banyak lagi. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "10 mots arabes indispensables au café | Apprendre l'arabe",
+   "Les 10 mots arabes dont vous avez besoin au café : café, thé, eau, lait, sucre, l'addition et plus encore. 2 minutes d'arabe par jour."
+  ],
+  "ru": [
+   "10 арабских слов для кафе | Арабский язык с нуля",
+   "10 арабских слов, которые пригодятся в кафе: кофе, чай, вода, молоко, сахар, счёт и другие. Всего 2 минуты арабского в день."
+  ],
+  "de": [
+   "10 arabische Wörter fürs Café | Arabisch lernen",
+   "Die 10 arabischen Wörter, die du im Café brauchst: Kaffee, Tee, Wasser, Milch, Zucker, die Rechnung und mehr. Arabisch in 2 Minuten am Tag."
+  ],
+  "so": [
+   "10 Eray oo Af-Carabi ah oo Kafeega Looga Baahan Yahay | Baro Af-Carabi",
+   "10 eray oo af-Carabi ah oo aad kafeega ugu baahan tahay: qaxwo, shaah, biyo, caano, sonkor, biil iyo qaar kale. Af-Carabi 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Maneno 10 ya Kiarabu ya Mgahawani | Jifunze Kiarabu",
+   "Maneno 10 ya Kiarabu unayohitaji mgahawani: kahawa, chai, maji, maziwa, sukari, bili na mengine. Kiarabu dakika 2 kwa siku."
+  ],
+  "es": [
+   "10 palabras en árabe para la cafetería | Aprender árabe",
+   "Las 10 palabras en árabe que necesitas en una cafetería: café, té, agua, leche, azúcar, la cuenta y más. Árabe en 2 minutos al día."
+  ]
+ },
+ "pYM-T12xe6s": {
+  "name": "Parts of the Body in Arabic",
+  "hi": [
+   "अरबी में शरीर के अंग (10 शब्द) | अरबी सीखें",
+   "अरबी में शरीर के 10 अंगों के नाम सीखें, सिर से दिल तक। रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں جسم کے اعضاء (10 الفاظ) | عربی سیکھیں",
+   "عربی میں جسم کے 10 اعضاء کے نام سیکھیں، سر سے دل تک۔ روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Anggota Tubuh dalam Bahasa Arab (10 Kata) | Belajar Bahasa Arab",
+   "Belajar 10 nama anggota tubuh dalam bahasa Arab, dari kepala sampai jantung. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবিতে শরীরের অঙ্গ (১০টি শব্দ) | আরবি শিখুন",
+   "আরবিতে শরীরের ১০টি অঙ্গের নাম শিখুন, মাথা থেকে হৃদয় পর্যন্ত। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça Vücut Bölümleri (10 Kelime) | Arapça Öğren",
+   "Arapçada vücudun 10 bölümünü öğren, baştan kalbe kadar. Günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "اعضای بدن به عربی (۱۰ کلمه) | آموزش زبان عربی از صفر",
+   "نام ۱۰ عضو بدن را به عربی یاد بگیرید، از سر تا قلب. هر روز ۲ دقیقه آموزش زبان عربی از صفر."
+  ],
+  "ms": [
+   "Anggota Badan dalam Bahasa Arab (10 Perkataan) | Belajar Bahasa Arab",
+   "Belajar 10 nama anggota badan dalam bahasa Arab, dari kepala hingga ke jantung. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Les parties du corps en arabe (10 mots) | Apprendre l'arabe",
+   "Apprenez 10 parties du corps en arabe, de la tête jusqu'au cœur. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Части тела на арабском (10 слов) | Арабский язык с нуля",
+   "Выучите 10 частей тела на арабском, от головы до сердца. Арабский язык с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Körperteile auf Arabisch (10 Wörter) | Arabisch lernen",
+   "Lerne 10 Körperteile auf Arabisch, vom Kopf bis zum Herzen. Arabisch in 2 Minuten am Tag für Anfänger."
+  ],
+  "so": [
+   "Xubnaha Jirka oo Af-Carabi ah (10 Eray) | Baro Af-Carabi",
+   "Baro magacyada 10 xubnood oo jirka ah af-Carabi, madaxa ilaa wadnaha. Af-Carabi 2 daqiiqo maalintii oo loogu talagalay dadka bilowga ah."
+  ],
+  "sw": [
+   "Viungo vya Mwili kwa Kiarabu (Maneno 10) | Jifunze Kiarabu",
+   "Jifunze majina 10 ya viungo vya mwili kwa Kiarabu, kuanzia kichwa hadi moyo. Kiarabu dakika 2 kwa siku kwa wanaoanza."
+  ],
+  "es": [
+   "Las partes del cuerpo en árabe (10 palabras) | Aprender árabe",
+   "Aprende 10 partes del cuerpo en árabe, de la cabeza al corazón. Árabe en 2 minutos al día para principiantes."
+  ]
+ },
+ "ncy-zZxkMzI": {
+  "name": "10 Ways to Say Goodbye",
+  "hi": [
+   "अरबी में अलविदा कहने के 10 तरीके (5 सीरियाई बोली में)",
+   "रोज़मर्रा की बातचीत के लिए अरबी में अलविदा कहने के 10 तरीके: 5 मानक अरबी में और 5 सीरियाई बोली में।"
+  ],
+  "ur": [
+   "عربی میں خدا حافظ کہنے کے 10 طریقے (5 شامی لہجے میں)",
+   "روزمرہ کی گفتگو کے لیے عربی میں خدا حافظ کہنے کے 10 طریقے: 5 فصیح عربی میں اور 5 شامی لہجے میں۔"
+  ],
+  "id": [
+   "10 Cara Mengucapkan Selamat Tinggal dalam Bahasa Arab (5 Dialek Suriah)",
+   "10 cara berpamitan dalam bahasa Arab untuk percakapan sehari-hari: 5 dalam bahasa Arab fusha dan 5 dalam dialek Suriah."
+  ],
+  "bn": [
+   "আরবিতে বিদায় বলার ১০টি উপায় (৫টি সিরিয়ান উপভাষায়)",
+   "প্রতিদিনের কথাবার্তার জন্য আরবিতে বিদায় বলার ১০টি উপায়: ৫টি প্রমিত আরবিতে আর ৫টি সিরিয়ান উপভাষায়।"
+  ],
+  "tr": [
+   "Arapçada Hoşça Kal Demenin 10 Yolu (5'i Suriye Lehçesinde)",
+   "Günlük konuşmalar için Arapçada vedalaşmanın 10 yolu: 5'i standart Arapça (fasih), 5'i Suriye lehçesi."
+  ],
+  "fa": [
+   "۱۰ روش برای خداحافظی به عربی (۵ تا به لهجه سوری)",
+   "۱۰ روش خداحافظی به زبان عربی برای گفتگوهای روزمره: ۵ روش به عربی فصیح و ۵ روش به لهجه سوری. آموزش زبان عربی از صفر."
+  ],
+  "ms": [
+   "10 Cara Mengucapkan Selamat Tinggal dalam Bahasa Arab (5 Dialek Syria)",
+   "10 cara mengucapkan selamat tinggal dalam bahasa Arab untuk perbualan harian: 5 dalam bahasa Arab fusha dan 5 dalam dialek Syria."
+  ],
+  "fr": [
+   "10 façons de dire au revoir en arabe (dont 5 en dialecte syrien)",
+   "10 façons de dire au revoir en arabe pour les conversations de tous les jours : 5 en arabe standard et 5 en dialecte syrien."
+  ],
+  "ru": [
+   "10 способов сказать «до свидания» по-арабски (5 на сирийском диалекте)",
+   "10 способов попрощаться по-арабски для повседневного общения: 5 на литературном арабском и 5 на сирийском диалекте."
+  ],
+  "de": [
+   "10 Arten, auf Arabisch Tschüss zu sagen (5 im syrischen Dialekt)",
+   "10 Arten, sich auf Arabisch zu verabschieden, für Gespräche im Alltag: 5 auf Hocharabisch und 5 im syrischen Dialekt."
+  ],
+  "so": [
+   "10 Siyaabood oo Nabadgelyo Loogu Yiraahdo Af-Carabi (5 Lahjadda Suuriya)",
+   "10 siyaabood oo af-Carabi lagu macsalaameeyo wadahadalka maalinlaha ah: 5 af-Carabi fasiix ah iyo 5 lahjadda Suuriya."
+  ],
+  "sw": [
+   "Njia 10 za Kusema Kwaheri kwa Kiarabu (5 kwa Lahaja ya Syria)",
+   "Njia 10 za kuaga kwa Kiarabu kwa mazungumzo ya kila siku: 5 kwa Kiarabu fasaha na 5 kwa lahaja ya Syria."
+  ],
+  "es": [
+   "10 formas de decir adiós en árabe (5 en dialecto sirio)",
+   "10 formas de despedirse en árabe para las conversaciones de todos los días: 5 en árabe estándar y 5 en dialecto sirio."
+  ]
+ },
+ "fbHfwdMExss": {
+  "name": "How to Read Arabic Numbers",
+  "hi": [
+   "अरबी अंक कैसे पढ़ें (ये अलग दिखते हैं) | अरबी सीखें",
+   "दाम, बसों और फ़ोन पर दिखने वाले 1 से 10 तक के अरबी अंक पढ़ना सीखें। रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی ہندسے کیسے پڑھیں | عربی سیکھیں",
+   "قیمتوں، بسوں اور فون پر نظر آنے والے 1 سے 10 تک کے عربی ہندسے پڑھنا سیکھیں۔ روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Cara Membaca Angka Arab (Bentuknya Berbeda) | Belajar Bahasa Arab",
+   "Belajar membaca angka Arab 1 sampai 10 yang kamu lihat di harga, bus, dan ponsel. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবি সংখ্যা কীভাবে পড়বেন (দেখতে আলাদা) | আরবি শিখুন",
+   "দাম, বাস আর ফোনে যে আরবি অঙ্ক ১ থেকে ১০ দেখা যায়, সেগুলো পড়তে শিখুন। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça Rakamlar Nasıl Okunur (Farklı Görünürler) | Arapça Öğren",
+   "Fiyatlarda, otobüslerde ve telefonlarda gördüğün Arapça rakamları 1'den 10'a okumayı öğren. Günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "چطور اعداد عربی را بخوانیم | آموزش زبان عربی از صفر",
+   "ارقام عربی ۱ تا ۱۰ را که روی قیمت‌ها، اتوبوس‌ها و گوشی‌ها می‌بینید بخوانید. هر روز ۲ دقیقه آموزش زبان عربی."
+  ],
+  "ms": [
+   "Cara Membaca Angka Arab (Bentuknya Berbeza) | Belajar Bahasa Arab",
+   "Belajar membaca angka Arab 1 hingga 10 yang anda lihat pada harga, bas dan telefon. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Comment lire les chiffres en arabe (ils sont différents) | Apprendre l'arabe",
+   "Apprenez à lire les chiffres de 1 à 10 en écriture arabe, tels qu'on les voit sur les prix, les bus et les téléphones. 2 minutes d'arabe par jour."
+  ],
+  "ru": [
+   "Как читать цифры на арабском (они выглядят иначе) | Арабский язык с нуля",
+   "Научитесь читать цифры от 1 до 10 в арабском письме: на ценниках, автобусах и телефонах. Арабский язык с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Zahlen auf Arabisch lesen (sie sehen anders aus) | Arabisch lernen",
+   "Lerne, die Zahlen 1 bis 10 in arabischer Schrift zu lesen, wie du sie auf Preisen, Bussen und Handys siehst. Arabisch in 2 Minuten am Tag."
+  ],
+  "so": [
+   "Sida Loo Akhriyo Tirooyinka Carabiga (Way Ka Duwan Yihiin) | Baro Af-Carabi",
+   "Baro akhrinta tirooyinka Carabiga 1 ilaa 10 ee aad ku aragto qiimaha, basaska iyo taleefannada. Af-Carabi 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Jinsi ya Kusoma Namba za Kiarabu (Zinaonekana Tofauti) | Jifunze Kiarabu",
+   "Jifunze kusoma namba za Kiarabu 1 hadi 10 unazoziona kwenye bei, mabasi na simu. Kiarabu dakika 2 kwa siku."
+  ],
+  "es": [
+   "Cómo leer los números en árabe (se ven diferentes) | Aprender árabe",
+   "Aprende a leer los números del 1 al 10 en escritura árabe, como los ves en precios, autobuses y teléfonos. Árabe en 2 minutos al día."
+  ]
+ },
+ "-ju67hph1EI": {
+  "name": "\"I Want\" in Syrian Arabic: Biddi",
+  "hi": [
+   "सीरियाई अरबी में “मुझे चाहिए”: बिद्दी | सीरियाई बोली",
+   "सीरिया में “मुझे चाहिए” को बिद्दी कहते हैं। इससे ऑर्डर करना और “मुझे नहीं चाहिए” कहना सीखें, रोज़ सिर्फ 2 मिनट में।"
+  ],
+  "ur": [
+   "شامی عربی میں “مجھے چاہیے”: بدي کہیں | شامی لہجہ",
+   "شام میں “مجھے چاہیے” کو بدي کہا جاتا ہے۔ اس سے آرڈر کرنا اور “مجھے نہیں چاہیے” کہنا سیکھیں، روزانہ صرف 2 منٹ میں۔"
+  ],
+  "id": [
+   "“Saya Mau” dalam Bahasa Arab Suriah: Biddi | Dialek Suriah",
+   "Di Suriah, “saya mau” diucapkan biddi. Belajar memesan dengan biddi dan mengatakan “saya tidak mau”. Bahasa Arab 2 menit sehari."
+  ],
+  "bn": [
+   "সিরিয়ান আরবিতে “আমি চাই”: বিদ্দি | সিরিয়ান উপভাষা",
+   "সিরিয়ায় “আমি চাই” বলতে বলা হয় বিদ্দি। এটা দিয়ে অর্ডার দিতে আর “আমি চাই না” বলতে শিখুন। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Suriye Arapçasında “İstiyorum”: Biddi | Suriye Lehçesi",
+   "Suriye'de “istiyorum” demek için biddi denir. Onunla sipariş vermeyi ve “istemiyorum” demeyi öğren. Günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "«می‌خواهم» به عربی سوری: بدي | لهجه سوری",
+   "در سوریه به جای «می‌خواهم» می‌گویند بدي. یاد بگیرید با آن سفارش بدهید و بگویید «نمی‌خواهم». هر روز ۲ دقیقه آموزش زبان عربی."
+  ],
+  "ms": [
+   "“Saya Mahu” dalam Bahasa Arab Syria: Biddi | Dialek Syria",
+   "Di Syria, “saya mahu” disebut biddi. Belajar memesan dengan biddi dan menyebut “saya tidak mahu”. Bahasa Arab 2 minit sehari."
+  ],
+  "fr": [
+   "« Je veux » en arabe syrien : dites biddi | Dialecte syrien",
+   "En Syrie, « je veux » se dit biddi. Apprenez à commander avec ce mot et à dire « je ne veux pas ». 2 minutes d'arabe par jour."
+  ],
+  "ru": [
+   "«Я хочу» на сирийском арабском: бидди | Сирийский диалект",
+   "В Сирии «я хочу» говорят бидди. Научитесь заказывать с этим словом и говорить «я не хочу». Всего 2 минуты арабского в день."
+  ],
+  "de": [
+   "„Ich will“ auf Syrisch-Arabisch: Biddi | Syrischer Dialekt",
+   "In Syrien sagt man für „ich will“ biddi. Lerne, damit zu bestellen und „ich will nicht“ zu sagen. Arabisch in 2 Minuten am Tag."
+  ],
+  "so": [
+   "“Waan Rabaa” Af-Carabiga Suuriya: Biddi | Lahjadda Suuriya",
+   "Suuriya, “waan rabaa” waxaa lagu yiraahdaa biddi. Baro sida wax loogu dalbado iyo sida loo yiraahdo “ma rabo”. Af-Carabi 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "“Nataka” kwa Kiarabu cha Syria: Biddi | Lahaja ya Syria",
+   "Huko Syria, “nataka” husemwa biddi. Jifunze kuagiza kwa neno hili na kusema “sitaki”. Kiarabu dakika 2 kwa siku."
+  ],
+  "es": [
+   "“Quiero” en árabe sirio: di biddi | Dialecto sirio",
+   "En Siria, “quiero” se dice biddi. Aprende a pedir con esta palabra y a decir “no quiero”. Árabe en 2 minutos al día."
+  ]
+ },
+ "LWlgINnlAk0": {
+  "name": "Arabic Numbers 11 to 20",
+  "hi": [
+   "अरबी गिनती 11 से 20 तक (एक आसान पैटर्न) | अरबी सीखें",
+   "एक आसान पैटर्न के साथ अरबी में 11 से 20 तक गिनना सीखें। रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی گنتی 11 سے 20 تک (ایک آسان قاعدہ) | عربی سیکھیں",
+   "ایک آسان قاعدے کے ساتھ عربی میں 11 سے 20 تک گنتی سیکھیں۔ روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Angka Bahasa Arab 11 sampai 20 (Satu Pola Mudah) | Belajar Bahasa Arab",
+   "Belajar berhitung 11 sampai 20 dalam bahasa Arab dengan satu pola mudah. Bahasa Arab 2 menit sehari untuk pemula."
+  ],
+  "bn": [
+   "আরবি সংখ্যা ১১ থেকে ২০ (একটি সহজ নিয়ম) | আরবি শিখুন",
+   "একটি সহজ নিয়মে আরবিতে ১১ থেকে ২০ পর্যন্ত গুনতে শিখুন। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça Sayılar 11'den 20'ye (Tek Kolay Kural) | Arapça Öğren",
+   "Arapçada 11'den 20'ye kadar saymayı tek bir kolay kuralla öğren. Günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "اعداد عربی از ۱۱ تا ۲۰ (با یک الگوی ساده) | آموزش زبان عربی از صفر",
+   "شمارش از ۱۱ تا ۲۰ به زبان عربی را با یک الگوی ساده یاد بگیرید. هر روز ۲ دقیقه آموزش زبان عربی."
+  ],
+  "ms": [
+   "Nombor Bahasa Arab 11 hingga 20 (Satu Corak Mudah) | Belajar Bahasa Arab",
+   "Belajar mengira 11 hingga 20 dalam bahasa Arab dengan satu corak mudah. Bahasa Arab 2 minit sehari untuk pemula."
+  ],
+  "fr": [
+   "Compter de 11 à 20 en arabe (une règle simple) | Apprendre l'arabe",
+   "Apprenez à compter de 11 à 20 en arabe grâce à une règle simple. 2 minutes d'arabe par jour pour débutants."
+  ],
+  "ru": [
+   "Числа от 11 до 20 на арабском (одно простое правило) | Арабский язык с нуля",
+   "Научитесь считать от 11 до 20 на арабском с помощью одного простого правила. Арабский язык с нуля, всего 2 минуты в день."
+  ],
+  "de": [
+   "Arabische Zahlen 11 bis 20 (ein einfaches Muster) | Arabisch lernen",
+   "Lerne, auf Arabisch von 11 bis 20 zu zählen, mit einem einfachen Muster. Arabisch in 2 Minuten am Tag."
+  ],
+  "so": [
+   "Tirooyinka Af-Carabiga 11 ilaa 20 (Qaab Fudud) | Baro Af-Carabi",
+   "Baro tirinta 11 ilaa 20 af-Carabi adigoo isticmaalaya hal qaab oo fudud. Af-Carabi 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Namba za Kiarabu 11 hadi 20 (Mpangilio Mmoja Rahisi) | Jifunze Kiarabu",
+   "Jifunze kuhesabu 11 hadi 20 kwa Kiarabu kwa mpangilio mmoja rahisi. Kiarabu dakika 2 kwa siku."
+  ],
+  "es": [
+   "Números en árabe del 11 al 20 (un patrón fácil) | Aprender árabe",
+   "Aprende a contar del 11 al 20 en árabe con un patrón fácil. Árabe en 2 minutos al día."
+  ]
+ },
+ "lYgjF0MTaYo": {
+  "name": "Full Beginner Lesson · Part 2",
+  "hi": [
+   "शुरुआती लोगों के लिए पूरा अरबी पाठ · भाग 2 · दिन 6–10 | अरबी सीखें",
+   "दिन 6 से 10 एक ही वीडियो में: हाँ और नहीं, आप कहाँ से हैं, एक खास अक्षर और 1 से 10 तक गिनती, साथ में एक रिव्यू क्विज़।"
+  ],
+  "ur": [
+   "مبتدیوں کے لیے مکمل عربی سبق · حصہ 2 · دن 6–10",
+   "دن 6 سے 10 ایک ہی ویڈیو میں: ہاں اور نہیں، آپ کہاں سے ہیں، ایک خاص حرف اور 1 سے 10 تک گنتی، ساتھ میں ایک ریویو کوئز۔"
+  ],
+  "id": [
+   "Pelajaran Bahasa Arab Lengkap untuk Pemula · Bagian 2 · Hari 6–10",
+   "Hari 6 sampai 10 dalam satu video: ya dan tidak, dari mana asalmu, satu huruf ajaib, dan angka 1 sampai 10, ditambah kuis ulangan."
+  ],
+  "bn": [
+   "নতুনদের জন্য পূর্ণাঙ্গ আরবি পাঠ · পর্ব ২ · দিন ৬–১০ | আরবি শিখুন",
+   "দিন ৬ থেকে ১০ এক ভিডিওতে: হ্যাঁ আর না, আপনি কোথা থেকে এসেছেন, একটি বিশেষ অক্ষর আর ১ থেকে ১০ পর্যন্ত সংখ্যা, সাথে একটি রিভিউ কুইজ।"
+  ],
+  "tr": [
+   "Yeni Başlayanlar İçin Tam Arapça Ders · 2. Bölüm · 6–10. Günler",
+   "6–10. günler tek videoda: evet ve hayır, nerelisin, sihirli bir harf ve 1'den 10'a sayılar, üstüne bir tekrar testi."
+  ],
+  "fa": [
+   "درس کامل عربی برای مبتدی‌ها · قسمت ۲ · روزهای ۶ تا ۱۰ | آموزش زبان عربی از صفر",
+   "روزهای ۶ تا ۱۰ در یک ویدیو: بله و نه، اهل کجا هستید، یک حرف جادویی و اعداد ۱ تا ۱۰، همراه با یک آزمون مرور."
+  ],
+  "ms": [
+   "Pelajaran Bahasa Arab Lengkap untuk Pemula · Bahagian 2 · Hari 6–10",
+   "Hari 6 hingga 10 dalam satu video: ya dan tidak, dari mana anda berasal, satu huruf ajaib dan nombor 1 hingga 10, serta kuiz ulang kaji."
+  ],
+  "fr": [
+   "Cours complet d'arabe pour débutants · Partie 2 · Jours 6 à 10",
+   "Les jours 6 à 10 en une seule vidéo : oui et non, d'où vous venez, une lettre magique et les chiffres de 1 à 10, avec un quiz de révision."
+  ],
+  "ru": [
+   "Полный урок арабского для начинающих · Часть 2 · Дни 6–10",
+   "Дни 6–10 в одном видео: да и нет, откуда вы, одна волшебная буква и числа от 1 до 10, плюс тест на повторение."
+  ],
+  "de": [
+   "Komplette Arabisch-Lektion für Anfänger · Teil 2 · Tage 6–10",
+   "Tag 6 bis 10 in einem Video: ja und nein, woher du kommst, ein magischer Buchstabe und die Zahlen 1 bis 10, dazu ein Wiederholungsquiz."
+  ],
+  "so": [
+   "Cashar Af-Carabi oo Dhammaystiran oo Bilowga ah · Qaybta 2 · Maalmaha 6–10",
+   "Maalmaha 6 ilaa 10 hal muuqaal: haa iyo maya, xagee baad ka timid, xaraf gaar ah iyo tirooyinka 1 ilaa 10, oo ay la socdaan imtixaan dib-u-eegis ah."
+  ],
+  "sw": [
+   "Somo Kamili la Kiarabu kwa Wanaoanza · Sehemu ya 2 · Siku 6–10",
+   "Siku ya 6 hadi 10 katika video moja: ndiyo na hapana, unatoka wapi, herufi moja maalum na namba 1 hadi 10, pamoja na jaribio la marudio."
+  ],
+  "es": [
+   "Lección completa de árabe para principiantes · Parte 2 · Días 6–10",
+   "Los días 6 a 10 en un solo video: sí y no, de dónde eres, una letra mágica y los números del 1 al 10, con un quiz de repaso."
+  ]
+ },
+ "_xqKbGy66dY": {
+  "name": "Learn Arabic in 10 Minutes · Part 3",
+  "hi": [
+   "10 मिनट में अरबी सीखें – शुरुआती पाठ 3 · भाग 3 · दिन 11–15",
+   "दिन 11 से 15 एक ही वीडियो में: सड़क पर बातचीत, मेरा और तुम्हारा, परिवार के शब्द और कैफ़े में ऑर्डर करना, साथ में एक रिव्यू क्विज़।"
+  ],
+  "ur": [
+   "10 منٹ میں عربی سیکھیں – مبتدیوں کا سبق 3 · حصہ 3 · دن 11–15",
+   "دن 11 سے 15 ایک ہی ویڈیو میں: سڑک پر گفتگو، میرا اور تمہارا، خاندان کے الفاظ اور کیفے میں آرڈر، ساتھ میں ایک ریویو کوئز۔"
+  ],
+  "id": [
+   "Belajar Bahasa Arab dalam 10 Menit – Pelajaran 3 · Bagian 3 · Hari 11–15",
+   "Hari 11 sampai 15 dalam satu video: percakapan di jalan, “milikku” dan “milikmu”, keluarga, dan memesan di kafe, ditambah kuis ulangan."
+  ],
+  "bn": [
+   "১০ মিনিটে আরবি শিখুন – নতুনদের পাঠ ৩ · পর্ব ৩ · দিন ১১–১৫",
+   "দিন ১১ থেকে ১৫ এক ভিডিওতে: রাস্তায় কথোপকথন, আমার আর তোমার, পরিবারের শব্দ আর ক্যাফেতে অর্ডার দেওয়া, সাথে একটি রিভিউ কুইজ।"
+  ],
+  "tr": [
+   "10 Dakikada Arapça Öğren – Başlangıç Dersi 3 · 3. Bölüm · 11–15. Günler",
+   "11–15. günler tek videoda: sokakta bir sohbet, benim ve senin, aile kelimeleri ve kafede sipariş, üstüne bir tekrar testi."
+  ],
+  "fa": [
+   "یادگیری عربی در ۱۰ دقیقه – درس ۳ مبتدی · قسمت ۳ · روزهای ۱۱ تا ۱۵",
+   "روزهای ۱۱ تا ۱۵ در یک ویدیو: گفتگو در خیابان، «مال من» و «مال تو»، کلمات خانواده و سفارش در کافه، همراه با یک آزمون مرور."
+  ],
+  "ms": [
+   "Belajar Bahasa Arab dalam 10 Minit – Pelajaran 3 · Bahagian 3 · Hari 11–15",
+   "Hari 11 hingga 15 dalam satu video: perbualan di jalan, “milik saya” dan “milik anda”, keluarga dan memesan di kafe, serta kuiz ulang kaji."
+  ],
+  "fr": [
+   "Apprendre l'arabe en 10 minutes · Partie 3 · Jours 11 à 15",
+   "Les jours 11 à 15 en une seule vidéo : une conversation dans la rue, « mon » et « ton », la famille et commander au café, avec un quiz de révision."
+  ],
+  "ru": [
+   "Арабский за 10 минут – урок 3 для начинающих · Часть 3 · Дни 11–15",
+   "Дни 11–15 в одном видео: разговор на улице, «мой» и «твой», семья и заказ в кафе, плюс тест на повторение."
+  ],
+  "de": [
+   "Arabisch lernen in 10 Minuten – Lektion 3 · Teil 3 · Tage 11–15",
+   "Tag 11 bis 15 in einem Video: ein Gespräch auf der Straße, „mein“ und „dein“, die Familie und Bestellen im Café, dazu ein Wiederholungsquiz."
+  ],
+  "so": [
+   "Baro Af-Carabi 10 Daqiiqo Gudahood – Casharka 3 · Qaybta 3 · Maalmaha 11–15",
+   "Maalmaha 11 ilaa 15 hal muuqaal: wadahadal waddada ah, “kayga” iyo “kaaga”, qoyska iyo dalbashada kafeega, oo ay la socdaan imtixaan dib-u-eegis ah."
+  ],
+  "sw": [
+   "Jifunze Kiarabu kwa Dakika 10 – Somo la 3 · Sehemu ya 3 · Siku 11–15",
+   "Siku ya 11 hadi 15 katika video moja: mazungumzo barabarani, “yangu” na “yako”, familia na kuagiza mgahawani, pamoja na jaribio la marudio."
+  ],
+  "es": [
+   "Aprende árabe en 10 minutos – Lección 3 · Parte 3 · Días 11–15",
+   "Los días 11 a 15 en un solo video: una conversación en la calle, “mi” y “tu”, la familia y pedir en la cafetería, con un quiz de repaso."
   ]
  }
 }

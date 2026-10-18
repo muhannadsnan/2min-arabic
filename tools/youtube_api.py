@@ -362,8 +362,9 @@ def find(stem, suffix):
     return hits[0] if hits else None
 
 
-LOC_LANGS = ["fa", "ur", "tr", "id", "fr"]   # owner, 2026-10-17: Persian, Urdu, Turkish, Indonesian, French
-LOC_NATIVE_CHECK = {"fa", "ur"}
+# owner 2026-10-17: fa ur tr id fr · 2026-10-18: the same 13 languages as the subtitles (priority order)
+LOC_LANGS = ["hi", "ur", "id", "bn", "tr", "fa", "ms", "fr", "ru", "de", "so", "sw", "es"]
+LOC_NATIVE_CHECK = {"fa", "ur", "bn", "so", "sw"}
 # most generic first — removed one by one only when the new tags would not fit in YouTube's 500 characters
 LOC_GENERIC = ["shorts", "language learning", "اموزش زبان عربی از صفر", "تعليم عربي للاجانب",
                "تعليم اللغة العربية لغير الناطقين بها", "learn arabic", "arabic for beginners", "learn arabic online",
@@ -371,8 +372,9 @@ LOC_GENERIC = ["shorts", "language learning", "اموزش زبان عربی از
                "arabic phrases for beginners", "دروس العربية", "arabic vocabulary", "syrian arabic",
                "modern standard arabic", "levantine arabic", "arabic phrases levantine", "استماع لهجات عربية",
                "arabic conversation for beginners"]
+# shared search tags of the top languages (owner 2026-10-18: hi ur id bn tr fa ms; ms = "belajar bahasa arab" too)
 LOC_TAGS = ["آموزش زبان عربی", "آموزش زبان عربی از صفر", "زبان عربی", "عربی سیکھیں", "arapça öğren",
-            "belajar bahasa arab", "apprendre l'arabe"]
+            "belajar bahasa arab", "apprendre l'arabe", "अरबी सीखें", "আরবি শিখুন", "arabi seekhein"]
 
 
 def localize(a):
@@ -405,7 +407,8 @@ def localize(a):
         if dropped:
             print(f"tags removed (most generic first): {dropped}")
         print(f"\n=== {data[vid]['name']} ({vid}) — {sn['title']}")
-        for lang in LOC_LANGS:
+        langs = [l for l in LOC_LANGS if l in data[vid]]   # whatever this video has (old entries: 5 languages)
+        for lang in langs:
             ttl, opener = data[vid][lang]
             if len(ttl) > 100:
                 sys.exit(f"{vid} {lang}: title over 100 characters")
@@ -427,9 +430,9 @@ def localize(a):
             for _ in range(6):   # YouTube shows new localizations with a delay (17 Oct: empty right after the update)
                 time.sleep(10)
                 back = y.videos().list(part="localizations", id=vid).execute()["items"][0].get("localizations", {})
-                if all(lang in back for lang in LOC_LANGS):
+                if all(lang in back for lang in langs):
                     break
-            results[vid] = {lang: ("done" if back.get(lang, {}).get("title") == data[vid][lang][0] else "failed") for lang in LOC_LANGS}
+            results[vid] = {lang: ("done" if back.get(lang, {}).get("title") == data[vid][lang][0] else "failed") for lang in langs}
         except Exception as e:
             results[vid] = f"failed ({str(e)[:120]})"
     if a.apply:

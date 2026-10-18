@@ -157,12 +157,17 @@ already know in Persian").
 
 ## Subtitles + audio tracks in other languages (owner, 2026-10-18)
 
+**Priority (owner, 2026-10-18), cheapest reach first:** 1. translated **titles + descriptions** (all 13 languages,
+every video — `localize`, ~50 units per video) → 2. **tags** of the top languages (LOC_TAGS, added by `localize`; the
+most generic tags go first when 500 characters don't fit) → 3. **subtitles**, one language at a time on the whole
+channel (`subtitle-backlog`) → 4. **audio tracks** for the selected top videos (owner in Studio).
+
 **Three tiers (owner, 2026-10-18):**
 | Tier | Which videos | Subtitles (text, no owner work) | Audio tracks (owner adds in Studio) |
 |---|---|---|---|
 | All | every video, from now on + backfill | 13, in priority order: hi ur id bn tr fa ms · fr ru de so sw · es | — |
 | Top | top 6 by views + the first video of each week | same | fr, tr, es, hi (= Hindi + Urdu), id (= Indonesian + Malay) |
-| Star | > 2× the channel median views (now x03, Day 12) | same | Top + de, ru, sw |
+| Star | > 2× the channel median views (now x03, Day 12) | same | Top + ru, sw (German = subtitles only, owner) |
 Portuguese + Chinese dropped (owner 2026-10-18: small Arabic-learning interest; YouTube blocked in China). Re-check the
 tiers at every weekly review (`videos`); on 31 Oct compare with Studio → Audience → Top geographies and cut languages
 that bring nothing. Not filmed videos (Day 1: lips on camera), not Parts yet
@@ -170,7 +175,7 @@ that bring nothing. Not filmed videos (Day 1: lips on camera), not Parts yet
 New video: write its `dubs/<stem>.json` (13 languages) with the sheet; `caption_backlog.sh` (10:30 daily) uploads
 missing tracks itself, language by language in priority order, most-viewed first, max 20 a day (a new video = 13 tracks) (`youtube_api.py subtitle-backlog`; IDs in `dubs/ids.json`). **Free, commercial-OK models only** (owner: "we only use free licenced models everywhere").
 1. **Translations** `dubs/<stem>.json`: every narrator clip (`audio/<stem>/timeline.json`, speaker narrator, key = n)
-   in the 13 languages of the table (audio languages: fr, tr, es, hi, id + star de, ru, sw; ur/ms = proper Urdu/Malay text). Same or fewer syllables than the English
+   in the 13 languages of the table (audio languages: fr, tr, es, hi, id + star ru, sw; ur/ms = proper Urdu/Malay text). Same or fewer syllables than the English
    (the line must fit its slot). Arabic words stay transliterated (ismi). hi = plain spoken Hindustani that Urdu
    speakers understand too (lafz, zaroori, sawaal; ख़/ग़/क़ kept); id = everyday Indonesian (read by the Malay voice).
 2. **Audio** (GPU, one at a time): `$TTS tools/dub_track.py dubs/<stem>.json <lang>` for fr, tr, es, hi, id →
