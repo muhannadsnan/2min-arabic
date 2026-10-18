@@ -53,7 +53,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **Scheduled jobs = systemd user timers with catch-up (2026-10-15, owner):** `systemctl --user list-timers '2min-*'` —
   pending-jobs 09:15 · ig-queue-check 10:00 (refills the Instagram queue itself when ≤ 3, tools/ig_refill.py) ·
   caption-backlog 10:30 · weekly-report Sun 10:00 · instagram-refresh Mon 09:00 (also updates the GitHub secret IG_TOKEN).
-  **Instagram posting runs on GitHub Actions** (.github/workflows/instagram-daily.yml, 15:00 Oslo, laptop can be off) from the
+  **Instagram posting runs on GitHub Actions**, started at 15:00 sharp by **cron-job.org** (owner's account, job "2min Instagram 15:00"; GitHub token `2min-ig-cron`, Actions-write on this repo only, **expires 2027-10-17 → renew ~1 Oct 2027**; GitHub's own schedule was up to 3 h late),  (.github/workflows/instagram-daily.yml, 15:00 Oslo, laptop can be off) from the
   encrypted `ig-queue` release (key: ~/.config/2min-instagram/queue.key = secret IG_QUEUE_KEY); the laptop timer
   2min-instagram-daily is disabled (don't re-enable: double posts). Dry run: `gh workflow run instagram-daily.yml -f dry_run=true`. A run missed
   while the laptop was off runs when it's back on. Only comment_job stays in cron (hourly). Units in ~/.config/systemd/user.
