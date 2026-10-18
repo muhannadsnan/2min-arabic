@@ -54,7 +54,10 @@ def main():
         best = None
         for k in range(a.takes + 3):   # extra takes only when none of the first ones fits (takes vary a lot in length)
             if k >= a.takes and best and best[2] / slot <= 1.18: break
-            out = T / f"{c['n']}-{k}.wav"; local_tts.synthesize(text, f"narrator-{a.lang}", out, seed=k)
+            raw = T / f"{c['n']}-{k}-raw.wav"; local_tts.synthesize(text, f"narrator-{a.lang}", raw, seed=k)
+            out = T / f"{c['n']}-{k}.wav"   # trim the voice's silence (≈0.1 s before, ≈0.5 s after every take)
+            run("ffmpeg", "-y", "-i", str(raw), "-af", "silenceremove=start_periods=1:start_threshold=-40dB:start_silence=0.03,"
+                "areverse,silenceremove=start_periods=1:start_threshold=-40dB:start_silence=0.08,areverse", str(out))
             heard = " ".join(s.text for s in asr.transcribe(str(out), language=a.lang)[0]); e = cer(text, heard); d = dur(out)
             score = e + max(0, d / slot - 1) * 0.5
             if best is None or score < best[0]: best = (score, out, d, e, heard)
