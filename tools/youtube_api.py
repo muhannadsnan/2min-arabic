@@ -528,6 +528,11 @@ def fill(a):
                 print(f"  ✅ added to playlist '{name}'")
             else:
                 print(f"  = already in playlist '{name}'")
+    # priorities 1+2 (owner 2026-10-18): 13-language titles/descriptions + top-language tags, in the same go
+    if a.video in json.loads((ROOT / "tools" / "localizations.json").read_text(encoding="utf-8")):
+        localize(argparse.Namespace(video=a.video, apply=True, channel=a.channel))
+    else:
+        print("  ⚠️ no translated titles yet: add this video to tools/localizations.json (13 languages), then run localize")
     print("Left for Studio (no API): Education Type = Concept overview, Level = Beginner\n"
           "  · Automatic chapters ✅, places ❌, concepts ❌ · Parts: end screen/cards/quiz.\n"
           "  After it goes live (desktop notification): pin the comment + set Related video.")

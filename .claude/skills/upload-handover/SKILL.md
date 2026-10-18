@@ -131,9 +131,11 @@ a Real Street Conversation") got 37–57. Shorts thumbnails are shown in a **16:
 Never type a fixed `T15:00:00Z`: 17:00 Oslo is 15:00Z in summer but 16:00Z from the last Sunday of October (v02 was
 almost published at 16:00). After filling, read the times back (`videos`) and check each is 17:00 Oslo.
 
-## Localize — every video, right after `fill` (owner, 2026-10-17)
+## Localize — every video, automatically inside `fill` (owner, 2026-10-17; 13 languages since 2026-10-18)
 
-Translated titles + description openers in **Persian (fa), Urdu (ur), Turkish (tr), Indonesian (id), French (fr)**:
+Translated titles + description openers in the **13 languages** (hi ur id bn tr fa ms fr ru de so sw es), written
+with the upload sheet. `fill --apply` publishes them + the top-language tags by itself when the video's entry is in
+the file (it warns when it isn't); the translated subtitles come from `dubs/<stem>.json` via the daily job:
 1. Write them into `tools/localizations.json` (`{"<video id>": {"name": …, "fa": [title, opener], …}}`): titles use the
    words people search ("آموزش زبان عربی از صفر", "عربی سیکھیں", "Arapça öğren", "belajar bahasa Arab", "apprendre
    l'arabe"), Day/Part numbers the local way (روز ۱۰ · دن 10 · 10. Gün · Hari 10 · Jour 10), max 100 characters; the
@@ -173,7 +175,7 @@ tiers at every weekly review (`videos`); on 31 Oct compare with Studio → Audie
 that bring nothing. Not filmed videos (Day 1: lips on camera), not Parts yet
 (compiled from several timelines). YouTube's own auto-dubbing stays OFF (it would re-voice the Arabic too).
 New video: write its `dubs/<stem>.json` (13 languages) with the sheet; `caption_backlog.sh` (10:30 daily) uploads
-missing tracks itself, language by language in priority order, most-viewed first, max 20 a day (a new video = 13 tracks) (`youtube_api.py subtitle-backlog`; IDs in `dubs/ids.json`). **Free, commercial-OK models only** (owner: "we only use free licenced models everywhere").
+missing tracks itself, language by language in priority order, most-viewed first, max 22 a day (a new video = 13 tracks) (`youtube_api.py subtitle-backlog`; IDs in `dubs/ids.json`). **Free, commercial-OK models only** (owner: "we only use free licenced models everywhere").
 1. **Translations** `dubs/<stem>.json`: every narrator clip (`audio/<stem>/timeline.json`, speaker narrator, key = n)
    in the 13 languages of the table (audio languages: fr, tr, es, hi, id + star ru, sw; ur/ms = proper Urdu/Malay text). Same or fewer syllables than the English
    (the line must fit its slot). Arabic words stay transliterated (ismi). hi = plain spoken Hindustani that Urdu
