@@ -59,14 +59,37 @@ def main():
     subprocess.run(f'openssl enc -d -aes-256-cbc -pbkdf2 -pass file:"{key}" -in "{tmp / name}" | tar -C "{tmp}" -xf -',
                    shell=True, check=True)
     key.unlink()
-    print(f"{name}: {(tmp / 'caption.txt').read_text(encoding='utf-8').splitlines()[0][:80]}")
-    ig.post(argparse.Namespace(video=str(tmp / "video.mp4"), caption_file=str(tmp / "caption.txt"),
-                               cover=str(tmp / "cover.jpg"), apply=not a.dry_run))
+    cap = tmp / "caption.txt"
+    cap.write_text(add_languages(cap.read_text(encoding="utf-8"), now.timetuple().tm_yday), encoding="utf-8")
+    print(f"{name}: {cap.read_text(encoding='utf-8').splitlines()[0][:80]}")
+    print("languages today:", cap.read_text(encoding="utf-8").strip().split("\n\n")[-2].replace("\n", " · "))
+    ig.post(argparse.Namespace(video=str(tmp / "video.mp4"), caption_file=str(cap),
+                               cover=str(tmp / "cover.jpg"), apply=not a.dry_run, trial=False))
     if not a.dry_run:
         gh("release", "delete-asset", QUEUE, name, "-y")
         print(f"{name} removed from the queue · {len(names) - 1} Reels left")
         if len(names) - 1 <= 3:
             print(f"::warning::Only {len(names) - 1} Reels left in the Instagram queue")
+
+
+# owner 2026-10-18: every Reel also speaks to two other language audiences — one short line each above the hashtags and
+# one hashtag each (3 fixed + 2 rotating = 5). Rotates daily through the top languages so each gets regular reach.
+FIXED_TAGS = "#learnarabic #arabicforbeginners #2minutearabic"
+LANG_ROT = [("Belajar bahasa Arab, 2 menit sehari.", "#belajarbahasaarab"),          # Indonesian
+            ("Arabi seekhein, roz sirf 2 minute.", "#learnarabicinurdu"),            # Urdu / Hindi (Latin letters)
+            ("Günde 2 dakikada sıfırdan Arapça.", "#arapçaöğren"),                   # Turkish
+            ("آموزش زبان عربی از صفر، روزی ۲ دقیقه.", "#آموزش_زبان_عربی"),            # Persian
+            ("প্রতিদিন ২ মিনিটে আরবি শিখুন।", "#আরবি_শিক্ষা"),                        # Bengali
+            ("Belajar bahasa Arab, 2 minit sehari.", "#belajarbahasaarab"),           # Malay
+            ("Apprendre l'arabe, 2 minutes par jour.", "#apprendrelarabe")]           # French
+
+def add_languages(caption, day):
+    """Two languages a day: their line goes above the hashtags, their hashtag replaces the kind-specific ones."""
+    picks = [LANG_ROT[day % len(LANG_ROT)], LANG_ROT[(day + 1) % len(LANG_ROT)]]
+    parts = caption.strip().split("\n\n")
+    body = parts[:-1] if parts[-1].lstrip().startswith("#") else parts
+    tags = " ".join(dict.fromkeys([*FIXED_TAGS.split(), *(t for _, t in picks)]))
+    return "\n\n".join([*body, "🌍 " + "\n🌍 ".join(l for l, _ in picks), tags])
 
 
 if __name__ == "__main__":

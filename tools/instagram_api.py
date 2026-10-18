@@ -93,6 +93,8 @@ def post(a):
         params = {"media_type": "REELS", "video_url": url(names["video"]), "caption": caption, "share_to_feed": "true"}
         if a.cover:
             params["cover_url"] = url(names["cover"])
+        if getattr(a, "trial", False):   # Trial Reel: shown to non-followers only, graduates by hand in the app
+            params["trial_params"] = json.dumps({"graduation_strategy": "MANUAL"})
         cid = call(f"{me}/media", method="POST", data={"_": "1"}, **params)["id"]
         for _ in range(60):
             st = call(cid, fields="status_code,status")
@@ -132,7 +134,8 @@ def main():
     p = sub.add_parser("media"); p.add_argument("--limit", type=int, default=20); p.set_defaults(fn=media)
     p = sub.add_parser("comments"); p.add_argument("--limit", type=int, default=20); p.set_defaults(fn=comments)
     p = sub.add_parser("post"); p.add_argument("video"); p.add_argument("--caption-file", required=True)
-    p.add_argument("--cover"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=post)
+    p.add_argument("--cover"); p.add_argument("--apply", action="store_true")
+    p.add_argument("--trial", action="store_true", help="Trial Reel: non-followers only (owner 2026-10-18 test)"); p.set_defaults(fn=post)
     sub.add_parser("refresh").set_defaults(fn=refresh)
     a = ap.parse_args()
     a.fn(a)
