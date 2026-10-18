@@ -211,12 +211,12 @@
  },
  "sw": {
   "1": "Kiarabu hakina neno la “yangu”. Unaongeza sauti ndogo mwishoni mwa neno; leo utaijifunza.",
-  "2": "Mimi ni mwalimu wako, Kiarabu ni lugha yangu ya mama. Nakuahidi: dakika mbili kwa siku, na kwa siku thelathini, mazungumzo yako ya kwanza kwa Kiarabu.",
+  "2": "Mimi ni mwalimu wako; Kiarabu ni lugha yangu ya mama. Dakika mbili kwa siku, siku thelathini, mazungumzo yako ya kwanza.",
   "3": "Siku ya kumi na mbili: tuanze na ya jana. Lina alimkaribishaje mtalii?",
   "5": "Mbinu ni hii: kusema “yangu”, ongeza sauti ndefu ya “i” mwishoni mwa neno. Mfano mmoja unaujua tangu siku ya pili.",
   "6": "Sikiliza kwanza “jina”, kisha “jina langu”.",
   "9": "Inafaa karibu kila neno: sikiliza “kitabu”, kisha “kitabu changu”.",
-  "12": "Vivyo hivyo na “nyumba”: sikiliza vizuri ile “i” mwishoni mwa “nyumba yangu”.",
+  "12": "Vivyo hivyo “nyumba”: sikiliza ile “i” mwishoni.",
   "15": "Badiliko dogo: maneno ya “a” laini ya siku ya tisa hupata “t” kabla ya mwisho. “Kahawa” inakuwa “kahawa yangu”.",
   "18": "“Yako” ina miisho miwili, kama anta na anti ya siku ya tano. Kwa mwanaume ni hivi:",
   "20": "na kwa mwanamke, mwisho unakuwa “i” fupi.",
@@ -225,7 +225,7 @@
   "28": "Na “nyumba yako”, ukiongea na mwanaume?",
   "30": "Na hili la siku ya tisa: unasemaje “mwalimu”, akiwa mwanamke?",
   "32": "Kesho Lina anamwonyesha Sami picha ya familia yake, na ya mwisho ni mshangao.",
-  "33": "Hizo ni dakika zako mbili za leo. Rudi kesho, hapa hapa, dakika mbili.",
+  "33": "Hizo ni dakika zako mbili. Kesho tena, dakika mbili.",
   "34": "Jisajili ili mfululizo wako usikatike."
  },
  "zh": {
