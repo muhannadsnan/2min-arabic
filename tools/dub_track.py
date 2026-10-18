@@ -40,21 +40,30 @@ def main():
             p, d[0] = d[0], i
             for j, y in enumerate(h, 1): p, d[j] = d[j], min(d[j] + 1, d[j - 1] + 1, p + (x != y))
         return d[len(h)] / max(1, len(r))
-    placed, report = [], []
+    placed, report, long_lines = [], [], []
+    import hashlib, shutil
+    cache = ROOT / "output" / stem / "dub-cache" / a.lang; cache.mkdir(parents=True, exist_ok=True)
     for i, c in enumerate(clips):
         if c["speaker"] != "narrator" or str(c["n"]) not in lines: continue
         text = lines[str(c["n"])]; slot = (clips[i + 1]["start"] if i + 1 < len(clips) else tl["duration"]) - c["start"] - 0.2
+        fit = T / f"{c['n']}-fit.wav"
+        key = cache / (hashlib.sha1(f"{text}|{TEMPO.get(a.lang, 0.95)}|{slot:.2f}".encode()).hexdigest()[:12] + ".wav")
+        if key.exists():   # this exact line already fitted on an earlier run → reuse it (re-runs only redo changed lines)
+            shutil.copy(key, fit); report.append(f"{c['n']:>3} cached {dur(fit):5.2f}s / slot {slot:5.2f}s  fits | {text}")
+            placed.append((c["start"], c["end"], fit)); continue
         best = None
-        for k in range(a.takes):
+        for k in range(a.takes + 3):   # extra takes only when none of the first ones fits (takes vary a lot in length)
+            if k >= a.takes and best and best[2] / slot <= 1.18: break
             out = T / f"{c['n']}-{k}.wav"; local_tts.synthesize(text, f"narrator-{a.lang}", out, seed=k)
             heard = " ".join(s.text for s in asr.transcribe(str(out), language=a.lang)[0]); e = cer(text, heard); d = dur(out)
             score = e + max(0, d / slot - 1) * 0.5
             if best is None or score < best[0]: best = (score, out, d, e, heard)
         _, out, d, e, heard = best
         speed = max(1.0, d / slot)
-        fit = T / f"{c['n']}-fit.wav"
         run("ffmpeg", "-y", "-i", str(out), "-af", f"atempo={min(speed, 1.18):.3f},loudnorm=I=-18:TP=-2", "-ar", "48000", "-ac", "1", str(fit))
         flag = "TOO LONG — shorten" if speed > 1.18 else ("sped up %.2f×" % speed if speed > 1.0 else "fits")
+        if speed > 1.18: long_lines.append({"n": c["n"], "text": text, "seconds": round(d, 2), "slot": round(slot, 2), "ratio": round(speed, 2)})
+        else: shutil.copy(fit, key)
         report.append(f"{c['n']:>3} {d:5.2f}s / slot {slot:5.2f}s  CER {e:.2f}  {flag} | {text}")
         placed.append((c["start"], c["end"], fit))
     # full mix: the final video's audio with the English narration muted, the new lines on top
@@ -70,6 +79,7 @@ def main():
     od = ROOT / "output" / stem; m4a = od / f"dub-{a.lang}.m4a"
     run("ffmpeg", "-y", "-i", str(mixed), "-af", "loudnorm=I=-14:TP=-1.5", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", str(m4a))
     run("ffmpeg", "-y", "-i", str(final), "-i", str(m4a), "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "copy", "-shortest", str(od / f"dub-{a.lang}-preview.mp4"))
+    (od / f"dub-{a.lang}-too-long.json").write_text(json.dumps(long_lines, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\n".join(report)); print(f"→ {m4a}  ({dur(m4a):.1f}s, video {dur(final):.1f}s)")
 
 if __name__ == "__main__":
