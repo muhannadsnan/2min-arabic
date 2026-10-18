@@ -168,8 +168,8 @@ channel (`subtitle-backlog`) → 4. **audio tracks** for the selected top videos
 | Tier | Which videos | Subtitles (text, no owner work) | Audio tracks (owner adds in Studio) |
 |---|---|---|---|
 | All | every video, from now on + backfill | 13, in priority order: hi ur id bn tr fa ms · fr ru de so sw · es | — |
-| Top | top 6 by views + the first video of each week | same | fr, tr, es, hi (= Hindi + Urdu), id (= Indonesian + Malay), ru (owner 2026-10-18) |
-| Star | > 2× the channel median views (now x03, Day 12) | same | Top + sw (German = subtitles only, owner) |
+| Top | top 6 by views + the first video of each week | same | fr, tr, es, hi (= Hindi + Urdu), id (= Indonesian + Malay), ru, sw, fa (TTSMaker), bn (Piper) — owner 2026-10-18 |
+| Star | > 2× the channel median views (now x03, Day 12) | same | = Top for now (German = subtitles only, owner) |
 Portuguese + Chinese dropped (owner 2026-10-18: small Arabic-learning interest; YouTube blocked in China). Re-check the
 tiers at every weekly review (`videos`); on 31 Oct compare with Studio → Audience → Top geographies and cut languages
 that bring nothing. Not filmed videos (Day 1: lips on camera), not Parts yet
@@ -198,3 +198,14 @@ missing tracks itself, language by language in priority order, most-viewed first
 - **One carousel a week** from the week's best word list, built from the video's own cards, one word per slide.
 - Captions keep the consistent style (first line of the description · word lists · fixed footer · 5 hashtags —
   tools/ig_refill.py builds them).
+- **Other languages on Instagram (owner, 2026-10-18):** no extra audio tracks there (Instagram has no upload for them;
+  Meta's AI voice translation would re-voice the Arabic → stays off). Instead, at posting time `ig_cloud_post.py`
+  (`add_languages`) adds **two rotating language lines** above the hashtags ("Belajar bahasa Arab, 2 menit sehari.",
+  "Arabi seekhein, roz sirf 2 minute." …) and **two rotating language hashtags** next to the 3 fixed ones
+  (#learnarabic #arabicforbeginners #2minutearabic + e.g. #belajarbahasaarab #learnarabicinurdu = 5). Rotation:
+  Indonesian, Urdu/Hindi, Turkish, Persian, Bengali, Malay, French (LANG_ROT, by day of the year). Instagram search
+  reads caption words; "See translation" covers the rest. Check which language hashtags bring views at the review.
+- **Trial Reels with dubbed audio (owner, 2026-10-18 test):** a top video's dubbed version (`dub-<lang>-preview.mp4`)
+  posted as a Trial Reel — shown to non-followers only, so followers don't get the same video twice:
+  `instagram_api.py post <mp4> --caption-file <txt> --cover <jpg> --trial --apply` (caption in that language +
+  its hashtags). Graduation to followers is by hand in the app (MANUAL). Compare their reach with the normal Reels.
