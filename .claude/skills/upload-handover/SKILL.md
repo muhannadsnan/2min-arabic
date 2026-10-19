@@ -115,6 +115,8 @@ a Real Street Conversation") got 37–57. Shorts thumbnails are shown in a **16:
   are series names), Parts `| Part N · Days a–b`. **No channel name** in the
   title (YouTube shows it under the title; it cost 19 characters that phones cut). Subject part ≤ 50 characters.
   Avoid story/teaser-only titles ("Meet Lina's Family") — say what the viewer learns ("Family Words in Arabic: …").
+  Write from the **learner's point of view** — they are the visitor in an Arab country ("Talking to Locals", not
+  "Meeting a Tourist", owner 2026-10-19).
 - **Thumbnail text = big English words** naming the subject ("ORDER COFFEE", "FAMILY WORDS", "BODY PARTS"), the DAY N
   (or category) badge, and **one small Arabic word** under them — it tells the viewer which language the lesson is for
   (owner, 2026-10-16); never a big Arabic word. `tools/thumbnail.py` default style "subject" does exactly this; `--crop`
