@@ -35,7 +35,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", help="upload + let Instagram process it, but don't publish")
     ap.add_argument("--force", action="store_true", help="ignore the 15:00 gate and the once-a-day check")
+    ap.add_argument("--trial", action="store_true", help="post the next dubbed Trial Reel from the ig-trial queue")
     a = ap.parse_args()
+    if a.trial:
+        return trial(a)
     now = datetime.datetime.now(OSLO)
     if not a.force and now.hour < POST_HOUR:
         print(f"{now:%H:%M} Oslo — before {POST_HOUR}:00, nothing to do")
@@ -70,6 +73,35 @@ def main():
         print(f"{name} removed from the queue · {len(names) - 1} Reels left")
         if len(names) - 1 <= 3:
             print(f"::warning::Only {len(names) - 1} Reels left in the Instagram queue")
+
+
+def trial(a):
+    """Daily dubbed Trial Reel (owner 2026-10-19): one language a day from the `ig-trial` release (trial-NN-<lang>.bin,
+    same encryption as the main queue), posted as a Trial Reel = non-followers only. Its caption is already in that
+    language (no rotation). Once a day: a `done-YYYY-MM-DD` marker asset in the same release."""
+    now = datetime.datetime.now(OSLO); Q = "ig-trial"
+    assets = gh("release", "view", Q, "--json", "assets", "--jq", ".assets[].name").split()
+    marker = f"done-{now:%Y-%m-%d}"
+    if marker in assets and not a.force:
+        print(f"a Trial Reel was already posted today ({marker})"); return
+    names = sorted(n for n in assets if n.startswith("trial-") and n.endswith(".bin"))
+    if not names:
+        print("trial queue is empty — nothing to do"); return
+    name = names[0]; tmp = pathlib.Path(tempfile.mkdtemp())
+    gh("release", "download", Q, "-p", name, "-D", str(tmp))
+    key = tmp / "key"; key.write_text(os.environ["IG_QUEUE_KEY"])
+    subprocess.run(f'openssl enc -d -aes-256-cbc -pbkdf2 -pass file:"{key}" -in "{tmp / name}" | tar -C "{tmp}" -xf -',
+                   shell=True, check=True)
+    key.unlink()
+    print(f"{name}: {(tmp / 'caption.txt').read_text(encoding='utf-8').splitlines()[0][:80]}")
+    ig.post(argparse.Namespace(video=str(tmp / "video.mp4"), caption_file=str(tmp / "caption.txt"),
+                               cover=str(tmp / "cover.jpg"), apply=not a.dry_run, trial=True))
+    if not a.dry_run:
+        gh("release", "delete-asset", Q, name, "-y")
+        (tmp / marker).write_text("1"); gh("release", "upload", Q, str(tmp / marker), "--clobber")
+        for old in (n for n in assets if n.startswith("done-") and n != marker):
+            gh("release", "delete-asset", Q, old, "-y")
+        print(f"{name} posted as a Trial Reel · {len(names) - 1} left")
 
 
 # owner 2026-10-18: every Reel also speaks to two other language audiences — one short line each above the hashtags and
