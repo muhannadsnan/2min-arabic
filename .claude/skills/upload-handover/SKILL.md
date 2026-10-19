@@ -210,3 +210,8 @@ missing tracks itself, language by language in priority order, most-viewed first
   posted as a Trial Reel — shown to non-followers only, so followers don't get the same video twice:
   `instagram_api.py post <mp4> --caption-file <txt> --cover <jpg> --trial --apply` (caption in that language +
   its hashtags). Graduation to followers is by hand in the app (MANUAL). Compare their reach with the normal Reels.
+  **Daily since 2026-10-19 (owner):** one language a day, automatic — `tools/ig_trial_add.py <stem> <captions.json>
+  --apply` queues a video's dubbed versions (encrypted, `ig-trial` release); `.github/workflows/instagram-trial.yml`
+  posts one at ~18:30 (after the 15:00 Reel; once a day via a done-<date> marker). Order: x03 first (tr, fa, bn, ur,
+  ru, es, fr, ms, sw — Urdu uses the Hindi audio, Malay the Indonesian), then the next top video (Day 12). Captions in
+  that language, ending "more lessons with <language> subtitles on YouTube (link in bio)".

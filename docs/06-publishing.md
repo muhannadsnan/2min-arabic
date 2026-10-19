@@ -147,3 +147,14 @@ Put 3 hashtags max in the description (the first 3 show above the title).
   (evidence: YouTube Analytics 20 Sep–6 Oct). Removed from Days 3 and 5; never add it again.
 - 2026-10-15: The channel-intro scene (≈7–18 s: hello clip + "I'm your teacher… my promise") loses 35–50 % of viewers on every Day measured (Days 6, 8, 9: 0.86→0.50, 0.88→0.62, 0.96→0.48); x03 without the intro holds 0.98→0.77 (evidence: YouTube Analytics retention, 15 Oct).
 
+## Other languages (owner, 2026-10-18/19)
+
+- **YouTube, every video:** titles + descriptions in 13 languages (hi ur id bn tr fa ms fr ru de so sw es), top-language
+  tags, and subtitles in the same 13 (daily job, one language across the channel at a time). New descriptions carry the
+  13-language block (tools/description_languages.json).
+- **YouTube, top videos:** audio tracks in 11 labels from 9 files — French, Turkish, Spanish, Hindi + Urdu, Indonesian +
+  Malay, Russian, Swahili, Persian (TTSMaker → owner voice), Bengali (Piper → owner voice). The Arabic is always the real
+  recording. YouTube auto-dubbing stays off. Free, commercial-OK models only.
+- **Instagram:** no audio tracks; each Reel's caption gets 2 rotating language lines + 2 language hashtags pointing to
+  YouTube; dubbed versions of top videos go out as daily Trial Reels (non-followers only).
+- Details and tools: the upload-handover skill ("Subtitles + audio tracks", "Instagram").
