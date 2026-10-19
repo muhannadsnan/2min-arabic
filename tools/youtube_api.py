@@ -155,6 +155,26 @@ def comments(a):
 REPLIES = pathlib.Path.home() / ".local/share/2min-yt/replies.jsonl"
 
 
+def channel_about(a):
+    """Channel About text in other languages (owner 2026-10-19): tools/channel-about-translations.json → channel
+    localizations, one language per call (a refused one doesn't block the rest); title stays "2 Minute Arabic"."""
+    from googleapiclient.errors import HttpError
+    d = json.loads((ROOT / "tools" / "channel-about-translations.json").read_text(encoding="utf-8"))
+    y = yt(a.channel); c = y.channels().list(part="localizations", mine=True).execute(num_retries=3)["items"][0]
+    locs = c.get("localizations") or {}; bad = []
+    for lang, text in d.items():
+        if locs.get(lang, {}).get("description") == text: continue
+        try:
+            y.channels().update(part="localizations", body={"id": c["id"], "localizations": {
+                **locs, lang: {"title": "2 Minute Arabic", "description": text}}}).execute(num_retries=3)
+            locs[lang] = {"title": "2 Minute Arabic", "description": text}; print(f"  ✅ {lang}")
+        except HttpError as e:
+            if "quota" in str(e).lower(): sys.exit("quota used up — the rest tomorrow")
+            bad.append(lang); print(f"  ❌ {lang}: {str(e)[-80:]}")
+    print(f"channel About: {len(locs)} languages" + (f" · refused: {bad}" if bad else ""))
+    if bad: sys.exit(1)
+
+
 def pending_comments(a):
     """Comments that still need an answer (owner 2026-10-19, daily reply routine): top-level comments on our videos
     without a reply from the channel and not answered before (replies.jsonl). JSON lines for the reply run."""
@@ -647,6 +667,7 @@ def main():
     p = sub.add_parser("subtitle"); p.add_argument("video"); p.add_argument("lang"); p.add_argument("srt"); p.set_defaults(fn=subtitle)
     p = sub.add_parser("subtitle-backlog"); p.add_argument("--max", type=int, default=12); p.set_defaults(fn=subtitle_backlog)
     sub.add_parser("pending-comments").set_defaults(fn=pending_comments)
+    sub.add_parser("channel-about").set_defaults(fn=channel_about)
     p = sub.add_parser("reply"); p.add_argument("parent"); p.add_argument("text"); p.set_defaults(fn=reply)
     p = sub.add_parser("post-comments"); p.add_argument("--days", type=int, default=3); p.set_defaults(fn=post_comments)
     p = sub.add_parser("localize"); p.add_argument("video", nargs="?"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=localize)
