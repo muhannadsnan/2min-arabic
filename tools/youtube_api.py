@@ -175,7 +175,9 @@ def channel_about(a):
     if bad: sys.exit(1)
 
 
-PDF_LINE = "📄 Free PDF — your first 83 Arabic words & phrases: https://muhannadsnan.github.io/2min-arabic/free/"
+PDF_LINE = "📄 Free PDF: https://muhannadsnan.github.io/2min-arabic/free/"
+ABOUT_LONG = "🌍 Learn in your language. Subtitles in 13 languages are being added to every lesson: Hindi, Urdu, Indonesian, Bengali, Turkish, Persian, Malay, French, Russian, German, Somali, Swahili and Spanish. Our most popular lessons also have narration in 11 languages (tap ⚙️ → Audio track). The Arabic is always my own voice."
+ABOUT_SHORT = "🌍 Learn in your language: subtitles in 13 languages (Hindi, Urdu, Indonesian, Bengali, Turkish, Persian, Malay, French, Russian, German, Somali, Swahili, Spanish), narration in 11 on our top lessons (⚙️ → Audio track). The Arabic is always my voice."
 
 
 def channel_pdf_link(a):
@@ -185,6 +187,7 @@ def channel_pdf_link(a):
     ch = c["brandingSettings"]["channel"]; d = ch.get("description", "")
     if "/2min-arabic/free/" in d:
         print("= the About text already has the free-downloads link"); return
+    d = d.replace(ABOUT_LONG, ABOUT_SHORT)   # room for the link (the About text was at YouTube's 1000-character limit)
     anchor = "🗓 New lesson every day"
     ch["description"] = d.replace(anchor, PDF_LINE + "\n\n" + anchor, 1) if anchor in d else d.rstrip() + "\n\n" + PDF_LINE
     if len(ch["description"]) > 1000: sys.exit(f"About text would be {len(ch['description'])} > 1000 characters")
