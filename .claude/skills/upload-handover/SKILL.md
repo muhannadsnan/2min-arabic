@@ -35,7 +35,7 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
    - **the 5-language line** before the hashtags (`tools/description_languages.json`: Farsi, Indonesian, Urdu/Hindi,
      Turkish, French — the biggest learner searches + our #1 search term, owner 2026-10-15);
    - "Start from Day 1" link without `?si=…`; ~3 hashtags at the end (`#learnarabic` … `#2minutearabic`).
-   - right under the Day 1 link: `📄 Free PDF — your first 84 Arabic words: https://muhannadsnan.github.io/2min-arabic/free/`
+   - right under the Day 1 link: `📄 Free PDF — your first 83 Arabic words: https://muhannadsnan.github.io/2min-arabic/free/`
      (owner, 2026-10-20; docs/20 — update the line when a newer free PDF exists).
    Write it with Python so the invisible markers are really in the file, then print it once to verify.
 5. **Tags** in a code box, 20–26 tags, use the room up to ~470 characters, most important first, in this order (owner, 2026-10-02/05):

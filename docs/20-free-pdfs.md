@@ -3,7 +3,7 @@
 Why (owner + Claude, 20 Oct): too early to sell; a free, useful PDF gives YouTube and Instagram viewers a reason to
 visit, shows real demand, and later can collect emails for the membership launch (docs/19).
 
-## PDF 1 — "Your first 84 Arabic words & phrases" (Days 1–10)
+## PDF 1 — "Your first 83 Arabic words & phrases" (Days 1–10)
 
 - File: `output/free-pdfs/2-minute-arabic-days-1-10.pdf` (6 pages), built from `output/free-pdfs/days-1-10.html`.
 - Content: every on-screen word card of Days 1–10 (Arabic with harakat · transliteration · meaning), grouped by day and
@@ -17,7 +17,7 @@ visit, shows real demand, and later can collect emails for the membership launch
 
 ## Where the link goes
 
-- **YouTube descriptions:** one line "📄 Free PDF — your first 84 Arabic words: <link>" under the Day 1 link — added
+- **YouTube descriptions:** one line "📄 Free PDF — your first 83 Arabic words: <link>" under the Day 1 link — added
   with the queued 13-language description update (API, when there's room) and in every new sheet from now on.
 - **Instagram:** the bio link (Linktree-style or the site's homepage) + a mention in captions of word-list Reels.
 - **Pinned comments** on Days 1–10.
