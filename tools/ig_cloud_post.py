@@ -44,7 +44,10 @@ def main():
         print(f"{now:%H:%M} Oslo — before {POST_HOUR}:00, nothing to do")
         return
     if not a.force:
-        latest = ig.call("me/media", fields="timestamp", limit=1).get("data", [])
+        # only our normal Reels count (owner 2026-10-19): Trial Reels (not shared to the profile) and the owner's own
+        # photo posts must not block the daily Reel
+        recent = ig.call("me/media", fields="timestamp,media_product_type,is_shared_to_feed", limit=10).get("data", [])
+        latest = [m for m in recent if m.get("media_product_type") == "REELS" and m.get("is_shared_to_feed") is not False]
         if latest:
             last = datetime.datetime.strptime(latest[0]["timestamp"], "%Y-%m-%dT%H:%M:%S%z").astimezone(OSLO)
             if last.date() == now.date():
@@ -78,10 +81,10 @@ def main():
 def trial(a):
     """Daily dubbed Trial Reel (owner 2026-10-19): one language a day from the `ig-trial` release (trial-NN-<lang>.bin,
     same encryption as the main queue), posted as a Trial Reel = non-followers only. Its caption is already in that
-    language (no rotation). Once a day: a `done-YYYY-MM-DD` marker asset in the same release."""
+    language (no rotation). Once per slot (morning / evening): a `done-YYYY-MM-DD-am|pm` marker asset."""
     now = datetime.datetime.now(OSLO); Q = "ig-trial"
     assets = gh("release", "view", Q, "--json", "assets", "--jq", ".assets[].name").split()
-    marker = f"done-{now:%Y-%m-%d}"
+    marker = f"done-{now:%Y-%m-%d}-{'am' if now.hour < 14 else 'pm'}"   # two slots a day (owner 2026-10-19, x03 phase)
     if marker in assets and not a.force:
         print(f"a Trial Reel was already posted today ({marker})"); return
     names = sorted(n for n in assets if n.startswith("trial-") and n.endswith(".bin"))

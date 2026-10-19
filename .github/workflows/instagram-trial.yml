@@ -3,7 +3,8 @@
 # critical, so GitHub's own schedule is enough here.
 name: Instagram daily Trial Reel
 on:
-  schedule:
+  schedule:   # two a day while x03's versions run (owner 2026-10-19), then back to one (remove the morning line)
+    - cron: "37 9 * * *"
     - cron: "37 16 * * *"
   workflow_dispatch:
     inputs:
