@@ -175,6 +175,23 @@ def channel_about(a):
     if bad: sys.exit(1)
 
 
+PDF_LINE = "📄 Free PDF — your first 83 Arabic words & phrases: https://muhannadsnan.github.io/2min-arabic/free/"
+
+
+def channel_pdf_link(a):
+    """Put the free-downloads line into the channel's About text, above the closing "🗓 New lesson…" line (owner
+    2026-10-20). Only if missing — safe to repeat."""
+    y = yt(a.channel); c = y.channels().list(part="brandingSettings", mine=True).execute(num_retries=3)["items"][0]
+    ch = c["brandingSettings"]["channel"]; d = ch.get("description", "")
+    if "/2min-arabic/free/" in d:
+        print("= the About text already has the free-downloads link"); return
+    anchor = "🗓 New lesson every day"
+    ch["description"] = d.replace(anchor, PDF_LINE + "\n\n" + anchor, 1) if anchor in d else d.rstrip() + "\n\n" + PDF_LINE
+    if len(ch["description"]) > 1000: sys.exit(f"About text would be {len(ch['description'])} > 1000 characters")
+    y.channels().update(part="brandingSettings", body={"id": c["id"], "brandingSettings": c["brandingSettings"]}).execute(num_retries=3)
+    print("✅ free-downloads link added to the About text")
+
+
 def pending_comments(a):
     """Comments that still need an answer (owner 2026-10-19, daily reply routine): top-level comments on our videos
     without a reply from the channel and not answered before (replies.jsonl). JSON lines for the reply run."""
@@ -668,6 +685,7 @@ def main():
     p = sub.add_parser("subtitle-backlog"); p.add_argument("--max", type=int, default=12); p.set_defaults(fn=subtitle_backlog)
     sub.add_parser("pending-comments").set_defaults(fn=pending_comments)
     sub.add_parser("channel-about").set_defaults(fn=channel_about)
+    sub.add_parser("channel-pdf-link").set_defaults(fn=channel_pdf_link)
     p = sub.add_parser("reply"); p.add_argument("parent"); p.add_argument("text"); p.set_defaults(fn=reply)
     p = sub.add_parser("post-comments"); p.add_argument("--days", type=int, default=3); p.set_defaults(fn=post_comments)
     p = sub.add_parser("localize"); p.add_argument("video", nargs="?"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=localize)
