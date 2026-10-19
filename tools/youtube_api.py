@@ -152,6 +152,40 @@ def comments(a):
               f"  ({t['snippet']['totalReplyCount']} replies)")
 
 
+REPLIES = pathlib.Path.home() / ".local/share/2min-yt/replies.jsonl"
+
+
+def pending_comments(a):
+    """Comments that still need an answer (owner 2026-10-19, daily reply routine): top-level comments on our videos
+    without a reply from the channel and not answered before (replies.jsonl). JSON lines for the reply run."""
+    y = yt(a.channel)
+    cid = y.channels().list(part="id", mine=True).execute(num_retries=3)["items"][0]["id"]
+    done = {json.loads(l).get("parent") for l in REPLIES.read_text().splitlines() if l.strip()} if REPLIES.exists() else set()
+    r = y.commentThreads().list(part="snippet,replies", allThreadsRelatedToChannelId=cid, maxResults=100,
+                                order="time").execute(num_retries=3)
+    titles = {}
+    for t in r["items"]:
+        top = t["snippet"]["topLevelComment"]; c = top["snippet"]
+        if c.get("authorChannelId", {}).get("value") == cid or top["id"] in done: continue
+        if any(x["snippet"].get("authorChannelId", {}).get("value") == cid for x in (t.get("replies") or {}).get("comments", [])):
+            continue
+        vid = t["snippet"]["videoId"]
+        if vid not in titles:
+            titles[vid] = y.videos().list(part="snippet", id=vid).execute(num_retries=3)["items"][0]["snippet"]["title"]
+        print(json.dumps({"platform": "youtube", "id": top["id"], "video": titles[vid], "author": c["authorDisplayName"],
+                          "text": c["textOriginal"], "date": c["publishedAt"][:10]}, ensure_ascii=False))
+
+
+def reply(a):
+    """Reply as the channel to a top-level comment and log it (replies.jsonl)."""
+    y = yt(a.channel)
+    r = y.comments().insert(part="snippet", body={"snippet": {"parentId": a.parent, "textOriginal": a.text}}).execute(num_retries=3)
+    with REPLIES.open("a") as f:
+        f.write(json.dumps({"platform": "youtube", "parent": a.parent, "reply_id": r["id"], "text": a.text,
+                            "at": dt.datetime.now().isoformat(timespec="seconds")}, ensure_ascii=False) + "\n")
+    print(f"✅ replied to {a.parent}: {a.text}")
+
+
 def seconds(iso):
     """ISO 8601 duration (PT1M4S) → seconds."""
     m = re.fullmatch(r"P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", iso or "P")
@@ -612,6 +646,8 @@ def main():
     p = sub.add_parser("captions"); p.add_argument("video"); p.add_argument("--replace"); p.set_defaults(fn=captions)
     p = sub.add_parser("subtitle"); p.add_argument("video"); p.add_argument("lang"); p.add_argument("srt"); p.set_defaults(fn=subtitle)
     p = sub.add_parser("subtitle-backlog"); p.add_argument("--max", type=int, default=12); p.set_defaults(fn=subtitle_backlog)
+    sub.add_parser("pending-comments").set_defaults(fn=pending_comments)
+    p = sub.add_parser("reply"); p.add_argument("parent"); p.add_argument("text"); p.set_defaults(fn=reply)
     p = sub.add_parser("post-comments"); p.add_argument("--days", type=int, default=3); p.set_defaults(fn=post_comments)
     p = sub.add_parser("localize"); p.add_argument("video", nargs="?"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=localize)
     p = sub.add_parser("title"); p.add_argument("video"); p.add_argument("title"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=title)

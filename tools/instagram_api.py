@@ -64,6 +64,31 @@ def comments(a):
             print(f"[{c['timestamp'][:10]}] {(m.get('caption') or '')[:28]!r} · @{c.get('username')}: {c['text']}")
 
 
+REPLIES = pathlib.Path.home() / ".local/share/2min-yt/replies.jsonl"
+
+
+def pending_comments(a):
+    """Instagram comments still needing an answer (owner 2026-10-19): not ours, no reply from us, not answered before."""
+    me = token().get("username", "")
+    done = {json.loads(l).get("parent") for l in REPLIES.read_text().splitlines() if l.strip()} if REPLIES.exists() else set()
+    r = call("me/media", fields="id,caption,comments{id,username,text,timestamp,replies{username}}", limit=a.limit)
+    for m in r.get("data", []):
+        for c in (m.get("comments") or {}).get("data", []):
+            if c.get("username") == me or c["id"] in done: continue
+            if any(x.get("username") == me for x in (c.get("replies") or {}).get("data", [])): continue
+            print(json.dumps({"platform": "instagram", "id": c["id"], "video": (m.get("caption") or "")[:60],
+                              "author": c.get("username"), "text": c["text"], "date": c["timestamp"][:10]}, ensure_ascii=False))
+
+
+def reply(a):
+    """Reply to an Instagram comment (needs the instagram_business_manage_comments permission) and log it."""
+    r = call(f"{a.comment}/replies", method="POST", data={"_": "1"}, message=a.text)
+    with REPLIES.open("a") as f:
+        f.write(json.dumps({"platform": "instagram", "parent": a.comment, "reply_id": r.get("id"), "text": a.text,
+                            "at": time.strftime("%Y-%m-%dT%H:%M:%S")}, ensure_ascii=False) + "\n")
+    print(f"✅ replied to {a.comment}: {a.text}")
+
+
 REPO, BUFFER = "muhannadsnan/2min-arabic", "ig-temp"   # public release used as a short-lived download link
 
 
@@ -133,6 +158,8 @@ def main():
     sub = ap.add_subparsers(required=True)
     p = sub.add_parser("media"); p.add_argument("--limit", type=int, default=20); p.set_defaults(fn=media)
     p = sub.add_parser("comments"); p.add_argument("--limit", type=int, default=20); p.set_defaults(fn=comments)
+    p = sub.add_parser("pending-comments"); p.add_argument("--limit", type=int, default=25); p.set_defaults(fn=pending_comments)
+    p = sub.add_parser("reply"); p.add_argument("comment"); p.add_argument("text"); p.set_defaults(fn=reply)
     p = sub.add_parser("post"); p.add_argument("video"); p.add_argument("--caption-file", required=True)
     p.add_argument("--cover"); p.add_argument("--apply", action="store_true")
     p.add_argument("--trial", action="store_true", help="Trial Reel: non-followers only (owner 2026-10-18 test)"); p.set_defaults(fn=post)
