@@ -42,6 +42,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   (big English words + small Arabic) on 16 Oct (owner, option a; log + views at change: output/repackage-proposals-2026-10-16/
   applied-log.json; earlier 15 Oct changes: output/repackage-2026-10-15/). (19 Oct also: the 3 Part thumbnails → "ARABIC CONVERSATION" + topic bullets + a real phrase from each Part, output/part-thumbs-2026-10-19/.) Compare views/day for 7 days before vs after,
   channel-wide and per video; search-traffic share; revert single videos that clearly lost.
+- **Quota lesson (19 Oct):** the 10:30 subtitle job uses most of the day's 10,000 units — anything else planned for the API (channel texts, descriptions) goes in pending-commands for 09:15, before it.
 - **YouTube API quota extension SUBMITTED 2026-10-18 afternoon** (50,000/day; answers + evidence in output/api-quota-form/). Once granted: (50,000/day, form evidence output/api-quota-form/) — watch the email for Google's questions; when granted, raise `subtitle-backlog --max` in tools/caption_backlog.sh.
 - **2026-10-31: translations + subtitles check** (also: Studio → Audience → Top geographies → cut subtitle languages that bring nothing; 13 now) — 5 videos got fa/ur/tr/id/fr titles + descriptions on 17 Oct (tools/localizations.json,
   `youtube_api.py localize`). Studio → Analytics → Research: search terms in those languages + views from IR, AF, PK, TR, ID, FR
@@ -56,10 +57,10 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   https://muhannadsnan.github.io/2min-arabic/ (verified in Search Console — keep `google413904a81875b8fb.html`).
 - **Scheduled jobs = systemd user timers with catch-up (2026-10-15, owner):** `systemctl --user list-timers '2min-*'` —
   pending-jobs 09:15 · ig-queue-check 10:00 (refills the Instagram queue itself when ≤ 3, tools/ig_refill.py) ·
-  caption-backlog 10:30 · weekly-report Sun 10:00 · instagram-refresh Mon 09:00 (also updates the GitHub secret IG_TOKEN).
+  caption-backlog 10:30 (translated subtitles, 22/day) · **comment-replies 19:30** (Claude answers YouTube + Instagram comments, tools/comment_replies_prompt.md, desktop summary) · weekly-report Sun 10:00 · instagram-refresh Mon 09:00 (also updates the GitHub secret IG_TOKEN).
   **Instagram posting runs on GitHub Actions**, started at 15:00 sharp by **cron-job.org** (owner's account, job "2min Instagram 15:00"; GitHub token `2min-ig-cron`, Actions-write on this repo only, **expires 2027-10-17 → renew ~1 Oct 2027**; GitHub's own schedule was up to 3 h late),  (.github/workflows/instagram-daily.yml, 15:00 Oslo, laptop can be off) from the
   encrypted `ig-queue` release (key: ~/.config/2min-instagram/queue.key = secret IG_QUEUE_KEY); the laptop timer
-  2min-instagram-daily is disabled (don't re-enable: double posts). Dry run: `gh workflow run instagram-daily.yml -f dry_run=true`. A run missed
+  2min-instagram-daily is disabled (don't re-enable: double posts). Dry run: `gh workflow run instagram-daily.yml -f dry_run=true`. The once-a-day check counts only normal shared Reels (Trial Reels and the owner's photo posts don't block it). **Trial Reels:** .github/workflows/instagram-trial.yml posts dubbed versions from the encrypted `ig-trial` release (tools/ig_trial_add.py), ~11:37 + ~18:37 Oslo while x03 runs, then once a day. A run missed
   while the laptop was off runs when it's back on. Only comment_job stays in cron (hourly). Units in ~/.config/systemd/user.
 - **Hourly (cron, automatic):** `tools/comment_job.sh` posts each sheet's pinned comment once its video is live and
   pops a desktop notification; the owner taps ⋮ → Pin (no API for pinning). Log: `~/.local/share/2min-yt/comments.log`.

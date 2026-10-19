@@ -31,6 +31,8 @@ chapter list + that day's words. Built with `tools/compile_part.py parts/part-NN
 - **Related video:** always set it (Day 1 for early videos; later the playlist's first video or the weekly compilation).
 - **Thumbnail:** "Upload file" with Claude's `thumbnail (vertical).jpg` (not "Select from video").
 - **Title and description language:** English. **Category:** Education, **Type:** Concept overview.
+  Education type/level and automatic places/concepts are **per video** in Studio → Details — Upload defaults don't
+  offer them and the API can't set them (checked 2026-10-19).
   Problems / Academic system: leave empty (they're for school subjects).
 - **Shorts remixing:** allow video and audio remixing (free exposure).
 - **Automatic dubbing: OFF** (Studio → Settings → Channel → Advanced settings → uncheck "Allow automatic dubbing").
@@ -97,10 +99,19 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 
 ## Thumbnail / Shorts cover
 
-- One big idea, max 3–4 words: e.g. **"2 MIN A DAY"**, **"10 PHRASES"**, **"NO 'IS'?!"**
-- Arabic word large in the center (added in the editor, not by the image AI).
-- Same layout every time: stopwatch icon top corner, "DAY N" badge. Recognizable in the feed.
-- For Shorts: pick a strong frame as the cover in the upload screen.
+(The old rules — big Arabic word in the centre, stopwatch icon — are superseded.)
+- **Shorts (2026-10-16):** big **English** words naming the subject + the DAY N / category badge + **one small Arabic word**;
+  one big object or place that IS the subject; a person only when the person is the subject, then close-up. Shorts
+  thumbnails are shown in a 16:9 box (search, suggested), so check the phone-size AND a 16:9 mock. The first ~1.5 s of a
+  Short looks like the thumbnail.
+- **Parts (2026-10-19, the channel page's first impression):** "**ARABIC CONVERSATION**" (the series' promise) + the
+  Part's 3 topics as a **bullet list** (never mixed like "FAMILY CAFE") + **one useful phrase that is really said in that
+  Part**, a different one per Part (اسمي سامي، تشرفنا · أنا من سوريا. وأنت؟ · أريد شاي، من فضلك) — never مرحبا /
+  أهلا وسهلا (they repeated across the page and looked too basic). `thumbnail.py --wide --bullets "a|b|c"`.
+- **Viewpoint:** topics and titles from the learner's side — they are the visitor in an Arab country ("Talking to
+  native speakers", not "Meeting a tourist"; "native speakers", never just "natives").
+- Two thumbnails side by side on the channel page should look different (e.g. the talk videos: one close-up, one
+  full shot).
 
 ## Playlists
 
@@ -118,6 +129,13 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 - Never post Spanish lessons here — keep each channel's audience clean.
 
 ## Community
+
+- **Daily comment replies (19 Oct, owner):** a laptop timer (2min-comment-replies, 19:30, catches up after sleep) starts
+  Claude with the rules in `tools/comment_replies_prompt.md`: praise → ❤️ / 👍 / a few words of Arabic WITHOUT harakat;
+  learners' Arabic → a short warm line; lesson questions → one or two sentences; criticism, religion, politics, personal,
+  money, spam → not answered, listed for the owner. Every reply is logged (`~/.local/share/2min-yt/replies.jsonl`); one
+  desktop summary per run. Hearts can't be given through the API — the owner adds them in the Studio app. Instagram
+  replies may need one re-login for the comments permission.
 
 - Pin a comment on every video with a mini task: *"Write today's phrase in the comments — in Arabic letters if you can!"*
 - Reply to comments in both English and Arabic (with transliteration). Early replies boost the video.
@@ -149,12 +167,28 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 
 ## Other languages (owner, 2026-10-18/19)
 
-- **YouTube, every video:** titles + descriptions in 13 languages (hi ur id bn tr fa ms fr ru de so sw es), top-language
-  tags, and subtitles in the same 13 (daily job, one language across the channel at a time). New descriptions carry the
-  13-language block (tools/description_languages.json).
-- **YouTube, top videos:** audio tracks in 11 labels from 9 files — French, Turkish, Spanish, Hindi + Urdu, Indonesian +
-  Malay, Russian, Swahili, Persian (TTSMaker → owner voice), Bengali (Piper → owner voice). The Arabic is always the real
-  recording. YouTube auto-dubbing stays off. Free, commercial-OK models only.
-- **Instagram:** no audio tracks; each Reel's caption gets 2 rotating language lines + 2 language hashtags pointing to
-  YouTube; dubbed versions of top videos go out as daily Trial Reels (non-followers only).
-- Details and tools: the upload-handover skill ("Subtitles + audio tracks", "Instagram").
+Priority (owner): 1. titles + descriptions → 2. top-language tags → 3. subtitles → 4. audio tracks.
+- **YouTube, every video:** titles + descriptions in 13 languages (hi ur id bn tr fa ms fr ru de so sw es) — set by
+  `fill` itself for new videos; top-language tags (Hindi, Urdu, Indonesian/Malay, Bengali, Turkish, Persian; the most
+  generic tags go first when 500 characters don't fit); subtitles in the same 13, uploaded by the daily job one language
+  across the whole channel at a time (22 a day = 8,800 units; a quota extension to 50,000/day was requested 18 Oct).
+  New descriptions carry the 13-language block; the 31 older ones get it when the API has room (calendar).
+- **YouTube, top videos (top 6 by views + the first video of each week):** audio tracks in 11 labels from 9 files —
+  French, Turkish, Spanish, Hindi = Hindi + Urdu, Indonesian = Indonesian + Malay, Russian, Swahili, Persian (TTSMaker,
+  pasted by the owner, then Chatterbox voice conversion to the owner's voice), Bengali (Piper bn_BD, CC BY-SA → credit
+  line in the description, + voice conversion). All 66 tracks of the 6 top videos live since 19 Oct; the Arabic in every
+  track checked identical to the original. YouTube auto-dubbing stays off (it would re-voice the Arabic). Free,
+  commercial-OK models only.
+- **What made the dubs fit (18 Oct):** trim the voice's ~0.6 s of silence around each take; shorten pauses inside a
+  sentence to 80 ms before speeding up; extra takes when none fits; lines that still don't fit get shorter text
+  (102 → 0 too-long lines). Subtitle-only translations often run long when spoken — shorten before generating audio.
+- **Channel level (19 Oct):** About text has a "🌍 Learn in your language" paragraph and is translated into 13
+  languages (6 live, 7 queued for the next quota day — `youtube_api.py channel-about`); channel keywords = "learn
+  Arabic" + "Arabic conversation" in all the languages (494/500 characters).
+- **Instagram:** no audio tracks. Each Reel's caption gets 2 rotating language lines + 2 language hashtags (3 fixed +
+  2 = 5) that point to YouTube ("…with Bengali subtitles on YouTube" — never promise lessons in their language on
+  Instagram). Dubbed versions of top videos go out as **Trial Reels** (non-followers only, hidden from the profile grid,
+  visible in Professional dashboard → Trial reels): x03 in 9 languages, 2 a day (~11:30 + ~18:30) until ~23 Oct, then
+  1 a day starting with Day 12. Hint after 1 day: the Indonesian and Hindi Trial Reels got 122 and 107 views from
+  non-followers only, vs 147 (Day 10) and 187 (Day 9) for normal Reels incl. followers — check on 22 Oct.
+- Details and tools: the upload-handover skill ("Subtitles + audio tracks", "Instagram"), memory note 2min-other-languages.
