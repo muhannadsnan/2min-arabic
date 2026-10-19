@@ -456,10 +456,11 @@ def resolve_video(y, ref):
     fill can be queued before the id is known (owner 2026-10-18). Anything else is returned as an id."""
     if not ref.startswith("title:"):
         return ref
-    want = ref[6:].strip().lower()
+    norm = lambda t: re.sub(r"[\s_\-]+", " ", t.strip().lower())   # YouTube turns "v1-listen-carefully.mp4" into "v1 listen carefully"
+    want = norm(ref[6:])
     up = y.channels().list(part="contentDetails", mine=True).execute(num_retries=3)["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
     items = y.playlistItems().list(part="snippet", playlistId=up, maxResults=50).execute(num_retries=3)["items"]
-    hit = [i["snippet"]["resourceId"]["videoId"] for i in items if i["snippet"]["title"].strip().lower() == want]
+    hit = [i["snippet"]["resourceId"]["videoId"] for i in items if norm(i["snippet"]["title"]) == want]
     if len(hit) != 1:
         sys.exit(f"{ref}: found {len(hit)} uploads with that title")
     return hit[0]

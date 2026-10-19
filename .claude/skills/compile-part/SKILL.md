@@ -27,8 +27,14 @@ Template: Part 1 = `videos/w01-review.md` + `parts/part-01.json` + `videos/w01-u
 5. **Check**: `$TTS tools/final_check.py output/<part>/<part>.mp4 --frames …` (pick a frame in every chapter);
    joins are clean, no overlaps, current chapter highlighted, words panel right, no □ glyphs. Length isn't capped
    (≈10–12 min), loudness −14 LUFS, peak < −1 dB.
-6. **Thumbnail**: `python3 tools/thumbnail.py <image> "output/<part>/thumbnail.jpg" --wide --badge "DAYS a–b"
-   --line1 … --line2 … --line3 … --arabic …` and check the phone-size preview.
+6. **Thumbnail** (owner, 2026-10-19 — the Parts are the channel page's first impression):
+   `python3 tools/thumbnail.py <image> "output/<part>/…-thumbnail.jpg" --wide --badge "DAYS a–b" --line1 "ARABIC"
+   --line2 "CONVERSATION" --bullets "<topic 1>|<topic 2>|<topic 3>" --arabic "<phrase>"`.
+   "ARABIC CONVERSATION" on every Part (the series' promise, and it sells); the Part's 3 main topics as a **bullet
+   list** (never mixed into one line like "FAMILY CAFE"); one **interesting phrase that is really said in the Part**
+   (a sentence a learner wants to say — "أُرِيدُ شَايْ، مِنْ فَضْلِكْ", "أَنَا مِنْ سُورِيَا. وَأَنْتِ؟"), a
+   different one on every Part — never مرحبا / أهلا وسهلا (they repeat across the channel page and look too basic).
+   Check the phone-size preview and the three Parts side by side.
 7. **Upload sheet** via the upload-handover skill, including chapters from `chapters.txt` in the description and the
    **Video elements** section (end screen, playlist card, quiz). Playlist: "Full Lessons".
 

@@ -111,6 +111,18 @@ def wide(a):
     f = fit(d, a.badge, BOLD, 46, 380)
     b = d.textbbox((0, 0), a.badge, font=f)
     d.text((50 + (420 - (b[2] - b[0])) / 2 - b[0], 90 - (b[3] + b[1]) / 2), a.badge, font=f, fill=(20, 20, 20))
+    if a.bullets:   # owner 2026-10-19: series promise on top, topics as a bullet list (no "FAMILY CAFE" mix-ups)
+        d.text((50, 150), a.line1, font=fit(d, a.line1, BOLD, 100, 660), fill=TEAL)
+        d.text((50, 255), a.line2, font=fit(d, a.line2, BOLD, 84, 660), fill=TERRA)
+        for i, t in enumerate(a.bullets.split("|")):
+            y = 375 + i * 58
+            d.ellipse((58, y + 16, 76, y + 34), fill=TERRA)
+            d.text((92, y), t.strip(), font=fit(d, t.strip(), BOLD, 46, 600), fill=(51, 51, 51))
+        if a.arabic:
+            fa = fit(d, a.arabic, AR, 72, 640, direction="rtl", language="ar")
+            b = d.textbbox((0, 0), a.arabic, font=fa, direction="rtl", language="ar")
+            d.text((60 - b[0], 570 - b[1]), a.arabic, font=fa, fill=TEAL, direction="rtl", language="ar")
+        return im
     d.text((50, 160), a.line1, font=fit(d, a.line1, BOLD, 120, 660), fill=TEAL)
     d.text((50, 300), a.line2, font=fit(d, a.line2, BOLD, 120, 660), fill=TERRA)
     if a.line3:
@@ -133,13 +145,14 @@ def main():
     ap.add_argument("--line1", required=True)
     ap.add_argument("--line2", required=True)
     ap.add_argument("--line3", default="")
+    ap.add_argument("--bullets", default="", help="wide only: topics separated by | (shown as a bullet list)")
     ap.add_argument("--arabic", default="")
     ap.add_argument("--wide", action="store_true")
     ap.add_argument("--crop", default="", help="zoom into the object: x,y,w,h as fractions of the source image")
     ap.add_argument("--style", choices=["subject", "classic"], default="subject",
                     help="subject (default, 2026-10-16): big English subject words + small Arabic; classic: the old layout")
     a = ap.parse_args()
-    for t in (a.badge, a.line1, a.line2, a.line3, a.arabic):
+    for t in (a.badge, a.line1, a.line2, a.line3, a.arabic, a.bullets):
         if any(ch in MISSING_GLYPHS for ch in t or ""):
             raise SystemExit(f"'{t}' contains a character the fonts don't have ({MISSING_GLYPHS}) — rephrase")
     im = wide(a) if a.wide else vertical(a)

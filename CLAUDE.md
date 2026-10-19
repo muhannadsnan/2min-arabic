@@ -39,7 +39,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **2026-10-22: Instagram Trial Reels check** — x03 dubbed in Indonesian (Deo_WECFWx5) + Hindi (Deo_ffDDMBX), posted 18 Oct as Trial Reels (non-followers only). Compare reach/plays with normal Reels (`instagram_api.py media`); if better → one more language a day (tr, fa, bn, ru, es, fr, sw from x03), captions pointing to YouTube for their language. Also: which rotating language hashtags bring reach.
 - **2026-10-23: re-packaging check** — ALL published Shorts got new titles (subject first + category) and thumbnails
   (big English words + small Arabic) on 16 Oct (owner, option a; log + views at change: output/repackage-proposals-2026-10-16/
-  applied-log.json; earlier 15 Oct changes: output/repackage-2026-10-15/). Compare views/day for 7 days before vs after,
+  applied-log.json; earlier 15 Oct changes: output/repackage-2026-10-15/). (19 Oct also: the 3 Part thumbnails → "ARABIC CONVERSATION" + topic bullets + a real phrase from each Part, output/part-thumbs-2026-10-19/.) Compare views/day for 7 days before vs after,
   channel-wide and per video; search-traffic share; revert single videos that clearly lost.
 - **YouTube API quota extension SUBMITTED 2026-10-18 afternoon** (50,000/day; answers + evidence in output/api-quota-form/). Once granted: (50,000/day, form evidence output/api-quota-form/) — watch the email for Google's questions; when granted, raise `subtitle-backlog --max` in tools/caption_backlog.sh.
 - **2026-10-31: translations + subtitles check** (also: Studio → Audience → Top geographies → cut subtitle languages that bring nothing; 13 now) — 5 videos got fa/ur/tr/id/fr titles + descriptions on 17 Oct (tools/localizations.json,
