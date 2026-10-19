@@ -1,5 +1,7 @@
 # Channel trailer (+ Short) · Upload sheet
 
+> Title + description edited by the owner in Studio on 19 Oct (live = this sheet). Video id `1Exx4_alPEI`, public 19 Oct 12:00.
+
 **File to upload:** `output/talk-videos/v2-channel-trailer.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/talk-videos/v2-channel-trailer-thumbnail.jpg`
 
@@ -16,13 +18,13 @@
 ## Title
 
 ```
-Learn Arabic from Zero (30-Day Course) | Intro
+Learn Arabic from Zero (2 minutes a day) | Intro
 ```
 
 ## Description
 
 ```
-Learn Arabic from zero, 2 minutes a day. I'm a native Arabic speaker, and in 30 days I'll take you from your first word to your first real conversation in Arabic. Every lesson is short, real and spoken by a native.
+I'm a native Arabic speaker, and in 30 days I'll take you from your first word to your first real conversation in Arabic. Every lesson is short, real and spoken by a native.
 
 📚 How it works:
 • a new 2-minute lesson every day, Day 1 to Day 30
