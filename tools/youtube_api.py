@@ -204,24 +204,43 @@ def pending_comments(a):
     r = y.commentThreads().list(part="snippet,replies", allThreadsRelatedToChannelId=cid, maxResults=100,
                                 order="time").execute(num_retries=3)
     titles = {}
-    for t in r["items"]:
-        top = t["snippet"]["topLevelComment"]; c = top["snippet"]
-        if c.get("authorChannelId", {}).get("value") == cid or top["id"] in done: continue
-        if any(x["snippet"].get("authorChannelId", {}).get("value") == cid for x in (t.get("replies") or {}).get("comments", [])):
-            continue
-        vid = t["snippet"]["videoId"]
+    def title(vid):
         if vid not in titles:
             titles[vid] = y.videos().list(part="snippet", id=vid).execute(num_retries=3)["items"][0]["snippet"]["title"]
-        print(json.dumps({"platform": "youtube", "id": top["id"], "video": titles[vid], "author": c["authorDisplayName"],
-                          "text": c["textOriginal"], "date": c["publishedAt"][:10]}, ensure_ascii=False))
+        return titles[vid]
+    for t in r["items"]:
+        top = t["snippet"]["topLevelComment"]; c = top["snippet"]; vid = t["snippet"]["videoId"]
+        reps = sorted((t.get("replies") or {}).get("comments", []), key=lambda x: x["snippet"]["publishedAt"])
+        if t["snippet"].get("totalReplyCount", 0) > len(reps):   # the thread list only carries the first replies
+            reps = sorted(y.comments().list(part="snippet", parentId=top["id"], maxResults=100).execute(num_retries=3)["items"],
+                          key=lambda x: x["snippet"]["publishedAt"])
+        mine = lambda x: x["snippet"].get("authorChannelId", {}).get("value") == cid
+        ours = [x for x in reps if mine(x)]
+        if c.get("authorChannelId", {}).get("value") == cid:
+            continue
+        if not ours:
+            if top["id"] not in done:
+                print(json.dumps({"platform": "youtube", "id": top["id"], "video": title(vid), "author": c["authorDisplayName"],
+                                  "text": c["textOriginal"], "date": c["publishedAt"][:10]}, ensure_ascii=False))
+            continue
+        # follow-ups (owner 2026-10-20): a viewer writing again after our last reply → id "<top>/<follow-up>"
+        last = ours[-1]["snippet"]["publishedAt"]
+        thread = [{"author": c["authorDisplayName"], "text": c["textOriginal"]}] + \
+                 [{"author": x["snippet"]["authorDisplayName"], "text": x["snippet"]["textOriginal"]} for x in reps]
+        for x in reps:
+            if not mine(x) and x["snippet"]["publishedAt"] > last and x["id"] not in done:
+                print(json.dumps({"platform": "youtube", "id": f"{top['id']}/{x['id']}", "video": title(vid),
+                                  "author": x["snippet"]["authorDisplayName"], "text": x["snippet"]["textOriginal"],
+                                  "date": x["snippet"]["publishedAt"][:10], "followup": True, "thread": thread}, ensure_ascii=False))
 
 
 def reply(a):
     """Reply as the channel to a top-level comment and log it (replies.jsonl)."""
     y = yt(a.channel)
-    r = y.comments().insert(part="snippet", body={"snippet": {"parentId": a.parent, "textOriginal": a.text}}).execute(num_retries=3)
+    top, _, follow = a.parent.partition("/")   # "<top>/<follow-up>" = answering a follow-up in that thread
+    r = y.comments().insert(part="snippet", body={"snippet": {"parentId": top, "textOriginal": a.text}}).execute(num_retries=3)
     with REPLIES.open("a") as f:
-        f.write(json.dumps({"platform": "youtube", "parent": a.parent, "reply_id": r["id"], "text": a.text,
+        f.write(json.dumps({"platform": "youtube", "parent": follow or top, "reply_id": r["id"], "text": a.text,
                             "at": dt.datetime.now().isoformat(timespec="seconds")}, ensure_ascii=False) + "\n")
     print(f"✅ replied to {a.parent}: {a.text}")
 

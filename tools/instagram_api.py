@@ -73,7 +73,7 @@ def fbcall(path, method="GET", data=None, **q):
 def all_comments(limit):
     """Our posts with their comments (and replies) — via the Page token."""
     r = fbcall(f"{token()['user_id']}/media", limit=limit,
-               fields="id,caption,comments_count,comments.limit(50){id,username,text,timestamp,replies{username,text}}")
+               fields="id,caption,comments_count,comments.limit(50){id,username,text,timestamp,replies{id,username,text,timestamp}}")
     return r.get("data", [])
 
 
@@ -89,26 +89,40 @@ REPLIES = pathlib.Path.home() / ".local/share/2min-yt/replies.jsonl"
 
 
 def pending_comments(a):
-    """Instagram comments still needing an answer (owner 2026-10-19): not ours, no reply from us, not answered before."""
+    """Instagram comments still needing an answer (owner 2026-10-19): not ours, no reply from us, not answered before.
+    Follow-ups too (owner 2026-10-20): a viewer writing again in a thread after our last reply → id "<top>/<follow-up>"
+    (Instagram replies always go under the top comment), with the thread for context."""
     me = token().get("username") or "2minutearabic"
     done = {json.loads(l).get("parent") for l in REPLIES.read_text().splitlines() if l.strip()} if REPLIES.exists() else set()
     for m in all_comments(a.limit):
         cs = (m.get("comments") or {}).get("data", [])
         for c in cs:
-            if c.get("username") == me or c["id"] in done: continue
-            if any(x.get("username") == me for x in (c.get("replies") or {}).get("data", [])): continue
-            # answered with a top-level "@user …" comment (the app's old way) counts as answered too
-            if any(o.get("username") == me and f"@{c.get('username')}" in o.get("text", "") and o["timestamp"] > c["timestamp"]
-                   for o in cs): continue
-            print(json.dumps({"platform": "instagram", "id": c["id"], "video": (m.get("caption") or "")[:60],
-                              "author": c.get("username"), "text": c["text"], "date": c["timestamp"][:10]}, ensure_ascii=False))
+            reps = sorted((c.get("replies") or {}).get("data", []), key=lambda x: x.get("timestamp", ""))
+            ours = [x for x in reps if x.get("username") == me]
+            thread = [{"author": c.get("username"), "text": c["text"]}] + [{"author": x.get("username"), "text": x.get("text")} for x in reps]
+            video = (m.get("caption") or "")[:60]
+            if c.get("username") == me:
+                continue
+            if not ours and c["id"] not in done:
+                # answered with a top-level "@user …" comment (the app's old way) counts as answered too
+                if not any(o.get("username") == me and f"@{c.get('username')}" in o.get("text", "") and o["timestamp"] > c["timestamp"]
+                           for o in cs):
+                    print(json.dumps({"platform": "instagram", "id": c["id"], "video": video, "author": c.get("username"),
+                                      "text": c["text"], "date": c["timestamp"][:10]}, ensure_ascii=False))
+                continue
+            last_ours = ours[-1]["timestamp"] if ours else ""
+            for x in reps:   # viewer follow-ups after our last reply
+                if x.get("username") != me and x.get("timestamp", "") > last_ours and x["id"] not in done:
+                    print(json.dumps({"platform": "instagram", "id": f"{c['id']}/{x['id']}", "video": video, "author": x.get("username"),
+                                      "text": x.get("text"), "date": x["timestamp"][:10], "followup": True, "thread": thread}, ensure_ascii=False))
 
 
 def reply(a):
     """Reply to an Instagram comment (Page token, instagram_manage_comments) and log it."""
-    r = fbcall(f"{a.comment}/replies", method="POST", data={"message": a.text})
+    top, _, follow = a.comment.partition("/")   # "<top>/<follow-up>" = answering a follow-up in that thread
+    r = fbcall(f"{top}/replies", method="POST", data={"message": a.text})
     with REPLIES.open("a") as f:
-        f.write(json.dumps({"platform": "instagram", "parent": a.comment, "reply_id": r.get("id"), "text": a.text,
+        f.write(json.dumps({"platform": "instagram", "parent": follow or top, "reply_id": r.get("id"), "text": a.text,
                             "at": time.strftime("%Y-%m-%dT%H:%M:%S")}, ensure_ascii=False) + "\n")
     print(f"✅ replied to {a.comment}: {a.text}")
 

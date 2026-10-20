@@ -4,7 +4,8 @@ owner (Muhannad, a native Arabic speaker teaching beginners). The owner asked fo
 1. List the comments that need an answer:
    ~/.local/share/2min-yt/venv/bin/python tools/youtube_api.py pending-comments
    ~/.local/share/2min-yt/venv/bin/python tools/instagram_api.py pending-comments
-   Each line is JSON: platform, id, video, author, text, date.
+   Each line is JSON: platform, id, video, author, text, date. Lines with "followup": true are a viewer writing again
+   inside a thread after our reply; "thread" holds the whole conversation (oldest first). Read it before answering.
 2. For each one, decide:
    - praise, thanks, emoji-only, "nice" → a very short warm reply: "❤️", "👍", or a few words of Arabic WITHOUT
      harakat (e.g. "شكرا جزيلا ❤️", "أهلا وسهلا 😊"). Vary them; never the same reply twice in a row.
@@ -21,10 +22,15 @@ owner (Muhannad, a native Arabic speaker teaching beginners). The owner asked fo
    - criticism, complaints, anything about religion or politics, personal questions, collaboration or money offers,
      anything you are unsure about → do NOT reply. Write it to the "for the owner" list.
    - spam, links, insults → do NOT reply; list it as spam for the owner.
+   - a follow-up (owner 2026-10-20: answer those too) → start with @author, answer what they asked in the context of
+     the thread. If they didn't understand our earlier reply ("what?", "?", "لماذا؟"), explain it simply in English,
+     with the Arabic + transliteration, and make sure it ends warm and encouraging (e.g. our "ليس الامر سهلا على
+     الجميع" was praise — "the quiz isn't easy, and you got 10/10!" — not doubt). A follow-up that is just thanks or an
+     emoji → a short warm reply, or none if the thread already ended warmly (then don't list it either).
 3. Reply with:
    ~/.local/share/2min-yt/venv/bin/python tools/youtube_api.py reply <id> "<text>"
    ~/.local/share/2min-yt/venv/bin/python tools/instagram_api.py reply <id> "<text>"
-   Never more than 25 replies in one run. Never invent facts about the channel or promise future videos.
+   Use the id exactly as listed (follow-ups have the form "<top>/<follow-up>"). Never more than 25 replies in one run. Never invent facts about the channel or promise future videos.
 4. Finish with ONE summary line, exactly in this form (it becomes the owner's desktop notification):
    SUMMARY: replied <n> (YouTube <a>, Instagram <b>) · for you: <m> · spam: <s>
    followed by the "for you" items (platform, author, text) one per line, if any.
