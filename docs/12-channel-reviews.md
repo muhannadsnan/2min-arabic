@@ -1,5 +1,27 @@
 # 12 — Channel reviews (newest on top)
 
+## 2026-10-20 (YouTube + Instagram)
+
+**YouTube** (analytics to 17 Oct): **1 715 views · 27 subscribers** (+28 / −2 since the start). Daily views 35–95 (2–9 Oct)
+→ **100–180** (10–17 Oct); subscribers 1–4 a day. Traffic, week 13–19 vs 6–12 Oct: Shorts feed 320 vs 292 ↑ ·
+**YouTube search 108 vs 254 ↓** (x03 cooling: 32 views this week) · subscribers 86 vs 88. Countries still hidden (too few views).
+
+| Video (last 7 days) | Format | Views | Avg % viewed | Subs | Notes |
+|---|---|---|---|---|---|
+| Day 12 "No word for My" | Grammar (contrast) | **143** | 30 % | 3 | best views of the week |
+| Day 13 family story | Story (busy) | 80 | 14 % | 0 | weakest hold — busy story again |
+| Day 14 quiz | Quiz | 69 | 29 % | 0 | |
+| **Day 15 "I want"** | Phrases (usable) | 47 | **46 %** | **3** | best subscribers per view |
+| x05 Biddi | Syrian dialect | 40 | 23 % | 1 | |
+| x03 Introduce yourself | Extra (searched) | 32 | 34 % | 0 | search spike over |
+| Part 1 | Long | 31 | 10 % (62 s) | 0 | |
+
+**Instagram:** **330 followers** (≈ 12× the YouTube subscribers, same videos). New followers/day 15 · 7 · 8 · 18 · **69** (17 Oct)
+· 23; reach/day 130–1 000. Best Reels (lifetime): Day 5 1 858 views / 50 saves · Day 3 1 803 / 66 saves / 13 shares ·
+Day 8 1 385 / 34 saves (→ the +69 day) · Day 4 723 / 22. Low: greetings and quizzes 195–460, Day 6 227, Day 9 219.
+Trial Reels (non-followers only, 1 day): Indonesian 107 · Hindi 126 · Turkish 120. Dolma photo (with word list) 120.
+Too early: 16 Oct re-packaging, subtitles/audio tracks, Trial Reels (checks 22–23 Oct).
+
 ## 2026-10-15 (after the owner's week away, 8–14 Oct)
 
 Channel: **1 289 views · 20 subscribers** (from 319 views · 7 subs on 5 Oct). Daily views: ~35–85 before → **95–179/day**

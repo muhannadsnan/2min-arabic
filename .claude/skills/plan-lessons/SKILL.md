@@ -60,6 +60,11 @@ For each planned day, check against the previous 3:
   **"start here" entry points** (Day 1 +3 subs, Part 1 +4 — every series needs one). Weak: quizzes (→ challenges),
   rule-first grammar (Day 9: 21 % → open with an example people can picture), busy stories, mid-course titles that
   tell a stranger "you missed the start". Long Parts keep subscribers + watch hours but don't bring new people.
+- **Update 20 Oct (docs/12, docs/06 Learnings):** Instagram is where new people come from — word lists and one clear rule
+  get saved and bring followers (Days 3, 5, 8: 1 400–1 860 views each), greetings and quizzes don't (200–460). Search
+  needs a new searched-topic Extra every week (x03's search spike faded: 254 → 108). Usable phrases convert best
+  (Day 15 "I want": 46 % viewed, 3 subs from 47 views — a hint so far). So plan more: word lists, "one rule + 3
+  examples", phrases people use today (ordering, asking, introducing); fewer: quizzes, greetings lists, busy stories.
 - **Format** (phrases / conversation / story / grammar / review / challenge): never the same twice in a row. Where
   docs/04 has two in a row (Days 22–23 Phrases, 28–29 Conversation), give the second a different inner shape, e.g. a
   mini-game, "wrong vs right", or a situation with Sami or Lina.

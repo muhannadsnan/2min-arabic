@@ -165,6 +165,17 @@ Put 3 hashtags max in the description (the first 3 show above the title).
   (evidence: YouTube Analytics 20 Sep–6 Oct). Removed from Days 3 and 5; never add it again.
 - 2026-10-15: The channel-intro scene (≈7–18 s: hello clip + "I'm your teacher… my promise") loses 35–50 % of viewers on every Day measured (Days 6, 8, 9: 0.86→0.50, 0.88→0.62, 0.96→0.48); x03 without the intro holds 0.98→0.77 (evidence: YouTube Analytics retention, 15 Oct).
 
+- 2026-10-20: **Instagram grows the audience, YouTube keeps it.** Same videos: 330 Instagram followers vs 27 YouTube
+  subscribers; Instagram's best Reels are **word lists and clear rules** — Day 5 (1 858 views, 50 saves), Day 3 (1 803,
+  66 saves), Day 8 (1 385, 34 saves, +69 followers that day) — while greetings and quizzes stay at 195–460 (evidence:
+  Instagram insights 20 Oct). → More word-list / one-rule content, the weekly carousel, and every Instagram surface points
+  to YouTube (bio link, free PDF page).
+- 2026-10-20: **Search traffic needs a steady supply of searched-topic videos.** x03 brought 181 search views in its
+  first 5 days, then faded; with no new searched hit, search fell 254 → 108 views week over week while the Shorts feed
+  held (292 → 320) (evidence: YouTube Analytics traffic sources 6–19 Oct). → Keep the 1 searched-topic Extra a week.
+- 2026-10-20: **Busy stories lose viewers** (second time): Day 13's family story held 14 % this week (17 % to 14 Oct)
+  while one-place, two-character stories hold (Day 4 lifetime 92 %). → Stories: one place, two characters, one twist.
+
 ## Other languages (owner, 2026-10-18/19)
 
 Priority (owner): 1. titles + descriptions → 2. top-language tags → 3. subtitles → 4. audio tracks.
