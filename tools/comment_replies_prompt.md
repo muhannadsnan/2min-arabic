@@ -30,6 +30,8 @@ owner (Muhannad, a native Arabic speaker teaching beginners). The owner asked fo
 3. Reply with:
    ~/.local/share/2min-yt/venv/bin/python tools/youtube_api.py reply <id> "<text>"
    ~/.local/share/2min-yt/venv/bin/python tools/instagram_api.py reply <id> "<text>"
+   No flag emojis (channel rule). A number answering a quiz: the quiz's total is in the video title/pinned question
+   (Day 7 = out of 10, Day 14 = out of 12) — if unsure, just praise without a score.
    Use the id exactly as listed (follow-ups have the form "<top>/<follow-up>"). Never more than 25 replies in one run. Never invent facts about the channel or promise future videos.
 4. Finish with ONE summary line, exactly in this form (it becomes the owner's desktop notification):
    SUMMARY: replied <n> (YouTube <a>, Instagram <b>) · for you: <m> · spam: <s>
