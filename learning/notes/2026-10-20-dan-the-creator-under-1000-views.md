@@ -27,3 +27,17 @@ rules (docs/06) say the same things.
   with the short intro (approved 15 Oct); this tells us whether the new hook gets people to stop.
 - **Watch item:** Day 13 "Family Words" — 13.9 % viewed (16 s of 117 s), by far the lowest. Look at its first seconds in
   the 23 Oct re-packaging check (retention curve) before deciding anything.
+
+## Claim 1 measured (owner's Studio screenshots, 20 Oct evening)
+
+| Video | Intro | Engaged views | Stayed to watch (vs swiped) | Avg duration |
+|---|---|---|---|---|
+| Day 14 quiz (2:17) | old | 31 | **37.4 %** | 0:42 (cliff 100 → ~45 % in the first ~15 s) |
+| Day 15 "I want" (2:26) | old | 29 | **44.6 %** | 1:08 (drop to ~60 % by ~15 s, then flat ~40 % to the end) |
+| Day 16 order coffee (1:51) | **new short intro** | 21 | **67.7 %** | 0:46 |
+| Day 17 sun/moon (2:01) | **new short intro** | 5 | 45.5 % (5 views — too early) | 1:10 |
+
+**Hint (not proof yet):** the first day with the short intro and direct hook went from ~40 % to 68 % stayed, close to
+Dan's 70 % line. Every old-intro Day loses most viewers in the first 15 s — the same place the 15 Oct retention
+finding showed. Confirm on Days 17–20 (all have the new intro) at the 24 Oct check; if ≥ 2 of them stay ≥ 60 %,
+it goes into docs/06 Learnings as confirmed.
