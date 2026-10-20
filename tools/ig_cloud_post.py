@@ -71,6 +71,12 @@ def main():
     print("languages today:", cap.read_text(encoding="utf-8").strip().split("\n\n")[-2].replace("\n", " · "))
     ig.post(argparse.Namespace(video=str(tmp / "video.mp4"), caption_file=str(cap),
                                cover=str(tmp / "cover.jpg"), apply=not a.dry_run, trial=False))
+    if not a.dry_run and os.environ.get("FB_PAGE_TOKEN"):   # owner 2026-10-20: the same Reel on the Facebook Page
+        try:
+            import facebook_api as fb
+            print(f"✅ Facebook: {fb.post_video(tmp / 'video.mp4', cap.read_text(encoding='utf-8').strip())}")
+        except (Exception, SystemExit) as e:   # Facebook failing must never block the Instagram post
+            print(f"::warning::Facebook post failed: {str(e)[:200]}")
     if not a.dry_run:
         gh("release", "delete-asset", QUEUE, name, "-y")
         print(f"{name} removed from the queue · {len(names) - 1} Reels left")
