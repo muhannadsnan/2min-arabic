@@ -33,6 +33,8 @@ def req(url, data=None, headers=None, method=None):
 
 
 def duration(path):
+    import shutil
+    if not shutil.which("ffprobe"): return 9999.0   # unknown length (e.g. on GitHub) → the normal video upload, any length
     return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
                                 capture_output=True, text=True).stdout or 0)
 
