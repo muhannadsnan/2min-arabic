@@ -57,11 +57,32 @@ def media(a):
               f"{m.get('comments_count', 0):>4} {v.get('shares', 0):>5} {v.get('saved', 0):>5}  {cap}")
 
 
+def fbcall(path, method="GET", data=None, **q):
+    """Instagram through the Facebook Page token (Facebook-login route, page linked 2026-10-20). The Instagram-login
+    API hides other people's comments while the app is in development mode; this route returns them all."""
+    c = json.loads((pathlib.Path.home() / ".config/2min-facebook/page.json").read_text())
+    q["access_token"] = c["page_token"]
+    req = urllib.request.Request("https://graph.facebook.com/v21.0/" + path + "?" + urllib.parse.urlencode(q),
+                                 data=urllib.parse.urlencode(data).encode() if data else None, method=method)
+    try:
+        return json.load(urllib.request.urlopen(req, timeout=60))
+    except urllib.error.HTTPError as e:
+        sys.exit(f"Instagram (via Facebook) error {e.code}: {e.read().decode(errors='ignore')[:300]}")
+
+
+def all_comments(limit):
+    """Our posts with their comments (and replies) — via the Page token."""
+    r = fbcall(f"{token()['user_id']}/media", limit=limit,
+               fields="id,caption,comments_count,comments.limit(50){id,username,text,timestamp,replies{username,text}}")
+    return r.get("data", [])
+
+
 def comments(a):
-    r = call("me/media", fields="id,caption,comments{id,username,text,timestamp}", limit=a.limit)
-    for m in r.get("data", []):
+    for m in all_comments(a.limit):
         for c in (m.get("comments") or {}).get("data", []):
             print(f"[{c['timestamp'][:10]}] {(m.get('caption') or '')[:28]!r} · @{c.get('username')}: {c['text']}")
+            for x in (c.get("replies") or {}).get("data", []):
+                print(f"      ↳ @{x.get('username')}: {x.get('text')}")
 
 
 REPLIES = pathlib.Path.home() / ".local/share/2min-yt/replies.jsonl"
@@ -69,20 +90,23 @@ REPLIES = pathlib.Path.home() / ".local/share/2min-yt/replies.jsonl"
 
 def pending_comments(a):
     """Instagram comments still needing an answer (owner 2026-10-19): not ours, no reply from us, not answered before."""
-    me = token().get("username", "")
+    me = token().get("username") or "2minutearabic"
     done = {json.loads(l).get("parent") for l in REPLIES.read_text().splitlines() if l.strip()} if REPLIES.exists() else set()
-    r = call("me/media", fields="id,caption,comments{id,username,text,timestamp,replies{username}}", limit=a.limit)
-    for m in r.get("data", []):
-        for c in (m.get("comments") or {}).get("data", []):
+    for m in all_comments(a.limit):
+        cs = (m.get("comments") or {}).get("data", [])
+        for c in cs:
             if c.get("username") == me or c["id"] in done: continue
             if any(x.get("username") == me for x in (c.get("replies") or {}).get("data", [])): continue
+            # answered with a top-level "@user …" comment (the app's old way) counts as answered too
+            if any(o.get("username") == me and f"@{c.get('username')}" in o.get("text", "") and o["timestamp"] > c["timestamp"]
+                   for o in cs): continue
             print(json.dumps({"platform": "instagram", "id": c["id"], "video": (m.get("caption") or "")[:60],
                               "author": c.get("username"), "text": c["text"], "date": c["timestamp"][:10]}, ensure_ascii=False))
 
 
 def reply(a):
-    """Reply to an Instagram comment (needs the instagram_business_manage_comments permission) and log it."""
-    r = call(f"{a.comment}/replies", method="POST", data={"_": "1"}, message=a.text)
+    """Reply to an Instagram comment (Page token, instagram_manage_comments) and log it."""
+    r = fbcall(f"{a.comment}/replies", method="POST", data={"message": a.text})
     with REPLIES.open("a") as f:
         f.write(json.dumps({"platform": "instagram", "parent": a.comment, "reply_id": r.get("id"), "text": a.text,
                             "at": time.strftime("%Y-%m-%dT%H:%M:%S")}, ensure_ascii=False) + "\n")

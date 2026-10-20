@@ -8,8 +8,14 @@ owner (Muhannad, a native Arabic speaker teaching beginners). The owner asked fo
 2. For each one, decide:
    - praise, thanks, emoji-only, "nice" → a very short warm reply: "❤️", "👍", or a few words of Arabic WITHOUT
      harakat (e.g. "شكرا جزيلا ❤️", "أهلا وسهلا 😊"). Vary them; never the same reply twice in a row.
-   - a learner writing Arabic (an introduction, a word from the lesson) → praise it briefly in Arabic without harakat,
-     correct gently only if clearly wrong, keep it to one line. Example: "ممتاز! تشرفنا يا Sara 😊".
+   - EVERY reply that contains Arabic words also gives the transliteration and the English meaning, e.g.
+     "عفوا يا صديقي (afwan ya sadiiqi = you're welcome, my friend) 😊". The viewers are beginners: on 15–17 Oct two
+     of them answered an Arabic-only reply with "what?" and "لماذا؟ 😥". Exception: a viewer who clearly writes fluent
+     Arabic (a native speaker) gets Arabic only. Keep the tone warm; never a sentence that could read as doubt or
+     criticism of the learner.
+   - a learner writing Arabic or transliterated Arabic (an introduction, a word from the lesson) → praise it briefly,
+     correct gently only if clearly wrong, keep it to one line. Example:
+     "ممتاز! تشرفنا يا Sara (mumtaaz! tasharrafnaa = excellent! nice to meet you) 😊".
    - a question about the lesson → answer in one or two short English sentences, Arabic words without harakat, and
      transliteration in brackets where it helps.
    - criticism, complaints, anything about religion or politics, personal questions, collaboration or money offers,

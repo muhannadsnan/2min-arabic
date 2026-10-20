@@ -7,10 +7,12 @@ for _ in $(seq 60); do getent hosts oauth2.googleapis.com >/dev/null 2>&1 && bre
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
 LOG=~/.local/share/2min-yt/comment-replies.log; PY=~/.local/share/2min-yt/venv/bin/python
 echo "=== $(date '+%F %T')" >> "$LOG"
-OUT=$(~/.local/bin/claude -p "$(cat tools/comment_replies_prompt.md)" \
-  --allowedTools "Bash($PY tools/youtube_api.py pending-comments)" "Bash($PY tools/instagram_api.py pending-comments)" \
+# the prompt gets the full python path: with "~/..." Claude's commands didn't match the allowed list (19 Oct run blocked)
+PROMPT=$(sed "s#~/.local/share/2min-yt/venv/bin/python#$PY#g" tools/comment_replies_prompt.md)
+OUT=$(~/.local/bin/claude -p "$PROMPT" \
+  --allowedTools "Bash($PY tools/youtube_api.py pending-comments:*)" "Bash($PY tools/instagram_api.py pending-comments:*)" \
                  "Bash($PY tools/youtube_api.py reply:*)" "Bash($PY tools/instagram_api.py reply:*)" \
-  --max-turns 60 2>&1)
+  --max-turns 60 < /dev/null 2>&1)
 echo "$OUT" >> "$LOG"
 SUM=$(grep -m1 "^SUMMARY:" <<<"$OUT" | sed 's/^SUMMARY: //')
 if [ -n "$SUM" ]; then
