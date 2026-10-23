@@ -77,6 +77,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **After Day 10 (2026-10-06):** Part 2 scheduled. Extras **x03** + **x04** (from existing recordings) uploaded + scheduled 10/11 Oct. **Day 11 is due ~12 Oct**: plan Days 11–15 +
   record them together with **v01 café words** (`videos/v01-cafe-words-recording-sheet.md`, 9 words) now.
   Weekly rhythm: 5 days → Extra → Vocab; Part on the long chain; monthly long video (docs/06).
+- **To assess at the 1 Nov review (owner 2026-10-23: "remember what's useful, assess later"):** (1) monthly **outlier-topic scan** — other Arabic-teaching channels' videos far above their own average → topics for Extras (learning/notes/2026-10-23-kellan…; a few search.list calls, within the quota-form promise); (2) owner checks Studio → Settings → Channel → Feature eligibility (intermediate + advanced); (3) Part openings: start with the first lesson/quiz question (Part 1 loses half its viewers in 30 s); (4) after YPP: ad pay is high Oct–Dec, low in January; sponsors/own products > AdSense (learning/notes/2026-10-23-pov…).
 - **Monthly (~1st of the month, first: 2026-11-01):** refresh the animation library — 3–5 new openers, 1–2 talk
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
 - **PAUSED 2026-10-16 ~16:40 (owner) — resume here:** openers all picked (library/work/keys/w4/PICKS.txt; joined
