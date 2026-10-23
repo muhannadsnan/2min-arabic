@@ -14,6 +14,8 @@ in a source are never adopted just because they're mentioned (licence rule, docs
 
 | Date | Source | Note | Adopted |
 |---|---|---|---|
+| 2026-10-23 | Kellan Henneberry — "fastest way to hit 10k/mo with yt shorts" (24 min, audio) | [note](notes/2026-10-23-kellan-henneberry-10k-shorts.md) | outlier-topic scan (proposal); his reused-clips model rejected |
+| 2026-10-23 | POV This Is You — "Every Level of a YouTuber After Monetization" (15 min, audio) | [note](notes/2026-10-23-pov-levels-after-monetization.md) | confirms: products/sponsors > AdSense; keep YouTube on-pattern |
 | 2026-10-20 | Dan the creator — "If your shorts get under 1,000 views… do this" (10.5 min, audio) | [note](notes/2026-10-20-dan-the-creator-under-1000-views.md) | nothing new: 5 of 8 claims already our rules; "≤ 20 s" not supported by our data |
 | 2026-10-15 | YouTube Studio: how viewers find us (10 screenshots) | [note](notes/2026-10-15-studio-how-viewers-find-us.md) | 52 % Shorts feed · 28 % search · 10 % Home |
 | 2026-10-15 | YouTube official — Search & Discovery FAQ (7 min) | [note](notes/2026-10-15-youtube-official-search-discovery-faq.md) | tags matter little; re-package losers; daily not required |
