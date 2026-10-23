@@ -581,5 +581,19 @@
   "seconds": 5.03,
   "source": "library/work/joined/x06.mp4",
   "used_in": []
+ },
+ {
+  "name": "d21-waiter-notepad",
+  "type": "opener",
+  "character": "waiter",
+  "style": "semi",
+  "seconds": null,
+  "source": "library/work/joined/d21.mp4",
+  "action": "the café waiter picks up his pen, ready to take your order, then a calm idle hold",
+  "used_in": [
+   "021-answer-the-waiter"
+  ],
+  "approved": false,
+  "note": "owner approval pending (2026-10-23)"
  }
 ]

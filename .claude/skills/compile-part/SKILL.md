@@ -12,7 +12,7 @@ Template: Part 1 = `videos/w01-review.md` + `parts/part-01.json` + `videos/w01-u
 
 ## Steps
 
-1. **Review script** `videos/wNN-review.md`: short welcome, quiz intro, ~12 quiz questions (English question →
+1. **Review script** `videos/wNN-review.md`: **no welcome — open straight on the first quiz question or the first lesson's hook** (Part 1 loses half its viewers in the first 30 s; Day 16 with a direct opening: 68 % stayed vs 37–45 % — learning/notes/2026-10-20-dan…, 2026-10-23), quiz intro, ~12 quiz questions (English question →
    ⏸️ pause → the Arabic answer), outro. **Re-use recorded Arabic only** — pick answers whose lines exist in the
    days' `footage/recordings/<day>/map.json`, then build `footage/recordings/wNN-review/map.json` pointing at those
    files. Nothing new to record. Images: `"same"`/`"from"` links to the days' images.

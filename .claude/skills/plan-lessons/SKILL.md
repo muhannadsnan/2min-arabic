@@ -14,7 +14,7 @@ into one session.
 
 Before choosing Extras/Vocab topics (and when a Day can lean towards a popular angle), run
 `$Y tools/youtube_api.py niche "<topic> in arabic" "<format idea>"` (≈100 quota units per query) and
-`python3 tools/suggest.py "<topic> in arabic"`. Prefer topics where learner videos (not kids' songs) already get views;
+`python3 tools/suggest.py "<topic> in arabic"`. **Outlier scan (monthly, source: learning/notes/2026-10-23-kellan-henneberry…):** look for videos far above their channel's usual views — that topic is proven; take the topic, never the content (2026-10-23: "inshallah meaning" — 13.2 M and 1.1 M views → x07). Prefer topics where learner videos (not kids' songs) already get views;
 note the hook/format of the top ones. Log the picks in docs/15.
 
 ## 1. The vocabulary ledger — `docs/13-vocabulary-ledger.md`
@@ -82,6 +82,8 @@ For each day, write 2–3 hook lines (English narrator, ≤ 2 s to the point, no
 - *"Don't say أَنْتَ to a woman."*
 - *"Sami walks into the café. It's closed."*
 
+**YouTube stays on-pattern:** mood or motivation posts (like the Lina "do it anyway" image) go to Instagram and the YouTube Posts tab only, never as a Short — off-pattern videos lose the audience (learning/notes/2026-10-23-pov…).
+
 ## 6. Extras calendar
 
 30–60 s bonus Shorts (arabic-extras skill, `x0N-` stems). They go **between** days and never replace a day. The daily
@@ -90,7 +92,7 @@ For each day, write 2–3 hook lines (English narrator, ≤ 2 s to the point, no
   phrase first (`tools/suggest.py`, search-terms report) and use its words in the title. List: I love you · How are you
   (10 ways) · Thank you / you're welcome · Happy birthday · days / colors / food · travel (taxi, hotel, airport) · the 5
   questions every Arab will ask you (name, country, age, job, married?) · a 5-min long version of Introduce Yourself ·
-  **"What does it mean?"** word Shorts (inshallah, mashallah, habibi, yalla, wallah, khalas: the word, its meaning,
+  **"What does it mean?"** word Shorts (**inshallah = x07**, then habibi, yalla, mashallah, khalas, wallah — one word each, a weekly series: the word, its meaning,
   how Syrians use it — the easiest to share).
 - **Seasonal, published early:** Ramadan phrases mid-January (Ramadan 2027 ≈ 8 Feb) · Happy New Year late December ·
   Eid al-Fitr ≈ 10 Mar 2027.

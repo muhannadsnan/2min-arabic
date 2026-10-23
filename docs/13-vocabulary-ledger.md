@@ -57,3 +57,13 @@ Maintained by the plan-lessons skill. A word introduced on Day d is due on d+1, 
 | مَاءْ · شَايْ · عَصِيرْ | maa' · shaay · 'aSiir | water · tea · juice | Day 15 | v01, 16 | Day 16 |
 | بِدِّي · مَا بِدِّي · شُو بِدَّكْ/بِدِّكْ؟ (Syrian) | biddi · ma biddi · shu biddak/biddik | I want · I don't want · what do you want? | x05 | — | — |
 | حَلِيبْ · سُكَّرْ · فِنْجَانْ · كَعْكَةْ · نَادِلْ · حِسَابْ | Haliib · sukkar · finjaan · ka'ka · naadil · Hisaab | milk · sugar · cup · cake · waiter · bill | v01 | — | Day 16 |
+| تَفَضَّلْ / تَفَضَّلِي | tafaDDal / tafaDDalii | here you go m / f | Day 16 | 21, P4 | Day 23 |
+| مَعَ · بِدُونِ | ma'a · biduuni | with · without | Day 16 | 21, P4 | Day 23 |
+| بِكَمْ هَذَا؟ | bikam haadhaa? | how much is this? | Day 16 | 21 | Day 23 |
+| الْ (sun / moon letters) | al- | the | Day 17 | 18, 19, 20, P4 | Day 24 |
+| مَا · مَنْ · أَيْنَ · كَمْ · مَتَى | maa · man · ayna · kam · mataa | what · who · where · how many · when | Day 18 | 19, 21, P4, 24 | Day 25 |
+| هُنَا · الْآنْ · دَرْسْ | hunaa · al-aan · dars | here · now · lesson | Day 18 | 19, P4, 24 | Day 25 |
+| يَمِينْ · يَسَارْ · ثُمَّ · هُنَاكْ | yamiin · yasaar · thumma · hunaak | right · left · then · there | Day 19 | 20, P4 | Day 26 |
+| أَشْرَبُ · آكُلُ · أَذْهَبُ · أُحِبُّ · إِلَى | ashrabu · aakulu · adh-habu · uHibbu · ilaa | I drink · I eat · I go · I love · to | Day 20 | v02, P4, 25 | Day 27 |
+| أَحَدَ عَشَرْ … عِشْرُونْ | aHada 'ashar … 'ishruun | 11–20 | x06 | — | Day 23 (days = numbers) |
+| رَأْسْ · شَعْرْ · عَيْنْ · أُذُنْ · أَنْفْ · فَمْ · يَدْ · رِجْلْ · صَدْرْ · قَلْبْ | body words | head · hair · eye · ear · nose · mouth · hand · leg · chest · heart | v02 | — | Day 30 |
