@@ -489,7 +489,10 @@ def localize(a):
         lines = sn["description"].split("\n")
         start = next((i for i, l in enumerate(lines) if l.startswith(("▶️", "🔔", "🌍", "#"))), len(lines))
         tail = "\n".join(lines[start:]).strip()
-        tags = list(sn.get("tags", [])); added = [t for t in LOC_TAGS if t.lower() not in {x.lower() for x in tags}]
+        base = getattr(a, "base_tags", None) or []
+        tags = list(sn.get("tags", []))
+        tags += [t for t in base if t.lower() not in {x.lower() for x in tags}]
+        added = [t for t in LOC_TAGS if t.lower() not in {x.lower() for x in tags}]
         chars = lambda ts: sum(len(t) + (2 if " " in t else 0) for t in ts) + len(ts) - 1
         dropped = []   # owner (2026-10-17): remove the most generic tags, one by one, until all new tags fit
         for g in LOC_GENERIC:
@@ -660,7 +663,9 @@ def fill(a):
                 print(f"  = already in playlist '{name}'")
     # priorities 1+2 (owner 2026-10-18): 13-language titles/descriptions + top-language tags, in the same go
     if a.video in json.loads((ROOT / "tools" / "localizations.json").read_text(encoding="utf-8")):
-        localize(argparse.Namespace(video=a.video, apply=True, channel=a.channel))
+        # pass the sheet tags: a read right after the update can still return the old (tag-less) snippet, and
+        # localize would then write back only its 10 language tags (Day 21, 2026-10-23: all 22 tags lost)
+        localize(argparse.Namespace(video=a.video, apply=True, channel=a.channel, base_tags=tags))
     else:
         print("  ⚠️ no translated titles yet: add this video to tools/localizations.json (13 languages), then run localize")
     print("Left for Studio (no API): Education Type = Concept overview, Level = Beginner\n"
