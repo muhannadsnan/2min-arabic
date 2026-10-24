@@ -1,0 +1,119 @@
+[00:00] Okay, tell me if this sounds like you. Imagine you post 12 videos this month,
+[00:05] and all 12 stay below 1,000 views. Now imagine that instead of all these videos,
+[00:11] you post just one video this month, and that one video gets 250,000 views.
+[00:18] So of course you'd pick the second month, right? But most of us actually live the first month,
+[00:23] again and again, and the reason has way less to do with YouTube than you think.
+[00:28] And I know that first month really well because I lived it for a very long time,
+[00:32] so let me show you how it usually goes. Let's say you spend all day on a video and you upload it.
+[00:39] A few days later you check the views and it's stuck below 1,000. So you make another video,
+[00:45] you post it and you get the same results. And after a couple of videos you start to
+[00:50] think that maybe you're just bad at this. So in this video I'll show you what makes you
+[00:55] rush and how a viewer's brain decides to keep watching. But first, here's how one video can
+[01:01] beat 12. Now YouTube has said that what it recommends depends on how viewers react to
+[01:07] each video. So 12 videos people skip or leave are 12-week signals, and one video people watch until
+[01:14] the end is one strong signal so YouTube can keep showing it. So instead of trying to upload more,
+[01:21] your goal is to make one video people actually watch. But if one good video can do more than
+[01:27] 12 rushed ones, why do we keep rushing? Well, a lot of it comes from how our brain makes decisions.
+[01:35] A psychologist who won a Nobel Prize explains this in his book Thinking Fast and Slow, and he says
+[01:41] it's like you have two characters living in your head. The first one is fast. It's called system
+[01:48] one. It works on its own, without any effort, and it runs on feelings. The second one is slow.
+[01:54] It's called system two. It thinks things through, but that takes effort, so it's kind of lazy.
+[02:01] There's even a name for this, the law of least effort. If there are a few ways to do something,
+[02:07] we slowly drift to the easiest one. Here's a quick test from the book. A bat and a ball
+[02:12] cost one dollar and ten cents in total. The bat costs one dollar more than the ball.
+[02:18] How much does the ball cost? Take a second. If ten cents popped into your head, that's system one.
+[02:26] The right answer is five cents. And the book says more than half of the students at Harvard,
+[02:31] MIT, and Princeton got it wrong. So even smart people let the fast character answer first.
+[02:38] And when you're making videos, the fast character is usually the one hitting upload.
+[02:43] It makes two big mistakes. The first one is about time. The psychologist who wrote that book learned
+[02:49] this the hard way. Years ago, he and a team started writing a school textbook. After a year of work,
+[02:56] they felt confident they'd finish soon. Then he asked the expert on the team a simple question.
+[03:02] How long did other teams like ours take? And the expert said many never finished. And the ones that
+[03:08] did took seven to ten years. Their book took eight years. And by the time it was done,
+[03:15] nobody used it. This is called the planning fallacy. When we plan, we picture everything
+[03:20] going right. So we think our project will take way less time than it really does.
+[03:26] And that's exactly what happens with a weekly upload plan. You're behind by Thursday. And because
+[03:31] you're behind, on Friday, you skip the last steps. You don't cut the boring parts and you don't watch
+[03:37] your video again. And the viewer feels that. And the fix is called the outside view. Instead of
+[03:43] trusting your feeling, you look at how long things really took before. So look at your last three
+[03:49] videos. How many days did each one really take? Then plan your next video with that real number.
+[03:55] Okay, so that's the time part. But even when I planned my videos really well,
+[04:00] I still rushed them. And that's because of something else. The second mistake is a feeling.
+[04:06] People call it FOMO, the fear of missing out. For creators, it basically means feeling like
+[04:12] you're behind. Like if you skip one week, you'll lose everything. And the same book explains why
+[04:18] this feeling is so strong with a simple bet. Imagine I flip a coin. If it's tails, you lose
+[04:24] $100. If it's heads, you win $150. Would you take that bet? You'd win more than you could lose.
+[04:33] But most people still say no. Because losing $100 hurts more than winning $150
+[04:40] feels good. It's called loss aversion. In the studies, losses felt about twice as strong as
+[04:46] wins. Newer studies find a bit less, but losing still hurts more. And there's a reason our brain
+[04:52] works like this. Creatures that treat threats as more urgent than chances have a better chance
+[04:57] to survive. So for our brain, a loss feels like a danger. So when you skip a week, your brain says
+[05:05] I'm losing my audience. And because that loss feels bigger, you upload something rushed just
+[05:10] to make the feeling stop. And I've been there. I had days where a video didn't work and I couldn't
+[05:17] let go. I changed the thumbnail in the evening. I waited. Nothing happened. I changed it again.
+[05:23] Then again, late at night, instead of sleeping or playing video games. That's system one driving.
+[05:30] And the book gives a simple rule for this moment. Notice the signs, slow down, and let system two
+[05:36] help. So how do you actually do that? First, name it. When the panic comes, say to yourself,
+[05:43] this is FOMO. Scientists found that just naming a feeling turns it down a little. Second, decide
+[05:49] while you're calm. Make an if-then plan. For example, if I want to check my views,
+[05:55] then I open my script instead. And third, give the slow character time. Instead of one quick video
+[06:02] in a day, spend two weeks or even a month on one video. But I remember working five days on a video,
+[06:09] not one day. I thought it was going to get 10,000 views, 20,000, maybe 100,000. It got zero views in
+[06:17] the first hours. Then 20, 30. A couple of days later, it got to like 1500 views. And then it
+[06:24] just stopped. Forever. So the time alone didn't do it. A video also needs people to keep watching.
+[06:32] That's called retention. So the next problem is, how do you make people stay? And to answer that,
+[06:38] we have to look inside the viewer's head while they watch. And honestly, this is the part I wish
+[06:43] someone told me when I started. Remember the two characters? Your viewer has them too.
+[06:49] When your thumbnail shows up on their screen, there's no time to think. System One decides
+[06:54] if they click in a split second. So your thumbnail has to make sense to the fast character right away.
+[07:01] But once they click, their brain starts doing something else. It starts guessing.
+[07:06] There's a book called Made to Stick. Two brothers wrote it about why some ideas stick in our heads
+[07:12] while others are forgotten right away. And it says the most basic way to get someone's attention
+[07:17] is to break a pattern. Here's how it works. Your brain is a guessing machine. It's always
+[07:24] guessing what comes next. When the guess is right, your attention kind of falls asleep.
+[07:29] But when the guess is wrong, your attention wakes up. Our brain is built to notice changes.
+[07:35] If nothing changes, it's probably safe to ignore. But a change might be important.
+[07:40] So the brain pays attention. The book gives an example with flight safety talks. Everyone has
+[07:46] heard them so many times that nobody listens. But a flight attendant who said things people
+[07:51] didn't expect got the whole plane to listen. So for every part of your video, write down what
+[07:57] the viewer expects. Then give them something they didn't guess, like a bigger number or a twist.
+[08:03] But the twist has to fit your message. Otherwise, it's just a gimmick.
+[08:08] But once you have their attention, you have to keep it. And the same book explains this with
+[08:13] curiosity. Curiosity is a gap between what you know and what you want to know. And that gap feels
+[08:20] like an itch you need to scratch. So before you give people the answer, first show them what
+[08:25] they're missing. Later, scientists tested this inside a brain scanner. People answered quiz
+[08:31] questions. Like, what instrument was made to sound like a human singing? Try to guess.
+[08:38] They were most curious when they half knew the answer. While they were curious, the brain's
+[08:43] reward areas lit up. And they remembered the answers better later. Oh, and it's the violin,
+[08:50] by the way. I mean, you've watched this far, right? Think about the start. 12 videos or one video.
+[08:56] You kind of knew one video could win, but not how. That's a gap. So in your video,
+[09:03] give a little first, then show what's missing and put your most important lesson inside that gap
+[09:09] right before the answer. Your title and thumbnail open the gap and your video closes it piece by
+[09:15] piece. But even a curious viewer leaves when they get lost. And made to stick also explains why we
+[09:22] can't see that in our own videos. There's a famous test from a university student.
+[09:27] She asked people to tap a famous song on a table, like Happy Birthday. Another person had to guess
+[09:33] the song just from the knocking. The tappers thought listeners would get it half the time.
+[09:39] But out of 120 songs, listeners guessed three, because the tapper hears the music in his head
+[09:45] and the listener only hears knocking. This is called the curse of knowledge. Once you know
+[09:51] something, it's really hard to imagine not knowing it. And that's you with your own video.
+[09:57] You know the whole story, so a confusing part feels clear to you. Like when you use a word
+[10:02] your viewer never heard or you skip a step because it feels obvious to you. You hear the song. They
+[10:09] only hear knocking. So here's what the extra time is for. Sleep on it and watch your video the next
+[10:15] day like a stranger. Every time you get a little lost, fix that part. And even if people watch until
+[10:22] the end, they won't remember all of it. The psychologist from Thinking Fast and Slow tested
+[10:27] this with cold water. People put a hand in painfully cold water for 60 seconds. Another time,
+[10:34] they did 90 seconds, but the last 30 seconds were a tiny bit less cold. When they picked one to do
+[10:40] again, 22 out of 32 picked the longer one. So they chose more pain because it ended better.
+[10:48] This is called the peak end rule. We mostly remember the strongest moment and the last moment
+[10:54] because memory doesn't record everything. It keeps a few snapshots and it mostly ignores how
+[10:59] long things lasted. So decide your peak before you edit and make the last minute one of your best
+[11:06] because the end is how people remember your video right when they decide what to watch next.
+[11:12] So let's go back to the two months. In the first month, the fast character makes the decisions.
+[11:18] FOMO decides when you post and your brain is too hopeful about time. In the second month,
+[11:24] you slow down and you decide. So this month, pick one idea. When the panic comes, name it.
+[11:30] When you want to check your views, open your script instead. Then build that one video around
+[11:36] what the viewer expects. One gap and one peak. And watch it like a stranger before you post it.
+[11:42] And that's how one video gets a real chance to beat 12.
+[11:47] Now, if you want to learn more about the algorithm and how you can grow on YouTube,
+[11:51] you might want to watch this video over here because inside this video, I'm going to teach
+[11:54] you how to do storytelling so that you have better retention on YouTube.

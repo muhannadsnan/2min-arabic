@@ -14,6 +14,8 @@ in a source are never adopted just because they're mentioned (licence rule, docs
 
 | Date | Source | Note | Adopted |
 |---|---|---|---|
+| 2026-10-24 | Steffen Miro — "This Is Boring But It'll Get Your Channel Monetized Faster" (21 min) | [note](notes/2026-10-24-steffen-miro-boring-monetized-faster.md) | YPP 8,000 h from Feb 2027 verified → long searched video a month (proposal); topic transfer; 80/20 |
+| 2026-10-24 | Danny Why — "Monetize your Small Channel with ONE Video" (12 min) | [note](notes/2026-10-24-danny-why-monetize-one-video.md) | stranger check in the gate; end-on-the-peak outro (proposal) |
 | 2026-10-23 | Kellan Henneberry — "fastest way to hit 10k/mo with yt shorts" (24 min, audio) | [note](notes/2026-10-23-kellan-henneberry-10k-shorts.md) | outlier-topic scan (proposal); his reused-clips model rejected |
 | 2026-10-23 | POV This Is You — "Every Level of a YouTuber After Monetization" (15 min, audio) | [note](notes/2026-10-23-pov-levels-after-monetization.md) | confirms: products/sponsors > AdSense; keep YouTube on-pattern |
 | 2026-10-20 | Dan the creator — "If your shorts get under 1,000 views… do this" (10.5 min, audio) | [note](notes/2026-10-20-dan-the-creator-under-1000-views.md) | nothing new: 5 of 8 claims already our rules; "≤ 20 s" not supported by our data |

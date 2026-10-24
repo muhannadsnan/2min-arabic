@@ -99,3 +99,5 @@ Fixes: none
 Credits: adapted from ravsau/youtuber-skills (youtube-virality-gate, youtube-packaging, youtube-shorts),
 sergebulaev/youtube-skills (yt-title-optimizer, yt-thumbnail-brief, yt-hook-scripter) and AgriciDaniel/claude-youtube
 (shorts, metadata, hook) — all MIT.
+
+**Stranger check (learning/notes/2026-10-24-danny-why…):** read the script as someone who has never seen the channel — every Arabic word the narrator says must already have been shown on a card (or come with its meaning in the same line). A word used before it's taught = FIX.

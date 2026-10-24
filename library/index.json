@@ -595,5 +595,33 @@
   ],
   "approved": false,
   "note": "owner approval pending (2026-10-23)"
+ },
+ {
+  "name": "d22-sami-slowly",
+  "type": "opener",
+  "character": "sami",
+  "style": "semi",
+  "seconds": 7.1,
+  "source": "library/work/joined/d22.mp4",
+  "action": "at a café table Sami raises an open palm, 'slowly, please', then back to the table (gesture forward + reverse) + idle",
+  "used_in": [
+   "022-lifesaver-phrases"
+  ],
+  "approved": false,
+  "note": "owner approval pending (2026-10-24)"
+ },
+ {
+  "name": "d23-lina-planner",
+  "type": "opener",
+  "character": "lina",
+  "style": "semi",
+  "seconds": 7.1,
+  "source": "library/work/joined/d23.mp4",
+  "action": "at her desk at home Lina gives a small thumbs-up, back to her planner (forward + reverse) + idle",
+  "used_in": [
+   "023-days-of-the-week"
+  ],
+  "approved": false,
+  "note": "owner approval pending (2026-10-24)"
  }
 ]
