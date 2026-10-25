@@ -131,7 +131,8 @@ animation-library skill.
 
 Our retention lost 35–50 % at 7–18 s on every Day (the channel intro), and the warm-up recall talked to returning
 viewers right where new ones were leaving. So:
-1. **Short intro:** scene 2 = the owner's hello clip + **one** short line ("Day 16 — let's go."). The
+1. **Short intro:** scene 2 = the owner's hello clip + **one** short line, and **no card** (owner 2026-10-25: the white
+   "2 Minute Arabic · Day N" card only repeated the yellow badge — leave out the 🔤 line in scene 2) ("Day 16 — let's go."). The
    "I'm your teacher… my promise is simple…" line is only for Day 1 and the Parts.
 2. **Quests, visible:** the hook names the quests ("3 new words, 1 game and a twist"); cards show progress
    ("Word 2/3", "Round 1/2"); something pays off every 20–30 s (a new word, a game answer, a story beat).
@@ -145,8 +146,10 @@ that owns port 8188). Two `make_audio.py` runs at once also clash on `audio/.cac
 Never edit a shell script while it is running (bash reads it as it goes) — write a new queue file instead.
 
 **Progress stars (owner, 2026-10-17 — from Day 21 on):** three grey stars above the badge; each turns gold with a
-pop + soft chime (`assets/stars/`) at the end of a milestone scene. **The first star comes early — at the first win, within ~35 s (owner 2026-10-25: motivates viewers to stay)**; then one star per
-remaining part, snapped to a REAL
+pop + soft chime (`assets/stars/`) at the end of a milestone scene. **Star placement (owner 2026-10-25):** star 1 early — at the first win, within ~35 s (keeps viewers from leaving); star 2 at
+the MIDDLE of the video, right after an answer the viewer is waiting for (e.g. Sami's "shukran. bikam haadhaa?");
+star 3 right after the very last answer / bonus word — split the scene if a reply follows (the waiter's "tikram" gets
+its own scene AFTER the star). Each star snapped to a REAL
 milestone (new words learned · story/game/conversation done · "Your turn" done) — never on a timer. In
 `images/<video>/prompts.json` add `{"stars": [s1, s2, s3]}` (scene numbers); assemble.py does the rest. Not for the
 talking/trailer videos (no milestones). Check `contact.png` and listen: the chime never covers a word.
@@ -170,8 +173,8 @@ before, or comes with its meaning in the same line.
 **"Your turn" stays (2026-10-25):** retrieval practice — answering before hearing the answer — is the strongest
 memory booster we have, and our retention data shows no drop at the 2-s recall pauses (Day 15 holds ~40 % to the end).
 Keep 1–2 short items, pauses ≤ 2 s, framed as a game the viewer wins.
-**Openers:** the v3 shape in the animation-library skill (3 s action + alive end pose, person centred, scene-1
-`shift` ≤ 0.05).
+**Openers:** the v4 shape in the animation-library skill (3-s action ending on a high-quality still, 3D faces,
+person centred, no fades, no idle).
 
 ## 1. Script — `videos/NNN-<slug>.md`
 

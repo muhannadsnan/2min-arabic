@@ -279,8 +279,11 @@ def main():
                      "-update", "1", "-frames:v", "1", str(image)])
                 if o.get("shift"):   # match the shifted opener exactly, so the hand-over is seamless
                     image = shifted(image, o["shift"], seg_dir / f"s{i:02d}-lastframe-shifted.png")
+            elif image.exists() and o.get("shift"):   # the scene's own still (opener v4) moves down exactly like the clip
+                image = shifted(image, o["shift"], seg_dir / f"s{i:02d}-shifted.png")
             if image.exists() and rest > FPS // 2:
-                rest_chain = (f"[1:v]{fit}[b]" if style3d else
+                # opener v4 (hold 0): the still IS the clip's last frame, sharper — no zoom, or the hand-over jumps
+                rest_chain = (f"[1:v]{fit}[b]" if (style3d or float(o.get("hold", 1.0)) == 0) else
                               f"[1:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
                               f"zoompan=z='1+0.05*on/{rest}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={rest}:s={W}x{H}:fps={FPS},"
                               f"setsar=1[b]")

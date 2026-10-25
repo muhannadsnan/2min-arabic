@@ -27,7 +27,6 @@ Someone answers you in fast Arabic, and you are lost after two words. Three shor
 ### 🎬 Scene 2 — Channel intro (short)
 
 🖼️ **Image:** the desk with the stopwatch
-🔤 **On screen:** 2 Minute Arabic · Day 22
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator

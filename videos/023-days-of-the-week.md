@@ -27,7 +27,6 @@ In Arabic, most days of the week are secretly numbers, so if you know how to cou
 ### 🎬 Scene 2 — Channel intro (short)
 
 🖼️ **Image:** the desk with the stopwatch
-🔤 **On screen:** 2 Minute Arabic · Day 23
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator

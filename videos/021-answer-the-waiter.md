@@ -27,7 +27,6 @@ A waiter in Damascus is about to ask you five questions, so answer all five in A
 ### 🎬 Scene 2 — Channel intro (short)
 
 🖼️ **Image:** the desk with the stopwatch
-🔤 **On screen:** 2 Minute Arabic · Day 21
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
@@ -136,11 +135,17 @@ Here you go, he says, and puts the tea down. Thank him, and ask how much it is.
 ```say:sami
 شُكْرًا. بِكَمْ هَذَا؟
 ```
+
+### 🎬 Scene 12 — The price
+
+🖼️ **Image:** same as scene 10
+🔤 **On screen:** خَمْسَةْ · *khamsa* · Five.
+
 ```say:teacher
 خَمْسَةْ
 ```
 
-### 🎬 Scene 12 — Question 5
+### 🎬 Scene 13 — Question 5
 
 🖼️ **Image:** Day 16's Sami handing coins to the waiter
 🔤 **On screen:** Question 5/5 · Say: Here you go.
@@ -150,7 +155,7 @@ Five, he says. Last question: you hand him the money, so what do you say as you 
 ```
 ⏸️ **Pause 2s**
 
-### 🎬 Scene 13 — Answer 5
+### 🎬 Scene 14 — Answer 5
 
 🖼️ **Image:** same as scene 12
 🔤 **On screen:** تَفَضَّلْ · *tafaDDal* · Here you go.
@@ -162,7 +167,7 @@ Five, he says. Last question: you hand him the money, so what do you say as you 
 It is the same word that the waiter used, and now it is yours as well.
 ```
 
-### 🎬 Scene 14 — Bonus: the Syrian waiter
+### 🎬 Scene 15 — Bonus: the Syrian waiter
 
 🖼️ **Image:** same as scene 4
 🔤 **On screen:** شُو بِدَّكْ؟ · *shu biddak?* · Bonus — What would you like? (Syrian)
@@ -178,19 +183,25 @@ You learned the Syrian answer in the extra video about biddi. Try it before Sami
 ```
 ⏸️ **Pause 2s**
 
-### 🎬 Scene 15 — Bonus answer
+### 🎬 Scene 16 — Bonus answer
 
 🖼️ **Image:** same as scene 4
-🔤 **On screen:** بِدِّي شَايْ، الله يْخَلِّيكْ · *biddi shaay, allaah ykhalliik* · I'd like tea, please. (Waiter: tikram! = with pleasure!)
+🔤 **On screen:** بِدِّي شَايْ، الله يْخَلِّيكْ · *biddi shaay, allaah ykhalliik* · I'd like tea, please.
 
 ```say:sami
 بِدِّي شَايْ، الله يْخَلِّيكْ.
 ```
+
+### 🎬 Scene 17 — With pleasure
+
+🖼️ **Image:** same as scene 4
+🔤 **On screen:** تِكْرَمْ! · *tikram!* · With pleasure!
+
 ```say:teacher
 تِكْرَمْ!
 ```
 
-### 🎬 Scene 16 — Score
+### 🎬 Scene 18 — Score
 
 🖼️ **Image:** Sami at the café table lifting his glass of tea, smiling (Day 20)
 🔤 **On screen:** How many did you get? · 5/5 = ready for a real café
@@ -202,7 +213,7 @@ So, how many did you get? Five out of five means you could order in Damascus tod
 Send this video to the friend you would like to drink tea with one day in Damascus.
 ```
 
-### 🎬 Scene 17 — Outro
+### 🎬 Scene 19 — Outro
 
 🖼️ **Image:** the desk with the stopwatch and confetti
 🔤 **On screen:** Day 21 · 1.01²¹ = 1.23 · tomorrow: when Arabic is too fast
