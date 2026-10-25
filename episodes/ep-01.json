@@ -746,8 +746,8 @@
     },
     {
      "title": "Challenge 4",
-     "image": "010-numbers-1-to-10/s12.png",
-     "shift": 0,
+     "image": "x04-arabic-digits/s09.png",
+     "shift": 0.06,
      "card": "Question 4/8 · eight",
      "say": [
       [
@@ -759,8 +759,8 @@
     },
     {
      "title": "Challenge answer 4",
-     "image": "010-numbers-1-to-10/s12.png",
-     "shift": 0,
+     "image": "x04-arabic-digits/s09.png",
+     "shift": 0.06,
      "card": "ثَمَانِيَةْ · *thamaaniya* · eight",
      "say": [
       [

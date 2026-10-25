@@ -56,15 +56,17 @@ def panel_image(part, segments, idx, out):
     d.text((70, 190), part["title"], font=ImageFont.truetype(str(BOLD), 46), fill=TEAL)
     d.text((70, 250), part["subtitle"], font=ImageFont.truetype(str(REG), 30), fill=CHAR)
     y = 340
+    row = min(70, (H - 370) // max(len(segments), 1))   # the monthly Episode has ~19 chapters: shrink to fit
+    fs = 34 if row >= 70 else max(20, int(row * 0.66))
     for k, seg in enumerate(segments):
         cur = k == idx
         if cur:
-            d.rounded_rectangle((55, y - 10, PANEL - 55, y + 52), radius=26, fill=TEAL)
-        f = fit(d, seg["title"], BOLD if cur else REG, 34, PANEL - 170)
+            d.rounded_rectangle((55, y - row * 0.14, PANEL - 55, y + row * 0.74), radius=int(row * 0.37), fill=TEAL)
+        f = fit(d, seg["title"], BOLD if cur else REG, fs, PANEL - 170)
         if cur:   # drawn triangle (the fonts have no ▶ glyph)
-            d.polygon([(78, y + 10), (78, y + 34), (98, y + 22)], fill=(255, 255, 255))
+            d.polygon([(78, y + row * 0.14), (78, y + row * 0.49), (98, y + row * 0.31)], fill=(255, 255, 255))
         d.text((112, y), seg["title"], font=f, fill=(255, 255, 255) if cur else CHAR)
-        y += 70
+        y += row
     # right panel: words of this segment
     x0 = PANEL + VW
     d.rectangle((x0, 0, W, H), fill=(246, 232, 214))

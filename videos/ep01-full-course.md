@@ -3657,7 +3657,7 @@ How do you say: my mother?
 
 ### 🎬 Scene 326 — Challenge 4
 
-🖼️ **Image:** 010-numbers-1-to-10/s12.png
+🖼️ **Image:** x04-arabic-digits/s09.png
 🔤 **On screen:** Question 4/8 · eight
 
 ```say:narrator
@@ -3667,7 +3667,7 @@ Now a number. How do you say eight?
 
 ### 🎬 Scene 327 — Challenge answer 4
 
-🖼️ **Image:** 010-numbers-1-to-10/s12.png
+🖼️ **Image:** x04-arabic-digits/s09.png
 🔤 **On screen:** ثَمَانِيَةْ · *thamaaniya* · eight
 
 ```say:teacher

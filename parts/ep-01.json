@@ -1,0 +1,727 @@
+{
+ "name": "ep01-full-course-16x9",
+ "title": "Episode 1",
+ "subtitle": "Learn Arabic from zero · full course",
+ "segments": [
+  {
+   "title": "What you'll learn",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 0.0,
+   "end": 9.246,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "panel_title": "In this episode",
+   "panel_text": [
+    "Learn Arabic from zero:",
+    "greetings, introductions,",
+    "numbers, family, the café,",
+    "questions, directions",
+    "and your first verbs.",
+    "",
+    "All Arabic is spoken",
+    "by native speakers."
+   ]
+  },
+  {
+   "title": "Hello and your first words",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 9.246,
+   "end": 193.113,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "السَّلَامُ عَلَيْكُمْ",
+     "as-salaamu 'alaykum",
+     "Peace be upon you (= hello)"
+    ],
+    [
+     "وَعَلَيْكُمُ السَّلَامْ",
+     "wa 'alaykumu s-salaam",
+     "And upon you, peace (the reply)"
+    ],
+    [
+     "كَيْفَ حَالُكْ؟",
+     "kayfa haaluk?",
+     "How are you?"
+    ],
+    [
+     "بِخَيْرْ، الْحَمْدُ لِلَّهْ",
+     "bikhayr, al-hamdu lillaah",
+     "Fine, thank God"
+    ],
+    [
+     "شُكْرًا",
+     "shukran",
+     "Thank you"
+    ],
+    [
+     "عَفْوًا",
+     "'afwan",
+     "You're welcome"
+    ]
+   ]
+  },
+  {
+   "title": "Your first conversation",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 193.113,
+   "end": 300.813,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "السَّلَامُ عَلَيْكُمْ",
+     "as-salaamu 'alaykum",
+     "Lina: Peace be upon you."
+    ],
+    [
+     "وَعَلَيْكُمُ السَّلَامْ",
+     "wa 'alaykumu s-salaam",
+     "Sami: And upon you, peace."
+    ],
+    [
+     "أَنَا لِينَا. مَا اسْمُكْ؟",
+     "ana Liinaa. maa smuk?",
+     "Lina: I'm Lina. What's your name?"
+    ],
+    [
+     "اسْمِي سَامِي. تَشَرَّفْنَا",
+     "ismii Saamii. tasharrafnaa",
+     "Sami: My name is Sami. Nice to mee"
+    ],
+    [
+     "أَعْمَلُ فِي الْمَكْتَبَةْ",
+     "a'malu fi l-maktaba",
+     "Lina: I work at the bookshop."
+    ],
+    [
+     "مَعَ السَّلَامَةْ",
+     "ma'a s-salaama",
+     "Sami: Goodbye."
+    ]
+   ]
+  },
+  {
+   "title": "No word for \"is\"",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 300.813,
+   "end": 359.284,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "أَنَا طَالِبْ",
+     "ana taalib",
+     "I student = I am a student"
+    ],
+    [
+     "أَنَا",
+     "ana",
+     "I"
+    ],
+    [
+     "أَنْتَ",
+     "anta",
+     "you (to a man)"
+    ],
+    [
+     "أَنْتِ",
+     "anti",
+     "you (to a woman)"
+    ],
+    [
+     "هُوَ",
+     "huwa",
+     "he"
+    ],
+    [
+     "هِيَ",
+     "hiya",
+     "she"
+    ]
+   ]
+  },
+  {
+   "title": "Yes, no, sorry, okay",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 359.284,
+   "end": 426.242,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "نَعَمْ",
+     "na'am",
+     "yes"
+    ],
+    [
+     "لَا",
+     "laa",
+     "no"
+    ],
+    [
+     "هَلْ تُرِيدُ قَهْوَةْ؟",
+     "hal turiidu qahwa?",
+     "Do you want coffee?"
+    ],
+    [
+     "نَعَمْ، مِنْ فَضْلِكْ",
+     "na'am, min faDlik",
+     "Yes, please."
+    ],
+    [
+     "لَا، شُكْرًا",
+     "laa, shukran",
+     "No, thank you."
+    ],
+    [
+     "آسِفْ",
+     "aasif",
+     "Sorry. (man)"
+    ]
+   ]
+  },
+  {
+   "title": "Introduce yourself",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 426.242,
+   "end": 555.02,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "مِنْ أَيْنَ أَنْتَ؟",
+     "min ayna anta?",
+     "Where are you from? (to a man)"
+    ],
+    [
+     "مِنْ أَيْنَ أَنْتِ؟",
+     "min ayna anti?",
+     "Where are you from? (to a woman)"
+    ],
+    [
+     "أَنَا مِنْ",
+     "ana min",
+     "I am from + your country"
+    ],
+    [
+     "أَنَا مِنْ لُبْنَانْ",
+     "ana min Lubnaan",
+     "I'm from Lebanon."
+    ],
+    [
+     "أَمْرِيكَا",
+     "Amriikaa",
+     "America"
+    ],
+    [
+     "بَرِيطَانِيَا",
+     "BariiTaaniyaa",
+     "Britain"
+    ]
+   ]
+  },
+  {
+   "title": "Man or woman: one letter",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 555.02,
+   "end": 630.096,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "ة",
+     "-a",
+     "the \"woman\" ending: a soft a"
+    ],
+    [
+     "طَالِبْ، طَالِبَةْ",
+     "taalib, taaliba",
+     "student: man, woman"
+    ],
+    [
+     "مُعَلِّمْ، مُعَلِّمَةْ",
+     "mu'allim, mu'allima",
+     "teacher: man, woman"
+    ],
+    [
+     "صَدِيقْ، صَدِيقَةْ",
+     "Sadiiq, Sadiiqa",
+     "friend: man, woman"
+    ],
+    [
+     "سَعِيدَةْ، آسِفَةْ",
+     "sa'iida, aasifa",
+     "happy, sorry (said by a woman)"
+    ],
+    [
+     "لِينَا طَالِبَةْ",
+     "Liinaa taaliba",
+     "Lina is a student."
+    ]
+   ]
+  },
+  {
+   "title": "Numbers 1 to 20",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 630.096,
+   "end": 781.387,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "وَاحِدْ",
+     "waaHid",
+     "1"
+    ],
+    [
+     "اِثْنَانْ",
+     "ithnaan",
+     "2"
+    ],
+    [
+     "ثَلَاثَةْ",
+     "thalaatha",
+     "3"
+    ],
+    [
+     "أَرْبَعَةْ",
+     "arba'a",
+     "4"
+    ],
+    [
+     "خَمْسَةْ",
+     "khamsa",
+     "5"
+    ],
+    [
+     "سِتَّةْ",
+     "sitta",
+     "6"
+    ]
+   ]
+  },
+  {
+   "title": "Meeting someone in the street",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 781.387,
+   "end": 852.246,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "أَهْلًا وَسَهْلًا",
+     "ahlan wa sahlan",
+     "Welcome!"
+    ],
+    [
+     "سَائِحْ",
+     "saa'iH",
+     "a tourist"
+    ],
+    [
+     "دِمَشْقُ جَمِيلَةْ",
+     "dimashqu jamiila",
+     "Damascus is beautiful."
+    ],
+    [
+     "عَفْوًا، مَرْحَبًا!",
+     "'afwan, marhaban!",
+     "Excuse me, hello!"
+    ],
+    [
+     "أَهْلًا وَسَهْلًا!",
+     "ahlan wa sahlan!",
+     "Welcome!"
+    ],
+    [
+     "تَشَرَّفْنَا. اسْمِي تُومْ.",
+     "tasharrafnaa. ismii Tom.",
+     "Nice to meet you. My name is Tom."
+    ]
+   ]
+  },
+  {
+   "title": "My and your",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 852.246,
+   "end": 929.435,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "ـِي",
+     "-ii",
+     "my"
+    ],
+    [
+     "اسْمْ، اسْمِي",
+     "ism, ismii",
+     "name, my name"
+    ],
+    [
+     "كِتَابْ، كِتَابِي",
+     "kitaab, kitaabii",
+     "a book, my book"
+    ],
+    [
+     "بَيْتْ، بَيْتِي",
+     "bayt, baytii",
+     "a house, my house"
+    ],
+    [
+     "قَهْوَةْ، قَهْوَتِي",
+     "qahwa, qahwatii",
+     "coffee, my coffee"
+    ],
+    [
+     "اسْمُكَ",
+     "ismuka",
+     "your name (to a man)"
+    ]
+   ]
+  },
+  {
+   "title": "Family",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 929.435,
+   "end": 981.046,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "هَذَا، هَذِهِ",
+     "haadhaa, haadhihi",
+     "this (a man), this (a woman)"
+    ],
+    [
+     "هَذِهِ عَائِلَتِي.",
+     "haadhihi 'aa'ilatii.",
+     "This is my family."
+    ],
+    [
+     "هَذَا أَبِي.",
+     "haadhaa abii.",
+     "This is my father."
+    ],
+    [
+     "هَذَا أَخِي. هُوَ طَالِبْ.",
+     "haadhaa akhii. huwa Taalib.",
+     "This is my brother. He is a studen"
+    ],
+    [
+     "وَهَذَا؟",
+     "wa haadhaa?",
+     "And this one?"
+    ],
+    [
+     "هَذَا قِطِّي!",
+     "haadhaa qiTTii!",
+     "This is my cat!"
+    ]
+   ]
+  },
+  {
+   "title": "At the café",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 981.046,
+   "end": 1239.829,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "قَهْوَةْ",
+     "qahwa",
+     "coffee"
+    ],
+    [
+     "شَايْ",
+     "shaay",
+     "tea"
+    ],
+    [
+     "مَاءْ",
+     "maa'",
+     "water"
+    ],
+    [
+     "حَلِيبْ",
+     "Haliib",
+     "milk"
+    ],
+    [
+     "سُكَّرْ",
+     "sukkar",
+     "sugar"
+    ],
+    [
+     "فِنْجَانْ",
+     "finjaan",
+     "a coffee cup"
+    ]
+   ]
+  },
+  {
+   "title": "\"The\": sun and moon letters",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 1239.829,
+   "end": 1322.704,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "الْ",
+     "al-",
+     "the"
+    ],
+    [
+     "الْقَهْوَةْ",
+     "al-qahwa",
+     "the coffee"
+    ],
+    [
+     "الْكِتَابْ، الْبَيْتْ",
+     "al-kitaab, al-bayt",
+     "the book, the house"
+    ],
+    [
+     "الشَّايْ",
+     "ash-shaay",
+     "the tea"
+    ],
+    [
+     "السُّكَّرْ",
+     "as-sukkar",
+     "the sugar"
+    ],
+    [
+     "النَّادِلْ",
+     "an-naadil",
+     "the waiter"
+    ]
+   ]
+  },
+  {
+   "title": "Asking questions",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 1322.704,
+   "end": 1372.733,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "مَا",
+     "maa",
+     "what?"
+    ],
+    [
+     "مَا هَذَا؟",
+     "maa haadhaa?",
+     "What is this?"
+    ],
+    [
+     "كِتَابِي",
+     "kitaabii",
+     "My book."
+    ],
+    [
+     "مَنْ",
+     "man",
+     "who?"
+    ],
+    [
+     "مَنْ هَذِهِ؟",
+     "man haadhihi?",
+     "Who is this?"
+    ],
+    [
+     "هَذِهِ أُخْتِي",
+     "haadhihi ukhtii",
+     "This is my sister."
+    ]
+   ]
+  },
+  {
+   "title": "Finding your way",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 1372.733,
+   "end": 1438.755,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "يَمِينْ",
+     "yamiin",
+     "right"
+    ],
+    [
+     "يَسَارْ",
+     "yasaar",
+     "left"
+    ],
+    [
+     "ثُمَّ",
+     "thumma",
+     "then"
+    ],
+    [
+     "هُنَا",
+     "hunaa",
+     "here"
+    ],
+    [
+     "هُنَاكْ",
+     "hunaak",
+     "there"
+    ],
+    [
+     "أَيْنَ الْمَقْهَى؟",
+     "ayna l-maqhaa?",
+     "Where is the café?"
+    ]
+   ]
+  },
+  {
+   "title": "I drink, I eat, I go",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 1438.755,
+   "end": 1501.813,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "أَشْرَبُ",
+     "ashrabu",
+     "I drink"
+    ],
+    [
+     "أَشْرَبُ الشَّايْ",
+     "ashrabu sh-shaay",
+     "I drink tea."
+    ],
+    [
+     "آكُلُ",
+     "aakulu",
+     "I eat"
+    ],
+    [
+     "أَذْهَبُ",
+     "adh-habu",
+     "I go"
+    ],
+    [
+     "أَذْهَبُ إِلَى الْمَقْهَى",
+     "adh-habu ilaa l-maqhaa",
+     "I go to the café."
+    ],
+    [
+     "أُحِبُّ",
+     "uHibbu",
+     "I love / I like"
+    ]
+   ]
+  },
+  {
+   "title": "Your body in Arabic",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 1501.813,
+   "end": 1540.371,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "رَأْسْ",
+     "ra's",
+     "head"
+    ],
+    [
+     "شَعْرْ",
+     "sha'r",
+     "hair"
+    ],
+    [
+     "عَيْنْ",
+     "'ayn",
+     "eye"
+    ],
+    [
+     "أُذُنْ",
+     "udhun",
+     "ear"
+    ],
+    [
+     "أَنْفْ",
+     "anf",
+     "nose"
+    ],
+    [
+     "فَمْ",
+     "fam",
+     "mouth"
+    ]
+   ]
+  },
+  {
+   "title": "The big conversation",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 1540.371,
+   "end": 1627.173,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "السَّلَامُ عَلَيْكُمْ.",
+     "as-salaamu 'alaykum.",
+     "Peace be upon you."
+    ],
+    [
+     "وَعَلَيْكُمُ السَّلَامْ.",
+     "wa 'alaykumu s-salaam.",
+     "And peace be upon you."
+    ],
+    [
+     "أَنَا لِينَا. مَا اسْمُكْ؟",
+     "ana Liinaa. maa smuk?",
+     "I'm Lina. What's your name?"
+    ],
+    [
+     "اسْمِي سَامِي. تَشَرَّفْنَا.",
+     "ismii Saamii. tasharrafnaa.",
+     "My name is Sami. Nice to meet you."
+    ],
+    [
+     "أَنَا مِنْ لُبْنَانْ.",
+     "ana min lubnaan.",
+     "I'm from Lebanon."
+    ],
+    [
+     "هَذِهِ عَائِلَتِي.",
+     "haadhihi 'aa'ilatii.",
+     "This is my family."
+    ]
+   ]
+  },
+  {
+   "title": "Final challenge",
+   "file": "output/ep01-full-course/ep01-full-course.mp4",
+   "start": 1627.173,
+   "end": null,
+   "srt": "output/ep01-full-course/captions-upload.srt",
+   "words": [
+    [
+     "اسْمِي سَامِي",
+     "ismii Saamii",
+     "My name is Sami"
+    ],
+    [
+     "أُمِّي",
+     "ummii",
+     "my mother"
+    ],
+    [
+     "ثَمَانِيَةْ",
+     "thamaaniya",
+     "eight"
+    ],
+    [
+     "أَيْنَ الْمَقْهَى؟",
+     "ayna l-maqhaa?",
+     "Where is the café?"
+    ],
+    [
+     "أُحِبُّ الْقَهْوَةْ.",
+     "uHibbu l-qahwa.",
+     "I love coffee."
+    ],
+    [
+     "دِمَشْقُ جَمِيلَةْ.",
+     "dimashqu jamiila.",
+     "Damascus is beautiful."
+    ]
+   ]
+  }
+ ]
+}
