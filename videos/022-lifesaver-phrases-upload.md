@@ -1,7 +1,7 @@
 # Day 22 · Upload sheet
 
-**File to upload:** `output/022-lifesaver-phrases/<built when the recording arrives>.mp4` (vertical → **Short**)
-**Thumbnail:** Upload file → `output/022-lifesaver-phrases/<built with the video>-thumbnail.jpg`
+**File to upload:** `output/022-lifesaver-phrases/arabic-survival-phrases-slower-please-and-repeat.mp4` (vertical → **Short**)
+**Thumbnail:** Upload file → `output/022-lifesaver-phrases/arabic-survival-phrases-slower-please-and-repeat-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
 
@@ -103,4 +103,7 @@ Caption: "Arabic too fast? These 3 sentences save you every time 🛟 Save this.
 
 ## Quality check (Claude)
 
-- (filled in after the recording arrives and the video is built)
+- Arabic = your recording of 25 Oct (+ re-used lines); English = your clone at tempo 0.9; 3 narrator lines reworded (accent drift, a gap) until the audio gate passed ("narrator clips to redo: none").
+- Opener v4 (approved 25 Oct): 3-s action ending on the high-quality 3D still; no white intro card; the video ends on its last win (no "same place, two minutes").
+- Stars at 38 s, 62 s (after "maa'!"), 108 s — first at the first win, second mid-video after an answer, third after the last answer.
+- final_check: length 2:05 ✅, −14 LUFS, peak < −1 dB, 0 overlaps · captions synced (0 weak).

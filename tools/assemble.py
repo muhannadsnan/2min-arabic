@@ -461,7 +461,7 @@ def main():
         achain += f";{''.join(mix)}amix=inputs={len(mix)}:normalize=0:duration=first[m]"
     else:
         achain += ";[vo]anull[m]"
-    achain += ";[m]alimiter=limit=0.79:level=false,pan=stereo|c0=c0|c1=c0[a]"
+    achain += ";[m]alimiter=limit=0.75:level=false,pan=stereo|c0=c0|c1=c0[a]"
     run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", vchain + ";" + achain,
          "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p",
          "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(final)])

@@ -1,7 +1,7 @@
 # Day 23 · Upload sheet
 
-**File to upload:** `output/023-days-of-the-week/<built when the recording arrives>.mp4` (vertical → **Short**)
-**Thumbnail:** Upload file → `output/023-days-of-the-week/<built with the video>-thumbnail.jpg`
+**File to upload:** `output/023-days-of-the-week/days-of-the-week-in-arabic-they-re-just-numbers.mp4` (vertical → **Short**)
+**Thumbnail:** Upload file → `output/023-days-of-the-week/days-of-the-week-in-arabic-they-re-just-numbers-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
 
@@ -109,4 +109,7 @@ Caption: "Arabic days of the week are secretly numbers 🤯 Save this list." —
 
 ## Quality check (Claude)
 
-- (filled in after the recording arrives and the video is built)
+- Arabic = your recording of 25 Oct (+ re-used lines); English = your clone at tempo 0.9; 3 narrator lines reworded (a gap, accent drift, rushed); limiter set a touch lower (peak −2.3 dB) until the audio gate passed ("narrator clips to redo: none").
+- Opener v4 (approved 25 Oct): 3-s action ending on the high-quality 3D still; no white intro card; the video ends on its last win (no "same place, two minutes").
+- Stars at 23 s, 53 s, 97 s — first at the first win, second mid-video after an answer, third after the last answer.
+- final_check: length 1:54 ✅, −14 LUFS, peak < −1 dB, 0 overlaps · captions synced (0 weak).

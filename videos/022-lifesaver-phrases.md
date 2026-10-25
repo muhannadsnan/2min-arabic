@@ -39,7 +39,7 @@ Day 22, and today you learn how to survive a real conversation.
 🔤 **On screen:** A real waiter, at real speed
 
 ```say:narrator
-Listen to how fast a real waiter in Damascus speaks.
+Now listen carefully, because this is how fast a real waiter in Damascus speaks.
 ```
 ```say:teacher
 أَهْلًا وَسَهْلًا! شُو بِدَّكْ الْيَوْمْ؟ قَهْوِة؟ شَاي؟ عَصِير؟
@@ -154,7 +154,7 @@ Now it's your turn. Someone talks far too fast for you, so how do you ask them t
 🔤 **On screen:** Your turn · I don't understand.
 
 ```say:narrator
-And one from Day 2, the sentence that comes right before it. How do you say, I don't understand?
+And one more from your very first phrases, the sentence you say just before it: how do you say I don't understand?
 ```
 ⏸️ **Pause 2s**
 
@@ -173,7 +173,7 @@ And one from Day 2, the sentence that comes right before it. How do you say, I d
 🔤 **On screen:** Day 22 · 1.01²² = 1.24 · next: the days of the week
 
 ```say:narrator
-Send this to the friend who always talks too fast.
+Send this video to the friend who always talks a little too fast.
 ```
 ```say:narrator
 In the next lesson, the days of the week, and they are easier than you think.

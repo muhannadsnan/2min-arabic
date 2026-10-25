@@ -148,7 +148,7 @@ Quick game. Wednesday is day four, so which day comes after it? Say it before I 
 🔤 **On screen:** الْيَوْمْ الْأَحَدْ · *al-yawm al-aHad* · Today is Sunday.
 
 ```say:narrator
-Now two real sentences: today is Sunday.
+Now here are two real sentences, and the first one means today is Sunday.
 ```
 ```say:teacher
 الْيَوْمْ الْأَحَدْ.
@@ -160,7 +160,7 @@ Now two real sentences: today is Sunday.
 🔤 **On screen:** غَدًا الْجُمُعَةْ · *ghadan al-jumu'a* · Tomorrow is Friday.
 
 ```say:narrator
-And ghadan means the day after today, so this one says: it's Friday then.
+The word ghadan means tomorrow, so this sentence says that tomorrow is Friday.
 ```
 ```say:teacher
 غَدًا الْجُمُعَةْ.
@@ -191,7 +191,7 @@ Now it's your turn, with a time word from Day 18. How do you say now?
 🔤 **On screen:** Day 23 · 1.01²³ = 1.26 · next: Sami makes a plan with Lina
 
 ```say:narrator
-Send this to a friend and tell them which day you'll meet.
+Send this video to a friend, and tell them which day you would like to meet.
 ```
 ```say:narrator
 In the next lesson, Sami makes a plan with Lina, and you'll need today's words.

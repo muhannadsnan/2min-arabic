@@ -583,42 +583,45 @@
   "used_in": []
  },
  {
-  "name": "d21-waiter-looks-up",
+  "name": "d21-waiter-v4",
   "type": "opener",
   "character": "waiter",
-  "style": "semi",
-  "version": "v3 (3 s action + alive end pose)",
-  "seconds": 6.83,
-  "action": "looks up from his notepad at the camera, warm smile",
+  "style": "3d",
+  "version": "v4 (3-s action → HQ still)",
+  "seconds": 3.06,
+  "action": "looks up from his notepad to the camera",
   "used_in": [
    "021-answer-the-waiter"
   ],
-  "approved": false
+  "approved": true,
+  "note": "approved by the owner 2026-10-25"
  },
  {
-  "name": "d22-sami-too-fast",
+  "name": "d22-sami-v4",
   "type": "opener",
   "character": "sami",
-  "style": "semi",
-  "version": "v3 (3 s action + alive end pose)",
-  "seconds": 6.83,
-  "action": "turns his head from the side to the camera, puzzled, then a polite smile",
+  "style": "3d",
+  "version": "v4 (3-s action → HQ still)",
+  "seconds": 3.06,
+  "action": "turns his head from the side to the camera",
   "used_in": [
    "022-lifesaver-phrases"
   ],
-  "approved": false
+  "approved": true,
+  "note": "approved by the owner 2026-10-25"
  },
  {
-  "name": "d23-lina-looks-up",
+  "name": "d23-lina-v4",
   "type": "opener",
   "character": "lina",
-  "style": "semi",
-  "version": "v3 (3 s action + alive end pose)",
-  "seconds": 6.83,
-  "action": "looks up from her planner to the camera, warm smile",
+  "style": "3d",
+  "version": "v4 (3-s action → HQ still)",
+  "seconds": 3.06,
+  "action": "looks up from her planner to the camera",
   "used_in": [
    "023-days-of-the-week"
   ],
-  "approved": false
+  "approved": true,
+  "note": "approved by the owner 2026-10-25"
  }
 ]
