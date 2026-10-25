@@ -53,6 +53,23 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
 `assemble.py`). **Rotation:** for a new video pick the unit of the right character with the fewest / oldest
 `used_in`; never the same opener on two videos in a row. Target 6–10 openers, extend over time.
 
+## Openers v3 — 3 s action + alive end pose (owner, 2026-10-25 — replaces the older opener shapes below)
+
+1. **Framing:** the person is **centred** horizontally and the head sits at ~25–35 % of the frame height (waist-up),
+   so the scene-1 card never needs a big `shift` — use `"shift"` ≤ 0.05 on scene 1. Crop the keyframe on the person's
+   centre (check the crop at full size before animating). Owner 2026-10-25: "the scene is shifted right and down —
+   centralise it so the person shows up well".
+2. **Faces stay the character's established face:** keyframes take TWO refs — `assets/characters/<name>-semi.png` +
+   an approved earlier opener frame of that character (Lina: `library/work/keys/w4/d18-lina-home_close.png`).
+3. **The action (~3 s):** one clear, readable movement that ends in a natural pose — looking up to the camera,
+   eyes turning from away to the camera, turning the head, a hand/arm gesture, opening the arms, a welcoming gesture.
+   Prefer head/eye actions (robust); hands only when the lesson needs them. Objects the person holds must stay the
+   same (Day 21: the pen changed colour between frames → prompt "the same single dark pen", or avoid moving it).
+   Generate 49 frames, stretched to ~3 s (join speed 0.667).
+4. **The alive end pose (~2 s+):** an idle clip animated FROM THE ACTION'S LAST FRAME — blinking, breathing, a tiny
+   sway/float too small to notice; never a frozen frame. Join: `tools/animate/join_idle.sh action.mp4 idle.mp4 out.mp4 0.667`.
+5. Two seeds per action; check first/middle/last frame at full size (eyes, hands, held objects, centring).
+
 ## Making a unit
 
 1. **Keyframe (3D still)** — `python3 tools/images/generate.py "<prompt>" out.png --style 3d --ref assets/characters/<name>-3d.png`

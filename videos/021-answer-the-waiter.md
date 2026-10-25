@@ -211,9 +211,6 @@ Send this video to the friend you would like to drink tea with one day in Damasc
 In the next lesson, you will learn three sentences that save you when someone speaks Arabic too fast.
 ```
 ```say:narrator
-That's your two minutes for today. Come back tomorrow — same place, two minutes.
-```
-```say:narrator
 Subscribe so you don't break your streak.
 ```
 🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)

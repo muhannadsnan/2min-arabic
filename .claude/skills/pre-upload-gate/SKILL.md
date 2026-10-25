@@ -101,3 +101,5 @@ sergebulaev/youtube-skills (yt-title-optimizer, yt-thumbnail-brief, yt-hook-scri
 (shorts, metadata, hook) — all MIT.
 
 **Stranger check (learning/notes/2026-10-24-danny-why…):** read the script as someone who has never seen the channel — every Arabic word the narrator says must already have been shown on a card (or come with its meaning in the same line). A word used before it's taught = FIX.
+
+**Peak-end check (owner 2026-10-25):** the last 15 s start right after the video's last win (no routine "that's your two minutes" line); the opener shows the person centred (head not covered by the card, not pushed to a corner).

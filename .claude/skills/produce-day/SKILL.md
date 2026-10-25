@@ -159,6 +159,19 @@ talking/trailer videos (no milestones). Check `contact.png` and listen: the chim
   say it to" · "Tag someone who can't answer this" · "Say this to your Arab friend and watch their face". (Baseline:
   8 shares in total by 14 Oct — channel-review compares.)
 
+
+**Ending on the high point (owner 2026-10-25, learning/notes/2026-10-24-danny-why…):** people remember the strongest
+moment and the last one. The video ends: last win ("Your turn" answer / score / payoff) → share hook → one "next lesson"
+line → "Subscribe so you don't break your streak." → goodbye clip. The line "That's your two minutes for today. Come back
+tomorrow — same place, two minutes." is NOT used any more.
+**Stranger check (same note, also in pre-upload-gate):** every Arabic word the narrator says has been shown on a card
+before, or comes with its meaning in the same line.
+**"Your turn" stays (2026-10-25):** retrieval practice — answering before hearing the answer — is the strongest
+memory booster we have, and our retention data shows no drop at the 2-s recall pauses (Day 15 holds ~40 % to the end).
+Keep 1–2 short items, pauses ≤ 2 s, framed as a game the viewer wins.
+**Openers:** the v3 shape in the animation-library skill (3 s action + alive end pose, person centred, scene-1
+`shift` ≤ 0.05).
+
 ## 1. Script — `videos/NNN-<slug>.md`
 
 Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼️ Image`, `🔤 On screen`,

@@ -198,9 +198,6 @@ Send this to a friend and tell them which day you'll meet.
 In the next lesson, Sami makes a plan with Lina, and you'll need today's words.
 ```
 ```say:narrator
-That's your two minutes for today. Come back tomorrow — same place, two minutes.
-```
-```say:narrator
 Subscribe so you don't break your streak.
 ```
 🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)

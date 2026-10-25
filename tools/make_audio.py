@@ -125,6 +125,9 @@ OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami", "tom"}
 def level(src: pathlib.Path, dst: pathlib.Path, owner=None, match=""):
     """Trim silence at both ends, bring the clip to CLIP_LUFS, keep peaks below -1.5 dB.
     owner=True: the owner's recorded voice — clarity EQ and +2 dB (see OWNER_CLARITY)."""
+    if "_placeholder" in str(src):   # silent stand-in for a line not recorded yet (preview builds): keep it as it is
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-ar", "24000", "-ac", "1", str(dst)], check=True)
+        return
     trimmed = dst.with_suffix(".trim.wav")
     # gentle onset trim (owner, 2026-10-05: "I'm your teacher" sounded cut after the hello clip): -55 dB threshold and
     # 0.12 s kept before the first sound, so soft starts ("I…", "and…") are never clipped

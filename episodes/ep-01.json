@@ -1,0 +1,946 @@
+{
+ "stem": "ep01-full-course",
+ "title": "Episode 1 — Learn Arabic for Beginners: Full Course",
+ "intro": [
+  {
+   "title": "What you'll learn",
+   "image": "ep01-fillers/s02.png",
+   "card": "Learn Arabic for beginners · Episode 1",
+   "line": "In this lesson you'll learn to greet people, introduce yourself, count to twenty, talk about your family, order at a café and find your way, all in Arabic, from zero."
+  }
+ ],
+ "chapters": [
+  {
+   "title": "Hello and your first words",
+   "image": "ep01-fillers/s06.png",
+   "line": "First, hello and the ten phrases you will use every day.",
+   "items": [
+    {
+     "script": "002-10-most-useful-phrases",
+     "scenes": [
+      4,
+      13
+     ]
+    },
+    {
+     "script": "x01-10-ways-to-say-hello",
+     "scenes": [
+      2,
+      11
+     ]
+    },
+    {
+     "script": "x02-10-ways-to-say-goodbye",
+     "scenes": [
+      2,
+      11
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Your first conversation",
+   "image": "ep01-fillers/s01.png",
+   "line": "Now let's put those words into your first real conversation.",
+   "items": [
+    {
+     "script": "003-first-conversation",
+     "scenes": [
+      4,
+      14
+     ]
+    },
+    {
+     "script": "004-story-sami-and-the-coffee",
+     "scenes": [
+      4,
+      12
+     ]
+    }
+   ]
+  },
+  {
+   "title": "No word for \"is\"",
+   "image": "ep01-fillers/s08.png",
+   "line": "Here is one of the nicest surprises in Arabic: there is no word for is.",
+   "items": [
+    {
+     "script": "005-grammar-no-is-in-arabic",
+     "scenes": [
+      4,
+      12
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Yes, no, sorry, okay",
+   "image": "ep01-fillers/s04.png",
+   "line": "Next, the little polite words that make you sound friendly.",
+   "items": [
+    {
+     "script": "006-yes-no-and-polite-words",
+     "scenes": [
+      5,
+      13
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Introduce yourself",
+   "image": "ep01-fillers/s05.png",
+   "line": "Now you can tell people who you are and where you come from.",
+   "items": [
+    {
+     "script": "008-where-are-you-from",
+     "scenes": [
+      5,
+      14
+     ]
+    },
+    {
+     "script": "x03-introduce-yourself-in-arabic",
+     "scenes": [
+      2,
+      13
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Man or woman: one letter",
+   "image": "ep01-fillers/s08.png",
+   "line": "One small letter changes a word from a man to a woman.",
+   "items": [
+    {
+     "script": "009-grammar-one-letter-for-women",
+     "scenes": [
+      5,
+      13
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Numbers 1 to 20",
+   "image": "ep01-fillers/s02.png",
+   "line": "Time to count, and to read the Arabic digits too.",
+   "items": [
+    {
+     "script": "010-numbers-1-to-10",
+     "scenes": [
+      5,
+      19
+     ]
+    },
+    {
+     "script": "x04-arabic-digits",
+     "scenes": [
+      2,
+      11
+     ]
+    },
+    {
+     "script": "x06-arabic-numbers-11-to-20",
+     "scenes": [
+      2,
+      11
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Meeting someone in the street",
+   "image": "ep01-fillers/s06.png",
+   "line": "Now a real street conversation in Damascus.",
+   "items": [
+    {
+     "script": "011-lina-meets-a-tourist",
+     "scenes": [
+      5,
+      16
+     ]
+    }
+   ]
+  },
+  {
+   "title": "My and your",
+   "image": "ep01-fillers/s08.png",
+   "line": "Arabic has no word for my, so let's see what it does instead.",
+   "items": [
+    {
+     "script": "012-grammar-no-word-for-my",
+     "scenes": [
+      5,
+      14
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Family",
+   "image": "ep01-fillers/s03.png",
+   "line": "Next, meet Lina's family, and her cat.",
+   "items": [
+    {
+     "script": "013-story-linas-family",
+     "scenes": [
+      5,
+      14
+     ]
+    }
+   ]
+  },
+  {
+   "title": "At the café",
+   "image": "ep01-fillers/s02.png",
+   "line": "And now the place you will use Arabic first: the café.",
+   "items": [
+    {
+     "script": "v01-cafe-words",
+     "scenes": [
+      2,
+      11
+     ]
+    },
+    {
+     "script": "015-i-want-i-dont-want",
+     "scenes": [
+      5,
+      15
+     ]
+    },
+    {
+     "script": "016-ordering-at-the-cafe",
+     "scenes": [
+      3,
+      15
+     ]
+    },
+    {
+     "script": "x05-syrians-say-biddi",
+     "scenes": [
+      2,
+      10
+     ]
+    }
+   ]
+  },
+  {
+   "title": "\"The\": sun and moon letters",
+   "image": "ep01-fillers/s08.png",
+   "line": "Next, the little word for the, and its sun and moon letters.",
+   "items": [
+    {
+     "script": "017-the-sun-and-moon-letters",
+     "scenes": [
+      3,
+      15
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Asking questions",
+   "image": "ep01-fillers/s01.png",
+   "line": "Now you can ask questions: what, who, where, how many and when.",
+   "items": [
+    {
+     "script": "018-question-words",
+     "scenes": [
+      3,
+      18
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Finding your way",
+   "image": "ep01-fillers/s06.png",
+   "line": "Next, right, left and finding your way in Damascus.",
+   "items": [
+    {
+     "script": "019-story-sami-gets-lost",
+     "scenes": [
+      3,
+      14
+     ]
+    }
+   ]
+  },
+  {
+   "title": "I drink, I eat, I go",
+   "image": "ep01-fillers/s07.png",
+   "line": "Then four everyday verbs, with one secret letter.",
+   "items": [
+    {
+     "script": "020-i-drink-i-eat-i-go",
+     "scenes": [
+      3,
+      14
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Your body in Arabic",
+   "image": "ep01-fillers/s05.png",
+   "line": "And ten words for your body.",
+   "items": [
+    {
+     "script": "v02-body-words",
+     "scenes": [
+      2,
+      11
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The big conversation",
+   "image": "ep01-fillers/s07.png",
+   "line": "Now everything together: one long conversation, all in Arabic, with the English on screen.",
+   "custom": [
+    {
+     "title": "The big conversation",
+     "image": "003-first-conversation/s04.png",
+     "shift": 0,
+     "card": "السَّلَامُ عَلَيْكُمْ. · *as-salaamu 'alaykum.* · Peace be upon you.",
+     "say": [
+      [
+       "narrator",
+       "Sami meets Lina for the first time, and this is the whole story of the month, in Arabic."
+      ],
+      [
+       "lina",
+       "السَّلَامُ عَلَيْكُمْ."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "003-first-conversation/s04.png",
+     "shift": 0,
+     "card": "وَعَلَيْكُمُ السَّلَامْ. · *wa 'alaykumu s-salaam.* · And peace be upon you.",
+     "say": [
+      [
+       "sami",
+       "وَعَلَيْكُمُ السَّلَامْ."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "003-first-conversation/s06.png",
+     "shift": 0,
+     "card": "أَنَا لِينَا. مَا اسْمُكْ؟ · *ana Liinaa. maa smuk?* · I'm Lina. What's your name?",
+     "say": [
+      [
+       "lina",
+       "أَنَا لِينَا. مَا اسْمُكْ؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "003-first-conversation/s06.png",
+     "shift": 0,
+     "card": "اسْمِي سَامِي. تَشَرَّفْنَا. · *ismii Saamii. tasharrafnaa.* · My name is Sami. Nice to meet you.",
+     "say": [
+      [
+       "sami",
+       "اسْمِي سَامِي. تَشَرَّفْنَا."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "003-first-conversation/s08.png",
+     "shift": 0,
+     "card": "تَشَرَّفْنَا. كَيْفَ حَالُكْ؟ · *tasharrafnaa. kayfa Haaluk?* · Nice to meet you. How are you?",
+     "say": [
+      [
+       "lina",
+       "تَشَرَّفْنَا. كَيْفَ حَالُكْ؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "003-first-conversation/s08.png",
+     "shift": 0,
+     "card": "بِخَيْرْ، الْحَمْدُ لِلَّهْ. وَأَنْتِ؟ · *bikhayr, al-Hamdu lillaah. wa-anti?* · Fine, thank God. And you?",
+     "say": [
+      [
+       "sami",
+       "بِخَيْرْ، الْحَمْدُ لِلَّهْ. وَأَنْتِ؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "008-where-are-you-from/s05.png",
+     "shift": 0.18,
+     "card": "مِنْ أَيْنَ أَنْتَ يَا سَامِي؟ · *min ayna anta yaa Saamii?* · Where are you from, Sami?",
+     "say": [
+      [
+       "narrator",
+       "Then she asks where he is from."
+      ],
+      [
+       "lina",
+       "مِنْ أَيْنَ أَنْتَ يَا سَامِي؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "008-where-are-you-from/s05.png",
+     "shift": 0.18,
+     "card": "أَنَا مِنْ سُورِيَا. وَأَنْتِ؟ · *ana min suuriyaa. wa-anti?* · I'm from Syria. And you?",
+     "say": [
+      [
+       "sami",
+       "أَنَا مِنْ سُورِيَا. وَأَنْتِ؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "008-where-are-you-from/s05.png",
+     "shift": 0.18,
+     "card": "أَنَا مِنْ لُبْنَانْ. · *ana min lubnaan.* · I'm from Lebanon.",
+     "say": [
+      [
+       "lina",
+       "أَنَا مِنْ لُبْنَانْ."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "013-story-linas-family/s06.png",
+     "shift": 0.16,
+     "card": "هَذِهِ عَائِلَتِي. · *haadhihi 'aa'ilatii.* · This is my family.",
+     "say": [
+      [
+       "narrator",
+       "Later, Lina shows him a photo of her family."
+      ],
+      [
+       "lina",
+       "هَذِهِ عَائِلَتِي."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "013-story-linas-family/s06.png",
+     "shift": 0.16,
+     "card": "هَذِهِ أُمِّي. أُمِّي مُعَلِّمَةْ. · *haadhihi ummii. ummii mu'allima.* · This is my mother. My mother is a teacher.",
+     "say": [
+      [
+       "lina",
+       "هَذِهِ أُمِّي. أُمِّي مُعَلِّمَةْ."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "013-story-linas-family/s06.png",
+     "shift": 0.16,
+     "card": "هَذَا أَخِي. هُوَ طَالِبْ. · *haadhaa akhii. huwa Taalib.* · This is my brother. He is a student.",
+     "say": [
+      [
+       "lina",
+       "هَذَا أَخِي. هُوَ طَالِبْ."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "013-story-linas-family/s12.png",
+     "shift": 0,
+     "card": "وَهَذَا؟ · *wa-haadhaa?* · And this?",
+     "say": [
+      [
+       "sami",
+       "وَهَذَا؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "013-story-linas-family/s12.png",
+     "shift": 0,
+     "card": "هَذَا قِطِّي! · *haadhaa qiTTii!* · This is my cat!",
+     "say": [
+      [
+       "lina",
+       "هَذَا قِطِّي!"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "013-story-linas-family/s12.png",
+     "shift": 0,
+     "card": "قِطُّكِ جَمِيلْ! · *qiTTuki jamiil!* · Your cat is beautiful!",
+     "say": [
+      [
+       "sami",
+       "قِطُّكِ جَمِيلْ!"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "016-ordering-at-the-cafe/s08.png",
+     "shift": 0.14,
+     "card": "أُرِيدُ قَهْوَةْ مَعَ حَلِيبْ، مِنْ فَضْلِكْ. · *uriidu qahwa ma'a Haliib, min faDlik.* · I'd like a coffee with milk, please.",
+     "say": [
+      [
+       "narrator",
+       "At the café, Sami orders for himself."
+      ],
+      [
+       "sami",
+       "أُرِيدُ قَهْوَةْ مَعَ حَلِيبْ، مِنْ فَضْلِكْ."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "016-ordering-at-the-cafe/s08.png",
+     "shift": 0.14,
+     "card": "سُكَّرْ؟ · *sukkar?* · Sugar?",
+     "say": [
+      [
+       "teacher",
+       "سُكَّرْ؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "016-ordering-at-the-cafe/s08.png",
+     "shift": 0.14,
+     "card": "لَا، بِدُونِ سُكَّرْ. · *laa, biduuni sukkar.* · No, without sugar.",
+     "say": [
+      [
+       "sami",
+       "لَا، بِدُونِ سُكَّرْ."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "016-ordering-at-the-cafe/s15.png",
+     "shift": 0.14,
+     "card": "شُكْرًا. بِكَمْ هَذَا؟ · *shukran. bikam haadhaa?* · Thank you. How much is this?",
+     "say": [
+      [
+       "sami",
+       "شُكْرًا. بِكَمْ هَذَا؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "016-ordering-at-the-cafe/s15.png",
+     "shift": 0.14,
+     "card": "خَمْسَةْ · *khamsa* · Five.",
+     "say": [
+      [
+       "teacher",
+       "خَمْسَةْ"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "016-ordering-at-the-cafe/s15.png",
+     "shift": 0.14,
+     "card": "تَفَضَّلْ. · *tafaDDal.* · Here you go.",
+     "say": [
+      [
+       "sami",
+       "تَفَضَّلْ."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "019-story-sami-gets-lost/s10.png",
+     "shift": 0.14,
+     "card": "عَفْوًا، أَيْنَ الْمَقْهَى؟ · *'afwan, ayna l-maqhaa?* · Excuse me, where is the café?",
+     "say": [
+      [
+       "narrator",
+       "Another day, Sami can't find the café."
+      ],
+      [
+       "sami",
+       "عَفْوًا، أَيْنَ الْمَقْهَى؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "019-story-sami-gets-lost/s10.png",
+     "shift": 0.14,
+     "card": "يَمِينْ؟ يَسَارْ؟ · *yamiin? yasaar?* · Right? Left?",
+     "say": [
+      [
+       "sami",
+       "يَمِينْ؟ يَسَارْ؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "019-story-sami-gets-lost/s12.png",
+     "shift": 0.14,
+     "card": "يَمِينْ، ثُمَّ يَسَارْ. · *yamiin, thumma yasaar.* · Right, then left.",
+     "say": [
+      [
+       "lina",
+       "يَمِينْ، ثُمَّ يَسَارْ."
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "019-story-sami-gets-lost/s14.png",
+     "shift": 0.16,
+     "card": "هُنَا يَا سَامِي! · *hunaa yaa Saamii!* · Here, Sami!",
+     "say": [
+      [
+       "lina",
+       "هُنَا يَا سَامِي!"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "019-story-sami-gets-lost/s14.png",
+     "shift": 0.16,
+     "card": "أَنَا هُنَا! · *ana hunaa!* · I'm here!",
+     "say": [
+      [
+       "lina",
+       "أَنَا هُنَا!"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "020-i-drink-i-eat-i-go/s14.png",
+     "shift": 0.14,
+     "card": "أُحِبُّ دِمَشْقْ! · *uHibbu dimashq!* · I love Damascus!",
+     "say": [
+      [
+       "narrator",
+       "And at the end of the month, Sami says what he feels."
+      ],
+      [
+       "sami",
+       "أُحِبُّ دِمَشْقْ!"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Final challenge",
+   "image": "ep01-fillers/s08.png",
+   "line": "And to finish, your challenge.",
+   "custom": [
+    {
+     "title": "Final challenge",
+     "image": "x03-introduce-yourself-in-arabic/s03.png",
+     "shift": 0.26,
+     "card": "Final challenge · 8 questions",
+     "say": [
+      [
+       "narrator",
+       "Now the final challenge: eight questions from the whole lesson. Answer out loud before you hear me."
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 1",
+     "image": "x03-introduce-yourself-in-arabic/s03.png",
+     "shift": 0.26,
+     "card": "Question 1/8 · My name is Sami",
+     "say": [
+      [
+       "narrator",
+       "Let's start easy. How do you say: my name is Sami?"
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 1",
+     "image": "x03-introduce-yourself-in-arabic/s03.png",
+     "shift": 0.26,
+     "card": "اسْمِي سَامِي · *ismii Saamii* · My name is Sami",
+     "say": [
+      [
+       "teacher",
+       "اسْمِي سَامِي"
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 2",
+     "image": "008-where-are-you-from/s09.png",
+     "shift": 0.18,
+     "card": "Question 2/8 · I'm from Syria. And you?",
+     "say": [
+      [
+       "narrator",
+       "Next, say that you are from Syria, and ask the other person back."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 2",
+     "image": "008-where-are-you-from/s09.png",
+     "shift": 0.18,
+     "card": "أَنَا مِنْ سُورِيَا. وَأَنْتِ؟ · *ana min suuriyaa. wa-anti?* · I'm from Syria. And you?",
+     "say": [
+      [
+       "sami",
+       "أَنَا مِنْ سُورِيَا. وَأَنْتِ؟"
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 3",
+     "image": "013-story-linas-family/s08.png",
+     "shift": 0.32,
+     "card": "Question 3/8 · my mother",
+     "say": [
+      [
+       "narrator",
+       "How do you say: my mother?"
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 3",
+     "image": "013-story-linas-family/s08.png",
+     "shift": 0.32,
+     "card": "أُمِّي · *ummii* · my mother",
+     "say": [
+      [
+       "teacher",
+       "أُمِّي"
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 4",
+     "image": "010-numbers-1-to-10/s12.png",
+     "shift": 0,
+     "card": "Question 4/8 · eight",
+     "say": [
+      [
+       "narrator",
+       "Now a number. How do you say eight?"
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 4",
+     "image": "010-numbers-1-to-10/s12.png",
+     "shift": 0,
+     "card": "ثَمَانِيَةْ · *thamaaniya* · eight",
+     "say": [
+      [
+       "teacher",
+       "ثَمَانِيَةْ"
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 5",
+     "image": "015-i-want-i-dont-want/s08.png",
+     "shift": 0,
+     "card": "Question 5/8 · I want water, please.",
+     "say": [
+      [
+       "narrator",
+       "You are thirsty at the café. Ask for water, politely."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 5",
+     "image": "015-i-want-i-dont-want/s08.png",
+     "shift": 0,
+     "card": "أُرِيدُ مَاءْ، مِنْ فَضْلِكْ. · *uriidu maa', min faDlik.* · I want water, please.",
+     "say": [
+      [
+       "teacher",
+       "أُرِيدُ مَاءْ، مِنْ فَضْلِكْ."
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 6",
+     "image": "019-story-sami-gets-lost/s07.png",
+     "shift": 0,
+     "card": "Question 6/8 · Where is the café?",
+     "say": [
+      [
+       "narrator",
+       "You are lost in the old city. How do you ask where the café is?"
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 6",
+     "image": "019-story-sami-gets-lost/s07.png",
+     "shift": 0,
+     "card": "أَيْنَ الْمَقْهَى؟ · *ayna l-maqhaa?* · Where is the café?",
+     "say": [
+      [
+       "teacher",
+       "أَيْنَ الْمَقْهَى؟"
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 7",
+     "image": "020-i-drink-i-eat-i-go/s08.png",
+     "shift": 0,
+     "card": "Question 7/8 · I love coffee.",
+     "say": [
+      [
+       "narrator",
+       "Tell someone that you love coffee."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 7",
+     "image": "020-i-drink-i-eat-i-go/s08.png",
+     "shift": 0,
+     "card": "أُحِبُّ الْقَهْوَةْ. · *uHibbu l-qahwa.* · I love coffee.",
+     "say": [
+      [
+       "teacher",
+       "أُحِبُّ الْقَهْوَةْ."
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 8",
+     "image": "011-lina-meets-a-tourist/s07.png",
+     "shift": 0,
+     "card": "Question 8/8 · Damascus is beautiful.",
+     "say": [
+      [
+       "narrator",
+       "And the last one, for your trip: Damascus is beautiful."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 8",
+     "image": "011-lina-meets-a-tourist/s07.png",
+     "shift": 0,
+     "card": "دِمَشْقُ جَمِيلَةْ. · *dimashqu jamiila.* · Damascus is beautiful.",
+     "say": [
+      [
+       "teacher",
+       "دِمَشْقُ جَمِيلَةْ."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "rewrite": {
+  "Four. Until tomorrow. Perfect after class or work.": "Four. Until tomorrow, perfect after class or work.",
+  "Remember Lina's question from Day 4?": "Remember Lina's question at the café?",
+  "To a woman, only the last word changes, just like on Day 5.": "To a woman, only the last word changes, just like with you.",
+  " · Hello · Day 1": " · Hello",
+  " · My name is Sami (now: your name) · Day 2": " · My name is Sami (now: your name)",
+  "Then you say where you're from, and you add your country, like America, Germany or India from Day 8.": "Then you say where you're from, and you add your country, like America, Germany or India.",
+  " · I'm from … (your country) · Day 8": " · I'm from … (your country)",
+  " · I study Arabic. And you? · Day 3": " · I study Arabic. And you?",
+  " · Nice to meet you · Day 3": " · Nice to meet you",
+  "Did you hear it? From three to ten, every number ends with that soft ah, which is yesterday's letter.": "Did you hear it? From three to ten, every number ends with that soft ah, the letter for a woman.",
+  "There's no word for is, as you learned on Day 5, and beautiful": "There's no word for is, as you learned earlier, and beautiful",
+  "and you already know one example from Day 2.": "and you already know one example from your first phrases.",
+  "Words with the soft ah from Day 9 get a t sound": "Words with the soft ah ending get a t sound",
+  "just like you and you from Day 5. To a man,": "just like the two words for you. To a man,",
+  "You know this from Day 4, but when you point": "You know this word already, but when you point",
+  "We will start with an old friend from Day 4, which is the reason we all come here.": "We will start with an old friend, which is the reason we all come here.",
+  " · coffee · you know it from Day 4": " · coffee",
+  "Next comes tea, which you met on Day 15, and in Syria": "Next comes tea, and in Syria",
+  " · tea · Day 15": " · tea",
+  "Next is water, also from Day 15, a short word": "Next is water, a short word",
+  " · water · Day 15": " · water",
+  "and you can hear the soft ah ending from Day 9.": "and you can hear the soft ah ending again.",
+  " · juice · Day 15": " · juice",
+  "The man who brings it all, is our friend from Day 10, the waiter.": "The man who brings it all is our friend, the waiter.",
+  "Remember Day 4, when Lina asked Sami a question at the café? Listen again, because today's word is hiding inside it.": "Remember when Lina asked Sami a question at the café? Listen again, because the next word is hiding inside it.",
+  " · Do you want coffee? · Day 4": " · Do you want coffee?",
+  "add the please from Day 2 at the end.": "add please at the end.",
+  "you put the little no from Day 6, in front.": "you put the little no in front.",
+  "just like you from Day 5.": "just like you to a woman.",
+  "with the same ee sound you know from Day 5.": "with the same ee sound you already know.",
+  "which you met inside how much on Day 16.": "which you met inside how much at the café.",
+  "because it is a sun letter from yesterday.": "because it is a sun letter.",
+  " · Day 17's sun letter!": " · a sun letter!",
+  "You heard the fourth one yesterday, when Sami found the cat: here.": "You already heard the fourth one, when Sami found the cat: here.",
+  "with where from yesterday.": "with the word for where.",
+  "with a sun letter from Day 17: I drink tea.": "with a sun letter: I drink tea.",
+  "On Day 4 you heard he goes, yadh-habu. Change the start, and now it's I.": "In Sami's story you heard he goes, yadh-habu. Change the start, and now it's I.",
+  "🔤 **On screen:** أَنَا مِنْ … · *ana min …* · I'm from … (your country)": "🔤 **On screen:** أَنَا مِنْ · *ana min …* · I'm from … (your country)",
+  "🔤 **On screen:** اسْمِي ___ · *ismii ___* · My name is ___": "🔤 **On screen:** اسْمِي · *ismii …* · My name is … (your name)",
+  "NEW: tasharrafnaa": "tasharrafnaa"
+ },
+ "allow": [
+  "Until tomorrow"
+ ],
+ "outro": [
+  {
+   "title": "Outro",
+   "image": "ep01-fillers/s04.png",
+   "card": "Episode 1 · you can talk in Arabic now",
+   "say": [
+    [
+     "narrator",
+     "If you answered most of them, you can already have a real first conversation in Arabic, and that is a big step."
+    ],
+    [
+     "narrator",
+     "Send this to a friend who wants to learn Arabic with you."
+    ],
+    [
+     "narrator",
+     "Episode 2 brings the next month of lessons."
+    ],
+    [
+     "narrator",
+     "Subscribe so you don't break your streak."
+    ]
+   ],
+   "goodbye": true
+  }
+ ]
+}

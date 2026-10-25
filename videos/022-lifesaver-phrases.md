@@ -180,9 +180,6 @@ Send this to the friend who always talks too fast.
 In the next lesson, the days of the week, and they are easier than you think.
 ```
 ```say:narrator
-That's your two minutes for today. Come back tomorrow — same place, two minutes.
-```
-```say:narrator
 Subscribe so you don't break your streak.
 ```
 🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)

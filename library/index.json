@@ -583,45 +583,42 @@
   "used_in": []
  },
  {
-  "name": "d21-waiter-notepad",
+  "name": "d21-waiter-looks-up",
   "type": "opener",
   "character": "waiter",
   "style": "semi",
-  "seconds": null,
-  "source": "library/work/joined/d21.mp4",
-  "action": "the café waiter picks up his pen, ready to take your order, then a calm idle hold",
+  "version": "v3 (3 s action + alive end pose)",
+  "seconds": 6.83,
+  "action": "looks up from his notepad at the camera, warm smile",
   "used_in": [
    "021-answer-the-waiter"
   ],
-  "approved": false,
-  "note": "owner approval pending (2026-10-23)"
+  "approved": false
  },
  {
-  "name": "d22-sami-slowly",
+  "name": "d22-sami-too-fast",
   "type": "opener",
   "character": "sami",
   "style": "semi",
-  "seconds": 7.1,
-  "source": "library/work/joined/d22.mp4",
-  "action": "at a café table Sami raises an open palm, 'slowly, please', then back to the table (gesture forward + reverse) + idle",
+  "version": "v3 (3 s action + alive end pose)",
+  "seconds": 6.83,
+  "action": "turns his head from the side to the camera, puzzled, then a polite smile",
   "used_in": [
    "022-lifesaver-phrases"
   ],
-  "approved": false,
-  "note": "owner approval pending (2026-10-24)"
+  "approved": false
  },
  {
-  "name": "d23-lina-planner",
+  "name": "d23-lina-looks-up",
   "type": "opener",
   "character": "lina",
   "style": "semi",
-  "seconds": 7.1,
-  "source": "library/work/joined/d23.mp4",
-  "action": "at her desk at home Lina gives a small thumbs-up, back to her planner (forward + reverse) + idle",
+  "version": "v3 (3 s action + alive end pose)",
+  "seconds": 6.83,
+  "action": "looks up from her planner to the camera, warm smile",
   "used_in": [
    "023-days-of-the-week"
   ],
-  "approved": false,
-  "note": "owner approval pending (2026-10-24)"
+  "approved": false
  }
 ]

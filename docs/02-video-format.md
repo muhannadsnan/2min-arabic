@@ -36,8 +36,11 @@ Optionally make 2–3 variants later so long-time viewers don't tire of it.
 ## Standard outro (every video)
 
 ```say:narrator
-That's your two minutes for today. Come back tomorrow — same place, two minutes. Subscribe so you don't break your streak.
+Subscribe so you don't break your streak.
 ```
+(2026-10-25, owner — peak-end rule, learning/notes/2026-10-24-danny-why…: the routine line "That's your two minutes for
+today. Come back tomorrow — same place, two minutes." is dropped. The video ends on its high point: the last win
+("Your turn" answer / score / payoff) → share hook → one "next lesson" line → subscribe → goodbye clip.)
 ```say:teacher
 مَعَ السَّلَامَة!
 ```
