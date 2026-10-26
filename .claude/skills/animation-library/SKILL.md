@@ -53,6 +53,26 @@ PID (`pgrep -f "main.py --listen"`), stop it by that PID at the end.
 `assemble.py`). **Rotation:** for a new video pick the unit of the right character with the fewest / oldest
 `used_in`; never the same opener on two videos in a row. Target 6–10 openers, extend over time.
 
+## Characters v5 — green-screen picture sequences, blended (owner's plan, 2026-10-26 — replaces Openers v4)
+
+Tested 26 Oct (library/work/seqtest/): FLUX.2 klein edits of ONE approved still, same seed, played as a picture
+sequence with soft blends (ffmpeg `framerate=fps=30:interp_start=0:interp_end=255:scene=100`) — sharper than Wan
+video, faces stay pretty, the room doesn't flicker. Owner preferred blends over hard cuts, and green screen.
+1. **Every character is made on green** (flat #00B140, even light, no props except what they hold / sit at) and
+   composited on a background with `tools/animate/composite.py` → characters and backgrounds are reusable separately,
+   a new background per video. Add a soft contact shadow under the character and a light colour match so it doesn't
+   look pasted in.
+2. **Openers: 5 pictures per second**, 3 s = 15 pictures of one action (eyes up, head turn, smile, gesture), each an
+   edit of the approved still with the same seed and the phase written out ("eyes halfway up"), blended. The last
+   picture is the high-quality still that stays on screen (no fades, no idle clip).
+3. **Mid-video scenes: 3 pictures per second** — but from **reusable motion sets** (per character + pose, 8–10
+   pictures: blink, small smile, small head tilt) played forward/back on green, so they cost GPU time once and are
+   reused across scenes and videos (library/sets/<character>-<pose>/).
+4. **Fingers (owner: still ugly):** prefer poses with simple hands — resting flat, holding one object, or out of frame
+   (chest-up). Check EVERY picture's hands at full size; regenerate a bad one with a new seed, never keep it.
+5. Keep clothes in the prompt every time (Lina: mustard cardigan, white high-neck blouse, long dark-teal skirt) — the
+   green test changed her skirt to trousers.
+
 ## Openers v4 — a 3-s action ending on a high-quality still (owner, 2026-10-25 — replaces every older opener shape)
 
 Owner: "only a 3-second video with the last frame as a separate high-quality image, no fade in/out; extra attention to

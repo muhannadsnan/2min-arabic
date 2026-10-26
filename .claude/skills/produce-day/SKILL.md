@@ -173,7 +173,8 @@ before, or comes with its meaning in the same line.
 **"Your turn" stays (2026-10-25):** retrieval practice — answering before hearing the answer — is the strongest
 memory booster we have, and our retention data shows no drop at the 2-s recall pauses (Day 15 holds ~40 % to the end).
 Keep 1–2 short items, pauses ≤ 2 s, framed as a game the viewer wins.
-**Openers:** the v4 shape in the animation-library skill (3-s action ending on a high-quality still, 3D faces,
+**Characters + openers:** the v5 plan in the animation-library skill (green-screen picture sequences: openers 5/s,
+mid-video 3/s from reusable motion sets; pilot = Day 24). Earlier: the v4 shape (3-s action ending on a high-quality still, 3D faces,
 person centred, no fades, no idle).
 
 ## 1. Script — `videos/NNN-<slug>.md`
