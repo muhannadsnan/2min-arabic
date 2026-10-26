@@ -31,7 +31,7 @@ In English you change the whole sentence to ask a question. In Arabic you just a
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-Welcome to Day 25, where you will learn to ask yes or no questions.
+Day 25, and today you will learn to ask yes or no questions.
 ```
 
 ### 🎬 Scene 3 — A sentence you know

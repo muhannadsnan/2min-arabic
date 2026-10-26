@@ -80,11 +80,11 @@ The second way is slow and polite, and it often means maybe, we'll see. Listen t
 
 ### 🎬 Scene 6 — Way 3: a plan
 
-🖼️ **Image:** Sami and the waiter at the café, facing each other
+🖼️ **Image:** Sami and his friend Omar at the café, facing each other
 🔤 **On screen:** نَلْتَقِي غَدًا؟ · *naltaqii ghadan?* · Shall we meet tomorrow? · Way 3/3
 
 ```say:narrator
-And the third way is the most common one: a normal yes to a plan.
+And the third way is the most common one: a normal yes to a plan, like when Sami asks his friend Omar.
 ```
 ```say:sami
 نَلْتَقِي غَدًا؟
@@ -92,7 +92,7 @@ And the third way is the most common one: a normal yes to a plan.
 
 ### 🎬 Scene 7 — The answer
 
-🖼️ **Image:** same as scene 6, the waiter answering
+🖼️ **Image:** same as scene 6, Omar answering
 🔤 **On screen:** إِنْ شَاءَ اللهْ · *in shaa' allaah* · Yes, God willing.
 
 ```say:teacher

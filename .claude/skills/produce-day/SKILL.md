@@ -131,7 +131,8 @@ animation-library skill.
 
 Our retention lost 35–50 % at 7–18 s on every Day (the channel intro), and the warm-up recall talked to returning
 viewers right where new ones were leaving. So:
-1. **Short intro:** scene 2 = the owner's hello clip + **one** short line, and **no card** (owner 2026-10-25: the white
+1. **Short intro:** scene 2 = the owner's hello clip + **one** short line — never "Welcome to Day N" (the clip already
+   says "Welcome to 2 Minute Arabic"; owner 2026-10-26: duplicate) — e.g. "Day 25, and today you…", and **no card** (owner 2026-10-25: the white
    "2 Minute Arabic · Day N" card only repeated the yellow badge — leave out the 🔤 line in scene 2) ("Day 16 — let's go."). The
    "I'm your teacher… my promise is simple…" line is only for Day 1 and the Parts.
 2. **Quests, visible:** the hook names the quests ("3 new words, 1 game and a twist"); cards show progress
@@ -176,6 +177,11 @@ Keep 1–2 short items, pauses ≤ 2 s, framed as a game the viewer wins.
 **Characters + openers:** the v5 plan in the animation-library skill (green-screen picture sequences: openers 5/s,
 mid-video 3/s from reusable motion sets; pilot = Day 24). Earlier: the v4 shape (3-s action ending on a high-quality still, 3D faces,
 person centred, no fades, no idle).
+
+**Recordings are checked for extra sounds before use (owner 2026-10-26: "don't you listen to the audio?"):**
+`$TTS tools/check_bursts.py videos/NNN-….md` splits every recorded clip at its pauses and transcribes each sound
+burst on its own; a loud burst that isn't part of the line (throat clearing, a cough, a stray word) is cut
+(`--fix`, original kept as *-orig.wav). Run it after building map.json and before make_audio — every video.
 
 ## 1. Script — `videos/NNN-<slug>.md`
 

@@ -75,6 +75,17 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
 - Characters **stay still unless they speak**; speaking = **mostly the mouth** (5 mouth shapes of the same pose, a new
   one ~6×/s), small or no gestures, **eyes steady** (never looking in all directions). No looping of big movements.
 - Quick switches between pictures (~0.07-s blend), not long dissolves.
+- The mouth moves **only while the voice is actually sounding** — speaking intervals come from the voiced part of each
+  clip (silence-trimmed), so the mouth closes the moment the sentence ends (owner 2026-10-26).
+- Dialogue: the listener faces the speaker too (both turned to each other), never one turned away. A side view that
+  faces the wrong way is mirrored (ImageOps.mirror), and framed like the partner (head to mid-thigh).
+- **Who talks to whom (owner 2026-10-26):** Sami makes plans with a male friend, not with the waiter — **Omar**
+  (عُمَر; curly brown-blonde hair, round glasses, short beard, fuller build, mustard-green sweater;
+  `assets/characters/omar-3d.png`, green sets `library/sets/v2/omar_*`). Pick the person who fits the situation.
+- **Openers (owner 2026-10-26):** no random facial expressions. A good opener = a close-up of one person (e.g. Omar)
+  greeting with the face (warm hello smile) whose **mouth moves with the narrator's hook** like a presenter — built with
+  compose_talk.py (still = hello face, talk = 5 mouth shapes, speak = the voiced parts of the hook clip).
+- Speaking intervals: `tools/animate/voiced.py` → `speaking(stem)` (voiced parts only, breaths < 0.15 s ignored).
 - Two-person scenes: they **face each other** (three-quarter side views), each moves **only during their own line**
   (speaking times from audio/<video>/timeline.json); expressions (laugh, smile, hopeful) as single "react" pictures.
 - No green rim: strong despill + 1-px eroded edge (`tools/animate/compose_talk.py`, `compose_scene.py`).
