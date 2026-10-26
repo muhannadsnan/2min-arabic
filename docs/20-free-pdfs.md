@@ -22,6 +22,11 @@ visit, shows real demand, and later can collect emails for the membership launch
 - **Instagram:** the bio link (Linktree-style or the site's homepage) + a mention in captions of word-list Reels.
 - **Pinned comments** on Days 1–10.
 
+## PDF 2 — "118 more Arabic words & phrases" (Days 11–20 + Extras x05, x06, Vocab v01, v02) — published 26 Oct
+
+- Built with `python3 tools/free_pdf.py 11 20 --extra x05-…,x06-…,v01-…,v02-…` (8 pages; words already in PDF 1 skipped).
+- https://muhannadsnan.github.io/2min-arabic/free/2-minute-arabic-days-11-20.pdf, card on the downloads page.
+
 ## Next PDFs (one per 10 days)
 
 Days 11–20 (after Day 20), Days 21–30, then topic sheets (numbers, café words, body words). Same builder: extract the
