@@ -71,7 +71,7 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
    reused across scenes and videos (library/sets/<character>-<pose>/).
 4. **Fingers (owner: still ugly):** prefer poses with simple hands — resting flat, holding one object, or out of frame
    (chest-up). Check EVERY picture's hands at full size; regenerate a bad one with a new seed, never keep it.
-**v5.1 — owner's verdict on the Day 24 pilot (2026-10-26: "too active, rebuild"):**
+**v5.1 — APPROVED by the owner 2026-10-26 ("very nice… efficient and attractive: face movement on talk only") — the standard for all videos from Day 24 on.** Owner's verdict on the first pilot was "too active, rebuild":
 - Characters **stay still unless they speak**; speaking = **mostly the mouth** (5 mouth shapes of the same pose, a new
   one ~6×/s), small or no gestures, **eyes steady** (never looking in all directions). No looping of big movements.
 - Quick switches between pictures (~0.07-s blend), not long dissolves.
