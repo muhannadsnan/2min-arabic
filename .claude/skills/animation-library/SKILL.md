@@ -65,8 +65,9 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
 2. **Openers: 5 pictures per second**, 3 s = 15 pictures of one action (eyes up, head turn, smile, gesture), each an
    edit of the approved still with the same seed and the phase written out ("eyes halfway up"), blended. The last
    picture is the high-quality still that stays on screen (no fades, no idle clip).
-3. **Mid-video scenes: 3 pictures per second** — but from **reusable motion sets** (per character + pose, 8–10
-   pictures: blink, small smile, small head tilt) played forward/back on green, so they cost GPU time once and are
+3. **Mid-video scenes: 3 pictures per second** — from **reusable motion sets** (per character + pose, 8–10
+   pictures). Owner 2026-10-26: real, lively actions, not only blinking — lifting an arm, handing something over,
+   turning around, opening the mouth to talk, nodding, pointing, laughing; pick the action that fits the line spoken played forward/back on green, so they cost GPU time once and are
    reused across scenes and videos (library/sets/<character>-<pose>/).
 4. **Fingers (owner: still ugly):** prefer poses with simple hands — resting flat, holding one object, or out of frame
    (chest-up). Check EVERY picture's hands at full size; regenerate a bad one with a new seed, never keep it.
