@@ -31,7 +31,7 @@ In English you change the whole sentence to ask a question. In Arabic you just a
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-Day 25, and today you can ask yes or no questions.
+Welcome to Day 25, where you will learn to ask yes or no questions.
 ```
 
 ### 🎬 Scene 3 — A sentence you know
@@ -52,7 +52,7 @@ Start with a sentence you already know: you are a student.
 🔤 **On screen:** هَلْ · *hal* · = a yes/no question
 
 ```say:narrator
-Now put this little word in front of it.
+Now put this one little word right in front of the sentence.
 ```
 ```say:teacher
 هَلْ
@@ -120,7 +120,7 @@ This one is for you. Answer with yes or no, in Arabic.
 🔤 **On screen:** هَلْ هَذَا كِتَابُكْ؟ · *hal haadhaa kitaabuk?* · Is this your book? · Question 3/3
 
 ```say:narrator
-And the last one, with a little twist.
+The final question comes with a small surprise at the end.
 ```
 ```say:teacher
 هَلْ هَذَا كِتَابُكْ؟
