@@ -24,16 +24,13 @@ W, H = 1080, 1920
 
 
 def key(img):
+    """Green key with strong despill and a 1-px eroded edge — no green rim (owner, 2026-10-26)."""
     a = np.asarray(img.convert("RGB"), dtype=np.float32)
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
-    dom = g - np.maximum(r, b)
-    alpha = np.clip(1.0 - (dom - 20) / 50, 0, 1)            # 0 = green background, 1 = character
-    spill = np.clip(g - np.maximum(r, b), 0, None)
-    a[..., 1] = np.where(alpha > 0, g - spill * 0.85, g)       # pull green fringe down
-    out = np.dstack([np.clip(a, 0, 255), alpha * 255]).astype(np.uint8)
-    im = Image.fromarray(out, "RGBA")
-    al = im.getchannel("A").filter(ImageFilter.GaussianBlur(1.2))
-    im.putalpha(al)
+    alpha = np.clip(1.0 - (g - np.maximum(r, b) - 12) / 40, 0, 1)
+    a[..., 1] = np.minimum(g, np.maximum(r, b) * 1.04)
+    al = Image.fromarray((alpha * 255).astype(np.uint8)).filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(1.0))
+    im = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8)).convert("RGBA"); im.putalpha(al)
     return im
 
 

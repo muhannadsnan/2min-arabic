@@ -71,6 +71,17 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
    reused across scenes and videos (library/sets/<character>-<pose>/).
 4. **Fingers (owner: still ugly):** prefer poses with simple hands — resting flat, holding one object, or out of frame
    (chest-up). Check EVERY picture's hands at full size; regenerate a bad one with a new seed, never keep it.
+**v5.1 — owner's verdict on the Day 24 pilot (2026-10-26: "too active, rebuild"):**
+- Characters **stay still unless they speak**; speaking = **mostly the mouth** (5 mouth shapes of the same pose, a new
+  one ~6×/s), small or no gestures, **eyes steady** (never looking in all directions). No looping of big movements.
+- Quick switches between pictures (~0.07-s blend), not long dissolves.
+- Two-person scenes: they **face each other** (three-quarter side views), each moves **only during their own line**
+  (speaking times from audio/<video>/timeline.json); expressions (laugh, smile, hopeful) as single "react" pictures.
+- No green rim: strong despill + 1-px eroded edge (`tools/animate/compose_talk.py`, `compose_scene.py`).
+- Tool: `$TTS tools/animate/compose_talk.py scene.json out.mp4` (still / talk / speak / react per character).
+- **Recordings:** before using a line, check it for a second sound burst (throat clearing, a breath, a word from the
+  next line) — Day 24's هَيَّا carried a throat-clear (cut 26 Oct). Silent bursts below −50 dB are harmless.
+
 5. Keep clothes in the prompt every time (Lina: mustard cardigan, white high-neck blouse, long dark-teal skirt) — the
    green test changed her skirt to trousers.
 

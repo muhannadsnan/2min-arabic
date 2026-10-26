@@ -105,10 +105,10 @@ Caption: "Sami had the perfect plan… until Lina said this 😂 Save it for you
 
 ## Quality check (Claude)
 
-- **Characters v5 pilot:** Sami and Lina on green screen, 79 pictures in 9 motion sets (talking, thinking, "let's go",
-  asking, listening, laughing), blended at 3 pictures/s and composited on the courtyard with soft shadows; opener at
-  5 pictures/s ending on the high-quality still. New intro picture (C) and "Your turn" picture (A, left hand redone).
-- Arabic = your recording of 25 Oct + Koki's; English = your clone at tempo 0.9; 4 narrator lines reworded until
-  "narrator clips to redo: none". Cards: "…" replaced by "،" on screen (it doesn't render inside Arabic).
-- Stars at 32 s (the 3 words), 53 s (Lina's twist), 81 s (last answer).
-- final_check: 1:38 ✅, −14 LUFS, peak −2.2 dB, 0 overlaps · captions synced (45, 0 weak).
+- **Rebuilt from scratch (owner, 26 Oct) — Characters v5.1:** characters stand still unless they speak; speaking =
+  mouth shapes of the same pose, steady eyes, no gestures; Sami and Lina face each other in the story and each moves
+  only during their own line; reactions (Lina laughs, Sami hopeful) as single expression changes; quick switches.
+- **Your هَيَّا:** the throat-clear before the word is cut out (all 58 new lines checked — the rest are clean).
+- No green rim (stronger edge key); opener = Sami looks up, 5 pictures/s, ending on the high-quality still.
+- Your picks: intro C, "Your turn" A with the left hand redone. Stars at 31 s, 52 s (Lina's twist), 80 s.
+- final_check: 1:37 ✅, −14 LUFS, peak −2.4 dB, 0 overlaps · captions synced (45, 0 weak).
