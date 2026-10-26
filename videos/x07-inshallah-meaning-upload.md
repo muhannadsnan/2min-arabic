@@ -99,5 +99,5 @@ Which inshallah do YOU hear most — the hopeful one, the polite "maybe", or a r
 
 - Searched topic ("inshallah meaning": English, Hindi, Urdu, Tamil, Malayalam searches; top videos 13 M + 1.1 M views).
 - Characters v5.1: Sami on a Damascus rooftop, Sami and the waiter (new on green) at the café; opener = Sami looks up with a warm knowing smile.
-- Arabic = your recording of 25 Oct (lines 41–48; "shaa'" and "allah" recut into their own clips); 1 narrator line reworded.
+- Arabic = your recording of 25 Oct (lines 41–48; "shaa'" and "allah" recut into their own clips; **your throat-clears in lines 45 and 46 cut out** — found with the new burst check, final audio re-scanned clean); 1 narrator line reworded.
 - final_check: 1:10 ✅, −14 LUFS, peak −2.1 dB, 0 overlaps · captions synced (34, 0 weak).

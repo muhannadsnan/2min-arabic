@@ -100,7 +100,8 @@ Day 25 ✅ — Ask me a yes/no question in Arabic 👇 (هَلْ … ؟ = hal �
 
 ## Quality check (Claude)
 
-- Characters v5.1 (approved): Sami and Lina on green screen in a new café, still unless speaking, mouth-only talk, facing each other in the book scene; opener = Lina looks up with a curious face (5 pictures/s → HQ still).
+- Characters v5.1 (approved): Sami and Lina on green screen in a new café, still unless speaking, mouth-only talk, facing each other in the book scene; opener = Omar (new, Sami's friend) greets in a close-up and speaks the hook like a presenter; mouths move only while the voice sounds.
+- Recordings checked for extra sounds (tools/check_bursts.py): only faint breaths, removed by the denoiser.
 - Arabic = your recording of 25 Oct (lines 32–40) + Koki's line 4; English = your clone; 3 narrator lines reworded until "narrator clips to redo: none".
 - Stars at 33 s (the rule), 46 s (Lina's answer), 84 s (last answer).
 - final_check: 1:38 ✅, −14 LUFS, peak −2.3 dB, 0 overlaps · captions synced (47, 0 weak).

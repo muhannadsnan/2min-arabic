@@ -18,7 +18,7 @@
 
 ### 🎬 Scene 1 — Hook (opener)
 
-🖼️ **Image:** opener v5.1 — Lina at the café looks up with a curious, questioning face
+🖼️ **Image:** opener — Omar, close-up in the café, greets with a warm smile and speaks the hook like a presenter
 🔤 **On screen:** Yes/no questions in Arabic
 
 ```say:narrator
