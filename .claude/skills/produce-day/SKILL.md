@@ -178,6 +178,8 @@ Keep 1–2 short items, pauses ≤ 2 s, framed as a game the viewer wins.
 mid-video 3/s from reusable motion sets; pilot = Day 24). Earlier: the v4 shape (3-s action ending on a high-quality still, 3D faces,
 person centred, no fades, no idle).
 
+**Repeated lines: always the LAST take** (owner 2026-10-26; split_recording keeps the last good take — check the
+report when a line was repeated). **Throat clearing, coughs and false starts are always removed** — never in a video.
 **Recordings are checked for extra sounds before use (owner 2026-10-26: "don't you listen to the audio?"):**
 `$TTS tools/check_bursts.py videos/NNN-….md` splits every recorded clip at its pauses and transcribes each sound
 burst on its own; a loud burst that isn't part of the line (throat clearing, a cough, a stray word) is cut
