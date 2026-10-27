@@ -4,6 +4,8 @@
 # command saved an empty IG_TOKEN and the cloud post failed).
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# wait for the network after a wake-up (26 Oct: the catch-up run started before Wi-Fi was back and failed)
+for _ in $(seq 60); do getent hosts graph.instagram.com >/dev/null 2>&1 && break; sleep 5; done
 LOG=~/.local/share/2min-yt/instagram.log
 python3 tools/instagram_api.py refresh >> "$LOG" 2>&1
 TOK=$(python3 -c "import json;print(json.load(open('$HOME/.config/2min-instagram/token.json'))['access_token'])")
