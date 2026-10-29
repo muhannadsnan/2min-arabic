@@ -233,6 +233,7 @@ def main():
 
     # 1. one video segment per scene: image + slow zoom + badge + card
     concat, contact = [], []
+    card_bottom = {}   # scene → y of its card's lower edge (the YOUR TURN label sits right under it)
     prompts = img_dir / "prompts.json"
     entries = json.loads(prompts.read_text(encoding="utf-8")) if prompts.exists() else []
     # progress stars need a row at the top: badge and cards move down by TOP (owner, 2026-10-17)
@@ -320,6 +321,7 @@ def main():
         if screens[i - 1]:
             card = out_dir / "cards" / f"s{i:02d}.png"
             render_card(screens[i - 1], card, all_bold=(i == 1))
+            card_bottom[i] = 170 + TOP + Image.open(card).getbbox()[3]
             overlays += ["-i", str(card)]
             hook_s = float(o.get("hook", {}).get("seconds", 1.5)) if (i == 1 and o.get("hook")) else 0
             chain += f";[b1][2:v]overlay=0:{170 + TOP}" + (f":enable='gte(t,{hook_s:.2f})'" if hook_s else "") + "[b2]"
@@ -377,7 +379,20 @@ def main():
     gain = -17.0 - measured
     final = out_dir / f"{title_slug(args.script) or stem}.mp4"   # owner (2026-10-01): one final file, named after its title
     inputs = ["-i", str(video_only), "-i", str(turn), "-i", str(voice)]
-    vchain = f"[0:v][1:v]overlay=0:1400:enable='{enable}'[v0]"
+    # YOUR TURN right under the white card, so the eye catches both at once (owner, 2026-10-28); 1400 without a card
+    def turn_y(p):
+        sc = next((k for k, s in enumerate(tl["scenes"], 1) if s["start"] <= p["start"] + 0.01 < s["end"]), None)
+        return card_bottom[sc] - 12 if sc in card_bottom else 1400
+    turns = [(p, turn_y(p)) for p in tl["pauses"]]
+    if turns:
+        vchain = f"[1:v]split={len(turns)}" + "".join(f"[yt{k}]" for k in range(len(turns)))
+        prev = "0:v"
+        for k, (p, y) in enumerate(turns):
+            vchain += (f";[{prev}][yt{k}]overlay=0:{y}:enable='between(t,{p['start']:.2f},{p['end']:.2f})'"
+                       + ("[v0]" if k == len(turns) - 1 else f"[yo{k}]"))
+            prev = f"yo{k}"
+    else:
+        vchain = "[0:v][1:v]overlay=0:1400:enable='0'[v0]"
     achain = f"[2:a]volume={gain:.2f}dB,aformat=channel_layouts=mono[vo]"
     mix, last = ["[vo]"], "v0"
     for k, v in enumerate(tl.get("videos", [])):   # filmed clips: full screen with their own sound
@@ -444,6 +459,32 @@ def main():
             achain += f";[{cidx}:a]volume=0.8,aformat=channel_layouts=mono,adelay={round(ts * 1000)}:all=1[ch{i}]"
             mix.append(f"[ch{i}]")
         print(f"  stars at {', '.join(f'{x:.1f}s' for x in times)} (scenes {star_scenes})")
+    # sound effects (owner, 2026-10-28; our own, tools/make_sfx.py): a whoosh as the hook card leaves · an airy swoosh
+    # when a word card appears (not right after a star chime) · a pop as the YOUR TURN label appears, then tick-tock
+    # through the ⏸️ pause · per-scene extras from
+    # prompts.json {"sfx": [[scene, "boing"], …]} (boing = a funny twist, sparkle = an "aha"). {"sfx": false} = none.
+    sfx_dir = HERE.parent / "assets" / "sfx"
+    extra = next((e["sfx"] for e in entries if isinstance(e, dict) and "sfx" in e and "s" not in e), [])
+    if extra is not False and sfx_dir.exists():
+        chimes = times if star_scenes and (star_dir / "pop.mov").exists() else []
+        hook1 = opts.get(1, {}).get("hook")
+        cues = [("whoosh", float(hook1.get("seconds", 1.5)) - 0.2, 0.55)] if hook1 else []
+        for i, sc in enumerate(tl["scenes"][1:], 2):
+            if screens[i - 1] and not any(-0.1 < sc["start"] - c < 0.8 for c in chimes):
+                cues.append(("card", sc["start"], 0.45))
+        for p in tl["pauses"]:
+            cues.append(("pop", p["start"], 0.4))
+            t = p["start"] + 0.25
+            # the clock ticks through the whole YOUR TURN (owner 2026-10-28: "2 complete seconds"; pauses are ≥ 2 s)
+            while t < p["end"] - 0.1:
+                cues.append(("tick" if len(cues) % 2 else "tock", t, 0.3)); t += 0.5
+        for s, name in extra:
+            cues.append((name, tl["scenes"][s - 1]["start"] + 0.1, 0.5))
+        for j, (name, at, vol) in enumerate(cues):
+            sidx = inputs.count("-i"); inputs += ["-i", str(sfx_dir / f"{name}.wav")]
+            achain += f";[{sidx}:a]volume={vol},aformat=channel_layouts=mono,adelay={round(at * 1000)}:all=1[fx{j}]"
+            mix.append(f"[fx{j}]")
+        print(f"  sound effects: {len(cues)} ({', '.join(sorted({c[0] for c in cues}))})")
     hook = opts.get(1, {}).get("hook")   # thumbnail look for the first ~1.5 s (owner, 2026-10-16), over the caption too
     if hook:
         sys.path.insert(0, str(HERE))

@@ -13,8 +13,10 @@ course. They reuse the whole daily pipeline (see the **produce-day** skill); onl
 - **Stem** `videos/x0N-<slug>.md` (x01, x02, …). `assemble.py` shows the badge **ARABIC EXTRAS** for any stem
   starting with `x`, instead of "DAY N".
 - **Length 30–75 s** (a 10-phrase list lands around 1:05–1:10; Shorts allow up to 3 min, but keep it tight). Short hook in the first 2 s ("10 ways to say hello in Arabic — number 7 is what Syrians
-  really say"). Keep the hello clip only if it doesn't eat the hook; always end with the goodbye clip + subscribe
-  line.
+  really say"). Keep the hello clip only if it doesn't eat the hook. End on the subscribe line **without** the goodbye clip
+  (from x07, 2026-10-27; the owner liked it without): Extras are discovery Shorts for strangers, a "bye" cues the swipe, and a clean end
+  lets the Short loop. Days and Parts keep the goodbye. The owner is recording a new intro + outro; use them when they
+  come.
 - **Scroll-stopper + 3D:** like the days — scene 1 = a library opener (animation-library skill), 3D look via
   `{"style": "3d"}` (x01/x02 were made before the switch and stay flat).
 - **Dialect is allowed here — and only here.** The course stays Modern Standard Arabic (fusha). In Extras every

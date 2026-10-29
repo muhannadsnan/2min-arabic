@@ -90,7 +90,7 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
   evidence it helps language Shorts reach people, and it costs the owner time every upload.
 - **Captions on the channel:** `$Y tools/youtube_api.py captions <id> --replace <srt>` swaps the English track. API
   quota is 10,000 units/day (a caption upload = 450, a fill ≈ 600): for big batches put the rest in
-  `~/.local/share/2min-yt/captions-pending.txt` — `tools/caption_backlog.sh` (cron, 10:30 daily) uploads them.
+  `~/.local/share/2min-yt/captions-pending.txt` — `tools/caption_backlog.sh` (cron, 20:30 daily) uploads them.
 - **Quota out?** Queue the command line (e.g. `fill w02 <id> --publish-at … --apply`) in
   `~/.local/share/2min-yt/pending-commands.txt`; `tools/pending_jobs.sh` (cron 09:15, after the reset) runs it.
 - **Parts are published after their last day** (Part 2 after Day 10) — never before, it would spoil the days.
@@ -178,7 +178,7 @@ Portuguese + Chinese dropped (owner 2026-10-18: small Arabic-learning interest; 
 tiers at every weekly review (`videos`); on 31 Oct compare with Studio → Audience → Top geographies and cut languages
 that bring nothing. Not filmed videos (Day 1: lips on camera), not Parts yet
 (compiled from several timelines). YouTube's own auto-dubbing stays OFF (it would re-voice the Arabic too).
-New video: write its `dubs/<stem>.json` (13 languages) with the sheet; `caption_backlog.sh` (10:30 daily) uploads
+New video: write its `dubs/<stem>.json` (13 languages) with the sheet; `caption_backlog.sh` (20:30 daily) uploads
 missing tracks itself, language by language in priority order, most-viewed first, max 22 a day (a new video = 13 tracks) (`youtube_api.py subtitle-backlog`; IDs in `dubs/ids.json`). **Free, commercial-OK models only** (owner: "we only use free licenced models everywhere").
 1. **Translations** `dubs/<stem>.json`: every narrator clip (`audio/<stem>/timeline.json`, speaker narrator, key = n)
    in the 13 languages of the table (audio languages: fr, tr, es, hi, id + star ru, sw; ur/ms = proper Urdu/Malay text). Same or fewer syllables than the English

@@ -585,6 +585,15 @@ def fill(a):
         print(f"  {a.stem}: upload found → {a.video}")
     if a.apply:
         adopt_localizations(a.stem, a.video)
+        # translated subtitles: the 20:30 job only covers videos listed in dubs/ids.json (Days 21–25 and x07 were
+        # missed until 28 Oct) → register every filled video that has its dubs/<stem>.json
+        full = sheet_file.name[: -len("-upload.md")]
+        ids_f = ROOT / "dubs" / "ids.json"; ids = json.loads(ids_f.read_text())
+        if (ROOT / "dubs" / f"{full}.json").exists() and ids.get(full) != a.video:
+            ids[full] = a.video; ids_f.write_text(json.dumps(ids, indent=1))
+            print(f"  translated subtitles: {full} → {a.video} (dubs/ids.json)")
+        elif not (ROOT / "dubs" / f"{full}.json").exists():
+            print(f"  ⚠️ no dubs/{full}.json yet → no translated subtitles until it's written")
     desc_file = find(a.stem, "-description.txt")
     title = box(sheet, "Title")
     desc = desc_file.read_text(encoding="utf-8").strip() if desc_file else box(sheet, "Description")

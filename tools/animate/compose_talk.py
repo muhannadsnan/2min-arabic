@@ -7,7 +7,8 @@ scene.json: {"bg": "…png", "seconds": 6.2, "layers": [
     {"still": "…png", "x": 0.28, "h": 0.6,
      "talk": ["…talk1.png", "…talk2.png", …],          # mouth shapes, same head pose
      "speak": [[0.4, 1.9], …],                           # seconds (scene time) when this character speaks
-     "react": [{"img": "…png", "from": 2.0, "to": 4.0}]  # optional expression changes (laugh, smile)
+     "react": [{"img": "…png", "from": 2.0, "to": 4.0}], # optional expression changes (laugh, smile)
+     "mirror": true                                      # optional: flip so the character faces the other way
     }, …]}
 Owner's rules: the character stays still unless speaking; speaking = mostly mouth movement (a new mouth shape ~6×/s,
 switched with a quick 0.07-s blend), steady eyes, no big gestures; two-person scenes: they face each other and each
@@ -26,17 +27,18 @@ W, H, FPS = 1080, 1920, 30
 _cache = {}
 
 
-def keyed(path):
-    if path in _cache:
-        return _cache[path]
-    a = np.asarray(Image.open(path).convert("RGB"), dtype=np.float32)
+def keyed(path, mirror=False):
+    if (path, mirror) in _cache:
+        return _cache[path, mirror]
+    src = Image.open(path).convert("RGB")
+    a = np.asarray(src.transpose(Image.FLIP_LEFT_RIGHT) if mirror else src, dtype=np.float32)
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
     dom = g - np.maximum(r, b)
     alpha = np.clip(1.0 - (dom - 12) / 40, 0, 1)
     a[..., 1] = np.minimum(g, np.maximum(r, b) * 1.04)          # despill everywhere: no green tint on hair/edges
     al = Image.fromarray((alpha * 255).astype(np.uint8)).filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(1.0))
     im = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8)).convert("RGBA"); im.putalpha(al)
-    _cache[path] = im
+    _cache[path, mirror] = im
     return im
 
 
@@ -87,7 +89,7 @@ def main():
         if keys not in frames_cache:
             c = bg.copy()
             for l, k in zip(spec["layers"], keys):
-                c = place(c, keyed(k), l["x"], l["h"], bg_mean)
+                c = place(c, keyed(k, l.get("mirror", False)), l["x"], l["h"], bg_mean)
             frames_cache[keys] = np.asarray(c, dtype=np.float32)
         cur = frames_cache[keys]
         if prev_key is not None and keys != prev_key:

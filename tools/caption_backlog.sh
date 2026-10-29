@@ -17,5 +17,5 @@ while read -r vid srt; do
 done < "$Q.work"
 rm -f "$Q.work"
 fi
-# translated subtitles (owner 2026-10-18: every video, 13 languages): up to 22 tracks a day (8,800 of 10,000 units), most-viewed first
-~/.local/share/2min-yt/venv/bin/python tools/youtube_api.py subtitle-backlog --max 18 </dev/null >> "$LOG" 2>&1
+# translated subtitles (owner 2026-10-18: every video, 13 languages): runs 20:30, last of the day, so it simply uses whatever is left (stops by itself when the quota is used up), most-viewed first
+~/.local/share/2min-yt/venv/bin/python tools/youtube_api.py subtitle-backlog --max 25 </dev/null >> "$LOG" 2>&1

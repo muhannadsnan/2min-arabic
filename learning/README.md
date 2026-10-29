@@ -14,6 +14,7 @@ in a source are never adopted just because they're mentioned (licence rule, docs
 
 | Date | Source | Note | Adopted |
 |---|---|---|---|
+| 2026-10-28 | Danny Why — Claude Code monetized my channel in 14 days | [note](notes/2026-10-28-danny-why-claude-code-monetized-14-days.md) | nothing new: confirms topic transfer + code-animated stills; Higgsfield rejected (paid) |
 | 2026-10-24 | Steffen Miro — "This Is Boring But It'll Get Your Channel Monetized Faster" (21 min) | [note](notes/2026-10-24-steffen-miro-boring-monetized-faster.md) | YPP 8,000 h from Feb 2027 verified → long searched video a month (proposal); topic transfer; 80/20 |
 | 2026-10-24 | Danny Why — "Monetize your Small Channel with ONE Video" (12 min) | [note](notes/2026-10-24-danny-why-monetize-one-video.md) | stranger check in the gate; end-on-the-peak outro (proposal) |
 | 2026-10-23 | Kellan Henneberry — "fastest way to hit 10k/mo with yt shorts" (24 min, audio) | [note](notes/2026-10-23-kellan-henneberry-10k-shorts.md) | outlier-topic scan (proposal); his reused-clips model rejected |

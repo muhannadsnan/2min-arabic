@@ -65,7 +65,7 @@ Español: Aprende árabe en 2 minutos al día
 ## Tags
 
 ```
-days of the week in arabic, arabic days of the week, days of the week in arabic and english, sunday in arabic, friday in arabic, today in arabic, tomorrow in arabic, al ahad, al jumuah, ayyam al usbu, أيام الأسبوع, أيام الأسبوع بالعربي, الأحد, الجمعة, اليوم, غدا, learn arabic, arabic for beginners, arabic vocabulary, language learning, shorts
+days of the week in arabic, arabic days of the week, week days in arabic, days in arabic, days of week in arabic, sunday in arabic, friday in arabic, today in arabic, tomorrow in arabic, al ahad, al jumuah, ayyam al usbu, أيام الأسبوع, أيام الأسبوع بالعربي, الأحد, الجمعة, اليوم, غدا, learn arabic, arabic for beginners, arabic vocabulary, language learning, shorts
 ```
 
 ## Settings

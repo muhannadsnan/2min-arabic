@@ -155,6 +155,19 @@ milestone (new words learned · story/game/conversation done · "Your turn" done
 `images/<video>/prompts.json` add `{"stars": [s1, s2, s3]}` (scene numbers); assemble.py does the rest. Not for the
 talking/trailer videos (no milestones). Check `contact.png` and listen: the chime never covers a word.
 
+**YOUR TURN label (owner, 2026-10-28):** it sits right under the white card (assemble.py, per scene), so in a
+scene with a ⏸️ pause nothing important may be in the ~150 px under the card: put characters lower (h ≈ 0.5 for a
+single still) and objects centered below it; check a frame inside every pause. Pauses are 2 s with the clock ticking
+through them.
+
+**Sound effects (owner, 2026-10-28: "much nicer and livelier"):** every Day, Extra and Part gets them — our own
+sounds from `tools/make_sfx.py` → `assets/sfx/`, placed by assemble.py: whoosh as the hook card leaves · an airy
+swoosh (`card`) when a word card appears (not right after a star chime) · pop as the YOUR TURN label appears, then
+tick-tock through the ⏸️ pause when it is ≥ 1.8 s (a game or "Your turn"; short repeat-after-me pauses: pop only) · per-scene extras in prompts.json `{"sfx": [[scene, "boing"], …]}` — **boing** for a funny twist,
+**sparkle** for an "aha"/magic moment, **pop** for anything that appears without a sound of its own. Pick 1–3 extras
+per video from the script (a twist, a reveal, a punchline). Reuse the library; **now and then make a new sound** in
+make_sfx.py (owner allows it) when a moment needs one — never downloaded sounds with unclear licences.
+
 **Content rules from the analytics (owner, 2026-10-17):**
 - **Mini story:** one place, two characters, one twist, ≤ 4 new words. Shape: play the story → replay it with the new
   words on screen → end on ONE line the viewer can use.
