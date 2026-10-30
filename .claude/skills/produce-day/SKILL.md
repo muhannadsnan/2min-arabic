@@ -263,6 +263,10 @@ stretched, gappy and pitch-drifting takes automatically; still read `audio/<vide
 with `--redo N,M --takes 8`. It stops if an Arabic line has no recording — fix the recording, don't reach for
 `--allow-tts` (robotic Arabic TTS is why the owner records). If the voice setup changed, send the owner a 30 s
 sample before building the whole video — his ear is the judge, and overstating checks has burned us before.
+**Hesitations (owner 2026-10-29: an "aaahh" before "Day 27"):** the audio gate now flags any uh / um / ahh / er / hmm
+in a narrator clip (`voice_balance.py`, Whisper with a disfluent prompt — normal transcription silently drops them).
+A flagged clip is never shipped: redo it, and if the filler comes back, reword the line's start (the clone tends to
+hesitate before a number at the very start: prefer "This is Day 27." over "Day 27, and…").
 
 ## 5. Images — ComfyUI + FLUX.2 klein
 

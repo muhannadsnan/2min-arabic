@@ -1,0 +1,212 @@
+[00:00] I just used Clotcode to help me create a new YouTube channel to see if I can go viral.
+[00:05] But I didn't just go viral.
+[00:07] I ended up getting monetized in just two weeks.
+[00:10] Let me actually show you the analytics of this channel.
+[00:13] These are the analytics in the last 28 days.
+[00:17] Let me switch to the last 365 days over here so you can see that I started posting literally
+[00:22] just two weeks ago.
+[00:23] You can see over here, this is where I started posting.
+[00:27] Over here we can check watch time as well, subscribers and revenue.
+[00:31] I just started earning yesterday and the day before that.
+[00:34] Let me go back to the last 28 days and you can see that in the first day it made $27
+[00:40] and the second day it made $162.
+[00:43] So I'm assuming this channel might earn me $4,000 to $5,000 if it keeps going like this.
+[00:48] Over here the channel is getting 3 million views every 48 hours as you can see over here.
+[00:55] As you can see, I blew up this channel literally just in two weeks, almost three weeks.
+[01:01] I'm not going to reveal the channel yet because I want to see how far I can grow it.
+[01:05] My plan is to try and grow it to 1 million subscribers and then make a video about it
+[01:10] on how I grew this channel.
+[01:13] But in this video I am going to show you and teach you how you can make videos like this
+[01:17] as well.
+[01:18] Not only that, but I'm going to share the skill with you, basically the skill I use
+[01:22] inside Cloud Code to help me create these videos.
+[01:25] This is a skill I've created myself.
+[01:27] I've spent credits to build this skill and now I'm going to be sharing it with you so
+[01:32] that you don't have to spend credits.
+[01:33] So if you want to learn how to edit videos like this, in this video I'm going to be teaching
+[01:37] you.
+[01:38] Let's begin.
+[01:39] Before we start, first you need to understand the system and why this works.
+[01:43] We're going to be creating shorts that are 20 to 30 seconds long because they're easier
+[01:48] to make and use lower AI credits.
+[01:51] That's also the point of this video, to show you how to create content like this without
+[01:55] spending too much money.
+[01:57] That's also why I'm going to be sharing with you the skill I created myself.
+[02:01] Because to create a skill like this, you are going to spend a bunch of credits to actually
+[02:05] build it.
+[02:06] So I'm just going to share it with you.
+[02:07] Now the most important part is the niche.
+[02:11] If you choose something that is oversaturated, it's going to be harder to grow or even impossible.
+[02:17] So how do you find something different?
+[02:19] Well, you look at different channels and see how you can combine their topics and styles.
+[02:24] So let me quickly teach you how I did it for this channel so you can learn how to create
+[02:29] your own niche.
+[02:30] For example, we have this video over here called, why don't we throw trash into a volcano?
+[02:35] It was posted a long time ago, but then I found this other channel which covered the
+[02:40] same topic, but used 2D animations to basically tell the story.
+[02:46] And their video got 3.6 million views as you can see, which is insane.
+[02:50] So you can see how taking a topic that people are already interested in and presenting it
+[02:55] into a different style can work really well.
+[02:57] That's what we're going to do here.
+[02:59] Something I personally haven't seen much of on shorts is 2D animations explaining random
+[03:04] facts.
+[03:06] Basically take Zach D. Films for example.
+[03:09] He gets billions of views and I've seen a lot of creators copying his style, basically
+[03:14] recreating 3D animations.
+[03:16] But I haven't seen people recreate the style in 2D animations.
+[03:21] So that's what we're going to be doing here.
+[03:22] We're going to take a similar approach to explaining interesting facts, but create our
+[03:27] own videos using 2D animations.
+[03:29] And I'm also going to share the prompts so you can create the same animations yourself.
+[03:33] Now for this to work, you need two things.
+[03:37] A subscription to Clock Code and a subscription to Higgs Field.
+[03:41] That's all you need.
+[03:42] I promise it's not going to be as expensive as you think.
+[03:45] With that said, let's begin the tutorial.
+[03:48] Let me show you how to create these animations.
+[03:49] So I'm going to assume that you already have Clock Code on your computer.
+[03:53] The next step is to connect Higgs Field to Clock Code.
+[03:56] For that there's going to be a link down in the description.
+[03:58] If you click on that link, it's going to send you to the Higgs Field dashboard over here.
+[04:03] Once you are on the Higgs Field dashboard, on the top left over here where it says MCP,
+[04:08] click on MCP.
+[04:09] Then over here where it says Claude, click on Claude.
+[04:12] Then just click over here where it says connect Higgs Field.
+[04:15] Once you click on this button, it's going to ask you to connect Higgs Field to your
+[04:19] Claude account.
+[04:20] But I already have it connected so I'm not going to continue.
+[04:23] You just click continue, continue, authorized and that's it.
+[04:26] You're going to have Higgs Field connected to your Claude account.
+[04:28] That's all you have to do.
+[04:29] After that, we can go ahead and start creating the animations.
+[04:32] So for that, just open Clock Code on your computer like this and you should have a completely
+[04:36] new chat in Clock Code.
+[04:38] Make sure you're on the Claude Code section.
+[04:40] So over here at the top left, you can see we have the chat and we have the code.
+[04:45] Make sure you're on the code section.
+[04:47] Now as I said in the beginning to make this tutorial as easy as possible to follow, I
+[04:51] prepared a Google document with all the prompts I'm going to be using inside this video.
+[04:56] So go to this document, there's going to be a link down in the description.
+[04:59] If you click on that link, it should send you to this document over here.
+[05:01] And as you can see, we have step number one.
+[05:04] For step number one, what you want to do is copy this message over here, this prompt.
+[05:08] Right click and copy.
+[05:09] Then go back to Clock Code and paste this prompt over here in a new chat and just send
+[05:13] this prompt.
+[05:14] Now make sure you are on Opus 5.5 or the newer model that is better at the current time.
+[05:20] And for the effort level, make sure you set max over here and just send this prompt to
+[05:25] Claude.
+[05:26] But one more thing I forgot to mention over here where it says bypass permissions.
+[05:30] If you have it set as auto or manual or accept edits, make sure you select bypass permissions
+[05:35] because this can take 10 to 20 minutes and sometimes it's going to ask you to accept
+[05:39] edits.
+[05:40] And if you want to leave your computer, if you want to go make yourself a sandwich or
+[05:42] if you want to go work out, select bypass permissions so Claude can just do everything
+[05:46] for you.
+[05:47] Then just go ahead and send the prompt like I did over here.
+[05:49] Now what this prompt does, this is basically a general prompt that will help you research
+[05:54] ideas for your animations.
+[05:56] So you can always use this prompt, you don't need to change it, you don't need to add anything
+[06:00] to it.
+[06:01] Let's start with this prompt because this prompt, as I've said, is going to research
+[06:05] ideas for you.
+[06:06] Now while Claude code is thinking and researching ideas, I want you to go back to the document
+[06:11] over here, scroll down.
+[06:12] And here we have step number two, which is basically the skill.
+[06:16] As you can see, if we scroll down, this is a huge text with codes, with instructions.
+[06:21] Basically what this is, this is the skill I already created.
+[06:25] What does that mean?
+[06:26] Well, let me explain.
+[06:27] When you create an animation inside Claude code for the first time, it's not going to
+[06:32] look good.
+[06:33] You have to prompt it again and prompt it again and send reference photos and prompt
+[06:38] it again.
+[06:39] And I basically spent an entire day reprompting and fine tuning my Claude account to basically
+[06:44] create really good animations.
+[06:47] And then I can turn that into a skill.
+[06:49] This over here is exactly that.
+[06:51] It's the skill I basically had to spend my credits to teach my Claude account how to
+[06:56] create the perfect animations.
+[06:58] So what I'm doing over here with step number two is basically sharing this skill with you
+[07:03] so that you don't have to prompt and fine tune your Claude account yourself.
+[07:07] You don't have to spend money and you don't have to spend credits.
+[07:10] So as I said, go back to my Google document, go to step number two over here, copy this
+[07:14] entire skill until it says step number three.
+[07:18] We will stop at step number three.
+[07:21] So as you can see, I'm copying this entire thing over here, step number three, as you
+[07:24] can see.
+[07:25] So over here, I'm going to copy this text and then I'm going to go back to Claude code
+[07:30] and I'm going to paste this skill and I'm going to send this message.
+[07:34] So now we've sent two messages to Claude code.
+[07:37] The first one is researching the idea.
+[07:40] The second one is teaching Claude code how to create really good 2D animations.
+[07:45] And now all you have to do is wait for Claude code to process all of this information to
+[07:51] research ideas and to understand how the skill works.
+[07:55] That's it.
+[07:56] And if you want to learn a little bit more about this skill and how it works, basically
+[08:00] here's how it works.
+[08:01] Hicksfield makes the assets, the character in every pose, every face he makes.
+[08:07] And all these assets are created and prompted by Claude code.
+[08:11] Claude code is going to use Hicksfield to generate all these assets.
+[08:15] So we don't have to write prompts ourselves for each image and each asset.
+[08:19] Claude code is going to do that for us.
+[08:21] And then Claude code is going to code the animations, the motion graphics, and it's
+[08:25] going to use these assets created with Hicksfield as footage.
+[08:29] That's how it works.
+[08:30] And that's what this skill does.
+[08:32] But because I fine tune it so much, it does it really well.
+[08:36] Now once Claude code is done finding an idea, all you want to do is go back to my document
+[08:40] over here to step number three, copy the prompt from step number three, right click, copy
+[08:46] and paste the prompt.
+[08:48] This prompt will turn the idea into a 2D animation.
+[08:51] Now an extra thing you can do is you can actually add sound effects so you can add a folder
+[08:55] with sound effects in the message with music and the voiceover.
+[08:59] And if you do that, your animation will also have music, sound effects and the voiceover.
+[09:04] So you just send the prompt.
+[09:05] And this usually takes around 20 to 30 minutes to create.
+[09:10] So you can go ahead, create make a sandwich for yourself or whatever.
+[09:14] Now I already created this animation before so I can show it to you because I didn't want
+[09:18] to wait 20 to 30 minutes.
+[09:20] So let me actually show you how the animation looks like.
+[09:23] First of all, Claude code will create the assets using Hicksfield.
+[09:26] As you can see over here, these are assets for our animation.
+[09:30] They come with backgrounds, but Claude code is going to remove the backgrounds using the
+[09:35] Hicksfield background removal tool.
+[09:37] And then once it's done generating the assets, it's going to create a mood board like this,
+[09:42] which will show you how the animation will look.
+[09:44] And then it's basically going to go ahead and create the animation and you will also
+[09:49] have the animation inside remotion, which means you can make edits to it.
+[09:53] So over here, if I click open, we will open the remotion studio.
+[09:57] And over here we have our animation.
+[09:59] If I hit play, let me see if I have my sound connected.
+[10:02] Yep.
+[10:03] Now before I show you the video, the final result, I just want to say that I have a private
+[10:07] community.
+[10:08] There's going to be a link down in the description or you can join it inside my private community.
+[10:11] I teach those things.
+[10:12] I teach how to edit videos using AI.
+[10:14] I have a step by step course on how to grow on YouTube and how to create a system for
+[10:19] your channel so that making videos is easier.
+[10:21] Not only that, but you can talk with me inside the community and other creators.
+[10:24] So if you want to grow on YouTube and make this process of growing a YouTube channel
+[10:28] and monetizing it easier, I suggest you try out my community.
+[10:33] There's going to be a link down in the description if you want to try it out.
+[10:35] Now let's go ahead and see the final result.
+[10:38] Let's see how this animation created with cloth code looks like.
+[10:53] You might see a little bit of glitches.
+[10:55] That's because we're watching the animation inside Remotion.
+[10:58] If I exit this Remotion window and actually play the animation from my computer over here,
+[11:03] it should look like this.
+[11:09] But anything wet inside turns into steam and the lava comes flying back out.
+[11:14] The volcano basically said no thanks.
+[11:17] This is absolutely insane because this is not a video generated using AI.
+[11:24] This is code animating our PNG photos created with Hicks Field and it gives that animation
+[11:30] look which many channels on YouTube have.
+[11:34] Channels that were created 10 years ago or 20 years ago, right?
+[11:37] I mean, just look at this.
+[11:44] And the reason why it's so smooth is because you used the skill I shared with you.
+[11:48] Usually from the first try, it's not going to look like this.
+[11:51] Now if you want to learn more, as I said, I strongly suggest you check out my community.
+[11:56] There's going to be a link down in the description.
+[11:58] Inside I have courses and many more things.
+[12:00] I'll see you inside my community.

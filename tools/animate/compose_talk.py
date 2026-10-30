@@ -35,6 +35,9 @@ def keyed(path, mirror=False):
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
     dom = g - np.maximum(r, b)
     alpha = np.clip(1.0 - (dom - 12) / 40, 0, 1)
+    # dark clothes catch green bounce light (the waiter's trousers were half see-through, owner 2026-10-29): the screen
+    # itself is bright, so anything darker than it stays solid, fading over g 80–110
+    alpha = np.maximum(alpha, np.clip((110 - g) / 30, 0, 1))
     a[..., 1] = np.minimum(g, np.maximum(r, b) * 1.04)          # despill everywhere: no green tint on hair/edges
     al = Image.fromarray((alpha * 255).astype(np.uint8)).filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(1.0))
     im = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8)).convert("RGBA"); im.putalpha(al)

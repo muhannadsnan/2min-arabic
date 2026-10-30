@@ -33,6 +33,9 @@ def speaking(stem):
             continue
         n = next(i + 1 for i, (s, e) in enumerate(scenes) if s <= c["start"] < e)
         s0 = scenes[n - 1][0]
-        for a, b in voiced_parts(ROOT / "audio" / stem / "clips" / c["file"]):
+        parts = voiced_parts(ROOT / "audio" / stem / "clips" / c["file"])
+        if not parts:   # silent placeholder (preview before the recording): the mouth moves through the whole slot
+            parts = [(0.1, c["end"] - c["start"] - 0.1)]
+        for a, b in parts:
             res.setdefault(n, {}).setdefault(c["speaker"], []).append([round(c["start"] - s0 + a, 2), round(c["start"] - s0 + b, 2)])
     return res

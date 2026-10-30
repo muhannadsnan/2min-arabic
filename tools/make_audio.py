@@ -38,12 +38,12 @@ WORKER = pathlib.Path(__file__).resolve().parent / "tts_worker.py"
 # Bump a speaker's version when its voice reference or setting in <TTS_HOME>/local_tts.py changes,
 # so only that speaker's clips are regenerated.
 VOICE_VERSIONS = {"narrator": "owner-en-6", "teacher": "owner-ar-4", "teacher-slow": "owner-ar-4",
-                  "sami": "owner-ar-4", "tom": "owner-ar-4", "lina": "sara-ar-5", "narrator-kokoro": "kokoro-2"}
+                  "sami": "owner-ar-4", "tom": "owner-ar-4", "omar": "owner-ar-4", "lina": "sara-ar-5", "narrator-kokoro": "kokoro-2"}
 # -2: neutral, 5% slower · -3 (Arabic): denoised reference, cfg 0.5, tail check + trim
 # owner-en-3 / sara-ar-4: all references denoised with DeepFilterNet (2026-09-27)
 # -4/-5: every generated clip also passes through DeepFilterNet (noise-free guarantee)
 # owner-en-6 (2026-10-15): narrator tempo 0.9 — calmer for beginners (~3.3 instead of ~3.8 words/s), same voice/accent
-SPEAKERS = ("narrator", "teacher", "teacher-slow", "sami", "tom", "lina", "narrator-kokoro")
+SPEAKERS = ("narrator", "teacher", "teacher-slow", "sami", "tom", "omar", "lina", "narrator-kokoro")
 
 MAX_PAUSE = 2.0     # seconds — longer waits bore the viewer (easy words: 1.5 s)
 AFTER_FILMED = 0.6   # s of air after a filmed clip (hello) before the next line
@@ -57,7 +57,7 @@ PAUSE = re.compile(r"⏸️ \*\*Pause (\d+(?:\.\d+)?)s\*\*")
 VIDEO = re.compile(r"^🎥 \*\*Clip:\*\*\s*([\w-]+)(?:\s*—\s*(.+))?$")
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CLIPS_DIR = ROOT / "footage" / "clips"
-ARABIC_SPEAKERS = ("teacher", "teacher-slow", "sami", "tom", "lina")   # tom = Day 11 tourist, voiced by the owner
+ARABIC_SPEAKERS = ("teacher", "teacher-slow", "sami", "tom", "omar", "lina")   # tom = Day 11 tourist, omar = Sami's friend: both voiced by the owner
 
 
 def parse(script: pathlib.Path):
@@ -119,7 +119,7 @@ RECORDING_MATCH = {
     "_1620-combined": "lowshelf=f=250:g=2,highshelf=f=1800:g=-10,equalizer=f=6300:t=q:w=0.9:g=-9,",
 }
 OWNER_LIFT_DB = 1.0   # measured 2026-10-02: +2 put him 2 LU above the narrator; the EQ does most of the work
-OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami", "tom"}
+OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami", "tom", "omar"}
 
 
 def level(src: pathlib.Path, dst: pathlib.Path, owner=None, match=""):

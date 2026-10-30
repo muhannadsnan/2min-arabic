@@ -180,6 +180,40 @@ def post(a):
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+def carousel(a):
+    """Carousel post (owner 2026-10-30): every slide-*.jpg of a folder (made by tools/make_carousel.py) + caption.txt.
+    Same public-link trick as post(): the images sit in the ig-temp release while Instagram fetches them."""
+    import shutil, tempfile
+    folder = pathlib.Path(a.folder)
+    slides = sorted(folder.glob("slide-*.jpg"))
+    if not 2 <= len(slides) <= 20:
+        sys.exit(f"{len(slides)} slides — Instagram takes 2–20")
+    caption = (folder / "caption.txt").read_text(encoding="utf-8").strip()
+    me = token()["user_id"]; stamp = int(time.time())
+    tmp = pathlib.Path(tempfile.mkdtemp()); names = []
+    for k, sl in enumerate(slides, 1):
+        names.append(f"car-{stamp}-{k:02d}.jpg"); shutil.copy(sl, tmp / names[-1])
+    url = lambda n: f"https://github.com/{REPO}/releases/download/{BUFFER}/{n}"
+    gh("release", "upload", BUFFER, *[str(tmp / n) for n in names], "--clobber", "-R", REPO)
+    try:
+        kids = [call(f"{me}/media", method="POST", data={"_": "1"}, image_url=url(n), is_carousel_item="true")["id"] for n in names]
+        cid = call(f"{me}/media", method="POST", data={"_": "1"}, media_type="CAROUSEL", children=",".join(kids), caption=caption)["id"]
+        for _ in range(30):
+            st = call(cid, fields="status_code,status")
+            if st.get("status_code") == "FINISHED": break
+            if st.get("status_code") == "ERROR": sys.exit(f"carousel failed: {st.get('status')}")
+            time.sleep(5)
+        print(f"✅ carousel container ready ({len(kids)} slides)")
+        if not a.apply:
+            print("dry run — not published. Add --apply to publish."); return
+        pid = call(f"{me}/media_publish", method="POST", data={"creation_id": cid})["id"]
+        print(f"✅ published: {call(pid, fields='permalink').get('permalink')}")
+    finally:
+        for n in names:
+            gh("release", "delete-asset", BUFFER, n, "-y", "-R", REPO)
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def refresh(a):
     t = token()
     r = json.load(urllib.request.urlopen("https://graph.instagram.com/refresh_access_token?" + urllib.parse.urlencode(
@@ -201,6 +235,7 @@ def main():
     p = sub.add_parser("post"); p.add_argument("video"); p.add_argument("--caption-file", required=True)
     p.add_argument("--cover"); p.add_argument("--apply", action="store_true")
     p.add_argument("--trial", action="store_true", help="Trial Reel: non-followers only (owner 2026-10-18 test)"); p.set_defaults(fn=post)
+    p = sub.add_parser("carousel"); p.add_argument("folder"); p.add_argument("--apply", action="store_true"); p.set_defaults(fn=carousel)
     sub.add_parser("refresh").set_defaults(fn=refresh)
     a = ap.parse_args()
     a.fn(a)

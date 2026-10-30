@@ -36,7 +36,10 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="upload + let Instagram process it, but don't publish")
     ap.add_argument("--force", action="store_true", help="ignore the 15:00 gate and the once-a-day check")
     ap.add_argument("--trial", action="store_true", help="post the next dubbed Trial Reel from the ig-trial queue")
+    ap.add_argument("--carousel", action="store_true", help="post the next carousel from the ig-carousel queue")
     a = ap.parse_args()
+    if a.carousel:
+        return carousel(a)
     if a.trial:
         return trial(a)
     now = datetime.datetime.now(OSLO)
@@ -82,6 +85,34 @@ def main():
         print(f"{name} removed from the queue · {len(names) - 1} Reels left")
         if len(names) - 1 <= 3:
             print(f"::warning::Only {len(names) - 1} Reels left in the Instagram queue")
+
+
+def carousel(a):
+    """Carousel twice a week (owner 2026-10-30: Wed + Sun 19:00, 7–8 slides, the words of the latest Reel's video):
+    the next carousel-NN.bin from the `ig-carousel` release (encrypted tar of slide-*.jpg + caption.txt, made by
+    tools/ig_carousel_add.py). Once per day (done-YYYY-MM-DD marker)."""
+    now = datetime.datetime.now(OSLO); Q = "ig-carousel"
+    assets = gh("release", "view", Q, "--json", "assets", "--jq", ".assets[].name").split()
+    marker = f"done-{now:%Y-%m-%d}"
+    if marker in assets and not a.force:
+        print(f"a carousel was already posted today ({marker})"); return
+    names = sorted(n for n in assets if n.startswith("carousel-") and n.endswith(".bin"))
+    if not names:
+        print("::warning::carousel queue is empty — ask Claude for the next carousels"); return
+    name = names[0]; tmp = pathlib.Path(tempfile.mkdtemp())
+    gh("release", "download", Q, "-p", name, "-D", str(tmp))
+    key = tmp / "key"; key.write_text(os.environ["IG_QUEUE_KEY"])
+    subprocess.run(f'openssl enc -d -aes-256-cbc -pbkdf2 -pass file:"{key}" -in "{tmp / name}" | tar -C "{tmp}" -xf -',
+                   shell=True, check=True)
+    key.unlink()
+    print(f"{name}: {(tmp / 'caption.txt').read_text(encoding='utf-8').splitlines()[0][:80]}")
+    ig.carousel(argparse.Namespace(folder=str(tmp), apply=not a.dry_run))
+    if not a.dry_run:
+        gh("release", "delete-asset", Q, name, "-y")
+        (tmp / marker).write_text("1"); gh("release", "upload", Q, str(tmp / marker), "--clobber")
+        for old in (n for n in assets if n.startswith("done-") and n != marker):
+            gh("release", "delete-asset", Q, old, "-y")
+        print(f"{name} posted · {len(names) - 1} carousels left")
 
 
 def trial(a):

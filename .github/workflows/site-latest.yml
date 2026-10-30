@@ -1,0 +1,25 @@
+# Website start page with the newest lessons (owner, 2026-10-30): the Instagram bio link points here, so it must be
+# current every day without the laptop — after the 15:00 Reel and the 17:00 YouTube premiere (Oslo, winter time).
+name: Website newest lessons
+on:
+  schedule:
+    - cron: "25 14,16 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: site-latest
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rebuild and push index.html
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "2min-arabic bot"
+          git config user.email "actions@users.noreply.github.com"
+          python3 tools/site_latest.py --push

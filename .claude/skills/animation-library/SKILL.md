@@ -85,6 +85,30 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
 - **Openers (owner 2026-10-26):** no random facial expressions. A good opener = a close-up of one person (e.g. Omar)
   greeting with the face (warm hello smile) whose **mouth moves with the narrator's hook** like a presenter — built with
   compose_talk.py (still = hello face, talk = 5 mouth shapes, speak = the voiced parts of the hook clip).
+- **The opener is a close-up of the video's MAIN character speaking the narrator's hook (owner 2026-10-29: "I expect
+  him to talk since he is the first to show up")** — Day 27's waiter, Day 26's Sami, Day 28's Lina… Close-up talk
+  sets: `library/sets/v2/<name>_close.png` + `<name>_close_talk1–5.png` (Omar, Sami, Lina, the waiter). A new main
+  character gets a close set first.
+  **The narrator is the owner's male voice → the presenter is always a man** (Sami, Omar, the waiter — owner 2026-10-29:
+  "Lina can't be the starting narrator"). In a Lina-centred video Sami presents the hook; Lina's mouth never moves to
+  the narrator.
+- **One person talking alone → often a close-up** (owner 2026-10-29), not the standing full figure; two people talking
+  → the two-shot.
+- **Close-up framing (owner 2026-10-29, Day 27):** the person sits in the **lower half** of the picture (cards, badge and
+  stars own the upper half), head and shoulders, and the picture spans the **full video width** — the shoulders run off
+  the bottom/sides naturally; never a narrow picture whose side edges show inside the frame. Sets:
+  `<name>_close2.png` + `<name>_close2_talk1–5.png`, placed with h = 1.0 (made from a crop of the approved front picture
+  pasted into the lower half of a green 9:16 canvas, then sharpened with klein `--no-style`).
+- **No `--style` on edits of existing characters:** the style text (cream palette, loose jeans) overrides the reference —
+  the first close-ups came back in cream turtlenecks. Use `--no-style` and name the clothes.
+- **Two-shots:** heads the same size (scale the partner, don't trust the picture's own framing); Sami without the books
+  when he just talks (`sami_side_free`); the waiter has natural cheeks (no pink blush).
+- **Two people standing (owner 2026-10-29):** the second one **mirrors the first one's stance**: same three-quarter view
+  turned to the partner, same crop (just above the knees), same scale (heads the same size) — never one full-length
+  "floating" next to one cut at the thighs. Props are **held** in a hand (the waiter's notepad floated). A character
+  framed differently gets a new side picture framed like Sami's (`--ref <identity> --ref sami_side.png`).
+- Dark clothes keep their green bounce light → compose_talk.py keeps anything darker than the screen solid (the
+  waiter's trousers were see-through, 29 Oct). Check every new character on a pink background before use.
 - Speaking intervals: `tools/animate/voiced.py` → `speaking(stem)` (voiced parts only, breaths < 0.15 s ignored).
 - Two-person scenes: they **face each other** (three-quarter side views), each moves **only during their own line**
   (speaking times from audio/<video>/timeline.json); expressions (laugh, smile, hopeful) as single "react" pictures.

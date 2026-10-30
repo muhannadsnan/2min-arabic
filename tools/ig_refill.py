@@ -4,7 +4,7 @@
     ~/.local/share/2min-yt/venv/bin/python tools/ig_refill.py [--max 14] [--apply] [--out DIR]
 
 Takes the channel's Shorts that are already PUBLIC on YouTube, in publish order, skips the ones Instagram already
-had (~/.local/share/2min-yt/ig-queued.txt, one YouTube id per line), and builds one Reel per video:
+had (data/ig-queued.txt in the repo, one YouTube id per line), and builds one Reel per video:
 video = the uploaded file, cover = its thumbnail, caption = the description's first line + its word lists
 (🆕 / 📝 blocks) + the fixed Instagram footer. Each Reel is packed (tar) and encrypted with the queue key
 (~/.config/2min-instagram/queue.key) as reel-NN.bin; --apply uploads them to the `ig-queue` release that
@@ -22,7 +22,7 @@ import tempfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 REPO, QUEUE = "muhannadsnan/2min-arabic", "ig-queue"
-STATE = pathlib.Path.home() / ".local/share/2min-yt/ig-queued.txt"
+STATE = ROOT / "data" / "ig-queued.txt"   # in the repo (2026-10-30): the website job on GitHub reads it
 KEY = pathlib.Path.home() / ".config/2min-instagram/queue.key"
 FOOTER = ("Two minutes a day. Your first Arabic conversation in 30 days.\n"
           "▶️ Full lessons + the whole course on YouTube: link in bio\n"
@@ -121,6 +121,9 @@ def main():
         subprocess.run(["gh", "release", "upload", QUEUE, "-R", REPO, *[str(b) for *_, b in built]], check=True)
         with STATE.open("a") as f:
             f.writelines(f"{vid}\n" for _, vid, _, _ in built)
+        # the website job (GitHub, site-latest.yml) reads this list to show "From our Instagram this week"
+        subprocess.run(f'git add "{STATE}" && git commit -q -m "Instagram queue: {len(built)} Reels" -- "{STATE}" && git push -q',
+                       shell=True, cwd=ROOT)
         print(f"REFILLED reel-{built[0][0]:02d}–{built[-1][0]:02d} ({len(built)} Reels)")
     shutil.rmtree(tmp, ignore_errors=True)
 

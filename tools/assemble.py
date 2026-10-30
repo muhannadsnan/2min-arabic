@@ -238,11 +238,14 @@ def main():
     entries = json.loads(prompts.read_text(encoding="utf-8")) if prompts.exists() else []
     # progress stars need a row at the top: badge and cards move down by TOP (owner, 2026-10-17)
     TOP = 175 if any(isinstance(e, dict) and "stars" in e for e in entries) else 0
+    # owner 2026-10-29: badge + card sit tight under the stars (55 px higher) so the scene gets more room; pictures
+    # move down only 120 px instead of 175
+    BADGE_Y, CARD_Y, PIC_TOP = (165, 290, 120) if TOP else (40, 170, 0)
     opts = {p["s"]: p for p in entries if "s" in p}
     if TOP:   # the cards sit TOP px lower → every picture moves down as much, so faces and chalk stay below the card
         for o in opts.values():
-            if not o.get("asset") or o.get("shift"):
-                o["shift"] = round(o.get("shift", 0) + TOP / H, 3)
+            if (not o.get("asset") or o.get("shift")) and not o.get("noshift"):   # noshift: close-ups placed exactly
+                o["shift"] = round(o.get("shift", 0) + PIC_TOP / H, 3)
     # 3D videos (Day 6+, owner 2026-10-05): only the opener moves; every other scene is a clear still picture and
     # consecutive scenes cross-fade softly (XF s). Older flat videos keep the slow zoom and hard cuts.
     style3d = any(p.get("style") == "3d" for p in entries)
@@ -305,26 +308,26 @@ def main():
         if clip is not None:
             # library clip: "once" (default) = opener + 1-s hold (+ the scene picture); "loop" repeats it
             src = (["-stream_loop", "-1"] if o.get("clip_mode") == "loop" else []) + ["-i", str(clip)]
-            chain = f"[0:v]{fit},tpad=stop_mode=clone:stop_duration=600[bg];[bg][1:v]overlay=0:{40 + TOP}[b1]"
+            chain = f"[0:v]{fit},tpad=stop_mode=clone:stop_duration=600[bg];[bg][1:v]overlay=0:{BADGE_Y}[b1]"
         elif o.get("motion", "still" if style3d else "zoom") in ("still", "fade"):
             # still picture (no zoom); "fade" adds a slow fade in and out (for photo-only scenes)
             src = ["-loop", "1", "-i", str(image)]
             fade = (f",fade=t=in:st=0:d=0.5,fade=t=out:st={max(frames / FPS - 0.5, 0):.2f}:d=0.5"
                     if o.get("motion") == "fade" and not style3d else "")   # 3D: the cross-fade does this
-            chain = f"[0:v]{fit}{fade}[bg];[bg][1:v]overlay=0:{40 + TOP}[b1]"
+            chain = f"[0:v]{fit}{fade}[bg];[bg][1:v]overlay=0:{BADGE_Y}[b1]"
         else:
             src = ["-loop", "1", "-i", str(image)]
             chain = (f"[0:v]scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
                      f"zoompan=z='1+0.05*on/{max(frames, 1)}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
-                     f":d={frames}:s={W}x{H}:fps={FPS},setsar=1[bg];[bg][1:v]overlay=0:{40 + TOP}[b1]")
+                     f":d={frames}:s={W}x{H}:fps={FPS},setsar=1[bg];[bg][1:v]overlay=0:{BADGE_Y}[b1]")
         last = "b1"
         if screens[i - 1]:
             card = out_dir / "cards" / f"s{i:02d}.png"
             render_card(screens[i - 1], card, all_bold=(i == 1))
-            card_bottom[i] = 170 + TOP + Image.open(card).getbbox()[3]
+            card_bottom[i] = CARD_Y + Image.open(card).getbbox()[3]
             overlays += ["-i", str(card)]
             hook_s = float(o.get("hook", {}).get("seconds", 1.5)) if (i == 1 and o.get("hook")) else 0
-            chain += f";[b1][2:v]overlay=0:{170 + TOP}" + (f":enable='gte(t,{hook_s:.2f})'" if hook_s else "") + "[b2]"
+            chain += f";[b1][2:v]overlay=0:{CARD_Y}" + (f":enable='gte(t,{hook_s:.2f})'" if hook_s else "") + "[b2]"
             last = "b2"
         seg = seg_dir / f"s{i:02d}.mp4"
         run(["ffmpeg", "-v", "error", "-y", *src, *overlays, "-filter_complex", chain,

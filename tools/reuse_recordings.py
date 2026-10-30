@@ -12,7 +12,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SPEAKERS = {"teacher", "teacher-slow", "sami", "tom", "lina"}
+SPEAKERS = {"teacher", "teacher-slow", "sami", "tom", "omar", "lina"}
 
 
 def main():

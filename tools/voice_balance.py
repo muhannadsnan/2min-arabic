@@ -19,7 +19,7 @@ import numpy as np
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CONSIST = 0.92   # line vs. the video's other narrator lines; Days 6–10 scored 0.907–0.96 (median 0.95) — below 0.92 = noticeably different
-GROUP = {"narrator": "narrator", "teacher": "owner", "teacher-slow": "owner", "sami": "owner", "tom": "owner", "lina": "koki"}
+GROUP = {"narrator": "narrator", "teacher": "owner", "teacher-slow": "owner", "sami": "owner", "tom": "owner", "omar": "owner", "lina": "koki"}
 
 
 def lufs(path):
@@ -107,6 +107,24 @@ def main():
             print(f"{'⚠️ ' if notes else '✅ '}{c['n']:>3} {', '.join(notes) or 'ok':22} {c['text'][:70]}")
             if notes: problems.append(c["n"])
             if dur >= 2.6: narr_embs.append((c["n"], voice_emb(y, sr)))
+    # hesitations (owner, 2026-10-29: "aaahh" before "Day 27"): Whisper drops fillers unless its prompt contains some,
+    # so each narrator clip is transcribed with a disfluent prompt and any uh / um / ahh / er / hmm is flagged
+    try:
+        from faster_whisper import WhisperModel
+        wm = WhisperModel("medium", device="cuda", compute_type="float16")
+        filler = re.compile(r"^(u+h+|u+m+|a+h+|e+r+m*|h+m+|m+h*m+)$")
+        for c in tl["clips"]:
+            if c["speaker"] != "narrator":
+                continue
+            segs, _ = wm.transcribe(str(ROOT / "audio" / stem / "clips" / c["file"]), language="en", word_timestamps=True, vad_filter=False,
+                                    initial_prompt="Umm, uh, ahh, er, hmm. So, uh, day, um, twenty.")
+            hits = [f"{w.word.strip()} at {w.start:.1f} s" for s in segs for w in s.words
+                    if filler.match(re.sub(r"[^a-z]", "", w.word.lower()))]
+            if hits:
+                print(f"⚠️ {c['n']:>3} hesitation: {', '.join(hits)}  {c['text'][:60]}")
+                if c["n"] not in problems: problems.append(c["n"])
+    except ImportError:
+        pass
     # sentence-to-sentence consistency (owner, 2026-10-05: the accent must not change between sentences — keep it
     # American): each narrator line vs. the centre of all OTHER narrator lines of this video
     embs = {n: e for n, e in narr_embs}
