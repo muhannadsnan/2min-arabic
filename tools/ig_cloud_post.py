@@ -120,6 +120,9 @@ def trial(a):
     same encryption as the main queue), posted as a Trial Reel = non-followers only. Its caption is already in that
     language (no rotation). Once per slot (morning / evening): a `done-YYYY-MM-DD-am|pm` marker asset."""
     now = datetime.datetime.now(OSLO); Q = "ig-trial"
+    pause = pathlib.Path(__file__).resolve().parent.parent / "data" / "trial-paused.txt"
+    if pause.exists():   # owner 2026-10-30: the old-style dubs are flagged "looks like something you shared before"
+        print(f"Trial Reels paused: {pause.read_text().strip()}"); return
     assets = gh("release", "view", Q, "--json", "assets", "--jq", ".assets[].name").split()
     marker = f"done-{now:%Y-%m-%d}-{'am' if now.hour < 14 else 'pm'}"   # two slots a day (owner 2026-10-19, x03 phase)
     if marker in assets and not a.force:

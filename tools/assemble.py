@@ -18,6 +18,7 @@ English narration is burned in as captions (Arabic lines are already on the card
 """
 import argparse
 import json
+import os
 import pathlib
 import re
 import shutil
@@ -489,7 +490,10 @@ def main():
             mix.append(f"[fx{j}]")
         print(f"  sound effects: {len(cues)} ({', '.join(sorted({c[0] for c in cues}))})")
     hook = opts.get(1, {}).get("hook")   # thumbnail look for the first ~1.5 s (owner, 2026-10-16), over the caption too
-    if hook:
+    if os.environ.get("NO_CAPTIONS") == "1":   # clean picture for the dubbed language versions (ig_lang_version.py)
+        vchain += f";[{last}]null[v]"
+        final = final.with_name(final.stem + "-nocap.mp4")
+    elif hook:
         sys.path.insert(0, str(HERE))
         from thumbnail import hook_overlay
         hook_png = out_dir / "cards" / "hook.png"

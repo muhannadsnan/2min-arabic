@@ -1,0 +1,1 @@
+Paused 2026-10-30: Instagram flags the old-style dubs (same picture, new voice) as 'looks like something you shared before'. Resume with new-style versions (tools/ig_lang_version.py: own subtitles + hook per language) — delete this file to resume.
