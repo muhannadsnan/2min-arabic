@@ -126,7 +126,8 @@ def main():
         return f
     order = pick or list(range(1, len(words) + 1))   # original word numbers, for the pNN close-ups
     pic = lambda k, n: (ROOT / imgdir / f"p{order[k - 1]:02d}.png") if imgdir else img(n)
-    slides = [cover(pic(1, words[0][0]), title, sub, len(words))]
+    cov = ROOT / imgdir / "cover.png" if imgdir else None   # a dedicated cover picture (owner 2026-10-30: full shot)
+    slides = [cover(cov if cov and cov.exists() else pic(1, words[0][0]), title, sub, len(words))]
     slides += [word_slide(pic(k, n), a, t, e, k, len(words)) for k, (n, a, t, e) in enumerate(words, 1)]
     slides.append(closing())
     for k, s in enumerate(slides, 1):

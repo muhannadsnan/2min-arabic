@@ -23,6 +23,17 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 
 ## Calendar (keep it current)
 
+- **Weekly social rhythm (owner 2026-10-30):** Instagram Reel daily 15:00 + dubbed trial Reel daily (one video's 9
+  languages at a time: Day 12 → Day 8 → Day 3, then Day 4, x01) · **Instagram carousel Wed + Sun 19:00** (GitHub
+  instagram-carousel.yml, queue `ig-carousel`; 7–8 slides = cover + 5–6 words + closing; the words of the latest
+  Instagram Reel's video; every picture a dedicated close-up made for the slide, every hand finger-checked at full
+  size; owner approves each batch — tools/make_carousel.py + tools/ig_carousel_add.py; queued: Day 19 directions
+  1 Nov, body parts 4 Nov) · **YouTube Post Mon / Wed / Fri** (owner posts by hand, Claude prepares picture + text):
+  a teaser for the newest YouTube video with 2 new words or sentences, the video attached; every other one a quiz.
+  Review after 2 weeks (saves, follows, reach per post) — up to 3 carousels/week if it holds, down if reach per post drops.
+- **Website** https://muhannadsnan.github.io/2min-arabic/ = the Instagram bio link: newest YouTube lessons + this
+  week's Instagram videos, refreshed by GitHub (site-latest.yml, 15:25 + 17:25), tools/site_latest.py.
+
 - ~~After the vacation: restore sleep-on-power~~ → done 2026-10-15.
 - **After the trip (14 Oct), Instagram:** account 2minutearabic (Creator, Education, bio + YouTube link set). Reels
   01–14 scheduled by hand in the app 8–21 Oct (folder `../instagram-reels-oct`, SCHEDULE.txt). Still to do: link the
