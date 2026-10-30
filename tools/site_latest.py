@@ -101,7 +101,9 @@ def page(latest, insta):
 @media (prefers-reduced-motion:reduce){{.start{{animation:none}}}}
 .free{{position:relative;overflow:hidden;background:linear-gradient(135deg,#fff3c4,#f2c14e);border:none;color:#2b2b2b}}
 .free h2{{color:#1f5f5b}}.free p{{color:#3a3328}}
-.free .ribbon{{position:absolute;top:18px;right:-42px;transform:rotate(35deg);background:#c0633a;color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.12em;padding:6px 52px}}
+.free .seal{{position:absolute;top:14px;right:14px;width:78px;height:78px;border-radius:50%;background:#c0633a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-12deg);box-shadow:0 4px 12px rgba(120,50,20,.35);outline:2px dashed rgba(255,255,255,.75);outline-offset:-7px;line-height:1}}
+.free .seal b{{font-size:1.15rem;letter-spacing:.06em}}.free .seal small{{font-size:.62rem;letter-spacing:.08em;margin-top:3px;opacity:.95}}
+.free h2{{padding-right:84px;min-height:58px}}
 .free .row{{display:flex;gap:18px;align-items:center}}.free svg{{flex:none;width:64px;height:64px}}
 .free .btn{{background:#1f5f5b}}
 .follow{{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}}
@@ -119,7 +121,7 @@ footer .tool{{max-width:560px;margin:10px auto 0;font-size:.8rem;opacity:.8}}
 {igbox}
 <section class="card start"><h2>✨ New here? Start here</h2><p>Two minutes a day, in order: real phrases, little stories and simple grammar for complete beginners.</p>
 <div class="links"><a class="btn" href="{DAY1}">▶ Start Day 1</a><a class="btn alt" href="{PLAYLIST}">All 30 days</a></div></section>
-<section class="card free"><span class="ribbon">FREE</span><div class="row"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 4h26l12 12v42a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff"/><path d="M40 4v12h12" fill="#e9dcc0"/><rect x="18" y="34" width="28" height="14" rx="3" fill="#c0633a"/><text x="32" y="45" text-anchor="middle" font-family="Noto Sans,sans-serif" font-weight="700" font-size="10" fill="#fff">PDF</text><rect x="18" y="20" width="22" height="3" rx="1.5" fill="#1f5f5b"/><rect x="18" y="26" width="16" height="3" rx="1.5" fill="#1f5f5b"/></svg>
+<section class="card free"><span class="seal"><b>FREE</b><small>PDF</small></span><div class="row"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 4h26l12 12v42a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff"/><path d="M40 4v12h12" fill="#e9dcc0"/><rect x="18" y="34" width="28" height="14" rx="3" fill="#c0633a"/><text x="32" y="45" text-anchor="middle" font-family="Noto Sans,sans-serif" font-weight="700" font-size="10" fill="#fff">PDF</text><rect x="18" y="20" width="22" height="3" rx="1.5" fill="#1f5f5b"/><rect x="18" y="26" width="16" height="3" rx="1.5" fill="#1f5f5b"/></svg>
 <div><h2>Free downloads</h2><p>Every word of the course as a printable PDF: Arabic, transliteration and English.</p></div></div>
 <div class="links"><a class="btn" href="free/">⬇ Get the free PDFs</a></div></section>
 <section class="card"><h2>Follow</h2><div class="follow">
