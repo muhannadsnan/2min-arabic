@@ -127,9 +127,11 @@ def trial(a):
     marker = f"done-{now:%Y-%m-%d}-{'am' if now.hour < 14 else 'pm'}"   # two slots a day (owner 2026-10-19, x03 phase)
     if marker in assets and not a.force:
         print(f"a Trial Reel was already posted today ({marker})"); return
-    names = sorted(n for n in assets if n.startswith("trial-") and n.endswith(".bin"))
+    # only the new-style language versions (own subtitles + hook, "-v2"): the old ones (same picture, new voice) are
+    # flagged "looks like something you shared before" (owner 2026-10-30)
+    names = sorted(n for n in assets if n.startswith("trial-") and n.endswith("-v2.bin"))
     if not names:
-        print("trial queue is empty — nothing to do"); return
+        print("trial queue has no new-style versions — nothing to do"); return
     name = names[0]; tmp = pathlib.Path(tempfile.mkdtemp())
     gh("release", "download", Q, "-p", name, "-D", str(tmp))
     key = tmp / "key"; key.write_text(os.environ["IG_QUEUE_KEY"])

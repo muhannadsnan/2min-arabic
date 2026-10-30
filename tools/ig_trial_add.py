@@ -26,12 +26,13 @@ def main():
     n0 = max(existing, default=0); tmp = pathlib.Path(tempfile.mkdtemp()); built = []
     for i, it in enumerate(items, 1):
         w = tmp / f"w{i}"; w.mkdir()
-        video = ROOT / "output" / stem / f"dub-{it['audio']}-preview.mp4"
+        v2 = ROOT / "output" / stem / f"ig-{it['lang']}.mp4"   # new style (tools/ig_lang_version.py) if built
+        video = v2 if v2.exists() else ROOT / "output" / stem / f"dub-{it['audio']}-preview.mp4"
         if not video.exists(): sys.exit(f"missing {video}")
         shutil.copy(video, w / "video.mp4"); shutil.copy(thumb, w / "cover.jpg")
         (w / "caption.txt").write_text(it["caption"].strip() + "\n", encoding="utf-8")
         if len(it["caption"]) > 2200: sys.exit(f"{it['lang']}: caption too long")
-        b = tmp / f"trial-{n0 + i:02d}-{it['lang']}.bin"
+        b = tmp / f"trial-{n0 + i:02d}-{it['lang']}{'-v2' if v2.exists() else ''}.bin"
         subprocess.run(f'tar -C "{w}" -cf - video.mp4 cover.jpg caption.txt | '
                        f'openssl enc -aes-256-cbc -pbkdf2 -salt -pass file:"{KEY}" -out "{b}"', shell=True, check=True)
         built.append(b); print(f"{b.name}  {video.name}  {it['caption'].splitlines()[0][:60]}")
