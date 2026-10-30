@@ -64,7 +64,7 @@ def cards_html(items):
     out = []
     for i, t in items:
         title, cat = (t.split(" | ") + [""])[:2]
-        out.append(f'<a class="yt-card" href="https://youtu.be/{i}"><div class="thumb"><img src="https://i.ytimg.com/vi/{i}/maxresdefault.jpg" '
+        out.append(f'<a class="yt-card" target="_blank" rel="noopener" href="https://youtu.be/{i}"><div class="thumb"><img src="https://i.ytimg.com/vi/{i}/maxresdefault.jpg" '
                    f'alt="" loading="lazy"><span class="play"></span></div><b>{html.escape(title)}</b><small>{html.escape(cat)}</small></a>')
     return "".join(out)
 
@@ -75,7 +75,7 @@ def reels_html(items):
     out = []
     for i, t in items:
         label = t.split(" | ")[0]
-        out.append(f'<a class="reel" href="https://youtu.be/{i}" title="{html.escape(label)}"><img src="https://i.ytimg.com/vi/{i}/maxresdefault.jpg" '
+        out.append(f'<a class="reel" target="_blank" rel="noopener" href="https://youtu.be/{i}" title="{html.escape(label)}"><img src="https://i.ytimg.com/vi/{i}/maxresdefault.jpg" '
                    f'alt="{html.escape(label)}" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M8 5v14l11-7z"/></svg></a>')
     return "".join(out)
 
@@ -119,13 +119,13 @@ footer .tool{{max-width:560px;margin:10px auto 0;font-size:.8rem;opacity:.8}}
 <section class="card"><h2 class="sh"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6 15.8 12 9.6 8.4z"/></svg>Newest lessons on YouTube</h2><div class="ytrow">{cards}</div></section>
 {igbox}
 <section class="card start"><h2>✨ New here? Start here</h2><p>Two minutes a day, in order: real phrases, little stories and simple grammar for complete beginners.</p>
-<div class="links"><a class="btn" href="{DAY1}">▶ Start Day 1</a><a class="btn alt" href="{PLAYLIST}">All 30 days</a></div></section>
+<div class="links"><a class="btn" target="_blank" rel="noopener" href="{DAY1}">▶ Start Day 1</a><a class="btn alt" target="_blank" rel="noopener" href="{PLAYLIST}">All 30 days</a></div></section>
 <section class="card free"><span class="bookmark">FREE<small>PDF</small></span><div class="row"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 4h26l12 12v42a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff"/><path d="M40 4v12h12" fill="#e9dcc0"/><rect x="18" y="34" width="28" height="14" rx="3" fill="#c0633a"/><text x="32" y="45" text-anchor="middle" font-family="Noto Sans,sans-serif" font-weight="700" font-size="10" fill="#fff">PDF</text><rect x="18" y="20" width="22" height="3" rx="1.5" fill="#1f5f5b"/><rect x="18" y="26" width="16" height="3" rx="1.5" fill="#1f5f5b"/></svg>
 <div><h2>Free downloads</h2><p>Every word of the course as a printable PDF: Arabic, transliteration and English.</p></div></div>
 <div class="links"><a class="btn" href="free/">⬇ Get the free PDFs</a></div></section>
 <section class="card"><h2>Follow</h2><div class="follow">
-<a class="social yt" href="https://www.youtube.com/@2MinArabic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#ff0000" d="M9.6 15.6 15.8 12 9.6 8.4z"/></svg>YouTube<small>daily lessons + full course</small></a>
-<a class="social insta" href="https://www.instagram.com/2minutearabic/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.4" fill="#fff"/></svg>Instagram<small>a new lesson every day</small></a>
+<a class="social yt" target="_blank" rel="noopener" href="https://www.youtube.com/@2MinArabic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#ff0000" d="M9.6 15.6 15.8 12 9.6 8.4z"/></svg>YouTube<small>daily lessons + full course</small></a>
+<a class="social insta" target="_blank" rel="noopener" href="https://www.instagram.com/2minutearabic/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.4" fill="#fff"/></svg>Instagram<small>a new lesson every day</small></a>
 </div></section>
 </main><footer><div class="wrap"><a href="index.html">Home</a>·<a href="privacy.html">Privacy policy</a>·<a href="terms.html">Terms</a><p>© 2026 2 Minute Arabic</p>
 <p class="tool">“2min tools” is the channel's own private helper for its YouTube, Instagram and Facebook accounts (lesson details, subtitles, schedules, the channel's own statistics). It is not offered to anyone else. <a href="privacy.html">Privacy policy</a></p></div></footer></body></html>
