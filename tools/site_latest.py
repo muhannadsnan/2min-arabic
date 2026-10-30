@@ -108,10 +108,11 @@ def page(latest, insta):
 .social:hover{{transform:translateY(-3px)}}.social svg{{width:56px;height:56px}}
 .yt{{background:#ff0000}}.insta{{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}}
 .social small{{font-weight:400;opacity:.9;font-size:.85rem}}
+header .badge{{font-size:1.6rem;padding:8px 28px}}
 footer .tool{{max-width:560px;margin:10px auto 0;font-size:.8rem;opacity:.8}}
 </style>
-<title>2 Minute Arabic</title><meta name="description" content="Learn Arabic two minutes a day. Your first Arabic conversation in 30 days."></head><body>
-<header><div class="wrap"><span class="badge">2 MINUTE ARABIC</span><h1><span class="nw">Learn Arabic</span><br><span class="nw">2 minutes a day</span></h1><p class="ar" lang="ar" dir="rtl">مَرْحَبًا</p><p class="tag">Your first Arabic conversation in 30 days.</p></div></header>
+<title>2 Minute Arabic</title><meta name="description" content="Become fluent in Arabic, two minutes a day. Your first Arabic conversation in 30 days."></head><body>
+<header><div class="wrap"><span class="badge">2 MINUTE ARABIC</span><h1><span class="nw">Become fluent in Arabic,</span><br><span class="nw">2 minutes a day</span></h1><p class="ar" lang="ar" dir="rtl">مَرْحَبًا</p><p class="tag">Your first Arabic conversation in 30 days.</p></div></header>
 <main class="wrap">
 <section class="card"><h2>Newest lessons</h2><div class="ytgrid">{cards}</div></section>
 {igbox}
