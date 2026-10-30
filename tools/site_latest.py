@@ -60,18 +60,38 @@ def on_instagram(n=3):
 
 
 def cards_html(items):
-    return "".join(
-        f'<a class="vid" href="https://youtu.be/{i}"><img src="https://i.ytimg.com/vi/{i}/hqdefault.jpg" alt="" loading="lazy">'
-        f'<span>{html.escape(t.split(" | ")[0])}<small>{html.escape(t.split(" | ")[1]) if " | " in t else ""}</small></span></a>'
-        for i, t in items)
+    """YouTube-style cards: the big 16:9 thumbnail YouTube itself shows (the Short with blurred sides), title below."""
+    out = []
+    for i, t in items:
+        title, cat = (t.split(" | ") + [""])[:2]
+        out.append(f'<a class="yt-card" href="https://youtu.be/{i}"><div class="thumb"><img src="https://i.ytimg.com/vi/{i}/maxresdefault.jpg" '
+                   f'alt="" loading="lazy"><span class="play"></span></div><b>{html.escape(title)}</b><small>{html.escape(cat)}</small></a>')
+    return "".join(out)
+
+
+def reels_html(items):
+    """Instagram-style Reels grid: three vertical tiles — the centre of YouTube's 16:9 thumbnail is exactly our vertical
+    custom thumbnail (oardefault shows YouTube's own frame grab instead), play icon, label as tooltip."""
+    out = []
+    for i, t in items:
+        label = t.split(" | ")[0]
+        out.append(f'<a class="reel" href="https://youtu.be/{i}" title="{html.escape(label)}"><img src="https://i.ytimg.com/vi/{i}/maxresdefault.jpg" '
+                   f'alt="{html.escape(label)}" loading="lazy"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M8 5v14l11-7z"/></svg></a>')
+    return "".join(out)
 
 
 def page(latest, insta):
-    cards, ig = cards_html(latest), cards_html(insta)
-    igbox = f'<section class="card ig"><h2>From our Instagram this week</h2><div class="vids">{ig}</div></section>' if insta else ""
+    cards, ig = cards_html(latest), reels_html(insta)
+    igbox = (f'<section class="card ig"><h2>From our Instagram this week</h2><p class="muted">Tap a Reel for the full lesson on YouTube.</p>'
+             f'<div class="reels">{ig}</div></section>') if insta else ""
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
 <style>
-.vids{{display:grid;gap:12px}}.vid{{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:8px;background:var(--bg)}}.vid img{{width:120px;aspect-ratio:16/9;object-fit:cover;border-radius:10px;flex:none}}.vid span{{font-weight:700;line-height:1.3}}.vid small{{display:block;font-weight:400;color:var(--muted);margin-top:4px}}.vid:first-child{{border-color:var(--terra)}}
+.ytgrid{{display:grid;gap:18px}}@media (min-width:640px){{.ytgrid{{grid-template-columns:1fr 1fr}}.ytgrid a:first-child{{grid-column:1/-1}}}}
+.yt-card{{text-decoration:none;color:var(--ink);display:block}}.yt-card b{{display:block;margin-top:10px;line-height:1.3;font-size:1.05rem}}.yt-card small{{color:var(--muted)}}
+.thumb{{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:#000}}.thumb img{{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}}.yt-card:hover img{{transform:scale(1.03)}}
+.play{{position:absolute;left:10px;bottom:10px;width:44px;height:31px;background:#ff0000;border-radius:9px;box-shadow:0 2px 6px rgba(0,0,0,.4)}}.play:after{{content:"";position:absolute;left:17px;top:9px;border-style:solid;border-width:6.5px 0 6.5px 11px;border-color:transparent transparent transparent #fff}}
+.reels{{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}}.reel{{position:relative;aspect-ratio:9/16;border-radius:10px;overflow:hidden;display:block}}.reel img{{position:absolute;top:0;left:50%;height:100%;width:auto;transform:translateX(-50%);display:block}}.reel svg{{position:absolute;top:8px;right:8px;width:26px;height:26px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}}
+.ig{{border:2px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4) border-box}}
 .ig h2{{background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af);-webkit-background-clip:text;background-clip:text;color:transparent}}
 .start{{position:relative;border:2px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(120deg,var(--gold),var(--terra),var(--teal),var(--gold)) border-box;background-size:100% 100%,300% 300%;animation:glowmove 6s ease infinite,pulse 2.8s ease-in-out infinite}}
 .start h2{{font-size:1.45rem}}
@@ -93,7 +113,7 @@ footer .tool{{max-width:560px;margin:10px auto 0;font-size:.8rem;opacity:.8}}
 <title>2 Minute Arabic</title><meta name="description" content="Learn Arabic two minutes a day. Your first Arabic conversation in 30 days."></head><body>
 <header><div class="wrap"><span class="badge">2 MINUTE ARABIC</span><h1><span class="nw">Learn Arabic</span><br><span class="nw">2 minutes a day</span></h1><p class="ar" lang="ar" dir="rtl">مَرْحَبًا</p><p class="tag">Your first Arabic conversation in 30 days.</p></div></header>
 <main class="wrap">
-<section class="card"><h2>Newest lessons</h2><div class="vids">{cards}</div></section>
+<section class="card"><h2>Newest lessons</h2><div class="ytgrid">{cards}</div></section>
 {igbox}
 <section class="card start"><h2>✨ New here? Start here</h2><p>Two minutes a day, in order: real phrases, little stories and simple grammar for complete beginners.</p>
 <div class="links"><a class="btn" href="{DAY1}">▶ Start Day 1</a><a class="btn alt" href="{PLAYLIST}">All 30 days</a></div></section>
