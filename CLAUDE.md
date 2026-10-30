@@ -29,7 +29,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   Instagram Reel's video; every picture a dedicated close-up made for the slide, every hand finger-checked at full
   size; owner approves each batch — tools/make_carousel.py + tools/ig_carousel_add.py; queued: Day 19 directions
   1 Nov, body parts 4 Nov) · **YouTube Post Mon / Wed / Fri** (owner posts by hand, Claude prepares picture + text):
-  a teaser for the newest YouTube video with 2 new words or sentences, the video attached; every other one a quiz.
+  a teaser for the newest YouTube video with 2 new words or sentences + the video attached (a post takes pictures OR a video, not both); every other one a quiz. Files: output/yt-posts/<date>-<video>/ (post.txt + HOW.md).
   Review after 2 weeks (saves, follows, reach per post) — up to 3 carousels/week if it holds, down if reach per post drops.
 - **Website** https://muhannadsnan.github.io/2min-arabic/ = the Instagram bio link: newest YouTube lessons + this
   week's Instagram videos, refreshed by GitHub (site-latest.yml, 15:25 + 17:25), tools/site_latest.py.
