@@ -5,7 +5,6 @@ name: Instagram carousel (Wed + Sun)
 on:
   schedule:
     - cron: "0 18 * * 0,3"
-    - cron: "0 18 30 10 *"   # one-off: the first carousel on Fri 30 Oct 2026, 19:00 Oslo (owner: "start from today")
   workflow_dispatch:
     inputs:
       dry_run:
