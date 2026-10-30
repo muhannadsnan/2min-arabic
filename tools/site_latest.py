@@ -82,11 +82,12 @@ def reels_html(items):
 
 def page(latest, insta):
     cards, ig = cards_html(latest), reels_html(insta)
-    igbox = (f'<section class="card ig"><h2>From our Instagram this week</h2><p class="muted">Tap a Reel for the full lesson on YouTube.</p>'
+    igbox = (f'<section class="card ig"><h2 class="sh"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><defs><radialGradient id="igg" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs><rect x="1" y="1" width="22" height="22" rx="6" fill="url(#igg)"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg>On Instagram this week</h2><p class="muted">Tap a Reel for the full lesson on YouTube.</p>'
              f'<div class="reels">{ig}</div></section>') if insta else ""
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
 <style>
-.ytgrid{{display:grid;gap:18px}}@media (min-width:640px){{.ytgrid{{grid-template-columns:1fr 1fr}}.ytgrid a:first-child{{grid-column:1/-1}}}}
+.sh{{display:flex;align-items:center;gap:10px}}.sh .logo{{width:30px;height:30px;flex:none}}
+.ytrow{{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin:0 -4px;-webkit-overflow-scrolling:touch}}.ytrow .yt-card{{flex:0 0 78%;scroll-snap-align:start}}@media (min-width:640px){{.ytrow .yt-card{{flex-basis:46%}}}}
 .yt-card{{text-decoration:none;color:var(--ink);display:block}}.yt-card b{{display:block;margin-top:10px;line-height:1.3;font-size:1.05rem}}.yt-card small{{color:var(--muted)}}
 .thumb{{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:#000}}.thumb img{{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}}.yt-card:hover img{{transform:scale(1.03)}}
 .play{{position:absolute;left:10px;bottom:10px;width:44px;height:31px;background:#ff0000;border-radius:9px;box-shadow:0 2px 6px rgba(0,0,0,.4)}}.play:after{{content:"";position:absolute;left:17px;top:9px;border-style:solid;border-width:6.5px 0 6.5px 11px;border-color:transparent transparent transparent #fff}}
@@ -114,7 +115,7 @@ footer .tool{{max-width:560px;margin:10px auto 0;font-size:.8rem;opacity:.8}}
 <title>2 Minute Arabic</title><meta name="description" content="Become fluent in Arabic, two minutes a day. Your first Arabic conversation in 30 days."></head><body>
 <header><div class="wrap"><span class="badge">2 MINUTE ARABIC</span><h1><span class="nw">Become fluent in Arabic,</span><br><span class="nw">2 minutes a day</span></h1><p class="ar" lang="ar" dir="rtl">مَرْحَبًا</p><p class="tag">Your first Arabic conversation in 30 days.</p></div></header>
 <main class="wrap">
-<section class="card"><h2>Newest lessons</h2><div class="ytgrid">{cards}</div></section>
+<section class="card"><h2 class="sh"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6 15.8 12 9.6 8.4z"/></svg>Newest lessons on YouTube</h2><div class="ytrow">{cards}</div></section>
 {igbox}
 <section class="card start"><h2>✨ New here? Start here</h2><p>Two minutes a day, in order: real phrases, little stories and simple grammar for complete beginners.</p>
 <div class="links"><a class="btn" href="{DAY1}">▶ Start Day 1</a><a class="btn alt" href="{PLAYLIST}">All 30 days</a></div></section>
