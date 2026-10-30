@@ -29,7 +29,12 @@ def main():
         v2 = ROOT / "output" / stem / f"ig-{it['lang']}.mp4"   # new style (tools/ig_lang_version.py) if built
         video = v2 if v2.exists() else ROOT / "output" / stem / f"dub-{it['audio']}-preview.mp4"
         if not video.exists(): sys.exit(f"missing {video}")
-        shutil.copy(video, w / "video.mp4"); shutil.copy(thumb, w / "cover.jpg")
+        shutil.copy(video, w / "video.mp4")
+        if v2.exists():   # its own cover (the talking close-up), not the English thumbnail: a near-copy signal
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "0.5", "-i", str(v2), "-frames:v", "1", "-q:v", "2",
+                            str(w / "cover.jpg")], check=True)
+        else:
+            shutil.copy(thumb, w / "cover.jpg")
         (w / "caption.txt").write_text(it["caption"].strip() + "\n", encoding="utf-8")
         if len(it["caption"]) > 2200: sys.exit(f"{it['lang']}: caption too long")
         b = tmp / f"trial-{n0 + i:02d}-{it['lang']}{'-v2' if v2.exists() else ''}.bin"
