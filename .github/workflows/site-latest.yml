@@ -20,8 +20,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          GROUPS_KEY: ${{ secrets.GROUPS_KEY }}
         run: |
           git config user.name "2min-arabic bot"
           git config user.email "actions@users.noreply.github.com"
           python3 tools/site_latest.py --push
+          pip install -q cryptography
           python3 tools/fb_groups_page.py --push   # the owner's group-posts page (groups.html)

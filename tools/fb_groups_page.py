@@ -14,6 +14,7 @@ catch up. Not more at once: sharing into many groups in one sitting gets "tempor
 
 English Reels come from the Facebook Page (only those posted after the app went Live, 30 Oct 2026).
 """
+import base64
 import datetime
 import json
 import os
@@ -25,15 +26,37 @@ import tempfile
 import urllib.parse
 import urllib.request
 
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
-# the owner's groups (final list 31 Oct 2026, joined as the Page): data/fb-groups.json — name, lang, members, kind,
-# url (the group's link → an "Open the group" button). Target 3–5 groups per language.
-GROUPS = [(x["name"], x["lang"], x["members"], x["kind"]) for x in
-          json.loads((ROOT / "data" / "fb-groups.json").read_text(encoding="utf-8"))]
-URLS = {x["name"]: x.get("url", "") for x in json.loads((ROOT / "data" / "fb-groups.json").read_text(encoding="utf-8"))}
+
+
+def key():
+    """The page key (owner 2026-10-31: the group page is private): env GROUPS_KEY (GitHub secret) or
+    ~/.config/2min-groups/key. The page and the group list are AES-GCM encrypted with it; the owner's link carries it
+    after '#' (never sent to a server)."""
+    k = os.environ.get("GROUPS_KEY") or (pathlib.Path.home() / ".config/2min-groups/key").read_text().strip()
+    return base64.urlsafe_b64decode(k + "=" * (-len(k) % 4))
+
+
+def seal(text):
+    nonce = os.urandom(12)
+    return base64.b64encode(nonce + AESGCM(key()).encrypt(nonce, text.encode("utf-8"), None)).decode()
+
+
+def unseal(blob):
+    raw = base64.b64decode(blob)
+    return AESGCM(key()).decrypt(raw[:12], raw[12:], None).decode("utf-8")
+
+
+# the owner's groups (final list 31 Oct 2026, joined as the Page), encrypted in data/fb-groups.enc (the repo is public):
+# name, lang, members, kind, url (→ "Open the group"). Read/change: --show-groups > x.json · edit · --set-groups x.json
+_G = json.loads(unseal((ROOT / "data" / "fb-groups.enc").read_text()))
+GROUPS = [(x["name"], x["lang"], x["members"], x["kind"]) for x in _G]
+URLS = {x["name"]: x.get("url", "") for x in _G}
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
 CLOSE = {
     "en": "I'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂",
@@ -92,7 +115,7 @@ def content():
 
 
 def page(groups, rotation, data):
-    blob = json.dumps({"groups": groups, "order": rotation, "start": START, **data}, ensure_ascii=False).replace("</", "<\\/")
+    blob = seal(json.dumps({"groups": groups, "order": rotation, "start": START, **data}, ensure_ascii=False))
     built = datetime.datetime.now(datetime.timezone.utc).strftime("%d %b %H:%M UTC")
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
@@ -123,7 +146,8 @@ details{{margin-top:26px}} summary{{cursor:pointer;font-weight:700}}
 table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,th{{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}}
 .foot{{color:var(--soft);font-size:.8rem;margin-top:24px}}
 </style></head><body><div class="wrap">
-<h1>Group posts</h1><p class="sub" id="date"></p>
+<div id="locked" hidden><h1>Private page</h1><p class="sub">This page is private.</p></div>
+<div id="app" hidden><h1>Group posts</h1><p class="sub" id="date"></p>
 <div class="steps">
 <p><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</p>
 <p><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.</p>
@@ -131,9 +155,24 @@ table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,
 <h2>Today</h2><div id="today"></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's 3</summary><div id="yesterday"></div></details>
 <details><summary>All groups, in rotation order</summary><div id="all"></div></details>
-<p class="foot">Updated {built}. English Reels refresh from the Facebook page every afternoon.</p>
+</div><p class="foot">Updated {built}. English Reels refresh from the Facebook page every afternoon.</p>
 </div><script>
-const D = {blob};
+const SEALED = "{blob}";
+(async () => {{
+  let D;
+  try {{
+    let k = location.hash.startsWith("#k=") ? location.hash.slice(3) : null;
+    try {{ k = k || localStorage.getItem("gk"); }} catch (e) {{}}
+    const b = s => Uint8Array.from(atob(s.replace(/-/g, "+").replace(/_/g, "/") + "===".slice((s.length + 3) % 4)), c => c.charCodeAt(0));
+    const raw = b(SEALED), ck = await crypto.subtle.importKey("raw", b(k), "AES-GCM", false, ["decrypt"]);
+    D = JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({{name: "AES-GCM", iv: raw.slice(0, 12)}}, ck, raw.slice(12))));
+    try {{ localStorage.setItem("gk", k); }} catch (e) {{}}
+    if (location.hash) history.replaceState(null, "", location.pathname);
+  }} catch (e) {{ document.getElementById("locked").hidden = false; return; }}
+  document.getElementById("app").hidden = false;
+  main(D);
+}})();
+function main(D) {{
 const now = new Date(new Date().toLocaleString("en-US", {{timeZone: "Europe/Oslo"}}));
 const ymd = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 const dayNo = Math.round((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - Date.parse(D.start + "T00:00:00Z")) / 864e5);
@@ -174,11 +213,18 @@ document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {{
 fill("today", dayNo); fill("yesterday", dayNo - 1);
 document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Language</th></tr>" +
   D.order.map((g, i) => `<tr><td>${{i + 1}}</td><td>${{esc(D.groups[g].name)}}</td><td>${{D.groups[g].lang}}</td></tr>`).join("") + "</table>";
+}}
 </script></body></html>
 """
 
 
 def main():
+    if "--show-groups" in sys.argv:
+        print(json.dumps(_G, ensure_ascii=False, indent=1)); return
+    if "--set-groups" in sys.argv:
+        src = pathlib.Path(sys.argv[sys.argv.index("--set-groups") + 1])
+        (ROOT / "data" / "fb-groups.enc").write_text(seal(json.dumps(json.loads(src.read_text(encoding="utf-8")), ensure_ascii=False)) + "\n")
+        print("data/fb-groups.enc updated"); return
     groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, "")} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
