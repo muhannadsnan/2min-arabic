@@ -118,6 +118,45 @@ RECORDED_CLEAN = "afftdn=nr=12:nf=-50:tn=1,agate=threshold=0.012:ratio=3:attack=
 RECORDING_MATCH = {
     "_1620-combined": "lowshelf=f=250:g=2,highshelf=f=1800:g=-10,equalizer=f=6300:t=q:w=0.9:g=-9,",
 }
+NARRATOR_CLARITY = -22.0   # dB of energy above 2 kHz (voice_balance.clarity) — where the narrator sits
+
+
+def auto_tone(folder: pathlib.Path):
+    """Owner 2026-10-30: phone one day, clip-on mic the next — every recording gets its own treble correction so it
+    sounds like the narrator. Measures up to 8 owner lines of the recording (after the usual EQ + clean), sets a 2 kHz
+    shelf to land on NARRATOR_CLARITY, and remembers it in <recording>/tone.json (delete the file to measure again)."""
+    tf = folder / "tone.json"
+    if tf.exists():
+        return json.loads(tf.read_text())["filter"]
+    lines = sorted(p for p in (folder / "lines").glob("*.wav") if "-orig" not in p.name and "lina" not in p.name)[:8]
+    if not lines:
+        return ""
+    def mean_db(f, extra):
+        out = subprocess.run(["ffmpeg", "-i", str(f), "-af", OWNER_CLARITY + RECORDED_CLEAN + extra + "volumedetect",
+                              "-f", "null", "-"], capture_output=True, text=True).stderr
+        m = re.search(r"mean_volume: (-?[\d.]+) dB", out)
+        return float(m.group(1)) if m else None
+    vals = []
+    for f in lines:
+        full, high = mean_db(f, ","), mean_db(f, ",highpass=f=2000:p=2,highpass=f=2000:p=2,")
+        if full is not None and high is not None: vals.append(high - full)
+    measured = sorted(vals)[len(vals) // 2]
+    g = max(-12.0, min(6.0, round(NARRATOR_CLARITY - measured, 1)))
+    filt = f"highshelf=f=2000:g={g}," if abs(g) >= 1 else ""
+    tf.write_text(json.dumps({"measured_clarity": round(measured, 1), "target": NARRATOR_CLARITY, "shelf_db": g, "filter": filt}, indent=1))
+    print(f"  tone match {folder.name}: clarity {measured:.1f} dB → shelf {g:+.1f} dB")
+    return filt
+
+
+def tone_for(rec_file: str):
+    """The tone filter for a recorded line: a hand-set one (RECORDING_MATCH) or the automatic one."""
+    for k, m in RECORDING_MATCH.items():
+        if f"/{k}/" in f"/{rec_file}":
+            return m
+    parts = pathlib.Path(rec_file).parts
+    if "recordings" in parts and parts.index("recordings") + 1 < len(parts) and "_placeholder" not in rec_file:
+        return auto_tone(ROOT / pathlib.Path(*parts[:parts.index("recordings") + 2]))
+    return ""
 OWNER_LIFT_DB = 1.0   # measured 2026-10-02: +2 put him 2 LU above the narrator; the EQ does most of the work
 OWNER_SPEAKERS = {"teacher", "teacher-slow", "sami", "tom", "omar"}
 
@@ -228,8 +267,9 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         if rec:
             digest = hashlib.sha1((ROOT / rec["file"]).read_bytes()).hexdigest()
             tag = "rec7" if speaker in OWNER_SPEAKERS else "reck2"   # rec4/reck2 = denoise + gate (+ owner EQ)
-            if any(f"/{k}/" in f"/{rec['file']}" for k in RECORDING_MATCH):
-                tag += "-m2"   # tone-matched recording (RECORDING_MATCH) — never reuse the unmatched cache
+            tone = tone_for(rec["file"])
+            if tone:
+                tag += "-t" + hashlib.sha1(tone.encode()).hexdigest()[:6]   # tone-matched: never reuse another tone's cache
             return cache / f"{tag}-{digest}.wav"
         return cache / (hashlib.sha1(f"{VOICE_VERSIONS[speaker]}|{speaker}|{text}".encode()).hexdigest() + ".wav")
 
@@ -237,7 +277,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         target = cache_path(speaker, text)
         if not target.exists():
             level(ROOT / rec["file"], target, owner=speaker in OWNER_SPEAKERS,
-                  match=next((m for k, m in RECORDING_MATCH.items() if f"/{k}/" in f"/{rec['file']}"), ""))
+                  match=tone_for(rec["file"]))
             target.with_suffix(".json").write_text(json.dumps(
                 {"speaker": speaker, "text": text, "cer": rec["cer"], "heard": "🎙️ recorded: " + rec["heard"]},
                 ensure_ascii=False), encoding="utf-8")
@@ -307,7 +347,9 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
             flag = " ⚠️" if info["cer"] > 0.25 else ""
             report.append(f"| {n:02d} | {speaker} | {text} | {info['heard']} | {info['cer']:.2f}{flag} |")
             t += length
-    if pending_gap:  # a pause after the last clip
+    # a pause after the last clip — but never after the closing filmed goodbye: the video ends on its last frame, no
+    # silent darkening tail ("signals the end and people scroll away", owner 2026-10-31; a hard cut loops the Short)
+    if pending_gap and not (events and events[-1][0] == "video"):
         segments.append(("silence", pending_gap))
         t += pending_gap
     for i, scene in enumerate(data["scenes"]):
