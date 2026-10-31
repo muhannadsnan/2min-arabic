@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """The owner's Facebook-groups helper page (owner 2026-10-31: "a file with all content, I just copy-paste"):
-groups.html on gh-pages — today's 3 groups (Mon–Fri, all 15 in a week), each with the newest page Reel in that
+groups.html on gh-pages — the next 3 groups in the rotation (any day: owner 2026-10-31, "sometimes I have time at
+the weekend, sometimes not"), each with the newest page Reel in that
 group's language, an "Open the Reel" button and the text to paste with a Copy button. Meta has no API for posting
 in groups (removed 2024), so the owner shares by hand: Reel → Share → Group → paste. 3 a day, not 15 at once:
 sharing to many groups in one sitting gets "temporarily blocked from posting in groups".
@@ -9,7 +10,8 @@ sharing to many groups in one sitting gets "temporarily blocked from posting in 
     python3 tools/fb_groups_page.py --push    # commits groups.html to gh-pages (GitHub: site-latest.yml)
 
 Reels come from the Facebook Page (only those posted after the app went Live, 30 Oct 2026 — older ones were never
-shown to anyone). Today's day is picked in the browser, so the page is right whenever it's opened.
+shown to anyone). What's done is remembered in the browser (the "Posted" ticks): the page shows the 3 groups posted
+to longest ago, and stops at 3 a day.
 """
 import datetime
 import html
@@ -43,8 +45,8 @@ GROUPS = [
     ("Arapça Öğrenmek İsteyenler", "tr", "11K", "quiet"),
     ("Arapça Ders Öğren İrap Tahlil Cümle", "tr", "37K", "busy"),
 ]
-# Mon–Fri: 3 groups a day, 3 different languages where possible (index into GROUPS, which English Reel: 0 newest, 1 next)
-WEEK = [[0, 6, 8], [1, 7, 12], [2, 9, 13], [3, 10, 14], [4, 11, 5]]
+# rotation order: every 3 in a row are different languages where possible (index into GROUPS)
+ORDER = [0, 6, 8, 1, 7, 12, 2, 9, 13, 3, 10, 14, 4, 11, 5]
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
 CLOSE = {
     "en": "I'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂",
@@ -90,25 +92,21 @@ def plan():
     by_lang = {}
     for v in sorted(reels(), key=lambda v: v["created_time"], reverse=True):
         by_lang.setdefault(language(v["description"]), []).append(v)
-    days = []
-    for slots in WEEK:
-        used, day = {}, []
-        for g in slots:
-            name, lang, members, kind = GROUPS[g]
-            n = used.get(lang, 0); used[lang] = n + 1
-            pick = by_lang.get(lang, [])[n:n + 1] or by_lang.get(lang, [])[:1]
-            item = {"group": name, "lang": LANG[lang], "members": members, "kind": kind}
-            if pick:
-                v = pick[0]
-                item.update(url="https://www.facebook.com" + v["permalink_url"], title=v["description"].splitlines()[0][:90],
-                            text=paste_text(v["description"], lang))
-            day.append(item)
-        days.append(day)
-    return days
+    items, used = [], {}
+    for g in ORDER:   # groups of one language get that language's Reels newest first, so they don't all share one
+        name, lang, members, kind = GROUPS[g]
+        mine = by_lang.get(lang, []); n = used.get(lang, 0); used[lang] = n + 1
+        item = {"id": g, "group": name, "lang": LANG[lang], "members": members, "kind": kind}
+        if mine:
+            v = mine[n % len(mine)]
+            item.update(url="https://www.facebook.com" + v["permalink_url"], title=v["description"].splitlines()[0][:90],
+                        text=paste_text(v["description"], lang))
+        items.append(item)
+    return items
 
 
-def page(days):
-    data = json.dumps(days, ensure_ascii=False).replace("</", "<\\/")
+def page(items):
+    data = json.dumps(items, ensure_ascii=False).replace("</", "<\\/")
     built = datetime.datetime.now(datetime.timezone.utc).strftime("%d %b %H:%M UTC")
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
@@ -137,42 +135,45 @@ details{{margin-top:26px}} summary{{cursor:pointer;font-weight:700}}
 table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,th{{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}}
 .foot{{color:var(--soft);font-size:.8rem;margin-top:24px}}
 </style></head><body><div class="wrap">
-<h1>Today's group posts</h1><p class="sub" id="date"></p>
-<div class="steps"><b>For each:</b> Open the Reel → <b>Share</b> → <b>Group</b> → search the group name → <b>paste</b> the text → Post. About a minute each.</div>
+<h1>Group posts</h1><p class="sub" id="date"></p>
+<div class="steps"><b>For each:</b> Open the Reel → <b>Share</b> → <b>Group</b> → search the group name → <b>paste</b> the text → Post → tick <b>Posted</b>. About a minute each. Up to 3 a day, any day.</div>
 <div id="today"></div>
-<details><summary>The whole week (all 15 groups)</summary><div id="week"></div></details>
-<p class="foot">Updated {built} from the Facebook page. Reels refresh every afternoon; today is picked on your phone's date.</p>
+<details><summary>All 15 groups (last posted)</summary><div id="all"></div></details>
+<p class="foot">Updated {built} from the Facebook page. Reels refresh every afternoon. Your ticks are remembered on this device.</p>
 </div><script>
-const DAYS = {data};
-const NAMES = ["Monday","Tuesday","Wednesday","Thursday","Friday"];
+const ITEMS = {data};
 const now = new Date(new Date().toLocaleString("en-US", {{timeZone: "Europe/Oslo"}}));
-const wd = (now.getDay() + 6) % 7;   // 0 = Monday
-const key = now.toISOString().slice(0, 10);
+const today = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
 const esc = s => s.replace(/[&<>"]/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}})[c]);
-function store(k, v) {{ try {{ localStorage.setItem(k, v); }} catch (e) {{}} }}
-function read(k) {{ try {{ return localStorage.getItem(k); }} catch (e) {{ return null; }} }}
+function load() {{ try {{ return JSON.parse(localStorage.getItem("fbgroups") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
+function save(v) {{ try {{ localStorage.setItem("fbgroups", JSON.stringify(v)); }} catch (e) {{}} }}
+let last = load();   // group id -> date posted
 document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "long"}});
-const box = document.getElementById("today");
-if (wd > 4) {{
-  box.innerHTML = '<div class="card"><p class="none">No group posts at the weekend. Next: Monday.</p></div>';
-}} else {{
-  DAYS[wd].forEach((it, i) => {{
-    const id = key + "-" + i, done = read(id) === "1";
+function render() {{
+  const box = document.getElementById("today"); box.innerHTML = "";
+  const doneToday = ITEMS.filter(it => last[it.id] === today);
+  // longest ago first (never = first), rotation order breaks ties
+  const queue = ITEMS.map((it, i) => [last[it.id] || "", i, it]).sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : a[1] - b[1]).map(x => x[2]);
+  const show = doneToday.concat(queue.filter(it => last[it.id] !== today).slice(0, Math.max(0, 3 - doneToday.length)));
+  if (doneToday.length >= 3) box.insertAdjacentHTML("beforeend", '<div class="card"><p class="none">Done for today ✓ Three a day keeps Facebook happy. Next 3 whenever you have time, from tomorrow.</p></div>');
+  show.forEach((it, i) => {{
+    const done = last[it.id] === today;
     const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
     c.innerHTML = `<div class="top"><div><div class="g">${{esc(it.group)}}</div>
       <div class="meta"><span class="lang">${{it.lang}}</span>${{it.members}} members · ${{esc(it.kind)}}</div></div><div class="num">${{i + 1}}</div></div>` +
       (it.url ? `<div class="btns"><a class="btn" href="${{it.url}}" target="_blank" rel="noopener">Open the Reel</a>
         <button class="copy">Copy text</button></div><pre>${{esc(it.text)}}</pre>`
-              : `<p class="none">No ${{it.lang}} Reel on the page yet — skip this one today.</p>`) +
+              : `<p class="none">No ${{it.lang}} Reel on the page yet: tick it to skip for now.</p>`) +
       `<label><input type="checkbox" ${{done ? "checked" : ""}}> Posted</label>`;
     const b = c.querySelector("button.copy");
     if (b) b.onclick = () => navigator.clipboard.writeText(it.text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
-    c.querySelector("input").onchange = e => {{ store(id, e.target.checked ? "1" : "0"); c.classList.toggle("done", e.target.checked); }};
+    c.querySelector("input").onchange = e => {{ if (e.target.checked) last[it.id] = today; else delete last[it.id]; save(last); render(); }};
     box.appendChild(c);
   }});
+  document.getElementById("all").innerHTML = "<table><tr><th>Group</th><th>Language</th><th>Last posted</th></tr>" +
+    ITEMS.map(it => `<tr><td>${{esc(it.group)}}</td><td>${{it.lang}}</td><td>${{last[it.id] || "—"}}</td></tr>`).join("") + "</table>";
 }}
-document.getElementById("week").innerHTML = "<table><tr><th>Day</th><th>Group</th><th>Language</th></tr>" +
-  DAYS.map((d, i) => d.map((it, j) => `<tr><td>${{j ? "" : NAMES[i]}}</td><td>${{esc(it.group)}}</td><td>${{it.lang}}</td></tr>`).join("")).join("") + "</table>";
+render();
 </script></body></html>
 """
 
