@@ -47,10 +47,10 @@ Day 28, and today you play Sami. Lina talks to you, and you answer before Sami d
 ### 🎬 Scene 4 — Sami 1
 
 🖼️ **Image:** same, Sami talks
-🔤 **On screen:** مَرْحَبًا! · *marHaban!* · Hello!
+🔤 **On screen:** أَهْلًا! · *ahlan!* · Hi!
 
 ```say:sami
-مَرْحَبًا!
+أَهْلًا!
 ```
 
 ### 🎬 Scene 5 — Line 2: how are you?
@@ -142,10 +142,13 @@ Day 28, and today you play Sami. Lina talks to you, and you answer before Sami d
 ### 🎬 Scene 14 — Sami 6
 
 🖼️ **Image:** same, Sami talks, happy
-🔤 **On screen:** نَعَمْ، مَعَ حَلِيبْ! · *na'am, ma'a Haliib!* · Yes, with milk!
+🔤 **On screen:** نَعَمْ، أُرِيدُ قَهْوَةْ مَعَ حَلِيبْ! · *na'am, uriidu qahwa ma'a Haliib!* · Yes, I want coffee with milk!
 
 ```say:sami
-نَعَمْ، مَعَ حَلِيبْ!
+نَعَمْ،
+```
+```say:sami
+أُرِيدُ قَهْوَةْ مَعَ حَلِيبْ!
 ```
 
 ### 🎬 Scene 15 — Line 7: goodbye
@@ -164,10 +167,10 @@ After the coffee, Lina has to leave.
 ### 🎬 Scene 16 — Sami 7
 
 🖼️ **Image:** same, Sami waves
-🔤 **On screen:** مَعَ السَّلَامَةْ! · *ma'a s-salaama!* · Goodbye!
+🔤 **On screen:** إِلَى اللِّقَاءْ! · *ilaa l-liqaa'!* · See you!
 
 ```say:sami
-مَعَ السَّلَامَةْ!
+إِلَى اللِّقَاءْ!
 ```
 
 ### 🎬 Scene 17 — Score
