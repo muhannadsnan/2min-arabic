@@ -7,8 +7,13 @@ The folder holds slide-*.jpg (tools/make_carousel.py) + caption.txt. It is tarre
 key (like the Reel queue) and uploaded to the `ig-carousel` release as carousel-NN.bin, numbered after what is queued.
 The workflow instagram-carousel.yml posts the lowest number.
 """
-import pathlib, re, subprocess, sys, tempfile
+import atexit, pathlib, re, shutil, subprocess, sys, tempfile
 KEY = pathlib.Path.home() / ".config/2min-instagram/queue.key"; REPO, Q = "muhannadsnan/2min-arabic", "ig-carousel"
+
+def _scratch():
+    """A temp folder that is removed when the script exits (bare mkdtemp folders piled up in /tmp, 2026-10-31)."""
+    d = tempfile.mkdtemp(); atexit.register(shutil.rmtree, d, True); return d
+
 
 def main():
     folder = pathlib.Path(sys.argv[1]); apply = "--apply" in sys.argv
@@ -24,7 +29,7 @@ def main():
     else:
         existing = [int(m.group(1)) for m in re.finditer(r"carousel-(\d+)", r.stdout)]
     n = max(existing, default=0) + 1
-    b = pathlib.Path(tempfile.mkdtemp()) / f"carousel-{n:02d}.bin"
+    b = pathlib.Path(_scratch()) / f"carousel-{n:02d}.bin"
     files = " ".join(f'"{s.name}"' for s in slides) + " caption.txt"
     subprocess.run(f'tar -C "{folder}" -cf - {files} | openssl enc -aes-256-cbc -pbkdf2 -salt -pass file:"{KEY}" -out "{b}"',
                    shell=True, check=True)

@@ -9,10 +9,15 @@ Videos up to 90 s go up as Facebook Reels (video_reels API); longer ones as a Pa
 too). The backfill downloads each Instagram post through the Instagram API (exact same file and caption), skips Trial
 Reels (not shared to the profile) and anything already posted (log: ~/.local/share/2min-yt/facebook.jsonl).
 """
-import argparse, json, os, pathlib, subprocess, sys, tempfile, time, urllib.parse, urllib.request
+import argparse, atexit, json, os, pathlib, shutil, subprocess, sys, tempfile, time, urllib.parse, urllib.request
 
 GRAPH = "https://graph.facebook.com/v21.0"
 LOG = pathlib.Path.home() / ".local/share/2min-yt/facebook.jsonl"
+
+
+def _scratch():
+    """A temp folder that is removed when the script exits (bare mkdtemp folders piled up in /tmp, 2026-10-31)."""
+    d = tempfile.mkdtemp(); atexit.register(shutil.rmtree, d, True); return d
 
 
 def creds():
@@ -87,7 +92,7 @@ def backfill(a):
         print(f"  {m['timestamp'][:10]} {m['media_type']:5} {cap.splitlines()[0][:60] if cap else ''}")
         if not a.apply: continue
         if m["media_type"] == "VIDEO":
-            tmp = pathlib.Path(tempfile.mkdtemp()) / "v.mp4"
+            tmp = pathlib.Path(_scratch()) / "v.mp4"
             urllib.request.urlretrieve(m["media_url"], tmp)
             fb = post_video(tmp, cap); tmp.unlink()
         elif m["media_type"] == "IMAGE":

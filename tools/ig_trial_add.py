@@ -8,9 +8,14 @@ Indonesian). Video = output/<stem>/dub-<audio>-preview.mp4, cover = the video's 
 with the Instagram queue key (like the main queue) and uploaded to the `ig-trial` release as trial-NN-<lang>.bin,
 numbered after what's already queued. The workflow instagram-trial.yml posts one a day.
 """
-import json, pathlib, re, subprocess, sys, tempfile, shutil
+import atexit, json, pathlib, re, shutil, subprocess, sys, tempfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 KEY = pathlib.Path.home() / ".config/2min-instagram/queue.key"; REPO, Q = "muhannadsnan/2min-arabic", "ig-trial"
+
+def _scratch():
+    """A temp folder that is removed when the script exits (bare mkdtemp folders piled up in /tmp, 2026-10-31)."""
+    d = tempfile.mkdtemp(); atexit.register(shutil.rmtree, d, True); return d
+
 
 def main():
     stem, cap_file = sys.argv[1], sys.argv[2]; apply = "--apply" in sys.argv
@@ -23,7 +28,7 @@ def main():
         existing = []
     else:
         existing = [int(m.group(1)) for m in re.finditer(r"trial-(\d+)-", r.stdout)] if r.returncode == 0 else []
-    n0 = max(existing, default=0); tmp = pathlib.Path(tempfile.mkdtemp()); built = []
+    n0 = max(existing, default=0); tmp = pathlib.Path(_scratch()); built = []
     for i, it in enumerate(items, 1):
         w = tmp / f"w{i}"; w.mkdir()
         v2 = ROOT / "output" / stem / f"ig-{it['lang']}.mp4"   # new style (tools/ig_lang_version.py) if built

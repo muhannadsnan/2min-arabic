@@ -11,13 +11,18 @@ a take longer than the slot is sped up (max 1.18×), longer still = reported, sh
 languages (free, MIT: fr, tr, es, hi, ms …). Indonesian = Indonesian text read by the Malay voice (same sounds,
 owner 2026-10-18); Urdu viewers get the Hindi track in plain spoken Hindustani (no Persian: no free model).
 """
-import argparse, json, pathlib, subprocess, sys, tempfile
+import argparse, atexit, json, pathlib, shutil, subprocess, sys, tempfile
 import numpy as np, soundfile as sf
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, "/media/msn/GamesLinux/AI/tts")
 import local_tts  # noqa: E402
 VOICE = {"id": "ms"}   # track language → Chatterbox voice language
 TEMPO = {"id": 1.08}   # the Malay voice speaks slowly (x03 sample, 2026-10-18)
+
+def _scratch():
+    """A temp folder that is removed when the script exits (bare mkdtemp folders piled up in /tmp, 2026-10-31)."""
+    d = tempfile.mkdtemp(); atexit.register(shutil.rmtree, d, True); return d
+
 
 def run(*a): subprocess.run(a, check=True, capture_output=True)
 def dur(p): return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(p)], capture_output=True, text=True).stdout)
@@ -30,7 +35,7 @@ def main():
     tl = json.loads((ROOT / "audio" / stem / "timeline.json").read_text()); clips = tl["clips"]
     cands = sorted(p for p in (ROOT / "output" / stem).glob("*.mp4") if "video-only" not in p.name and "preview" not in p.name)
     final = next((p for p in cands if "uploaded" in p.name), cands[0])   # the render that is on YouTube
-    T = pathlib.Path(tempfile.mkdtemp())
+    T = pathlib.Path(_scratch())
     local_tts.SPEAKERS[f"narrator-{a.lang}"] = ("chatterbox", local_tts.OWNER_EN_ENERGETIC, dict(lang=VOICE.get(a.lang, a.lang), exaggeration=0.5, cfg_weight=0.5, tempo=TEMPO.get(a.lang, 0.95)))
     from faster_whisper import WhisperModel
     asr = WhisperModel("small", device="cpu", compute_type="int8")

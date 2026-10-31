@@ -105,6 +105,10 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
 - **Characters v5 (owner plan 2026-10-26, animation-library skill):** all characters on green screen as blended picture sequences — openers 5 pics/s, mid-video 3 pics/s from reusable motion sets, new background per video, finger check on every picture. **Pilot Day 24 → v5.1 approved 26 Oct** (still unless speaking, mouth-only talk, facing each other; tools/animate/compose_talk.py).
 - **Monthly Episode (owner 2026-10-24, docs/21-monthly-episode.md):** Shorts → weekly Parts → a monthly 30+ min "Episode N" by topic, no day numbers, big combined conversation (Arabic + English), vocab, final challenge. Episode 1 (October) planned ≈ 35 min; owner to pick the publish date (1 or 8 Nov).
+- ~~**DISK (2026-10-31):** root hit 100 % (1.6 GB left) — 331 leftover animation frame dirs (112 GB) in /tmp.~~ → done
+  31 Oct: swept (root 44 %), compose_talk/compose_scene clean their frames (also when a run is stopped), the other 7
+  bare-mkdtemp scripts use `_scratch()` (removed at exit). Root is 191 GB shared with Docker + /usr; /home is a
+  separate disk — a full / stops every timer job but leaves the videos untouched.
 - **Next up (2026-10-31):** Days 26–30, x08, v04 built with real voices, checked, in ~/Downloads/to confirm/ — waiting
   for the owner's OK (Day 26 publishes 3 Nov) → then upload sheets, 13-language titles, thumbnails, gate. Every video
   for the owner goes to ~/Downloads/to confirm/.
@@ -135,4 +139,10 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - Never buy views/subs or use engagement groups; never use third-party or watermarked footage (docs/11).
 - From Day 6: 3D look + library opener in scene 1. No AI label on videos (owner). No PC upgrades / bigger models for now.
 - Stop ComfyUI by PID; set LD_LIBRARY_PATH for Whisper (final_check.py does it itself).
+- **Temp dirs: always `with tempfile.TemporaryDirectory() as tmp:` (as make_loop.py does) or `_scratch()`, never a bare
+  `tempfile.mkdtemp()`.** Leftover frame dirs (compose_talk/compose_scene) leaked 359 dirs / 108 GB of 1080×1920 PNG frames in four days
+  (28–31 Oct; mostly runs stopped mid-way) and filled the root disk to 100 %, which stalls every job on the laptop —
+  fixed 31 Oct everywhere (frames: `talkframes-*` + SIGTERM cleanup + 6-h sweep; small files: `_scratch()` = mkdtemp + atexit).
+  When a job behaves oddly or the disk warns: `du -xsh /tmp` and `find /tmp -maxdepth 1 -name 'tmp*' -type d | wc -l`.
+  Safe sweep (never deletes a running job's dir): `find /tmp -mindepth 1 -maxdepth 1 -name 'tmp*' -type d -user msn -mmin +120 -exec rm -rf {} +`
 - Details: docs/02 format · 04 curriculum · 05 style · 06 publishing · 07 monetization · 10 production · 11 policy · 16 hardware, speed + power.

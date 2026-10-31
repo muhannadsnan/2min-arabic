@@ -4,12 +4,15 @@ zoomed 2× (eyes, hands, arms per side) — see animation-library "double check"
 
     python3 tools/animate/check_clip.py clip.mp4 out.png [--face x0,y0,x1,y1]
 """
-import argparse, subprocess, tempfile, pathlib
+import argparse, atexit, pathlib, shutil, subprocess, tempfile
 from PIL import Image
 
 ap = argparse.ArgumentParser(); ap.add_argument("clip"); ap.add_argument("out"); ap.add_argument("--face", default="138,120,438,420")
 a = ap.parse_args()
-d = pathlib.Path(tempfile.mkdtemp())
+def _scratch():
+    """A temp folder that is removed when the script exits (bare mkdtemp folders piled up in /tmp, 2026-10-31)."""
+    d = tempfile.mkdtemp(); atexit.register(shutil.rmtree, d, True); return d
+d = pathlib.Path(_scratch())
 n = int(subprocess.run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries",
                         "stream=nb_read_frames", "-of", "csv=p=0", a.clip], capture_output=True, text=True).stdout)
 frames = [0, n // 5, 2 * n // 5, 3 * n // 5, 4 * n // 5, n - 1]

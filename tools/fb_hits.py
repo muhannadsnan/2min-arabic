@@ -8,8 +8,10 @@ visible to app roles, so Facebook has never shown our best videos to anyone.
 Takes the first line of data/fb-hits.txt (Instagram media id, best first), downloads that Reel and its caption
 through the Instagram API, posts it to the Page and removes the line (the workflow commits the file).
 """
+import atexit
 import datetime
 import pathlib
+import shutil
 import sys
 import tempfile
 import urllib.request
@@ -20,6 +22,11 @@ import facebook_api as fb    # noqa: E402
 import instagram_api as ig   # noqa: E402
 
 LIST = pathlib.Path(__file__).resolve().parent.parent / "data" / "fb-hits.txt"
+
+
+def _scratch():
+    """A temp folder that is removed when the script exits (bare mkdtemp folders piled up in /tmp, 2026-10-31)."""
+    d = tempfile.mkdtemp(); atexit.register(shutil.rmtree, d, True); return d
 
 
 def main():
@@ -38,7 +45,7 @@ def main():
     print(f"{mid}: {cap.splitlines()[0][:80] if cap else ''}")
     if "--dry-run" in sys.argv:
         print("dry run"); return
-    tmp = pathlib.Path(tempfile.mkdtemp()) / "v.mp4"
+    tmp = pathlib.Path(_scratch()) / "v.mp4"
     urllib.request.urlretrieve(m["media_url"], tmp)
     vid = fb.post_video(tmp, cap)
     print(f"✅ Facebook: {vid} · {len(todo) - 1} hits left")

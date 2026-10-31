@@ -11,9 +11,11 @@ the lowest NN is decrypted and posted through instagram_api.post (ig-temp link f
 and its bundle is removed from the queue. The queue is refilled from the laptop: tools/ig_queue_add.sh.
 """
 import argparse
+import atexit
 import datetime
 import os
 import pathlib
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -25,6 +27,11 @@ import instagram_api as ig  # noqa: E402
 OSLO = ZoneInfo("Europe/Oslo")
 POST_HOUR = 15
 QUEUE = "ig-queue"
+
+
+def _scratch():
+    """A temp folder that is removed when the script exits (bare mkdtemp folders piled up in /tmp, 2026-10-31)."""
+    d = tempfile.mkdtemp(); atexit.register(shutil.rmtree, d, True); return d
 
 
 def gh(*args, capture=True):
@@ -61,7 +68,7 @@ def main():
     if not names:
         sys.exit("Instagram queue is empty — ask Claude for the next Reels (tools/ig_queue_add.sh)")
     name = names[0]
-    tmp = pathlib.Path(tempfile.mkdtemp())
+    tmp = pathlib.Path(_scratch())
     gh("release", "download", QUEUE, "-p", name, "-D", str(tmp))
     key = tmp / "key"
     key.write_text(os.environ["IG_QUEUE_KEY"])
@@ -99,7 +106,7 @@ def carousel(a):
     names = sorted(n for n in assets if n.startswith("carousel-") and n.endswith(".bin"))
     if not names:
         print("::warning::carousel queue is empty — ask Claude for the next carousels"); return
-    name = names[0]; tmp = pathlib.Path(tempfile.mkdtemp())
+    name = names[0]; tmp = pathlib.Path(_scratch())
     gh("release", "download", Q, "-p", name, "-D", str(tmp))
     key = tmp / "key"; key.write_text(os.environ["IG_QUEUE_KEY"])
     subprocess.run(f'openssl enc -d -aes-256-cbc -pbkdf2 -pass file:"{key}" -in "{tmp / name}" | tar -C "{tmp}" -xf -',
@@ -132,7 +139,7 @@ def trial(a):
     names = sorted(n for n in assets if n.startswith("trial-") and n.endswith("-v2.bin"))
     if not names:
         print("trial queue has no new-style versions — nothing to do"); return
-    name = names[0]; tmp = pathlib.Path(tempfile.mkdtemp())
+    name = names[0]; tmp = pathlib.Path(_scratch())
     gh("release", "download", Q, "-p", name, "-D", str(tmp))
     key = tmp / "key"; key.write_text(os.environ["IG_QUEUE_KEY"])
     subprocess.run(f'openssl enc -d -aes-256-cbc -pbkdf2 -pass file:"{key}" -in "{tmp / name}" | tar -C "{tmp}" -xf -',
