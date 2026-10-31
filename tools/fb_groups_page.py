@@ -145,7 +145,7 @@ table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,
 </style></head><body><div class="wrap">
 <h1>Group posts</h1><p class="sub" id="date"></p>
 <div class="steps">
-<p><b>English:</b> Open the Reel → <b>Share</b> → <b>Group</b> → search the group name → <b>paste</b> → Post.</p>
+<p><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</p>
 <p><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.</p>
 <p>About a minute each. Every day has its own 3 (the same on every device). Skipped ones come back in the next round.</p></div>
 <h2>Today</h2><div id="today"></div>
