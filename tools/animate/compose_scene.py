@@ -14,6 +14,7 @@ spill is pulled down. Each character gets a soft contact shadow and is colour-ma
 """
 import argparse
 import pathlib
+import shutil
 import subprocess
 import tempfile
 
@@ -90,6 +91,7 @@ def main():
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(a.pps), "-i", str(tmp / "%04d.png"),
                     "-vf", "framerate=fps=30:interp_start=0:interp_end=255:scene=100,format=yuv420p",
                     "-c:v", "libx264", "-crf", "14", a.out], check=True)
+    shutil.rmtree(tmp, ignore_errors=True)   # the frames were never deleted before (2026-10-31: /tmp filled the disk)
     print(f"{a.out}: {n_out} pictures at {a.pps}/s")
 
 

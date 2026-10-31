@@ -16,9 +16,12 @@ moves only during their own line. Green key with strong despill and a 1-px erode
 """
 import json
 import pathlib
+import shutil
+import signal
 import subprocess
 import sys
 import tempfile
+import time
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
@@ -82,30 +85,38 @@ def main():
     bg = src.crop(((src.width - W) // 2, (src.height - H) // 2, (src.width - W) // 2 + W, (src.height - H) // 2 + H))
     bg_mean = np.asarray(bg, dtype=np.float32).reshape(-1, 3).mean(axis=0)
     n = int(round(spec["seconds"] * FPS))
-    tmp = pathlib.Path(tempfile.mkdtemp())
     frames_cache = {}
     prev_key, prev_img, blend_left = None, None, 0
     BL = 2   # frames of quick blend (~0.07 s)
-    for i in range(n):
-        t = i / FPS
-        keys = tuple(state(l, t) for l in spec["layers"])
-        if keys not in frames_cache:
-            c = bg.copy()
-            for l, k in zip(spec["layers"], keys):
-                c = place(c, keyed(k, l.get("mirror", False)), l["x"], l["h"], bg_mean)
-            frames_cache[keys] = np.asarray(c, dtype=np.float32)
-        cur = frames_cache[keys]
-        if prev_key is not None and keys != prev_key:
-            blend_left, start = BL, prev_img
-        if blend_left:
-            a = (BL - blend_left + 1) / (BL + 1)
-            frame = start * (1 - a) + cur * a; blend_left -= 1
-        else:
-            frame = cur
-        Image.fromarray(frame.astype(np.uint8)).save(tmp / f"{i:05d}.png")
-        prev_key, prev_img = keys, frame
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(FPS), "-i", str(tmp / "%05d.png"),
-                    "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", out], check=True)
+    # frames go to a temp folder that must not outlive the run: 331 folders (112 GB) piled up in /tmp when background
+    # builds were stopped mid-way and filled the system disk (owner, 2026-10-31) → clean on SIGTERM too, and sweep
+    # our own leftovers older than 6 h before starting
+    signal.signal(signal.SIGTERM, lambda *_: sys.exit(1))
+    for old in pathlib.Path(tempfile.gettempdir()).glob("talkframes-*"):
+        if time.time() - old.stat().st_mtime > 6 * 3600:
+            shutil.rmtree(old, ignore_errors=True)
+    with tempfile.TemporaryDirectory(prefix="talkframes-") as tmp:
+        tmp = pathlib.Path(tmp)
+        for i in range(n):
+            t = i / FPS
+            keys = tuple(state(l, t) for l in spec["layers"])
+            if keys not in frames_cache:
+                c = bg.copy()
+                for l, k in zip(spec["layers"], keys):
+                    c = place(c, keyed(k, l.get("mirror", False)), l["x"], l["h"], bg_mean)
+                frames_cache[keys] = np.asarray(c, dtype=np.float32)
+            cur = frames_cache[keys]
+            if prev_key is not None and keys != prev_key:
+                blend_left, start = BL, prev_img
+            if blend_left:
+                a = (BL - blend_left + 1) / (BL + 1)
+                frame = start * (1 - a) + cur * a; blend_left -= 1
+            else:
+                frame = cur
+            Image.fromarray(frame.astype(np.uint8)).save(tmp / f"{i:05d}.png")
+            prev_key, prev_img = keys, frame
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(FPS), "-i", str(tmp / "%05d.png"),
+                        "-c:v", "libx264", "-crf", "14", "-pix_fmt", "yuv420p", out], check=True)
     print(f"{out}: {n} frames, {len(frames_cache)} distinct pictures")
 
 
