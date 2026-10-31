@@ -3,7 +3,7 @@
 name: Facebook daily hit
 on:
   schedule:
-    - cron: "0,30 10,11,12,13 * * *"   # many chances (GitHub runs late/skips); posts once a day (fb_hits.py)
+    - cron: "15,45 11,12,13 * * *"   # backups — MAIN trigger: cron-job.org at the exact time (owner's account); many chances (GitHub runs late/skips); posts once a day (fb_hits.py)
   workflow_dispatch:
     inputs:
       dry_run:

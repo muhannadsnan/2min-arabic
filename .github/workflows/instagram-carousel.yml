@@ -4,7 +4,7 @@
 name: Instagram carousel (Wed + Sun)
 on:
   schedule:
-    - cron: "0,30 18,19,20 * * 0,3"   # many chances; once a day via the done-<date> marker
+    - cron: "15,45 18,19,20 * * 0,3"   # backups — MAIN trigger: cron-job.org at the exact time (owner's account); many chances; once a day via the done-<date> marker
   workflow_dispatch:
     inputs:
       dry_run:

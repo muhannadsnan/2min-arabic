@@ -4,7 +4,8 @@
 name: Instagram daily Trial Reel
 on:
   schedule:   # one a day (two a day ran only for x03's versions, 19–27 Oct)
-    - cron: "7,37 16,17,18,19 * * *"   # many chances (31 Oct: the 17:37 run never started); once a day via the done-<date>-pm marker
+    - cron: "52 16 * * *"
+    - cron: "22,52 17,18,19 * * *"   # backups — MAIN trigger: cron-job.org at the exact time (owner's account); many chances (31 Oct: the 17:37 run never started); once a day via the done-<date>-pm marker
   workflow_dispatch:
     inputs:
       dry_run:
