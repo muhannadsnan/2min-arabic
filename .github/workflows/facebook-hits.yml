@@ -1,0 +1,34 @@
+# One proven Instagram hit a day on the Facebook Page, best first (owner 2026-10-31): data/fb-hits.txt.
+# 11:00 UTC = 12:00 Oslo (winter time): 3 h before the daily Reel, so the Page never gets two posts close together.
+name: Facebook daily hit
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only show what would be posted"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency: facebook-hits
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post the next hit
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then python3 tools/fb_hits.py --dry-run; exit 0; fi
+          python3 tools/fb_hits.py
+          git config user.name "2min-arabic bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/fb-hits.txt
+          git diff --cached --quiet || { git commit -m "Facebook hit posted"; git push; }
