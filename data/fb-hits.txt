@@ -1,6 +1,5 @@
 # Facebook page: one proven Instagram hit a day at 12:00 Oslo (owner 2026-10-31: "start with the best videos").
 # Order = Instagram views on 31 Oct. tools/fb_hits.py posts the first line and removes it. <instagram media id>  # views · title
-18016677038748032  # 1968 · Day 5 of 30 — Arabic has no word for «is». Follow for a
 18015449810956974  # 1918 · Day 3 of 30 — Sami meets Lina: Follow for a new Arabic 
 18124344038475913  # 1665 · Day 12 of 30 — Arabic has no word for "my". You add one
 18116135555014702  # 1458 · Day 8 of 30 — how to ask "where are you from?" in Arabi
