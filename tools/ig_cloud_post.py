@@ -141,12 +141,8 @@ def trial(a):
     print(f"{name}: {(tmp / 'caption.txt').read_text(encoding='utf-8').splitlines()[0][:80]}")
     ig.post(argparse.Namespace(video=str(tmp / "video.mp4"), caption_file=str(tmp / "caption.txt"),
                                cover=str(tmp / "cover.jpg"), apply=not a.dry_run, trial=True))
-    if not a.dry_run and os.environ.get("FB_PAGE_TOKEN"):   # owner 2026-10-31: the language versions on Facebook too
-        try:
-            import facebook_api as fb
-            print(f"✅ Facebook: {fb.post_video(tmp / 'video.mp4', (tmp / 'caption.txt').read_text(encoding='utf-8').strip())}")
-        except (Exception, SystemExit) as e:   # Facebook failing must never block the Instagram post
-            print(f"::warning::Facebook post failed: {str(e)[:200]}")
+    # not on the Facebook Page: the Page stays English-only like the Instagram profile (owner 2026-10-31); language
+    # versions reach Facebook only as files the owner uploads into groups of that language (groups.html)
     if not a.dry_run:
         gh("release", "delete-asset", Q, name, "-y")
         (tmp / marker).write_text("1"); gh("release", "upload", Q, str(tmp / marker), "--clobber")
