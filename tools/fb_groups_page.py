@@ -29,31 +29,11 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
-GROUPS = [   # the owner's final list, 31 Oct 2026 (Facebook "Share to a group"), joined as the Page
-    ("Learn Arabic in English", "en", "561K", "busy"),
-    ("Arabic is very easy", "en", "395K", "busy"),
-    ("Arabic Language Learners", "en", "236K", "busy"),
-    ("Let's Learn Arabic", "en", "152K", "busy"),
-    ("Learn Arabic & English", "en", "152K", "busy"),
-    ("Learn how to speak Arabic language", "en", "123K", "busy"),
-    ("Learn Arabic and other Languages", "en", "1.1M", "medium"),
-    ("Learning simple arabic for beginners", "en", "42K", "busy"),
-    ("Learn Arabic Easy", "en", "34K", "busy"),
-    ("learn Arabic with English", "en", "27K", "busy"),
-    ("Arabic Learning in English and Urdu", "ur", "340K", "quiet, admin approval — Urdu/English/Arabic only"),
-    ("[ARABIC WORDS and their meanings in Urdu]", "ur", "17K", "quiet"),
-    ("Learn URDU ARABIC,ENGLISH Online", "ur", "10K", "quiet"),
-    ("Arabic - Urdu. عربی - اردو", "ur", "9.6K", "quiet"),
-    ("Arabic English Lessons (Atik Sir)", "hi", "38K", "busy"),
-    ("Belajar Bahasa Arab", "id", "109K", "medium"),
-    ("Komunitas belajar bahasa arab", "id", "52K", "busy"),
-    ("PERCAKAPAN BAHASA ARAB SEHARI-HARI", "id", "19K", "medium · everyday conversation = our content"),
-    ("pembelajaran bahasa Arab dasar sehari_hari (PBA)", "id", "17K", "busy"),
-    ("BELAJAR BAHASA ARAB (PEMULA)", "id", "12K", "quiet"),
-    ("Arapça Dersi", "tr", "139K", "quiet"),
-    ("Arapça Ders Öğren İrap Tahlil Cümle", "tr", "37K", "busy"),
-    ("Arapça Öğrenmek İsteyenler", "tr", "11K", "quiet"),
-]
+# the owner's groups (final list 31 Oct 2026, joined as the Page): data/fb-groups.json — name, lang, members, kind,
+# url (the group's link → an "Open the group" button). Target 3–5 groups per language.
+GROUPS = [(x["name"], x["lang"], x["members"], x["kind"]) for x in
+          json.loads((ROOT / "data" / "fb-groups.json").read_text(encoding="utf-8"))]
+URLS = {x["name"]: x.get("url", "") for x in json.loads((ROOT / "data" / "fb-groups.json").read_text(encoding="utf-8"))}
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
 CLOSE = {
     "en": "I'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂",
@@ -133,7 +113,7 @@ h1{{font-size:1.5rem;margin:0 0 4px}} h2{{font-size:1.1rem;margin:26px 0 10px}} 
 .lang{{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}}
 .btns{{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 10px;align-items:center}}
 a.btn,button{{font:inherit;font-weight:600;border-radius:10px;padding:10px 14px;border:0;cursor:pointer;text-decoration:none}}
-a.btn{{background:var(--teal);color:#fff}} button.copy{{background:var(--terra);color:#fff}}
+a.btn{{background:var(--teal);color:#fff}} a.btn.grp{{background:#3b5998}} button.copy{{background:var(--terra);color:#fff}}
 .file{{background:var(--bg);border:1px dashed var(--teal);border-radius:10px;padding:8px 12px;font-size:.93rem}}
 .file b{{font-family:ui-monospace,monospace}}
 pre{{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;margin:0;font:inherit;font-size:.93rem;max-height:220px;overflow:auto}}
@@ -165,14 +145,15 @@ function slots(day) {{ return [0, 1, 2].map(k => D.groups[D.order[mod(3 * day + 
 function card(g, i, day, enIdx) {{
   const key = day + "-" + g.name, done = !!ticks()[key];
   let body;
+  const grp = g.url ? `<a class="btn grp" href="${{g.url}}" target="_blank" rel="noopener">Open the group</a>` : "";
   if (g.code === "en") {{
     const r = D.en.length ? D.en[mod(day * 2 + enIdx, D.en.length)] : null;
-    body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>
+    body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>${{grp}}
       <button class="copy">Copy text</button></div><pre>${{esc(r.text)}}</pre>` : `<p class="none">No English Reel on the page yet.</p>`;
     g._text = r && r.text;
   }} else {{
     const f = D.files[g.code];
-    body = f ? `<div class="btns"><span class="file">Upload: <b>${{esc(f.file)}}</b></span><button class="copy">Copy text</button></div><pre>${{esc(f.text)}}</pre>`
+    body = f ? `<div class="btns">${{grp}}<span class="file">Upload: <b>${{esc(f.file)}}</b></span><button class="copy">Copy text</button></div><pre>${{esc(f.text)}}</pre>`
              : `<p class="none">No ${{g.lang}} version yet: skip this one.</p>`;
     g._text = f && f.text;
   }}
@@ -198,7 +179,7 @@ document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><
 
 
 def main():
-    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k} for n, l, m, k in GROUPS]
+    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, "")} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
         p = pathlib.Path(tempfile.gettempdir()) / "groups.html"; p.write_text(out, encoding="utf-8"); print(p); return
