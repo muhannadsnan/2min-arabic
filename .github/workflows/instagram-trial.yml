@@ -1,10 +1,10 @@
 # Daily dubbed Trial Reel (owner, 2026-10-19): one language a day from the encrypted `ig-trial` release, posted as an
-# Instagram Trial Reel (non-followers only). Runs after the 15:00 main Reel; once a day (marker asset). Timing isn't
-# critical, so GitHub's own schedule is enough here.
+# Instagram Trial Reel (non-followers only). Runs after the 15:00 main Reel; once a day (marker asset). GitHub's own
+# schedule runs late or not at all at busy times → many start times, the first one posts. Manual run: -f dry_run=false.
 name: Instagram daily Trial Reel
 on:
   schedule:   # one a day (two a day ran only for x03's versions, 19–27 Oct)
-    - cron: "37 16 * * *"
+    - cron: "7,37 16,17,18,19 * * *"   # many chances (31 Oct: the 17:37 run never started); once a day via the done-<date>-pm marker
   workflow_dispatch:
     inputs:
       dry_run:

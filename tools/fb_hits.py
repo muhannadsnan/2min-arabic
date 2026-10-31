@@ -8,10 +8,12 @@ visible to app roles, so Facebook has never shown our best videos to anyone.
 Takes the first line of data/fb-hits.txt (Instagram media id, best first), downloads that Reel and its caption
 through the Instagram API, posts it to the Page and removes the line (the workflow commits the file).
 """
+import datetime
 import pathlib
 import sys
 import tempfile
 import urllib.request
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import facebook_api as fb    # noqa: E402
@@ -22,6 +24,11 @@ LIST = pathlib.Path(__file__).resolve().parent.parent / "data" / "fb-hits.txt"
 
 def main():
     lines = LIST.read_text(encoding="utf-8").splitlines()
+    # GitHub starts scheduled runs late or skips them (31 Oct: 5 h late) → the workflow runs several times a day and
+    # only the first one posts: "# last posted: YYYY-MM-DD" (Oslo date) in the list
+    today = f"# last posted: {datetime.datetime.now(ZoneInfo('Europe/Oslo')):%Y-%m-%d}"
+    if today in lines and "--force" not in sys.argv:
+        print(f"already posted today ({today[16:]})"); return
     todo = [i for i, l in enumerate(lines) if l.strip() and not l.startswith("#")]
     if not todo:
         print("fb-hits.txt is empty — nothing to post"); return
@@ -36,6 +43,7 @@ def main():
     vid = fb.post_video(tmp, cap)
     print(f"✅ Facebook: {vid} · {len(todo) - 1} hits left")
     del lines[i]
+    lines = [l for l in lines if not l.startswith("# last posted:")] + [today]
     LIST.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

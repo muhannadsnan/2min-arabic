@@ -4,7 +4,7 @@
 name: Instagram carousel (Wed + Sun)
 on:
   schedule:
-    - cron: "0 18 * * 0,3"
+    - cron: "0,30 18,19,20 * * 0,3"   # many chances; once a day via the done-<date> marker
   workflow_dispatch:
     inputs:
       dry_run:
