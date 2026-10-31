@@ -2,22 +2,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <title>Group posts</title><link rel="icon" href="favicon.png">
 <style>
-:root{--bg:#fbf6ee;--card:#fff;--ink:#2a2420;--soft:#6f6258;--teal:#1f6f6b;--terra:#c8643b;--line:#eadfce;--ok:#2e7d4f}
+:root{--bg:#fbf6ee;--card:#fff;--ink:#2a2420;--soft:#6f6258;--teal:#1f6f6b;--terra:#c8643b;--line:#eadfce}
 @media (prefers-color-scheme:dark){:root{--bg:#1d1a17;--card:#27231f;--ink:#f3ece3;--soft:#b9ab9c;--line:#3a332c;--teal:#5fb3ad;--terra:#e08a63}}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 .wrap{max-width:640px;margin:0 auto;padding:20px 16px 48px}
-h1{font-size:1.5rem;margin:0 0 4px} .sub{color:var(--soft);margin:0 0 18px}
+h1{font-size:1.5rem;margin:0 0 4px} h2{font-size:1.1rem;margin:26px 0 10px} .sub{color:var(--soft);margin:0 0 18px}
 .steps{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:18px;color:var(--soft);font-size:.95rem}
-.steps b{color:var(--ink)}
+.steps b{color:var(--ink)} .steps p{margin:4px 0}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px}
 .card.done{opacity:.55}
 .top{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
 .num{background:var(--terra);color:#fff;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-weight:700;flex:none}
 .g{font-weight:700;font-size:1.08rem} .meta{color:var(--soft);font-size:.88rem}
 .lang{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}
-.btns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 10px}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 10px;align-items:center}
 a.btn,button{font:inherit;font-weight:600;border-radius:10px;padding:10px 14px;border:0;cursor:pointer;text-decoration:none}
 a.btn{background:var(--teal);color:#fff} button.copy{background:var(--terra);color:#fff}
+.file{background:var(--bg);border:1px dashed var(--teal);border-radius:10px;padding:8px 12px;font-size:.93rem}
+.file b{font-family:ui-monospace,monospace}
 pre{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;margin:0;font:inherit;font-size:.93rem;max-height:220px;overflow:auto}
 label{display:flex;gap:8px;align-items:center;margin-top:10px;font-weight:600} input{width:20px;height:20px}
 .none{color:var(--soft);font-style:italic}
@@ -26,42 +28,53 @@ table{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px} td,th
 .foot{color:var(--soft);font-size:.8rem;margin-top:24px}
 </style></head><body><div class="wrap">
 <h1>Group posts</h1><p class="sub" id="date"></p>
-<div class="steps"><b>For each:</b> Open the Reel → <b>Share</b> → <b>Group</b> → search the group name → <b>paste</b> the text → Post → tick <b>Posted</b>. About a minute each. Up to 3 a day, any day.</div>
-<div id="today"></div>
-<details><summary>All 15 groups (last posted)</summary><div id="all"></div></details>
-<p class="foot">Updated 31 Oct 08:02 UTC from the Facebook page. Reels refresh every afternoon. Your ticks are remembered on this device.</p>
+<div class="steps">
+<p><b>English:</b> Open the Reel → <b>Share</b> → <b>Group</b> → search the group name → <b>paste</b> → Post.</p>
+<p><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.</p>
+<p>About a minute each. Every day has its own 3 (the same on every device). Skipped ones come back in the next round.</p></div>
+<h2>Today</h2><div id="today"></div>
+<details id="ydet"><summary>Missed yesterday? Yesterday's 3</summary><div id="yesterday"></div></details>
+<details><summary>All groups, in rotation order</summary><div id="all"></div></details>
+<p class="foot">Updated 31 Oct 08:53 UTC. English Reels refresh from the Facebook page every afternoon.</p>
 </div><script>
-const ITEMS = [{"id": 0, "group": "Learn Arabic in English", "lang": "English", "members": "561K", "kind": "busy", "url": "https://www.facebook.com/reel/1155314673585791/", "title": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can", "text": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can you hear it?\n\n🆕 The rule:\nal- — the — ⁧الْ⁩\n\n🌙 Moon letters (you hear the L):\nal-qahwa — the coffee — ⁧الْقَهْوَةْ⁩\nal-kitaab — the book — ⁧الْكِتَابْ⁩\nal-bayt — the house — ⁧الْبَيْتْ⁩\nal-Haliib — the milk — ⁧الْحَلِيبْ⁩\nal-'aSiir — the juice — ⁧الْعَصِيرْ⁩\n\n☀️ Sun letters (the L disappears):\nash-shaay — the tea — ⁧الشَّايْ⁩\nas-sukkar — the sugar — ⁧السُّكَّرْ⁩\nan-naadil — the waiter — ⁧النَّادِلْ⁩\n\nI'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂"}, {"id": 6, "group": "Arabic Learning in English and Urdu", "lang": "Urdu", "members": "340K", "kind": "quiet, admin approval — Urdu/English/Arabic only"}, {"id": 8, "group": "Belajar Bahasa Arab", "lang": "Indonesian", "members": "221K", "kind": "medium"}, {"id": 1, "group": "Arabic Language Learners", "lang": "English", "members": "236K", "kind": "busy", "url": "https://www.facebook.com/reel/1155314673585791/", "title": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can", "text": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can you hear it?\n\n🆕 The rule:\nal- — the — ⁧الْ⁩\n\n🌙 Moon letters (you hear the L):\nal-qahwa — the coffee — ⁧الْقَهْوَةْ⁩\nal-kitaab — the book — ⁧الْكِتَابْ⁩\nal-bayt — the house — ⁧الْبَيْتْ⁩\nal-Haliib — the milk — ⁧الْحَلِيبْ⁩\nal-'aSiir — the juice — ⁧الْعَصِيرْ⁩\n\n☀️ Sun letters (the L disappears):\nash-shaay — the tea — ⁧الشَّايْ⁩\nas-sukkar — the sugar — ⁧السُّكَّرْ⁩\nan-naadil — the waiter — ⁧النَّادِلْ⁩\n\nI'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂"}, {"id": 7, "group": "Arabic English Lessons", "lang": "Hindi", "members": "38K", "kind": "busy", "url": "https://www.facebook.com/reel/1396915375550162/", "title": "अरबी में \"मेरा\" के लिए कोई शब्द नहीं — बस शब्द के आख़िर में एक आवाज़ जोड़िए! 🤯", "text": "अरबी में \"मेरा\" के लिए कोई शब्द नहीं — बस शब्द के आख़िर में एक आवाज़ जोड़िए! 🤯\n\n🆕 ismii — मेरा नाम\nkitaabii — मेरी किताब\nbaytii — मेरा घर\nqahwatii — मेरी कॉफ़ी\nismuka / ismuki — आपका नाम (आदमी / औरत)\n\nMain Syria se hoon aur roz 2 minute ka Arabic lesson banata hoon. Koi sawal ho to zaroor poochhein 🙂"}, {"id": 12, "group": "Arapça Dersi", "lang": "Turkish", "members": "139K", "kind": "quiet"}, {"id": 2, "group": "Let's Learn Arabic", "lang": "English", "members": "152K", "kind": "busy", "url": "https://www.facebook.com/reel/1155314673585791/", "title": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can", "text": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can you hear it?\n\n🆕 The rule:\nal- — the — ⁧الْ⁩\n\n🌙 Moon letters (you hear the L):\nal-qahwa — the coffee — ⁧الْقَهْوَةْ⁩\nal-kitaab — the book — ⁧الْكِتَابْ⁩\nal-bayt — the house — ⁧الْبَيْتْ⁩\nal-Haliib — the milk — ⁧الْحَلِيبْ⁩\nal-'aSiir — the juice — ⁧الْعَصِيرْ⁩\n\n☀️ Sun letters (the L disappears):\nash-shaay — the tea — ⁧الشَّايْ⁩\nas-sukkar — the sugar — ⁧السُّكَّرْ⁩\nan-naadil — the waiter — ⁧النَّادِلْ⁩\n\nI'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂"}, {"id": 9, "group": "Belajar Bahasa Arab (the one with the اللغة العربية logo)", "lang": "Indonesian", "members": "109K", "kind": "medium"}, {"id": 13, "group": "Arapça Öğrenmek İsteyenler", "lang": "Turkish", "members": "11K", "kind": "quiet"}, {"id": 3, "group": "Learn Spoken Arabic", "lang": "English", "members": "72K", "kind": "busy", "url": "https://www.facebook.com/reel/1155314673585791/", "title": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can", "text": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can you hear it?\n\n🆕 The rule:\nal- — the — ⁧الْ⁩\n\n🌙 Moon letters (you hear the L):\nal-qahwa — the coffee — ⁧الْقَهْوَةْ⁩\nal-kitaab — the book — ⁧الْكِتَابْ⁩\nal-bayt — the house — ⁧الْبَيْتْ⁩\nal-Haliib — the milk — ⁧الْحَلِيبْ⁩\nal-'aSiir — the juice — ⁧الْعَصِيرْ⁩\n\n☀️ Sun letters (the L disappears):\nash-shaay — the tea — ⁧الشَّايْ⁩\nas-sukkar — the sugar — ⁧السُّكَّرْ⁩\nan-naadil — the waiter — ⁧النَّادِلْ⁩\n\nI'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂"}, {"id": 10, "group": "Komunitas belajar bahasa arab", "lang": "Indonesian", "members": "52K", "kind": "busy"}, {"id": 14, "group": "Arapça Ders Öğren İrap Tahlil Cümle", "lang": "Turkish", "members": "37K", "kind": "busy"}, {"id": 4, "group": "Learning simple arabic for beginners", "lang": "English", "members": "42K", "kind": "busy", "url": "https://www.facebook.com/reel/1155314673585791/", "title": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can", "text": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can you hear it?\n\n🆕 The rule:\nal- — the — ⁧الْ⁩\n\n🌙 Moon letters (you hear the L):\nal-qahwa — the coffee — ⁧الْقَهْوَةْ⁩\nal-kitaab — the book — ⁧الْكِتَابْ⁩\nal-bayt — the house — ⁧الْبَيْتْ⁩\nal-Haliib — the milk — ⁧الْحَلِيبْ⁩\nal-'aSiir — the juice — ⁧الْعَصِيرْ⁩\n\n☀️ Sun letters (the L disappears):\nash-shaay — the tea — ⁧الشَّايْ⁩\nas-sukkar — the sugar — ⁧السُّكَّرْ⁩\nan-naadil — the waiter — ⁧النَّادِلْ⁩\n\nI'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂"}, {"id": 11, "group": "BELAJAR BAHASA ARAB (PEMULA)", "lang": "Indonesian", "members": "12K", "kind": "quiet"}, {"id": 5, "group": "Learn Arabic Language - MSA Arabic - Egyptian Arabic - Gulf Arabic", "lang": "English", "members": "30K", "kind": "medium", "url": "https://www.facebook.com/reel/1155314673585791/", "title": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can", "text": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can you hear it?\n\n🆕 The rule:\nal- — the — ⁧الْ⁩\n\n🌙 Moon letters (you hear the L):\nal-qahwa — the coffee — ⁧الْقَهْوَةْ⁩\nal-kitaab — the book — ⁧الْكِتَابْ⁩\nal-bayt — the house — ⁧الْبَيْتْ⁩\nal-Haliib — the milk — ⁧الْحَلِيبْ⁩\nal-'aSiir — the juice — ⁧الْعَصِيرْ⁩\n\n☀️ Sun letters (the L disappears):\nash-shaay — the tea — ⁧الشَّايْ⁩\nas-sukkar — the sugar — ⁧السُّكَّرْ⁩\nan-naadil — the waiter — ⁧النَّادِلْ⁩\n\nI'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂"}];
+const D = {"groups": [{"name": "Learn Arabic in English", "code": "en", "lang": "English", "members": "561K", "kind": "busy"}, {"name": "Arabic Language Learners", "code": "en", "lang": "English", "members": "236K", "kind": "busy"}, {"name": "Let's Learn Arabic", "code": "en", "lang": "English", "members": "152K", "kind": "busy"}, {"name": "Learn Spoken Arabic", "code": "en", "lang": "English", "members": "72K", "kind": "busy"}, {"name": "Learning simple arabic for beginners", "code": "en", "lang": "English", "members": "42K", "kind": "busy"}, {"name": "Learn Arabic Language - MSA Arabic - Egyptian Arabic - Gulf Arabic", "code": "en", "lang": "English", "members": "30K", "kind": "medium"}, {"name": "Arabic Learning in English and Urdu", "code": "ur", "lang": "Urdu", "members": "340K", "kind": "quiet, admin approval — Urdu/English/Arabic only"}, {"name": "Arabic - Urdu. عربی - اردو", "code": "ur", "lang": "Urdu", "members": "9.6K", "kind": "quiet"}, {"name": "Learn URDU ARABIC,ENGLISH Online", "code": "ur", "lang": "Urdu", "members": "10K", "kind": "quiet"}, {"name": "[ARABIC WORDS and their meanings in Urdu]", "code": "ur", "lang": "Urdu", "members": "17K", "kind": "quiet"}, {"name": "Arabic English Lessons (Atik Sir)", "code": "hi", "lang": "Hindi", "members": "38K", "kind": "busy"}, {"name": "Belajar Bahasa Arab", "code": "id", "lang": "Indonesian", "members": "221K", "kind": "medium"}, {"name": "Belajar Bahasa Arab (the one with the اللغة العربية logo)", "code": "id", "lang": "Indonesian", "members": "109K", "kind": "medium"}, {"name": "Komunitas belajar bahasa arab", "code": "id", "lang": "Indonesian", "members": "52K", "kind": "busy"}, {"name": "Komunitas Belajar Bahasa Arab", "code": "id", "lang": "Indonesian", "members": "26K", "kind": "busy"}, {"name": "BELAJAR BAHASA ARAB (PEMULA)", "code": "id", "lang": "Indonesian", "members": "12K", "kind": "quiet"}, {"name": "Arapça Dersi", "code": "tr", "lang": "Turkish", "members": "139K", "kind": "quiet"}, {"name": "Arapça Öğrenmek İsteyenler", "code": "tr", "lang": "Turkish", "members": "11K", "kind": "quiet"}, {"name": "Arapça Ders Öğren İrap Tahlil Cümle", "code": "tr", "lang": "Turkish", "members": "37K", "kind": "busy"}], "order": [0, 11, 6, 16, 10, 1, 12, 7, 17, 2, 13, 8, 18, 3, 14, 9, 4, 15, 5], "start": "2026-11-01", "en": [{"url": "https://www.facebook.com/reel/1155314673585791/", "title": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can", "text": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun letters the L disappears. Can you hear it?\n\n🆕 The rule:\nal- — the — ⁧الْ⁩\n\n🌙 Moon letters (you hear the L):\nal-qahwa — the coffee — ⁧الْقَهْوَةْ⁩\nal-kitaab — the book — ⁧الْكِتَابْ⁩\nal-bayt — the house — ⁧الْبَيْتْ⁩\nal-Haliib — the milk — ⁧الْحَلِيبْ⁩\nal-'aSiir — the juice — ⁧الْعَصِيرْ⁩\n\n☀️ Sun letters (the L disappears):\nash-shaay — the tea — ⁧الشَّايْ⁩\nas-sukkar — the sugar — ⁧السُّكَّرْ⁩\nan-naadil — the waiter — ⁧النَّادِلْ⁩\n\nI'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂"}], "files": {"hi": {"file": "day12-hindi.mp4", "title": "Day 12 — no word for \"my\"", "text": "अरबी में \"मेरा\" के लिए कोई शब्द नहीं — बस शब्द के आख़िर में एक आवाज़ जोड़िए! 🤯\n\n🆕 ismii — मेरा नाम\nkitaabii — मेरी किताब\nbaytii — मेरा घर\nqahwatii — मेरी कॉफ़ी\nismuka / ismuki — आपका नाम (आदमी / औरत)\n\nMain Syria se hoon aur roz 2 minute ka Arabic lesson banata hoon. Koi sawal ho to zaroor poochhein 🙂\n\n▶️ YouTube: 2 Minute Arabic"}, "ur": {"file": "day12-urdu.mp4", "title": "Day 12 — no word for \"my\"", "text": "عربی میں «میرا» کا کوئی لفظ نہیں — بس لفظ کے آخر میں ایک آواز جوڑیں! 🤯\n\n🆕 ismii — میرا نام\nkitaabii — میری کتاب\nbaytii — میرا گھر\nqahwatii — میری کافی\nismuka / ismuki — آپ کا نام (مرد / عورت)\n\nمیں شام (سیریا) سے ہوں اور روز 2 منٹ کا عربی سبق بناتا ہوں۔ کوئی سوال ہو تو ضرور پوچھیں 🙂\n\n▶️ YouTube: 2 Minute Arabic"}, "id": {"file": "day12-indonesian.mp4", "title": "Day 12 — no word for \"my\"", "text": "Dalam bahasa Arab tidak ada kata untuk \"milikku\" — cukup tambah satu bunyi di akhir kata! 🤯\n\n🆕 ismii — namaku\nkitaabii — bukuku\nbaytii — rumahku\nqahwatii — kopiku\nismuka / ismuki — namamu (laki-laki / perempuan)\n\nSaya penutur asli bahasa Arab dari Suriah dan membuat pelajaran 2 menit setiap hari. Silakan bertanya 🙂\n\n▶️ YouTube: 2 Minute Arabic"}, "tr": {"file": "day12-turkish.mp4", "title": "Day 12 — no word for \"my\"", "text": "Arapçada \"benim\" diye bir kelime yok — kelimenin sonuna tek bir ses ekliyorsun! 🤯\n\n🆕 ismii — adım\nkitaabii — kitabım\nbaytii — evim\nqahwatii — kahvem\nismuka / ismuki — senin adın (erkek / kadın)\n\nSuriyeliyim, ana dilim Arapça. Her gün 2 dakikalık bir ders paylaşıyorum. Sorularınızı bekliyorum 🙂\n\n▶️ YouTube: 2 Minute Arabic"}, "ms": {"file": "day12-malay.mp4", "title": "Day 12 — no word for \"my\"", "text": "Bahasa Arab tiada perkataan untuk \"saya punya\" — cuma tambah satu bunyi di hujung perkataan! 🤯\n\n🆕 ismii — nama saya\nkitaabii — buku saya\nbaytii — rumah saya\nqahwatii — kopi saya\nismuka / ismuki — nama awak (lelaki / perempuan)\n\nSaya penutur asli bahasa Arab dari Syria dan membuat pelajaran 2 minit setiap hari. Silakan bertanya 🙂\n\n▶️ YouTube: 2 Minute Arabic"}}};
 const now = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Oslo"}));
-const today = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+const ymd = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+const dayNo = Math.round((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - Date.parse(D.start + "T00:00:00Z")) / 864e5);
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
-function load() { try { return JSON.parse(localStorage.getItem("fbgroups") || "{}"); } catch (e) { return {}; } }
-function save(v) { try { localStorage.setItem("fbgroups", JSON.stringify(v)); } catch (e) {} }
-let last = load();   // group id -> date posted
-document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {weekday: "long", day: "numeric", month: "long"});
-function render() {
-  const box = document.getElementById("today"); box.innerHTML = "";
-  const doneToday = ITEMS.filter(it => last[it.id] === today);
-  // longest ago first (never = first), rotation order breaks ties
-  const queue = ITEMS.map((it, i) => [last[it.id] || "", i, it]).sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : a[1] - b[1]).map(x => x[2]);
-  const show = doneToday.concat(queue.filter(it => last[it.id] !== today).slice(0, Math.max(0, 3 - doneToday.length)));
-  if (doneToday.length >= 3) box.insertAdjacentHTML("beforeend", '<div class="card"><p class="none">Done for today ✓ Three a day keeps Facebook happy. Next 3 whenever you have time, from tomorrow.</p></div>');
-  show.forEach((it, i) => {
-    const done = last[it.id] === today;
-    const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
-    c.innerHTML = `<div class="top"><div><div class="g">${esc(it.group)}</div>
-      <div class="meta"><span class="lang">${it.lang}</span>${it.members} members · ${esc(it.kind)}</div></div><div class="num">${i + 1}</div></div>` +
-      (it.url ? `<div class="btns"><a class="btn" href="${it.url}" target="_blank" rel="noopener">Open the Reel</a>
-        <button class="copy">Copy text</button></div><pre>${esc(it.text)}</pre>`
-              : `<p class="none">No ${it.lang} Reel on the page yet: tick it to skip for now.</p>`) +
-      `<label><input type="checkbox" ${done ? "checked" : ""}> Posted</label>`;
-    const b = c.querySelector("button.copy");
-    if (b) b.onclick = () => navigator.clipboard.writeText(it.text).then(() => { b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); });
-    c.querySelector("input").onchange = e => { if (e.target.checked) last[it.id] = today; else delete last[it.id]; save(last); render(); };
-    box.appendChild(c);
-  });
-  document.getElementById("all").innerHTML = "<table><tr><th>Group</th><th>Language</th><th>Last posted</th></tr>" +
-    ITEMS.map(it => `<tr><td>${esc(it.group)}</td><td>${it.lang}</td><td>${last[it.id] || "—"}</td></tr>`).join("") + "</table>";
+const N = D.order.length, mod = (a, n) => ((a % n) + n) % n;
+function ticks() { try { return JSON.parse(localStorage.getItem("fbg2") || "{}"); } catch (e) { return {}; } }
+function tick(k, on) { try { const t = ticks(); on ? t[k] = 1 : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); } catch (e) {} }
+function slots(day) { return [0, 1, 2].map(k => D.groups[D.order[mod(3 * day + k, N)]]); }
+function card(g, i, day, enIdx) {
+  const key = day + "-" + i, done = !!ticks()[key];
+  let body;
+  if (g.code === "en") {
+    const r = D.en.length ? D.en[mod(day * 2 + enIdx, D.en.length)] : null;
+    body = r ? `<div class="btns"><a class="btn" href="${r.url}" target="_blank" rel="noopener">Open the Reel</a>
+      <button class="copy">Copy text</button></div><pre>${esc(r.text)}</pre>` : `<p class="none">No English Reel on the page yet.</p>`;
+    g._text = r && r.text;
+  } else {
+    const f = D.files[g.code];
+    body = f ? `<div class="btns"><span class="file">Upload: <b>${esc(f.file)}</b></span><button class="copy">Copy text</button></div><pre>${esc(f.text)}</pre>`
+             : `<p class="none">No ${g.lang} version yet: skip this one.</p>`;
+    g._text = f && f.text;
+  }
+  const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
+  c.innerHTML = `<div class="top"><div><div class="g">${esc(g.name)}</div>
+    <div class="meta"><span class="lang">${g.lang}</span>${g.members} members · ${esc(g.kind)}</div></div><div class="num">${i + 1}</div></div>` +
+    body + `<label><input type="checkbox" ${done ? "checked" : ""}> Posted</label>`;
+  const b = c.querySelector("button.copy"), text = g._text;
+  if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => { b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); });
+  c.querySelector("input").onchange = e => { tick(key, e.target.checked); c.classList.toggle("done", e.target.checked); };
+  return c;
 }
-render();
+function fill(id, day) {
+  const box = document.getElementById(id); let en = 0;
+  slots(day).forEach((g, i) => box.appendChild(card(Object.assign({}, g), i, day, g.code === "en" ? en++ : 0)));
+}
+document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {weekday: "long", day: "numeric", month: "long"});
+fill("today", dayNo); fill("yesterday", dayNo - 1);
+document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Language</th></tr>" +
+  D.order.map((g, i) => `<tr><td>${i + 1}</td><td>${esc(D.groups[g].name)}</td><td>${D.groups[g].lang}</td></tr>`).join("") + "</table>";
 </script></body></html>
