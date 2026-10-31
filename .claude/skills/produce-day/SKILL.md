@@ -192,7 +192,9 @@ mid-video 3/s from reusable motion sets; pilot = Day 24). Earlier: the v4 shape 
 person centred, no fades, no idle).
 
 **Repeated lines: always the LAST take** (owner 2026-10-26; split_recording keeps the last good take — check the
-report when a line was repeated). **Throat clearing, coughs and false starts are always removed** — never in a video.
+report when a line was repeated). **A throat-clear marks a retake (owner 2026-10-30):** whatever follows it is a new take
+of the same line, so the take AFTER the last throat-clear wins, even if the earlier one sounded fine. **Throat clearing,
+coughs and false starts are always removed** — never in a video.
 **Recordings are checked for extra sounds before use (owner 2026-10-26: "don't you listen to the audio?"):**
 `$TTS tools/check_bursts.py videos/NNN-….md` splits every recorded clip at its pauses and transcribes each sound
 burst on its own; a loud burst that isn't part of the line (throat clearing, a cough, a stray word) is cut
@@ -225,6 +227,10 @@ Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼
 
 Then render the cards: `python3 tools/check_cards.py videos/NNN-….md` → look at `output/<video>/cards-sheet.png`.
 Fonts lack `…`, `_` (Arabic font) and `→`, `▶` (bold Latin) — they show as □.
+**Never put Arabic inside the English part of a card** (2026-10-31, Days 29/30 + x08): `before (≠ بَعْدَ after)` or
+`love → حَبِيبِي` rendered as "( □□□□□□ after)". Arabic goes only in the first (Arabic) field; English lines say it in
+words ("before (the opposite of after)"). Also don't split an English sentence with ` · ` — every ` · ` starts a new card
+line ("to a woman: you · your · student" came out as three broken lines). Check `cards-sheet.png` for □ every time.
 
 ## 2. Recording sheets → WhatsApp
 
@@ -316,6 +322,12 @@ animation, goodbye; captions don't cover faces or cards.
 - `videos/NNN-description.txt` + `videos/NNN-upload.md` → follow the **upload-handover** skill.
 
 ## 8. Hand over
+
+**Every video the owner should watch goes to `/home/msn/Downloads/to confirm/`** (owner 2026-10-30), named so he
+recognises it (`day26-sami-arabic-test.mp4`, `x08-habibi.mp4`), with absolute links + the folder opened.
+Before that, look at one frame from the middle of every scene yourself (a contact sheet): close-ups, two-shots,
+YOUR TURN, □ glyphs, cards covering faces (v04's outro: a tall 4-line card hid Sami's face in the belly-up cB framing →
+use the face-and-shoulders cA set under tall cards).
 
 Run the **pre-upload-gate** skill first (SHIP / FIX / KILL); only a SHIP gets handed over.
 Commit and push (recordings, audio, images, output are git-ignored; voice references are private and never

@@ -197,6 +197,21 @@ missing tracks itself, language by language in priority order, most-viewed first
    Malay (the same dub-id.m4a twice)** — spoken, these pairs are understood both ways; YouTube plays the track that
    matches the viewer's language (owner, 2026-10-18). The hand-over lists the files per video. Automatic dubbing stays OFF.
 
+## Instagram + Facebook language versions — CURRENT RULES (owner 2026-10-30/31, override the older notes below)
+- **The Instagram profile and the Facebook Page stay English-only** ("I can't be a dedicated teacher in each language").
+  Language versions are discovery only: Instagram **Trial Reels** (never "share with followers") + **files the owner
+  uploads into Facebook groups** of that language. They point to YouTube "with <language> subtitles".
+- **Each language version gets its OWN LOOK** — `$TTS tools/ig_lang_version.py <stem> <lang>` (LOOK table: another
+  cover character + background for the first 2.2 s, frame colour, translated badge, zoom/shift, hue; subtitles in that
+  script; hook line on the cover). Reason: same-picture dubs hit Instagram's near-copy filter ("looks like something
+  you shared before", 0 views); the own-look Hindi Day 12 got 2,375 views, 33 saves, 15 shares in ~18 h (record).
+  `ig_trial_add.py` takes `output/<stem>/ig-<lang>.mp4` (+ its own first frame as cover) → `-v2` bundles; only `-v2`
+  post. Order: hi → ur → id → tr → ms; videos best first (Day 12 → x03 → Day 8 → Day 3 → Day 4 → x01). No rooftop
+  background (minarets). Urdu/Persian badge digits in Eastern numerals (bidi).
+- **Facebook groups:** copy each new version to `~/Downloads/fb-groups/<video>-<language>.mp4` and add it to
+  `data/fb-group-files.json` (file, video, caption) — the owner's page https://muhannadsnan.github.io/2min-arabic/groups.html
+  shows today's 3 groups (tools/fb_groups_page.py; no group API exists since 2024).
+
 ## Instagram (owner, 2026-10-17)
 - **Saves decide reach:** word lists and clear rules get saved (Day 3: 65 saves, Day 5: 50); quizzes and greetings don't.
 - **One carousel a week** from the week's best word list, built from the video's own cards, one word per slide.

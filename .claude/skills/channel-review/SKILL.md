@@ -140,7 +140,11 @@ Baseline to 14 Oct: 1,503 views, 24 subscribers, 222 Instagram followers; ~60 �
 28 % → 44 % of views; **8 shares in total**. Every review compares with this and checks:
 - **Search share per video** — target: every Extra above 30 %.
 - **Shares** on videos with a share hook vs the 8-share baseline.
-- **Instagram:** saves per carousel vs the Reels average.
+- **Instagram:** saves per carousel vs the Reels average · **language versions (Trial Reels, own look):** views/saves
+  per language vs the English Reels; any "shared before" warning → the look isn't different enough.
+- **Facebook Page** (Business Dashboard → Content Library; the API token can't read Reel insights): views + average
+  watch time per Reel — the daily hit (12:00, best Instagram Reels first) vs the daily Reel (15:00). Day 17 baseline:
+  125 views, 2 s average (100 % non-followers). Followers count. Groups: which groups bring page follows.
 - Comments: every comment answered within a day, in Arabic + transliteration.
 - Dated checks: 23 Oct re-packaging (views/day before vs after, per video + channel) · 31 Oct translations (search
   terms in fa/ur/tr/id/fr, views from IR, AF, PK, TR, ID, FR; up → localize all older videos).

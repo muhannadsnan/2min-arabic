@@ -23,14 +23,24 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 
 ## Calendar (keep it current)
 
-- **Weekly social rhythm (owner 2026-10-30):** Instagram Reel daily 15:00 + dubbed trial Reel daily (one video's 9
-  languages at a time: Day 12 → Day 8 → Day 3, then Day 4, x01) · **Instagram carousel Wed + Sun 19:00** (GitHub
+- **Weekly social rhythm (owner 2026-10-30):** Instagram Reel daily 15:00 + dubbed trial Reel daily 17:37 (owner 2026-10-30: each language its OWN LOOK —
+  tools/ig_lang_version.py: other cover character + background, frame colour, translated badge, zoom, subtitles in its
+  script; only `-v2` bundles post; languages hi → ur → id → tr → ms; videos Day 12 → x03 → Day 8 → Day 3 → Day 4 → x01;
+  Instagram profile stays English-only — language versions only as trials, never shared to followers;
+  Day 12 hi (2,375 views, record) posted 30 Oct, ur/id/tr/ms queued as trials 31 Oct–3 Nov; **2 Nov check:**
+  < ~30 views each or the "shared before" warning → stop dubs; ~100 → continue, maybe 2/day after 2 weeks) · **Instagram carousel Wed + Sun 19:00** (GitHub
   instagram-carousel.yml, queue `ig-carousel`; 7–8 slides = cover + 5–6 words + closing; the words of the latest
   Instagram Reel's video; every picture a dedicated close-up made for the slide, every hand finger-checked at full
   size; owner approves each batch — tools/make_carousel.py + tools/ig_carousel_add.py; queued: Day 19 directions
   1 Nov, body parts 4 Nov) · **YouTube Post Mon / Wed / Fri** (owner posts by hand, Claude prepares picture + text):
   a teaser for the newest YouTube video with 2 new words or sentences + the video attached (a post takes pictures OR a video, not both); every other one a quiz. Files: output/yt-posts/<date>-<video>/ (post.txt + HOW.md).
   Review after 2 weeks (saves, follows, reach per post) — up to 3 carousels/week if it holds, down if reach per post drops.
+- **Facebook page (owner 2026-10-31):** app Live since 30 Oct; the 22 invisible older Reels deleted + republished.
+  **English only.** Daily: proven hit 12:00 (facebook-hits.yml, data/fb-hits.txt) · English Reel 15:00.
+  **Groups:** owner shares by hand (no API since 2024) from https://muhannadsnan.github.io/2min-arabic/groups.html —
+  ~19 groups (tools/fb_groups_page.py GROUPS; owner sends the final English list), 3 a day by calendar, same on every
+  device; language groups upload files from ~/Downloads/fb-groups/ (data/fb-group-files.json); reminder .ics 15:15.
+  **2 Nov check:** Facebook watch time per Reel (Day 17: 125 views, 2 s avg) — hits vs daily vs language versions.
 - **Website** https://muhannadsnan.github.io/2min-arabic/ = the Instagram bio link: newest YouTube lessons + this
   week's Instagram videos, refreshed by GitHub (site-latest.yml, 15:25 + 17:25), tools/site_latest.py.
 
@@ -94,6 +104,9 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   units, backgrounds. Ask the owner to close all apps and leave the laptop to it.
 - **Characters v5 (owner plan 2026-10-26, animation-library skill):** all characters on green screen as blended picture sequences — openers 5 pics/s, mid-video 3 pics/s from reusable motion sets, new background per video, finger check on every picture. **Pilot Day 24 → v5.1 approved 26 Oct** (still unless speaking, mouth-only talk, facing each other; tools/animate/compose_talk.py).
 - **Monthly Episode (owner 2026-10-24, docs/21-monthly-episode.md):** Shorts → weekly Parts → a monthly 30+ min "Episode N" by topic, no day numbers, big combined conversation (Arabic + English), vocab, final challenge. Episode 1 (October) planned ≈ 35 min; owner to pick the publish date (1 or 8 Nov).
+- **Next up (2026-10-31):** Days 26–30, x08, v04 built with real voices, checked, in ~/Downloads/to confirm/ — waiting
+  for the owner's OK (Day 26 publishes 3 Nov) → then upload sheets, 13-language titles, thumbnails, gate. Every video
+  for the owner goes to ~/Downloads/to confirm/.
 - **Next up (2026-10-29):** Days 23–25 + x07 re-uploaded with sound effects (new IDs KcnBpXKKpAM · MxlEx771Dnk · jXjfzVXmkhQ · ZjH1guEQuvI); v03 colors uploaded (slqxiJIVVVk, 2 Nov; captions/playlist/translations in the 09:15 queue). **Part 5 produced** (videos/w05-upload.md, 9:13, fill key `w05`, schedule Sat 7 Nov 17:00) — waiting for the owner's upload. Translated subtitles: dubs/ for 021–025, x07, v03 written 28 Oct (fill now registers dubs/ids.json itself); Parts + Episode still have none (multi-timeline, to build). Next: plan Days 26–30 + recording sheet.
 - **Next up (2026-10-24):** Days 22 + 23 prepared up to the recording (scripts, cards, images, chalk boards, openers d22-sami-slowly + d23-lina-planner — owner approval pending, sheets + 13 translations in tools/localizations-pending.json keys `022`/`023`). When `_2125` arrives: put it in footage/recordings/_2125-combined/ → `$TTS tools/split_recording.py videos/_2125-combined.md` → build day maps from the pool (like 021) → make_audio → assemble → checks. Part 4 filled 24 Oct (09:15 queue). **Decide with the owner:** monthly long searched video (YPP 8,000 h from 1 Feb 2027; we have 3.6 long-form h in 4 weeks) + end-on-the-peak outro (learning/notes/2026-10-24-*).
 - **Next up (2026-10-23):** Day 21 (videos/021-answer-the-waiter, 27 Oct) + Part 4 (videos/w04, 25 Oct) **produced, waiting for the owner's upload** (fill keys: `021-answer-the-waiter`, `w04` → 13 translations in tools/localizations-pending.json). Waiter opener d21-waiter-notepad = owner approval pending. Recording sheets out: videos/_2125-whatsapp.txt (Days 22–25 + x07 Inshallah + v03 colors, 58 lines) + videos/_lina-koki-5-whatsapp.txt (4). Schedule: Day 22 28 Oct · 23 29 · 24 30 · 25 31 · x07 1 Nov · v03 2 Nov · Part 5 ~7 Nov.

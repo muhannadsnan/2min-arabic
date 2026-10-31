@@ -159,6 +159,21 @@ Put 3 hashtags max in the description (the first 3 show above the title).
 | Sun | Arabic Vocab (top 10 words in one place) | |
 | Monthly | — | "The whole month in one video" |
 
+## Facebook Page + groups (owner 2026-10-31)
+- The Meta app "2minarabic tools" must stay **Live**: Reels posted while it was in development mode were visible only
+  to app roles (22 Reels, 20–29 Oct, 0–3 views each — deleted 31 Oct and republished).
+- **The Page is English-only** (like the Instagram profile). Daily: a proven Instagram hit at 12:00
+  (facebook-hits.yml, data/fb-hits.txt: 13 hits by Instagram views, then the other older Reels) · the English Reel
+  at 15:00 (instagram-daily.yml). Language versions never go to the Page.
+- **Groups:** no API (Meta removed group posting in 2024) and no bots (account risk). The owner posts 3 a day by
+  hand from https://muhannadsnan.github.io/2min-arabic/groups.html (tools/fb_groups_page.py: calendar rotation, the
+  same 3 on every device + yesterday's 3 to catch up; English groups share the Page Reel, other languages upload the
+  file from ~/Downloads/fb-groups/). More than ~3 shares at once into groups risks "temporarily blocked from posting
+  in groups". Groups chosen for topic fit first (general/beginner Arabic, not grammar/religion/exams), then size ×
+  activity, a mix of busy and quiet (posts in quiet groups stay on top for days). Hindi-script and Malay Arabic-learning
+  groups barely exist (searches return tiny or spam groups) — Hindi speakers sit in English/Urdu groups, Malaysians
+  in the Indonesian ones.
+
 ## Learnings (dated)
 - 2026-10-06: "viral shorts" tag experiment → **dropped**. Tagged Day 3 (55 views, 38 % viewed) and Day 5 (38, 40 %) did not
   beat untagged Day 4 (86, 109 %) or the Day 2 re-upload (26 in 4 days, 61 %); content and hook matter, the tag doesn't
@@ -203,3 +218,11 @@ Priority (owner): 1. titles + descriptions → 2. top-language tags → 3. subti
   1 a day starting with Day 12. Hint after 1 day: the Indonesian and Hindi Trial Reels got 122 and 107 views from
   non-followers only, vs 147 (Day 10) and 187 (Day 9) for normal Reels incl. followers — check on 22 Oct.
 - Details and tools: the upload-handover skill ("Subtitles + audio tracks", "Instagram"), memory note 2min-other-languages.
+- 2026-10-31: **Instagram's near-copy filter kills same-picture dubs; a different look per language fixes it.** Dubbed
+  Reels that only changed the voice dropped to 0 views and got "looks like something you shared before" (x03 ms/sw,
+  Day 12 id); the Hindi Day 12 with its own cover, frame, badge and Hindi subtitles got 2,375 views, 33 saves,
+  15 shares and 34 s average watch in ~18 h — 10× a normal Reel (evidence: Instagram insights 30–31 Oct).
+  → Every language version is built with tools/ig_lang_version.py.
+- 2026-10-31: **Facebook shows nothing posted while the Meta app is in development mode.** 22 Reels (20–29 Oct): 0–3
+  views; the first Reel after switching to Live (Day 17): 125 views — but 2 s average watch from 100 % non-followers
+  (evidence: Business Dashboard 31 Oct). → App stays Live; watch whether Facebook finds the right audience.

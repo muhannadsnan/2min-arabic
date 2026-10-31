@@ -92,6 +92,8 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
   **The narrator is the owner's male voice → the presenter is always a man** (Sami, Omar, the waiter — owner 2026-10-29:
   "Lina can't be the starting narrator"). In a Lina-centred video Sami presents the hook; Lina's mouth never moves to
   the narrator.
+- **cA or cB under a card (2026-10-31, v04 outro):** cB (belly-up, h ≈ 0.72) puts the face at ~y 600–800 — a card of
+  3+ lines reaches y ≈ 800 and hides it. Under tall cards use cA (face and shoulders, h ≈ 0.506, face at ~y 1000+).
 - **One person talking alone → often a close-up** (owner 2026-10-29), not the standing full figure; two people talking
   → the two-shot.
 - **Close-up framing (owner 2026-10-29, Day 27):** the person sits in the **lower half** of the picture (cards, badge and

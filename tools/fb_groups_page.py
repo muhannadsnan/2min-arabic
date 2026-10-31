@@ -44,7 +44,7 @@ GROUPS = [
     ("Belajar Bahasa Arab", "id", "221K", "medium"),
     ("Belajar Bahasa Arab (the one with the اللغة العربية logo)", "id", "109K", "medium"),
     ("Komunitas belajar bahasa arab", "id", "52K", "busy"),
-    ("Komunitas Belajar Bahasa Arab", "id", "26K", "busy"),
+    ("PERCAKAPAN BAHASA ARAB SEHARI-HARI", "id", "19K", "medium · everyday conversation = our content"),
     ("BELAJAR BAHASA ARAB (PEMULA)", "id", "12K", "quiet"),
     ("Arapça Dersi", "tr", "139K", "quiet"),
     ("Arapça Öğrenmek İsteyenler", "tr", "11K", "quiet"),
