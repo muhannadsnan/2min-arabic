@@ -10,7 +10,7 @@
 | **Voices** | English narrator = owner's clone (tempo 0.9, English only) · Arabic = the owner (teacher, Sami) + Koki (Lina) → **AI label: No** |
 | **Shape** | short intro (no card) · "Word 1/4" cards · the story · twist · Your turn · stars: words learned → the third answer → the twist |
 | **Look** | Characters v5.1 in the school courtyard (bg_court), Sami and Lina facing each other |
-| **YouTube title** | `Easy Arabic Story: Sami's Arabic Test \| Story · Day 26` |
+| **YouTube title** | `How Old Are You in Arabic? 3 Questions Arabs Ask \| Story · Day 26` |
 | **Thumbnail text** | "ARABIC TEST" + امْتِحَانْ |
 | **Recording** | owner `_2630-combined` · Lina `_lina-koki-6` |
 
@@ -175,7 +175,7 @@ To help him, Lina asks him three questions that every Arab will ask you too.
 🔤 **On screen:** هَذَا هُوَ الِامْتِحَانْ! · *haadhaa huwa l-imtiHaan!* · That WAS the test!
 
 ```say:narrator
-But then Lina tells him a little secret.
+Then Lina smiles and tells him the truth.
 ```
 ```say:lina
 هَذَا هُوَ الِامْتِحَانْ!
