@@ -206,7 +206,7 @@ Now it's your turn. After thirty days of Arabic, how do you say, the test is eas
 ### 🎬 Scene 19 — Outro
 
 🖼️ **Image:** the desk with the stopwatch and confetti
-🔤 **On screen:** Day 26 · 1.01²⁶ = 1.30 · next: "Do you speak Arabic?"
+🔤 **On screen:** Day 26 · +1% today = +26% total · next: "Do you speak Arabic?"
 
 ```say:narrator
 Send this to a friend who has a test soon, and tell them: it's easy!

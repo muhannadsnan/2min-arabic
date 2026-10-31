@@ -179,7 +179,7 @@ But Lina has her own taste.
 ### 🎬 Scene 17 — What changed
 
 🖼️ **Image:** board — chalk أَنْتَ ← أَنْتِ
-🔤 **On screen:** to a woman: you · your · student · do you want — one small sound each
+🔤 **On screen:** To a woman · one small sound changes: you, your, student, do you want
 
 ```say:narrator
 That's all that changes for a woman: you, your, student, and do you want. One small sound each.
@@ -188,7 +188,7 @@ That's all that changes for a woman: you, your, student, and do you want. One sm
 ### 🎬 Scene 18 — Outro
 
 🖼️ **Image:** the desk with the stopwatch and confetti
-🔤 **On screen:** Day 29 · 1.01²⁹ = 1.33 · next: Day 30, the final challenge
+🔤 **On screen:** Day 29 · +1% today = +29% total · next: Day 30, the final challenge
 
 ```say:narrator
 Send this to a friend and switch roles: who is Sami today?

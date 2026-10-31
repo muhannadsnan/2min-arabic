@@ -185,7 +185,7 @@ Count your answers. Seven lines, from hello to goodbye. Twenty-eight days ago, t
 ### 🎬 Scene 18 — Outro
 
 🖼️ **Image:** the desk with the stopwatch and confetti
-🔤 **On screen:** Day 28 · 1.01²⁸ = 1.32 · next: the same conversation, as Lina
+🔤 **On screen:** Day 28 · +1% today = +28% total · next: the same conversation, as Lina
 
 ```say:narrator
 Send this to a friend and play it together: one of you is Lina, one is Sami.

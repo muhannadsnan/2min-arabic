@@ -237,7 +237,7 @@ And here's one from Day 9. How do you say teacher, when the teacher is a woman?
 ### 🎬 Scene 21 — Outro
 
 🖼️ **Image:** the desk with the stopwatch and confetti, 3D
-🔤 **On screen:** Day 12 · 1.01¹² = 1.13 · tomorrow: Lina's family
+🔤 **On screen:** Day 12 · +1% today = +12% total · tomorrow: Lina's family
 
 ```say:narrator
 Tomorrow Lina shows Sami a photo of her family, and the very last picture is a surprise.

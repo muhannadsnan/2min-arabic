@@ -117,6 +117,8 @@ with a soft 0.3 s cross-fade between scenes (assemble.py default for 3D videos).
 "minutes" cut, 37 ms); `goodbye.mp4` ends at 2.73 s, before the owner reaches for the camera. Originals kept as
 `*-original.mp4`. The channel name is **2 Minute Arabic** (singular) everywhere — never "2 Minutes". Desk scenes:
 the intro desk (`desk-intro-3d.png`) is used for both intro and outro.
+**Outro progress card (owner 2026-10-31):** `Day N · +1% today = +N% total · next: …` — the percent is simply the day
+number, never `1.01ⁿ = …` (newcomers didn't understand it); narration says "N percent better", not the compound value.
 **Counting scenes:** cups.py lays objects out without overlap across the full width (≤ 4 per row).
 **Hello-clip join:** the narrator line after the filmed hello starts 0.6 s after it ends (`AFTER_FILMED`) and the
 onset trim keeps 0.12 s before the first sound — listen to that join in the approval preview; nothing may sound cut.

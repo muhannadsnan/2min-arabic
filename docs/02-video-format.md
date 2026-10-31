@@ -89,7 +89,7 @@ Only one rule per video. Always built from words the viewer already knows.
 
 ### 5. Review (every 7th day)
 A quiz: English prompt → ⏸️ 3 s → Arabic answer. Cover the whole week. Ends with a milestone
-message (e.g. "7 days — 1.01⁷ — you're already 7% better than a week ago").
+message (e.g. "7 days — you're already 7% better than a week ago"). **Outro card from Day 26 on (owner 2026-10-31, newcomers didn't get 1.01ⁿ):** `Day N · +1% today = +N% total · next: …` — the percent is the day number, no exponent.
 
 ## Teaching rules (all formats)
 

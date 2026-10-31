@@ -171,7 +171,7 @@ And now it's your question. How do you ask, do you speak English?
 ### 🎬 Scene 15 — Outro
 
 🖼️ **Image:** the desk with the stopwatch and confetti
-🔤 **On screen:** Day 27 · 1.01²⁷ = 1.31 · next: your first full conversation
+🔤 **On screen:** Day 27 · +1% today = +27% total · next: your first full conversation
 
 ```say:narrator
 Now send this to a friend, and ask them the question in Arabic.

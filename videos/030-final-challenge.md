@@ -2,13 +2,13 @@
 
 | | |
 |---|---|
-| **Format** | Challenge + milestone — a stranger (Omar) at the café asks 6 mixed questions, the viewer answers each in the pause, then hears a model answer; score; 1.01³⁰; the real-world challenge; Month 2 |
+| **Format** | Challenge + milestone — a stranger (Omar) at the café asks 6 mixed questions, the viewer answers each in the pause, then hears a model answer; score; +1% today = +30% total; the real-world challenge; Month 2 |
 | **Target length** | ~2:20 |
 | **Goal** | The course promise, kept: the viewer answers six real first-conversation questions from all four weeks without help — and is invited to try it with a real native speaker. |
-| **New words** | مَبْرُوكْ! (congratulations!) |
+| **New words** | مَبْرُوكْ! (congratulations!) · قَبْلَ (before — the opposite of Day 24's بَعْدَ; owner 2026-10-30) |
 | **Re-used (due)** | كَيْفَ حَالُكْ؟ (2) · مَا اسْمُكْ؟ (2) · مِنْ أَيْنَ أَنْتَ؟ (8) · هَلْ تَتَكَلَّمُ الْعَرَبِيَّةْ؟ · قَلِيلًا (27) · هَلْ تُرِيدُ قَهْوَةْ؟ · مَعَ / بِدُونِ (16) · مَتَى؟ (18) · غَدًا (23) · مُمْتَازْ (26) · مَعَ السَّلَامَةْ (1) |
 | **Voices** | English narrator = owner's clone (English only) · Arabic = the owner (Omar, Sami, teacher) → **AI label: No** · optional: the owner on camera, 10 s ("mabrook!") |
-| **Shape** | short intro (no card) · "Question N/6": Omar asks → ⏸️ → Sami's model answer · score · 1.01³⁰ = 1.35 · challenge · Month 2 · stars: Q2 → Q4 → Q6 |
+| **Shape** | short intro (no card) · "Question N/6": Omar asks → ⏸️ → Sami's model answer · score · +1% today = +30% total · challenge · Month 2 · stars: Q2 → Q4 → Q6 |
 | **Look** | Characters v5.1 at the café: Omar (the stranger) and Sami facing each other |
 | **YouTube title** | `Can You Answer These 6 Arabic Questions? (30-Day Challenge) \| Day 30` |
 | **Thumbnail text** | "6 QUESTIONS — CAN YOU?" + مَبْرُوكْ |
@@ -59,7 +59,7 @@ Day 30, the final challenge. A man at the café starts talking to you. Answer in
 🔤 **On screen:** مَا اسْمُكْ؟ مِنْ أَيْنَ أَنْتَ؟ · *maa smuk? min ayna anta?* · What's your name? Where are you from? · Question 2/6
 
 ```say:narrator
-Now two questions in one breath, just like real life.
+Now he asks two questions at once, just like in real life.
 ```
 ```say:omar
 مَا اسْمُكْ؟ مِنْ أَيْنَ أَنْتَ؟
@@ -126,13 +126,25 @@ Now two questions in one breath, just like real life.
 ### 🎬 Scene 12 — Answer 5
 
 🖼️ **Image:** same, Sami talks
-🔤 **On screen:** الدَّرْسْ غَدًا · *ad-dars ghadan* · The lesson is tomorrow.
+🔤 **On screen:** الدَّرْسْ غَدًا، قَبْلَ الْقَهْوَةْ · *ad-dars ghadan, qabla l-qahwa* · The lesson is tomorrow, before coffee.
 
 ```say:sami
-الدَّرْسْ غَدًا.
+الدَّرْسْ غَدًا، قَبْلَ الْقَهْوَةْ.
 ```
 
-### 🎬 Scene 13 — Question 6
+### 🎬 Scene 13 — Bonus: before
+
+🖼️ **Image:** board — chalk قَبْلَ · بَعْدَ
+🔤 **On screen:** قَبْلَ · *qabla* · before (the opposite of after)
+
+```say:narrator
+And here's a bonus word, the opposite of after: before.
+```
+```say:teacher
+قَبْلَ
+```
+
+### 🎬 Scene 14 — Question 6
 
 🖼️ **Image:** same, Omar stands up, smiling
 🔤 **On screen:** مُمْتَازْ! مَعَ السَّلَامَةْ! · *mumtaaz! ma'a s-salaama!* · Excellent! Goodbye! · Question 6/6
@@ -142,7 +154,7 @@ Now two questions in one breath, just like real life.
 ```
 ⏸️ **Pause 2s**
 
-### 🎬 Scene 14 — Answer 6
+### 🎬 Scene 15 — Answer 6
 
 🖼️ **Image:** same, Sami waves
 🔤 **On screen:** مَعَ السَّلَامَةْ! · *ma'a s-salaama!* · Goodbye!
@@ -151,16 +163,16 @@ Now two questions in one breath, just like real life.
 مَعَ السَّلَامَةْ!
 ```
 
-### 🎬 Scene 15 — Score
+### 🎬 Scene 16 — Score
 
 🖼️ **Image:** the notebook with six ticks
 🔤 **On screen:** 6 / 6 ?
 
 ```say:narrator
-Count your answers. Six out of six means you just held your first real Arabic conversation.
+Now count your answers. Six out of six? Then you just held your first real Arabic conversation.
 ```
 
-### 🎬 Scene 16 — Congratulations
+### 🎬 Scene 17 — Congratulations
 
 🖼️ **Image:** confetti over the café; (optional) the owner on camera, 10 s
 🔤 **On screen:** مَبْرُوكْ! · *mabruuk!* · Congratulations!
@@ -172,16 +184,16 @@ Count your answers. Six out of six means you just held your first real Arabic co
 That's what Arabs say when you did something big. Congratulations!
 ```
 
-### 🎬 Scene 17 — The milestone
+### 🎬 Scene 18 — The milestone
 
 🖼️ **Image:** the desk with the stopwatch and confetti, a big 1.35
-🔤 **On screen:** 1.01³⁰ = 1.35 · 30 days · 2 minutes a day
+🔤 **On screen:** +1% today = +30% total · 30 days · 2 minutes a day
 
 ```say:narrator
-One percent better every day, for thirty days, makes you thirty-five percent better. Two minutes a day did that.
+One percent better every day, for thirty days, makes you thirty percent better. Two minutes a day did that.
 ```
 
-### 🎬 Scene 18 — The real challenge
+### 🎬 Scene 19 — The real challenge
 
 🖼️ **Image:** Sami with a phone, smiling at the camera
 🔤 **On screen:** Your challenge: talk to a real Arab this week · tell us in the comments
@@ -190,7 +202,7 @@ One percent better every day, for thirty days, makes you thirty-five percent bet
 Now your real challenge: say these six lines to a real Arabic speaker this week, a friend, a neighbor, or someone on a language app, and tell me in the comments how it went.
 ```
 
-### 🎬 Scene 19 — Outro
+### 🎬 Scene 20 — Outro
 
 🖼️ **Image:** the desk with the stopwatch and confetti
 🔤 **On screen:** Day 30 ✓ · next: Month 2
