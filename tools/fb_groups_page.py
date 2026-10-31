@@ -163,7 +163,7 @@ function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = 1 : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
 function slots(day) {{ return [0, 1, 2].map(k => D.groups[D.order[mod(3 * day + k, N)]]); }}
 function card(g, i, day, enIdx) {{
-  const key = day + "-" + i, done = !!ticks()[key];
+  const key = day + "-" + g.name, done = !!ticks()[key];
   let body;
   if (g.code === "en") {{
     const r = D.en.length ? D.en[mod(day * 2 + enIdx, D.en.length)] : null;
