@@ -29,26 +29,30 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
-GROUPS = [
+GROUPS = [   # the owner's final list, 31 Oct 2026 (Facebook "Share to a group"), joined as the Page
     ("Learn Arabic in English", "en", "561K", "busy"),
+    ("Arabic is very easy", "en", "395K", "busy"),
     ("Arabic Language Learners", "en", "236K", "busy"),
     ("Let's Learn Arabic", "en", "152K", "busy"),
-    ("Learn Spoken Arabic", "en", "72K", "busy"),
+    ("Learn Arabic & English", "en", "152K", "busy"),
+    ("Learn how to speak Arabic language", "en", "123K", "busy"),
+    ("Learn Arabic and other Languages", "en", "1.1M", "medium"),
     ("Learning simple arabic for beginners", "en", "42K", "busy"),
-    ("Learn Arabic Language - MSA Arabic - Egyptian Arabic - Gulf Arabic", "en", "30K", "medium"),
+    ("Learn Arabic Easy", "en", "34K", "busy"),
+    ("learn Arabic with English", "en", "27K", "busy"),
     ("Arabic Learning in English and Urdu", "ur", "340K", "quiet, admin approval — Urdu/English/Arabic only"),
-    ("Arabic - Urdu. عربی - اردو", "ur", "9.6K", "quiet"),
-    ("Learn URDU ARABIC,ENGLISH Online", "ur", "10K", "quiet"),
     ("[ARABIC WORDS and their meanings in Urdu]", "ur", "17K", "quiet"),
+    ("Learn URDU ARABIC,ENGLISH Online", "ur", "10K", "quiet"),
+    ("Arabic - Urdu. عربی - اردو", "ur", "9.6K", "quiet"),
     ("Arabic English Lessons (Atik Sir)", "hi", "38K", "busy"),
-    ("Belajar Bahasa Arab", "id", "221K", "medium"),
-    ("Belajar Bahasa Arab (the one with the اللغة العربية logo)", "id", "109K", "medium"),
+    ("Belajar Bahasa Arab", "id", "109K", "medium"),
     ("Komunitas belajar bahasa arab", "id", "52K", "busy"),
     ("PERCAKAPAN BAHASA ARAB SEHARI-HARI", "id", "19K", "medium · everyday conversation = our content"),
+    ("pembelajaran bahasa Arab dasar sehari_hari (PBA)", "id", "17K", "busy"),
     ("BELAJAR BAHASA ARAB (PEMULA)", "id", "12K", "quiet"),
     ("Arapça Dersi", "tr", "139K", "quiet"),
-    ("Arapça Öğrenmek İsteyenler", "tr", "11K", "quiet"),
     ("Arapça Ders Öğren İrap Tahlil Cümle", "tr", "37K", "busy"),
+    ("Arapça Öğrenmek İsteyenler", "tr", "11K", "quiet"),
 ]
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
 CLOSE = {
@@ -62,15 +66,13 @@ CLOSE = {
 
 
 def order():
-    """Rotation: round-robin over the languages (largest first), so 3 in a row are different languages."""
+    """Rotation: each language's groups spread evenly over the round (English has 10 of 23), so a day rarely gets
+    the same language twice."""
     by = {}
     for i, g in enumerate(GROUPS):
         by.setdefault(g[1], []).append(i)
-    queues = sorted(by.values(), key=len, reverse=True); out = []
-    while any(queues):
-        for q in queues:
-            if q: out.append(q.pop(0))
-    return out
+    slots = [((k + 0.5) / len(ids), -len(ids), i) for ids in by.values() for k, i in enumerate(ids)]
+    return [i for *_, i in sorted(slots)]
 
 
 def creds():
