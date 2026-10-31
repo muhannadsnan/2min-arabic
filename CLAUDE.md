@@ -38,7 +38,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - **Facebook page (owner 2026-10-31):** app Live since 30 Oct; the 22 invisible older Reels deleted + republished.
   **English only.** Daily: proven hit 12:00 (facebook-hits.yml, data/fb-hits.txt) · English Reel 15:00.
   **Groups:** owner shares by hand (no API since 2024) from https://muhannadsnan.github.io/2min-arabic/groups.html —
-  ~19 groups (tools/fb_groups_page.py GROUPS; owner sends the final English list), 3 a day by calendar, same on every
+  23 groups (tools/fb_groups_page.py GROUPS, owner final list 31 Oct: en 10 · ur 4 · hi 1 · id 5 · tr 3), 3 a day by calendar, same on every
   device; language groups upload files from ~/Downloads/fb-groups/ (data/fb-group-files.json); reminder .ics 15:15.
   **2 Nov check:** Facebook watch time per Reel (Day 17: 125 views, 2 s avg) — hits vs daily vs language versions.
 - **Website** https://muhannadsnan.github.io/2min-arabic/ = the Instagram bio link: newest YouTube lessons + this
