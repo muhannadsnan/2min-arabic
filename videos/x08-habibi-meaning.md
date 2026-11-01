@@ -2,13 +2,13 @@
 
 | | |
 |---|---|
-| **Format** | Arabic Extras · "What does it mean?" series #2 (after x07 Inshallah) · the word, word by word, 3 ways it's used, the female form |
-| **Target length** | 0:55–1:10 |
-| **Goal** | The viewer knows the literal meaning (my love / my dear: love + "my" from Day 12), hears 3 everyday uses (friends, family, "yalla habibi"), and says it to a woman. |
-| **New** | حَبِيبِي (Habiibii) · حُبّ (Hubb, love) · حَبِيبْتِي (Habiibtii, to a woman) · يَلَّا (yalla, come on — Syrian) |
-| **Re-used** | ـِي "my" (Day 12) · أَهْلًا (Day 11) · شُكْرًا (Day 2) · هَيَّا (Day 24, the standard "let's go") |
-| **Voices** | English narrator = owner's clone (English only) · Arabic = the owner (teacher, Omar, Sami) → **AI label: No** |
-| **Look** | Characters v5.1: Sami and Omar at the café (friends), facing each other; Lina for the female form |
+| **Format** | Arabic Extras · "What does it mean?" series #2 (after x07 Inshallah) · the word, word by word, who you really say it to (owner 2026-11-01), the female form |
+| **Target length** | 0:55–1:15 |
+| **Goal** | The viewer knows the literal meaning (my love / my dear: love + "my" from Day 12) and who Arabs really say it to: the one you love, children, and the family you love — between grown-up friends only as a joke (owner, native speaker, 2026-11-01). |
+| **New** | حَبِيبِي (Habiibii) · حُبّ (Hubb, love) · حَبِيبْتِي (Habiibtii, to a woman) · تَعَالْ (ta'aal, come here) · نَامِي (naamii, sleep — to a girl) · شْوَيّ شْوَيّ (shwayy shwayy, slowly — Syrian) |
+| **Re-used** | ـِي "my" (Day 12) · شْوَيّ شْوَيّ (Day 27's Syrian bonus) |
+| **Voices** | English narrator = owner's clone (English only) · Arabic = the owner (teacher; father / big-brother lines recorded 1 Nov) → **AI label: No** |
+| **Look** | Omar close-up opener (café) · new family pictures for the three uses · Omar and Sami laughing for "friends? only as a joke" |
 | **YouTube title** | `What Does Habibi Really Mean? (And What to Say to a Woman) \| Arabic Extras` |
 | **Thumbnail text** | "HABIBI = ?" + حَبِيبِي |
 | **Search** | "habibi meaning" + "… in hindi / english / urdu / tamil" (suggest.py, 29 Oct) — same audience as x07 |
@@ -22,7 +22,7 @@
 🔤 **On screen:** What does Habibi mean?
 
 ```say:narrator
-You hear this word in every Arabic song and every Arab café, and most people only know half of what it means.
+You hear this word in every Arabic song, and most learners use it the wrong way.
 ```
 
 ### 🎬 Scene 2 — The word
@@ -37,7 +37,7 @@ You hear this word in every Arabic song and every Arab café, and most people on
 ### 🎬 Scene 3 — Word by word
 
 🖼️ **Image:** board — chalk حُبّ ← حَبِيبِي
-🔤 **On screen:** حُبّ · *Hubb* · love → حَبِيبِي · *Habiibii* · my dear, my love
+🔤 **On screen:** حُبّ، حَبِيبِي · *Hubb, Habiibii* · love, so: my love, my dear
 
 ```say:narrator
 It comes from the word for love.
@@ -46,83 +46,107 @@ It comes from the word for love.
 حُبّ
 ```
 ```say:narrator
-And the ending is the same little sound that means my, from Day 12. So it means my dear, or my love.
+And the ending is the little sound that means my, from Day 12. So it means my love, or my dear.
 ```
 
-### 🎬 Scene 4 — Way 1: friends
+### 🎬 Scene 4 — Use 1: the one you love
 
-🖼️ **Image:** Omar and Sami at the café, facing each other; Omar greets
-🔤 **On screen:** أَهْلًا حَبِيبِي! · *ahlan Habiibii!* · Hey, my friend! · Way 1/3
+🖼️ **Image:** a young couple smiling at each other at a café table
+🔤 **On screen:** حَبِيبِي · حَبِيبْتِي · *Habiibii · Habiibtii* · my love (to a man · to a woman) · Use 1/3
 
 ```say:narrator
-But don't worry, it's not always romantic. The first way is just for friends.
+First, it's what you call the one you love. To a man.
 ```
-```say:omar
-أَهْلًا حَبِيبِي!
+```say:teacher
+حَبِيبِي
 ```
-
-### 🎬 Scene 5 — Way 2: thanks
-
-🖼️ **Image:** same, Sami hands Omar a cup; Omar thanks him
-🔤 **On screen:** شُكْرًا حَبِيبِي · *shukran Habiibii* · Thanks, my dear. · Way 2/3
-
 ```say:narrator
-The second way makes any thank you warmer.
-```
-```say:omar
-شُكْرًا حَبِيبِي.
-```
-
-### 🎬 Scene 6 — Way 3: come on!
-
-🖼️ **Image:** same, Omar stands, a "come on" gesture
-🔤 **On screen:** يَلَّا حَبِيبِي! · *yalla Habiibii!* · Come on, let's go! · Way 3/3
-
-```say:narrator
-And the third is the most famous. You'll hear it in songs, at football games, and every time someone is late.
-```
-```say:omar
-يَلَّا حَبِيبِي!
-```
-
-### 🎬 Scene 7 — To a woman
-
-🖼️ **Image:** Lina at the café, smiling
-🔤 **On screen:** حَبِيبْتِي · *Habiibtii* · to a woman
-
-```say:narrator
-And to a woman, the word changes a little. Listen.
+And to a woman, it changes a little.
 ```
 ```say:teacher
 حَبِيبْتِي
 ```
 
-### 🎬 Scene 8 — Your turn
+### 🎬 Scene 5 — Use 2: children
 
-🖼️ **Image:** the "Your turn" notebook
-🔤 **On screen:** Your turn · Your friend is late. Say: Come on, my friend!
+🖼️ **Image:** a father kneels with open arms, his little son runs to him
+🔤 **On screen:** تَعَالْ حَبِيبِي · *ta'aal Habiibii* · Come here, sweetie. · Use 2/3
 
 ```say:narrator
-Now it's your turn. Your friend is late again. What do you say?
+Second, parents say it to their children all day. A father calls his little son.
+```
+```say:teacher
+تَعَالْ حَبِيبِي
+```
+
+### 🎬 Scene 6 — To a little girl
+
+🖼️ **Image:** a father tucks his little daughter into bed, soft night light
+🔤 **On screen:** نَامِي حَبِيبْتِي · *naamii Habiibtii* · Sleep, sweetheart.
+
+```say:narrator
+And at bedtime, to his little daughter.
+```
+```say:teacher
+نَامِي حَبِيبْتِي
+```
+
+### 🎬 Scene 7 — Big brother
+
+🖼️ **Image:** a teenage boy walks his little brother to school, the small one runs ahead
+🔤 **On screen:** شْوَيّ شْوَيّ حَبِيبِي · *shwayy shwayy Habiibii* · Slowly, slowly, sweetie. (Syrian)
+
+```say:narrator
+A big brother or sister says it to the little one, too.
+```
+```say:teacher
+شْوَيّ شْوَيّ حَبِيبِي
+```
+
+### 🎬 Scene 8 — Use 3: family you love
+
+🖼️ **Image:** a young man laughing with his grandmother at a family dinner table
+🔤 **On screen:** your mother, father, grandparents · Use 3/3
+
+```say:narrator
+Third, the people you really love: your mother, your father, your grandmother.
+```
+
+### 🎬 Scene 9 — And friends?
+
+🖼️ **Image:** Omar and Sami laughing at the café
+🔤 **On screen:** Friends? Only as a joke!
+
+```say:narrator
+And your friends? Only as a joke. Between two grown men, it sounds funny, not serious.
+```
+
+### 🎬 Scene 10 — Your turn
+
+🖼️ **Image:** the "Your turn" notebook
+🔤 **On screen:** Your turn · Your little brother runs too fast. What do you say?
+
+```say:narrator
+Now it's your turn. Your little brother runs too fast. What do you say?
 ```
 ⏸️ **Pause 2s**
 
-### 🎬 Scene 9 — Answer
+### 🎬 Scene 11 — Answer
 
-🖼️ **Image:** same as scene 6
-🔤 **On screen:** يَلَّا حَبِيبِي! · *yalla Habiibii!* · Come on, let's go!
+🖼️ **Image:** same as scene 7
+🔤 **On screen:** شْوَيّ شْوَيّ حَبِيبِي · *shwayy shwayy Habiibii* · Slowly, slowly, sweetie.
 
-```say:omar
-يَلَّا حَبِيبِي!
+```say:teacher
+شْوَيّ شْوَيّ حَبِيبِي
 ```
 
-### 🎬 Scene 10 — Outro
+### 🎬 Scene 12 — Outro
 
 🖼️ **Image:** Omar and Sami laughing at the café
-🔤 **On screen:** 2 Minute Arabic · the full course starts at Day 1
+🔤 **On screen:** 2 Minute Arabic · who do you call habibi?
 
 ```say:narrator
-Send this to your habibi, and tell me in the comments who you call habibi.
+Send this to someone you call habibi, and tell me in the comments who it is.
 ```
 ```say:narrator
 Subscribe so you don't break your streak.
