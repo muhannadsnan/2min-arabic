@@ -319,11 +319,15 @@ def post_comments(a):
             continue
         y.commentThreads().insert(part="snippet", body={"snippet": {"videoId": v["id"], "topLevelComment": {
             "snippet": {"textOriginal": hit[1]}}}}).execute(num_retries=3)
-        day = re.search(r"Day (\d+)|Part (\d+)|Arabic Extras", v["snippet"]["title"])
-        print(f"✅ comment posted on {v['snippet']['title']} → owner: ⋮ → Pin · Related video = {hit[2] or 'previous day'}"
-              f" (only possible now that it's live)")
-        print(f"NOTIFY {(day.group(0) if day else v['snippet']['title'][:30])} is live: pin the comment (⋮ → Pin) and set "
-              f"Related video = {hit[2] or 'the previous day'}")
+        title = v["snippet"]["title"]
+        day = re.search(r"Day \d+|Part \d+|Episode \d+", title)
+        name = day.group(0) if day else title.split(" | ")[0][:45]
+        # Related video exists only for Shorts — Parts and Episodes (long videos) just get the pin (owner 2026-11-01)
+        long_video = bool(re.search(r"\| (Part|Episode) \d+", title))
+        rel = re.sub(r"\s*\(only after it.s live\)", "", hit[2] or "the previous day")
+        related = "" if long_video else f" and set Related video = {rel}"
+        print(f"✅ comment posted on {title} → owner: ⋮ → Pin{related}")
+        print(f"NOTIFY {name} is live: pin the comment (⋮ → Pin){related}")
 
 
 AR = re.compile("[\u0600-\u06ff]")
