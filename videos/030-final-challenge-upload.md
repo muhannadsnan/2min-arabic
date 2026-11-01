@@ -1,7 +1,7 @@
 # Day 30 · Upload sheet
 
-**File to upload:** `output/030-final-challenge/can-you-answer-these-6-arabic-questions-30-day-challenge.mp4` (vertical → **Short**)
-**Thumbnail:** Upload file → `output/030-final-challenge/can-you-answer-these-6-arabic-questions-30-day-challenge-thumbnail.jpg`
+**File to upload:** `output/030-final-challenge/can-you-answer-these-6-arabic-questions.mp4` (vertical → **Short**)
+**Thumbnail:** Upload file → `output/030-final-challenge/can-you-answer-these-6-arabic-questions-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
 
