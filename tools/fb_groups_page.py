@@ -105,11 +105,13 @@ def paste_text(caption, lang):
 
 
 def content():
-    en = [v for v in sorted(reels(), key=lambda v: v["created_time"], reverse=True) if is_english(v["description"])]
+    # oldest first: round r of the rotation shares English Reel r with every English group (owner 2026-11-01: "the previous
+    # one hasn't gone to all groups") — one Reel goes round all groups, then the next
+    en = [v for v in sorted(reels(), key=lambda v: v["created_time"]) if is_english(v["description"])]
     files = json.loads((ROOT / "data" / "fb-group-files.json").read_text(encoding="utf-8"))
     return {
         "en": [{"url": "https://www.facebook.com" + v["permalink_url"], "title": v["description"].splitlines()[0][:90],
-                "text": paste_text(v["description"], "en")} for v in en[:12]],
+                "text": paste_text(v["description"], "en")} for v in en],
         "files": {l: {"file": f["file"], "title": f["video"], "text": paste_text(f["caption"], l)} for l, f in files.items()},
     }
 
@@ -186,7 +188,9 @@ function card(g, i, day, enIdx) {{
   let body;
   const grp = g.url ? `<a class="btn grp" href="${{g.url}}" target="_blank" rel="noopener">Open the group</a>` : "";
   if (g.code === "en") {{
-    const r = D.en.length ? D.en[mod(day * 2 + enIdx, D.en.length)] : null;
+    // the round this card belongs to (round 0 = 31 Oct–7 Nov, the first one the owner posted): the same Reel for all
+    const round = Math.floor((3 * (day + 1) + i) / N);
+    const r = D.en.length ? D.en[Math.min(Math.max(round, 0), D.en.length - 1)] : null;
     body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>${{grp}}
       <button class="copy">Copy text</button></div><pre>${{esc(r.text)}}</pre>` : `<p class="none">No English Reel on the page yet.</p>`;
     g._text = r && r.text;
