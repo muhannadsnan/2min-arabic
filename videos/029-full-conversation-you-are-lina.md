@@ -11,7 +11,7 @@
 | **Shape** | short intro (no card) · 7 exchanges "Line N/7": Sami → ⏸️ your turn → Lina · Lina's twist (tea, not coffee) · stars: line 3 → line 5 → goodbye |
 | **Look** | Characters v5.1 at the café (bg_cafe), facing each other; Lina's side camera-left this time |
 | **YouTube title** | `Arabic Conversation Practice: the Female Version \| Conversation · Day 29` |
-| **Thumbnail text** | "YOU ARE LINA" + أَنْتِ |
+| **Thumbnail text** | "CONVERSATION WITH A WOMAN" + أَنْتِ (owner 2026-11-01) |
 | **Recording** | owner `_2630-combined` · Lina `_lina-koki-6` |
 
 ---
