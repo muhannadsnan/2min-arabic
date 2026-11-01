@@ -100,7 +100,7 @@ def paste_text(caption, lang):
     """The lesson part of the caption + a friendly line; drops hashtags, other-language lines and 'link in bio'."""
     keep = [p for p in caption.strip().split("\n\n")
             if not re.search(r"#|🌍|link|bio|लिंक|لنک|profil|YouTube", p, re.I)]
-    tail = [CLOSE[lang]] + ([] if lang == "en" else ["▶️ YouTube: 2 Minute Arabic"])
+    tail = [CLOSE[lang], "▶️ Full lessons: 2 Minute Arabic on YouTube" if lang == "en" else "▶️ YouTube: 2 Minute Arabic"]   # name only, no URL (group rules)
     return "\n\n".join(keep + tail)
 
 
