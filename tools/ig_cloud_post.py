@@ -114,6 +114,13 @@ def carousel(a):
     key.unlink()
     print(f"{name}: {(tmp / 'caption.txt').read_text(encoding='utf-8').splitlines()[0][:80]}")
     ig.carousel(argparse.Namespace(folder=str(tmp), apply=not a.dry_run))
+    if not a.dry_run and os.environ.get("FB_PAGE_TOKEN"):   # owner 2026-11-01: the same slides as a Page photo album
+        try:
+            import facebook_api as fb
+            slides = sorted(tmp.glob("slide-*.jpg"))
+            print(f"✅ Facebook album: {fb.post_album(slides, (tmp / 'caption.txt').read_text(encoding='utf-8').strip())}")
+        except (Exception, SystemExit) as e:   # Facebook failing must never block the Instagram post
+            print(f"::warning::Facebook album failed: {str(e)[:200]}")
     if not a.dry_run:
         gh("release", "delete-asset", Q, name, "-y")
         (tmp / marker).write_text("1"); gh("release", "upload", Q, str(tmp / marker), "--clobber")

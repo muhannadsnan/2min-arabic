@@ -69,6 +69,21 @@ def post_photo(url, caption):
     return req(f"{GRAPH}/{pid}/photos", {"url": url, "caption": caption, "access_token": tok})["id"]
 
 
+def post_album(paths, caption):
+    """Several local pictures as one Page post (Facebook's carousel, owner 2026-11-01): each uploaded unpublished,
+    then one feed post that attaches them in order. Returns the post id."""
+    pid, tok = creds(); ids = []
+    for f in paths:
+        r = subprocess.run(["curl", "-s", "-F", f"access_token={tok}", "-F", "published=false", "-F", f"source=@{f}",
+                            f"{GRAPH}/{pid}/photos"], capture_output=True, text=True)
+        out = json.loads(r.stdout or "{}")
+        if "id" not in out: sys.exit(f"Facebook photo upload failed: {r.stdout[:300]}")
+        ids.append(out["id"])
+    data = {"message": caption, "access_token": tok}
+    for j, x in enumerate(ids): data[f"attached_media[{j}]"] = json.dumps({"media_fbid": x})
+    return req(f"{GRAPH}/{pid}/feed", data)["id"]
+
+
 def log(entry):
     LOG.parent.mkdir(parents=True, exist_ok=True)
     with LOG.open("a") as f: f.write(json.dumps(entry, ensure_ascii=False) + "\n")
