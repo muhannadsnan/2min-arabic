@@ -206,7 +206,7 @@ missing tracks itself, language by language in priority order, most-viewed first
   script; hook line on the cover). Reason: same-picture dubs hit Instagram's near-copy filter ("looks like something
   you shared before", 0 views); the own-look Hindi Day 12 got 2,375 views, 33 saves, 15 shares in ~18 h (record).
   `ig_trial_add.py` takes `output/<stem>/ig-<lang>.mp4` (+ its own first frame as cover) → `-v2` bundles; only `-v2`
-  post. Order: hi → ur → id → tr → ms; videos best first (Day 12 → x03 → Day 8 → Day 3 → Day 4 → x01). No rooftop
+  post. Order: hi → ur → id → tr → ms; videos best first by the unified YouTube + Instagram views (owner 2026-11-01: Day 12 → x03 → Day 5 → Day 3 → Day 8 → Day 4); YouTube audio tracks stay ranked by YouTube views. No rooftop
   background (minarets). Urdu/Persian badge digits in Eastern numerals (bidi).
 - **Facebook groups:** copy each new version to `~/Downloads/fb-groups/<video>-<language>.mp4` and add it to
   `data/fb-group-files.json` (file, video, caption) — the owner's page https://muhannadsnan.github.io/2min-arabic/groups.html

@@ -94,6 +94,9 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
   the narrator.
 - **cA or cB under a card (2026-10-31, v04 outro):** cB (belly-up, h ≈ 0.72) puts the face at ~y 600–800 — a card of
   3+ lines reaches y ≈ 800 and hides it. Under tall cards use cA (face and shoulders, h ≈ 0.506, face at ~y 1000+).
+- **Two people side by side = the same height on screen (owner 2026-11-01, Day 30: Omar looked too small).** Each side
+  picture has its own empty margin, so equal `h` doesn't mean equal height: measure the keyed figure (alpha rows ×
+  scale) and match it. Current values: sami_side_free 0.55 · lina_side 0.55 · omar_side3 **0.543** (was 0.482) · waiter_side3 ≈0.562.
 - **One person talking alone → often a close-up** (owner 2026-10-29), not the standing full figure; two people talking
   → the two-shot.
 - **Close-up framing (owner 2026-10-29, Day 27):** the person sits in the **lower half** of the picture (cards, badge and

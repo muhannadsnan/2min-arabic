@@ -113,4 +113,4 @@ Day 26 ✅ — Answer Lina's 3 questions in Arabic 👇 (كَمْ عُمْرُك
 - Arabic = your recording of 30 Oct (new clip mic, lines 1–9, tone-matched to the older recordings) + Koki's 6 lines; English = your clone; hesitation check passed.
 - Test questions teach new things (owner 30 Oct): age, where you live, what you study.
 - Title changed from the plan ("Easy Arabic Story: Sami's Arabic Test") to the searched subject first — kept as backup 1.
-- final_check: 1:31 ✅, −14.0 LUFS, peak −2.3 dB · captions synced (47, 0 weak) · you approved the video 31 Oct.
+- final_check: 1:31 ✅ (ends on the goodbye, no fade), −14.0 LUFS, peak −2.3 dB · captions synced (47, 0 weak) · you approved the video 31 Oct.

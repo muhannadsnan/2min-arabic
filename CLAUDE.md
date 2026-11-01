@@ -25,7 +25,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 
 - **Weekly social rhythm (owner 2026-10-30):** Instagram Reel daily 15:00 + dubbed trial Reel daily 17:37 (owner 2026-10-30: each language its OWN LOOK —
   tools/ig_lang_version.py: other cover character + background, frame colour, translated badge, zoom, subtitles in its
-  script; only `-v2` bundles post; languages hi → ur → id → tr → ms; videos Day 12 → x03 → Day 8 → Day 3 → Day 4 → x01;
+  script; only `-v2` bundles post; languages hi → ur → id → tr → ms; videos by the unified YouTube+Instagram list (owner 2026-11-01): Day 12 → x03 → Day 5 → Day 3 → Day 8 → Day 4;
   Instagram profile stays English-only — language versions only as trials, never shared to followers;
   Day 12 hi (2,375 views, record) posted 30 Oct, ur/id/tr/ms queued as trials 31 Oct–3 Nov; **2 Nov check:**
   < ~30 views each or the "shared before" warning → stop dubs; ~100 → continue, maybe 2/day after 2 weeks) · **Instagram carousel Wed + Sun 19:00** (GitHub

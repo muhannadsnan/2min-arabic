@@ -37,7 +37,7 @@ Each gate is PASS or FAIL. Every FAIL gets **one fix, written as a command** ("R
 4. **Length.** Day 2:00–2:40 (never over 2:59). Extra 30–75 s. Part ≈ 10–12 min. Read it from `final_check`.
 5. **Ending / loop.**
    - **Day:** "Day N done — tomorrow: …" teaser → "Subscribe so you don't break your streak." (its own block) →
-     goodbye clip. Nothing after the goodbye, and no long silent tail.
+     goodbye clip. Nothing after the goodbye, and no long silent tail — **the last frame is the goodbye clip's last frame**: no fade or darkening (owner 2026-10-31: "it signals the end and they scroll away"; a hard cut lets the Short loop). make_audio adds no air after a closing filmed clip.
    - **Extra:** the last line may point back to the hook so a re-watch feels natural (e.g. the hook asks "number 7?"
      and the ending answers it). Always the goodbye + subscribe line.
    - **Part:** the end screen and the playlist card are in the sheet.

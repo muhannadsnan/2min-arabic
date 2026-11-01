@@ -34,7 +34,7 @@ Ten Arabic food words you'll need on your first day, and by the end you'll make 
 🔤 **On screen:** خُبْزْ · *khubz* · bread · 1/10
 
 ```say:narrator
-Start with the one on every Arab table.
+Let's start with the food you find on every Arab table.
 ```
 ```say:teacher
 خُبْزْ
@@ -110,7 +110,7 @@ Halfway there.
 🔤 **On screen:** خُضَارْ · *khuDaar* · vegetables · 8/10
 
 ```say:narrator
-And one word for all the green things your mother told you to eat.
+And one word for all the healthy things your mother told you to eat.
 ```
 ```say:teacher
 خُضَارْ
@@ -132,9 +132,6 @@ And one word for all the green things your mother told you to eat.
 🖼️ **Image:** a bowl of red lentil soup with lemon
 🔤 **On screen:** شُورْبَةْ · *shuurba* · soup · 10/10
 
-```say:narrator
-And the last one sounds almost like English.
-```
 ```say:teacher
 شُورْبَةْ
 ```
@@ -146,7 +143,7 @@ And the last one sounds almost like English.
 🔤 **On screen:** آكُلُ خُبْزْ · *aakulu khubz* · I eat bread.
 
 ```say:narrator
-Now add the verb from Day 20, I eat, and you have a full sentence.
+Now add the verb I eat from Day 20, and you have a full sentence.
 ```
 ```say:teacher
 آكُلُ خُبْزْ.
@@ -158,7 +155,7 @@ Now add the verb from Day 20, I eat, and you have a full sentence.
 🔤 **On screen:** Quiz 1/3 · what's this?
 
 ```say:narrator
-Quick game. Say the word before I do.
+Quick game. Say the food before I do.
 ```
 ⏸️ **Pause 2s**
 
@@ -209,7 +206,7 @@ Quick game. Say the word before I do.
 🔤 **On screen:** أُحِبُّ … · *uHibbu …* · I love … · what's your favorite food?
 
 ```say:narrator
-Which food do you love? Write it in Arabic in the comments, starting with I love.
+What's your favorite food? Write it in Arabic in the comments.
 ```
 ```say:narrator
 Subscribe so you don't break your streak.

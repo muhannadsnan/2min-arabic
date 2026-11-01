@@ -10,7 +10,7 @@
 | **Voices** | English narrator = owner's clone (English only) · Arabic = the owner (Omar, Sami, teacher) → **AI label: No** · optional: the owner on camera, 10 s ("mabrook!") |
 | **Shape** | short intro (no card) · "Question N/6": Omar asks → ⏸️ → Sami's model answer · score · +1% today = +30% total · challenge · Month 2 · stars: Q2 → Q4 → Q6 |
 | **Look** | Characters v5.1 at the café: Omar (the stranger) and Sami facing each other |
-| **YouTube title** | `Can You Answer These 6 Arabic Questions? (30-Day Challenge) \| Day 30` |
+| **YouTube title** | `Can You Answer These 6 Arabic Questions? \| Challenge · Day 30` |
 | **Thumbnail text** | "6 QUESTIONS — CAN YOU?" + مَبْرُوكْ |
 | **Recording** | owner `_2630-combined` (+ optional 10-s selfie video) |
 
