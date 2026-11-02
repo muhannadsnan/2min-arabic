@@ -100,8 +100,11 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
   Under a short card use **cB** (face at y ≈ 600–900): with cA the face sits at subtitle height (≈1300) and the
   subtitles cover the mouth. The SUBSCRIBE overlay sits at y 1500 (chest), never on a face.
 - **Generated scene pictures (families, places, food…) never put a face under the card (owner 2026-11-02).** Make them
-  landscape (896×768) and place them in the lower part of the 9:16 frame over a blurred copy of themselves
-  (faces land at y ≈ 1150+, every card ends above ≈ 900); check one frame per scene with its card on. Children's
+  landscape (896×768), filling **80 % of the video height** (owner 2026-11-02: smaller looked lost), placed with
+  `tools/place_picture.py <in> <out> --top <y> --cx <x>` so every face sits **between the card's bottom and y ≈ 1280**
+  (subtitles: 1290–1380) or wholly below 1390; prompts.json entry `"noshift": true` (else assemble moves it 120 px).
+  Measure faces on a 50-px grid; two faces stacked vertically (father above baby) never fit — prompt "faces side by
+  side at the same height". Check one frame per scene with card + subtitle on. Children's
   clothes fit their age (a baby wears baby clothes), shoes match, men don't get skirts, two people don't wear the same outfit.
 - **Two people side by side = the same height on screen (owner 2026-11-01, Day 30: Omar looked too small).** Each side
   picture has its own empty margin, so equal `h` doesn't mean equal height: measure the keyed figure (alpha rows ×
