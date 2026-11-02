@@ -1,6 +1,9 @@
 #!/bin/bash
 # Hourly (cron): post the pinned-comment text on newly published videos, then pop a desktop notification to pin it.
 cd "$(dirname "$0")/.." || exit 1
+# backup trigger for the website + group page (owner 2026-11-02): GitHub's own hourly schedule didn't run once that day.
+# Only while the laptop is on, between 06:00 and 21:59; the workflow republishes only when the content changed.
+h=$(date +%-H); [ "$h" -ge 6 ] && [ "$h" -le 21 ] && gh workflow run site-latest.yml -R muhannadsnan/2min-arabic >/dev/null 2>&1
 LOG=~/.local/share/2min-yt/comments.log
 OUT=$(~/.local/share/2min-yt/venv/bin/python tools/youtube_api.py post-comments 2>&1)
 echo "[$(date '+%F %T')] $OUT" >> "$LOG"

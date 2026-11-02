@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-02c"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-02d"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -224,7 +224,7 @@ function fill(id, day) {{
   }});
 }}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
-const UPD = Array.from({{length: 16}}, (_, k) => 5 + k);
+const UPD = Array.from({{length: 16}}, (_, k) => 5 + k).map(h => h);  // checks at :05 (laptop) and :25 (GitHub)
 function footer() {{
   const f = document.getElementById("foot"), built = new Date(f.dataset.built), t = new Date();
   let next = null;
@@ -235,7 +235,7 @@ function footer() {{
   const span = ms => {{ const m = Math.round(Math.abs(ms) / 60000), h = Math.floor(m / 60);
     return h ? `${{h}} h ${{m % 60}} min` : `${{m}} min`; }};
   const at = d => d.toLocaleString("en-GB", {{timeZone: "Europe/Oslo", weekday: "short", hour: "2-digit", minute: "2-digit"}});
-  f.textContent = `Last updated ${{span(t - built)}} ago (${{at(built)}}) · next update in ${{span(next - t)}} (${{at(next)}})`;
+  f.textContent = `Content last changed ${{span(t - built)}} ago (${{at(built)}}) · checked every hour, next check in about ${{span(next - t)}}`;
 }}
 footer(); setInterval(footer, 60000);
 document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "long"}});
