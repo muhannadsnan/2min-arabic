@@ -15,6 +15,7 @@ catch up. Not more at once: sharing into many groups in one sitting gets "tempor
 English Reels come from the Facebook Page (only those posted after the app went Live, 30 Oct 2026).
 """
 import base64
+import hashlib
 import datetime
 import json
 import os
@@ -30,6 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
+TEMPLATE_VERSION = "2026-11-02c"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -117,7 +119,9 @@ def content():
 
 
 def page(groups, rotation, data):
-    blob = seal(json.dumps({"groups": groups, "order": rotation, "start": START, **data}, ensure_ascii=False))
+    plain = json.dumps({"groups": groups, "order": rotation, "start": START, **data}, ensure_ascii=False)
+    blob = seal(plain)
+    fp = hashlib.sha256((plain + TEMPLATE_VERSION).encode()).hexdigest()[:16]   # content fingerprint: the ciphertext changes every run
     built = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
@@ -156,7 +160,7 @@ table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,
 <h2>Today</h2><div id="today"></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
 <details><summary>All groups, in rotation order</summary><div id="all"></div></details>
-</div><p class="foot" id="foot" data-built="{built}"></p>
+</div><p class="foot" id="foot" data-built="{built}" data-fp="{fp}"></p>
 </div><script>
 const SEALED = "{blob}";
 (async () => {{
@@ -182,8 +186,8 @@ const N = D.order.length, mod = (a, n) => ((a % n) + n) % n;
 function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = 1 : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
 // 3 a day until 2 Nov, 5 a day from 3 Nov (owner 2026-11-02) — the rotation continues where it was
-const per = day => day < 2 ? 3 : 6;   // 3 + 3: a morning and an evening session ~6 h apart (owner 2026-11-02)
-const first = day => day < 2 ? 3 * day : 6 + 6 * (day - 2);
+const per = day => day < 1 ? 3 : 6;   // 3 + 3: a morning and an evening session ~6 h apart (owner 2026-11-02)
+const first = day => day < 1 ? 3 * day : 3 + 6 * (day - 1);
 function slots(day) {{ return Array.from({{length: per(day)}}, (_, k) => D.groups[D.order[mod(first(day) + k, N)]]); }}
 function card(g, i, day, enIdx) {{
   const key = day + "-" + g.name, done = !!ticks()[key];
@@ -219,8 +223,8 @@ function fill(id, day) {{
     box.appendChild(card(Object.assign({{}}, g), i, day, g.code === "en" ? en++ : 0));
   }});
 }}
-// footer: last update + countdown to the next one (site-latest.yml runs at :25 past 14, 16 and 17 UTC)
-const UPD = [14, 16, 17];
+// footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
+const UPD = Array.from({{length: 16}}, (_, k) => 5 + k);
 function footer() {{
   const f = document.getElementById("foot"), built = new Date(f.dataset.built), t = new Date();
   let next = null;
@@ -261,7 +265,7 @@ def main():
     try:
         f = wt / "groups.html"
         old = f.read_text(encoding="utf-8") if f.exists() else ""
-        if re.sub(r"Updated .*? UTC", "", old) == re.sub(r"Updated .*? UTC", "", out):
+        if re.search(r'data-fp="([^"]*)"', old) and re.search(r'data-fp="([^"]*)"', old).group(1) == re.search(r'data-fp="([^"]*)"', out).group(1):
             print("no change"); return
         f.write_text(out, encoding="utf-8")
         run("git", "add", "groups.html", cwd=wt)

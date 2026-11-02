@@ -3,7 +3,7 @@
 name: Website newest lessons
 on:
   schedule:
-    - cron: "25 14,16,17 * * *"
+    - cron: "25 5-20 * * *"   # hourly (GitHub skips runs at busy times, 2 Nov); pushes only when the page changed
   workflow_dispatch:
 permissions:
   contents: write
