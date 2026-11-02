@@ -26,4 +26,19 @@ else   # cloud posting not set up yet: the laptop folder + ig-last.txt
   note "queue check: $left Reels left (laptop queue)"
   [ "$left" -le 3 ] && notify-send -u critical "2 Minute Arabic" "Instagram queue: only $left Reels left — tell Claude: refill the Instagram queue"
 fi
+
+# the other queues (owner 2026-11-02): built ahead by Claude, a warning when they're about to run out
+R=muhannadsnan/2min-arabic
+count(){ gh release view "$1" -R $R --json assets --jq "[.assets[].name | select(test(\"$2\"))] | length" 2>/dev/null; }
+if t=$(count ig-trial '^trial-.*-v2[.]bin$'); then
+  note "trial check: $t language versions left"
+  [ "$t" -le 1 ] && notify-send -u critical "2 Minute Arabic" "Instagram trials: $t left — tomorrow there's nothing to post. Ask Claude for the next video's 5 languages."
+fi
+if c=$(count ig-carousel '^carousel-.*[.]bin$'); then
+  note "carousel check: $c left"
+  [ "$c" -le 1 ] && notify-send -u critical "2 Minute Arabic" "Instagram carousels: $c left (Wed + Sun). Ask Claude for the next carousels."
+fi
+h=$(grep -cv '^#\|^\s*$' data/fb-hits.txt 2>/dev/null || echo 0)
+note "facebook hits: $h left"
+[ "$h" -le 3 ] && notify-send "2 Minute Arabic" "Facebook hits: $h left — the list restarts from the best ones after that."
 exit 0

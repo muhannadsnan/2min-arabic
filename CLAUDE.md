@@ -109,6 +109,11 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   31 Oct: swept (root 44 %), compose_talk/compose_scene clean their frames (also when a run is stopped), the other 7
   bare-mkdtemp scripts use `_scratch()` (removed at exit). Root is 191 GB shared with Docker + /usr; /home is a
   separate disk — a full / stops every timer job but leaves the videos untouched.
+- **LEFTOVERS (owner 2026-11-02: "don't forget it"):** ① Instagram carousel queue EMPTY → build ~4 ahead (Day 18 question
+  words first, for Wed 4 Nov; dedicated finger-checked pictures) ② x03 language versions built → check + queue as trials
+  (after Day 12 Malay, Tue 3 Nov) + copy to ~/Downloads/fb-groups ③ (b) hook cover for the English Facebook hits ④ (d)
+  monthly "Top 10" long YouTube video — plan for the owner's OK ⑤ queues built AHEAD + low-queue notifications for trials
+  (one video = 5 languages), carousels (~4), Facebook hits (restart from the top when the list ends).
 - **Next up (2026-10-31):** Days 26–30, x08, v04 built with real voices, checked, in ~/Downloads/to confirm/ — waiting
   for the owner's OK (Day 26 publishes 3 Nov) → then upload sheets, 13-language titles, thumbnails, gate. Every video
   for the owner goes to ~/Downloads/to confirm/.

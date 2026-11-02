@@ -22,6 +22,7 @@ import facebook_api as fb    # noqa: E402
 import instagram_api as ig   # noqa: E402
 
 LIST = pathlib.Path(__file__).resolve().parent.parent / "data" / "fb-hits.txt"
+ROOT_DONE = LIST.with_name("fb-hits-posted.txt")   # posted ids, best first: the next round when the list ends
 
 
 def _scratch():
@@ -37,8 +38,12 @@ def main():
     if today in lines and "--force" not in sys.argv:
         print(f"already posted today ({today[16:]})"); return
     todo = [i for i, l in enumerate(lines) if l.strip() and not l.startswith("#")]
-    if not todo:
-        print("fb-hits.txt is empty — nothing to post"); return
+    if not todo:   # the list ran out → start again from the best ones (owner 2026-11-02): Facebook shows them to new people
+        lines += [l.split("#")[0].strip() + "  # repeat" for l in (ROOT_DONE.read_text().splitlines() if ROOT_DONE.exists() else [])]
+        todo = [i for i, l in enumerate(lines) if l.strip() and not l.startswith("#")]
+        if not todo:
+            print("fb-hits.txt is empty — nothing to post"); return
+        ROOT_DONE.write_text("")
     i = todo[0]; mid = lines[i].split()[0]
     m = ig.call(mid, fields="media_url,caption,timestamp")
     cap = (m.get("caption") or "").strip()
@@ -49,6 +54,7 @@ def main():
     urllib.request.urlretrieve(m["media_url"], tmp)
     vid = fb.post_video(tmp, cap)
     print(f"✅ Facebook: {vid} · {len(todo) - 1} hits left")
+    with ROOT_DONE.open("a") as f: f.write(mid + "\n")
     del lines[i]
     lines = [l for l in lines if not l.startswith("# last posted:")] + [today]
     LIST.write_text("\n".join(lines) + "\n", encoding="utf-8")

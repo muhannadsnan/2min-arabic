@@ -30,5 +30,5 @@ jobs:
           python3 tools/fb_hits.py
           git config user.name "2min-arabic bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/fb-hits.txt
+          git add data/fb-hits.txt data/fb-hits-posted.txt
           git diff --cached --quiet || { git commit -m "Facebook hit posted"; git push; }
