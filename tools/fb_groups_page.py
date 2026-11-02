@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-02d"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-02f"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -57,7 +57,10 @@ def unseal(blob):
 # the owner's groups (final list 31 Oct 2026, joined as the Page), encrypted in data/fb-groups.enc (the repo is public):
 # name, lang, members, kind, url (→ "Open the group"). Read/change: --show-groups > x.json · edit · --set-groups x.json
 _G = json.loads(unseal((ROOT / "data" / "fb-groups.enc").read_text()))
+# to drop a group later: set "dropped": "<date>: why" in its entry (--show-groups/--set-groups) instead of deleting it —
+# deleting shifts every later day's groups and breaks the owner's ticks
 GROUPS = [(x["name"], x["lang"], x["members"], x["kind"]) for x in _G]
+DROPPED = {x["name"] for x in _G if x.get("dropped")}
 URLS = {x["name"]: x.get("url", "") for x in _G}
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
 CLOSE = {
@@ -184,11 +187,20 @@ const dayNo = Math.round((Date.UTC(now.getFullYear(), now.getMonth(), now.getDat
 const esc = s => s.replace(/[&<>"]/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}})[c]);
 const N = D.order.length, mod = (a, n) => ((a % n) + n) % n;
 function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
-function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = 1 : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
+function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = Date.now() : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
+// the evening 3 open 6 h after the LAST of the morning 3 was ticked (owner 2026-11-02)
+const GAP = 6 * 3600e3;
+function eveningOpensAt(day) {{
+  const t = ticks(), times = slots(day).slice(0, 3).map(g => t[day + "-" + g.name]);
+  if (slots(day).slice(0, 3).some((g, k) => !times[k] && !g.dropped)) return null;                                   // morning not finished yet
+  return Math.max(0, ...times.filter(Boolean).map(x => x === 1 ? 0 : x)) + GAP;               // 1 = ticked before this rule: open now
+}}
 // 3 a day until 2 Nov, 5 a day from 3 Nov (owner 2026-11-02) — the rotation continues where it was
 const per = day => day < 1 ? 3 : 6;   // 3 + 3: a morning and an evening session ~6 h apart (owner 2026-11-02)
 const first = day => day < 1 ? 3 * day : 3 + 6 * (day - 1);
 function slots(day) {{ return Array.from({{length: per(day)}}, (_, k) => D.groups[D.order[mod(first(day) + k, N)]]); }}
+// a dropped group (no posting allowed) counts as done, so its session can still finish and it shows as a slim note
+const isDone = (t, day, g) => g.dropped || !!t[day + "-" + g.name];
 function card(g, i, day, enIdx) {{
   const key = day + "-" + g.name, done = !!ticks()[key];
   let body;
@@ -213,16 +225,27 @@ function card(g, i, day, enIdx) {{
   const b = c.querySelector("button.copy"), text = g._text;
   c.querySelector("button.name").onclick = e => navigator.clipboard.writeText(g.name.replace(/ \\(.*\\)$/, "")).then(() => {{ e.target.textContent = "Copied ✓"; setTimeout(() => e.target.textContent = "Copy name", 1500); }});
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
-  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); c.classList.toggle("done", e.target.checked); }};
+  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); c.classList.toggle("done", e.target.checked); if (i < 3) render(); }};
   return c;
 }}
-function fill(id, day) {{
-  const box = document.getElementById(id); let en = 0;
+const span2 = ms => {{ const m = Math.max(1, Math.round(ms / 60000)), h = Math.floor(m / 60); return h ? `${{h}} h ${{m % 60}} min` : `${{m}} min`; }};
+function fill(id, day, lockEvening) {{
+  const box = document.getElementById(id); box.innerHTML = ""; let en = 0;
+  const opens = eveningOpensAt(day), t = ticks();
   slots(day).forEach((g, i) => {{
-    if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Evening (about 6 hours later)" : "Morning"}}</h3>`);
-    box.appendChild(card(Object.assign({{}}, g), i, day, g.code === "en" ? en++ : 0));
+    if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Evening" : "Morning"}}</h3>`);
+    const isEn = g.code === "en", idx = isEn ? en++ : 0;
+    if (g.dropped) {{ box.insertAdjacentHTML("beforeend", `<div class="card done"><span class="g">${{esc(g.name)}}</span> <span class="meta">— skipped: no posting allowed</span></div>`); return; }}
+    if (lockEvening && i >= 3 && !t[day + "-" + g.name] && (opens === null || Date.now() < opens)) {{
+      if (!box.querySelector(".locked")) box.insertAdjacentHTML("beforeend", `<div class="card locked"><p class="none">${{opens === null
+        ? "Opens 6 hours after you tick the 3rd morning group."
+        : `Opens in ${{span2(opens - Date.now())}} (at ${{new Date(opens).toLocaleTimeString("en-GB", {{hour: "2-digit", minute: "2-digit"}})}}) — 6 hours after your morning posts.`}}</p></div>`);
+      return;
+    }}
+    box.appendChild(card(Object.assign({{}}, g), i, day, idx));
   }});
 }}
+function render() {{ fill("today", dayNo, true); }}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
 const UPD = Array.from({{length: 16}}, (_, k) => 5 + k).map(h => h);  // checks at :05 (laptop) and :25 (GitHub)
 function footer() {{
@@ -239,7 +262,7 @@ function footer() {{
 }}
 footer(); setInterval(footer, 60000);
 document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "long"}});
-fill("today", dayNo); fill("yesterday", dayNo - 1);
+render(); setInterval(() => {{ if (document.querySelector(".card.locked")) render(); }}, 60000); fill("yesterday", dayNo - 1, false);
 document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Language</th></tr>" +
   D.order.map((g, i) => `<tr><td>${{i + 1}}</td><td>${{esc(D.groups[g].name)}}</td><td>${{D.groups[g].lang}}</td></tr>`).join("") + "</table>";
 }}
@@ -254,7 +277,7 @@ def main():
         src = pathlib.Path(sys.argv[sys.argv.index("--set-groups") + 1])
         (ROOT / "data" / "fb-groups.enc").write_text(seal(json.dumps(json.loads(src.read_text(encoding="utf-8")), ensure_ascii=False)) + "\n")
         print("data/fb-groups.enc updated"); return
-    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, "")} for n, l, m, k in GROUPS]
+    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
         p = pathlib.Path(tempfile.gettempdir()) / "groups.html"; p.write_text(out, encoding="utf-8"); print(p); return
