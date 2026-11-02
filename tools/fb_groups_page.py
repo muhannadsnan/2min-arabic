@@ -118,7 +118,7 @@ def content():
 
 def page(groups, rotation, data):
     blob = seal(json.dumps({"groups": groups, "order": rotation, "start": START, **data}, ensure_ascii=False))
-    built = datetime.datetime.now(datetime.timezone.utc).strftime("%d %b %H:%M UTC")
+    built = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <title>Group posts</title><link rel="icon" href="favicon.png">
@@ -156,7 +156,7 @@ table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,
 <h2>Today</h2><div id="today"></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
 <details><summary>All groups, in rotation order</summary><div id="all"></div></details>
-</div><p class="foot">Updated {built}. English Reels refresh from the Facebook page every afternoon.</p>
+</div><p class="foot" id="foot" data-built="{built}"></p>
 </div><script>
 const SEALED = "{blob}";
 (async () => {{
@@ -219,6 +219,21 @@ function fill(id, day) {{
     box.appendChild(card(Object.assign({{}}, g), i, day, g.code === "en" ? en++ : 0));
   }});
 }}
+// footer: last update + countdown to the next one (site-latest.yml runs at :25 past 14, 16 and 17 UTC)
+const UPD = [14, 16, 17];
+function footer() {{
+  const f = document.getElementById("foot"), built = new Date(f.dataset.built), t = new Date();
+  let next = null;
+  for (let d = 0; d < 2 && !next; d++) for (const h of UPD) {{
+    const c = new Date(Date.UTC(t.getUTCFullYear(), t.getUTCMonth(), t.getUTCDate() + d, h, 25));
+    if (c > t) {{ next = c; break; }}
+  }}
+  const span = ms => {{ const m = Math.round(Math.abs(ms) / 60000), h = Math.floor(m / 60);
+    return h ? `${{h}} h ${{m % 60}} min` : `${{m}} min`; }};
+  const at = d => d.toLocaleString("en-GB", {{timeZone: "Europe/Oslo", weekday: "short", hour: "2-digit", minute: "2-digit"}});
+  f.textContent = `Last updated ${{span(t - built)}} ago (${{at(built)}}) · next update in ${{span(next - t)}} (${{at(next)}})`;
+}}
+footer(); setInterval(footer, 60000);
 document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "long"}});
 fill("today", dayNo); fill("yesterday", dayNo - 1);
 document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Language</th></tr>" +
