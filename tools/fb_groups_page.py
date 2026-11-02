@@ -6,7 +6,7 @@ groups.html on gh-pages. Meta has no API for posting in groups (removed 2024), s
   · Other languages: the Page stays English-only (owner 2026-10-31), so their version is a FILE the owner uploads
     into the group (~/Downloads/fb-groups/, listed in data/fb-group-files.json) + the text to paste.
 
-3 groups a day, by the calendar (any day, the same 3 on every device: no storage needed), plus yesterday's 3 to
+5 groups a day from 3 Nov 2026 (3 before; owner 2026-11-02), by the calendar (the same on every device), plus yesterday's to
 catch up. Not more at once: sharing into many groups in one sitting gets "temporarily blocked from posting in groups".
 
     python3 tools/fb_groups_page.py           # writes /tmp/groups.html to look at
@@ -130,18 +130,18 @@ def page(groups, rotation, data):
 h1{{font-size:1.5rem;margin:0 0 4px}} h2{{font-size:1.1rem;margin:26px 0 10px}} .sub{{color:var(--soft);margin:0 0 18px}}
 .steps{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:18px;color:var(--soft);font-size:.95rem}}
 .steps b{{color:var(--ink)}} .steps p{{margin:4px 0}}
-.card{{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px}}
-.card.done{{opacity:.55}}
+.card{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px}}a.g{{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line)}}a.g:hover{{color:var(--teal)}}button.name{{background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:4px 10px;font-size:.85rem}}.btns{{margin:8px 0 8px}}label{{margin-top:6px}}
+.card.done{{opacity:.55;background:#d6d6d6}}@media (prefers-color-scheme:dark){{.card.done{{background:#3d3d3d}}}}
 .top{{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}}
 .num{{background:var(--terra);color:#fff;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-weight:700;flex:none}}
 .g{{font-weight:700;font-size:1.08rem}} .meta{{color:var(--soft);font-size:.88rem}}
-.lang{{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}}
+.lang.en{{background:#d93025!important}}.lang{{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}}
 .btns{{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 10px;align-items:center}}
 a.btn,button{{font:inherit;font-weight:600;border-radius:10px;padding:10px 14px;border:0;cursor:pointer;text-decoration:none}}
 a.btn{{background:var(--teal);color:#fff}} a.btn.grp{{background:#3b5998}} button.copy{{background:var(--terra);color:#fff}}
 .file{{background:var(--bg);border:1px dashed var(--teal);border-radius:10px;padding:8px 12px;font-size:.93rem}}
 .file b{{font-family:ui-monospace,monospace}}
-pre{{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;margin:0;font:inherit;font-size:.93rem;max-height:220px;overflow:auto}}
+pre{{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;margin:0;font:inherit;font-size:.93rem;max-height:4.6em;line-height:1.45;overflow:auto}}
 label{{display:flex;gap:8px;align-items:center;margin-top:10px;font-weight:600}} input{{width:20px;height:20px}}
 .none{{color:var(--soft);font-style:italic}}
 details{{margin-top:26px}} summary{{cursor:pointer;font-weight:700}}
@@ -153,9 +153,9 @@ table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,
 <div class="steps">
 <p><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</p>
 <p><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.</p>
-<p>About a minute each. Every day has its own 3 (the same on every device). Skipped ones come back in the next round.</p></div>
+<p>About a minute each. Every day has its own 5 (the same on every device); post them 10–15 minutes apart. Skipped ones come back in the next round.</p></div>
 <h2>Today</h2><div id="today"></div>
-<details id="ydet"><summary>Missed yesterday? Yesterday's 3</summary><div id="yesterday"></div></details>
+<details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
 <details><summary>All groups, in rotation order</summary><div id="all"></div></details>
 </div><p class="foot">Updated {built}. English Reels refresh from the Facebook page every afternoon.</p>
 </div><script>
@@ -182,29 +182,33 @@ const esc = s => s.replace(/[&<>"]/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;",
 const N = D.order.length, mod = (a, n) => ((a % n) + n) % n;
 function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = 1 : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
-function slots(day) {{ return [0, 1, 2].map(k => D.groups[D.order[mod(3 * day + k, N)]]); }}
+// 3 a day until 2 Nov, 5 a day from 3 Nov (owner 2026-11-02) — the rotation continues where it was
+const per = day => day < 2 ? 3 : 5;
+const first = day => day < 2 ? 3 * day : 6 + 5 * (day - 2);
+function slots(day) {{ return Array.from({{length: per(day)}}, (_, k) => D.groups[D.order[mod(first(day) + k, N)]]); }}
 function card(g, i, day, enIdx) {{
   const key = day + "-" + g.name, done = !!ticks()[key];
   let body;
-  const grp = g.url ? `<a class="btn grp" href="${{g.url}}" target="_blank" rel="noopener">Open the group</a>` : "";
   if (g.code === "en") {{
     // the round this card belongs to (round 0 = 31 Oct–7 Nov, the first one the owner posted): the same Reel for all
-    const round = Math.floor((3 * (day + 1) + i) / N);
+    const round = Math.floor((first(day) + i + 3) / N);
     const r = D.en.length ? D.en[Math.min(Math.max(round, 0), D.en.length - 1)] : null;
-    body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>${{grp}}
+    body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>
       <button class="copy">Copy text</button></div><pre>${{esc(r.text)}}</pre>` : `<p class="none">No English Reel on the page yet.</p>`;
     g._text = r && r.text;
   }} else {{
     const f = D.files[g.code];
-    body = f ? `<div class="btns">${{grp}}<span class="file">Upload: <b>${{esc(f.file)}}</b></span><button class="copy">Copy text</button></div><pre>${{esc(f.text)}}</pre>`
+    body = f ? `<div class="btns"><span class="file">Upload: <b>${{esc(f.file)}}</b></span><button class="copy">Copy text</button></div><pre>${{esc(f.text)}}</pre>`
              : `<p class="none">No ${{g.lang}} version yet: skip this one.</p>`;
     g._text = f && f.text;
   }}
   const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
-  c.innerHTML = `<div class="top"><div><div class="g">${{esc(g.name)}}</div>
-    <div class="meta"><span class="lang">${{g.lang}}</span>${{g.members}} members · ${{esc(g.kind)}}</div></div><div class="num">${{i + 1}}</div></div>` +
+  c.innerHTML = `<div class="top"><div>${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<div class="g">${{esc(g.name)}}</div>`}}
+    <button class="name">Copy name</button>
+    <div class="meta"><span class="lang${{g.code === "en" ? " en" : ""}}">${{g.lang}}</span>${{g.members}} members · ${{esc(g.kind)}}</div></div><div class="num">${{i + 1}}</div></div>` +
     body + `<label><input type="checkbox" ${{done ? "checked" : ""}}> Posted</label>`;
   const b = c.querySelector("button.copy"), text = g._text;
+  c.querySelector("button.name").onclick = e => navigator.clipboard.writeText(g.name.replace(/ \\(.*\\)$/, "")).then(() => {{ e.target.textContent = "Copied ✓"; setTimeout(() => e.target.textContent = "Copy name", 1500); }});
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
   c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); c.classList.toggle("done", e.target.checked); }};
   return c;
