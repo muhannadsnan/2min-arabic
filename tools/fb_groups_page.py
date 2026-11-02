@@ -6,7 +6,7 @@ groups.html on gh-pages. Meta has no API for posting in groups (removed 2024), s
   · Other languages: the Page stays English-only (owner 2026-10-31), so their version is a FILE the owner uploads
     into the group (~/Downloads/fb-groups/, listed in data/fb-group-files.json) + the text to paste.
 
-5 groups a day from 3 Nov 2026 (3 before; owner 2026-11-02), by the calendar (the same on every device), plus yesterday's to
+3 + 3 groups a day from 3 Nov 2026 (morning + evening, ~6 h apart; 3 before; owner 2026-11-02), by the calendar (the same on every device), plus yesterday's to
 catch up. Not more at once: sharing into many groups in one sitting gets "temporarily blocked from posting in groups".
 
     python3 tools/fb_groups_page.py           # writes /tmp/groups.html to look at
@@ -127,12 +127,12 @@ def page(groups, rotation, data):
 @media (prefers-color-scheme:dark){{:root{{--bg:#1d1a17;--card:#27231f;--ink:#f3ece3;--soft:#b9ab9c;--line:#3a332c;--teal:#5fb3ad;--terra:#e08a63}}}}
 *{{box-sizing:border-box}} body{{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}}
 .wrap{{max-width:640px;margin:0 auto;padding:20px 16px 48px}}
-h1{{font-size:1.5rem;margin:0 0 4px}} h2{{font-size:1.1rem;margin:26px 0 10px}} .sub{{color:var(--soft);margin:0 0 18px}}
+h1{{font-size:1.5rem;margin:0 0 4px}} h3{{font-size:1rem;margin:14px 0 8px;color:var(--soft)}} h2{{font-size:1.1rem;margin:26px 0 10px}} .sub{{color:var(--soft);margin:0 0 18px}}
 .steps{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:18px;color:var(--soft);font-size:.95rem}}
 .steps b{{color:var(--ink)}} .steps p{{margin:4px 0}}
 .card{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px}}a.g{{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line)}}a.g:hover{{color:var(--teal)}}button.name{{background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:4px 10px;font-size:.85rem}}.btns{{margin:8px 0 8px}}label{{margin-top:6px}}
 .card.done{{opacity:.55;background:#d6d6d6}}@media (prefers-color-scheme:dark){{.card.done{{background:#3d3d3d}}}}
-.top{{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}}
+.top{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}.top .right{{margin-left:auto;display:flex;gap:8px;align-items:center;white-space:nowrap}}.top .meta{{display:flex;gap:6px;align-items:center}}.top .lang{{margin:0}}.tick{{margin:0;display:flex;gap:6px;align-items:center;font-weight:600}}.card.done pre,.card.done button.copy{{display:none}}
 .num{{background:var(--terra);color:#fff;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-weight:700;flex:none}}
 .g{{font-weight:700;font-size:1.08rem}} .meta{{color:var(--soft);font-size:.88rem}}
 .lang.en{{background:#d93025!important}}.lang{{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}}
@@ -153,7 +153,7 @@ table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,
 <div class="steps">
 <p><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</p>
 <p><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.</p>
-<p>About a minute each. Every day has its own 5 (the same on every device); post them 10–15 minutes apart. Skipped ones come back in the next round.</p></div>
+<p>About a minute each. Every day has a morning 3 and an evening 3, about 6 hours apart (the same on every device). Skip a session if you must. Skipped ones come back in the next round.</p></div>
 <h2>Today</h2><div id="today"></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
 <details><summary>All groups, in rotation order</summary><div id="all"></div></details>
@@ -183,8 +183,8 @@ const N = D.order.length, mod = (a, n) => ((a % n) + n) % n;
 function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = 1 : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
 // 3 a day until 2 Nov, 5 a day from 3 Nov (owner 2026-11-02) — the rotation continues where it was
-const per = day => day < 2 ? 3 : 5;
-const first = day => day < 2 ? 3 * day : 6 + 5 * (day - 2);
+const per = day => day < 2 ? 3 : 6;   // 3 + 3: a morning and an evening session ~6 h apart (owner 2026-11-02)
+const first = day => day < 2 ? 3 * day : 6 + 6 * (day - 2);
 function slots(day) {{ return Array.from({{length: per(day)}}, (_, k) => D.groups[D.order[mod(first(day) + k, N)]]); }}
 function card(g, i, day, enIdx) {{
   const key = day + "-" + g.name, done = !!ticks()[key];
@@ -203,10 +203,10 @@ function card(g, i, day, enIdx) {{
     g._text = f && f.text;
   }}
   const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
-  c.innerHTML = `<div class="top"><div>${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<div class="g">${{esc(g.name)}}</div>`}}
-    <button class="name">Copy name</button>
-    <div class="meta"><span class="lang${{g.code === "en" ? " en" : ""}}">${{g.lang}}</span>${{g.members}} members · ${{esc(g.kind)}}</div></div><div class="num">${{i + 1}}</div></div>` +
-    body + `<label><input type="checkbox" ${{done ? "checked" : ""}}> Posted</label>`;
+  c.innerHTML = `<div class="top"><button class="name">Copy name</button>
+    ${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<span class="g">${{esc(g.name)}}</span>`}}
+    <span class="right"><span class="meta">${{g.members}} members <span class="lang${{g.code === "en" ? " en" : ""}}">${{g.lang}}</span></span>
+    <label class="tick"><input type="checkbox" ${{done ? "checked" : ""}}> Posted</label><span class="num">${{i + 1}}</span></span></div>` + body;
   const b = c.querySelector("button.copy"), text = g._text;
   c.querySelector("button.name").onclick = e => navigator.clipboard.writeText(g.name.replace(/ \\(.*\\)$/, "")).then(() => {{ e.target.textContent = "Copied ✓"; setTimeout(() => e.target.textContent = "Copy name", 1500); }});
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
@@ -215,7 +215,10 @@ function card(g, i, day, enIdx) {{
 }}
 function fill(id, day) {{
   const box = document.getElementById(id); let en = 0;
-  slots(day).forEach((g, i) => box.appendChild(card(Object.assign({{}}, g), i, day, g.code === "en" ? en++ : 0)));
+  slots(day).forEach((g, i) => {{
+    if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Evening (about 6 hours later)" : "Morning"}}</h3>`);
+    box.appendChild(card(Object.assign({{}}, g), i, day, g.code === "en" ? en++ : 0));
+  }});
 }}
 document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "long"}});
 fill("today", dayNo); fill("yesterday", dayNo - 1);
