@@ -132,7 +132,7 @@ h1{{font-size:1.5rem;margin:0 0 4px}} h3{{font-size:1rem;margin:14px 0 8px;color
 .steps b{{color:var(--ink)}} .steps p{{margin:4px 0}}
 .card{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px}}a.g{{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line)}}a.g:hover{{color:var(--teal)}}button.name{{background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:4px 10px;font-size:.85rem}}.btns{{margin:8px 0 8px}}label{{margin-top:6px}}
 .card.done{{opacity:.55;background:#d6d6d6}}@media (prefers-color-scheme:dark){{.card.done{{background:#3d3d3d}}}}
-.top{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}.top .right{{margin-left:auto;display:flex;gap:8px;align-items:center;white-space:nowrap}}.top .meta{{display:flex;gap:6px;align-items:center}}.top .lang{{margin:0}}.tick{{margin:0;display:flex;gap:6px;align-items:center;font-weight:600}}.card.done pre,.card.done button.copy{{display:none}}
+.top{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}.top .right{{margin-left:auto;display:flex;gap:8px;align-items:center;white-space:nowrap}}.top .meta{{display:flex;gap:6px;align-items:center}}.top .lang{{margin:0}}.tick{{margin:0;display:flex;gap:6px;align-items:center;font-weight:600}}.card.done pre,.card.done button.copy,.card.done .btns{{display:none}}.card.done{{margin-bottom:0;padding-bottom:8px;padding-top:8px}}.btns{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}.btns .meta{{margin-left:auto;display:flex;gap:6px;align-items:center}}.box{{position:relative}}.box pre{{padding-right:120px}}.box button.copy{{position:absolute;top:8px;right:8px;padding:8px 12px}}.head{{display:flex;align-items:center;gap:10px;flex-wrap:wrap}}.tips{{margin-left:auto;display:flex;gap:6px}}button.tip{{position:relative;background:var(--card);color:var(--soft);border:1px solid var(--line);font-size:.8rem;padding:4px 10px}}.tip .pop{{display:none;position:absolute;right:0;top:110%;width:min(320px,85vw);background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px;font-weight:400;font-size:.9rem;text-align:left;box-shadow:0 6px 24px rgba(0,0,0,.25);z-index:5}}.tip:hover .pop,.tip:focus .pop,.tip:focus-within .pop{{display:block}}
 .num{{background:var(--terra);color:#fff;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-weight:700;flex:none}}
 .g{{font-weight:700;font-size:1.08rem}} .meta{{color:var(--soft);font-size:.88rem}}
 .lang.en{{background:#d93025!important}}.lang{{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}}
@@ -149,11 +149,10 @@ table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,
 .foot{{color:var(--soft);font-size:.8rem;margin-top:24px}}
 </style></head><body><div class="wrap">
 <div id="locked" hidden><h1>Private page</h1><p class="sub">This page is private.</p></div>
-<div id="app" hidden><h1>Group posts</h1><p class="sub" id="date"></p>
-<div class="steps">
-<p><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</p>
-<p><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.</p>
-<p>About a minute each. Every day has a morning 3 and an evening 3, about 6 hours apart (the same on every device). Skip a session if you must. Skipped ones come back in the next round.</p></div>
+<div id="app" hidden><div class="head"><h1>Group posts</h1><span class="tips">
+<button class="tip" type="button">English ?<span class="pop"><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</span></button>
+<button class="tip" type="button">Other ?<span class="pop"><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.<br><br>Every day: a morning 3 and an evening 3, about 6 hours apart (the same on every device). Skipped ones come back in the next round.</span></button>
+</span></div><p class="sub" id="date"></p>
 <h2>Today</h2><div id="today"></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
 <details><summary>All groups, in rotation order</summary><div id="all"></div></details>
@@ -194,19 +193,19 @@ function card(g, i, day, enIdx) {{
     const round = Math.floor((first(day) + i + 3) / N);
     const r = D.en.length ? D.en[Math.min(Math.max(round, 0), D.en.length - 1)] : null;
     body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>
-      <button class="copy">Copy text</button></div><pre>${{esc(r.text)}}</pre>` : `<p class="none">No English Reel on the page yet.</p>`;
+</div><pre>${{esc(r.text)}}</pre><button class="copy">Copy text</button>` : `<p class="none">No English Reel on the page yet.</p>`;
     g._text = r && r.text;
   }} else {{
     const f = D.files[g.code];
-    body = f ? `<div class="btns"><span class="file">Upload: <b>${{esc(f.file)}}</b></span><button class="copy">Copy text</button></div><pre>${{esc(f.text)}}</pre>`
+    body = f ? `<div class="btns"><span class="file">Upload: <b>${{esc(f.file)}}</b></span></div><pre>${{esc(f.text)}}</pre><button class="copy">Copy text</button>`
              : `<p class="none">No ${{g.lang}} version yet: skip this one.</p>`;
     g._text = f && f.text;
   }}
   const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
   c.innerHTML = `<div class="top"><button class="name">Copy name</button>
     ${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<span class="g">${{esc(g.name)}}</span>`}}
-    <span class="right"><span class="meta">${{g.members}} members <span class="lang${{g.code === "en" ? " en" : ""}}">${{g.lang}}</span></span>
-    <label class="tick"><input type="checkbox" ${{done ? "checked" : ""}}> Posted</label><span class="num">${{i + 1}}</span></span></div>` + body;
+    <span class="right"><label class="tick"><input type="checkbox" ${{done ? "checked" : ""}}> Posted</label><span class="num">${{i + 1}}</span></span></div>` +
+    body.replace('<div class="btns">', `<div class="btns">`).replace("</div><pre>", `<span class="meta">${{g.members}} members <span class="lang${{g.code === "en" ? " en" : ""}}">${{g.lang}}</span></span></div><div class="box"><pre>`).replace('<button class="copy">Copy text</button>', '<button class="copy">Copy text</button></div>');
   const b = c.querySelector("button.copy"), text = g._text;
   c.querySelector("button.name").onclick = e => navigator.clipboard.writeText(g.name.replace(/ \\(.*\\)$/, "")).then(() => {{ e.target.textContent = "Copied ✓"; setTimeout(() => e.target.textContent = "Copy name", 1500); }});
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});

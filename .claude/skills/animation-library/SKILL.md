@@ -94,9 +94,18 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
   the narrator.
 - **cA or cB under a card (2026-10-31, v04 outro):** cB (belly-up, h ≈ 0.72) puts the face at ~y 600–800 — a card of
   3+ lines reaches y ≈ 800 and hides it. Under tall cards use cA (face and shoulders, h ≈ 0.506, face at ~y 1000+).
+- **The narrator is the presenter (owner 2026-11-02): when the narrator speaks over a scene that doesn't illustrate
+  something specific (outro, "and now…", explanations), show the video's male presenter (Omar / Sami / the waiter) in a
+  close-up (cA/cB set) talking to the camera, mouth synced to the narration** — not a still two-shot.
+- **Generated scene pictures (families, places, food…) never put a face under the card (owner 2026-11-02).** Make them
+  landscape (896×768) and place them in the lower part of the 9:16 frame over a blurred copy of themselves
+  (faces land at y ≈ 1150+, every card ends above ≈ 900); check one frame per scene with its card on. Children's
+  clothes fit their age (a baby wears baby clothes), shoes match, men don't get skirts, two people don't wear the same outfit.
 - **Two people side by side = the same height on screen (owner 2026-11-01, Day 30: Omar looked too small).** Each side
   picture has its own empty margin, so equal `h` doesn't mean equal height: measure the keyed figure (alpha rows ×
-  scale) and match it. Current values: sami_side_free 0.55 · lina_side 0.55 · omar_side3 **0.543** (was 0.482) · waiter_side3 ≈0.562.
+  scale) and match it — **head top AND clothes hem on the same line** (owner 2026-11-01: "the sweater end also aligns"), so
+  the bodies match, not only the faces: scale by the head→hem distance, then crop the picture's bottom so the head sits
+  at the partner's height. Current: sami_side_free 0.55 · lina_side 0.55 · **omar_side4** (omar_side3 cropped to 940 rows) 0.5558 · waiter_side3 ≈0.562.
 - **One person talking alone → often a close-up** (owner 2026-10-29), not the standing full figure; two people talking
   → the two-shot.
 - **Close-up framing (owner 2026-10-29, Day 27):** the person sits in the **lower half** of the picture (cards, badge and

@@ -420,9 +420,9 @@ def main():
         start = max(ask["start"] - 0.5, 0.0) if ask else max(tl["duration"] - DUR, 0.0)
         end = min(start + DUR, tl["duration"])
         idx = 3 + len(tl.get("videos", []))
-        inputs += ["-i", str(sub_mov)]
+        inputs += ["-i", str(sub_mov)]   # at chest height (y 1500): the outro is a talking close-up now — 930 covered the face (2026-11-02)
         vchain += (f";[{idx}:v]format=rgba,setpts=PTS-STARTPTS+{start:.3f}/TB[sub];"
-                   f"[{last}][sub]overlay=0:930:eof_action=pass:enable='between(t,{start:.3f},{end:.3f})'[vs]")
+                   f"[{last}][sub]overlay=0:1500:eof_action=pass:enable='between(t,{start:.3f},{end:.3f})'[vs]")
         last = "vs"
         sounds = [(click, CLICK_TIMES[0], 0.5), (click, CLICK_TIMES[1], 0.5), (ding, DING_TIME, 0.35)]
         for j, (wav, at, vol) in enumerate(sounds):
