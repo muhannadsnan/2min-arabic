@@ -97,6 +97,8 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
 - **The narrator is the presenter (owner 2026-11-02): when the narrator speaks over a scene that doesn't illustrate
   something specific (outro, "and now…", explanations), show the video's male presenter (Omar / Sami / the waiter) in a
   close-up (cA/cB set) talking to the camera, mouth synced to the narration** — not a still two-shot.
+  Under a short card use **cB** (face at y ≈ 600–900): with cA the face sits at subtitle height (≈1300) and the
+  subtitles cover the mouth. The SUBSCRIBE overlay sits at y 1500 (chest), never on a face.
 - **Generated scene pictures (families, places, food…) never put a face under the card (owner 2026-11-02).** Make them
   landscape (896×768) and place them in the lower part of the 9:16 frame over a blurred copy of themselves
   (faces land at y ≈ 1150+, every card ends above ≈ 900); check one frame per scene with its card on. Children's
