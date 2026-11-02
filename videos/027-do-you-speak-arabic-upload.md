@@ -3,6 +3,8 @@
 **File to upload:** `output/027-do-you-speak-arabic/do-you-speak-arabic-how-to-answer.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/027-do-you-speak-arabic/do-you-speak-arabic-how-to-answer-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `p84OAQQTMOI`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).

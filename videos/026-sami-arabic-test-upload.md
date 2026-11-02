@@ -3,6 +3,8 @@
 **File to upload:** `output/026-sami-arabic-test/how-old-are-you-in-arabic-3-questions-arabs-ask.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/026-sami-arabic-test/how-old-are-you-in-arabic-3-questions-arabs-ask-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `H5ayVDfg7Iw`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).

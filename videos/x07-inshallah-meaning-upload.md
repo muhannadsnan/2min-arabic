@@ -3,6 +3,8 @@
 **File to upload:** `output/x07-inshallah-meaning/what-does-inshallah-really-mean-3-ways-arabs-use-it.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/x07-inshallah-meaning/what-does-inshallah-really-mean-3-ways-arabs-use-it-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `ZjH1guEQuvI`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).

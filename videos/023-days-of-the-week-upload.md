@@ -3,6 +3,8 @@
 **File to upload:** `output/023-days-of-the-week/days-of-the-week-in-arabic-they-re-just-numbers.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/023-days-of-the-week/days-of-the-week-in-arabic-they-re-just-numbers-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `KcnBpXKKpAM`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

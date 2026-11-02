@@ -68,6 +68,10 @@ works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time 
 
 ## Hand-over
 
+- **After every fill, write the line `> ✅ **Uploaded + filled by Claude** — video id \`<id>\`` under the Thumbnail line
+  of the sheet.** tools/ig_refill.py finds Shorts for the Instagram queue only by that line (Days 21–25 + x07 were
+  missing → "3 Reels left and no new public Shorts", 2 Nov).
+
 - Run the **pre-upload-gate** skill first: hand over only on SHIP (fix every FIX first; never hand over a KILL).
 - Open the sheet for him: `code -r "videos/<stem>-upload.md"`, and give the link in the reply as well.
 - **API fill (connected 2026-09-30):** the owner only drops the file in Studio and saves it as a draft/private. Then

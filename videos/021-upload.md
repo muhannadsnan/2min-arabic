@@ -3,6 +3,8 @@
 **File to upload:** `output/021-answer-the-waiter/answer-a-waiter-in-arabic-5-questions-you-ll-hear.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/021-answer-the-waiter/answer-a-waiter-in-arabic-5-questions-you-ll-hear-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `8bS6_yYDDUg`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

@@ -3,6 +3,8 @@
 **File to upload:** `output/029-full-conversation-you-are-lina/arabic-conversation-practice-the-female-version.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/029-full-conversation-you-are-lina/arabic-conversation-practice-the-female-version-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `vzb3I7FlgQg`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).

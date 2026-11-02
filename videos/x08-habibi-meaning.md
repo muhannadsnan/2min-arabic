@@ -97,7 +97,7 @@ And at bedtime, to his little daughter.
 🔤 **On screen:** شْوَيّ شْوَيّ حَبِيبِي · *shwayy shwayy Habiibii* · Slowly, slowly, sweetie. (Syrian)
 
 ```say:narrator
-A big brother or sister says it to the little one, too.
+And a big brother, or a big sister, says it to the little one.
 ```
 ```say:teacher
 شْوَيّ شْوَيّ حَبِيبِي
@@ -118,7 +118,7 @@ Third, the people you really love: your mother, your father, your grandmother.
 🔤 **On screen:** Friends? Only as a joke!
 
 ```say:narrator
-And your friends? Only as a joke. Between two grown men, it sounds funny, not serious.
+And between friends, only as a joke, because between two grown men it sounds funny.
 ```
 
 ### 🎬 Scene 10 — Your turn
@@ -146,7 +146,7 @@ Now it's your turn. Your little brother runs too fast. What do you say?
 🔤 **On screen:** 2 Minute Arabic · who do you call habibi?
 
 ```say:narrator
-Send this to someone you call habibi, and tell me in the comments who it is.
+Send this to someone you call habibi, and in the comments, tell me who it is.
 ```
 ```say:narrator
 Subscribe so you don't break your streak.

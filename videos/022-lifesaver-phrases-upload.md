@@ -3,6 +3,8 @@
 **File to upload:** `output/022-lifesaver-phrases/arabic-survival-phrases-slower-please-and-repeat.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/022-lifesaver-phrases/arabic-survival-phrases-slower-please-and-repeat-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `AgIGmcuZJBI`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → close the dialog when it's uploaded (it stays **private/draft**).

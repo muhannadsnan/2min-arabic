@@ -3,6 +3,8 @@
 **File to upload:** `output/v03-colors/colors-in-arabic-10-words.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/v03-colors/colors-in-arabic-10-words-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `slqxiJIVVVk`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
