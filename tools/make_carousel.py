@@ -72,7 +72,10 @@ def cover(img, title, sub, n):
     shade = Image.new("RGB", (W, H), (20, 20, 20)); slide = Image.blend(slide, shade, 0.45)
     d = ImageDraw.Draw(slide)
     badge(d, "2 MINUTE ARABIC")
-    y = centered(d, 430, title, BOLD(120), (255, 255, 255)) + 40
+    size = 120   # shrink a long title so it fits the slide width (18: "5 QUESTION WORDS" was cut off)
+    while size > 70 and d.textlength(title, font=BOLD(size)) > W - 80:
+        size -= 6
+    y = centered(d, 430, title, BOLD(size), (255, 255, 255)) + 40
     y = centered(d, y, sub, BOLD(80), YELLOW) + 120
     centered(d, y, f"swipe for all {n} words", REG, (255, 255, 255))
     centered(d, H - 150, "save it for later", BOLD(52), YELLOW)
@@ -106,7 +109,7 @@ def main():
     words = []
     for i, s in enumerate(screens, 1):
         parts = [p.strip().strip("*") for p in (s or "").split("·")]
-        if len(parts) >= 4 and re.fullmatch(r"(Word |Phrase )?\d+/\d+", parts[-1]) or i in EXTRA:
+        if len(parts) >= 4 and re.fullmatch(r"(Word |Phrase |Question )?\d+/\d+", parts[-1]) or i in EXTRA:
             words.append((i, parts[0], parts[1], parts[2]))
     if not words:
         sys.exit("no 'N/M' word cards in this script")
@@ -135,7 +138,7 @@ def main():
     # caption: the words as text (searchable, copyable) + the way to the full lesson (owner 2026-10-30)
     yt = re.search(r"\*\*YouTube title\*\* \| `([^`]+)`", script.read_text(encoding="utf-8"))
     lesson = yt.group(1).replace("\\|", "|").split(" | ")[0] if yt else "the full lesson"
-    total = len([1 for x in screens if x and re.search(r"(Word |Phrase )?\d+/\d+$", x.strip())])
+    total = len([1 for x in screens if x and re.search(r"(Word |Phrase |Question )?\d+/\d+$", x.strip())])
     more = f" (all {total} words)" if pick and total > len(words) else ""
     cap = (f"{title.title()} {sub} 👇 Save this and swipe through it once a day this week.\n\n"
            + "\n".join(f"{t} — {e}" for _, a, t, e in words)
