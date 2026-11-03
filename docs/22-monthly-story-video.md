@@ -5,6 +5,12 @@ material in a new shape** — a mini-story with animals, comprehension questions
 the past and in the future. 16:9 long video (long videos bring ~3× the subscribers per view of Shorts: Parts 3.1 vs
 Shorts 0.9 per 100 views, Oct 2026). 3–4 Shorts are cut from it to promote it and fill days.
 
+## Updated 2026-11-03 (owner) — the signature lives in .claude/skills/story-episode/SKILL.md
+Drawing-book watercolour pictures (centre detailed, fading to white paper), words popping up in the white space,
+full story read first then sentence-by-sentence with many easy logical questions, word PAIRS (a word + its opposite),
+5 chiming stars. Story 1 = the owner's text: رامي الحصان، ماهر السلحفاة، مازن الثعلب، هاني الخروف، كامل العصفور
+(recording sheet: videos/_s01-whatsapp.txt). The draft below is superseded.
+
 ## Rules (owner)
 - Entirely different organisation and **new pictures** from the lessons: generated still images (not animation), one
   per story sentence, the same animal characters throughout. Clean animals only (horse, sheep, camel, fox, turtle,
