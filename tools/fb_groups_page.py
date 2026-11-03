@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-03a"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-03b"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -261,9 +261,26 @@ function footer() {{
   const span = ms => {{ const m = Math.round(Math.abs(ms) / 60000), h = Math.floor(m / 60);
     return h ? `${{h}} h ${{m % 60}} min` : `${{m}} min`; }};
   const at = d => d.toLocaleString("en-GB", {{timeZone: "Europe/Oslo", weekday: "short", hour: "2-digit", minute: "2-digit"}});
-  f.textContent = `Content last changed ${{span(t - built)}} ago (${{at(built)}}) · checked every hour, next check in about ${{span(next - t)}}`;
+  f.textContent = `Content last changed ${{span(t - built)}} ago (${{at(built)}}) · checked every hour, next check in about ${{span(next - t)}} · this page refreshes itself`;
 }}
 footer(); setInterval(footer, 60000);
+// self-refresh (owner 2026-11-03): every 5 min, only while the page is on screen — the content changes at most hourly
+// and GitHub Pages caches it 10 min, so faster gains nothing. A tiny conditional request (304 when unchanged); the
+// page reloads only when the content fingerprint changed or the Oslo day turned over. Ticks live in localStorage.
+let lastCheck = Date.now();
+async function refresh() {{
+  if (document.visibilityState !== "visible" || Date.now() - lastCheck < 60000) return;
+  lastCheck = Date.now();
+  const day = ymd(new Date(new Date().toLocaleString("en-US", {{timeZone: "Europe/Oslo"}})));
+  if (day !== ymd(now)) return location.reload();
+  try {{
+    const r = await fetch(location.pathname, {{cache: "no-cache"}});
+    const m = r.ok && (await r.text()).match(/data-fp="([^"]*)"/);
+    if (m && m[1] !== document.getElementById("foot").dataset.fp) location.reload();
+  }} catch (e) {{}}   // offline: try again next time
+}}
+setInterval(refresh, 5 * 60000);
+document.addEventListener("visibilitychange", refresh);   // back to the tab → check at once
 document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "long"}});
 render(); setInterval(() => {{ if (document.querySelector(".card.locked")) render(); }}, 60000); fill("yesterday", dayNo - 1, false);
 document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Language</th></tr>" +
