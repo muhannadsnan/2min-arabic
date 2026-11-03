@@ -27,6 +27,13 @@ Shorts cut from it promote it and fill days.
 - **5 small stars** at the top, one chimes in after each section: ① the story read the first time (early, to motivate)
   ② the questions ③ the word pairs ④ the past version ⑤ the future version.
 
+## Voice + presenter (owner 2026-11-03)
+- **The owner narrates the whole video in simple, slow Arabic** (comprehensible-input style) — no AI voice; English
+  subtitles on screen for everything. The recording sheet is the whole video in order (`videos/_sNN-whatsapp.txt`):
+  🎥 filmed intro, 🎙️ narration, 📖 story lines, 🎥 filmed outro.
+- **After his filmed intro, the clay teacher (assets/logo-clay-teacher, talking mouth sets) continues as him:** full screen
+  when he explains (no story sentence on screen); in a **small square** while a story sentence is shown. His filmed outro closes it.
+
 ## Shape (≈ 12–15 min, 16:9)
 1. **Hook (≤ 20 s):** the ending first (the surprise), and the promise: "by the end you'll tell this story in Arabic —
    in the past and in the future."
