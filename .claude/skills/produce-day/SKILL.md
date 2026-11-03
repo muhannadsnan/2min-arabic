@@ -228,6 +228,7 @@ Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼
   - full, relaxed sentences; listen for rushed or flat delivery in the report and re-voice it.
 
 Then render the cards: `python3 tools/check_cards.py videos/NNN-….md` → look at `output/<video>/cards-sheet.png`.
+**Harakat rule (owner 2026-11-03):** Arabic for learners is shown WITHOUT harakat, except where the plain word would be read as another word (مَن/مِن, أنتَ/أنتِ, final ـكِ) — `tools/arabic_text.py minimal()` for every card, slide and caption from Month 2 on (published videos stay).
 Fonts lack `…`, `_` (Arabic font) and `→`, `▶` (bold Latin) — they show as □.
 **Never put Arabic inside the English part of a card** (2026-10-31, Days 29/30 + x08): `before (≠ بَعْدَ after)` or
 `love → حَبِيبِي` rendered as "( □□□□□□ after)". Arabic goes only in the first (Arabic) field; English lines say it in

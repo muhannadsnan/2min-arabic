@@ -19,6 +19,7 @@ Shorts cut from it promote it and fill days.
 - **The white space is the stage:** while a sentence is read, its key Arabic words pop up **outside the picture**, in the
   four spots (left, right, top, bottom), one by one, then fade; the sentence being read sits under the picture; the
   narrator appears in a **small square** in a corner some of the time, or alone full screen for explanations.
+**Harakat rule (owner 2026-11-03):** Arabic for learners is shown WITHOUT harakat, except where the plain word would be read as another word (مَن/مِن, أنتَ/أنتِ, final ـكِ) — `tools/arabic_text.py minimal()` for every card, slide and caption from Month 2 on (published videos stay).
 - **Arabic on screen without tashkeel** (beginner text); add a vowel only where a word would be misread.
 - **Questions are the heart:** many easy, logical questions per sentence, asked in different ways — who…? who is X?
   is X a cat? where does X go? what does X do? is X fast? why? is Y fast like him? how does Y walk? what did Z say?
