@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-02f"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-03a"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -106,6 +106,9 @@ def paste_text(caption, lang):
     keep = [p for p in caption.strip().split("\n\n")
             if not re.search(r"#|🌍|link|bio|लिंक|لنک|profil|YouTube", p, re.I)]
     tail = [CLOSE[lang], "▶️ Full lessons: 2 Minute Arabic on YouTube" if lang == "en" else "▶️ YouTube: 2 Minute Arabic"]   # name only, no URL (group rules)
+    if lang == "en":   # a shared Reel already shows its own caption (owner 2026-11-03): only the hook + who we are
+        hook = re.sub(r"^Day \d+ of 30 — ", "", keep[0].splitlines()[0]) if keep else ""
+        return "\n\n".join([hook[:1].upper() + hook[1:]] + tail)
     return "\n\n".join(keep + tail)
 
 
