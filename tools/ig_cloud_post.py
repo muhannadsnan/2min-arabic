@@ -138,9 +138,13 @@ def trial(a):
     if pause.exists():   # owner 2026-10-30: the old-style dubs are flagged "looks like something you shared before"
         print(f"Trial Reels paused: {pause.read_text().strip()}"); return
     assets = gh("release", "view", Q, "--json", "assets", "--jq", ".assets[].name").split()
-    marker = f"done-{now:%Y-%m-%d}-{'am' if now.hour < 14 else 'pm'}"   # two slots a day (owner 2026-10-19, x03 phase)
+    # once a day, and only from 17:00 Oslo: a GitHub backup run that starts hours late (00:44 on 3 Nov) must not post
+    # after midnight and use up the next day's slot (owner's rhythm: one trial at 17:37, cron-job.org)
+    marker = f"done-{now:%Y-%m-%d}"
     if marker in assets and not a.force:
         print(f"a Trial Reel was already posted today ({marker})"); return
+    if now.hour < 17 and not a.force:
+        print(f"{now:%H:%M} Oslo — trials post from 17:00 (late backup run after midnight?)"); return
     # only the new-style language versions (own subtitles + hook, "-v2"): the old ones (same picture, new voice) are
     # flagged "looks like something you shared before" (owner 2026-10-30)
     names = sorted(n for n in assets if n.startswith("trial-") and n.endswith("-v2.bin"))
