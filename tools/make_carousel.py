@@ -88,10 +88,11 @@ def closing():
     d = ImageDraw.Draw(slide)
     logo = ROOT / "assets" / "logo-3d-narrator-1024.png"   # the 3D-film owner (2026-11-04; was logo-clay-teacher)
     if logo.exists():
-        lg = Image.open(logo).convert("RGB").resize((420, 420), Image.LANCZOS)
-        m = Image.new("L", lg.size, 0); ImageDraw.Draw(m).ellipse((0, 0, 419, 419), fill=255)
-        slide.paste(lg, ((W - 420) // 2, 150), m)
-    y = centered(d, 640, "A new Arabic lesson", BOLD(72), (255, 255, 255)) + 30
+        D = 600                                   # owner 2026-11-04: bigger circle (was 420)
+        lg = Image.open(logo).convert("RGB").resize((D, D), Image.LANCZOS)
+        m = Image.new("L", lg.size, 0); ImageDraw.Draw(m).ellipse((0, 0, D - 1, D - 1), fill=255)
+        slide.paste(lg, ((W - D) // 2, 80), m)
+    y = centered(d, 750, "A new Arabic lesson", BOLD(72), (255, 255, 255)) + 30
     y = centered(d, y, "every day, in 2 minutes", BOLD(72), (255, 255, 255)) + 90
     y = centered(d, y, "Follow @2minutearabic", BOLD(64), YELLOW) + 40
     centered(d, y, "Full course on YouTube · link in bio", REG, (255, 255, 255))
