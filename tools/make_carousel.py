@@ -78,7 +78,7 @@ def cover(img, title, sub, n):
         size -= 6
     y = centered(d, 430, title, BOLD(size), (255, 255, 255)) + 40
     y = centered(d, y, sub, BOLD(80), YELLOW) + 120
-    centered(d, y, f"swipe for all {n} words", REG, (255, 255, 255))
+    centered(d, y, f"swipe for all {n} {'phrases' if 'PHRASE' in title.upper() else 'words'}", REG, (255, 255, 255))
     centered(d, H - 150, "save it for later", BOLD(52), YELLOW)
     return slide
 
@@ -86,7 +86,7 @@ def cover(img, title, sub, n):
 def closing():
     slide = Image.new("RGB", (W, H), TEAL)
     d = ImageDraw.Draw(slide)
-    logo = ROOT / "assets" / "logo-clay-teacher-1024.png"
+    logo = ROOT / "assets" / "logo-3d-narrator-1024.png"   # the 3D-film owner (2026-11-04; was logo-clay-teacher)
     if logo.exists():
         lg = Image.open(logo).convert("RGB").resize((420, 420), Image.LANCZOS)
         m = Image.new("L", lg.size, 0); ImageDraw.Draw(m).ellipse((0, 0, 419, 419), fill=255)
@@ -110,7 +110,7 @@ def main():
     words = []
     for i, s in enumerate(screens, 1):
         parts = [p.strip().strip("*") for p in (s or "").split("·")]
-        if len(parts) >= 4 and re.fullmatch(r"(Word |Phrase |Question )?\d+/\d+", parts[-1]) or i in EXTRA:
+        if len(parts) >= 4 and re.fullmatch(r"([A-Z][a-z]+ )?\d+/\d+", parts[-1]) or i in EXTRA:
             words.append((i, minimal(parts[0]), parts[1], parts[2]))   # harakat only where needed (owner 2026-11-03)
     if not words:
         sys.exit("no 'N/M' word cards in this script")
@@ -141,7 +141,7 @@ def main():
     lesson = yt.group(1).replace("\\|", "|").split(" | ")[0] if yt else "the full lesson"
     total = len([1 for x in screens if x and re.search(r"(Word |Phrase |Question )?\d+/\d+$", x.strip())])
     more = f" (all {total} words)" if pick and total > len(words) else ""
-    cap = (f"{title.title()} {sub} 👇 Save this and swipe through it once a day this week.\n\n"
+    cap = (f"{re.sub(r"\b(Of|The|And|In|To|A)\b", lambda m: m[0].lower(), title.title())} {sub} 👇 Save this and swipe through it once a day this week.\n\n"
            + "\n".join(f"{a} — {t} — {e}" for _, a, t, e in words)
            + f"\n\nFull lesson{more}: \"{lesson}\" on YouTube, link in bio ▶️\nWhich one will you use first? Tell me in the comments 👇\n\n"
            + "#learnarabic #arabicvocabulary #arabicforbeginners #2minutearabic\n")
