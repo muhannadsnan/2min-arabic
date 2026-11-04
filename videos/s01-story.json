@@ -82,7 +82,7 @@
   {"kind": "qa", "line": 46, "pic": 12, "ar": "هل وصل رامي قبل ماهر؟ … لا، بل على العكس، رامي وصل متأخراً.", "en": "Did Rami arrive before Maher? … No, the opposite: Rami arrived late."},
   {"kind": "qa", "line": 47, "pic": 12, "ar": "لماذا وصل ماهر قبل رامي؟ … لأن رامي نام، أما ماهر لا.", "en": "Why did Maher arrive before Rami? … Because Rami slept, but Maher didn't."},
   {"kind": "talk", "line": 48, "ar": "ممتاز! لقد فهمت القصة كلها.", "en": "Excellent! You understood the whole story."},
-  {"kind": "star"},
+  {"kind": "star", "gap": 0},
 
   {"kind": "talk", "line": 49, "ar": "الآن كلمات مهمة من القصة. كل كلمة مع عكسها، هكذا أسهل للتذكر.", "en": "Now, important words from the story. Each word with its opposite: that way they are easier to remember."},
   {"kind": "pair", "line": 50, "pair": [["سريع", "fast"], ["بطيء", "slow"]], "ar": "سريع … بطيء.", "en": "fast … slow"},

@@ -291,7 +291,10 @@ def build(spec, preview):
         s = dict(first.get(s.get("line"), {}), **s) if s.get("replay") else dict(s)
         k = s["kind"]
         if k == "star":
-            segs[-1]["end"] += 1.6; segs[-1].setdefault("stars", []).append(segs[-1]["end"] - 1.45); t += 1.6
+            if s.get("gap") == 0:   # owner 2026-11-05: no pause — the chime rings in the tail and he keeps talking
+                segs[-1].setdefault("stars", []).append(segs[-1]["end"] - 0.45)
+            else:
+                segs[-1]["end"] += 1.6; segs[-1].setdefault("stars", []).append(segs[-1]["end"] - 1.45); t += 1.6
             continue
         s["start"] = t
         if k == "camera":
