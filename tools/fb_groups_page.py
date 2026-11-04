@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-03b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-04b"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -121,6 +121,8 @@ def content():
         "en": [{"url": "https://www.facebook.com" + v["permalink_url"], "title": v["description"].splitlines()[0][:90],
                 "text": paste_text(v["description"], "en")} for v in en],
         "files": {l: {"file": f["file"], "title": f["video"], "text": paste_text(f["caption"], l)} for l, f in files.items()},
+        # the YouTube Post that goes with each carousel (tools/yt_post.py; owner 2026-11-04) — shown on its day
+        "yt": json.loads((ROOT / "data" / "yt-posts.json").read_text(encoding="utf-8")) if (ROOT / "data" / "yt-posts.json").exists() else [],
     }
 
 
@@ -248,7 +250,24 @@ function fill(id, day, lockEvening) {{
     box.appendChild(card(Object.assign({{}}, g), i, day, idx));
   }});
 }}
-function render() {{ fill("today", dayNo, true); }}
+// the YouTube Post on carousel days (Wed + Sun; owner 2026-11-04): the same pictures + text as the Instagram carousel,
+// which Instagram and the Facebook Page get automatically at 19:00. Yesterday's stays until it's ticked.
+function ytCard() {{
+  const today = ymd(now), yd = new Date(now); yd.setDate(yd.getDate() - 1);
+  const p = (D.yt || []).find(p => p.date === today) || (D.yt || []).find(p => p.date === ymd(yd) && !ticks()["yt-" + p.date]);
+  if (!p) return null;
+  const key = "yt-" + p.date, done = !!ticks()[key], wrap = document.createElement("div");
+  wrap.innerHTML = `<h3>YouTube Post${{p.date === today ? "" : " (yesterday's)"}}</h3><div class="card${{done ? " done" : ""}}"><div class="top">
+    <span class="g">${{esc(p.title)}}</span><span class="right"><label class="tick"><input type="checkbox" ${{done ? "checked" : ""}}> Posted</label></span></div>
+    <div class="btns"><a class="btn" href="https://www.youtube.com/@2MinArabic/posts" target="_blank" rel="noopener">Open YouTube Posts</a>
+    <span class="file">Pictures: <b>Downloads → yt-posts → ${{esc(p.folder)}}</b> (all ${{p.n}})</span></div>
+    <div class="box"><pre>${{esc(p.text)}}</pre><button class="copy">Copy text</button></div></div>`;
+  const b = wrap.querySelector("button.copy");
+  b.onclick = () => navigator.clipboard.writeText(p.text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
+  wrap.querySelector("input").onchange = e => {{ tick(key, e.target.checked); wrap.querySelector(".card").classList.toggle("done", e.target.checked); }};
+  return wrap;
+}}
+function render() {{ fill("today", dayNo, true); const y = ytCard(); if (y) document.getElementById("today").prepend(y); }}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
 const UPD = Array.from({{length: 16}}, (_, k) => 5 + k).map(h => h);  // checks at :05 (laptop) and :25 (GitHub)
 function footer() {{
@@ -258,10 +277,12 @@ function footer() {{
     const c = new Date(Date.UTC(t.getUTCFullYear(), t.getUTCMonth(), t.getUTCDate() + d, h, 25));
     if (c > t) {{ next = c; break; }}
   }}
+  // owner 2026-11-04: three short lines — "updated: 1:56h ago (4.nov)" / "next hourly check in 22min" / "auto-refreshing page"
   const span = ms => {{ const m = Math.round(Math.abs(ms) / 60000), h = Math.floor(m / 60);
-    return h ? `${{h}} h ${{m % 60}} min` : `${{m}} min`; }};
-  const at = d => d.toLocaleString("en-GB", {{timeZone: "Europe/Oslo", weekday: "short", hour: "2-digit", minute: "2-digit"}});
-  f.textContent = `Content last changed ${{span(t - built)}} ago (${{at(built)}}) · checked every hour, next check in about ${{span(next - t)}} · this page refreshes itself`;
+    return h ? `${{h}}:${{String(m % 60).padStart(2, "0")}}h` : `${{m}}min`; }};
+  const at = d => d.toLocaleDateString("en-GB", {{timeZone: "Europe/Oslo", day: "numeric"}}) + "."
+    + d.toLocaleDateString("en-GB", {{timeZone: "Europe/Oslo", month: "short"}}).toLowerCase();
+  f.innerHTML = `updated: ${{span(t - built)}} ago (${{at(built)}})<br>next hourly check in ${{span(next - t)}}<br>auto-refreshing page`;
 }}
 footer(); setInterval(footer, 60000);
 // self-refresh (owner 2026-11-03): every 5 min, only while the page is on screen — the content changes at most hourly

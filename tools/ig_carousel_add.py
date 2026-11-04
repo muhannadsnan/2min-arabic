@@ -36,6 +36,8 @@ def main():
     print(f"{b.name}: {len(slides)} slides · {(folder / 'caption.txt').read_text(encoding='utf-8').splitlines()[0][:70]}")
     if apply:
         subprocess.run(["gh", "release", "upload", Q, "-R", REPO, str(b)], check=True); print("queued")
+        # the same post on YouTube (owner 2026-11-04): pictures to ~/Downloads/yt-posts + a card on the groups page
+        subprocess.run([sys.executable, str(pathlib.Path(__file__).with_name("yt_post.py")), str(folder)], check=True)
     else:
         print("dry run — add --apply to upload")
 

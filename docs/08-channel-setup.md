@@ -58,6 +58,7 @@ Faceless logos look like AI farms. A real, friendly face is the fastest trust si
 - Head and shoulders, **smiling, looking at the camera**, daylight from a window, plain background.
 - Optional touch: holding your phone showing a **2:00** timer.
 - Square, at least **800×800 px**. It's shown as a small circle, so crop close to the face.
+- **Now (owner 2026-11-04):** the 3D-film narrator, `assets/logo-3d-narrator-1024.png` (the carousel closing-slide picture, replaced the clay teacher). Set by hand in Studio — the API cannot change the profile picture.
 - Upload: Studio → **Customization → Profile → Picture**.
 
 ### Banner
