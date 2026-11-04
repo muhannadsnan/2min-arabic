@@ -55,7 +55,23 @@ def clean(src, work):
     from df.enhance import enhance, init_df, load_audio, save_audio
     model, state, _ = init_df()
     audio, _ = load_audio(str(raw), sr=state.sr())
-    save_audio(str(dfn), enhance(model, state, audio), state.sr())
+    # long recordings in 60-s chunks with a 1-s crossfade: the 13-min story take in one go needed > 6 GB (2026-11-04)
+    import torch
+    sr_, n, step, ov = state.sr(), audio.shape[-1], 60 * state.sr(), state.sr()
+    if n <= 2 * step:
+        out_audio = enhance(model, state, audio)
+    else:
+        out_audio, pos = torch.zeros_like(audio), 0
+        ramp = torch.linspace(0, 1, ov)
+        while pos < n:
+            a0, a1 = max(pos - ov, 0), min(pos + step, n)
+            part = enhance(model, state, audio[..., a0:a1].contiguous()).cpu()
+            if a0 < pos:   # crossfade the overlap with what is already there
+                part[..., :ov] *= ramp; out_audio[..., a0:pos] *= (1 - ramp)
+            out_audio[..., a0:a1] += part
+            pos = a1
+            torch.cuda.empty_cache()
+    save_audio(str(dfn), out_audio, state.sr())
     del model, state   # free the GPU for Whisper: a 4-min recording left DeepFilterNet's cache filling 6 GB (2026-10-07)
     import gc, torch
     gc.collect()
@@ -95,13 +111,18 @@ def main():
     script = pathlib.Path(sys.argv[1])   # add --as-recorded to keep a real woman's recording as is (no conversion)
     stem = script.stem
     root = HERE.parent
-    rec_dir = root / "footage" / "recordings" / stem
+    # monthly story (videos/sNN-story.json, owner 2026-11-04): the lines come from its numbered recording sheet
+    # ("📖 6. …"), only the audio-only ones (--lines=5-87; the camera lines are filmed), and the files are named by the
+    # sheet's line number (NN-you.wav) in the spec's "clips" folder; --src= picks the voice recording
+    story = json.loads(script.read_text(encoding="utf-8")) if script.suffix == ".json" else None
+    rec_dir = (root / story["clips"]).parent if story else root / "footage" / "recordings" / stem
+    src_arg = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--src=")), None)
     sources = sorted((p for p in rec_dir.iterdir() if p.suffix.lower() in AUDIO_EXT), key=lambda p: p.stat().st_mtime)
-    if not sources:
+    if not sources and not src_arg:
         sys.exit(f"no recording in {rec_dir}")
-    src = sources[-1]
+    src = root / src_arg if src_arg else sources[-1]
     work = rec_dir / "work"
-    lines_dir = rec_dir / "lines"
+    lines_dir = root / story["clips"] if story else rec_dir / "lines"
     work.mkdir(exist_ok=True)
     lines_dir.mkdir(exist_ok=True)
     print(f"recording: {src.name}")
@@ -112,7 +133,8 @@ def main():
     print(f"{len(segs)} speech pieces found")
 
     from faster_whisper import WhisperModel
-    asr = WhisperModel("medium", device="cuda", compute_type="float16")
+    dev = os.environ.get("ASR_DEVICE", "cuda")   # ASR_DEVICE=cpu: split while the graphics card is busy (a game)
+    asr = WhisperModel("medium", device=dev, compute_type="float16" if dev == "cuda" else "int8")
 
     def hear(a, b):
         tmp = work / "piece.wav"
@@ -126,7 +148,15 @@ def main():
         for j in range(i, min(i + 3, len(segs))):
             spans[(i, j)] = hear(segs[i][0], segs[j][1])
 
-    expected = unique_lines(script)
+    if story:
+        lo, hi = map(int, next(a.split("=", 1)[1] for a in sys.argv if a.startswith("--lines=")).split("-"))
+        numbered = [(int(m.group(1)), m.group(2).strip()) for m in
+                    (re.match(r"^\W*?(\d+)\.\s+(.+)$", l) for l in (root / story["sheet"]).read_text(encoding="utf-8").splitlines()) if m]
+        numbered = [(n, t.replace("…", " ").replace("...", " ")) for n, t in numbered if lo <= n <= hi]
+        expected, numbers = [("you", t) for _, t in numbered], [n for n, _ in numbered]
+    else:
+        expected = unique_lines(script)
+        numbers = list(range(1, len(expected) + 1))
     K, P = len(expected), len(segs)
     score = {(k, span): cer(expected[k][1], heard) for k in range(K) for span, heard in spans.items()}
     # order-preserving alignment (dynamic programming): each line gets one span, spans in order, skipped pieces
@@ -169,13 +199,13 @@ def main():
             if score[(k, (q, q))] <= score[(k, pick)] + 0.15:
                 picks[k] = pick = (q, q)
     result, pos = [], 0
-    for n, (speaker, text) in enumerate(expected, 1):
-        pick = picks[n - 1]
+    for k, (speaker, text) in enumerate(expected):
+        pick, n = picks[k], numbers[k]
         if pick is None:
             result.append({"n": n, "speaker": speaker, "text": text, "file": None, "heard": "", "cer": 1.0})
             continue
         i, j = pick
-        heard, sc = spans[(i, j)], score[(n - 1, (i, j))]
+        heard, sc = spans[(i, j)], score[(k, (i, j))]
         a, b = max(segs[i][0] - 0.12, 0), min(segs[j][1] + 0.18, len(y) / sr)
         clip = y[int(a * sr):int(b * sr)].copy()
         fade = int(0.03 * sr)

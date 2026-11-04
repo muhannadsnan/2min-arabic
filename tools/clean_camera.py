@@ -39,6 +39,8 @@ def main():
     ap.add_argument("src", type=pathlib.Path); ap.add_argument("dst", type=pathlib.Path)
     ap.add_argument("--cut", action="append", default=[], help="a-b seconds to remove (repeatable)")
     ap.add_argument("--ab", type=pathlib.Path, help="before/after sound sample")
+    ap.add_argument("--look", default="", help="extra video filter for light/colour, e.g. the outro's "
+                    "'eq=brightness=0.03:contrast=1.07:saturation=1.06,hqdn3d=1.5:1.5:4:4'")
     a = ap.parse_args()
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(a.src)],
                                capture_output=True, text=True).stdout)
@@ -66,7 +68,7 @@ def main():
         # trim + join: video parts and sound parts (a 20 ms fade at each join, so no click)
         fv, fa, n = [], [], len(keep)
         for i, (s, e) in enumerate(keep):
-            fv.append(f"[0:v]trim={s}:{e},setpts=PTS-STARTPTS,fps=30[v{i}]")
+            fv.append(f"[0:v]trim={s}:{e},setpts=PTS-STARTPTS,fps=30{',' + a.look if a.look else ''}[v{i}]")
             fa.append(f"[1:a]atrim={s}:{e},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,afade=t=out:st={e - s - 0.02:.3f}:d=0.02[a{i}]")
         fc = ";".join(fv + fa) + ";" + "".join(f"[v{i}][a{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=1[v][a]"
         a.dst.parent.mkdir(parents=True, exist_ok=True)

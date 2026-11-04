@@ -15,7 +15,6 @@
   {"kind": "camera", "file": "intro", "lines": [1, 2, 3, 4], "pic": 12,
    "en": ["A turtle arrives before a horse! How?", "Hello, and welcome to the 2 Minute Arabic channel.", "Today I'll tell you the story of the horse and the turtle.", "Listen to the story carefully, and at the end you will tell it yourselves, in three tenses: the present, the past and the future. Let's go!"]},
 
-  {"kind": "talk", "line": 5, "ar": "استمعوا الآن للقصة كلها:", "en": "Now listen to the whole story:"},
   {"kind": "story", "line": 6, "pic": 1, "ar": "هذا رامي الحصان. رامي يذهب إلى السوق.", "en": "This is Rami the horse. Rami goes to the market.",
    "words": [["هذا", "this"], ["يذهب", "goes"]]},
   {"kind": "story", "line": 7, "pic": 2, "ar": "وهنا ماهر السلحفاة. ماهر يذهب إلى السوق أيضا.", "en": "And here is Maher the turtle. Maher goes to the market too.",
@@ -130,7 +129,7 @@
   {"kind": "story", "line": 87, "pic": 11, "ar": "وسيصل ماهر إلى السوق قبل رامي!", "en": "And Maher will arrive at the market before Rami!", "verbs": [["يصل", "سيصل", "will arrive"]]},
   {"kind": "star"},
 
-  {"kind": "camera", "file": "outro", "lines": [88, 89, 90],
-   "en": ["Well done! Now you know the story in the present, the past and the future.", "Tell the story in Arabic in the comments, even just one sentence!", "And subscribe to the channel, see you in the next story. Goodbye!"]}
+  {"kind": "camera", "file": "outro", "lines": [88, 89, 90, 91],
+   "en": ["Well done! Now you know the story in the present, the past and the future.", "Write the story in the comments, or just one sentence you remember.", "Don't forget to like the video and subscribe to the channel.", "See you in the next story, goodbye!"]}
  ]
 }
