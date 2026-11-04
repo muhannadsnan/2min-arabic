@@ -14,6 +14,7 @@ import pathlib
 import subprocess
 import sys
 import tempfile
+import time
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import json, re, urllib.request   # noqa: E402
@@ -27,8 +28,18 @@ CHANNEL = "UCSPLk1XgELl4vkPFi_hDszA"
 
 
 def feed():
-    """YouTube's public feed (no login, works on GitHub): the 15 newest public videos, newest first."""
-    x = urllib.request.urlopen(f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL}", timeout=60).read().decode()
+    """YouTube's public feed (no login, works on GitHub): the 15 newest public videos, newest first.
+    The feed sometimes answers 404/5xx for a few minutes (2026-11-04 00:41 UTC) → 3 tries, then None."""
+    for wait in (0, 20, 60):
+        time.sleep(wait)
+        try:
+            x = urllib.request.urlopen(f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL}", timeout=60).read().decode()
+            break
+        except Exception as e:
+            err = e
+    else:
+        print(f"::warning::YouTube feed unavailable ({err}) — the page stays as it is until the next run")
+        return None
     return re.findall(r"<yt:videoId>([\w-]{11})</yt:videoId>\s*<yt:channelId>[^<]*</yt:channelId>\s*<title>([^<]*)</title>", x)
 
 
@@ -41,7 +52,8 @@ def title(vid, known):
 
 
 def newest(n=3):
-    return [(i, html.unescape(t)) for i, t in feed()[:n]]
+    f = feed()
+    return None if f is None else [(i, html.unescape(t)) for i, t in f[:n]]
 
 
 def on_instagram(n=3):
@@ -135,6 +147,7 @@ footer .tool{{max-width:560px;margin:10px auto 0;font-size:.8rem;opacity:.8}}
 
 def main():
     latest, insta = newest(), on_instagram()
+    if latest is None: return   # feed down: keep the page, no failed run (the groups page step still runs)
     out = page(latest, insta)
     print("\n".join(f"  {i}  {t}" for i, t in latest + [("IG", "")] + insta))
     if "--push" not in sys.argv:
