@@ -51,6 +51,12 @@ def main():
             t = min(1, (((x - W / 2) / W) ** 2 + ((y - H * .4) / H) ** 2) ** .5 * 1.7)
             col = tuple(int(TEAL[i] * (1 - t) + TEAL_D[i] * t) for i in range(3))
             for dx in range(4): px[x + dx, y] = col
+    # faint Arabic letters spread around, like the banner (owner 2026-11-05)
+    deco = Image.new("L", (W, H), 0); dd = ImageDraw.Draw(deco); fa = font("NotoNaskhArabic-Bold.ttf", 230)
+    for x, y, ch in [(90, 40, "ع"), (330, 560, "ب"), (40, 760, "س"), (1560, 60, "ر"), (1720, 470, "ي"), (1430, 760, "م"),
+                     (520, 120, "ك"), (1250, 20, "ح")]:
+        dd.text((x, y), ch, font=fa, fill=30)
+    im.paste(Image.new("RGB", (W, H), CREAM), (0, 0), deco)
     d = ImageDraw.Draw(im)
     D = 250; lx, ly = (W - D) // 2, 80                  # the round logo with a cream ring
     ring = Image.new("L", (D + 20, D + 20), 0); ImageDraw.Draw(ring).ellipse((0, 0, D + 19, D + 19), fill=255)

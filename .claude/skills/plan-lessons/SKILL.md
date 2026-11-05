@@ -17,6 +17,15 @@ Before choosing Extras/Vocab topics (and when a Day can lean towards a popular a
 `python3 tools/suggest.py "<topic> in arabic"`. **Outlier scan (monthly, source: learning/notes/2026-10-23-kellan-henneberry…):** look for videos far above their channel's usual views — that topic is proven; take the topic, never the content. **Topic transfer** (learning/notes/2026-10-24-steffen…): also scan other *language-learning* channels (Spanish, French, Japanese, Korean) for outliers and move the topic to Arabic ("10 words you need at the café", "what natives really say"). **80/20:** ~80 % of planned pieces use formats our data says win (word lists, one clear rule + examples, usable phrases, mini stories), ~20 % test something new (2026-10-23: "inshallah meaning" — 13.2 M and 1.1 M views → x07). Prefer topics where learner videos (not kids' songs) already get views;
 note the hook/format of the top ones. Log the picks in docs/15.
 
+**Platform taste (owner, 2026-11-05 — from Day 26 "How Old Are You?": 144 views in 2 days, the fastest start):**
+- **YouTube = beginners' life questions + daily-life expressions.** Questions every person has an answer to, and the
+  answers differ from person to person (no single right answer → people answer in the comments): what do you do / what
+  is your job? where do you live? how old are you? favourite colour / food / sport? hobby? what do you do at the
+  weekend? do you sleep early or late? … Plus **expressions by place**: at home, in the street, at work, at school, in
+  a shop, at the doctor's, … Each one = a searchable "How to say/answer X in Arabic" title + the viewer answers.
+- **Instagram = the surprise factor.** "Arabic has no word for my / is", one letter changes everything, a twist — the
+  Reels that stop a scroll (Day 12, Day 5, Day 3 lead there). Same lesson can serve both, but pick the hook per platform.
+
 ## 1. The vocabulary ledger — `docs/13-vocabulary-ledger.md`
 
 One row per word or phrase:
