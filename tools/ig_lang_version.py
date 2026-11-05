@@ -40,6 +40,51 @@ LOOK = {
     "tr": dict(char="waiter", bg="alley", color=(14, 116, 184), zoom=1.11, shift=-0.3, hue=-8),
     "ms": dict(char="lina", bg="cafe", color=(109, 40, 217), zoom=1.08, shift=0.4, hue=4),
 }
+# owner 2026-11-05: a NEW look on every trial — "the next Indonesian trial should have a different thumbnail/narrator/
+# place, so the audience feels it's a new unseen video". LOOK above = the first trials (Day 12, x03 hi/ur); from now on
+# pick_look() rotates character × pose × place × frame colour and remembers every choice in data/ig-looks.json.
+CHARS, POSES, PLACES = ("omar", "sami", "lina", "waiter"), ("cB", "cA", "close"), ("cafe", "alley", "desk")
+COLORS = [(234, 108, 22), (21, 128, 61), (200, 38, 38), (14, 116, 184), (109, 40, 217), (190, 24, 93),
+          (13, 148, 136), (161, 98, 7), (79, 70, 229), (220, 38, 38)]
+LOOKS = ROOT / "data" / "ig-looks.json"
+
+
+def pick_look(stem, lang):
+    import fcntl
+    with open(LOOKS.with_suffix(".lock"), "w") as lk:   # two builds at once lost a choice (2026-11-05): one at a time
+        fcntl.flock(lk, fcntl.LOCK_EX)
+        return _pick_look(stem, lang)
+
+
+def _pick_look(stem, lang):
+    import hashlib, random
+    hist = json.loads(LOOKS.read_text(encoding="utf-8")) if LOOKS.exists() else []
+    old = next((h for h in hist if h["stem"] == stem and h["lang"] == lang), None)
+    if old:   # a rebuild keeps its look
+        return dict(char=old["char"], pose=old["pose"], bg=old["bg"], color=tuple(old["color"]), zoom=old["zoom"],
+                    shift=old["shift"], hue=old["hue"])
+    mine = [h for h in hist if h["lang"] == lang]                       # this language's earlier trials, oldest first
+    same = [h for h in hist if h["stem"] == stem]                       # the other languages of this video
+    rnd = random.Random(int(hashlib.md5(f"{stem}/{lang}".encode()).hexdigest()[:8], 16))
+    cands = [(c, p, b, col) for c in CHARS for p in POSES for b in PLACES for col in range(len(COLORS))]
+    rnd.shuffle(cands)
+    def cost(k):
+        c, p, b, col = k; x = 0.0
+        for age, h in enumerate(reversed(mine[-4:])):                  # the newest counts most
+            w = 1.0 / (age + 1)
+            x += w * (4 * (h["char"] == c) + 2 * (h["bg"] == b) + 1.5 * (h.get("pose", "cB") == p) + 1.5 * (tuple(h["color"]) == COLORS[col]))
+        for h in same:   # 5 languages, 4 narrators: one repeats — then never in the same pose AND place (a near-twin)
+            sc = h["char"] == c
+            x += 3 * sc + 1 * (h["bg"] == b) + 2 * (tuple(h["color"]) == COLORS[col]) + 3 * (sc and h.get("pose", "cB") == p) + 3 * (sc and h["bg"] == b)
+        return x
+    c, p, b, col = min(cands, key=cost)
+    look = dict(char=c, pose=p, bg=b, color=COLORS[col], zoom=round(rnd.uniform(1.07, 1.11), 3),
+                shift=round(rnd.uniform(-0.6, 0.6), 2), hue=rnd.choice([-8, -6, -4, 4, 6, 8]))
+    hist.append(dict(stem=stem, lang=lang, **{k: (list(v) if k == "color" else v) for k, v in look.items()}))
+    LOOKS.write_text(json.dumps(hist, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return look
+
+
 BADGE = {"hi": "2 मिनट अरबी", "ur": "دو منٹ عربی", "id": "2 Menit Bahasa Arab", "tr": "2 Dakikada Arapça",
          "ms": "2 Minit Bahasa Arab"}
 DAY = {"hi": "दिन", "ur": "دن", "id": "Hari", "tr": "Gün", "ms": "Hari"}
@@ -60,8 +105,10 @@ def cover_frames(look, folder):
     bg = bg.filter(ImageFilter.GaussianBlur(4))
     mean = np.asarray(bg, dtype=np.float32).reshape(-1, 3).mean(axis=0)
     sets = ROOT / "library" / "sets" / "v2"
-    mouths = [sets / f"{look['char']}_cB_talk{i}.png" for i in (1, 3, 2, 5, 4, 2)] + [sets / f"{look['char']}_cB.png"]
-    pics = {m: place(bg.copy(), keyed(str(m)), 0.5, 0.7232, mean) for m in set(mouths)}
+    pose = look.get("pose", "cB")
+    mouths = [sets / f"{look['char']}_{pose}_talk{i}.png" for i in (1, 3, 2, 5, 4, 2)] + [sets / f"{look['char']}_{pose}.png"]
+    h = 0.7232 if pose == "cB" else 0.64   # the closer poses carry the face higher: smaller, so the hook clears it
+    pics = {m: place(bg.copy(), keyed(str(m)), 0.5, h, mean) for m in set(mouths)}
     for i in range(int(COVER * FPS)):
         pics[mouths[(i * 8 // FPS) % len(mouths)]].save(folder / f"c{i:03d}.png")
 
@@ -99,8 +146,17 @@ def main():
     cues = re.findall(r"\d+\n([\d:,]+) --> ([\d:,]+)\n(.*?)(?:\n\n|\Z)", srt, re.S)
     sec = lambda s: sum(float(x) * m for x, m in zip(s.replace(",", ".").split(":"), (3600, 60, 1)))
     arabic = re.compile(r"[ء-ي][ً-ْ]")   # Arabic WITH tashkeel = a lesson line (already on a card)
-    hook = a.hook or re.split(r"(?<=[.!?۔।])\s", spec[a.lang]["1"])[0]
-    look = LOOK[a.lang]
+    # the hook = the caption's headline (before " — "), 1–2 lines: the whole first sentence ran to 5 lines and covered
+    # the face on the closer poses (owner 2026-11-05)
+    capf = ROOT / "output" / "ig-trial" / f"captions-{a.stem.split('-')[0]}-v2.json"
+    head = next((c["caption"].splitlines()[0] for c in json.loads(capf.read_text(encoding="utf-8")) if c["lang"] == a.lang), None) if capf.exists() else None
+    if head:   # drop a trailing emoji (symbols only — Devanagari/Urdu vowel marks are not \w, so no regex here)
+        import unicodedata
+        head = head.split(" — ")[0].rstrip()
+        while head and unicodedata.category(head[-1]) in ("So", "Sk", "Cf", "Zs"):
+            head = head[:-1].rstrip()
+    hook = a.hook or head or re.split(r"(?<=[.!?۔।])\s", spec[a.lang]["1"])[0]
+    look = pick_look(a.stem, a.lang)
     font, size = FONT.get(a.lang, "Noto Sans"), SIZE.get(a.lang, 84)
 
     work = out_dir / f"ig-{a.lang}-look"; work.mkdir(exist_ok=True)
