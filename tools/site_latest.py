@@ -67,7 +67,7 @@ def on_instagram(n=3):
     posted = ids[:len(ids) - waiting] if waiting else ids
     want = posted[-n:][::-1]
     if not want: return []
-    known = {i: html.unescape(t) for i, t in feed()}
+    known = {i: html.unescape(t) for i, t in (feed() or [])}
     return [(i, t) for i in want if (t := title(i, known))]
 
 
@@ -146,8 +146,9 @@ footer .tool{{max-width:560px;margin:10px auto 0;font-size:.8rem;opacity:.8}}
 
 
 def main():
-    latest, insta = newest(), on_instagram()
+    latest = newest()
     if latest is None: return   # feed down: keep the page, no failed run (the groups page step still runs)
+    insta = on_instagram()      # only after the feed check: it reads the feed too (crashed on None, 4–5 Nov 2026)
     out = page(latest, insta)
     print("\n".join(f"  {i}  {t}" for i, t in latest + [("IG", "")] + insta))
     if "--push" not in sys.argv:
