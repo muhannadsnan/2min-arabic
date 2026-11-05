@@ -12,7 +12,7 @@
   {"a": ["هنا", "here"], "b": ["هناك", "there"], "forms": ["هنا", "هناك"]}
  ],
  "segments": [
-  {"kind": "camera", "file": "intro", "lines": [1, 2, 3, 4], "pic": 12,
+  {"kind": "camera", "file": "intro", "lines": [1, 2, 3, 4], "pic": 12, "subs": [[0.84, 3.45], [3.89, 7.64], [9.5, 12.64], [14.39, 24.5]],
    "en": ["A turtle arrives before a horse! How?", "Hello, and welcome to the 2 Minute Arabic channel.", "Today I'll tell you the story of the horse and the turtle.", "Listen to the story carefully, and at the end you will tell it yourselves, in three tenses: the present, the past and the future. Let's go!"]},
 
   {"kind": "story", "line": 6, "pic": 1, "ar": "هذا رامي الحصان. رامي يذهب إلى السوق.", "en": "This is Rami the horse. Rami goes to the market.",

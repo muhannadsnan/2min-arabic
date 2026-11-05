@@ -301,12 +301,14 @@ def build(spec, preview):
             f = ROOT / spec["camera"][s["file"]]
             if f.exists() and not preview:
                 x = read_audio(f); dur = len(x) / SR
-                vp = voiced(x, min_gap=0.35)
-                gaps = sorted(range(len(vp) - 1), key=lambda j: vp[j][1] - vp[j + 1][0])[:len(s["lines"]) - 1]   # biggest silences (end → next start)
-                cuts = sorted(gaps)
-                bounds, a = [], 0
-                for c in cuts + [len(vp) - 1]:
-                    bounds.append((vp[a][0], vp[c][1])); a = c + 1
+                if s.get("subs"):   # given by hand (seconds in the clip): the 1st one's end = where the hook picture ends
+                    bounds = [tuple(b) for b in s["subs"]]
+                else:
+                    vp = voiced(x, min_gap=0.35)
+                    gaps = sorted(range(len(vp) - 1), key=lambda j: vp[j][1] - vp[j + 1][0])[:len(s["lines"]) - 1]   # biggest silences (end → next start)
+                    bounds, a = [], 0
+                    for c in sorted(gaps) + [len(vp) - 1]:
+                        bounds.append((vp[a][0], vp[c][1])); a = c + 1
                 s["subs"] = [(t + b0, t + b1) for b0, b1 in bounds]
                 voice.append((t, x)); s["video"] = str(f)
             else:
