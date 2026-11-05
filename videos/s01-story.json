@@ -129,7 +129,7 @@
   {"kind": "story", "line": 87, "pic": 11, "ar": "وسيصل ماهر إلى السوق قبل رامي!", "en": "And Maher will arrive at the market before Rami!", "verbs": [["يصل", "سيصل", "will arrive"]]},
   {"kind": "star"},
 
-  {"kind": "camera", "file": "outro", "lines": [88, 89, 90, 91],
+  {"kind": "camera", "file": "outro", "lines": [88, 89, 90, 91], "subs": [[0.12, 6.7], [8.3, 13.59], [14.5, 17.51], [18.73, 21.12]],
    "en": ["Well done! Now you know the story in the present, the past and the future.", "Write the story in the comments, or just one sentence you remember.", "Don't forget to like the video and subscribe to the channel.", "See you in the next story, goodbye!"]},
 
   {"kind": "card", "image": "assets/end-card-1920.png", "dur": 10}

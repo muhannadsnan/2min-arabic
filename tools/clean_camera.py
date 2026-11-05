@@ -42,6 +42,7 @@ def main():
     ap.add_argument("--patch", action="append", default=[], help="START=FILE.wav: put a separately cleaned piece over the "
                     "sound from START s (source time), level-matched, 30 ms crossfades — e.g. the intro hook restored by "
                     "Resemble Enhance (owner's pick 2026-11-05)")
+    ap.add_argument("--raw-sound", action="store_true", help="keep the sound as recorded (mono, 90 Hz low-cut, level only)")
     ap.add_argument("--look", default="", help="extra video filter for light/colour, e.g. the outro's "
                     "'eq=brightness=0.03:contrast=1.07:saturation=1.06,hqdn3d=1.5:1.5:4:4'")
     a = ap.parse_args()
@@ -52,13 +53,17 @@ def main():
     for c0, c1 in cuts:
         keep.append((t, c0)); t = c1
     keep.append((t, dur))
+    keep = [(s, e) for s, e in keep if e - s > 0.05]   # a cut from 0 s leaves an empty first piece
     with tempfile.TemporaryDirectory() as tmp:
         tmp = pathlib.Path(tmp); raw, dfn, eq, lvl = (tmp / f"{n}.wav" for n in ("raw", "dfn", "eq", "lvl"))
         run(["ffmpeg", "-v", "error", "-y", "-i", str(a.src), "-map", "0:a:0", "-af",
              "pan=mono|c0=0.5*c0+0.5*c1,highpass=f=90", "-ar", "48000", str(raw)])
-        run([str(TTS_HOME / "venv/bin/python"), "-c", DFN, str(raw), str(dfn)],
-            env=dict(os.environ, HF_HOME=str(TTS_HOME / "hf")), stderr=subprocess.DEVNULL)
-        run(["ffmpeg", "-v", "error", "-y", "-i", str(dfn), "-af", EQ, str(eq)])
+        if a.raw_sound:   # as recorded, only levelled (owner's pick for the Story 1 outro, 2026-11-05)
+            run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-c", "copy", str(eq)])
+        else:
+            run([str(TTS_HOME / "venv/bin/python"), "-c", DFN, str(raw), str(dfn)],
+                env=dict(os.environ, HF_HOME=str(TTS_HOME / "hf")), stderr=subprocess.DEVNULL)
+            run(["ffmpeg", "-v", "error", "-y", "-i", str(dfn), "-af", EQ, str(eq)])
         gain = -22.0 - loudness(eq)   # the story lines are at −20 LUFS (split_recording); at −16 the intro played ~5 dB louder and its echo stood out (owner 2026-11-05)
         run(["ffmpeg", "-v", "error", "-y", "-i", str(eq), "-af",
              f"volume={gain:.2f}dB,alimiter=limit={10 ** (-1.5 / 20):.3f}:level=false", "-ar", "48000", str(lvl)])
