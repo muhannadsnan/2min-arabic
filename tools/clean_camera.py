@@ -39,6 +39,9 @@ def main():
     ap.add_argument("src", type=pathlib.Path); ap.add_argument("dst", type=pathlib.Path)
     ap.add_argument("--cut", action="append", default=[], help="a-b seconds to remove (repeatable)")
     ap.add_argument("--ab", type=pathlib.Path, help="before/after sound sample")
+    ap.add_argument("--patch", action="append", default=[], help="START=FILE.wav: put a separately cleaned piece over the "
+                    "sound from START s (source time), level-matched, 30 ms crossfades — e.g. the intro hook restored by "
+                    "Resemble Enhance (owner's pick 2026-11-05)")
     ap.add_argument("--look", default="", help="extra video filter for light/colour, e.g. the outro's "
                     "'eq=brightness=0.03:contrast=1.07:saturation=1.06,hqdn3d=1.5:1.5:4:4'")
     a = ap.parse_args()
@@ -59,6 +62,21 @@ def main():
         gain = -16.0 - loudness(eq)
         run(["ffmpeg", "-v", "error", "-y", "-i", str(eq), "-af",
              f"volume={gain:.2f}dB,alimiter=limit={10 ** (-1.5 / 20):.3f}:level=false", "-ar", "48000", str(lvl)])
+        if a.patch:
+            import numpy as np, soundfile as sf
+            y, sr = sf.read(lvl)
+            for pt in a.patch:
+                t0, f = pt.split("=", 1); i0 = int(float(t0) * sr)
+                p_, psr = sf.read(f)
+                if p_.ndim > 1: p_ = p_.mean(1)
+                if psr != sr:
+                    p_ = np.interp(np.arange(int(len(p_) * sr / psr)) * psr / sr, np.arange(len(p_)), p_)
+                n = min(len(p_), len(y) - i0); seg = y[i0:i0 + n]
+                loud = lambda v: np.sqrt(np.mean(v[np.abs(v) > 0.02] ** 2)) if np.any(np.abs(v) > 0.02) else 1e-9
+                p_ = p_[:n] * loud(seg) / loud(p_[:n])
+                fade = int(0.03 * sr); w = np.ones(n); w[:fade] = np.linspace(0, 1, fade); w[-fade:] = np.linspace(1, 0, fade)
+                y[i0:i0 + n] = seg * (1 - w) + p_ * w
+            sf.write(lvl, y, sr)
         if a.ab:
             before = tmp / "before.wav"
             g0 = -16.0 - loudness(raw)
