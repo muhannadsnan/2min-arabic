@@ -20,7 +20,7 @@ def _scratch():
 def main():
     stem, cap_file = sys.argv[1], sys.argv[2]; apply = "--apply" in sys.argv
     items = json.loads(pathlib.Path(cap_file).read_text(encoding="utf-8"))
-    thumb = next(p for p in (ROOT / "output" / stem).glob("*thumbnail.jpg"))
+    thumb = next((ROOT / "output" / stem).glob("*thumbnail*.jpg"), None)   # only the old style uses it
     r = subprocess.run(["gh", "release", "view", Q, "-R", REPO, "--json", "assets", "--jq", ".assets[].name"], capture_output=True, text=True)
     if r.returncode != 0 and apply:
         subprocess.run(["gh", "release", "create", Q, "-R", REPO, "--title", "Instagram trial queue (encrypted)",
