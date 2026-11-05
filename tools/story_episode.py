@@ -297,6 +297,9 @@ def build(spec, preview):
                 segs[-1]["end"] += 1.6; segs[-1].setdefault("stars", []).append(segs[-1]["end"] - 1.45); t += 1.6
             continue
         s["start"] = t
+        if k == "card":   # a still at the very end (owner 2026-11-05: the accounts, 5–10 s; room for YouTube's end screen)
+            s["end"] = t + s.get("dur", 10); segs.append(s); t = s["end"]
+            continue
         if k == "camera":
             f = ROOT / spec["camera"][s["file"]]
             if f.exists() and not preview:
@@ -551,6 +554,10 @@ def main():
             k = s["kind"]
             key = (mouths[min(fi, len(mouths) - 1)], int(fi in blinks))
             body = nar.body(t, lift[min(fi, len(lift) - 1)])
+            if k == "card":
+                if "card_im" not in s:
+                    s["card_im"] = Image.open(ROOT / s["image"]).convert("RGB").resize((W, H), Image.LANCZOS)
+                enc.stdin.write(s["card_im"].tobytes()); continue
             if k == "camera":
                 if s.get("video"):
                     if cam is None or cam[0] is not s:

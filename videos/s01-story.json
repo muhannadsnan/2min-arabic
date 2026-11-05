@@ -130,6 +130,8 @@
   {"kind": "star"},
 
   {"kind": "camera", "file": "outro", "lines": [88, 89, 90, 91],
-   "en": ["Well done! Now you know the story in the present, the past and the future.", "Write the story in the comments, or just one sentence you remember.", "Don't forget to like the video and subscribe to the channel.", "See you in the next story, goodbye!"]}
+   "en": ["Well done! Now you know the story in the present, the past and the future.", "Write the story in the comments, or just one sentence you remember.", "Don't forget to like the video and subscribe to the channel.", "See you in the next story, goodbye!"]},
+
+  {"kind": "card", "image": "assets/end-card-1920.png", "dur": 10}
  ]
 }
