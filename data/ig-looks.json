@@ -120,21 +120,6 @@
   "hue": -4
  },
  {
-  "stem": "003-first-conversation",
-  "lang": "ur",
-  "char": "omar",
-  "pose": "cA",
-  "bg": "desk",
-  "color": [
-   190,
-   24,
-   93
-  ],
-  "zoom": 1.074,
-  "shift": -0.34,
-  "hue": 6
- },
- {
   "stem": "x03-introduce-yourself-in-arabic",
   "lang": "tr",
   "char": "lina",
@@ -163,21 +148,6 @@
   "zoom": 1.08,
   "shift": -0.38,
   "hue": -4
- },
- {
-  "stem": "003-first-conversation",
-  "lang": "id",
-  "char": "sami",
-  "pose": "cA",
-  "bg": "cafe",
-  "color": [
-   220,
-   38,
-   38
-  ],
-  "zoom": 1.098,
-  "shift": -0.52,
-  "hue": 8
  },
  {
   "stem": "005-grammar-no-is-in-arabic",
@@ -343,5 +313,65 @@
   "zoom": 1.095,
   "shift": 0.42,
   "hue": -6
+ },
+ {
+  "stem": "008-where-are-you-from",
+  "lang": "ms",
+  "char": "sami",
+  "pose": "close",
+  "bg": "desk",
+  "color": [
+   13,
+   148,
+   136
+  ],
+  "zoom": 1.081,
+  "shift": -0.08,
+  "hue": -4
+ },
+ {
+  "stem": "003-first-conversation",
+  "lang": "hi",
+  "char": "sami",
+  "pose": "cA",
+  "bg": "desk",
+  "color": [
+   220,
+   38,
+   38
+  ],
+  "zoom": 1.085,
+  "shift": -0.07,
+  "hue": -4
+ },
+ {
+  "stem": "003-first-conversation",
+  "lang": "ur",
+  "char": "waiter",
+  "pose": "cB",
+  "bg": "alley",
+  "color": [
+   234,
+   108,
+   22
+  ],
+  "zoom": 1.074,
+  "shift": -0.34,
+  "hue": 6
+ },
+ {
+  "stem": "003-first-conversation",
+  "lang": "id",
+  "char": "omar",
+  "pose": "cA",
+  "bg": "desk",
+  "color": [
+   109,
+   40,
+   217
+  ],
+  "zoom": 1.098,
+  "shift": -0.52,
+  "hue": 8
  }
 ]

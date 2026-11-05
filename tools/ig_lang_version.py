@@ -30,7 +30,10 @@ from compose_talk import keyed, place  # noqa: E402
 
 FONT = {"hi": "Noto Sans Devanagari", "ur": "Noto Nastaliq Urdu", "fa": "Noto Nastaliq Urdu", "bn": "Noto Sans Bengali"}
 AUDIO = {"ur": "hi", "ms": "id"}
-SIZE = {"ur": 150, "fa": 150, "hi": 96}   # Nastaliq renders small at the Latin size
+SIZE = {"ur": 150, "fa": 150, "hi": 96}
+# the big hook line in Naskh for Urdu/Persian: libass draws Nastaliq letters into each other at that size ("عربی گفتگو",
+# Day 3, 2026-11-05) — the smaller subtitles stay Nastaliq
+HOOK_FONT = {"ur": ("Noto Naskh Arabic", 104), "fa": ("Noto Naskh Arabic", 104)}   # Nastaliq renders small at the Latin size
 # the look per language: cover character + background, frame colour (RGB), zoom, horizontal shift (-1…1), hue shift
 # no rooftop: its skyline is all minarets (owner 2026-10-28: too many mosques)
 LOOK = {
@@ -156,6 +159,8 @@ def main():
         while head and unicodedata.category(head[-1]) in ("So", "Sk", "Cf", "Zs"):
             head = head[:-1].rstrip()
     hook = a.hook or head or re.split(r"(?<=[.!?۔।])\s", spec[a.lang]["1"])[0]
+    if a.lang in ("ur", "fa"):   # the Nastaliq font has no Western digits ("3" vanished, Day 8) and bends straight quotes
+        hook = re.sub(r'"([^"]*)"', r"«\1»", hook).translate(str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹"))
     look = pick_look(a.stem, a.lang)
     font, size = FONT.get(a.lang, "Noto Sans"), SIZE.get(a.lang, 84)
 
@@ -174,7 +179,7 @@ def main():
         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, "
         "StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding",
         f"Style: Sub,{font},{size},&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,7,3,2,90,90,540,1",
-        f"Style: Hook,{font},{int(size * 1.3)},&H0000C8F6,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,10,5,8,70,70,250,1",
+        f"Style: Hook,{HOOK_FONT.get(a.lang, (font, int(size * 1.3)))[0]},{HOOK_FONT.get(a.lang, (font, int(size * 1.3)))[1]},&H0000C8F6,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,10,5,8,70,70,250,1",
         f"Style: Badge,{font},{int(size * 0.8)},&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1",
         "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text",
         f"Dialogue: 1,{ts(0)},{ts(COVER)},Hook,,0,0,0,,{hook}",
