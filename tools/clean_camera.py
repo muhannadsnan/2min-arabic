@@ -6,7 +6,7 @@
 Sound (owner 2026-11-04: "even though I use the mic, the car makes it like a dead echo"): mono + 90 Hz low-cut →
 DeepFilterNet (noise + part of the room tail) → EQ against the car's boxiness (−4 dB around 250 Hz, −2 dB at 120 Hz,
 +2 dB presence at 4 kHz) → a soft downward expander that shortens the echo tail between words → gentle compression →
-−16 LUFS, peak −1.5 dB. Video: each kept part is trimmed, joined with a hard cut (pick cut points where the eyes are
+−22 LUFS (sounds as loud as the −20 LUFS voice lines: the camera clips have fewer pauses), peak −1.5 dB. Video: each kept part is trimmed, joined with a hard cut (pick cut points where the eyes are
 open), 30 fps, the source resolution. --ab writes a before/after sound sample of the first 12 s.
 """
 import argparse, os, pathlib, re, subprocess, tempfile
@@ -59,7 +59,7 @@ def main():
         run([str(TTS_HOME / "venv/bin/python"), "-c", DFN, str(raw), str(dfn)],
             env=dict(os.environ, HF_HOME=str(TTS_HOME / "hf")), stderr=subprocess.DEVNULL)
         run(["ffmpeg", "-v", "error", "-y", "-i", str(dfn), "-af", EQ, str(eq)])
-        gain = -16.0 - loudness(eq)
+        gain = -22.0 - loudness(eq)   # the story lines are at −20 LUFS (split_recording); at −16 the intro played ~5 dB louder and its echo stood out (owner 2026-11-05)
         run(["ffmpeg", "-v", "error", "-y", "-i", str(eq), "-af",
              f"volume={gain:.2f}dB,alimiter=limit={10 ** (-1.5 / 20):.3f}:level=false", "-ar", "48000", str(lvl)])
         if a.patch:
