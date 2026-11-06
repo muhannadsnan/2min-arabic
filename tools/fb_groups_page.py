@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-04b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-06"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -159,11 +159,12 @@ label{{display:flex;gap:8px;align-items:center;margin-top:10px;font-weight:600}}
 details{{margin-top:26px}} summary{{cursor:pointer;font-weight:700}}
 table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,th{{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}}
 .foot{{color:var(--soft);font-size:.8rem;margin-top:24px}}
+button.pend{{background:var(--bg);color:var(--soft);border:1px solid var(--line);padding:4px 10px;font-size:.8rem}}.card.done button.pend.on{{color:var(--terra);border-color:var(--terra)}}.note{{margin:8px 0 0;color:var(--terra);font-size:.88rem;font-weight:600}}.card.done .note{{display:none}}
 </style></head><body><div class="wrap">
 <div id="locked" hidden><h1>Private page</h1><p class="sub">This page is private.</p></div>
 <div id="app" hidden><div class="head"><h1>Group posts</h1><span class="tips">
 <button class="tip" type="button">English ?<span class="pop"><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</span></button>
-<button class="tip" type="button">Other ?<span class="pop"><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.<br><br>Every day: a morning 3 and an evening 3, about 6 hours apart (the same on every device). Skipped ones come back in the next round.</span></button>
+<button class="tip" type="button">Other ?<span class="pop"><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.<br><br><b>"You have a pending post"</b> in a group (the admins haven't approved the last one yet)? Don't post again: tap <b>Still pending</b>. The group is skipped today, and its card reminds you next round.<br><br>Every day: a morning 3 and an evening 3, about 6 hours apart (the same on every device). Skipped ones come back in the next round.</span></button>
 </span></div><p class="sub" id="date"></p>
 <h2>Today</h2><div id="today"></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
@@ -193,6 +194,9 @@ const esc = s => s.replace(/[&<>"]/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;",
 const N = D.order.length, mod = (a, n) => ((a % n) + n) % n;
 function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = Date.now() : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
+// groups whose last post still waits for admin approval (owner 2026-11-06): {{name: {{day, date, n}}}} — n = rounds in a row
+function pends() {{ try {{ return JSON.parse(localStorage.getItem("fbgp") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
+function setPend(name, v) {{ try {{ const p = pends(); v ? p[name] = v : delete p[name]; localStorage.setItem("fbgp", JSON.stringify(p)); }} catch (e) {{}} }}
 // the evening 3 open 6 h after the LAST of the morning 3 was ticked (owner 2026-11-02)
 const GAP = 6 * 3600e3;
 function eveningOpensAt(day) {{
@@ -207,7 +211,8 @@ function slots(day) {{ return Array.from({{length: per(day)}}, (_, k) => D.group
 // a dropped group (no posting allowed) counts as done, so its session can still finish and it shows as a slim note
 const isDone = (t, day, g) => g.dropped || !!t[day + "-" + g.name];
 function card(g, i, day, enIdx) {{
-  const key = day + "-" + g.name, done = !!ticks()[key];
+  const key = day + "-" + g.name, done = !!ticks()[key], pr = pends()[g.name], pendNow = !!(pr && pr.day === day);
+  const pendOld = pr && pr.day < day ? pr : null;
   let body;
   if (g.code === "en") {{
     // the round this card belongs to (round 0 = 31 Oct–7 Nov, the first one the owner posted): the same Reel for all
@@ -225,12 +230,19 @@ function card(g, i, day, enIdx) {{
   const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
   c.innerHTML = `<div class="top"><button class="name">Copy name</button>
     ${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<span class="g">${{esc(g.name)}}</span>`}}
-    <span class="right"><label class="tick"><input type="checkbox" ${{done ? "checked" : ""}}> Posted</label><span class="num">${{i + 1}}</span></span></div>` +
+    <span class="right"><button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? "Pending — skipped" : "Still pending"}}</button><label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{i + 1}}</span></span></div>` +
+    (pendOld ? `<p class="note">${{pendOld.n >= 2 ? `Still pending ${{pendOld.n}} rounds in a row (last: ${{pendOld.date}}). If it's still waiting, tap Still pending and tell Claude to drop this group.`
+      : `Your last post here was still waiting for approval (${{pendOld.date}}). Open the group first: if Facebook says a post is pending, tap Still pending.`}}</p>` : "") +
     body.replace('<div class="btns">', `<div class="btns">`).replace("</div><pre>", `<span class="meta">${{g.members}} members <span class="lang${{g.code === "en" ? " en" : ""}}">${{g.lang}}</span></span></div><div class="box"><pre>`).replace('<button class="copy">Copy text</button>', '<button class="copy">Copy text</button></div>');
   const b = c.querySelector("button.copy"), text = g._text;
   c.querySelector("button.name").onclick = e => navigator.clipboard.writeText(g.name.replace(/ \\(.*\\)$/, "")).then(() => {{ e.target.textContent = "Copied ✓"; setTimeout(() => e.target.textContent = "Copy name", 1500); }});
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
-  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); c.classList.toggle("done", e.target.checked); if (i < 3) render(); }};
+  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); if (e.target.checked) setPend(g.name, null); c.classList.toggle("done", e.target.checked); if (i < 3) render(); }};
+  c.querySelector("button.pend").onclick = () => {{
+    if (pendNow) {{ setPend(g.name, null); tick(key, false); }}                       // tapped by mistake: undo
+    else {{ setPend(g.name, {{day, date: ymd(now), n: (pendOld ? pendOld.n : 0) + 1}}); tick(key, true); }}   // counts as done, so the session can finish
+    render(); fill("yesterday", dayNo - 1, false);
+  }};
   return c;
 }}
 const span2 = ms => {{ const m = Math.max(1, Math.round(ms / 60000)), h = Math.floor(m / 60); return h ? `${{h}} h ${{m % 60}} min` : `${{m}} min`; }};

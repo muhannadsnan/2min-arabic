@@ -199,7 +199,7 @@ missing tracks itself, language by language in priority order, most-viewed first
 4. **Owner (no API for audio tracks):** Studio → the video → Languages → add language → Audio → Add → the m4a.
    Language labels: French · Turkish · Spanish · **Hindi AND Urdu (the same dub-hi.m4a twice)** · **Indonesian AND
    Malay (the same dub-id.m4a twice)** — spoken, these pairs are understood both ways; YouTube plays the track that
-   matches the viewer's language (owner, 2026-10-18). The hand-over lists the files per video. Automatic dubbing stays OFF.
+   matches the viewer's language (owner, 2026-10-18). The hand-over lists the files per video: ~/Downloads/youtube-language-tracks/<stem>/ with each file named by its label only, no numbers ("French.m4a", "Hindi + Urdu.m4a"; owner 2026-11-05) + HOW-TO-ADD.txt. Automatic dubbing stays OFF.
 
 ## Instagram + Facebook language versions — CURRENT RULES (owner 2026-10-30/31, override the older notes below)
 - **The Instagram profile and the Facebook Page stay English-only** ("I can't be a dedicated teacher in each language").
