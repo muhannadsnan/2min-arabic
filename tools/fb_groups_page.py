@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-06"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-07"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -120,7 +120,9 @@ def content():
     return {
         "en": [{"url": "https://www.facebook.com" + v["permalink_url"], "title": v["description"].splitlines()[0][:90],
                 "text": paste_text(v["description"], "en")} for v in en],
-        "files": {l: {"file": f["file"], "title": f["video"], "text": paste_text(f["caption"], l)} for l, f in files.items()},
+        # one video per round per language, like the English Reels (owner 2026-11-07: a group got Day 12 again while its last
+        # Day 12 post was still pending) — data/fb-group-files.json: {lang: [round 0, round 1, …]}, the last one repeats
+        "files": {l: [{"file": f["file"], "title": f["video"], "text": paste_text(f["caption"], l)} for f in fs] for l, fs in files.items()},
         # the YouTube Post that goes with each carousel (tools/yt_post.py; owner 2026-11-04) — shown on its day
         "yt": json.loads((ROOT / "data" / "yt-posts.json").read_text(encoding="utf-8")) if (ROOT / "data" / "yt-posts.json").exists() else [],
     }
@@ -214,16 +216,16 @@ function card(g, i, day, enIdx) {{
   const key = day + "-" + g.name, done = !!ticks()[key], pr = pends()[g.name], pendNow = !!(pr && pr.day === day);
   const pendOld = pr && pr.day < day ? pr : null;
   let body;
+  // the round this card belongs to (round 0 = 31 Oct–4 Nov, the first one the owner posted): the same video for all groups
+  const round = Math.max(Math.floor((first(day) + i + 3) / N), 0);
   if (g.code === "en") {{
-    // the round this card belongs to (round 0 = 31 Oct–7 Nov, the first one the owner posted): the same Reel for all
-    const round = Math.floor((first(day) + i + 3) / N);
     const r = D.en.length ? D.en[Math.min(Math.max(round, 0), D.en.length - 1)] : null;
     body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>
 </div><pre>${{esc(r.text)}}</pre><button class="copy">Copy text</button>` : `<p class="none">No English Reel on the page yet.</p>`;
     g._text = r && r.text;
   }} else {{
-    const f = D.files[g.code];
-    body = f ? `<div class="btns"><span class="file">Upload: <b>${{esc(f.file)}}</b></span></div><pre>${{esc(f.text)}}</pre><button class="copy">Copy text</button>`
+    const fs = D.files[g.code] || [], f = fs[Math.min(round, fs.length - 1)];
+    body = f ? `<div class="btns"><span class="file">Upload: <b>${{esc(f.file)}}</b> <span class="meta">(${{esc(f.title)}})</span></span></div><pre>${{esc(f.text)}}</pre><button class="copy">Copy text</button>`
              : `<p class="none">No ${{g.lang}} version yet: skip this one.</p>`;
     g._text = f && f.text;
   }}

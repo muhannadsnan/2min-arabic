@@ -213,7 +213,7 @@ missing tracks itself, language by language in priority order, most-viewed first
   post. Order: hi → ur → id → tr → ms; videos best first by the unified YouTube + Instagram views (owner 2026-11-01: Day 12 → x03; 2026-11-05: then Day 5 → Day 3 → Day 8 → Day 4 → v01 café → Day 2 — ranked by Instagram views + saves, Instagram rewards the surprise hook); YouTube audio tracks stay ranked by YouTube views — done: x03, x05, Day 12, Day 13, x01, Day 4, Day 3, Day 8, Day 26, x07, Day 21, v02 (all with Persian, 6 Nov); next: Day 1 + x02. No rooftop
   background (minarets). Urdu/Persian badge digits in Eastern numerals (bidi).
 - **Facebook groups:** copy each new version to `~/Downloads/fb-groups/<video>-<language>.mp4` and add it to
-  `data/fb-group-files.json` (file, video, caption) — the owner's page https://muhannadsnan.github.io/2min-arabic/groups.html
+  `data/fb-group-files.json` ({lang: [one {file, video, caption} per round]} — a new video each round, in the trial order; append the next video when one is built, the last repeats) — the owner's page https://muhannadsnan.github.io/2min-arabic/groups.html
   shows today's 3 groups (tools/fb_groups_page.py; no group API exists since 2024).
 
 ## Instagram (owner, 2026-10-17)

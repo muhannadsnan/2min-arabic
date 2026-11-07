@@ -1,27 +1,137 @@
 {
- "hi": {
-  "file": "day12-no-word-for-my/hindi.mp4",
-  "video": "Day 12 — no word for \"my\"",
-  "caption": "अरबी में \"मेरा\" के लिए कोई शब्द नहीं — बस शब्द के आख़िर में एक आवाज़ जोड़िए! 🤯\n\n🆕 ismii — मेरा नाम\nkitaabii — मेरी किताब\nbaytii — मेरा घर\nqahwatii — मेरी कॉफ़ी\nismuka / ismuki — आपका नाम (आदमी / औरत)\n\nरोज़ सिर्फ 2 मिनट में अरबी — 30 दिन में आपकी पहली अरबी बातचीत। और पाठ YouTube पर हिंदी सबटाइटल के साथ (लिंक बायो में)। कमेंट में अरबी में \"मेरी किताब\" लिखिए! 👇\n\n#arabiseekhein #अरबीसीखें #learnarabic #arabicforbeginners #2minutearabic"
- },
- "ur": {
-  "file": "day12-no-word-for-my/urdu.mp4",
-  "video": "Day 12 — no word for \"my\"",
-  "caption": "عربی میں «میرا» کا کوئی لفظ نہیں — بس لفظ کے آخر میں ایک آواز جوڑیں! 🤯\n\n🆕 ismii — میرا نام\nkitaabii — میری کتاب\nbaytii — میرا گھر\nqahwatii — میری کافی\nismuka / ismuki — آپ کا نام (مرد / عورت)\n\nروزانہ صرف 2 منٹ میں عربی — 30 دن میں آپ کی پہلی عربی گفتگو۔ مزید اسباق YouTube پر اردو سب ٹائٹلز کے ساتھ (لنک بائیو میں)۔ کمنٹ میں عربی میں «میری کتاب» لکھیں! 👇\n\n#عربیسیکھیں #learnarabic #arabicforbeginners #2minutearabic"
- },
- "id": {
-  "file": "day12-no-word-for-my/indonesian.mp4",
-  "video": "Day 12 — no word for \"my\"",
-  "caption": "Dalam bahasa Arab tidak ada kata untuk \"milikku\" — cukup tambah satu bunyi di akhir kata! 🤯\n\n🆕 ismii — namaku\nkitaabii — bukuku\nbaytii — rumahku\nqahwatii — kopiku\nismuka / ismuki — namamu (laki-laki / perempuan)\n\nBahasa Arab 2 menit sehari — percakapan Arab pertamamu dalam 30 hari. Pelajaran lainnya di YouTube dengan teks bahasa Indonesia (link di profil). Tulis \"bukuku\" dalam bahasa Arab di komentar! 👇\n\n#belajarbahasaarab #bahasaarab #belajararab #learnarabic #2minutearabic"
- },
- "tr": {
-  "file": "day12-no-word-for-my/turkish.mp4",
-  "video": "Day 12 — no word for \"my\"",
-  "caption": "Arapçada \"benim\" diye bir kelime yok — kelimenin sonuna tek bir ses ekliyorsun! 🤯\n\n🆕 ismii — adım\nkitaabii — kitabım\nbaytii — evim\nqahwatii — kahvem\nismuka / ismuki — senin adın (erkek / kadın)\n\nGünde 2 dakikada Arapça — 30 günde ilk Arapça sohbetin. Daha fazla ders YouTube'da Türkçe altyazıyla (link profilde). Yorumlara Arapça \"kitabım\" yaz! 👇\n\n#arapçaöğren #arapça #arapçaöğreniyorum #learnarabic #2minutearabic"
- },
- "ms": {
-  "file": "day12-no-word-for-my/malay.mp4",
-  "video": "Day 12 — no word for \"my\"",
-  "caption": "Bahasa Arab tiada perkataan untuk \"saya punya\" — cuma tambah satu bunyi di hujung perkataan! 🤯\n\n🆕 ismii — nama saya\nkitaabii — buku saya\nbaytii — rumah saya\nqahwatii — kopi saya\nismuka / ismuki — nama awak (lelaki / perempuan)\n\nBahasa Arab 2 minit sehari — perbualan Arab pertama anda dalam 30 hari. Lebih banyak pelajaran di YouTube dengan sari kata Bahasa Melayu (pautan di bio). Tulis \"buku saya\" dalam bahasa Arab di ruangan komen! 👇\n\n#belajarbahasaarab #bahasaarab #belajararab #learnarabic #2minutearabic"
- }
+ "hi": [
+  {
+   "file": "day12-no-word-for-my/hindi.mp4",
+   "video": "Day 12 — no word for \"my\"",
+   "caption": "अरबी में \"मेरा\" के लिए कोई शब्द नहीं — बस शब्द के आख़िर में एक आवाज़ जोड़िए! 🤯\n\n🆕 ismii — मेरा नाम\nkitaabii — मेरी किताब\nbaytii — मेरा घर\nqahwatii — मेरी कॉफ़ी\nismuka / ismuki — आपका नाम (आदमी / औरत)\n\nरोज़ सिर्फ 2 मिनट में अरबी — 30 दिन में आपकी पहली अरबी बातचीत। और पाठ YouTube पर हिंदी सबटाइटल के साथ (लिंक बायो में)। कमेंट में अरबी में \"मेरी किताब\" लिखिए! 👇\n\n#arabiseekhein #अरबीसीखें #learnarabic #arabicforbeginners #2minutearabic"
+  },
+  {
+   "file": "x03-introduce-yourself/hindi.mp4",
+   "video": "x03 — introduce yourself",
+   "caption": "अरबी में अपना परिचय दें — हर ज़रूरी लफ़्ज़ आप पहले से जानते हैं! 👋\n\n🆕 marhaban — हेलो\nismi … — मेरा नाम …\nana min … — मैं … से हूँ\nana Taalib / Taaliba — मैं स्टूडेंट हूँ\ntasharrafnaa — आपसे मिलकर ख़ुशी हुई\n\nरोज़ सिर्फ़ 2 मिनट अरबी — 30 दिन में आपकी पहली बातचीत। और पाठ YouTube पर हिंदी सबटाइटल के साथ (लिंक बायो में)। अपना परिचय कमेंट में लिखें! 👇\n\n#learnarabicinhindi #arabiseekhein #learnarabicinurdu #learnarabic #2minutearabic"
+  },
+  {
+   "file": "day05-no-is-in-arabic/hindi.mp4",
+   "video": "Day 5 — no word for \"is\"",
+   "caption": "अरबी में «है» के लिए कोई शब्द ही नहीं — बस दो शब्द साथ रखिए! 🤯\n\n🆕 ana — मैं\nanta / anti — तुम (आदमी / औरत)\nhuwa — वह (आदमी)\nhiya — वह (औरत)\nana sa'iid / sa'iida — मैं ख़ुश हूँ\nana Taalib / Taaliba — मैं स्टूडेंट हूँ\n\nरोज़ सिर्फ़ 2 मिनट अरबी — 30 दिन में आपकी पहली अरबी बातचीत। और पाठ YouTube पर हिंदी सबटाइटल के साथ (लिंक बायो में)। कमेंट में अरबी में लिखिए: ana … 👇\n\n#arabiseekhein #अरबीसीखें #learnarabic #arabicforbeginners #2minutearabic"
+  },
+  {
+   "file": "day03-first-conversation/hindi.mp4",
+   "video": "Day 3 — first conversation",
+   "caption": "एक असली अरबी बातचीत समझिए — कैफ़े में सामी और लीना की पहली मुलाक़ात! ☕\n\n🆕 tasharrafnaa — आपसे मिलकर ख़ुशी हुई\nkayfa haaluk? — आप कैसे हैं?\nwa anti? — और आप? (औरत से)\nmaa khuttatuka l-yawm? — आज आपका क्या प्लान है?\nadrusu l-'arabiyya — मैं अरबी पढ़ता / पढ़ती हूँ\na'malu fi l-maktaba — मैं किताबों की दुकान में काम करता / करती हूँ\n\nरोज़ सिर्फ़ 2 मिनट अरबी — 30 दिन में आपकी पहली अरबी बातचीत। और पाठ YouTube पर हिंदी सबटाइटल के साथ (लिंक बायो में)। आज आपका क्या प्लान है? कमेंट में अरबी में जवाब दीजिए! 👇\n\n#arabiseekhein #अरबीसीखें #learnarabic #arabicforbeginners #2minutearabic"
+  },
+  {
+   "file": "day08-where-are-you-from/hindi.mp4",
+   "video": "Day 8 — where are you from?",
+   "caption": "अरबी में \"आप कहाँ से हैं?\" सिर्फ़ 3 शब्द — और एक शब्द आप पहले से जानते हैं! 🌍\n\n🆕 min ayna anta? / min ayna anti? — आप कहाँ से हैं? (आदमी / औरत)\nana min … — मैं … से हूँ\nSuuriyaa — सीरिया\nLubnaan — लेबनान\nAlmaaniyaa — जर्मनी\nal-Hind — भारत\n\nरोज़ सिर्फ़ 2 मिनट अरबी — 30 दिन में आपकी पहली अरबी बातचीत। और पाठ YouTube पर हिंदी सबटाइटल के साथ (लिंक बायो में)। आप कहाँ से हैं? कमेंट में अरबी में लिखिए: ana min … 👇\n\n#arabiseekhein #अरबीसीखें #learnarabic #arabicforbeginners #2minutearabic"
+  }
+ ],
+ "ur": [
+  {
+   "file": "day12-no-word-for-my/urdu.mp4",
+   "video": "Day 12 — no word for \"my\"",
+   "caption": "عربی میں «میرا» کا کوئی لفظ نہیں — بس لفظ کے آخر میں ایک آواز جوڑیں! 🤯\n\n🆕 ismii — میرا نام\nkitaabii — میری کتاب\nbaytii — میرا گھر\nqahwatii — میری کافی\nismuka / ismuki — آپ کا نام (مرد / عورت)\n\nروزانہ صرف 2 منٹ میں عربی — 30 دن میں آپ کی پہلی عربی گفتگو۔ مزید اسباق YouTube پر اردو سب ٹائٹلز کے ساتھ (لنک بائیو میں)۔ کمنٹ میں عربی میں «میری کتاب» لکھیں! 👇\n\n#عربیسیکھیں #learnarabic #arabicforbeginners #2minutearabic"
+  },
+  {
+   "file": "x03-introduce-yourself/urdu.mp4",
+   "video": "x03 — introduce yourself",
+   "caption": "عربی میں اپنا تعارف کروائیں — ہر ضروری لفظ آپ پہلے سے جانتے ہیں! 👋\n\n🆕 marhaban — ہیلو\nismi … — میرا نام …\nana min … — میں … سے ہوں\nana Taalib / Taaliba — میں طالب علم ہوں\ntasharrafnaa — آپ سے مل کر خوشی ہوئی\n\nروزانہ صرف 2 منٹ عربی — 30 دن میں آپ کی پہلی عربی گفتگو۔ مزید اسباق یوٹیوب پر اردو سب ٹائٹلز کے ساتھ (لنک بایو میں)۔ کمنٹ میں اپنا تعارف لکھیں! 👇\n\n#عربی_سیکھیں #learnarabicinurdu #arabiseekhein #learnarabic #2minutearabic"
+  },
+  {
+   "file": "day05-no-is-in-arabic/urdu.mp4",
+   "video": "Day 5 — no word for \"is\"",
+   "caption": "عربی میں «ہے» کے لیے کوئی لفظ ہی نہیں — بس دو لفظ ساتھ رکھیں! 🤯\n\n🆕 ana — میں\nanta / anti — تم (مرد / عورت)\nhuwa — وہ (مرد)\nhiya — وہ (عورت)\nana sa'iid / sa'iida — میں خوش ہوں\nana Taalib / Taaliba — میں طالب علم ہوں\n\nروزانہ صرف 2 منٹ میں عربی — 30 دن میں آپ کی پہلی عربی گفتگو۔ مزید اسباق YouTube پر اردو سب ٹائٹلز کے ساتھ (لنک بائیو میں)۔ کمنٹ میں عربی میں لکھیں: ana … 👇\n\n#عربیسیکھیں #learnarabicinurdu #learnarabic #arabicforbeginners #2minutearabic"
+  },
+  {
+   "file": "day03-first-conversation/urdu.mp4",
+   "video": "Day 3 — first conversation",
+   "caption": "ایک اصلی عربی گفتگو سمجھیں — کیفے میں سامی اور لینا کی پہلی ملاقات! ☕\n\n🆕 tasharrafnaa — آپ سے مل کر خوشی ہوئی\nkayfa haaluk? — آپ کیسے ہیں؟\nwa anti? — اور آپ؟ (عورت سے)\nmaa khuttatuka l-yawm? — آج آپ کا کیا پلان ہے؟\nadrusu l-'arabiyya — میں عربی پڑھتا / پڑھتی ہوں\na'malu fi l-maktaba — میں کتابوں کی دکان میں کام کرتا / کرتی ہوں\n\nروزانہ صرف 2 منٹ میں عربی — 30 دن میں آپ کی پہلی عربی گفتگو۔ مزید اسباق YouTube پر اردو سب ٹائٹلز کے ساتھ (لنک بائیو میں)۔ آج آپ کا کیا پلان ہے؟ کمنٹ میں عربی میں جواب دیں! 👇\n\n#عربیسیکھیں #learnarabicinurdu #learnarabic #arabicforbeginners #2minutearabic"
+  },
+  {
+   "file": "day08-where-are-you-from/urdu.mp4",
+   "video": "Day 8 — where are you from?",
+   "caption": "عربی میں \"آپ کہاں سے ہیں؟\" صرف 3 لفظ — اور ایک لفظ آپ پہلے سے جانتے ہیں! 🌍\n\n🆕 min ayna anta? / min ayna anti? — آپ کہاں سے ہیں؟ (مرد / عورت)\nana min … — میں … سے ہوں\nSuuriyaa — شام\nLubnaan — لبنان\nAlmaaniyaa — جرمنی\nBaakistaan — پاکستان\n\nروزانہ صرف 2 منٹ میں عربی — 30 دن میں آپ کی پہلی عربی گفتگو۔ مزید اسباق YouTube پر اردو سب ٹائٹلز کے ساتھ (لنک بائیو میں)۔ آپ کہاں سے ہیں؟ کمنٹ میں عربی میں لکھیں: ana min … 👇\n\n#عربیسیکھیں #learnarabicinurdu #learnarabic #arabicforbeginners #2minutearabic"
+  }
+ ],
+ "id": [
+  {
+   "file": "day12-no-word-for-my/indonesian.mp4",
+   "video": "Day 12 — no word for \"my\"",
+   "caption": "Dalam bahasa Arab tidak ada kata untuk \"milikku\" — cukup tambah satu bunyi di akhir kata! 🤯\n\n🆕 ismii — namaku\nkitaabii — bukuku\nbaytii — rumahku\nqahwatii — kopiku\nismuka / ismuki — namamu (laki-laki / perempuan)\n\nBahasa Arab 2 menit sehari — percakapan Arab pertamamu dalam 30 hari. Pelajaran lainnya di YouTube dengan teks bahasa Indonesia (link di profil). Tulis \"bukuku\" dalam bahasa Arab di komentar! 👇\n\n#belajarbahasaarab #bahasaarab #belajararab #learnarabic #2minutearabic"
+  },
+  {
+   "file": "x03-introduce-yourself/indonesian.mp4",
+   "video": "x03 — introduce yourself",
+   "caption": "Perkenalkan dirimu dalam bahasa Arab — kamu sudah tahu semua katanya! 👋\n\n🆕 marhaban — halo\nismi … — namaku …\nana min … — aku dari …\nana Taalib / Taaliba — aku pelajar\ntasharrafnaa — senang berkenalan\n\nBahasa Arab 2 menit sehari — percakapan bahasa Arab pertamamu dalam 30 hari. Pelajaran lainnya di YouTube dengan teks bahasa Indonesia (link di profil). Tulis perkenalanmu di komentar! 👇\n\n#belajarbahasaarab #bahasaarab #belajararab #learnarabic #2minutearabic"
+  },
+  {
+   "file": "day05-no-is-in-arabic/indonesian.mp4",
+   "video": "Day 5 — no word for \"is\"",
+   "caption": "Bahasa Arab tidak punya kata untuk \"adalah\" — cukup letakkan dua kata berdampingan! 🤯\n\n🆕 ana — aku\nanta / anti — kamu (laki-laki / perempuan)\nhuwa — dia (laki-laki)\nhiya — dia (perempuan)\nana sa'iid / sa'iida — aku bahagia\nana Taalib / Taaliba — aku pelajar\n\nBahasa Arab 2 menit sehari — percakapan bahasa Arab pertamamu dalam 30 hari. Pelajaran lainnya di YouTube dengan teks bahasa Indonesia (link di profil). Tulis dalam bahasa Arab di komentar: ana … 👇\n\n#belajarbahasaarab #bahasaarab #belajararab #learnarabic #2minutearabic"
+  },
+  {
+   "file": "day03-first-conversation/indonesian.mp4",
+   "video": "Day 3 — first conversation",
+   "caption": "Pahami percakapan bahasa Arab sungguhan — Sami bertemu Lina di kafe! ☕\n\n🆕 tasharrafnaa — senang berkenalan\nkayfa haaluk? — apa kabar?\nwa anti? — kalau kamu? (ke perempuan)\nmaa khuttatuka l-yawm? — apa rencanamu hari ini?\nadrusu l-'arabiyya — aku belajar bahasa Arab\na'malu fi l-maktaba — aku bekerja di toko buku\n\nBahasa Arab 2 menit sehari — percakapan bahasa Arab pertamamu dalam 30 hari. Pelajaran lainnya di YouTube dengan teks bahasa Indonesia (link di profil). Apa rencanamu hari ini? Jawab dalam bahasa Arab di komentar! 👇\n\n#belajarbahasaarab #bahasaarab #belajararab #learnarabic #2minutearabic"
+  },
+  {
+   "file": "day08-where-are-you-from/indonesian.mp4",
+   "video": "Day 8 — where are you from?",
+   "caption": "\"Dari mana asalmu?\" dalam bahasa Arab cuma 3 kata — dan satu sudah kamu tahu! 🌍\n\n🆕 min ayna anta? / min ayna anti? — dari mana asalmu? (laki-laki / perempuan)\nana min … — aku dari …\nSuuriyaa — Suriah\nLubnaan — Lebanon\nAlmaaniyaa — Jerman\nal-Hind — India\n\nBahasa Arab 2 menit sehari — percakapan bahasa Arab pertamamu dalam 30 hari. Pelajaran lainnya di YouTube dengan teks bahasa Indonesia (link di profil). Kamu dari mana? Jawab dalam bahasa Arab di komentar: ana min … 👇\n\n#belajarbahasaarab #bahasaarab #belajararab #learnarabic #2minutearabic"
+  }
+ ],
+ "tr": [
+  {
+   "file": "day12-no-word-for-my/turkish.mp4",
+   "video": "Day 12 — no word for \"my\"",
+   "caption": "Arapçada \"benim\" diye bir kelime yok — kelimenin sonuna tek bir ses ekliyorsun! 🤯\n\n🆕 ismii — adım\nkitaabii — kitabım\nbaytii — evim\nqahwatii — kahvem\nismuka / ismuki — senin adın (erkek / kadın)\n\nGünde 2 dakikada Arapça — 30 günde ilk Arapça sohbetin. Daha fazla ders YouTube'da Türkçe altyazıyla (link profilde). Yorumlara Arapça \"kitabım\" yaz! 👇\n\n#arapçaöğren #arapça #arapçaöğreniyorum #learnarabic #2minutearabic"
+  },
+  {
+   "file": "x03-introduce-yourself/turkish.mp4",
+   "video": "x03 — introduce yourself",
+   "caption": "Arapça kendini tanıt — gereken her kelimeyi zaten biliyorsun! 👋\n\n🆕 marhaban — merhaba\nismi … — benim adım …\nana min … — ben …'liyim\nana Taalib / Taaliba — öğrenciyim\ntasharrafnaa — memnun oldum\n\nGünde 2 dakikada Arapça — 30 günde ilk Arapça sohbetin. Daha fazla ders YouTube'da Türkçe altyazıyla (link profilde). Kendini yorumlarda tanıt! 👇\n\n#arapçaöğren #arapça #arapçaöğreniyorum #learnarabic #2minutearabic"
+  },
+  {
+   "file": "day05-no-is-in-arabic/turkish.mp4",
+   "video": "Day 5 — no word for \"is\"",
+   "caption": "Arapçada \"-dır / -dir\" diye bir şey yok — iki kelimeyi yan yana koy, cümle hazır! 🤯\n\n🆕 ana — ben\nanta / anti — sen (erkeğe / kadına)\nhuwa — o (erkek)\nhiya — o (kadın)\nana sa'iid / sa'iida — mutluyum\nana Taalib / Taaliba — öğrenciyim\n\nGünde sadece 2 dakikada Arapça — 30 günde ilk Arapça sohbetin. Diğer dersler YouTube'da Türkçe altyazıyla (link profilde). Yorumlara Arapça yaz: ana … 👇\n\n#arapçaöğren #arapça #arapçaöğreniyorum #learnarabic #2minutearabic"
+  },
+  {
+   "file": "day03-first-conversation/turkish.mp4",
+   "video": "Day 3 — first conversation",
+   "caption": "Gerçek bir Arapça sohbeti anla — Sami ve Lina kafede ilk kez tanışıyor! ☕\n\n🆕 tasharrafnaa — memnun oldum\nkayfa haaluk? — nasılsın?\nwa anti? — ya sen? (kadına)\nmaa khuttatuka l-yawm? — bugün planın ne?\nadrusu l-'arabiyya — Arapça çalışıyorum\na'malu fi l-maktaba — kitapçıda çalışıyorum\n\nGünde sadece 2 dakikada Arapça — 30 günde ilk Arapça sohbetin. Diğer dersler YouTube'da Türkçe altyazıyla (link profilde). Bugün planın ne? Yorumlara Arapça cevap yaz! 👇\n\n#arapçaöğren #arapça #arapçaöğreniyorum #learnarabic #2minutearabic"
+  },
+  {
+   "file": "day08-where-are-you-from/turkish.mp4",
+   "video": "Day 8 — where are you from?",
+   "caption": "Arapçada \"Nerelisin?\" sadece 3 kelime — birini zaten biliyorsun! 🌍\n\n🆕 min ayna anta? / min ayna anti? — nerelisin? (erkeğe / kadına)\nana min … — ben …'liyim\nSuuriyaa — Suriye\nLubnaan — Lübnan\nAlmaaniyaa — Almanya\nal-Hind — Hindistan\n\nGünde sadece 2 dakikada Arapça — 30 günde ilk Arapça sohbetin. Diğer dersler YouTube'da Türkçe altyazıyla (link profilde). Sen nerelisin? Yorumlara Arapça yaz: ana min … 👇\n\n#arapçaöğren #arapça #arapçaöğreniyorum #learnarabic #2minutearabic"
+  }
+ ],
+ "ms": [
+  {
+   "file": "day12-no-word-for-my/malay.mp4",
+   "video": "Day 12 — no word for \"my\"",
+   "caption": "Bahasa Arab tiada perkataan untuk \"saya punya\" — cuma tambah satu bunyi di hujung perkataan! 🤯\n\n🆕 ismii — nama saya\nkitaabii — buku saya\nbaytii — rumah saya\nqahwatii — kopi saya\nismuka / ismuki — nama awak (lelaki / perempuan)\n\nBahasa Arab 2 minit sehari — perbualan Arab pertama anda dalam 30 hari. Lebih banyak pelajaran di YouTube dengan sari kata Bahasa Melayu (pautan di bio). Tulis \"buku saya\" dalam bahasa Arab di ruangan komen! 👇\n\n#belajarbahasaarab #bahasaarab #belajararab #learnarabic #2minutearabic"
+  },
+  {
+   "file": "x03-introduce-yourself/malay.mp4",
+   "video": "x03 — introduce yourself",
+   "caption": "Perkenalkan diri dalam bahasa Arab — awak sudah tahu semua perkataannya! 👋\n\n🆕 marhaban — hai\nismi … — nama saya …\nana min … — saya dari …\nana Taalib / Taaliba — saya pelajar\ntasharrafnaa — selamat berkenalan\n\nBahasa Arab 2 minit sehari — perbualan bahasa Arab pertama awak dalam 30 hari. Lebih banyak pelajaran dengan sari kata Bahasa Melayu di YouTube (pautan di bio). Perkenalkan diri di ruangan komen! 👇\n\n#belajarbahasaarab #bahasaarab #belajararab #learnarabic #2minutearabic"
+  },
+  {
+   "file": "day05-no-is-in-arabic/malay.mp4",
+   "video": "Day 5 — no word for \"is\"",
+   "caption": "Bahasa Arab tiada perkataan untuk \"ialah\" — letak sahaja dua perkataan bersebelahan! 🤯\n\n🆕 ana — saya\nanta / anti — awak (lelaki / perempuan)\nhuwa — dia (lelaki)\nhiya — dia (perempuan)\nana sa'iid / sa'iida — saya gembira\nana Taalib / Taaliba — saya pelajar\n\nBahasa Arab 2 minit sehari — perbualan bahasa Arab pertama anda dalam 30 hari. Pelajaran lain di YouTube dengan sari kata Bahasa Melayu (pautan di bio). Tulis dalam bahasa Arab di komen: ana … 👇\n\n#belajarbahasaarab #bahasaarab #learnarabic #arabicforbeginners #2minutearabic"
+  },
+  {
+   "file": "day03-first-conversation/malay.mp4",
+   "video": "Day 3 — first conversation",
+   "caption": "Fahami perbualan bahasa Arab yang sebenar — Sami berjumpa Lina di kafe! ☕\n\n🆕 tasharrafnaa — gembira berkenalan\nkayfa haaluk? — apa khabar?\nwa anti? — awak pula? (kepada perempuan)\nmaa khuttatuka l-yawm? — apa rancangan awak hari ini?\nadrusu l-'arabiyya — saya belajar bahasa Arab\na'malu fi l-maktaba — saya bekerja di kedai buku\n\nBahasa Arab 2 minit sehari — perbualan bahasa Arab pertama anda dalam 30 hari. Pelajaran lain di YouTube dengan sari kata Bahasa Melayu (pautan di bio). Apa rancangan awak hari ini? Jawab dalam bahasa Arab di komen! 👇\n\n#belajarbahasaarab #bahasaarab #learnarabic #arabicforbeginners #2minutearabic"
+  },
+  {
+   "file": "day08-where-are-you-from/malay.mp4",
+   "video": "Day 8 — where are you from?",
+   "caption": "\"Awak dari mana?\" dalam bahasa Arab hanya 3 perkataan — dan satu awak sudah tahu! 🌍\n\n🆕 min ayna anta? / min ayna anti? — awak dari mana? (lelaki / perempuan)\nana min … — saya dari …\nSuuriyaa — Syria\nLubnaan — Lubnan\nAlmaaniyaa — Jerman\nMaaliiziyaa — Malaysia\n\nBahasa Arab 2 minit sehari — perbualan bahasa Arab pertama anda dalam 30 hari. Pelajaran lain di YouTube dengan sari kata Bahasa Melayu (pautan di bio). Awak dari mana? Jawab dalam bahasa Arab di komen: ana min … 👇\n\n#belajarbahasaarab #bahasaarab #learnarabic #arabicforbeginners #2minutearabic"
+  }
+ ]
 }
