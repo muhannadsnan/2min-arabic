@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-07d"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-07e"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -343,7 +343,7 @@ function allTable() {{
   }};
   const when = d => {{ const x = new Date(now); x.setDate(x.getDate() + d - dayNo);
     return d === dayNo ? "today" : d === dayNo + 1 ? "tomorrow" : x.toLocaleDateString("en-GB", {{weekday: "short", day: "numeric", month: "short"}}); }};
-  document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Language</th><th>Next</th></tr>" +
+  document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Next video</th></tr>" +
     D.order.map((gi, i) => {{
       const g = D.groups[gi]; let next = "—";
       if (g.dropped) next = "dropped";
@@ -352,7 +352,7 @@ function allTable() {{
         if (nt && list.length) {{ const v = list[videoIdx(g, nt[0], nt[1], list.length)];
           next = `${{esc(short(v.title))}}<br><span class="meta">${{when(nt[0])}}, ${{nt[1] < 3 ? "morning" : "evening"}}${{pends()[g.name] ? " · was pending" : ""}}</span>`; }}
       }}
-      return `<tr><td>${{i + 1}}</td><td>${{esc(g.name)}}</td><td><span class="lang ${{g.code}}">${{g.lang}}</span></td><td>${{next}}</td></tr>`;
+      return `<tr><td>${{i + 1}}</td><td><span class="lang ${{g.code}}">${{g.lang}}</span> ${{esc(g.name)}}</td><td>${{next}}</td></tr>`;
     }}).join("") + "</table>";
 }}
 allTable();
