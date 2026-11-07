@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-07b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-07d"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -149,7 +149,7 @@ h1{{font-size:1.5rem;margin:0 0 4px}} h3{{font-size:1rem;margin:14px 0 8px;color
 .top{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}.top .right{{margin-left:auto;display:flex;gap:8px;align-items:center;white-space:nowrap}}.top .meta{{display:flex;gap:6px;align-items:center}}.top .lang{{margin:0}}.tick{{margin:0;display:flex;gap:6px;align-items:center;font-weight:600}}.card.done pre,.card.done button.copy,.card.done .btns{{display:none}}.card.done{{padding-bottom:8px;padding-top:8px;border-color:transparent}}.btns{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}.btns .meta{{margin-left:auto;display:flex;gap:6px;align-items:center}}.box{{position:relative}}.box pre{{padding-right:120px}}.box button.copy{{position:absolute;top:8px;right:8px;padding:8px 12px}}.head{{display:flex;align-items:center;gap:10px;flex-wrap:wrap}}.tips{{margin-left:auto;display:flex;gap:6px}}button.tip{{position:relative;background:var(--card);color:var(--soft);border:1px solid var(--line);font-size:.8rem;padding:4px 10px}}.tip .pop{{display:none;position:absolute;right:0;top:110%;width:min(320px,85vw);background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px;font-weight:400;font-size:.9rem;text-align:left;box-shadow:0 6px 24px rgba(0,0,0,.25);z-index:5}}.tip:hover .pop,.tip:focus .pop,.tip:focus-within .pop{{display:block}}
 .num{{background:var(--terra);color:#fff;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-weight:700;flex:none}}
 .g{{font-weight:700;font-size:1.08rem}} .meta{{color:var(--soft);font-size:.88rem}}
-.lang.en{{background:#d93025!important}}.lang{{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}}
+/* one colour per language (owner 2026-11-07) */.lang.en{{background:#d93025!important}}.lang.id{{background:#1f7a4d!important}}.lang.tr{{background:#c2620a!important}}.lang.hi{{background:#7b3fc4!important}}.lang.ur{{background:#0b7285!important}}.lang.ms{{background:#c2255c!important}}.lang{{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}}
 .btns{{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 10px;align-items:center}}
 a.btn,button{{font:inherit;font-weight:600;border-radius:10px;padding:10px 14px;border:0;cursor:pointer;text-decoration:none}}
 a.btn{{background:var(--teal);color:#fff}} a.btn.grp{{background:#3b5998}} button.copy{{background:var(--terra);color:#fff}}
@@ -248,7 +248,7 @@ function card(g, i, day, enIdx) {{
     <span class="right"><button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? "Pending — skipped" : "Still pending"}}</button><label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{i + 1}}</span></span></div>` +
     (pendOld ? `<p class="note">${{pendOld.n >= 2 ? `Still pending ${{pendOld.n}} rounds in a row (last: ${{pendOld.date}}). If it's still waiting, tap Still pending and tell Claude to drop this group.`
       : `Your last post here was still waiting for approval (${{pendOld.date}}). Open the group first: if Facebook says a post is pending, tap Still pending.`}}</p>` : "") +
-    body.replace('<div class="btns">', `<div class="btns">`).replace("</div><pre>", `<span class="meta">${{g.members}} members <span class="lang${{g.code === "en" ? " en" : ""}}">${{g.lang}}</span></span></div><div class="box"><pre>`).replace('<button class="copy">Copy text</button>', '<button class="copy">Copy text</button></div>');
+    body.replace('<div class="btns">', `<div class="btns">`).replace("</div><pre>", `<span class="meta">${{g.members}} members <span class="lang ${{g.code}}">${{g.lang}}</span></span></div><div class="box"><pre>`).replace('<button class="copy">Copy text</button>', '<button class="copy">Copy text</button></div>');
   const b = c.querySelector("button.copy"), text = g._text;
   c.querySelector("button.name").onclick = e => navigator.clipboard.writeText(g.name.replace(/ \\(.*\\)$/, "")).then(() => {{ e.target.textContent = "Copied ✓"; setTimeout(() => e.target.textContent = "Copy name", 1500); }});
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
@@ -294,7 +294,7 @@ function ytCard() {{
   wrap.querySelector("input").onchange = e => {{ tick(key, e.target.checked); wrap.querySelector(".card").classList.toggle("done", e.target.checked); }};
   return wrap;
 }}
-function render() {{ fill("today", dayNo, true); const y = ytCard(); if (y) document.getElementById("today").prepend(y); }}
+function render() {{ if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); const y = ytCard(); if (y) document.getElementById("today").prepend(y); }}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
 const UPD = Array.from({{length: 16}}, (_, k) => 5 + k).map(h => h);  // checks at :05 (laptop) and :25 (GitHub)
 function footer() {{
@@ -331,8 +331,31 @@ setInterval(refresh, 5 * 60000);
 document.addEventListener("visibilitychange", refresh);   // back to the tab → check at once
 document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "long"}});
 render(); setInterval(() => {{ if (document.querySelector(".card.locked")) render(); }}, 60000); fill("yesterday", dayNo - 1, false);
-document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Language</th></tr>" +
-  D.order.map((g, i) => `<tr><td>${{i + 1}}</td><td>${{esc(D.groups[g].name)}}</td><td>${{D.groups[g].lang}}</td></tr>`).join("") + "</table>";
+// the table also shows each group's next turn and the video it will get (owner 2026-11-07)
+function allTable() {{
+  const t = ticks(), short = s => s.length > 42 ? s.slice(0, 40) + "…" : s;
+  const nextTurn = name => {{
+    for (let d = dayNo; d < dayNo + 60; d++) {{
+      const k = slots(d).findIndex(x => x.name === name);
+      if (k >= 0 && !(d === dayNo && t[d + "-" + name])) return [d, k];
+    }}
+    return null;
+  }};
+  const when = d => {{ const x = new Date(now); x.setDate(x.getDate() + d - dayNo);
+    return d === dayNo ? "today" : d === dayNo + 1 ? "tomorrow" : x.toLocaleDateString("en-GB", {{weekday: "short", day: "numeric", month: "short"}}); }};
+  document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Language</th><th>Next</th></tr>" +
+    D.order.map((gi, i) => {{
+      const g = D.groups[gi]; let next = "—";
+      if (g.dropped) next = "dropped";
+      else {{
+        const nt = nextTurn(g.name), list = g.code === "en" ? D.en : (D.files[g.code] || []);
+        if (nt && list.length) {{ const v = list[videoIdx(g, nt[0], nt[1], list.length)];
+          next = `${{esc(short(v.title))}}<br><span class="meta">${{when(nt[0])}}, ${{nt[1] < 3 ? "morning" : "evening"}}${{pends()[g.name] ? " · was pending" : ""}}</span>`; }}
+      }}
+      return `<tr><td>${{i + 1}}</td><td>${{esc(g.name)}}</td><td><span class="lang ${{g.code}}">${{g.lang}}</span></td><td>${{next}}</td></tr>`;
+    }}).join("") + "</table>";
+}}
+allTable();
 }}
 </script></body></html>
 """
