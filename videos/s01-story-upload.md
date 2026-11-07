@@ -8,7 +8,7 @@
 
 1. ✅ You uploaded it (private, 7 Nov).
 2. Claude fills everything (incl. the 13 translations) and schedules it on the **long chain: Sun 8 Nov, 17:00 Oslo** (the day after Part 5).
-3. You: **Video elements** below (end screen, card) + Education Type/Level in Studio.
+3. You: **Video elements** below (end screen, card, quiz) + Education Type/Level in Studio.
 
 ## Title
 
@@ -97,6 +97,8 @@ arabic short story for beginners, easy arabic stories for beginners, arabic stor
 | **Subtitles** | Claude uploads `output/s01-story/captions-upload.srt` (English, synced to this file) |
 | **End screen** | Template "1 video, 1 subscribe" over the last 10 s (the accounts card): video = **Episode 1** (Learn Arabic for Beginners: Full Course from Zero), subscribe element. Keep both off the middle, where the 3 accounts are. |
 | **Cards** | Playlist card at 1:44 ("Questions about the story") → "30 Days to Your First Arabic Conversation", teaser "Learn Arabic from Day 1" |
+| **Quiz** | Q: In the story in the past, يذهب (goes) becomes…? · ✅ ذهب (dhahaba — went) · سيذهب (sa-yadh-hab — will go) · يمشي (yamshii — walks) · Explanation: for the past, drop the ي at the start: يذهب → ذهب. For the future, add سـ in front: سيذهب. |
+| Quiz (spare, if Studio allows a 2nd) | Q: Who arrives at the market first? · ✅ Maher the turtle · Rami the horse · Hani the sheep · Explanation: Rami is fast, but he sleeps under the tree, and Maher keeps walking. |
 
 ## Pinned comment
 
