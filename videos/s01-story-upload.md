@@ -7,7 +7,7 @@
 ## Fast way
 
 1. ✅ You uploaded it (private, 7 Nov).
-2. Claude fills everything (incl. the 13 translations) and schedules it on the **long chain: Sun 8 Nov, 17:00 Oslo** (the day after Part 5).
+2. Claude fills everything (incl. the 13 translations) and schedules it on the **long chain: Sun 8 Nov, 12:00 Oslo** (the day after Part 5; 12:00 so it doesn't go out with the Day 30 Short at 17:00).
 3. You: **Video elements** below (end screen, card, quiz) + Education Type/Level in Studio.
 
 ## Title
@@ -88,7 +88,7 @@ arabic short story for beginners, easy arabic stories for beginners, arabic stor
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |
 | Automatic chapters / places / concepts | ✅ / ❌ / ❌ |
-| Visibility | Schedule: 8 Nov, 17:00 Oslo |
+| Visibility | Schedule: 8 Nov, 12:00 Oslo |
 
 ## Video elements (Studio → the video → Editor)
 
