@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-07e"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-07f"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -149,7 +149,7 @@ h1{{font-size:1.5rem;margin:0 0 4px}} h3{{font-size:1rem;margin:14px 0 8px;color
 .top{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}.top .right{{margin-left:auto;display:flex;gap:8px;align-items:center;white-space:nowrap}}.top .meta{{display:flex;gap:6px;align-items:center}}.top .lang{{margin:0}}.tick{{margin:0;display:flex;gap:6px;align-items:center;font-weight:600}}.card.done pre,.card.done button.copy,.card.done .btns{{display:none}}.card.done{{padding-bottom:8px;padding-top:8px;border-color:transparent}}.btns{{display:flex;gap:8px;align-items:center;flex-wrap:wrap}}.btns .meta{{margin-left:auto;display:flex;gap:6px;align-items:center}}.box{{position:relative}}.box pre{{padding-right:120px}}.box button.copy{{position:absolute;top:8px;right:8px;padding:8px 12px}}.head{{display:flex;align-items:center;gap:10px;flex-wrap:wrap}}.tips{{margin-left:auto;display:flex;gap:6px}}button.tip{{position:relative;background:var(--card);color:var(--soft);border:1px solid var(--line);font-size:.8rem;padding:4px 10px}}.tip .pop{{display:none;position:absolute;right:0;top:110%;width:min(320px,85vw);background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px;font-weight:400;font-size:.9rem;text-align:left;box-shadow:0 6px 24px rgba(0,0,0,.25);z-index:5}}.tip:hover .pop,.tip:focus .pop,.tip:focus-within .pop{{display:block}}
 .num{{background:var(--terra);color:#fff;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-weight:700;flex:none}}
 .g{{font-weight:700;font-size:1.08rem}} .meta{{color:var(--soft);font-size:.88rem}}
-/* one colour per language (owner 2026-11-07) */.lang.en{{background:#d93025!important}}.lang.id{{background:#1f7a4d!important}}.lang.tr{{background:#c2620a!important}}.lang.hi{{background:#7b3fc4!important}}.lang.ur{{background:#0b7285!important}}.lang.ms{{background:#c2255c!important}}.lang{{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}}
+/* one colour per language (owner 2026-11-07) */.lang{{min-width:7.4em;text-align:center;box-sizing:border-box}}.lang.en{{background:#d93025!important}}.lang.id{{background:#1f7a4d!important}}.lang.tr{{background:#c2620a!important}}.lang.hi{{background:#7b3fc4!important}}.lang.ur{{background:#0b7285!important}}.lang.ms{{background:#c2255c!important}}.lang{{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:600;margin-right:6px}}
 .btns{{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 10px;align-items:center}}
 a.btn,button{{font:inherit;font-weight:600;border-radius:10px;padding:10px 14px;border:0;cursor:pointer;text-decoration:none}}
 a.btn{{background:var(--teal);color:#fff}} a.btn.grp{{background:#3b5998}} button.copy{{background:var(--terra);color:#fff}}
