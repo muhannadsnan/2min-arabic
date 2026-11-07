@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-07"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-07b"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
@@ -199,6 +199,19 @@ function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = Date.now() : delet
 // groups whose last post still waits for admin approval (owner 2026-11-06): {{name: {{day, date, n}}}} — n = rounds in a row
 function pends() {{ try {{ return JSON.parse(localStorage.getItem("fbgp") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function setPend(name, v) {{ try {{ const p = pends(); v ? p[name] = v : delete p[name]; localStorage.setItem("fbgp", JSON.stringify(p)); }} catch (e) {{}} }}
+// which video each group got (owner 2026-11-07: "that group has not got the x03"): {{"day-name": video index}}. A group
+// skipped as pending gets the video it missed next time and never jumps one; on-time groups follow the round.
+function sentLog() {{ try {{ return JSON.parse(localStorage.getItem("fbgs") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
+function logSent(k, idx) {{ try {{ const s = sentLog(); idx === null ? delete s[k] : s[k] = idx; localStorage.setItem("fbgs", JSON.stringify(s)); }} catch (e) {{}} }}
+const roundOf = (day, k) => Math.max(Math.floor((first(day) + k + 3) / N), 0);
+function videoIdx(g, day, i, n) {{
+  const round = roundOf(day, i), s = sentLog(), mine = Object.keys(s).filter(k => k.endsWith("-" + g.name)).map(k => s[k]);
+  let idx = round;
+  if (mine.length) idx = Math.min(Math.max(...mine) + 1, round);
+  else {{ const pr = pends()[g.name];                                   // skipped before this log existed: the round it missed
+    if (pr && pr.day < day) {{ const k = slots(pr.day).findIndex(x => x.name === g.name); if (k >= 0) idx = roundOf(pr.day, k); }} }}
+  return Math.max(0, Math.min(idx, n - 1));
+}}
 // the evening 3 open 6 h after the LAST of the morning 3 was ticked (owner 2026-11-02)
 const GAP = 6 * 3600e3;
 function eveningOpensAt(day) {{
@@ -217,14 +230,14 @@ function card(g, i, day, enIdx) {{
   const pendOld = pr && pr.day < day ? pr : null;
   let body;
   // the round this card belongs to (round 0 = 31 Oct–4 Nov, the first one the owner posted): the same video for all groups
-  const round = Math.max(Math.floor((first(day) + i + 3) / N), 0);
+  let shown = 0;   // the video index this card shows (logged when ticked Posted)
   if (g.code === "en") {{
-    const r = D.en.length ? D.en[Math.min(Math.max(round, 0), D.en.length - 1)] : null;
+    shown = videoIdx(g, day, i, D.en.length); const r = D.en.length ? D.en[shown] : null;
     body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>
 </div><pre>${{esc(r.text)}}</pre><button class="copy">Copy text</button>` : `<p class="none">No English Reel on the page yet.</p>`;
     g._text = r && r.text;
   }} else {{
-    const fs = D.files[g.code] || [], f = fs[Math.min(round, fs.length - 1)];
+    const fs = D.files[g.code] || []; shown = videoIdx(g, day, i, fs.length); const f = fs[shown];
     body = f ? `<div class="btns"><span class="file">Upload: <b>${{esc(f.file)}}</b> <span class="meta">(${{esc(f.title)}})</span></span></div><pre>${{esc(f.text)}}</pre><button class="copy">Copy text</button>`
              : `<p class="none">No ${{g.lang}} version yet: skip this one.</p>`;
     g._text = f && f.text;
@@ -239,7 +252,7 @@ function card(g, i, day, enIdx) {{
   const b = c.querySelector("button.copy"), text = g._text;
   c.querySelector("button.name").onclick = e => navigator.clipboard.writeText(g.name.replace(/ \\(.*\\)$/, "")).then(() => {{ e.target.textContent = "Copied ✓"; setTimeout(() => e.target.textContent = "Copy name", 1500); }});
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
-  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); if (e.target.checked) setPend(g.name, null); c.classList.toggle("done", e.target.checked); if (i < 3) render(); }};
+  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); logSent(key, e.target.checked ? shown : null); if (e.target.checked) setPend(g.name, null); c.classList.toggle("done", e.target.checked); if (i < 3) render(); }};
   c.querySelector("button.pend").onclick = () => {{
     if (pendNow) {{ setPend(g.name, null); tick(key, false); }}                       // tapped by mistake: undo
     else {{ setPend(g.name, {{day, date: ymd(now), n: (pendOld ? pendOld.n : 0) + 1}}); tick(key, true); }}   // counts as done, so the session can finish
