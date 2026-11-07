@@ -102,10 +102,17 @@ def wide(a):
     W, H = 1280, 720
     im = Image.new("RGB", (W, H), (255, 246, 233))
     src = Image.open(a.image).convert("RGB")
-    s = H / src.height if src.width / src.height > 540 / 720 else 540 / src.width
-    src = src.resize((int(src.width * s), int(src.height * s)))
-    im.paste(src.crop(((src.width - 540) // 2, (src.height - 720) // 2, (src.width + 540) // 2, (src.height + 720) // 2)),
-             (W - 540, 0))
+    if a.crop:   # zoom into a part of the picture first (x,y,w,h fractions)
+        x, y, w, h = map(float, a.crop.split(","))
+        src = src.crop((int(x * src.width), int(y * src.height), int((x + w) * src.width), int((y + h) * src.height)))
+    if a.fit:    # the whole picture on white paper, like a picture-book page (story pictures: two characters side by side)
+        PW = 620; s = min(PW / src.width, (H - 40) / src.height); src = src.resize((int(src.width * s), int(src.height * s)), Image.LANCZOS)
+        im.paste((255, 255, 255), (0, 0, W, H)); im.paste(src, (W - PW - 10 + (PW - src.width) // 2, (H - src.height) // 2))   # all paper-white
+    else:
+        s = H / src.height if src.width / src.height > 540 / 720 else 540 / src.width
+        src = src.resize((int(src.width * s), int(src.height * s)))
+        im.paste(src.crop(((src.width - 540) // 2, (src.height - 720) // 2, (src.width + 540) // 2, (src.height + 720) // 2)),
+                 (W - 540, 0))
     d = ImageDraw.Draw(im)
     d.rounded_rectangle((50, 50, 470, 130), radius=40, fill=YELLOW)
     f = fit(d, a.badge, BOLD, 46, 380)
@@ -149,6 +156,7 @@ def main():
     ap.add_argument("--arabic", default="")
     ap.add_argument("--wide", action="store_true")
     ap.add_argument("--crop", default="", help="zoom into the object: x,y,w,h as fractions of the source image")
+    ap.add_argument("--fit", action="store_true", help="wide only: show the whole (cropped) picture on white instead of filling the panel")
     ap.add_argument("--style", choices=["subject", "classic"], default="subject",
                     help="subject (default, 2026-10-16): big English subject words + small Arabic; classic: the old layout")
     a = ap.parse_args()

@@ -446,15 +446,51 @@ def caption_box(frame, ar, en, x0=60, x1=None):
     draw_en(d, en, fe, (x0 + x1) / 2, y - 6, x1 - x0 - 80)
 
 
+CHAPTERS = ["The story", "Questions about the story", "Opposites: fast and slow, before and after", "The story in the past",
+            "The story in the future"]   # one per star (the 5 sections); the camera intro/outro + the end card frame them
+
+
+def write_captions(segs, total, out):
+    """captions-upload.srt (the English lines as shown on screen; a question and its answer = two cues) + chapters.txt."""
+    cues = []
+    for s in segs:
+        k = s["kind"]
+        if k == "camera":
+            cues += [(a, b, e) for (a, b), e in zip(s["subs"], s["en"])]
+        elif k == "qa":
+            cues += [(*s["q_span"], s["qe"]), (*s["a_span"], s["ae"])]
+        elif k in ("story", "talk", "pair"):
+            cues.append((*s["span"], s["en"]))
+    ts = lambda x: "%02d:%02d:%02d,%03d" % (x // 3600, x % 3600 // 60, x % 60, round(x % 1 * 1000) % 1000)
+    srt = out.parent / "captions-upload.srt"
+    srt.write_text("\n".join(f"{i}\n{ts(a)} --> {ts(min(b, total))}\n{e}\n" for i, (a, b, e) in enumerate(cues, 1)), encoding="utf-8")
+    # chapters: a section starts where the previous star's segment ends (the first after the intro)
+    starts, names, k = [0.0], ["Intro: a turtle before a horse?"], 0
+    for i, s in enumerate(segs):
+        if s["kind"] == "camera" and i == 0:
+            starts.append(s["end"]); names.append(CHAPTERS[0]); k = 1
+        elif s.get("stars") and i + 1 < len(segs):
+            nxt = segs[i + 1]
+            if k < len(CHAPTERS): starts.append(nxt["start"]); names.append(CHAPTERS[k]); k += 1
+            elif nxt["kind"] == "camera": starts.append(nxt["start"]); names.append("Your turn: tell the story")
+    mmss = lambda x: f"{int(x // 60)}:{int(x % 60):02d}"
+    (out.parent / "chapters.txt").write_text("\n".join(f"{mmss(t)} {n}" for t, n in zip(starts, names)) + "\n", encoding="utf-8")
+    print(f"{srt} ({len(cues)} cues) · {out.parent / 'chapters.txt'}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("spec"); ap.add_argument("out")
     ap.add_argument("--from", dest="t0", type=float, default=0); ap.add_argument("--to", dest="t1", type=float)
     ap.add_argument("--preview", action="store_true", help="ignore recordings: placeholders everywhere")
     ap.add_argument("--square", action="store_true", help="the clay owner in a small square on story/qa (off: owner 2026-11-03)")
+    ap.add_argument("--captions", action="store_true", help="no render: write captions-upload.srt + chapters.txt next to OUT "
+                    "from the same timeline (English, as on screen)")
     a = ap.parse_args()
     spec = json.loads((ROOT / a.spec).read_text())
     segs, voice, mouthv, total = build(spec, a.preview)
+    if a.captions:
+        return write_captions(segs, total, ROOT / a.out)
     star_times = [x for s in segs for x in s.get("stars", [])]
     t1 = min(a.t1 or total, total)
 
