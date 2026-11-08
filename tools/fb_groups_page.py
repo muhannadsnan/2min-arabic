@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-08d"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-08e"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -68,7 +68,8 @@ GROUPS = [(x["name"], x["lang"], x["members"], x["kind"]) for x in _G]
 DROPPED = {x["name"] for x in _G if x.get("dropped")}
 URLS = {x["name"]: x.get("url", "") for x in _G}
 START_IDX = {x["name"]: x["start"] for x in _G if x.get("start")}
-SHARE = {x["name"] for x in _G if x.get("share")}   # new group already posted to by hand before its first turn
+SHARE = {x["name"] for x in _G if x.get("share")}
+TODO = {x["name"]: x["todo"] for x in _G if x.get("todo")}   # an open question for the owner (shown on the to-do card)   # new group already posted to by hand before its first turn
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
 CLOSE = {
     "en": "I'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂",
@@ -189,7 +190,7 @@ button.pend{{background:var(--bg);color:var(--soft);border:1px solid var(--line)
 <button class="tip" type="button">English ?<span class="pop"><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</span></button>
 <button class="tip" type="button">Other ?<span class="pop"><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.<br><br><b>"You have a pending post"</b> in a group (the admins haven't approved the last one yet)? Don't post again: tap <b>Still pending</b>. The group is skipped today, gets the video it missed next round, and its card reminds you to check first.<br><br>Every day: a morning 3 and an evening 3, about 6 hours apart (the same on every device). Skipped ones come back in the next round.</span></button>
 </span></div><p class="sub" id="date"></p>
-<h2>Today</h2><div id="today"></div>
+<div id="todo"></div><h2>Today</h2><div id="today"></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
 <details><summary>All groups, in rotation order</summary><div id="all"></div></details>
 </div><p class="foot" id="foot" data-built="{built}" data-fp="{fp}"></p>
@@ -324,7 +325,20 @@ function ytCard() {{
   wrap.querySelector("input").onchange = e => {{ tick(key, e.target.checked); wrap.querySelector(".card").classList.toggle("done", e.target.checked); }};
   return wrap;
 }}
-function render() {{ if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); const y = ytCard(); if (y) document.getElementById("today").prepend(y); }}
+// Facebook to-dos (owner 2026-11-08: "remind me of those to remove"): dropped groups to leave (tick "Left"), groups to test
+function todoCard() {{
+  let left = {{}}; try {{ left = JSON.parse(localStorage.getItem("fbgl") || "{{}}"); }} catch (e) {{}}
+  const leave = D.groups.filter(g => g.dropped && !g.todo && !left[g.name]), test = D.groups.filter(g => g.todo);
+  const box = document.getElementById("todo"); box.innerHTML = "";
+  if (!leave.length && !test.length) return;
+  box.innerHTML = `<h3>Facebook to-dos</h3><div class="card">` +
+    (leave.length ? `<p class="meta" style="margin:0 0 6px">Leave these groups (they don't allow our posts) — open → Joined ▾ → Leave group:</p>` +
+      leave.map(g => `<label class="tick" style="margin:4px 0"><input type="checkbox" data-n="${{esc(g.name)}}"> ${{esc(g.name)}}</label>`).join("") : "") +
+    (test.length ? `<p class="meta" style="margin:${{leave.length ? 12 : 0}}px 0 6px">To check, then tell Claude:</p>` +
+      test.map(g => `<p style="margin:4px 0"><b>${{esc(g.name)}}</b> — ${{esc(g.todo)}}</p>`).join("") : "") + `</div>`;
+  box.querySelectorAll("input").forEach(i => i.onchange = () => {{ try {{ left[i.dataset.n] = Date.now(); localStorage.setItem("fbgl", JSON.stringify(left)); }} catch (e) {{}} todoCard(); }});
+}}
+function render() {{ todoCard(); if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); const y = ytCard(); if (y) document.getElementById("today").prepend(y); }}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
 const UPD = Array.from({{length: 16}}, (_, k) => 5 + k).map(h => h);  // checks at :05 (laptop) and :25 (GitHub)
 function footer() {{
@@ -398,7 +412,7 @@ def main():
         src = pathlib.Path(sys.argv[sys.argv.index("--set-groups") + 1])
         (ROOT / "data" / "fb-groups.enc").write_text(seal(json.dumps(json.loads(src.read_text(encoding="utf-8")), ensure_ascii=False)) + "\n")
         print("data/fb-groups.enc updated"); return
-    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE} for n, l, m, k in GROUPS]
+    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE, "todo": TODO.get(n, "")} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
         p = pathlib.Path(tempfile.gettempdir()) / "groups.html"; p.write_text(out, encoding="utf-8"); print(p); return
