@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-08b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-08c"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -67,6 +67,7 @@ _G = json.loads(unseal((ROOT / "data" / "fb-groups.enc").read_text()))
 GROUPS = [(x["name"], x["lang"], x["members"], x["kind"]) for x in _G]
 DROPPED = {x["name"] for x in _G if x.get("dropped")}
 URLS = {x["name"]: x.get("url", "") for x in _G}
+START_IDX = {x["name"]: x["start"] for x in _G if x.get("start")}   # new group already posted to by hand before its first turn
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
 CLOSE = {
     "en": "I'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂",
@@ -215,7 +216,7 @@ let BASE = null;   // the video each old group gets at its first turn in the big
 function base(name) {{
   if (!BASE) {{ BASE = {{}}; D.order_old.forEach(gi => {{ const nm = D.groups[gi].name;
     for (let d = E - 1; d > E - 40; d--) {{ const k = slots(d).findIndex(x => x.name === nm); if (k >= 0) {{ BASE[nm] = oldRound(d, k) + 1; break; }} }} }}); }}
-  return BASE[name] || 0;   // new groups: the first video
+  return BASE[name] || (D.groups.find(g => g.name === name) || {{}}).start || 0;   // new groups: the first video, or "start" if posted early by hand
 }}
 const roundOf = (day, k) => day < E ? oldRound(day, k) : base(slots(day)[k].name) + Math.floor((6 * (day - E) + k) / N);
 function videoIdx(g, day, i, n) {{
@@ -383,7 +384,7 @@ def main():
         src = pathlib.Path(sys.argv[sys.argv.index("--set-groups") + 1])
         (ROOT / "data" / "fb-groups.enc").write_text(seal(json.dumps(json.loads(src.read_text(encoding="utf-8")), ensure_ascii=False)) + "\n")
         print("data/fb-groups.enc updated"); return
-    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED} for n, l, m, k in GROUPS]
+    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0)} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
         p = pathlib.Path(tempfile.gettempdir()) / "groups.html"; p.write_text(out, encoding="utf-8"); print(p); return
