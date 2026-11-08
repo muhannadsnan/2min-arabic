@@ -31,8 +31,13 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-07g"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-08"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
+# 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
+# too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
+# OLD_N groups (ticks + history stay right); from EPOCH a new rotation of all groups, and each old group continues
+# with the video after the one its last old turn showed (new groups start at the first video).
+EPOCH, OLD_N = "2026-11-09", 23
 # the owner's groups (2026-10-31); (name, language, members, type). Target 3–5 per language.
 
 
@@ -73,11 +78,11 @@ CLOSE = {
 }
 
 
-def order():
+def order(groups=None):
     """Rotation: each language's groups spread evenly over the round (English has 10 of 23), so a day rarely gets
     the same language twice."""
     by = {}
-    for i, g in enumerate(GROUPS):
+    for i, g in enumerate(GROUPS if groups is None else groups):
         by.setdefault(g[1], []).append(i)
     slots = [((k + 0.5) / len(ids), -len(ids), i) for ids in by.values() for k, i in enumerate(ids)]
     return [i for *_, i in sorted(slots)]
@@ -129,7 +134,8 @@ def content():
 
 
 def page(groups, rotation, data):
-    plain = json.dumps({"groups": groups, "order": rotation, "start": START, **data}, ensure_ascii=False)
+    plain = json.dumps({"groups": groups, "order": rotation, "order_old": order(GROUPS[:OLD_N]), "start": START,
+                        "epoch": EPOCH, **data}, ensure_ascii=False)
     blob = seal(plain)
     fp = hashlib.sha256((plain + TEMPLATE_VERSION).encode()).hexdigest()[:16]   # content fingerprint: the ciphertext changes every run
     built = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -193,7 +199,8 @@ const now = new Date(new Date().toLocaleString("en-US", {{timeZone: "Europe/Oslo
 const ymd = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 const dayNo = Math.round((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - Date.parse(D.start + "T00:00:00Z")) / 864e5);
 const esc = s => s.replace(/[&<>"]/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}})[c]);
-const N = D.order.length, mod = (a, n) => ((a % n) + n) % n;
+const N = D.order.length, NO = D.order_old.length, mod = (a, n) => ((a % n) + n) % n;
+const E = Math.round((Date.parse(D.epoch + "T00:00:00Z") - Date.parse(D.start + "T00:00:00Z")) / 864e5);   // first day of the big rotation
 function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = Date.now() : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
 // groups whose last post still waits for admin approval (owner 2026-11-06): {{name: {{day, date, n}}}} — n = rounds in a row
@@ -203,7 +210,14 @@ function setPend(name, v) {{ try {{ const p = pends(); v ? p[name] = v : delete 
 // skipped as pending gets the video it missed next time and never jumps one; on-time groups follow the round.
 function sentLog() {{ try {{ return JSON.parse(localStorage.getItem("fbgs") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function logSent(k, idx) {{ try {{ const s = sentLog(); idx === null ? delete s[k] : s[k] = idx; localStorage.setItem("fbgs", JSON.stringify(s)); }} catch (e) {{}} }}
-const roundOf = (day, k) => Math.max(Math.floor((first(day) + k + 3) / N), 0);
+const oldRound = (day, k) => Math.max(Math.floor((first(day) + k + 3) / NO), 0);
+let BASE = null;   // the video each old group gets at its first turn in the big rotation = the one after its last old turn
+function base(name) {{
+  if (!BASE) {{ BASE = {{}}; D.order_old.forEach(gi => {{ const nm = D.groups[gi].name;
+    for (let d = E - 1; d > E - 40; d--) {{ const k = slots(d).findIndex(x => x.name === nm); if (k >= 0) {{ BASE[nm] = oldRound(d, k) + 1; break; }} }} }}); }}
+  return BASE[name] || 0;   // new groups: the first video
+}}
+const roundOf = (day, k) => day < E ? oldRound(day, k) : base(slots(day)[k].name) + Math.floor((6 * (day - E) + k) / N);
 function videoIdx(g, day, i, n) {{
   const round = roundOf(day, i), s = sentLog(), mine = Object.keys(s).filter(k => k.endsWith("-" + g.name)).map(k => s[k]);
   let idx = round;
@@ -222,7 +236,8 @@ function eveningOpensAt(day) {{
 // 3 a day until 2 Nov, 5 a day from 3 Nov (owner 2026-11-02) — the rotation continues where it was
 const per = day => day < 1 ? 3 : 6;   // 3 + 3: a morning and an evening session ~6 h apart (owner 2026-11-02)
 const first = day => day < 1 ? 3 * day : 3 + 6 * (day - 1);
-function slots(day) {{ return Array.from({{length: per(day)}}, (_, k) => D.groups[D.order[mod(first(day) + k, N)]]); }}
+function slots(day) {{ return Array.from({{length: per(day)}}, (_, k) => day < E ? D.groups[D.order_old[mod(first(day) + k, NO)]]
+                                                                 : D.groups[D.order[mod(6 * (day - E) + k, N)]]); }}
 // a dropped group (no posting allowed) counts as done, so its session can still finish and it shows as a slim note
 const isDone = (t, day, g) => g.dropped || !!t[day + "-" + g.name];
 function card(g, i, day, enIdx) {{
