@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-08c"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-08d"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -67,7 +67,8 @@ _G = json.loads(unseal((ROOT / "data" / "fb-groups.enc").read_text()))
 GROUPS = [(x["name"], x["lang"], x["members"], x["kind"]) for x in _G]
 DROPPED = {x["name"] for x in _G if x.get("dropped")}
 URLS = {x["name"]: x.get("url", "") for x in _G}
-START_IDX = {x["name"]: x["start"] for x in _G if x.get("start")}   # new group already posted to by hand before its first turn
+START_IDX = {x["name"]: x["start"] for x in _G if x.get("start")}
+SHARE = {x["name"] for x in _G if x.get("share")}   # new group already posted to by hand before its first turn
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
 CLOSE = {
     "en": "I'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂",
@@ -107,6 +108,18 @@ def is_english(caption):
     return not re.search(r"[؀-ۿऀ-ॿ]|Arapça|bahasa Arab|tiada|minit", first, re.I)
 
 
+# share-mode groups (owner 2026-11-08): a language group that blocks video uploads but lets members SHARE → it gets the
+# English Reel, with the paste text in its own language (who we are + the YouTube subtitles in that language)
+SUBS = {"id": "▶️ YouTube: 2 Minute Arabic (ada subtitle bahasa Indonesia)", "ms": "▶️ YouTube: 2 Minute Arabic (ada sari kata Bahasa Melayu)",
+        "tr": "▶️ YouTube: 2 Minute Arabic (Türkçe altyazılı)", "ur": "▶️ YouTube: 2 Minute Arabic (اردو سب ٹائٹلز کے ساتھ)",
+        "hi": "▶️ YouTube: 2 Minute Arabic (Hindi subtitles ke saath)"}
+
+
+def share_text(caption, lang):
+    hook = paste_text(caption, "en").split("\n\n")[0]
+    return "\n\n".join([hook, CLOSE[lang], SUBS[lang]])
+
+
 def paste_text(caption, lang):
     """The lesson part of the caption + a friendly line; drops hashtags, other-language lines and 'link in bio'."""
     keep = [p for p in caption.strip().split("\n\n")
@@ -125,7 +138,8 @@ def content():
     files = json.loads((ROOT / "data" / "fb-group-files.json").read_text(encoding="utf-8"))
     return {
         "en": [{"url": "https://www.facebook.com" + v["permalink_url"], "title": v["description"].splitlines()[0][:90],
-                "text": paste_text(v["description"], "en")} for v in en],
+                "text": paste_text(v["description"], "en"),
+                "local": {l: share_text(v["description"], l) for l in SUBS}} for v in en],
         # one video per round per language, like the English Reels (owner 2026-11-07: a group got Day 12 again while its last
         # Day 12 post was still pending) — data/fb-group-files.json: {lang: [round 0, round 1, …]}, the last one repeats
         "files": {l: [{"file": f["file"], "title": f["video"], "text": paste_text(f["caption"], l)} for f in fs] for l, fs in files.items()},
@@ -247,11 +261,11 @@ function card(g, i, day, enIdx) {{
   let body;
   // the round this card belongs to (round 0 = 31 Oct–4 Nov, the first one the owner posted): the same video for all groups
   let shown = 0;   // the video index this card shows (logged when ticked Posted)
-  if (g.code === "en") {{
-    shown = videoIdx(g, day, i, D.en.length); const r = D.en.length ? D.en[shown] : null;
-    body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>
-</div><pre>${{esc(r.text)}}</pre><button class="copy">Copy text</button>` : `<p class="none">No English Reel on the page yet.</p>`;
-    g._text = r && r.text;
+  if (g.code === "en" || g.share) {{   // share mode: a language group that only lets members share → the English Reel
+    shown = videoIdx(g, day, i, D.en.length); const r = D.en.length ? D.en[shown] : null, txt = r && (g.share ? r.local[g.code] : r.text);
+    body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>${{g.share ? ` <span class="file">Share the English Reel (this group allows no uploads)</span>` : ""}}
+</div><pre>${{esc(txt)}}</pre><button class="copy">Copy text</button>` : `<p class="none">No English Reel on the page yet.</p>`;
+    g._text = txt;
   }} else {{
     const fs = D.files[g.code] || []; shown = videoIdx(g, day, i, fs.length); const f = fs[shown];
     body = f ? `<div class="btns"><span class="file">Upload: <b>${{esc(f.file)}}</b> <span class="meta">(${{esc(f.title)}})</span></span></div><pre>${{esc(f.text)}}</pre><button class="copy">Copy text</button>`
@@ -364,7 +378,7 @@ function allTable() {{
       const g = D.groups[gi]; let next = "—";
       if (g.dropped) next = "dropped";
       else {{
-        const nt = nextTurn(g.name), list = g.code === "en" ? D.en : (D.files[g.code] || []);
+        const nt = nextTurn(g.name), list = g.code === "en" || g.share ? D.en : (D.files[g.code] || []);
         if (nt && list.length) {{ const v = list[videoIdx(g, nt[0], nt[1], list.length)];
           next = `<span class="vt" title="${{esc(v.title)}}">${{esc(v.title)}}</span><span class="meta">${{when(nt[0])}}, ${{nt[1] < 3 ? "morning" : "evening"}}${{pends()[g.name] ? " · was pending" : ""}}</span>`; }}
       }}
@@ -384,7 +398,7 @@ def main():
         src = pathlib.Path(sys.argv[sys.argv.index("--set-groups") + 1])
         (ROOT / "data" / "fb-groups.enc").write_text(seal(json.dumps(json.loads(src.read_text(encoding="utf-8")), ensure_ascii=False)) + "\n")
         print("data/fb-groups.enc updated"); return
-    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0)} for n, l, m, k in GROUPS]
+    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
         p = pathlib.Path(tempfile.gettempdir()) / "groups.html"; p.write_text(out, encoding="utf-8"); print(p); return
