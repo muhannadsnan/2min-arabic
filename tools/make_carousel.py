@@ -44,7 +44,7 @@ def trimmed(im, pad=0.06):
     """A drawing on white paper cut to the drawing itself (owner 2026-11-09: "enlarge the image as double"), paper → white."""
     g = im.convert("L"); paper = sorted(g.resize((32, 32)).get_flattened_data())[-100]
     im = im.point(lambda v: min(255, round(v * 255 / max(paper, 1))))
-    ink = im.convert("L").point(lambda v: 255 if v < 225 else 0).filter(ImageFilter.GaussianBlur(6)).point(lambda v: 255 if v > 90 else 0)
+    ink = im.convert("L").point(lambda v: 255 if v < 238 else 0).filter(ImageFilter.GaussianBlur(5)).point(lambda v: 255 if v > 40 else 0)   # faint pencil counts (the thumbs-down's thumb was cut off)
     box = ink.getbbox() or (0, 0, im.width, im.height)   # faint loose strokes far out don't count (blur + threshold)
     px, py = int((box[2] - box[0]) * pad), int((box[3] - box[1]) * pad)
     return im.crop((max(0, box[0] - px), max(0, box[1] - py), min(im.width, box[2] + px), min(im.height, box[3] + py)))
@@ -160,6 +160,11 @@ def main():
         sys.exit("no 'N/M' word cards in this script")
     if pick:
         words = [words[k - 1] for k in pick]
+    if opt.get("cards"):   # cards=file.json: [[arabic, translit, english], …] — the carousel's own list (owner 2026-11-09:
+        # simplest transliteration for beginners, "ashrab" not "ashrabu"; extra words like good/bad); pictures p01…pNN
+        import json as _j
+        words = [(0, minimal(a), t, e) for a, t, e in _j.loads(pathlib.Path(opt["cards"]).read_text(encoding="utf-8"))]
+        pick = list(range(1, len(words) + 1))
     out = ROOT / "output" / "carousel" / stem; out.mkdir(parents=True, exist_ok=True)
     for f in out.glob("slide-*.jpg"): f.unlink()
     import json
@@ -185,7 +190,7 @@ def main():
     lesson = yt.group(1).replace("\\|", "|").split(" | ")[0] if yt else "the full lesson"
     total = len([1 for x in screens if x and re.search(r"(Word |Phrase |Question )?\d+/\d+$", x.strip())])
     more = f" (all {total} words)" if pick and total > len(words) else ""
-    cap = (f"{re.sub(r"\b(Of|The|And|In|To|A)\b", lambda m: m[0].lower(), title.title())} {sub} 👇 Save this and swipe through it once a day this week.\n\n"
+    cap = (f"{re.sub(r"\b(Of|The|And|In|To|A|Or)\b", lambda m: m[0].lower(), title.title())} {sub} 👇 Save this and swipe through it once a day this week.\n\n"
            + "\n".join(f"{a} — {t} — {e}" for _, a, t, e in words)
            + f"\n\nFull lesson{more}: \"{lesson}\" on YouTube, link in bio ▶️\nWhich one will you use first? Tell me in the comments 👇\n\n"
            + "#learnarabic #arabicvocabulary #arabicforbeginners #2minutearabic\n")
