@@ -42,8 +42,13 @@ def is_drawing(im):
 
 def trimmed(im, pad=0.06):
     """A drawing on white paper cut to the drawing itself (owner 2026-11-09: "enlarge the image as double"), paper → white."""
-    g = im.convert("L"); paper = sorted(g.resize((32, 32)).get_flattened_data())[-100]
-    im = im.point(lambda v: min(255, round(v * 255 / max(paper, 1))))
+    # flat-field: divide by the paper's own brightness (a wide blur of the brightest nearby pixels), so grey or
+    # unevenly lit paper turns pure white everywhere (the thumbs-up came on grey paper → a grey box on the slide)
+    small = im.convert("L").resize((im.width // 8, im.height // 8))
+    bg = small.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.GaussianBlur(12)).resize(im.size, Image.BILINEAR)
+    from PIL import ImageMath
+    im = Image.merge("RGB", [ImageMath.lambda_eval(lambda e: e["convert"](e["min"](e["c"] * 262.65 / e["max"](e["bg"], 1), 255), "L"),
+                                                   c=ch.convert("F"), bg=bg.convert("F")) for ch in im.split()])
     ink = im.convert("L").point(lambda v: 255 if v < 238 else 0).filter(ImageFilter.GaussianBlur(5)).point(lambda v: 255 if v > 40 else 0)   # faint pencil counts (the thumbs-down's thumb was cut off)
     box = ink.getbbox() or (0, 0, im.width, im.height)   # faint loose strokes far out don't count (blur + threshold)
     px, py = int((box[2] - box[0]) * pad), int((box[3] - box[1]) * pad)
