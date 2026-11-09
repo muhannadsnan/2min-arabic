@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-09b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-09c"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -69,7 +69,8 @@ DROPPED = {x["name"] for x in _G if x.get("dropped")}
 URLS = {x["name"]: x.get("url", "") for x in _G}
 START_IDX = {x["name"]: x["start"] for x in _G if x.get("start")}
 SHARE = {x["name"] for x in _G if x.get("share")}
-LEFT = {x["name"] for x in _G if x.get("left")}   # the owner already left the group on Facebook
+LEFT = {x["name"] for x in _G if x.get("left")}
+FRESH = {x["name"] for x in _G if x.get("added") and not x.get("start")}   # joined, never posted to yet → can't be pending   # the owner already left the group on Facebook
 TODO = {x["name"]: x["todo"] for x in _G if x.get("todo")}   # an open question for the owner (shown on the to-do card)   # new group already posted to by hand before its first turn
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
 CLOSE = {
@@ -300,12 +301,17 @@ function xpicks() {{ try {{ return JSON.parse(localStorage.getItem("fbgx") || "{
 function extras(box, day, from, to) {{
   const t = ticks(), p = pends(), today = new Set(slots(day).map(g => g.name)), X = xpicks(), mine = X[day] || [];
   const need = slots(day).slice(from, to).filter(g => g.dropped || (p[g.name] && p[g.name].day === day)).length;
-  const used = new Set(Object.values(X).flat()), out = [];
-  mine.filter(x => x.s === from).forEach(x => {{ if (out.length < need) out.push(x); }});        // kept picks first (stay put once ticked)
-  for (let d = day + 1; d < day + 30 && out.length < need; d++) slots(d).forEach((g, k) => {{
-    if (out.length >= need || g.dropped || p[g.name] || today.has(g.name) || used.has(g.name) || t[d + "-" + g.name]) return;
-    out.push({{n: g.name, d, k, s: from}}); used.add(g.name);
+  const skipped = x => p[x.n] && p[x.n].day === x.d;   // an extra marked Still pending → it needs a replacement too
+  const used = new Set(Object.values(X).flat().map(x => x.n)), out = [], ok = () => out.filter(x => !skipped(x)).length;
+  mine.filter(x => x.s === from).forEach(x => out.push(x));                                          // kept picks stay put
+  // candidates: first the groups we never posted to (joined 8 Nov — nothing can be pending there), then the rest in line
+  const cand = [], sent = Object.keys(sentLog());
+  for (let d = day + 1; d < day + 30; d++) slots(d).forEach((g, k) => {{
+    if (g.dropped || p[g.name] || today.has(g.name) || used.has(g.name) || t[d + "-" + g.name] || cand.some(c => c.n === g.name)) return;
+    cand.push({{n: g.name, d, k, s: from, fresh: g.fresh && !sent.some(x => x.endsWith("-" + g.name))}});   // posted once → may be pending
   }});
+  cand.sort((a, b) => (b.fresh ? 1 : 0) - (a.fresh ? 1 : 0));   // stable: keeps the line order inside each group
+  for (const c of cand) {{ if (ok() >= need) break; out.push(c); }}
   if (!out.length) return;
   X[day] = mine.filter(x => x.s !== from).concat(out);
   try {{ localStorage.setItem("fbgx", JSON.stringify(Object.fromEntries(Object.entries(X).filter(([k]) => +k >= day - 1)))); }} catch (e) {{}}
@@ -434,7 +440,7 @@ def main():
         src = pathlib.Path(sys.argv[sys.argv.index("--set-groups") + 1])
         (ROOT / "data" / "fb-groups.enc").write_text(seal(json.dumps(json.loads(src.read_text(encoding="utf-8")), ensure_ascii=False)) + "\n")
         print("data/fb-groups.enc updated"); return
-    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE, "todo": TODO.get(n, ""), "left": n in LEFT} for n, l, m, k in GROUPS]
+    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE, "todo": TODO.get(n, ""), "left": n in LEFT, "fresh": n in FRESH} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
         p = pathlib.Path(tempfile.gettempdir()) / "groups.html"; p.write_text(out, encoding="utf-8"); print(p); return
