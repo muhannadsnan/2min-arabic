@@ -30,7 +30,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
   Day 12 hi (2,375 views, record) posted 30 Oct, ur/id/tr/ms queued as trials 31 Oct–3 Nov; **2 Nov check:**
   < ~30 views each or the "shared before" warning → stop dubs; ~100 → continue, maybe 2/day after 2 weeks) · **Instagram carousel Wed + Sun 19:00** (GitHub
   instagram-carousel.yml, queue `ig-carousel`; 7–8 slides = cover + 5–6 words + closing; the words of the latest
-  Instagram Reel's video; every picture a dedicated close-up made for the slide, every hand finger-checked at full
+  Instagram Reel's video; every picture a dedicated close-up made for the slide **in the story drawing style (pencil + watercolour picture book; owner 2026-11-09 — the 3D ones gave a fish-chicken)**, every picture checked at FULL size (not only the contact sheet), every hand finger-checked at full
   size; owner approves each batch — tools/make_carousel.py + tools/ig_carousel_add.py; queued: Day 19 directions
   1 Nov, body parts 4 Nov) · **YouTube Post Mon / Wed / Fri** (owner posts by hand, Claude prepares picture + text):
   a teaser for the newest YouTube video with 2 new words or sentences + the video attached (a post takes pictures OR a video, not both); every other one a quiz. Files: output/yt-posts/<date>-<video>/ (post.txt + HOW.md).
