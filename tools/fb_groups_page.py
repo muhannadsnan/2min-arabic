@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-09e"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-09f"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -73,6 +73,9 @@ URLS = {x["name"]: x.get("url", "") for x in _G}
 START_IDX = {x["name"]: x["start"] for x in _G if x.get("start")}
 SHARE = {x["name"] for x in _G if x.get("share")}
 LEFT = {x["name"] for x in _G if x.get("left")}
+# paused until a date (owner 2026-11-09: a group's Admin Assist declines posts from accounts ≤ 3 months old — the Page is
+# from Oct 2026): skipped like a dropped one until then, an extra takes its place, it comes back by itself
+PAUSE = {x["name"]: x["pause"] for x in _G if x.get("pause")}
 FRESH = {x["name"] for x in _G if x.get("added") and not x.get("start")}   # joined, never posted to yet → can't be pending   # the owner already left the group on Facebook
 TODO = {x["name"]: x["todo"] for x in _G if x.get("todo")}   # an open question for the owner (shown on the to-do card)   # new group already posted to by hand before its first turn
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
@@ -230,6 +233,8 @@ function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = Date.now() : delet
 // groups whose last post still waits for admin approval (owner 2026-11-06): {{name: {{day, date, n}}}} — n = rounds in a row
 function pends() {{ try {{ return JSON.parse(localStorage.getItem("fbgp") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 // owner 2026-11-09: a group still pending in its 3rd round is dropped — skipped from then on, listed to leave
+const dateOf = day => {{ const d = new Date(Date.parse(D.start + "T00:00:00Z") + day * 864e5); return d.toISOString().slice(0, 10); }};
+const paused = (g, day) => !!(g.pause && dateOf(day) < g.pause);
 const dead = name => {{ const p = pends()[name]; return !!(p && p.n >= 3); }};
 function setPend(name, v) {{ try {{ const p = pends(); v ? p[name] = v : delete p[name]; localStorage.setItem("fbgp", JSON.stringify(p)); }} catch (e) {{}} }}
 // which video each group got (owner 2026-11-07: "that group has not got the x03"): {{"day-name": video index}}. A group
@@ -310,14 +315,14 @@ const span2 = ms => {{ const m = Math.max(1, Math.round(ms / 60000)), h = Math.f
 function xpicks() {{ try {{ return JSON.parse(localStorage.getItem("fbgx") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function extras(box, day, from, to) {{
   const t = ticks(), p = pends(), today = new Set(slots(day).map(g => g.name)), X = xpicks(), mine = X[day] || [];
-  const need = slots(day).slice(from, to).filter(g => g.dropped || dead(g.name) || (p[g.name] && p[g.name].day === day)).length;
+  const need = slots(day).slice(from, to).filter(g => g.dropped || paused(g, day) || dead(g.name) || (p[g.name] && p[g.name].day === day)).length;
   const skipped = x => p[x.n] && p[x.n].day === x.d;   // an extra marked Still pending → it needs a replacement too
   const used = new Set(Object.values(X).flat().map(x => x.n)), out = [], ok = () => out.filter(x => !skipped(x)).length;
   mine.filter(x => x.s === from).forEach(x => out.push(x));                                          // kept picks stay put
   // candidates: first the groups we never posted to (joined 8 Nov — nothing can be pending there), then the rest in line
   const cand = [], sent = Object.keys(sentLog());
   for (let d = day + 1; d < day + 30; d++) slots(d).forEach((g, k) => {{
-    if (g.dropped || p[g.name] || today.has(g.name) || used.has(g.name) || t[d + "-" + g.name] || cand.some(c => c.n === g.name)) return;
+    if (g.dropped || paused(g, d) || p[g.name] || today.has(g.name) || used.has(g.name) || t[d + "-" + g.name] || cand.some(c => c.n === g.name)) return;
     cand.push({{n: g.name, d, k, s: from, fresh: g.fresh && !sent.some(x => x.endsWith("-" + g.name))}});   // posted once → may be pending
   }});
   cand.sort((a, b) => (b.fresh ? 1 : 0) - (a.fresh ? 1 : 0));   // stable: keeps the line order inside each group
@@ -335,7 +340,7 @@ function fill(id, day, lockEvening) {{
     if (lockEvening && i === 3) extras(box, day, 0, 3);   // after the morning 3, before the Evening heading
     if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Evening" : "Morning"}}</h3>`);
     const isEn = g.code === "en", idx = isEn ? en++ : 0;
-    if (g.dropped || (dead(g.name) && pends()[g.name].day < day)) {{ box.insertAdjacentHTML("beforeend", `<div class="card done"><span class="g">${{esc(g.name)}}</span> <span class="meta">— skipped: ${{g.dropped ? "no posting allowed" : "dropped (pending 3 rounds)"}}</span></div>`); return; }}
+    if (g.dropped || paused(g, day) || (dead(g.name) && pends()[g.name].day < day)) {{ box.insertAdjacentHTML("beforeend", `<div class="card done"><span class="g">${{esc(g.name)}}</span> <span class="meta">— skipped: ${{g.dropped ? "no posting allowed" : paused(g, day) ? "paused until " + g.pause + " (declines new accounts)" : "dropped (pending 3 rounds)"}}</span></div>`); return; }}
     if (lockEvening && i >= 3 && !t[day + "-" + g.name] && (opens === null || Date.now() < opens)) {{
       if (!box.querySelector(".locked")) box.insertAdjacentHTML("beforeend", `<div class="card locked"><p class="none">${{opens === null
         ? "Opens 6 hours after you tick the 3rd morning group."
@@ -429,6 +434,7 @@ function allTable() {{
     D.order.map((gi, i) => {{
       const g = D.groups[gi]; let next = "—";
       if (g.dropped) next = "dropped";
+      else if (g.pause && dateOf(dayNo) < g.pause) next = `paused until ${{g.pause}}`;
       else {{
         const nt = nextTurn(g.name), list = g.code === "en" || g.share ? D.en : (D.files[g.code] || []);
         if (nt && list.length) {{ const v = list[videoIdx(g, nt[0], nt[1], list.length)];
@@ -450,7 +456,7 @@ def main():
         src = pathlib.Path(sys.argv[sys.argv.index("--set-groups") + 1])
         (ROOT / "data" / "fb-groups.enc").write_text(seal(json.dumps(json.loads(src.read_text(encoding="utf-8")), ensure_ascii=False)) + "\n")
         print("data/fb-groups.enc updated"); return
-    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE, "todo": TODO.get(n, ""), "left": n in LEFT, "fresh": n in FRESH} for n, l, m, k in GROUPS]
+    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE, "todo": TODO.get(n, ""), "left": n in LEFT, "fresh": n in FRESH, "pause": PAUSE.get(n, "")} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
         p = pathlib.Path(tempfile.gettempdir()) / "groups.html"; p.write_text(out, encoding="utf-8"); print(p); return
