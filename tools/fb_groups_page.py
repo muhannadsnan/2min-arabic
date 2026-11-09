@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-09"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-09b"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -277,7 +277,7 @@ function card(g, i, day, enIdx) {{
   const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
   c.innerHTML = `<div class="top"><button class="name">Copy name</button>
     ${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<span class="g">${{esc(g.name)}}</span>`}}
-    <span class="right"><button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? "Pending — skipped" : "Still pending"}}</button><label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{i + 1}}</span></span></div>` +
+    <span class="right"><button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? "Pending — skipped" : "Still pending"}}</button><label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{day === dayNo || day === dayNo - 1 ? i + 1 : "+"}}</span></span></div>` +
     (pendOld ? `<p class="note">${{pendOld.n >= 2 ? `Still pending ${{pendOld.n}} rounds in a row (last: ${{pendOld.date}}) — slow admins (posts do get approved). Still waiting? Tap Still pending again.`
       : `Your last post here was still waiting for approval (${{pendOld.date}}). Open the group first: if Facebook says a post is pending, tap Still pending.`}}</p>` : "") +
     body.replace('<div class="btns">', `<div class="btns">`).replace("</div><pre>", `<span class="meta">${{g.members}} members <span class="lang ${{g.code}}">${{g.lang}}</span></span></div><div class="box"><pre>`).replace('<button class="copy">Copy text</button>', '<button class="copy">Copy text</button></div>');
@@ -293,10 +293,30 @@ function card(g, i, day, enIdx) {{
   return c;
 }}
 const span2 = ms => {{ const m = Math.max(1, Math.round(ms / 60000)), h = Math.floor(m / 60); return h ? `${{h}} h ${{m % 60}} min` : `${{m}} min`; }};
+// extras (owner 2026-11-09: "show more groups if the list contains pending ones … so we don't count them"): for every
+// card skipped today (pending or no posting allowed) one more group: the next one in line, its own later turn brought
+// forward — ticking it ticks that later card (same key), so it is never asked twice and gets that turn's video.
+function xpicks() {{ try {{ return JSON.parse(localStorage.getItem("fbgx") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
+function extras(box, day, from, to) {{
+  const t = ticks(), p = pends(), today = new Set(slots(day).map(g => g.name)), X = xpicks(), mine = X[day] || [];
+  const need = slots(day).slice(from, to).filter(g => g.dropped || (p[g.name] && p[g.name].day === day)).length;
+  const used = new Set(Object.values(X).flat()), out = [];
+  mine.filter(x => x.s === from).forEach(x => {{ if (out.length < need) out.push(x); }});        // kept picks first (stay put once ticked)
+  for (let d = day + 1; d < day + 30 && out.length < need; d++) slots(d).forEach((g, k) => {{
+    if (out.length >= need || g.dropped || p[g.name] || today.has(g.name) || used.has(g.name) || t[d + "-" + g.name]) return;
+    out.push({{n: g.name, d, k, s: from}}); used.add(g.name);
+  }});
+  if (!out.length) return;
+  X[day] = mine.filter(x => x.s !== from).concat(out);
+  try {{ localStorage.setItem("fbgx", JSON.stringify(Object.fromEntries(Object.entries(X).filter(([k]) => +k >= day - 1)))); }} catch (e) {{}}
+  box.insertAdjacentHTML("beforeend", `<p class="meta" style="margin:8px 2px 6px">Extra — instead of the skipped one${{out.length > 1 ? "s" : ""}} (its own later turn, brought forward):</p>`);
+  out.forEach(x => {{ const g = D.groups.find(y => y.name === x.n); if (g) box.appendChild(card(Object.assign({{}}, g), x.k, x.d, 0)); }});
+}}
 function fill(id, day, lockEvening) {{
   const box = document.getElementById(id); box.innerHTML = ""; let en = 0;
   const opens = eveningOpensAt(day), t = ticks();
   slots(day).forEach((g, i) => {{
+    if (lockEvening && i === 3) extras(box, day, 0, 3);   // after the morning 3, before the Evening heading
     if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Evening" : "Morning"}}</h3>`);
     const isEn = g.code === "en", idx = isEn ? en++ : 0;
     if (g.dropped) {{ box.insertAdjacentHTML("beforeend", `<div class="card done"><span class="g">${{esc(g.name)}}</span> <span class="meta">— skipped: no posting allowed</span></div>`); return; }}
@@ -308,6 +328,7 @@ function fill(id, day, lockEvening) {{
     }}
     box.appendChild(card(Object.assign({{}}, g), i, day, idx));
   }});
+  if (lockEvening && !box.querySelector(".locked")) extras(box, day, 3, 6);
 }}
 // the YouTube Post on carousel days (Wed + Sun; owner 2026-11-04): the same pictures + text as the Instagram carousel,
 // which Instagram and the Facebook Page get automatically at 19:00. Yesterday's stays until it's ticked.
