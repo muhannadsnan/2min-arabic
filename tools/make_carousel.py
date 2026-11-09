@@ -36,10 +36,35 @@ def centered(d, y, text, font, fill):
     return y + (b[3] - b[1])
 
 
+def is_drawing(im):
+    return sum(im.convert("L").resize((64, 64)).get_flattened_data()) / 4096 > 200   # mostly white paper
+
+
+def trimmed(im, pad=0.06):
+    """A drawing on white paper cut to the drawing itself (owner 2026-11-09: "enlarge the image as double"), paper → white."""
+    g = im.convert("L"); paper = sorted(g.resize((32, 32)).get_flattened_data())[-100]
+    im = im.point(lambda v: min(255, round(v * 255 / max(paper, 1))))
+    ink = im.convert("L").point(lambda v: 255 if v < 225 else 0).filter(ImageFilter.GaussianBlur(6)).point(lambda v: 255 if v > 90 else 0)
+    box = ink.getbbox() or (0, 0, im.width, im.height)   # faint loose strokes far out don't count (blur + threshold)
+    px, py = int((box[2] - box[0]) * pad), int((box[3] - box[1]) * pad)
+    return im.crop((max(0, box[0] - px), max(0, box[1] - py), min(im.width, box[2] + px), min(im.height, box[3] + py)))
+
+
+def fit_white(im, w, h, top=0, bottom=0, side=0):
+    """The trimmed drawing as big as fits w×h (minus the margins) on white, edges softened into the paper."""
+    out = Image.new("RGB", (w, h), (255, 255, 255)); ih = h - top - bottom
+    s = min((w - 2 * side) / im.width, ih / im.height); p = im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS)
+    m = Image.new("L", p.size, 0); ImageDraw.Draw(m).rectangle((18, 18, p.width - 19, p.height - 19), fill=255)
+    out.paste(p, ((w - p.width) // 2, top + (ih - p.height) // 2), m.filter(ImageFilter.GaussianBlur(10)))
+    return out
+
+
 def photo(path, box_h):
     """The whole scene picture, fitted to box_h and centred on a blurred, darkened copy of itself (nothing cut off —
     a body-part picture needs its head, a leg picture its feet)."""
     im = Image.open(path).convert("RGB")
+    if is_drawing(im):   # drawing style: no dark blur, the drawing itself as big as the space allows
+        return fit_white(trimmed(im), W, box_h, top=110, bottom=75, side=40)   # badge on top, the word card below
     s = max(W / im.width, box_h / im.height)
     bg = im.resize((int(im.width * s) + 1, int(im.height * s) + 1), Image.LANCZOS)
     bg = bg.crop(((bg.width - W) // 2, (bg.height - box_h) // 2, (bg.width - W) // 2 + W, (bg.height - box_h) // 2 + box_h))
@@ -70,7 +95,7 @@ def word_slide(img, arabic, translit, english, k, n):
 
 def cover(img, title, sub, n):
     pic = Image.open(img).convert("RGB")
-    if sum(pic.convert("L").resize((64, 64)).get_flattened_data()) / 4096 > 200:   # a drawing on white paper (owner 2026-11-09):
+    if is_drawing(pic):   # a drawing on white paper (owner 2026-11-09):
         return cover_light(pic, title, sub, n)                           # darkening it gave a muddy grey slide
     slide = photo(img, H).filter(ImageFilter.GaussianBlur(2))
     shade = Image.new("RGB", (W, H), (20, 20, 20)); slide = Image.blend(slide, shade, 0.45)
@@ -95,12 +120,7 @@ def cover_light(pic, title, sub, n):
         size -= 6
     y = centered(d, 150, title, BOLD(size), TEAL) + 30
     y = centered(d, y, sub, BOLD(76), TERRA) + 40
-    s = min((W - 60) / pic.width, (H - y - 260) / pic.height)
-    p = pic.resize((int(pic.width * s), int(pic.height * s)), Image.LANCZOS)
-    paper = sorted(p.convert("L").resize((32, 32)).get_flattened_data())[-100]   # the paper's grey → pure white, so no box shows
-    p = p.point(lambda v: min(255, round(v * 255 / max(paper, 1))))
-    m = Image.new("L", p.size, 0); ImageDraw.Draw(m).rectangle((40, 40, p.width - 41, p.height - 41), fill=255)
-    slide.paste(p, ((W - p.width) // 2, y + (H - y - 230 - p.height) // 2), m.filter(ImageFilter.GaussianBlur(22)))   # soft edges
+    slide.paste(fit_white(trimmed(pic), W - 40, H - y - 250), (20, y + 10))   # as big as it fits (owner: "double")
     centered(d, H - 210, f"swipe for all {n} {'phrases' if 'PHRASE' in title.upper() else 'words'}", REG, INK)
     centered(d, H - 120, "save it for later", BOLD(52), TERRA)
     return slide
