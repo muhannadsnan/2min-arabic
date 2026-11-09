@@ -69,6 +69,9 @@ def word_slide(img, arabic, translit, english, k, n):
 
 
 def cover(img, title, sub, n):
+    pic = Image.open(img).convert("RGB")
+    if sum(pic.convert("L").resize((64, 64)).get_flattened_data()) / 4096 > 200:   # a drawing on white paper (owner 2026-11-09):
+        return cover_light(pic, title, sub, n)                           # darkening it gave a muddy grey slide
     slide = photo(img, H).filter(ImageFilter.GaussianBlur(2))
     shade = Image.new("RGB", (W, H), (20, 20, 20)); slide = Image.blend(slide, shade, 0.45)
     d = ImageDraw.Draw(slide)
@@ -80,6 +83,26 @@ def cover(img, title, sub, n):
     y = centered(d, y, sub, BOLD(80), YELLOW) + 120
     centered(d, y, f"swipe for all {n} {'phrases' if 'PHRASE' in title.upper() else 'words'}", REG, (255, 255, 255))
     centered(d, H - 150, "save it for later", BOLD(52), YELLOW)
+    return slide
+
+
+def cover_light(pic, title, sub, n):
+    """The cover for drawing-style pictures: white paper, the title in dark teal on top, the whole drawing below."""
+    slide = Image.new("RGB", (W, H), (255, 255, 255)); d = ImageDraw.Draw(slide)
+    badge(d, "2 MINUTE ARABIC")
+    size = 120
+    while size > 70 and d.textlength(title, font=BOLD(size)) > W - 80:
+        size -= 6
+    y = centered(d, 150, title, BOLD(size), TEAL) + 30
+    y = centered(d, y, sub, BOLD(76), TERRA) + 40
+    s = min((W - 60) / pic.width, (H - y - 260) / pic.height)
+    p = pic.resize((int(pic.width * s), int(pic.height * s)), Image.LANCZOS)
+    paper = sorted(p.convert("L").resize((32, 32)).get_flattened_data())[-100]   # the paper's grey → pure white, so no box shows
+    p = p.point(lambda v: min(255, round(v * 255 / max(paper, 1))))
+    m = Image.new("L", p.size, 0); ImageDraw.Draw(m).rectangle((40, 40, p.width - 41, p.height - 41), fill=255)
+    slide.paste(p, ((W - p.width) // 2, y + (H - y - 230 - p.height) // 2), m.filter(ImageFilter.GaussianBlur(22)))   # soft edges
+    centered(d, H - 210, f"swipe for all {n} {'phrases' if 'PHRASE' in title.upper() else 'words'}", REG, INK)
+    centered(d, H - 120, "save it for later", BOLD(52), TERRA)
     return slide
 
 
