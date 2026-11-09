@@ -146,7 +146,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 - Uploads in day order. Automatic dubbing OFF. No hashtags in titles. Arabic in descriptions inside U+2067…U+2069.
 - Never buy views/subs or use engagement groups; never use third-party or watermarked footage (docs/11).
 - From Day 6: 3D look + library opener in scene 1. No AI label on videos (owner). No PC upgrades / bigger models for now.
-- Game check in queue scripts: `pgrep -f "[s]teamapps/common"` — the plain pattern also matches the waiting shell itself and the queue stalls forever (5 Nov). Stop ComfyUI by PID; set LD_LIBRARY_PATH for Whisper (final_check.py does it itself).
+- Game check in queue scripts: `pgrep -f "[s]teamapps/common"` — the plain pattern also matches the waiting shell itself and the queue stalls forever (5 Nov). Check before EVERY GPU step, not only at the start (stop ComfyUI while a game runs, restart after — library/work/queue-carousel-resume.sh `gamewait`), and give each job its OWN ComfyUI pid file (9 Nov: a shared comfy.pid was overwritten and one ComfyUI kept 3.7 GB of VRAM). Stop ComfyUI by PID; set LD_LIBRARY_PATH for Whisper (final_check.py does it itself).
 - **Temp dirs: always `with tempfile.TemporaryDirectory() as tmp:` (as make_loop.py does) or `_scratch()`, never a bare
   `tempfile.mkdtemp()`.** Leftover frame dirs (compose_talk/compose_scene) leaked 359 dirs / 108 GB of 1080×1920 PNG frames in four days
   (28–31 Oct; mostly runs stopped mid-way) and filled the root disk to 100 %, which stalls every job on the laptop —
