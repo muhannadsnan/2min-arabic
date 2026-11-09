@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-09f"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-09g"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -76,6 +76,8 @@ LEFT = {x["name"] for x in _G if x.get("left")}
 # paused until a date (owner 2026-11-09: a group's Admin Assist declines posts from accounts ≤ 3 months old — the Page is
 # from Oct 2026): skipped like a dropped one until then, an extra takes its place, it comes back by itself
 PAUSE = {x["name"]: x["pause"] for x in _G if x.get("pause")}
+SAY = {x["name"]: x["say"] for x in _G if x.get("say")}            # paste text in another language than the rotation's
+PERSONAL = {x["name"] for x in _G if x.get("personal")}            # owner posts there from his personal profile (2026-11-09)
 FRESH = {x["name"] for x in _G if x.get("added") and not x.get("start")}   # joined, never posted to yet → can't be pending   # the owner already left the group on Facebook
 TODO = {x["name"]: x["todo"] for x in _G if x.get("todo")}   # an open question for the owner (shown on the to-do card)   # new group already posted to by hand before its first turn
 LANG = {"en": "English", "ur": "Urdu", "hi": "Hindi", "id": "Indonesian", "tr": "Turkish", "ms": "Malay"}
@@ -83,6 +85,7 @@ CLOSE = {
     "en": "I'm a native Syrian Arabic speaker and post a 2-minute lesson every day. Questions welcome 🙂",
     "ur": "میں شام (سیریا) سے ہوں اور روز 2 منٹ کا عربی سبق بناتا ہوں۔ کوئی سوال ہو تو ضرور پوچھیں 🙂",
     "hi": "Main Syria se hoon aur roz 2 minute ka Arabic lesson banata hoon. Koi sawal ho to zaroor poochhein 🙂",
+    "hid": "मैं सीरिया से हूँ, अरबी मेरी मातृभाषा है, और मैं रोज़ 2 मिनट का अरबी सबक पोस्ट करता हूँ। कोई सवाल हो तो ज़रूर पूछिए 🙂",
     "id": "Saya penutur asli bahasa Arab dari Suriah dan membuat pelajaran 2 menit setiap hari. Silakan bertanya 🙂",
     "ms": "Saya penutur asli bahasa Arab dari Syria dan membuat pelajaran 2 minit setiap hari. Silakan bertanya 🙂",
     "tr": "Suriyeliyim, ana dilim Arapça. Her gün 2 dakikalık bir ders paylaşıyorum. Sorularınızı bekliyorum 🙂",
@@ -119,7 +122,7 @@ def is_english(caption):
 
 # share-mode groups (owner 2026-11-08): a language group that blocks video uploads but lets members SHARE → it gets the
 # English Reel, with the paste text in its own language (who we are + the YouTube subtitles in that language)
-SUBS = {"id": "▶️ YouTube: 2 Minute Arabic (ada subtitle bahasa Indonesia)", "ms": "▶️ YouTube: 2 Minute Arabic (ada sari kata Bahasa Melayu)",
+SUBS = {"hid": "▶️ पूरे सबक: YouTube पर 2 Minute Arabic (हिंदी सबटाइटल के साथ)", "id": "▶️ YouTube: 2 Minute Arabic (ada subtitle bahasa Indonesia)", "ms": "▶️ YouTube: 2 Minute Arabic (ada sari kata Bahasa Melayu)",
         "tr": "▶️ YouTube: 2 Minute Arabic (Türkçe altyazılı)", "ur": "▶️ YouTube: 2 Minute Arabic (اردو سب ٹائٹلز کے ساتھ)",
         "hi": "▶️ YouTube: 2 Minute Arabic (Hindi subtitles ke saath)"}
 
@@ -235,7 +238,8 @@ function pends() {{ try {{ return JSON.parse(localStorage.getItem("fbgp") || "{{
 // owner 2026-11-09: a group still pending in its 3rd round is dropped — skipped from then on, listed to leave
 const dateOf = day => {{ const d = new Date(Date.parse(D.start + "T00:00:00Z") + day * 864e5); return d.toISOString().slice(0, 10); }};
 const paused = (g, day) => !!(g.pause && dateOf(day) < g.pause);
-const dead = name => {{ const p = pends()[name]; return !!(p && p.n >= 3); }};
+const PAGE_OK = "2027-01-15";   // the Page is 3 months old: groups' "new profile" filters stop holding it back
+const dead = name => {{ const p = pends()[name]; return !!(p && (p.n3 || 0) >= 3); }};   // only rounds after PAGE_OK count
 function setPend(name, v) {{ try {{ const p = pends(); v ? p[name] = v : delete p[name]; localStorage.setItem("fbgp", JSON.stringify(p)); }} catch (e) {{}} }}
 // which video each group got (owner 2026-11-07: "that group has not got the x03"): {{"day-name": video index}}. A group
 // skipped as pending gets the video it missed next time and never jumps one; on-time groups follow the round.
@@ -280,8 +284,8 @@ function card(g, i, day, enIdx) {{
   // the round this card belongs to (round 0 = 31 Oct–4 Nov, the first one the owner posted): the same video for all groups
   let shown = 0;   // the video index this card shows (logged when ticked Posted)
   if (g.code === "en" || g.share) {{   // share mode: a language group that only lets members share → the English Reel
-    shown = videoIdx(g, day, i, D.en.length); const r = D.en.length ? D.en[shown] : null, txt = r && (g.share ? r.local[g.code] : r.text);
-    body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>${{g.share ? ` <span class="file">Share the English Reel (this group allows no uploads)</span>` : ""}}
+    shown = videoIdx(g, day, i, D.en.length); const r = D.en.length ? D.en[shown] : null, txt = r && (g.say ? r.local[g.say] : g.share ? r.local[g.code] : r.text);
+    body = r ? `<div class="btns"><a class="btn" href="${{r.url}}" target="_blank" rel="noopener">Open the Reel</a>${{g.share ? ` <span class="file">Share the English Reel (this group allows no uploads)</span>` : ""}}${{g.personal ? ` <span class="file"><b>Share from your personal profile</b> (the group declines new accounts)</span>` : ""}}
 </div><pre>${{esc(txt)}}</pre><button class="copy">Copy text</button>` : `<p class="none">No English Reel on the page yet.</p>`;
     g._text = txt;
   }} else {{
@@ -294,7 +298,7 @@ function card(g, i, day, enIdx) {{
   c.innerHTML = `<div class="top"><button class="name">Copy name</button>
     ${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<span class="g">${{esc(g.name)}}</span>`}}
     <span class="right"><button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? "Pending — skipped" : "Still pending"}}</button><label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{day === dayNo || day === dayNo - 1 ? i + 1 : "+"}}</span></span></div>` +
-    (pendOld ? `<p class="note">${{pendOld.n >= 2 ? `Still pending ${{pendOld.n}} rounds in a row (last: ${{pendOld.date}}). Still waiting this time too? Tap Still pending — that's round 3 and the group is dropped.`
+    (pendOld ? `<p class="note">${{pendOld.n >= 2 ? `Still pending ${{pendOld.n}} rounds in a row (last: ${{pendOld.date}}).${{ymd(now) < PAGE_OK ? " Kept for now: from " + PAGE_OK + " (the Page is 3 months old) 3 more pending rounds drop it." : (pendOld.n3 || 0) >= 2 ? " Still waiting this time too? Tap Still pending — that's round 3 and the group is dropped." : ""}}`
       : `Your last post here was still waiting for approval (${{pendOld.date}}). Open the group first: if Facebook says a post is pending, tap Still pending.`}}</p>` : "") +
     body.replace('<div class="btns">', `<div class="btns">`).replace("</div><pre>", `<span class="meta">${{g.members}} members <span class="lang ${{g.code}}">${{g.lang}}</span></span></div><div class="box"><pre>`).replace('<button class="copy">Copy text</button>', '<button class="copy">Copy text</button></div>');
   const b = c.querySelector("button.copy"), text = g._text;
@@ -303,7 +307,8 @@ function card(g, i, day, enIdx) {{
   c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); logSent(key, e.target.checked ? shown : null); if (e.target.checked) setPend(g.name, null); c.classList.toggle("done", e.target.checked); if (i < 3) render(); }};
   c.querySelector("button.pend").onclick = () => {{
     if (pendNow) {{ setPend(g.name, null); tick(key, false); }}                       // tapped by mistake: undo
-    else {{ setPend(g.name, {{day, date: ymd(now), n: (pendOld ? pendOld.n : 0) + 1}}); tick(key, true); }}   // counts as done, so the session can finish
+    else {{ const after = ymd(now) >= PAGE_OK;
+      setPend(g.name, {{day, date: ymd(now), n: (pendOld ? pendOld.n : 0) + 1, n3: (pendOld ? pendOld.n3 || 0 : 0) + (after ? 1 : 0)}}); tick(key, true); }}   // counts as done, so the session can finish
     render(); fill("yesterday", dayNo - 1, false);
   }};
   return c;
@@ -456,7 +461,7 @@ def main():
         src = pathlib.Path(sys.argv[sys.argv.index("--set-groups") + 1])
         (ROOT / "data" / "fb-groups.enc").write_text(seal(json.dumps(json.loads(src.read_text(encoding="utf-8")), ensure_ascii=False)) + "\n")
         print("data/fb-groups.enc updated"); return
-    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE, "todo": TODO.get(n, ""), "left": n in LEFT, "fresh": n in FRESH, "pause": PAUSE.get(n, "")} for n, l, m, k in GROUPS]
+    groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE, "todo": TODO.get(n, ""), "left": n in LEFT, "fresh": n in FRESH, "pause": PAUSE.get(n, ""), "say": SAY.get(n, ""), "personal": n in PERSONAL} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
         p = pathlib.Path(tempfile.gettempdir()) / "groups.html"; p.write_text(out, encoding="utf-8"); print(p); return
