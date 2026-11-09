@@ -103,6 +103,10 @@ def carousel(a):
     marker = f"done-{now:%Y-%m-%d}"
     if marker in assets and not a.force:
         print(f"a carousel was already posted today ({marker})"); return
+    # only on Wed/Sun from 18:00 Oslo: GitHub started a Wednesday backup run at 00:41 Oslo on Thursday 5 Nov — a new
+    # date, no marker — and it posted a second carousel, one day of the queue gone
+    if not a.force and (now.weekday() not in (2, 6) or now.hour < 18):
+        print(f"{now:%a %H:%M} Oslo — carousels go out Wed + Sun from 19:00 (late backup run?)"); return
     names = sorted(n for n in assets if n.startswith("carousel-") and n.endswith(".bin"))
     if not names:
         print("::warning::carousel queue is empty — ask Claude for the next carousels"); return
