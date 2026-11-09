@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-09c"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-09d"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -223,6 +223,8 @@ function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = Date.now() : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
 // groups whose last post still waits for admin approval (owner 2026-11-06): {{name: {{day, date, n}}}} — n = rounds in a row
 function pends() {{ try {{ return JSON.parse(localStorage.getItem("fbgp") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
+// owner 2026-11-09: a group still pending in its 3rd round is dropped — skipped from then on, listed to leave
+const dead = name => {{ const p = pends()[name]; return !!(p && p.n >= 3); }};
 function setPend(name, v) {{ try {{ const p = pends(); v ? p[name] = v : delete p[name]; localStorage.setItem("fbgp", JSON.stringify(p)); }} catch (e) {{}} }}
 // which video each group got (owner 2026-11-07: "that group has not got the x03"): {{"day-name": video index}}. A group
 // skipped as pending gets the video it missed next time and never jumps one; on-time groups follow the round.
@@ -279,7 +281,7 @@ function card(g, i, day, enIdx) {{
   c.innerHTML = `<div class="top"><button class="name">Copy name</button>
     ${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<span class="g">${{esc(g.name)}}</span>`}}
     <span class="right"><button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? "Pending — skipped" : "Still pending"}}</button><label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{day === dayNo || day === dayNo - 1 ? i + 1 : "+"}}</span></span></div>` +
-    (pendOld ? `<p class="note">${{pendOld.n >= 2 ? `Still pending ${{pendOld.n}} rounds in a row (last: ${{pendOld.date}}) — slow admins (posts do get approved). Still waiting? Tap Still pending again.`
+    (pendOld ? `<p class="note">${{pendOld.n >= 2 ? `Still pending ${{pendOld.n}} rounds in a row (last: ${{pendOld.date}}). Still waiting this time too? Tap Still pending — that's round 3 and the group is dropped.`
       : `Your last post here was still waiting for approval (${{pendOld.date}}). Open the group first: if Facebook says a post is pending, tap Still pending.`}}</p>` : "") +
     body.replace('<div class="btns">', `<div class="btns">`).replace("</div><pre>", `<span class="meta">${{g.members}} members <span class="lang ${{g.code}}">${{g.lang}}</span></span></div><div class="box"><pre>`).replace('<button class="copy">Copy text</button>', '<button class="copy">Copy text</button></div>');
   const b = c.querySelector("button.copy"), text = g._text;
@@ -300,7 +302,7 @@ const span2 = ms => {{ const m = Math.max(1, Math.round(ms / 60000)), h = Math.f
 function xpicks() {{ try {{ return JSON.parse(localStorage.getItem("fbgx") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function extras(box, day, from, to) {{
   const t = ticks(), p = pends(), today = new Set(slots(day).map(g => g.name)), X = xpicks(), mine = X[day] || [];
-  const need = slots(day).slice(from, to).filter(g => g.dropped || (p[g.name] && p[g.name].day === day)).length;
+  const need = slots(day).slice(from, to).filter(g => g.dropped || dead(g.name) || (p[g.name] && p[g.name].day === day)).length;
   const skipped = x => p[x.n] && p[x.n].day === x.d;   // an extra marked Still pending → it needs a replacement too
   const used = new Set(Object.values(X).flat().map(x => x.n)), out = [], ok = () => out.filter(x => !skipped(x)).length;
   mine.filter(x => x.s === from).forEach(x => out.push(x));                                          // kept picks stay put
@@ -325,7 +327,7 @@ function fill(id, day, lockEvening) {{
     if (lockEvening && i === 3) extras(box, day, 0, 3);   // after the morning 3, before the Evening heading
     if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Evening" : "Morning"}}</h3>`);
     const isEn = g.code === "en", idx = isEn ? en++ : 0;
-    if (g.dropped) {{ box.insertAdjacentHTML("beforeend", `<div class="card done"><span class="g">${{esc(g.name)}}</span> <span class="meta">— skipped: no posting allowed</span></div>`); return; }}
+    if (g.dropped || (dead(g.name) && pends()[g.name].day < day)) {{ box.insertAdjacentHTML("beforeend", `<div class="card done"><span class="g">${{esc(g.name)}}</span> <span class="meta">— skipped: ${{g.dropped ? "no posting allowed" : "dropped (pending 3 rounds)"}}</span></div>`); return; }}
     if (lockEvening && i >= 3 && !t[day + "-" + g.name] && (opens === null || Date.now() < opens)) {{
       if (!box.querySelector(".locked")) box.insertAdjacentHTML("beforeend", `<div class="card locked"><p class="none">${{opens === null
         ? "Opens 6 hours after you tick the 3rd morning group."
@@ -356,11 +358,11 @@ function ytCard() {{
 // Facebook to-dos (owner 2026-11-08: "remind me of those to remove"): dropped groups to leave (tick "Left"), groups to test
 function todoCard() {{
   let left = {{}}; try {{ left = JSON.parse(localStorage.getItem("fbgl") || "{{}}"); }} catch (e) {{}}
-  const leave = D.groups.filter(g => g.dropped && !g.left && !g.todo && !left[g.name]), test = D.groups.filter(g => g.todo);
+  const leave = D.groups.filter(g => ((g.dropped && !g.left && !g.todo) || (!g.dropped && dead(g.name))) && !left[g.name]), test = D.groups.filter(g => g.todo);
   const box = document.getElementById("todo"); box.innerHTML = "";
   if (!leave.length && !test.length) return;
   box.innerHTML = `<h3>Facebook to-dos</h3><div class="card">` +
-    (leave.length ? `<p class="meta" style="margin:0 0 6px">Leave these groups (they don't allow our posts) — open → Joined ▾ → Leave group:</p>` +
+    (leave.length ? `<p class="meta" style="margin:0 0 6px">Leave these groups (no posting allowed, or still pending after 3 rounds — tell Claude too) — open → Joined ▾ → Leave group:</p>` +
       leave.map(g => `<label class="tick" style="margin:4px 0"><input type="checkbox" data-n="${{esc(g.name)}}"> ${{esc(g.name)}}</label>`).join("") : "") +
     (test.length ? `<p class="meta" style="margin:${{leave.length ? 12 : 0}}px 0 6px">To check, then tell Claude:</p>` +
       test.map(g => `<p style="margin:4px 0"><b>${{esc(g.name)}}</b> — ${{esc(g.todo)}}</p>`).join("") : "") + `</div>`;
