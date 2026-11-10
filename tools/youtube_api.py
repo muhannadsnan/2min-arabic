@@ -252,6 +252,13 @@ def seconds(iso):
     return d * 86400 + h * 3600 + mi * 60 + se
 
 
+# 5 days a week (owner 2026-11-10): Shorts are not published on these weekdays (Mon=0 … Sun=6). Thu + Sat: our
+# weekday views are flat (89–139/day, Sep–Nov), and spread-out days off never leave two silent days in a row.
+OFF_DAYS = {3, 5}
+from zoneinfo import ZoneInfo as _ZI
+OSLO_TZ = _ZI("Europe/Oslo")
+
+
 def next_slot(y, exclude=None):
     """The day after the latest scheduled/published video OF THE SAME KIND, at the same time of day (UTC ISO).
     Shorts (≤ 3 min) and long videos (Parts) keep separate daily chains: a Part on 2 Oct must not push the next
@@ -268,7 +275,7 @@ def next_slot(y, exclude=None):
     last = max(times)
     slot = last + dt.timedelta(days=1)
     now = dt.datetime.now(dt.timezone.utc)
-    while slot < now + dt.timedelta(hours=1):
+    while slot < now + dt.timedelta(hours=1) or (short and slot.astimezone(OSLO_TZ).weekday() in OFF_DAYS):
         slot += dt.timedelta(days=1)
     return slot.strftime("%Y-%m-%dT%H:%M:%SZ"), last
 

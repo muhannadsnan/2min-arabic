@@ -23,6 +23,7 @@ Always end a hand-over with **what's next for the owner** (record / upload / scr
 
 ## Calendar (keep it current)
 
+- **YouTube Shorts 5 days a week (owner 2026-11-10):** off Thu + Sat (`OFF_DAYS`, `fill --publish-at next` skips them); long videos may use those days. Instagram, trials and Facebook groups unchanged.
 - **Weekly social rhythm (owner 2026-10-30):** Instagram Reel daily 15:00 + dubbed trial Reel daily 17:37 (owner 2026-10-30: each language its OWN LOOK —
   tools/ig_lang_version.py: other cover character + background, frame colour, translated badge, zoom, subtitles in its
   script; only `-v2` bundles post; languages hi → ur → id → tr → ms; videos by the unified YouTube+Instagram list (owner 2026-11-01): Day 12 → x03 → Day 5 → Day 3 → Day 8 → Day 4;
