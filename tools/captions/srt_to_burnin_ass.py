@@ -1,4 +1,7 @@
-"""SRT -> styled one-line burn-in captions (ASS) for vertical Shorts. Usage: mkass.py in.srt out.ass"""
+"""SRT -> styled one-line burn-in captions (ASS) for vertical Shorts. Usage: mkass.py in.srt out.ass [high=a-b,c-d]
+
+high=… (owner 2026-11-10: "the subtitles right on his face"): during these seconds the captions sit higher, above a
+close-up's head (MarginV 1100 → bottom edge at y 820) instead of the usual 540 from the bottom."""
 import re
 import sys
 
@@ -72,8 +75,10 @@ for block in open(sys.argv[1], encoding="utf-8").read().strip().split("\n\n"):
         events.append((t, t + d, p))
         t += d
 
+HIGH = [tuple(map(float, r.split("-"))) for a in sys.argv[3:] if a.startswith("high=") for r in a[5:].split(",") if r]
 with open(sys.argv[2], "w", encoding="utf-8") as f:
     f.write(HEADER)
     for a, b, p in events:
-        f.write(f"Dialogue: 0,{s2a(a)},{s2a(b)},Default,,0,0,0,,{fmt(p)}\n")
+        mv = 1100 if any(x - 0.05 <= a < y for x, y in HIGH) else 0
+        f.write(f"Dialogue: 0,{s2a(a)},{s2a(b)},Default,,0,0,{mv},,{fmt(p)}\n")
 print(len(events), "caption lines")
