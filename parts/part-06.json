@@ -1,0 +1,174 @@
+{
+ "name": "part-06-days-26-30",
+ "title": "Part 6",
+ "subtitle": "Days 26–30 · the full lesson",
+ "segments": [
+  {
+   "title": "Part 6 · Days 26–30",
+   "file": "output/w06-review/your-first-full-arabic-conversation-in-8-minutes.mp4",
+   "start": 0,
+   "end": 8.296,
+   "panel_title": "Your 30-day plan",
+   "panel_text": [
+    "Two minutes a day.",
+    "Your first Arabic conversation",
+    "in 30 days.",
+    "",
+    "Part 1: Days 1–5",
+    "Part 2: Days 6–10",
+    "Part 3: Days 11–15",
+    "Part 4: Days 16–20",
+    "Part 5: Days 21–25",
+    "Part 6: Days 26–30 (now)"
+   ],
+   "srt": "output/w06-review/captions-upload.srt"
+  },
+  {
+   "title": "Day 26 · Sami's Arabic test",
+   "file": "output/026-sami-arabic-test/how-old-are-you-in-arabic-3-questions-arabs-ask.mp4",
+   "start": 12.715,
+   "end": 75.644,
+   "words": [
+    [
+     "امْتِحَانْ",
+     "imtihaan",
+     "test"
+    ],
+    [
+     "صَعْبْ",
+     "Sa'b",
+     "hard"
+    ],
+    [
+     "سَهْلْ",
+     "sahl",
+     "easy"
+    ],
+    [
+     "كَمْ عُمْرُكْ؟",
+     "kam 'umruk?",
+     "how old are you?"
+    ]
+   ]
+  },
+  {
+   "title": "Day 27 · Do you speak Arabic?",
+   "file": "output/027-do-you-speak-arabic/do-you-speak-arabic-how-to-answer.mp4",
+   "start": 13.99,
+   "end": 95.747,
+   "words": [
+    [
+     "هَلْ تَتَكَلَّمُ الْعَرَبِيَّةْ؟",
+     "hal tatakallamu l-'arabiyya?",
+     "do you speak Arabic?"
+    ],
+    [
+     "نَعَمْ، قَلِيلًا",
+     "na'am, qaliilan",
+     "yes, a little"
+    ],
+    [
+     "أَتَكَلَّمُ الْإِنْجِلِيزِيَّةْ",
+     "atakallamu l-injiliiziyya",
+     "I speak English"
+    ],
+    [
+     "شْوَيّ شْوَيّ",
+     "shwayy shwayy",
+     "slowly (Syrian)"
+    ]
+   ]
+  },
+  {
+   "title": "Day 28 · You are Sami",
+   "file": "output/028-full-conversation-you-are-sami/your-first-full-conversation-in-arabic.mp4",
+   "start": 14.827,
+   "end": 62.221,
+   "words": [
+    [
+     "كَيْفَ حَالُكْ؟",
+     "kayfa Haaluk?",
+     "how are you?"
+    ],
+    [
+     "بِخَيْرْ، الْحَمْدُ لِلَّهْ",
+     "bikhayr, al-Hamdu lillaah",
+     "fine, thank God"
+    ],
+    [
+     "هَلْ أَنْتَ طَالِبْ؟",
+     "hal anta Taalib?",
+     "are you a student?"
+    ],
+    [
+     "قَهْوَةْ مَعَ حَلِيبْ",
+     "qahwa ma'a Haliib",
+     "coffee with milk"
+    ]
+   ]
+  },
+  {
+   "title": "Day 29 · You are Lina",
+   "file": "output/029-full-conversation-you-are-lina/arabic-conversation-practice-the-female-version.mp4",
+   "start": 14.106,
+   "end": 71.757,
+   "words": [
+    [
+     "كَيْفَ حَالُكِ؟",
+     "kayfa Haaluki?",
+     "how are you? (to a woman)"
+    ],
+    [
+     "مَا اسْمُكِ؟",
+     "maa smuki?",
+     "your name? (to a woman)"
+    ],
+    [
+     "هَلْ أَنْتِ طَالِبَةْ؟",
+     "hal anti Taaliba?",
+     "are you a student? (f)"
+    ],
+    [
+     "هَلْ تُرِيدِينَ قَهْوَةْ؟",
+     "hal turiidiina qahwa?",
+     "do you want coffee? (f)"
+    ]
+   ]
+  },
+  {
+   "title": "Day 30 · The final challenge",
+   "file": "output/030-final-challenge/can-you-answer-these-6-arabic-questions.mp4",
+   "start": 19.984,
+   "end": 93.799,
+   "words": [
+    [
+     "مَبْرُوكْ!",
+     "mabruuk!",
+     "congratulations!"
+    ],
+    [
+     "قَبْلَ",
+     "qabla",
+     "before"
+    ],
+    [
+     "بَعْدَ",
+     "ba'da",
+     "after"
+    ],
+    [
+     "مَتَى الدَّرْسْ؟",
+     "mataa d-dars?",
+     "when is the lesson?"
+    ]
+   ]
+  },
+  {
+   "title": "Review quiz",
+   "file": "output/w06-review/your-first-full-arabic-conversation-in-8-minutes.mp4",
+   "start": 8.296,
+   "end": null,
+   "srt": "output/w06-review/captions-upload.srt"
+  }
+ ]
+}
