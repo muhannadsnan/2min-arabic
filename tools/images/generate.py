@@ -61,6 +61,8 @@ def main():
     ap.add_argument("--width", type=int, default=768)
     ap.add_argument("--height", type=int, default=1344)
     ap.add_argument("--ref", action="append", default=[], help="reference image(s) (klein workflow only)")
+    ap.add_argument("--mask", help="inpaint mask (white = redraw) for the first --ref, same size as it")
+    ap.add_argument("--ref-mp", type=float, default=1.0, help="reference size in megapixels (0.6 fits a 6 GB card at 640×936, 2026-11-10)")
     ap.add_argument("--no-style", action="store_true")
     ap.add_argument("--style", choices=sorted(STYLES), default="flat")
     a = ap.parse_args()
@@ -83,12 +85,19 @@ def main():
         for k, path in enumerate(a.ref):
             b = 100 + 10 * k
             wf[str(b)] = {"class_type": "LoadImage", "inputs": {"image": upload(a.server, path)}}
-            wf[str(b+1)] = {"class_type": "ImageScaleToTotalPixels", "inputs": {"image": [str(b), 0], "upscale_method": "lanczos", "megapixels": 1.0, "resolution_steps": 16}}
+            wf[str(b+1)] = {"class_type": "ImageScaleToTotalPixels", "inputs": {"image": [str(b), 0], "upscale_method": "lanczos", "megapixels": a.ref_mp, "resolution_steps": 16}}
             wf[str(b+2)] = {"class_type": "VAEEncode", "inputs": {"pixels": [str(b+1), 0], "vae": ["3", 0]}}
             wf[str(b+3)] = {"class_type": "ReferenceLatent", "inputs": {"conditioning": pos, "latent": [str(b+2), 0]}}
             wf[str(b+4)] = {"class_type": "ReferenceLatent", "inputs": {"conditioning": neg, "latent": [str(b+2), 0]}}
             pos, neg = [str(b+3), 0], [str(b+4), 0]
         wf["10"]["inputs"]["positive"], wf["10"]["inputs"]["negative"] = pos, neg
+
+    if a.mask:  # inpaint: only the white part of the mask is redrawn, in the first --ref at its own size
+        # (2026-11-03: whole-picture mouth edits redrew the beard → a ghost mustache when blended back)
+        wf["200"] = {"class_type": "VAEEncode", "inputs": {"pixels": ["100", 0], "vae": ["3", 0]}}
+        wf["201"] = {"class_type": "LoadImageMask", "inputs": {"image": upload(a.server, a.mask), "channel": "red"}}
+        wf["202"] = {"class_type": "SetLatentNoiseMask", "inputs": {"samples": ["200", 0], "mask": ["201", 0]}}
+        wf["11"]["inputs"]["latent_image"] = ["202", 0]
 
     t0 = time.time()
     pid = json.loads(http(a.server, "/prompt", json.dumps({"prompt": wf, "client_id": uuid.uuid4().hex}).encode(),

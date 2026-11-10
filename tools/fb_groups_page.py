@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-10a"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-10b"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -143,6 +143,23 @@ def paste_text(caption, lang):
     return "\n\n".join(keep + tail)
 
 
+def queues():
+    """How many Instagram trials / carousels are left (owner 2026-11-10: a card reminds when the trials run low).
+    Counted from the encrypted release queues; trials post one a day at ~17:37 Oslo, carousels Wed + Sun."""
+    out = {}
+    try:
+        names = lambda tag: subprocess.run(["gh", "release", "view", tag, "--json", "assets", "--jq", ".assets[].name"],
+                                           cwd=ROOT, capture_output=True, text=True, timeout=60).stdout.split()
+        oslo = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)
+        t = [n for n in names("ig-trial") if n.startswith("trial-") and n.endswith("-v2.bin")]
+        last = oslo.date() + datetime.timedelta(days=len(t) - (0 if oslo.hour >= 18 else 1))
+        out["trial"] = {"left": len(t), "last": last.isoformat() if t else ""}
+        out["carousel"] = {"left": len([n for n in names("ig-carousel") if n.startswith("carousel-")])}
+    except Exception:
+        pass
+    return out
+
+
 def content():
     # oldest first: round r of the rotation shares English Reel r with every English group (owner 2026-11-01: "the previous
     # one hasn't gone to all groups") — one Reel goes round all groups, then the next
@@ -157,6 +174,7 @@ def content():
         "files": {l: [{"file": f["file"], "title": f["video"], "text": paste_text(f["caption"], l)} for f in fs] for l, fs in files.items()},
         # the YouTube Post that goes with each carousel (tools/yt_post.py; owner 2026-11-04) — shown on its day
         "yt": json.loads((ROOT / "data" / "yt-posts.json").read_text(encoding="utf-8")) if (ROOT / "data" / "yt-posts.json").exists() else [],
+        "q": queues(),
     }
 
 
@@ -169,7 +187,7 @@ def page(groups, rotation, data):
     built = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
-<title>Group posts</title><link rel="icon" href="favicon.png">
+<title>Tasks</title><link rel="icon" href="favicon.png">
 <style>
 :root{{--bg:#fbf6ee;--card:#fff;--ink:#2a2420;--soft:#6f6258;--teal:#1f6f6b;--terra:#c8643b;--line:#eadfce}}
 @media (prefers-color-scheme:dark){{:root{{--bg:#1d1a17;--card:#27231f;--ink:#f3ece3;--soft:#b9ab9c;--line:#3a332c;--teal:#5fb3ad;--terra:#e08a63}}}}
@@ -198,11 +216,13 @@ table{{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:10px}} td,
 button.pend{{background:var(--bg);color:var(--soft);border:1px solid var(--line);padding:4px 10px;font-size:.8rem}}.card.done button.pend.on{{color:var(--terra);border-color:var(--terra)}}.note{{margin:8px 0 0;color:var(--terra);font-size:.88rem;font-weight:600}}.card.done .note{{display:none}}
 </style></head><body><div class="wrap">
 <div id="locked" hidden><h1>Private page</h1><p class="sub">This page is private.</p></div>
-<div id="app" hidden><div class="head"><h1>Group posts</h1><span class="tips">
+<div id="app" hidden><div class="head"><h1>Tasks</h1><span class="tips">
 <button class="tip" type="button">English ?<span class="pop"><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</span></button>
 <button class="tip" type="button">Other ?<span class="pop"><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.<br><br><b>"You have a pending post"</b> in a group (the admins haven't approved the last one yet)? Don't post again: tap <b>Still pending</b>. The group is skipped today, gets the video it missed next round, and its card reminds you to check first.<br><br>Every day: a morning 3 and an evening 3, about 6 hours apart (the same on every device). Skipped ones come back in the next round.</span></button>
 </span></div><p class="sub" id="date"></p>
-<div id="todo"></div><h2>Today</h2><div id="today"></div>
+<h2>YouTube</h2><div id="yt"></div>
+<h2>Instagram</h2><div id="ig"></div>
+<h2>Facebook</h2><div id="todo"></div><h3>Today's groups</h3><div id="today"></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
 <details><summary id="allsum">All groups, in rotation order</summary><div id="all"></div></details>
 </div><p class="foot" id="foot" data-built="{built}" data-fp="{fp}"></p>
@@ -364,7 +384,7 @@ function ytCard() {{
   const p = (D.yt || []).find(p => p.date === today) || (D.yt || []).find(p => p.date === ymd(yd) && !ticks()["yt-" + p.date]);
   if (!p) return null;
   const key = "yt-" + p.date, done = !!ticks()[key], wrap = document.createElement("div");
-  wrap.innerHTML = `<h3>YouTube Post${{p.date === today ? "" : " (yesterday's)"}}</h3><div class="card${{done ? " done" : ""}}"><div class="top">
+  wrap.innerHTML = `<h3>Post${{p.date === today ? "" : " (yesterday's)"}}</h3><div class="card${{done ? " done" : ""}}"><div class="top">
     <span class="g">${{esc(p.title)}}</span><span class="right"><label class="tick"><input type="checkbox" ${{done ? "checked" : ""}}> Posted</label></span></div>
     <div class="btns"><a class="btn" href="https://www.youtube.com/@2MinArabic/posts" target="_blank" rel="noopener">Open YouTube Posts</a>
     <span class="file">Pictures: <b>Downloads → yt-posts → ${{esc(p.folder)}}</b> (all ${{p.n}})</span></div>
@@ -387,7 +407,24 @@ function todoCard() {{
       test.map(g => `<p style="margin:4px 0"><b>${{esc(g.name)}}</b> — ${{esc(g.todo)}}</p>`).join("") : "") + `</div>`;
   box.querySelectorAll("input").forEach(i => i.onchange = () => {{ try {{ left[i.dataset.n] = Date.now(); localStorage.setItem("fbgl", JSON.stringify(left)); }} catch (e) {{}} todoCard(); }});
 }}
-function render() {{ todoCard(); if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); const y = ytCard(); if (y) document.getElementById("today").prepend(y); }}
+// YouTube section: the Post on carousel days, otherwise a quiet line with the next one
+function ytSection() {{
+  const box = document.getElementById("yt"); box.innerHTML = ""; const y = ytCard();
+  if (y) {{ box.appendChild(y); return; }}
+  const nx = (D.yt || []).filter(p => p.date > ymd(now)).sort((a, b) => a.date < b.date ? -1 : 1)[0];
+  box.innerHTML = `<p class="none">Nothing to do today.${{nx ? " Next YouTube Post: " + new Date(nx.date + "T12:00").toLocaleDateString("en-GB", {{weekday: "short", day: "numeric", month: "short"}}) + "." : ""}}</p>`;
+}}
+// Instagram section (owner 2026-11-10): everything posts by itself; a card only when a queue Claude fills runs low
+function igSection() {{
+  const box = document.getElementById("ig"), q = D.q || {{}}, t = q.trial, c = q.carousel; box.innerHTML = "";
+  const day = d => new Date(d + "T12:00").toLocaleDateString("en-GB", {{weekday: "short", day: "numeric", month: "short"}});
+  const low = [];
+  if (t && t.left <= 5) low.push(`<p style="margin:4px 0"><b>Language trials: ${{t.left ? t.left + " left — the last one " + day(t.last) : "the queue is empty"}}.</b> Tell Claude <b>"fill the trials"</b>.</p>`);
+  if (c && c.left <= 2) low.push(`<p style="margin:4px 0"><b>Carousels: ${{c.left ? c.left + " left" : "the queue is empty"}}.</b> Tell Claude <b>"make the next carousels"</b>.</p>`);
+  if (low.length) box.innerHTML = `<div class="card">${{low.join("")}}</div>`;
+  else box.innerHTML = `<p class="none">Nothing to do — posting by itself.${{t ? " Trials: " + t.left + " queued (to " + day(t.last) + ")." : ""}}${{c ? " Carousels: " + c.left + " queued." : ""}}</p>`;
+}}
+function render() {{ todoCard(); if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); ytSection(); igSection(); }}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
 const UPD = Array.from({{length: 16}}, (_, k) => 5 + k).map(h => h);  // checks at :05 (laptop) and :25 (GitHub)
 function footer() {{
@@ -456,6 +493,10 @@ allTable();
 """
 
 
+REDIRECT = ('<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>Tasks</title>'
+            '<script>location.replace("tasks.html" + location.hash)</script><a href="tasks.html">Tasks</a>\n')
+
+
 def main():
     if "--show-groups" in sys.argv:
         print(json.dumps(_G, ensure_ascii=False, indent=1)); return
@@ -466,18 +507,19 @@ def main():
     groups = [{"name": n, "code": l, "lang": LANG[l], "members": m, "kind": k, "url": URLS.get(n, ""), "dropped": n in DROPPED, "start": START_IDX.get(n, 0), "share": n in SHARE, "todo": TODO.get(n, ""), "left": n in LEFT, "fresh": n in FRESH, "pause": PAUSE.get(n, ""), "say": SAY.get(n, ""), "personal": n in PERSONAL} for n, l, m, k in GROUPS]
     out = page(groups, order(), content())
     if "--push" not in sys.argv:
-        p = pathlib.Path(tempfile.gettempdir()) / "groups.html"; p.write_text(out, encoding="utf-8"); print(p); return
+        p = pathlib.Path(tempfile.gettempdir()) / "tasks.html"; p.write_text(out, encoding="utf-8"); print(p); return
     wt = pathlib.Path(tempfile.mkdtemp()) / "gh"
     run = lambda *a, **k: subprocess.run(a, cwd=k.get("cwd", ROOT), check=True, capture_output=True, text=True)
     run("git", "fetch", "-q", "origin", "gh-pages")
     run("git", "worktree", "add", "--detach", str(wt), "origin/gh-pages")
     try:
-        f = wt / "groups.html"
+        f = wt / "tasks.html"
         old = f.read_text(encoding="utf-8") if f.exists() else ""
         if re.search(r'data-fp="([^"]*)"', old) and re.search(r'data-fp="([^"]*)"', old).group(1) == re.search(r'data-fp="([^"]*)"', out).group(1):
             print("no change"); return
         f.write_text(out, encoding="utf-8")
-        run("git", "add", "groups.html", cwd=wt)
+        (wt / "groups.html").write_text(REDIRECT, encoding="utf-8")   # old bookmarks (owner 2026-11-10: renamed to the task page)
+        run("git", "add", "tasks.html", "groups.html", cwd=wt)
         run("git", "commit", "-m", "Group posts page", cwd=wt)
         run("git", "push", "-q", "origin", "HEAD:gh-pages", cwd=wt)
         print("pushed")

@@ -26,4 +26,4 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           python3 tools/site_latest.py --push
           pip install -q cryptography
-          python3 tools/fb_groups_page.py --push   # the owner's group-posts page (groups.html)
+          python3 tools/fb_groups_page.py --push   # the owner's task page (tasks.html; groups.html forwards to it)
