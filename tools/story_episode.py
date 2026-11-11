@@ -221,6 +221,9 @@ def pop_scale(age):
     return 0.5 + 0.6 * a / 0.75 if a < 0.75 else 1.1 - 0.1 * (a - 0.75) / 0.25
 
 
+LIST_EN = 32   # the list's English size (vertical Shorts: 38, owner 2026-11-11 "a bit enlarged … in black")
+
+
 def list_item(row, en, col, en_at=0, en_col=GREY):
     """one bullet of the word list, RGBA: ● + row (right to left: [(text, font, color, rtl)]) + the English under the
     row's piece en_at (verbs: under the coloured new form, in its colour — grey means the present; owner 2026-11-03).
@@ -229,7 +232,7 @@ def list_item(row, en, col, en_at=0, en_col=GREY):
     ws = [text_w(f, t, r) for t, f, c, r in row]
     boxes = [f.getbbox(t, anchor="rs", direction="rtl" if r else None) for t, f, c, r in row]
     top, bot = min(bx[1] for bx in boxes), max(bx[3] for bx in boxes)     # ink above / below the baseline
-    ef = ENI(32); eh = int(ef.size * 1.35)
+    ef = ENI(LIST_EN); eh = int(ef.size * 1.35)
     rights = [sum(ws[:i]) + gap * i for i in range(len(row))]            # each piece's right edge, from the text's right
     if isinstance(en, dict):   # English centred under each piece
         ens = [(t, max(rights[i] + ws[i] / 2, text_w(ef, t) / 2), "ma") for i, t in en.items()]   # never past the bullet side
@@ -483,6 +486,31 @@ def write_vcaptions(segs, ranges, out):
     (out.parent / "captions-upload.srt").write_text("\n".join(f"{i}\n{ts(a_)} --> {ts(b_)}\n{e}\n" for i, (a_, b_, e) in enumerate(out_, 1)), encoding="utf-8")
 
 
+def squeeze_pauses(track, ranges, thr=0.012, min_gap=0.3):
+    """split the kept ranges inside every silence ≥ 0.3 s of the voice so it plays half as long (0.25–1.0 s)"""
+    out, w = [], int(0.02 * SR)
+    for r0, r1 in ranges:
+        x = track[int(r0 * SR):int(r1 * SR)]
+        n = len(x) // w
+        if n == 0: out.append((r0, r1)); continue
+        loud = np.sqrt((x[:n * w].reshape(n, w) ** 2).mean(axis=1)) > thr
+        runs, i = [], 0
+        while i < n:
+            if not loud[i]:
+                j = i
+                while j < n and not loud[j]: j += 1
+                if (j - i) * 0.02 >= min_gap and i > 0 and j < n: runs.append((r0 + i * 0.02, r0 + j * 0.02))
+                i = j
+            else: i += 1
+        a_ = r0
+        for s0, s1 in runs:
+            keep = min(max(0.5 * (s1 - s0), 0.25), 1.0)
+            out.append((a_, s0 + keep / 2)); a_ = s1 - keep / 2
+        out.append((a_, r1))
+    snap = lambda v: round(v * FPS) / FPS          # cut on whole video frames: sound and picture stay in sync
+    return [(snap(a_), snap(b_)) for a_, b_ in out if snap(b_) - snap(a_) >= 1 / FPS]
+
+
 def vertical_keep(segs, ranges):
     """the parts worth keeping (owner 2026-11-11: "cut the silence between sentences"): each line's voice ±0.3 s; a
     question keeps its thinking pause (q → a); the camera hook keeps its first line only"""
@@ -502,13 +530,50 @@ def vertical_keep(segs, ranges):
     return [tuple(x) for x in m]
 
 
+PUNCT_END = (".", "،", ",", ":", "؛", ";", "!", "؟", "?", "…")
+
+
+def smart_lines(words, wfun, sp, maxw):
+    """owner 2026-11-11: a sentence that needs two lines breaks where it reads well — after . ، : … if there is one
+    (the most even such break), else at the most even point — never leaving one word alone; one line if it fits"""
+    W_ = lambda ws: sum(wfun(w) for w in ws) + sp * max(0, len(ws) - 1)
+    if W_(words) <= maxw or len(words) < 2: return [words]
+    cands = [i for i in range(1, len(words)) if W_(words[:i]) <= maxw and W_(words[i:]) <= maxw]
+    if not cands: return None
+    punct = [i for i in cands if words[i - 1].endswith(PUNCT_END)]
+    best = min(punct or cands, key=lambda i: abs(W_(words[:i]) - W_(words[i:])))
+    return [words[:best], words[best:]]
+
+
+def draw_ar_smart(d, tokens, colors, font, cx, y, maxw):
+    sp = text_w(font, " ") or 18; lh = int(font.size * 1.45)
+    lines = smart_lines(tokens, lambda t: text_w(font, t, True), sp, maxw)
+    if lines is None: return draw_ar_tokens(d, tokens, colors, font, cx, y, maxw)
+    k = 0
+    for line in lines:
+        ws = [text_w(font, t, True) for t in line]
+        x = cx + (sum(ws) + sp * (len(line) - 1)) / 2
+        for t, w in zip(line, ws):
+            d.text((x - w, y), t, font=font, fill=colors[k], direction="rtl", anchor="la"); x -= w + sp; k += 1
+        y += lh
+    return y
+
+
+def draw_en_smart(d, s_, font, cx, y, maxw, fill=GREY):
+    words = s_.split(); lines = smart_lines(words, lambda w: text_w(font, w), text_w(font, " ") or 10, maxw)
+    if lines is None: return draw_en(d, s_, font, cx, y, maxw, fill)
+    for line in lines:
+        d.text((cx, y), " ".join(line), font=font, fill=fill, anchor="ma"); y += int(font.size * 1.3)
+    return y
+
+
 def v_text(d, ar, en, y, far, fen, col_ar=INK, col_en=GREY):
     """Arabic (explicit \\n = new line, each wrapped) + English under it, centred, no card"""
     for part in ar.split("\n"):
         t = ar_text(part).split()
-        y = draw_ar_tokens(d, t, [col_ar] * len(t), far, VW / 2, y, 1040)
+        y = draw_ar_smart(d, t, [col_ar] * len(t), far, VW / 2, y, 1040)
     for part in en.split("\n"):
-        y = draw_en(d, part, fen, VW / 2, y - 4, 1040, fill=col_en)
+        y = draw_en_smart(d, part, fen, VW / 2, y - 4, 1040, fill=col_en)
     return y
 
 
@@ -517,6 +582,8 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
     3 stars close together at the very top · the words as LISTS in columns, opposites on the right, the other words /
     verbs on the left, popping in and staying · the picture full width (no paper margin) in the lower half with the
     sentence under it · talk/pair: plain text (no card) and the presenter under it · --heading until the first word."""
+    global LIST_EN
+    LIST_EN = 38
     in_rng = lambda t: any(r0 - 0.4 <= t < r1 + 0.4 for r0, r1 in ranges)
     left, right, seen = [], [], set()
     for e in sorted(R.entries + L.entries, key=lambda e: e["t"]):
@@ -544,9 +611,9 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
     best = None
     if items:
         mh = max(it["im"].height for it in items)
-        for sc in (1.0, 0.92, 0.85, 0.78, 0.72, 0.66, 0.6, 0.55, 0.5, 0.45):
+        for sc in (1.1, 1.0, 0.92, 0.85, 0.78, 0.72, 0.66, 0.6, 0.55, 0.5, 0.45):
             rh = mh * sc + 4
-            for rows in range(max(1, int(470 // rh)), 0, -1):   # a list: as many rows as fit (owner: "list form, columns")
+            for rows in range(max(1, min(int(560 // rh), max(len(left), len(right)))), 0, -1):   # a list: as many rows as fit, no empty ones
                 tw = width(left, rows, sc) + width(right, rows, sc) + (50 if left and right else 0)
                 if tw <= VW - 40: best = (sc, rows, rh); break
             if best: break
@@ -557,11 +624,16 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
             for c in cols(group, rows):
                 cw = max(it["im"].width for it in c) * sc
                 for i, it in enumerate(c):
-                    it["sim"] = it["im"].resize((max(1, int(it["im"].width * sc)), max(1, int(it["im"].height * sc))), Image.LANCZOS) if sc < 1 else it["im"]
+                    it["sim"] = it["im"].resize((max(1, int(it["im"].width * sc)), max(1, int(it["im"].height * sc))), Image.LANCZOS) if sc != 1 else it["im"]
                     it.update(right=x, cy=WY0 + i * rh + rh / 2)
                 x -= cw + 26 * sc
-        place(right, VW - 20)
-        place(left, 20 + width(left, rows, sc))
+        # the whole block centred (owner 2026-11-11: few words shouldn't hug the edge): opposites on its right side,
+        # the other words on its left side; inside a column the Arabic is right-aligned
+        wr, wl = width(right, rows, sc), width(left, rows, sc)
+        tw = wr + wl + (50 if left and right else 0)
+        xr = VW / 2 + tw / 2
+        place(right, xr)
+        place(left, xr - wr - (50 if right else 0))
         words_end = WY0 + rows * rh
     else:
         words_end = WY0
@@ -578,6 +650,9 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
     t_of = lambda x: (x.get("q_span") or x.get("span") or (x["start"] + x["subs"][0][0], 0))[0] + 0.1
     vis = [x for x in segs if x["kind"] in ("story", "qa", "camera") and in_rng(t_of(x))]
     th = max([text_h(x) for x in vis] + [200])
+    th_pic = {}
+    for x in vis:
+        if x.get("pic"): th_pic[x["pic"]] = max(th_pic.get(x["pic"], 0), text_h(x))
     def trimmed(n):
         p = P.picture(n)
         bb = p.convert("L").point(lambda v: 255 if v < 228 else 0).getbbox()
@@ -587,8 +662,21 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
     PIC_Y = int(max(words_end + 24, VH - 40 - th - 24 - hmax))
     room = VH - 40 - th - 24 - PIC_Y          # the picture's height budget (full width when it fits)
     def pic(n):
-        p = trimmed(n); k_ = min(VW / p.width, room / p.height)
-        return p.resize((int(p.width * k_), int(p.height * k_)), Image.LANCZOS)
+        """full width always (owner 2026-11-11: no side margins); it moves up into free space instead of shrinking,
+        and only shrinks if even that doesn't leave room for the text"""
+        # owner 2026-11-11: the subtitles get a minimum room (≥ 400 px, more if this picture's own sentences need it)
+        # and a small margin stays at the bottom of the video
+        p = trimmed(n); h = int(p.height * VW / p.width)
+        t_room = max(400, th_pic.get(n, 0)); limit = VH - 70 - t_room - 24
+        top = int(max(words_end + 24, limit - h))
+        if top + h > limit:
+            h = limit - top
+            full = int(p.height * VW / p.width)
+            if h < full:   # keep the full width: trim up to 12 % of the picture's height (top/bottom) before shrinking
+                cut = min(p.height - int(h * p.width / VW), int(0.12 * p.height))
+                if cut > 0: p = p.crop((0, cut // 2, p.width, p.height - (cut - cut // 2)))
+        k_ = min(VW / p.width, h / p.height)
+        return p.resize((int(p.width * k_), int(p.height * k_)), Image.LANCZOS), top
 
     def frame(t, tl, s, k, key, body):
         f = Image.new("RGB", (VW, VH), PAPER); d = ImageDraw.Draw(f)
@@ -610,15 +698,15 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
             n = s.get("pic")
             if n:
                 if n not in pics: pics[n] = pic(n)
-                im = pics[n]; f.paste(im, ((VW - im.width) // 2, PIC_Y)); y_ = PIC_Y + im.height + 24
+                im, top_ = pics[n]; f.paste(im, ((VW - im.width) // 2, top_)); y_ = top_ + im.height + 24
             else:
                 y_ = PIC_Y
             if k == "story":
                 toks = ar_text(s["ar"]).split(); cols_ = [INK] * len(toks)
                 for p_ in s.get("lit_l", []) + s.get("lit", []):
                     if t >= p_["t"] and p_["tok"] is not None: cols_[p_["tok"]] = p_["e"]["col"]
-                y_ = draw_ar_tokens(d, toks, cols_, FS, VW / 2, y_, 1040)
-                draw_en(d, s["en"], FE, VW / 2, y_ - 4, 1040)
+                y_ = draw_ar_smart(d, toks, cols_, FS, VW / 2, y_, 1040)
+                draw_en_smart(d, s["en"], FE, VW / 2, y_ - 4, 1040)
             elif k == "qa":
                 q0, q1 = s["q_span"]; a0, a1 = s["a_span"]
                 y_ = v_text(d, s["q"], s["qe"], y_, FQ, FQE)
@@ -713,8 +801,6 @@ def main():
     if a.vertical:
         ranges = [tuple(map(float, r.split("-"))) for r in a.ranges.split(",")] if a.ranges else [(a.t0, a.t1 or total)]
         ranges = vertical_keep(segs, ranges)
-        write_vcaptions(segs, ranges, ROOT / a.out)
-        if a.captions: return
     star_times = [x for s in segs for x in s.get("stars", [])]
     t1 = min(a.t1 or total, total)
 
@@ -722,6 +808,10 @@ def main():
     signal.signal(signal.SIGTERM, lambda *_: sys.exit(1))
     try:
         vtrack = mix(voice, total)
+        if a.vertical:   # owner 2026-11-11: pauses inside a sentence halved, no pause longer than 1 s
+            ranges = squeeze_pauses(vtrack, ranges)
+            write_vcaptions(segs, ranges, ROOT / a.out)
+            if a.captions: return
         sfx = np.zeros_like(vtrack)
         chime = read_audio(ROOT / "assets/stars/chime.wav") * 0.6
         pop = read_audio(ROOT / "assets/sfx/pop.wav") * 0.18
@@ -803,7 +893,7 @@ def main():
         afilter = f"volume={-14 - lufs:.2f}dB,alimiter=limit={10 ** (-1.5 / 20):.3f}:level=false"
         if a.vertical:
             full = np.clip(vtrack + sfx, -1, 1)
-            short = np.concatenate([full[int(r0 * SR):int(r1 * SR)] for r0, r1 in ranges])
+            short = np.concatenate([full[round(r0 * FPS) * (SR // FPS):round(r1 * FPS) * (SR // FPS)] for r0, r1 in ranges])
             dloc = len(short) / SR
             v_stars_t = [dloc / 3, 2 * dloc / 3 - 0.1 * dloc, dloc - 6.0]   # owner 2026-11-11: 2nd 10 % earlier, 3rd 5 s earlier
             for st in v_stars_t:
@@ -823,7 +913,7 @@ def main():
                                 "-c:v", "libx264", "-crf", "17", "-preset", "medium", "-pix_fmt", "yuv420p",
                                 "-c:a", "aac", "-b:a", "192k", "-af", afilter, "-shortest", str(ROOT / a.out)],
                                stdin=subprocess.PIPE)
-        fis = [fi for r0, r1 in ranges for fi in range(int(r0 * FPS), int(r1 * FPS))] if a.vertical else range(int(a.t0 * FPS), int(t1 * FPS))
+        fis = [fi for r0, r1 in ranges for fi in range(round(r0 * FPS), round(r1 * FPS))] if a.vertical else range(int(a.t0 * FPS), int(t1 * FPS))
         for li, fi in enumerate(fis):
             t = fi / FPS
             s = next((x for x in segs if x["start"] <= t < x["end"]), segs[-1])

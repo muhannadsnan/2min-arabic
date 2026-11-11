@@ -615,7 +615,9 @@
    "kind": "talk",
    "line": 49,
    "ar": "الآن كلمات مهمة من القصة. كل كلمة مع عكسها، هكذا أسهل للتذكر.",
-   "en": "Now, important words from the story. Each word with its opposite: that way they are easier to remember."
+   "en": "Now, important words from the story. Each word with its opposite: that way they are easier to remember.",
+   "ar_v": "كلمات مهمة من القصة. كل كلمة مع عكسها، هكذا أسهل للتذكر.",
+   "en_v": "Important words from the story. Each word with its opposite: that way they are easier to remember."
   },
   {
    "kind": "pair",
