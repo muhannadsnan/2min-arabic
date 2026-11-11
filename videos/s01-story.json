@@ -76,7 +76,7 @@
   {"kind": "story", "line": 15, "pic": 10, "replay": true},
   {"kind": "qa", "line": 42, "pic": 10, "ar": "من يرى ماهر في النهاية؟ … كامل العصفور يرى ماهر.", "en": "Who sees Maher at the end? … Kamel the bird sees Maher."},
   {"kind": "qa", "line": 43, "pic": 10, "ar": "ماذا يقول كامل؟ … لقد قال: ممتاز!", "en": "What does Kamel say? … He said: excellent!"},
-  {"kind": "qa", "line": 44, "pic": 10, "ar": "هل قال كامل: جيد جداً؟ … في الحقيقة نفس المعنى تقريباً، قال: ممتاز!", "en": "Did Kamel say \"very good\"? … Actually, almost the same meaning: he said \"excellent!\""},
+  {"kind": "qa", "line": 44, "pic": 10, "ar": "هل قال كامل: جيد جداً؟ … في الحقيقة نعم، نفس المعنى تقريباً، قال: ممتاز!", "en": "Did Kamel say \"very good\"? … Actually yes, almost the same meaning: he said \"excellent!\""},
   {"kind": "story", "line": 16, "pic": 11, "replay": true},
   {"kind": "qa", "line": 45, "pic": 12, "ar": "من وصل أولاً؟ … ماهر هو الأول.", "en": "Who arrived first? … Maher is the first."},
   {"kind": "qa", "line": 46, "pic": 12, "ar": "هل وصل رامي قبل ماهر؟ … لا، بل على العكس، رامي وصل متأخراً.", "en": "Did Rami arrive before Maher? … No, the opposite: Rami arrived late."},

@@ -1,6 +1,6 @@
 # Story 1 Short · Upload sheet
 
-**File to upload:** `output/s01-5-future/s01-5-future.mp4` (vertical, 1:02 → **Short**, made from Story 1: the horse and the turtle)
+**File to upload:** `output/s01-5-future/s01-5-future.mp4` (vertical, 1:06 → **Short**, made from Story 1: the horse and the turtle)
 **Thumbnail:** Upload file → `output/s01-5-future/s01-5-future-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -93,7 +93,7 @@ What will you do tomorrow? Say it in Arabic 👇 (⁧سأذهب⁩ sa-adh-hab = 
 
 ## Quality check (Claude)
 
-- New material for the Shorts tab: Story 1 was only a 16:9 long video. Re-rendered natively in 9:16 (tools/story_episode.py --vertical): picture + sentence + this sentence's key words big in the middle; presenter scenes with the caption ABOVE him (never on his face); stars at the top; nothing in the bottom 22 % the Shorts UI covers.
-- Opens on "And now, the story in the future: tomorrow!" and the "sa" rule; ends at the end of its section (its star chime).
+- New material for the Shorts tab: Story 1 was only a 16:9 long video. Re-rendered natively in 9:16 (tools/story_episode.py --vertical): 3 big stars across the top, one chime every third of the Short · ALL its words below them, popping in as said and staying to the end · the picture full width + the sentence · presenter parts with the caption ABOVE him (never on his face) · nothing in the bottom part the Shorts UI covers.
+- Opens on a big heading FUTURE TENSE (the same story, tomorrow · ⁧المستقبل⁩) while you say "and now, the story in the future: tomorrow!"; ends at the end of its section (its star chime).
 - Arabic = your recording; −14 LUFS; captions cut from Story 1's synced captions.
 - Thumbnail: STORY 1 badge + big subject words + one Arabic line from the video (no tashkeel, learner rule).

@@ -429,56 +429,181 @@ class Painter:
         return self.cards[key]
 
 
-def caption_box(frame, ar, en, x0=60, x1=None, bottom=40, top=None):
-    """Arabic + English at the bottom (talk / pair); any frame size (vertical Shorts: bottom = the Shorts UI margin)"""
+def caption_box(frame, ar, en, x0=60, x1=None, top=None, fs=54):
+    """Arabic + English at the bottom (talk / pair), or from `top` down (vertical Shorts); returns the box's bottom y"""
     W, H = frame.size
     x1 = x1 or W - 60
-    f, fe = AR(54), ENI(34)
+    f, fe = AR(fs), ENI(int(fs * 0.63))
     toks = ar_text(ar).split()
     lines = ar_lines(toks, f, x1 - x0 - 80)
     en_l = wrap_en(en, fe, x1 - x0 - 80)
     h = len(lines) * int(f.size * 1.45) + len(en_l) * int(fe.size * 1.3) + 40
-    y0 = H - bottom - h if top is None else top
+    y0 = H - 40 - h if top is None else top
     box = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     ImageDraw.Draw(box).rounded_rectangle((x0, y0, x1, y0 + h), 28, fill=(255, 255, 255, 236))
     frame.paste(box, (0, 0), box)
     d = ImageDraw.Draw(frame)
     y = draw_ar_tokens(d, toks, [INK] * len(toks), f, (x0 + x1) / 2, y0 + 14, x1 - x0 - 80)
     draw_en(d, en, fe, (x0 + x1) / 2, y - 6, x1 - x0 - 80)
+    return y0 + h
 
 
 CHAPTERS = ["The story", "Questions about the story", "Opposites: fast and slow, before and after", "The story in the past",
             "The story in the future"]   # one per star (the 5 sections); the camera intro/outro + the end card frame them
 
 
-# ---- vertical Shorts (owner 2026-11-10: "make top 5 shorts from the story") ----
+# ---- vertical Shorts from the story (owner 2026-11-10/11) ----
 VW, VH = 1080, 1920
-SAFE_B = 430          # the Shorts title/channel overlay covers the bottom ~22 %: no text below VH - SAFE_B
-V_TOP = 150           # …and the top bar: stars start here
+V_BOTTOM = 1610        # text stays above this (the Shorts title/channel overlay covers the bottom)
 
 
-def v_stars(P, t, star_times):
-    strip = Image.new("RGB", (480, 100), PAPER); P.stars_on(strip, t, star_times)
-    return strip
+def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
+    """Returns frame(t, tl, s, k, key, body) for a 9:16 Short (owner 2026-11-11):
+    3 big stars across the top (one chime every third) · ALL words of the Short below them, popping in and staying ·
+    then the picture full width + the sentence (story/qa), or the caption + the presenter under it (talk/pair) —
+    never text on his face. --heading 'TITLE|sub|Arabic' fills the word area until the first word pops."""
+    in_rng = lambda t: any(r0 - 0.01 <= t < r1 for r0, r1 in ranges)
+    # every word/verb/opposite of the Short, once, in pop order
+    items, seen = [], set()
+    for e in sorted(R.entries + L.entries, key=lambda e: e["t"]):
+        if not in_rng(e["t"]): continue
+        kind = e.get("typ", "o"); kk = (kind, repr(e["it"]))
+        if kk in seen: continue
+        seen.add(kk)
+        im = P.verb_item(*e["it"], e["col"]) if kind == "v" else P.word_item(*e["it"], e["col"]) if kind == "w" else P.opp_item(*e["it"], e["col"])
+        items.append({"t": e["t"], "im": im, "v": kind == "v"})
+    for x in segs:   # the opposites part: each pair joins the list once both cards have popped
+        if x["kind"] == "pair" and x.get("new_pair") and in_rng(x["start"]):
+            kk = ("p", repr(x["pair"]))
+            if kk in seen: continue
+            seen.add(kk)
+            items.append({"t": x["pops"][1]["t"] + 0.6, "im": P.opp_item(x["pair"][0], x["pair"][1], WORD_COLS[len(items) % len(WORD_COLS)])})
+    items.sort(key=lambda i: i["t"])
+    if any(i.get("v") for i in items):   # past / future: only the verbs at the top (owner 2026-11-11: "this includes the verbs")
+        items = [i for i in items if i.get("v")]
+    # stars
+    SW = 165; stars = [Image.open(ROOT / f"assets/stars/{n}.png").convert("RGBA").resize((SW, int(SW * 135 / 140)), Image.LANCZOS) for n in ("grey", "gold")]
+    STAR_Y = 118
+    WY0 = STAR_Y + stars[0].height + 18
+    # word area: flow the items into ≤ 3 centred rows, right to left (Arabic order), at the largest scale that fits
+    def flow(sc):
+        rows, cur, w = [], [], 0
+        for it in items:
+            iw = it["im"].width * sc; g = 30 * sc
+            if cur and w + g + iw > VW - 40:
+                rows.append(cur); cur, w = [], 0
+            w += (g if cur else 0) + iw; cur.append(it)
+        return rows + ([cur] if cur else [])
+    def flow_h(sc):
+        return sum(max(it["im"].height for it in row) * sc + 8 for row in flow(sc))
+    sc = 1.0
+    for sc in (1.0, 0.92, 0.85, 0.78, 0.72, 0.66, 0.6, 0.55):   # the biggest words that fit ≤ 500 px (picture shrinks a bit)
+        if flow_h(sc) <= 500: break
+    rows = flow(sc); y = WY0
+    for row in rows:
+        rh = max(it["im"].height for it in row) * sc
+        tw = sum(it["im"].width * sc for it in row) + 30 * sc * (len(row) - 1); xr = VW / 2 + tw / 2
+        for it in row:
+            im = it["im"].resize((max(1, int(it["im"].width * sc)), max(1, int(it["im"].height * sc))), Image.LANCZOS) if sc < 1 else it["im"]
+            it.update(sim=im, right=xr, cy=y + rh / 2); xr -= im.width + 30 * sc
+        y += rh + 8
+    head = a.heading.split("|") if a.heading else []
+    YC = int(max(y, WY0 + (285 if head else 0)) + 22)          # where the content starts (fixed for the whole Short)
+    # the picture: full width unless the longest text of the Short needs the room
+    def text_h(x):
+        if x["kind"] == "story":
+            return len(ar_lines(ar_text(x["ar"]).split(), AR(70), 1040)) * int(70 * 1.45) + len(wrap_en(x["en"], ENI(39), 1040)) * int(39 * 1.3)
+        if x["kind"] == "qa":
+            return (len(ar_lines(ar_text(x["q"]).split(), AR(66), 1040)) + len(ar_lines(ar_text(x["a"]).split(), AR(66), 1040))) * int(66 * 1.45) \
+                + (len(wrap_en(x["qe"], ENI(37), 1040)) + len(wrap_en(x["ae"], ENI(37), 1040))) * int(37 * 1.3) + 10
+        return 0
+    th = max([text_h(x) for x in segs if x["kind"] in ("story", "qa") and in_rng(x["start"])] + [300])
+    pic_hmax = V_BOTTOM - YC - th - 36
+    def pic(n):
+        p = P.picture(n)
+        g = p.convert("L").point(lambda v: 255 if v < 228 else 0)          # trim the empty paper around the drawing
+        bb = g.getbbox()
+        if bb:
+            pad = 14; p = p.crop((max(0, bb[0] - pad), max(0, bb[1] - pad), min(p.width, bb[2] + pad), min(p.height, bb[3] + pad)))
+        k_ = min(VW / p.width, pic_hmax / p.height)
+        return p.resize((int(p.width * k_), int(p.height * k_)), Image.LANCZOS)
+    pics = {}
 
-
-def v_page(P, n, strip):
-    """the hook picture alone, big, on paper (9:16)"""
-    v = Image.new("RGB", (VW, VH), PAPER)
-    v.paste(strip.resize((384, 80), Image.LANCZOS), (24, V_TOP))
-    pic = P.picture(n); kp = min(1000 / pic.width, 900 / pic.height)
-    pic = pic.resize((int(pic.width * kp), int(pic.height * kp)), Image.LANCZOS)
-    v.paste(pic, ((VW - pic.width) // 2, V_TOP + 160))
-    return v
-
-
-def v_person(big_im, strip, y):
-    """the presenter with his head at y (just below the caption/cards — never text on his face), body to the bottom edge"""
-    v = Image.new("RGB", (VW, VH), PAPER)
-    v.paste(strip.resize((384, 80), Image.LANCZOS), (24, V_TOP))
-    k = max(0.92, (VH + 40 - y) / big_im.height); im = big_im.resize((int(big_im.width * k), int(big_im.height * k)), Image.LANCZOS)
-    v.paste(im, ((VW - im.width) // 2, y), im)
-    return v
+    def frame(t, tl, s, k, key, body):
+        f = Image.new("RGB", (VW, VH), PAPER); d = ImageDraw.Draw(f)
+        for j in range(3):   # the stars
+            done = tl >= star_t[j]; im = stars[1 if done else 0]
+            if done and tl - star_t[j] < 0.45:
+                z = 1 + 0.35 * math.sin(math.pi * (tl - star_t[j]) / 0.45); im = im.resize((int(im.width * z), int(im.height * z)), Image.BICUBIC)
+            cx = VW * (1 + 2 * j) / 6
+            f.paste(im, (int(cx - im.width / 2), int(STAR_Y + stars[0].height / 2 - im.height / 2)), im)
+        shown = [it for it in items if it["t"] <= t]
+        if head and not shown:   # the heading: what this Short is about
+            hy = WY0 + 6
+            d.text((VW / 2, hy), head[0], font=ENB(104), fill=LIT, anchor="ma"); hy += 124
+            if len(head) > 1: d.text((VW / 2, hy), head[1], font=ENB(44), fill=INK, anchor="ma"); hy += 62
+            if len(head) > 2: draw_ar_tokens(d, ar_text(head[2]).split(), [GREEN] * len(ar_text(head[2]).split()), AR(58), VW / 2, hy - 8, 1000)
+        for it in shown:
+            paste_item(f, it["sim"], it["right"], it["cy"], t - it["t"])
+        if k in ("story", "qa") or (k == "camera" and s.get("pic")):
+            n = s["pic"]
+            if n not in pics: pics[n] = pic(n)
+            im = pics[n]; x0 = (VW - im.width) // 2
+            f.paste(im, (x0, YC)); y_ = YC + im.height + 26
+            if k == "story":
+                toks = ar_text(s["ar"]).split(); cols = [INK] * len(toks)
+                for p_ in s.get("lit_l", []) + s.get("lit", []):
+                    if t >= p_["t"] and p_["tok"] is not None: cols[p_["tok"]] = p_["e"]["col"]
+                y_ = draw_ar_tokens(d, toks, cols, AR(70), VW / 2, y_, 1040)
+                draw_en(d, s["en"], ENI(39), VW / 2, y_ - 4, 1040)
+            elif k == "qa":
+                q0, q1 = s["q_span"]; a0, a1 = s["a_span"]
+                qt = ar_text(s["q"]).split()
+                y_ = draw_ar_tokens(d, qt, [INK] * len(qt), AR(66), VW / 2, y_, 1040)
+                y_ = draw_en(d, s["qe"], ENI(37), VW / 2, y_ - 6, 1040)
+                if q1 + 0.2 <= t < a0:
+                    nd = min(3, int((t - q1 - 0.2) / max(0.3, (a0 - q1 - 0.2) / 3)) + 1)
+                    for j in range(3):
+                        cx = VW / 2 - 50 + j * 50
+                        d.ellipse((cx - 12, y_ + 14, cx + 12, y_ + 38), fill=GREEN if j < nd else (215, 210, 200))
+                if t >= a0:
+                    at = ar_text(s["a"]).split()
+                    y2 = draw_ar_tokens(d, at, [GREEN] * len(at), AR(66), VW / 2, y_ + 2, 1040)
+                    draw_en(d, s["ae"], ENI(37), VW / 2, y2 - 6, 1040, fill=GREEN)
+            else:   # the hook line over the picture
+                for j, (b0, b1) in enumerate(s["subs"]):
+                    if b0 <= t < b1 + 0.2:
+                        lines = wrap_en(s["en"][j], ENB(48), 940); bh = len(lines) * 62 + 30
+                        box = Image.new("RGBA", (VW, VH), (0, 0, 0, 0))
+                        ImageDraw.Draw(box).rounded_rectangle((50, y_, VW - 50, y_ + bh), 24, fill=(0, 0, 0, 160)); f.paste(box, (0, 0), box)
+                        yy = y_ + 15
+                        for ln in lines:
+                            d.text((VW / 2, yy), ln, font=ENB(48), fill=(255, 255, 255), anchor="ma"); yy += 62
+            return f
+        if k == "pair":   # the current pair big, arrow centred between the two cards (owner: it was misaligned)
+            p0 = segs.index(s); first = next(x for x in reversed(segs[:p0 + 1]) if x.get("new_pair"))
+            cy = YC + 95; g = 70
+            ims = [P.pair_card(*s["pair"][j], col) for j, col in ((0, CRAYON[0]), (1, CRAYON[2]))]
+            cxs = [VW / 2 + g + ims[0].width / 2, VW / 2 - g - ims[1].width / 2]   # first word on the right (Arabic order)
+            for j in range(2):
+                pt = first["pops"][j]["t"]
+                if t >= pt: paste_card(f, ims[j], int(cxs[j]), cy, t - pt)
+            if t >= first["pops"][1]["t"]:
+                d.text((VW / 2, cy), "↔", font=SYM(64), fill=GREY, anchor="mm")
+            top = cy + max(im.height for im in ims) / 2 + 24
+        else:
+            top = YC
+        ar_, en_ = s.get("ar", ""), s.get("en", "")
+        if s.get("span") and s["span"][0] < ranges[0][0] - 0.3 and s["start"] < ranges[0][0] <= s["end"]:
+            ar_ = ar_.split("!", 1)[1].strip() if "!" in ar_[:12] else ar_     # the Short starts after a cut first word
+            en_ = en_.split("!", 1)[1].strip() if "!" in en_[:12] else en_     # ("رائع!" / "Great!") — the caption too
+        bot = caption_box(f, ar_, en_, 40, VW - 40, top=top, fs=52) if ar_ else top
+        im = nar.transform(big[key], *body)
+        hy = bot + 26; z = max(0.9, (VH + 30 - hy) / im.height)
+        im = im.resize((int(im.width * z), int(im.height * z)), Image.LANCZOS)
+        f.paste(im, ((VW - im.width) // 2, int(hy)), im)
+        return f
+    return frame
 
 
 def write_captions(segs, total, out):
@@ -515,7 +640,9 @@ def main():
     ap.add_argument("--from", dest="t0", type=float, default=0); ap.add_argument("--to", dest="t1", type=float)
     ap.add_argument("--preview", action="store_true", help="ignore recordings: placeholders everywhere")
     ap.add_argument("--square", action="store_true", help="the clay owner in a small square on story/qa (off: owner 2026-11-03)")
-    ap.add_argument("--vertical", action="store_true", help="9:16 for Shorts (use with --from/--to)")
+    ap.add_argument("--vertical", action="store_true", help="9:16 Short; give the parts with --ranges")
+    ap.add_argument("--ranges", default="", help="vertical: source seconds a-b,c-d … joined in order")
+    ap.add_argument("--heading", default="", help="vertical: 'TITLE|subtitle|Arabic' shown at the top until the first word pops")
     ap.add_argument("--segments", action="store_true", help="no render: print every segment's start/end/kind/line")
     ap.add_argument("--captions", action="store_true", help="no render: write captions-upload.srt + chapters.txt next to OUT "
                     "from the same timeline (English, as on screen)")
@@ -526,8 +653,10 @@ def main():
         return write_captions(segs, total, ROOT / a.out)
     if a.segments:
         for x in segs:
-            print(f"{x['start']:8.2f} {x['end']:8.2f} {x['kind']:6} {x.get('line', '')!s:>4} {(x.get('ar') or x.get('file') or '')[:60]}")
+            print(f"{x['start']:8.2f} {x['end']:8.2f} {x['kind']:6} {x.get('line', '')!s:>4} voice {x.get('span', ('', ''))} {(x.get('ar') or x.get('file') or '')[:50]}")
         return
+    if a.vertical:
+        ranges = [tuple(map(float, r.split("-"))) for r in a.ranges.split(",")] if a.ranges else [(a.t0, a.t1 or total)]
     star_times = [x for s in segs for x in s.get("stars", [])]
     t1 = min(a.t1 or total, total)
 
@@ -538,7 +667,7 @@ def main():
         sfx = np.zeros_like(vtrack)
         chime = read_audio(ROOT / "assets/stars/chime.wav") * 0.6
         pop = read_audio(ROOT / "assets/sfx/pop.wav") * 0.18
-        for st in star_times:
+        for st in ([] if a.vertical else star_times):   # vertical Shorts get their own 3 chimes (below)
             p = int(st * SR); sfx[p:p + len(chime)] += chime[:len(sfx) - p]
         # mouth: the voice's loudness (placeholders: syllable-like bursts), only outside the filmed parts
         mv = mix(mouthv, total)
@@ -614,66 +743,64 @@ def main():
                               capture_output=True, text=True).stderr
         lufs = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", meas)[-1])
         afilter = f"volume={-14 - lufs:.2f}dB,alimiter=limit={10 ** (-1.5 / 20):.3f}:level=false"
+        if a.vertical:
+            full = np.clip(vtrack + sfx, -1, 1)
+            short = np.concatenate([full[int(r0 * SR):int(r1 * SR)] for r0, r1 in ranges])
+            dloc = len(short) / SR
+            v_stars_t = [dloc / 3, 2 * dloc / 3, dloc - 1.0]   # 3 stars, one chime every third (owner 2026-11-11)
+            for st in v_stars_t:
+                p = max(0, int(st * SR)); n_ = len(short[p:p + len(chime)]); short[p:p + n_] += chime[:n_]
+            sf.write(tmp / "short.wav", np.clip(short, -1, 1), SR)
+            meas = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(tmp / "short.wav"), "-af", "ebur128", "-f", "null", "-"],
+                                  capture_output=True, text=True).stderr
+            lufs = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", meas)[-1])
+            afilter = f"volume={-14 - lufs:.2f}dB,alimiter=limit={10 ** (-1.5 / 20):.3f}:level=false"
 
         cam = None
+        ain = ["-i", str(tmp / "short.wav")] if a.vertical else ["-ss", f"{a.t0:.3f}", "-t", f"{t1 - a.t0:.3f}", "-i", str(tmp / "audio.wav")]
+        if a.vertical:
+            vframe = vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, v_stars_t)
         enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{VW}x{VH}" if a.vertical else f"{W}x{H}",
-                                "-r", str(FPS), "-i", "-", "-ss", f"{a.t0:.3f}", "-t", f"{t1 - a.t0:.3f}", "-i", str(tmp / "audio.wav"),
+                                "-r", str(FPS), "-i", "-"] + ain + [
                                 "-c:v", "libx264", "-crf", "17", "-preset", "medium", "-pix_fmt", "yuv420p",
                                 "-c:a", "aac", "-b:a", "192k", "-af", afilter, "-shortest", str(ROOT / a.out)],
                                stdin=subprocess.PIPE)
-        for fi in range(int(a.t0 * FPS), int(t1 * FPS)):
+        fis = [fi for r0, r1 in ranges for fi in range(int(r0 * FPS), int(r1 * FPS))] if a.vertical else range(int(a.t0 * FPS), int(t1 * FPS))
+        for li, fi in enumerate(fis):
             t = fi / FPS
             s = next((x for x in segs if x["start"] <= t < x["end"]), segs[-1])
             k = s["kind"]
             key = (mouths[min(fi, len(mouths) - 1)], int(fi in blinks))
             body = nar.body(t, lift[min(fi, len(lift) - 1)])
-            strip = v_stars(P, t, star_times) if a.vertical else None
+            if a.vertical:
+                enc.stdin.write(vframe(t, li / FPS, s, k, key, body).tobytes()); continue
             if k == "card":
-                if a.vertical:
-                    enc.stdin.write(Image.new("RGB", (VW, VH), PAPER).tobytes()); continue
                 if "card_im" not in s:
                     s["card_im"] = Image.open(ROOT / s["image"]).convert("RGB").resize((W, H), Image.LANCZOS)
                 enc.stdin.write(s["card_im"].tobytes()); continue
             if k == "camera":
                 if s.get("video"):
                     if cam is None or cam[0] is not s:
-                        cw, ch = (VW, VH) if a.vertical else (W, H)
                         cam = (s, subprocess.Popen(["ffmpeg", "-v", "error", "-i", s["video"], "-vf",
-                               f"fps={FPS},scale={cw}:{ch}:force_original_aspect_ratio=increase,crop={cw}:{ch}",
+                               f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}",
                                "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE))
-                    fw, fh_ = (VW, VH) if a.vertical else (W, H)
-                    buf = cam[1].stdout.read(fw * fh_ * 3)
-                    frame = Image.frombytes("RGB", (fw, fh_), buf) if len(buf) == fw * fh_ * 3 else Image.new("RGB", (fw, fh_), PAPER)
+                    buf = cam[1].stdout.read(W * H * 3)
+                    frame = Image.frombytes("RGB", (W, H), buf) if len(buf) == W * H * 3 else Image.new("RGB", (W, H), PAPER)
                 else:
                     frame = Image.new("RGB", (W, H), (70, 74, 80)); d = ImageDraw.Draw(frame)
                     d.text((W / 2, H / 2 - 40), f"your filmed {s['file']} (lines {s['lines'][0]}–{s['lines'][-1]})", font=ENB(54), fill=(235, 235, 235), anchor="mm")
                 hook = s.get("pic") and s["subs"] and t < s["subs"][0][1]
                 if hook:
-                    frame = v_page(P, s["pic"], strip) if a.vertical else P.page(s["pic"])
-                FW, FH = frame.size; bm = SAFE_B if a.vertical else 50; bw = (FW - 140) / 2 if a.vertical else 800
+                    frame = P.page(s["pic"])
                 for j, (b0, b1) in enumerate(s["subs"]):
                     if b0 <= t < b1 + 0.2:
-                        box = Image.new("RGBA", (FW, FH), (0, 0, 0, 0)); d = ImageDraw.Draw(box)
-                        lines = wrap_en(s["en"][j], ENB(44), int(bw * 2 - 100))
-                        y = FH - bm - 20 - len(lines) * 58
-                        d.rounded_rectangle((FW / 2 - bw, y - 18, FW / 2 + bw, FH - bm), 22, fill=(0, 0, 0, 150))
+                        box = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(box)
+                        lines = wrap_en(s["en"][j], ENB(44), 1500)
+                        y = H - 70 - len(lines) * 58
+                        d.rounded_rectangle((W / 2 - 800, y - 18, W / 2 + 800, H - 50), 22, fill=(0, 0, 0, 150))
                         for ln in lines:
-                            d.text((FW / 2, y), ln, font=ENB(44), fill=(255, 255, 255, 255), anchor="ma"); y += 58
+                            d.text((W / 2, y), ln, font=ENB(44), fill=(255, 255, 255, 255), anchor="ma"); y += 58
                         frame.paste(box, (0, 0), box)
-            elif k == "talk" and a.vertical:
-                frame = v_person(nar.transform(big[key], *body), strip, 600)
-                caption_box(frame, s["ar"], s["en"], 50, VW - 50, top=V_TOP + 110)
-            elif k == "pair" and a.vertical:
-                frame = v_person(nar.transform(big[key], *body), strip, 860)
-                p0 = segs.index(s)
-                first_pair = next(x for x in reversed(segs[:p0 + 1]) if x.get("new_pair"))
-                for j, (cx, col) in enumerate([(VW // 2 + 245, CRAYON[0]), (VW // 2 - 245, CRAYON[2])]):   # side by side, Arabic order
-                    pt = first_pair["pops"][j]["t"]
-                    if t >= pt:
-                        paste_card(frame, P.pair_card(*s["pair"][j], col), cx, V_TOP + 260, t - pt)
-                if t >= first_pair["pops"][1]["t"]:
-                    ImageDraw.Draw(frame).text((VW // 2, V_TOP + 260), "↔", font=SYM(64), fill=GREY, anchor="mm")
-                caption_box(frame, s["ar"], s["en"], 50, VW - 50, top=V_TOP + 450)
             elif k == "talk":
                 frame = Image.new("RGB", (W, H), PAPER)
                 im = nar.transform(big[key], *body)
@@ -692,45 +819,6 @@ def main():
                 if t >= first_pair["pops"][1]["t"]:
                     ImageDraw.Draw(frame).text((530, 415), "↕", font=SYM(64), fill=GREY, anchor="mm")
                 caption_box(frame, s["ar"], s["en"], 60, 1000)
-            elif a.vertical:   # story / qa drawn natively in 9:16 (cropping the 16:9 page cut sentences and showed shadow edges)
-                frame = Image.new("RGB", (VW, VH), PAPER)
-                frame.paste(strip.resize((384, 80), Image.LANCZOS), (24, V_TOP))
-                pic = P.picture(s["pic"]); kp = min(1000 / pic.width, 700 / pic.height)
-                pic = pic.resize((int(pic.width * kp), int(pic.height * kp)), Image.LANCZOS)
-                x0, y0 = (VW - pic.width) // 2, V_TOP + 230   # picture + text centred in the part the Shorts UI leaves free
-                sh = Image.new("L", (VW, VH), 0); ImageDraw.Draw(sh).rectangle((x0 + 6, y0 + 10, x0 + pic.width + 6, y0 + pic.height + 10), fill=60)
-                frame = Image.composite(Image.new("RGB", (VW, VH), (120, 105, 90)), frame, sh.filter(ImageFilter.GaussianBlur(10)))
-                frame.paste(pic, (x0, y0)); d = ImageDraw.Draw(frame); y = y0 + pic.height + 34
-                if k == "story":
-                    toks = ar_text(s["ar"]).split(); cols = [INK] * len(toks)
-                    for p_ in s.get("lit_l", []) + s.get("lit", []):
-                        if t >= p_["t"] and p_["tok"] is not None and t < p_["e"]["until"]: cols[p_["tok"]] = p_["e"]["col"]
-                    y = draw_ar_tokens(d, toks, cols, AR(76), VW / 2, y, 1000)
-                    y = draw_en(d, s["en"], ENI(42), VW / 2, y - 4, 1000)
-                else:
-                    q0, q1 = s["q_span"]; a0, a1 = s["a_span"]
-                    qt = ar_text(s["q"]).split()
-                    y = draw_ar_tokens(d, qt, [INK] * len(qt), AR(72), VW / 2, y, 1000)
-                    y = draw_en(d, s["qe"], ENI(40), VW / 2, y - 6, 1000)
-                    if q1 + 0.2 <= t < a0:
-                        n = min(3, int((t - q1 - 0.2) / max(0.3, (a0 - q1 - 0.2) / 3)) + 1)
-                        for j in range(3):
-                            cx = VW / 2 - 50 + j * 50
-                            d.ellipse((cx - 12, y + 14, cx + 12, y + 38), fill=GREEN if j < n else (215, 210, 200))
-                    if t >= a0:
-                        at = ar_text(s["a"]).split()
-                        y2 = draw_ar_tokens(d, at, [GREEN] * len(at), AR(72), VW / 2, y + 2, 1000)
-                        y = draw_en(d, s["ae"], ENI(40), VW / 2, y2 - 6, 1000, fill=GREEN)
-                # this sentence's new words (or verbs / opposites), in one row under the text, popping in as they're said
-                its = [e for e in R.entries + L.entries if s["start"] - 0.01 <= e["t"] < s["end"] and e["t"] <= t < e["until"]]
-                ims = [(P.verb_item(*e["it"], e["col"]) if e.get("typ") == "v" else P.word_item(*e["it"], e["col"]) if "typ" in e
-                        else P.opp_item(*e["it"], e["col"]), e) for e in its]
-                if ims:
-                    tw = sum(im.width for im, _ in ims) + 50 * (len(ims) - 1); ks = min(1.0, 1000 / tw)
-                    xr = VW / 2 + tw * ks / 2; cy = y + 24 + max(im.height for im, _ in ims) * ks / 2
-                    for im, e in ims:   # right to left, like the Arabic
-                        im2 = im.resize((int(im.width * ks), int(im.height * ks)), Image.LANCZOS) if ks < 1 else im
-                        paste_item(frame, im2, xr, cy, t - e["t"]); xr -= im2.width + 50 * ks
             else:   # story / qa
                 frame = P.page(s["pic"])
                 d = ImageDraw.Draw(frame)
@@ -772,8 +860,7 @@ def main():
                     ImageDraw.Draw(frame).rounded_rectangle((SQ[0] - 6, SQ[1] - 6, SQ[2] + 6, SQ[3] + 6), 26, fill=(255, 255, 255))
                     m = Image.new("L", (sqw, sqw), 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, sqw, sqw), 22, fill=255)
                     frame.paste(face, SQ[:2], m)
-            if not a.vertical:
-                P.stars_on(frame, t, star_times)
+            P.stars_on(frame, t, star_times)
             enc.stdin.write(frame.tobytes())
         enc.stdin.close(); enc.wait()
         if cam: cam[1].kill()
