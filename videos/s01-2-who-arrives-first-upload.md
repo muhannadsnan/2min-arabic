@@ -1,6 +1,6 @@
 # Story 1 Short · Upload sheet
 
-**File to upload:** `output/s01-2-who-arrives-first/s01-2-who-arrives-first.mp4` (vertical, 0:50 → **Short**, made from Story 1: the horse and the turtle)
+**File to upload:** `output/s01-2-who-arrives-first/s01-2-who-arrives-first.mp4` (vertical, 2:33 → **Short**, made from Story 1: the horse and the turtle)
 **Thumbnail:** Upload file → `output/s01-2-who-arrives-first/s01-2-who-arrives-first-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -12,13 +12,13 @@
 ## Title
 
 ```
-Arabic Listening Quiz: Who Arrives First? | Story 1
+Arabic Listening Quiz: 29 Easy Questions | Story 1
 ```
 
 ## Description
 
 ```
-The end of the horse and the turtle: the story sentence, then easy questions in Arabic. Answer before you hear the answer! Who sees the turtle? Who arrives first, and why?
+29 easy questions in Arabic about the story of the horse and the turtle: who, where, why, fast or slow? Answer out loud before you hear the answer!
 
 📝 Words from this part:
 man waSala awwalan? — who arrived first? — ⁧من وصل أولا؟⁩
@@ -93,6 +93,6 @@ How many did you answer before me? 👇 Write your score (all = ⁧ممتاز!�
 ## Quality check (Claude)
 
 - New material for the Shorts tab: Story 1 was only a 16:9 long video. Re-rendered natively in 9:16 (tools/story_episode.py --vertical, owner feedback 11 Nov): 3 stars close together at the top (chimes at ⅓, ~57 % and 6 s before the end) · the words as lists in columns — opposites on the right, words/verbs on the left — popping in and staying · the picture full width in the lower half, the sentence bigger under it · presenter parts as plain text (no card) above him · pauses between sentences cut, inside sentences halved, none longer than 1 s · the layout is the story-Shorts template (story-episode skill).
-- Opens on the story sentence "Kamel the bird sees Maher and says: excellent!" with its picture; ends at the end of its section (its star chime).
+- All 29 questions of the story (owner 2026-11-11: "include all the questions"), without the repeated story sentences so it stays under 3 min; opens on "Who goes to the market?"; ends at the end of its section (its star chime).
 - Arabic = your recording; −14.5 LUFS; captions on the cut timeline (tools/story_episode.py --vertical --captions).
 - Thumbnail: STORY 1 badge + big subject words + one Arabic line from the video (no tashkeel, learner rule).

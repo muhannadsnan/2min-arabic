@@ -21,6 +21,7 @@ silent placeholder of estimated length (the mouth still moves), so the layout ca
 """
 import argparse
 import json
+import os
 import math
 import pathlib
 import random
@@ -404,25 +405,25 @@ class Painter:
                 im = im.resize((int(STAR[0] * s), int(STAR[1] * s)), Image.BICUBIC)
             frame.paste(im, (int(x + STAR[0] / 2 - im.width / 2), int(y + STAR[1] / 2 - im.height / 2)), im)
 
-    def word_item(self, ar, en, col):
-        key = ("w", ar, en, col)
+    def word_item(self, ar, en, col, en_col=GREY):
+        key = ("w", ar, en, col, en_col)
         if key not in self.cards:
-            self.cards[key] = list_item([(minimal(ar), AR(64), col, True)], en, col)
+            self.cards[key] = list_item([(minimal(ar), AR(64), col, True)], en, col, en_col=en_col)
         return self.cards[key]
 
-    def opp_item(self, a, b, col):
-        key = ("o", tuple(a), tuple(b), col)
+    def opp_item(self, a, b, col, en_col=GREY):
+        key = ("o", tuple(a), tuple(b), col, en_col)
         if key not in self.cards:
             self.cards[key] = list_item([(minimal(a[0]), AR(56), col, True), ("↔", SYM(40), GREY, False),
-                                         (minimal(b[0]), AR(56), col, True)], {0: a[1], 2: b[1]}, col)
+                                         (minimal(b[0]), AR(56), col, True)], {0: a[1], 2: b[1]}, col, en_col=en_col)
         return self.cards[key]
 
-    def verb_item(self, old, new, en, col):
-        key = ("v", old, new, en, col)
+    def verb_item(self, old, new, en, col, en_col=None):
+        key = ("v", old, new, en, col, en_col)
         if key not in self.cards:
             # past/future: the present (small, grey) ← the new form (in the word's colour)
-            self.cards[key] = list_item([(minimal(old), AR(42), GREY, True), ("←", SYM(30), GREY, False),
-                                         (minimal(new), AR(64), col, True)], en, col, en_at=2, en_col=col)
+            self.cards[key] = list_item([(minimal(old), AR(36 if en_col else 42), GREY, True), ("←", SYM(26 if en_col else 30), GREY, False),
+                                         (minimal(new), AR(64), col, True)], en, col, en_at=2, en_col=en_col or col)
         return self.cards[key]
 
     def pair_card(self, ar, en, col):
@@ -591,14 +592,14 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
         kind = e.get("typ", "o"); kk = (kind, repr(e["it"]))
         if kk in seen: continue
         seen.add(kk)
-        if kind == "o": right.append({"t": e["t"], "im": P.opp_item(*e["it"], e["col"])})
-        else: left.append({"t": e["t"], "im": P.verb_item(*e["it"], e["col"]) if kind == "v" else P.word_item(*e["it"], e["col"])})
+        if kind == "o": right.append({"t": e["t"], "im": P.opp_item(*e["it"], e["col"], INK)})
+        else: left.append({"t": e["t"], "im": P.verb_item(*e["it"], e["col"], INK) if kind == "v" else P.word_item(*e["it"], e["col"], INK)})
     for x in segs:
         if x["kind"] == "pair" and x.get("new_pair") and in_rng(x["span"][0] + 0.1):
             kk = ("p", repr(x["pair"]))
             if kk in seen: continue
             seen.add(kk)
-            right.append({"t": x["pops"][1]["t"] + 0.6, "im": P.opp_item(x["pair"][0], x["pair"][1], WORD_COLS[len(right) % len(WORD_COLS)])})
+            right.append({"t": x["pops"][1]["t"] + 0.6, "im": P.opp_item(x["pair"][0], x["pair"][1], WORD_COLS[len(right) % len(WORD_COLS)], INK)})
     items = left + right
     SW = 160; stars = [Image.open(ROOT / f"assets/stars/{n}.png").convert("RGBA").resize((SW, int(SW * 135 / 140)), Image.LANCZOS) for n in ("grey", "gold")]
     STAR_Y = 46; WY0 = STAR_Y + stars[0].height + 16
@@ -607,18 +608,20 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
         return [group[i:i + rows] for i in range(0, len(group), rows)]
     def width(group, rows, sc):
         cs = cols(group, rows)
-        return sum(max(it["im"].width for it in c) * sc for c in cs) + 26 * sc * max(0, len(cs) - 1)
+        return sum(max(it["im"].width for it in c) * sc for c in cs) + 18 * sc * max(0, len(cs) - 1)
     best = None
     if items:
         mh = max(it["im"].height for it in items)
-        for sc in (1.1, 1.0, 0.92, 0.85, 0.78, 0.72, 0.66, 0.6, 0.55, 0.5, 0.45):
+        for sc in (1.3, 1.2, 1.1, 1.0, 0.92, 0.85, 0.78, 0.72, 0.66, 0.6, 0.55, 0.5, 0.45):
             rh = mh * sc + 4
-            for rows in range(max(1, min(int(560 // rh), max(len(left), len(right)))), 0, -1):   # a list: as many rows as fit, no empty ones
-                tw = width(left, rows, sc) + width(right, rows, sc) + (50 if left and right else 0)
-                if tw <= VW - 40: best = (sc, rows, rh); break
+            for rows in range(max(1, min(int(a.list_h // rh), max(len(left), len(right)))), 0, -1):   # a list: as many rows as fit, no empty ones
+                tw = width(left, rows, sc) + width(right, rows, sc) + (28 if left and right else 0)
+                if tw <= VW - 16: best = (sc, rows, rh); break
+            if os.environ.get("VDEBUG") and not best: print("sc", sc, "no fit", [(r_, round(width(left, r_, sc) + width(right, r_, sc))) for r_ in range(3, 7)])
             if best: break
         best = best or (0.45, max(len(left), len(right)), mh * 0.45 + 4)
         sc, rows, rh = best
+        if os.environ.get("VDEBUG"): print("CHOSEN sc", sc, "rows", rows, "rh", rh, "left", [it["im"].width for it in left][:3], "right", [it["im"].width for it in right][:3])
         def place(group, x_right):
             x = x_right
             for c in cols(group, rows):
@@ -626,14 +629,14 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
                 for i, it in enumerate(c):
                     it["sim"] = it["im"].resize((max(1, int(it["im"].width * sc)), max(1, int(it["im"].height * sc))), Image.LANCZOS) if sc != 1 else it["im"]
                     it.update(right=x, cy=WY0 + i * rh + rh / 2)
-                x -= cw + 26 * sc
+                x -= cw + 18 * sc
         # the whole block centred (owner 2026-11-11: few words shouldn't hug the edge): opposites on its right side,
         # the other words on its left side; inside a column the Arabic is right-aligned
         wr, wl = width(right, rows, sc), width(left, rows, sc)
-        tw = wr + wl + (50 if left and right else 0)
+        tw = wr + wl + (28 if left and right else 0)
         xr = VW / 2 + tw / 2
         place(right, xr)
-        place(left, xr - wr - (50 if right else 0))
+        place(left, xr - wr - (28 if right else 0))
         words_end = WY0 + rows * rh
     else:
         words_end = WY0
@@ -667,7 +670,7 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
         # owner 2026-11-11: the subtitles get a minimum room (≥ 400 px, more if this picture's own sentences need it)
         # and a small margin stays at the bottom of the video
         p = trimmed(n); h = int(p.height * VW / p.width)
-        t_room = max(400, th_pic.get(n, 0)); limit = VH - 70 - t_room - 24
+        t_room = max(300, th_pic.get(n, 0)); limit = VH - 50 - t_room - 24
         top = int(max(words_end + 24, limit - h))
         if top + h > limit:
             h = limit - top
@@ -785,6 +788,7 @@ def main():
     ap.add_argument("--square", action="store_true", help="the clay owner in a small square on story/qa (off: owner 2026-11-03)")
     ap.add_argument("--vertical", action="store_true", help="9:16 Short; give the parts with --ranges")
     ap.add_argument("--ranges", default="", help="vertical: source seconds a-b,c-d … joined in order")
+    ap.add_argument("--list-h", type=int, default=560, help="vertical: height for the word list (bigger = bigger words, picture lower)")
     ap.add_argument("--heading", default="", help="vertical: 'TITLE|subtitle|Arabic' shown at the top until the first word pops")
     ap.add_argument("--segments", action="store_true", help="no render: print every segment's start/end/kind/line")
     ap.add_argument("--captions", action="store_true", help="no render: write captions-upload.srt + chapters.txt next to OUT "
