@@ -58,3 +58,12 @@ Each line = the search phrases that exist → the video. Check `tools/suggest.py
 - "arabic 101 common mistakes" → "5 mistakes every beginner makes" (wrong vs right)
 
 **Avoid even though searched:** insults / swear words (brand + policy), songs / nasheeds / kids' songs (not our audience, and music rights).
+
+**Dialects (owner 2026-11-11: "add Egyptian slang + the top-3 searched nationalities")** — `youtube_api.py niche`, last 365 days:
+- **Egyptian:** "egyptian arabic slang / lessons / for beginners"; top Shorts 24k–50k ("POV: you went to Egypt to learn Arabic…", "Egyptian vs Moroccan"), a 9-min "10 essential Egyptian words before your trip" 15k.
+- **Moroccan (Darija):** the biggest: "NEVER say this in Morocco…" 1.1 M, "Why is Moroccan Arabic so hard?" 741k, "Darija words that sound Spanish" 403k.
+- **Gulf / Saudi:** "Hindi to Arabic · daily use words in Saudi" 361k, "Hotel Arabic words for Gulf travelers" 186k, "2 everyday Gulf phrases" 293k — the Indian/Pakistani worker audience = our Hindi/Urdu trial audience.
+- (Lebanese/Levantine close behind — our own Syrian dialect, already in the "What Syrians say" Extras.)
+→ Format: **"Same thing, 4 dialects"** — one everyday phrase (how are you / I want / what's up / no problem / now) in Syria · Egypt · Morocco · Gulf, + the standard Arabic; and "10 Egyptian slang words". Every dialect word is checked with a native source before recording (the owner is Syrian; mark anything he isn't sure of).
+
+**"What your Arabic name means" — one video = 10 names** on a theme (boys' names · girls' names · names of prophets · names from nature · names with "Abd"), each name: the Arabic, the root meaning, one picture. Single-name Shorts only later, for a name that a themed video shows people search for.
