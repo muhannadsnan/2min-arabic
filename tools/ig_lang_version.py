@@ -89,8 +89,8 @@ def _pick_look(stem, lang):
 
 
 BADGE = {"hi": "2 मिनट अरबी", "ur": "دو منٹ عربی", "id": "2 Menit Bahasa Arab", "tr": "2 Dakikada Arapça",
-         "ms": "2 Minit Bahasa Arab"}
-DAY = {"hi": "दिन", "ur": "دن", "id": "Hari", "tr": "Gün", "ms": "Hari"}
+         "ms": "2 Minit Bahasa Arab", "es": "Árabe en 2 minutos", "fr": "L'arabe en 2 minutes"}   # es/fr: test 2026-11-11
+DAY = {"hi": "दिन", "ur": "دن", "id": "Hari", "tr": "Gün", "ms": "Hari", "es": "Día", "fr": "Jour"}
 BADGE_BOX = (188, 70, 891, 149)   # the yellow badge in the 1080×1920 frame (assemble.py BADGE_Y)
 W, H, COVER, FPS = 1080, 1920, 2.2, 30
 

@@ -44,8 +44,29 @@ def duration(path):
                                 capture_output=True, text=True).stdout or 0)
 
 
+def with_hook(path, caption):
+    """Facebook hook cover (owner 2026-11-11: only 11 % of Page views lasted 3 s): if data/fb-hooks/ has a picture for
+    this caption's first line (big subject words + an Arabic word, made by Claude ahead of time), lay it over the
+    first 1.6 s. Needs only ffmpeg (GitHub runners have it); without a picture the video goes up unchanged."""
+    import hashlib
+    first = (caption or "").strip().splitlines()[0].strip() if (caption or "").strip() else ""
+    png = pathlib.Path(__file__).resolve().parent.parent / "data" / "fb-hooks" / f"{hashlib.sha1(first.encode()).hexdigest()[:12]}.png"
+    if not first or not png.exists():
+        return pathlib.Path(path)
+    out = pathlib.Path(_scratch()) / "hooked.mp4"
+    r = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(path), "-i", str(png), "-filter_complex",
+                        "[1:v][0:v]scale2ref[h][v];[v][h]overlay=0:0:enable='lt(t,1.6)'", "-c:v", "libx264",
+                        "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy", str(out)],
+                       capture_output=True, text=True)
+    if r.returncode != 0 or not out.exists():
+        print(f"hook overlay failed, posting without: {r.stderr[:200]}"); return pathlib.Path(path)
+    print(f"hook cover: {png.name}")
+    return out
+
+
 def post_video(path, caption):
     """Upload a local video to the Page; returns the Facebook video id."""
+    path = with_hook(path, caption)
     pid, tok = creds(); path = pathlib.Path(path); size = path.stat().st_size
     if duration(path) <= 90:
         start = req(f"{GRAPH}/{pid}/video_reels", {"upload_phase": "start", "access_token": tok})

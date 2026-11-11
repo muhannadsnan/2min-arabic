@@ -29,6 +29,8 @@ def main():
     else:
         existing = [int(m.group(1)) for m in re.finditer(r"trial-(\d+)-", r.stdout)] if r.returncode == 0 else []
     n0 = max(existing, default=0); tmp = pathlib.Path(_scratch()); built = []
+    if "--first" in sys.argv:   # jump the queue (owner 2026-11-11: "start publishing from today"): numbers before the lowest
+        n0 = min(existing, default=1) - len(items) - 1
     for i, it in enumerate(items, 1):
         w = tmp / f"w{i}"; w.mkdir()
         v2 = ROOT / "output" / stem / f"ig-{it['lang']}.mp4"   # new style (tools/ig_lang_version.py) if built
