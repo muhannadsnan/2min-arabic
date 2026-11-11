@@ -67,3 +67,15 @@ Each line = the search phrases that exist → the video. Check `tools/suggest.py
 → Format: **"Same thing, 4 dialects"** — one everyday phrase (how are you / I want / what's up / no problem / now) in Syria · Egypt · Morocco · Gulf, + the standard Arabic; and "10 Egyptian slang words". Every dialect word is checked with a native source before recording (the owner is Syrian; mark anything he isn't sure of).
 
 **"What your Arabic name means" — one video = 10 names** on a theme (boys' names · girls' names · names of prophets · names from nature · names with "Abd"), each name: the Arabic, the root meaning, one picture. Single-name Shorts only later, for a name that a themed video shows people search for.
+
+**"Your language is full of Arabic words" (owner 2026-11-12: "hindi words from arabic, pakistani words from arabic…")**
+— one edition per language, 10 everyday words the viewer already says that are Arabic (with the Arabic, the meaning, a
+picture). Evidence (niche, 365 days): Hindi Short "अरब का यह शब्द कैसे हमारा शब्द हो गया" 2.28 M · "Word differences
+between Arabic & Urdu & Persian & Turkic" 993k · "Plural forms in Arabic and Turkish" 2.0 M · "Common dishes Arabic and
+Turkish" 1.77 M; searches "arabic words in urdu / hindi / turkish / persian / spanish / swahili", "urdu and arabic
+similar words". Editions, by our audience strength:
+1. **Hindi & Urdu** (kitaab, waqt, duniya, khabar, sabr, qalam, insaan, mausam, shukriya, zaroor…) — English video + Hindi and Urdu trials
+2. **Turkish** (kitap, kalem, saat, dünya, merhaba, insan, sabır…) · 3. **Indonesian / Malay** (kitab, waktu, dunia, ilmu, kursi, hadir, selamat…)
+4. **Spanish** (ojalá, aceite, azúcar, almohada, ojalá, hasta, aldea…) · 5. **Swahili** (kitabu, saa, habari, dunia, salama…) · 6. Persian · 7. English (sugar, coffee, algebra, cotton…)
+Each edition goes out on YouTube (English narration, the language in the title + translations) AND as an Instagram trial
+narrated in that language — the viewer hears his own words. Every word is checked (real Arabic origin, everyday use).
