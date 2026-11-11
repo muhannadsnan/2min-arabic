@@ -20,3 +20,41 @@ arabic-extras) so episodes are cheap to repeat. Pick by niche research (`youtube
 Finish the 30-day course first (it's the channel's promise; Days 16–30 ≈ 2 weeks). Meanwhile the **Extra slot**
 alternates: letters ↔ other Extras. After Day 30: a weekday rhythm, e.g. Mon/Wed/Fri course "Month 2", Tue/Thu
 letters, Sat story/conversation, Sun Vocab/Q&A game — one Short per day, one long video per week (Part or conversation).
+
+## Idea bank from real searches (YouTube autocomplete, 2026-11-11 — owner: "more ideas people search for")
+
+Each line = the search phrases that exist → the video. Check `tools/suggest.py` again before producing (searches move).
+
+**Words people look up ("X in Arabic")**
+- "animals in arabic (and english / name)" → Top 20 animals (clean animals only: no dogs/pigs)
+- "fruits in arabic (and english)" / "vegetables" → Top 15 fruits · Top 15 vegetables
+- "countries in arabic", "arab countries name" → the 22 Arab countries in Arabic (map style) · Top 20 world countries
+- "arabic food names (and pictures)", "arabic dishes" → Top 20 Arab dishes (dolma, falafel, hummus…, real dishes)
+- "100 arabic words / for everyday life / basic / common", "arabic words for daily use" → the long "100 everyday words" video
+- "50 arabic words", "most common arabic words", "50 arabic phrases" → long video + Shorts
+- "arabic numbers 1 to 100 / 100 to 200" → Month 3 numbers (docs/23)
+
+**"How to say … in Arabic" (one Short each — the classic search shape)**
+- "how to say I love you / how are you / what is your name / thank you in arabic" → one-question Shorts (some re-use recordings)
+- "arabic love words (and meanings)", "arabic romantic words" → 10 sweet words (habibi, hayati, ya albi…) — clean, family-friendly
+
+**Situations (travel = big intent)**
+- "arabic phrases for travel / for tourists / basic arabic for travel", "arabic for travelers" → a "Travel Arabic" set: airport, taxi, hotel, restaurant, shop, emergency (Short each + a long compilation)
+- "arabic phrases for conversation", "arabic greetings and responses" → greeting + the right answer pairs
+
+**Curiosity / comparison (Instagram-style surprise)**
+- "arabic words in english" (sugar, coffee, algebra, cotton…) → "10 English words that are secretly Arabic" (very shareable)
+- "arabic words in spanish" → Spanish words from Arabic (ojalá = inshallah!) — perfect for the Spanish test audience
+- "arabic vs persian / hebrew / turkish" → "Arabic vs Turkish: same word?" (Turkish audience is strong)
+- "arabic words that just make sense" → words whose logic is beautiful (e.g. the root k-t-b: kitaab, maktab, kaatib)
+
+**Dialect + slang (label clearly as dialect)**
+- "arabic slang (words / phrases)", "egyptian arabic slang" → 10 Syrian slang words · "yalla, khalas, wallah…" (the "What does X mean?" series)
+- "arabic name meaning (in urdu / for girls)", "islamic names meaning" → "What your Arabic name means" (Muhammad, Fatima, Noor, Amir…) — huge in Urdu/Hindi/Indonesian
+
+**Learning formats**
+- "learn arabic through (short) stories / stories and reading texts" → the monthly Story + its Shorts (proven)
+- "arabic alphabet (for beginners / pronunciation)" → the letters series (docs/17 #1)
+- "arabic 101 common mistakes" → "5 mistakes every beginner makes" (wrong vs right)
+
+**Avoid even though searched:** insults / swear words (brand + policy), songs / nasheeds / kids' songs (not our audience, and music rights).
