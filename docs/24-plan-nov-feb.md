@@ -33,7 +33,7 @@ comments".
 | **30 Nov** | Day 34: **What's your hobby?** | Letter 2 | Day 35: **Do you sleep early or late?** | **Top 20 animals** | **Hindi & Urdu words that are Arabic** (+ Hindi/Urdu trials) | Part 7 (Days 31–35) | drop the weakest trial language ~5 Dec · 🎙️ session B |
 | **7 Dec** | Day 36: **What's your favourite sport?** | Letter 3 | Day 37: **Where do you live?** (house, flat, city, village) | **Same thing, 4 dialects #1** (how are you: Syria · Egypt · Morocco · Gulf) | **Your Arabic name: 10 girls' names** | **Story 2** | |
 | **14 Dec** | Story 2 Short 1 | Short 2 | Short 3 | Short 4 | Short 5 | — | 🎙️ session C = the numbers sheet |
-| **21 Dec** | Numbers 20–100 | Letter 4 | 21–99 "backwards" | Phone numbers | **Merry Christmas & Happy New Year in Arabic** | **Arabic numbers 1 to 100** (long) | numbers month starts (docs/23) |
+| **21 Dec** | **Merry Christmas & Happy New Year in Arabic** (before the 25th) | Letter 4 | Numbers 20–100 | 21–99 "backwards" | Phone numbers | **Arabic numbers 1 to 100** (long) | numbers month starts (docs/23) |
 | **28 Dec** | 100 · 1,000 · million | Letter 5 | "Two" is special (dual) | How many brothers? | Days of the week = numbers | **Episode 3** (December) | |
 | **4 Jan** | What time is it? | Letter 6 | Half / quarter past | Prices: بكم؟ | Kilo, half kilo | Part (numbers) | 🎙️ session D (Ramadan + travel) |
 | **11 Jan** | How tall are you? | Letter 7 | How far? | It's 30 degrees | **Ramadan #1: what to say** (4 weeks early) | **Story 3** (market, with numbers) | |
