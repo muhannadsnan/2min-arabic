@@ -11,6 +11,8 @@ arabic-extras) so episodes are cheap to repeat. Pick by niche research (`youtube
 | 4 | **Situation sentences** | 5 or 10 easy sentences for one situation; words and specific letters highlighted in colour | Short | beginner+ level; colour-coding needs a card upgrade |
 | 5 | **Words → explained → story** | a few words introduced, explained, then used in a story; can use a fully cartoony style for variation | Short + longer cut of the same words | niche: "Learn Arabic Through a Short Story" Short 2.06 M |
 | 6 | **Curiosity words** | "The Arabic word for X is fascinating" shape | Short | niche: 420 k–1.1 M |
+| 7 | **Numbers in life** (Month 3) | the counting ladder (tens, 21–99, hundreds, thousands) + numbers in subjects: phone, time, prices, weights, height, distance, weather, years, the Arab world / the body in numbers | Short + 1–100 long + Episode 3 | owner 2026-11-09 · plan: docs/23-month-3-numbers.md · searches "arabic numbers 1 to 100 / 1 to 20 / 1 to 50" |
+| 8 | **Top N word lists** (owner 2026-11-11) | "Top 10 / 20 / 50 / 100 X in Arabic": food, jobs (v05 = Top 20), animals, countries, cities, fruits, colours, body, family, verbs, everyday words… — N fits the subject. One picture per word (pencil style), the owner's recording names them one by one | Top 10–20 = Short (≤ 3 min); Top 50–100 = a long video (watch hours) + Shorts cut from it | searches (suggest.py 11 Nov): "100 arabic words / for everyday life / basic / common", "50 arabic words", "animals in arabic (and english)", "countries in arabic", "fruits in arabic" · proven: Colors + Food (v03/v04) |
 | … | *(more to come from the owner)* | | | |
 
 ## How series run together (owner approved 2026-10-15)
