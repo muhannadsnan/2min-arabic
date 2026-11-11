@@ -600,6 +600,7 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
             if kk in seen: continue
             seen.add(kk)
             right.append({"t": x["pops"][1]["t"] + 0.6, "im": P.opp_item(x["pair"][0], x["pair"][1], WORD_COLS[len(right) % len(WORD_COLS)], INK)})
+    if a.no_words: left, right = [], []   # owner 2026-11-11 (the questions Short): no list, the picture moves up
     items = left + right
     SW = 160; stars = [Image.open(ROOT / f"assets/stars/{n}.png").convert("RGBA").resize((SW, int(SW * 135 / 140)), Image.LANCZOS) for n in ("grey", "gold")]
     STAR_Y = 46; WY0 = STAR_Y + stars[0].height + 16
@@ -671,7 +672,11 @@ def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
         # and a small margin stays at the bottom of the video
         p = trimmed(n); h = int(p.height * VW / p.width)
         t_room = max(300, th_pic.get(n, 0)); limit = VH - 50 - t_room - 24
-        top = int(max(words_end + 24, limit - h))
+        if a.no_words:   # no list: the picture + its sentences centred in the room under the stars
+            free = (VH - 50) - (words_end + 30) - h - max(300, th_pic.get(n, 0)) - 24
+            top = int(words_end + 30 + max(0, free / 2))
+        else:
+            top = int(max(words_end + 24, limit - h))
         if top + h > limit:
             h = limit - top
             full = int(p.height * VW / p.width)
@@ -788,6 +793,7 @@ def main():
     ap.add_argument("--square", action="store_true", help="the clay owner in a small square on story/qa (off: owner 2026-11-03)")
     ap.add_argument("--vertical", action="store_true", help="9:16 Short; give the parts with --ranges")
     ap.add_argument("--ranges", default="", help="vertical: source seconds a-b,c-d … joined in order")
+    ap.add_argument("--no-words", action="store_true", help="vertical: no popping word list; picture + text move up under the stars")
     ap.add_argument("--list-h", type=int, default=560, help="vertical: height for the word list (bigger = bigger words, picture lower)")
     ap.add_argument("--heading", default="", help="vertical: 'TITLE|subtitle|Arabic' shown at the top until the first word pops")
     ap.add_argument("--segments", action="store_true", help="no render: print every segment's start/end/kind/line")
