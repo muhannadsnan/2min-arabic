@@ -457,149 +457,204 @@ VW, VH = 1080, 1920
 V_BOTTOM = 1610        # text stays above this (the Shorts title/channel overlay covers the bottom)
 
 
+def write_vcaptions(segs, ranges, out):
+    """captions-upload.srt for a vertical Short: the same English cues, mapped onto the kept (cut) timeline"""
+    cues = []
+    for s in segs:
+        k = s["kind"]
+        if k == "camera": cues += [(a_, b_, e) for (a_, b_), e in zip(s["subs"][:1], s["en"][:1])]
+        elif k == "qa": cues += [(*s["q_span"], s["qe"]), (*s["a_span"], s["ae"])]
+        elif k in ("story", "talk", "pair"): cues.append((*s["span"], (s.get("en_v") or s["en"]).replace("\n", " ")))
+    def loc(t):
+        off = 0
+        for r0, r1 in ranges:
+            if t < r0: return off
+            if t <= r1: return off + t - r0
+            off += r1 - r0
+        return off
+    first = ranges[0][0]
+    out_ = []
+    for a_, b_, e in cues:
+        if b_ < first - 0.05 or not any(r0 - 0.05 <= a_ < r1 or r0 < b_ <= r1 + 0.05 for r0, r1 in ranges): continue
+        if a_ < first - 0.3 and e[:12].count("!") and e.split("!", 1)[1].strip(): e = e.split("!", 1)[1].strip()   # cut first word
+        x, y = loc(a_), loc(b_)
+        if y - x > 0.2: out_.append((x, y, e))
+    ts = lambda x: "%02d:%02d:%02d,%03d" % (x // 3600, x % 3600 // 60, x % 60, round(x % 1 * 1000) % 1000)
+    (out.parent / "captions-upload.srt").write_text("\n".join(f"{i}\n{ts(a_)} --> {ts(b_)}\n{e}\n" for i, (a_, b_, e) in enumerate(out_, 1)), encoding="utf-8")
+
+
+def vertical_keep(segs, ranges):
+    """the parts worth keeping (owner 2026-11-11: "cut the silence between sentences"): each line's voice ±0.3 s; a
+    question keeps its thinking pause (q → a); the camera hook keeps its first line only"""
+    out = []
+    for x in segs:
+        if x["kind"] == "qa": a_, b_ = x["q_span"][0] - 0.25, x["a_span"][1] + 0.35
+        elif x["kind"] == "camera": a_, b_ = x["start"] + x["subs"][0][0] - 0.3, x["start"] + x["subs"][0][1] + 0.3
+        elif x.get("span"): a_, b_ = x["span"][0] - 0.25, x["span"][1] + 0.35
+        else: continue
+        for r0, r1 in ranges:
+            lo, hi = max(a_, r0), min(b_, r1)
+            if hi - lo > 0.2: out.append([lo, hi])
+    out.sort(); m = []
+    for lo, hi in out:
+        if m and lo <= m[-1][1] + 0.05: m[-1][1] = max(m[-1][1], hi)
+        else: m.append([lo, hi])
+    return [tuple(x) for x in m]
+
+
+def v_text(d, ar, en, y, far, fen, col_ar=INK, col_en=GREY):
+    """Arabic (explicit \\n = new line, each wrapped) + English under it, centred, no card"""
+    for part in ar.split("\n"):
+        t = ar_text(part).split()
+        y = draw_ar_tokens(d, t, [col_ar] * len(t), far, VW / 2, y, 1040)
+    for part in en.split("\n"):
+        y = draw_en(d, part, fen, VW / 2, y - 4, 1040, fill=col_en)
+    return y
+
+
 def vertical_painter(a, spec, segs, ranges, P, R, L, big, nar, star_t):
-    """Returns frame(t, tl, s, k, key, body) for a 9:16 Short (owner 2026-11-11):
-    3 big stars across the top (one chime every third) · ALL words of the Short below them, popping in and staying ·
-    then the picture full width + the sentence (story/qa), or the caption + the presenter under it (talk/pair) —
-    never text on his face. --heading 'TITLE|sub|Arabic' fills the word area until the first word pops."""
-    in_rng = lambda t: any(r0 - 0.01 <= t < r1 for r0, r1 in ranges)
-    # every word/verb/opposite of the Short, once, in pop order
-    items, seen = [], set()
+    """frame(t, tl, s, k, key, body) for a 9:16 Short (owner 2026-11-11, 2nd round):
+    3 stars close together at the very top · the words as LISTS in columns, opposites on the right, the other words /
+    verbs on the left, popping in and staying · the picture full width (no paper margin) in the lower half with the
+    sentence under it · talk/pair: plain text (no card) and the presenter under it · --heading until the first word."""
+    in_rng = lambda t: any(r0 - 0.4 <= t < r1 + 0.4 for r0, r1 in ranges)
+    left, right, seen = [], [], set()
     for e in sorted(R.entries + L.entries, key=lambda e: e["t"]):
         if not in_rng(e["t"]): continue
         kind = e.get("typ", "o"); kk = (kind, repr(e["it"]))
         if kk in seen: continue
         seen.add(kk)
-        im = P.verb_item(*e["it"], e["col"]) if kind == "v" else P.word_item(*e["it"], e["col"]) if kind == "w" else P.opp_item(*e["it"], e["col"])
-        items.append({"t": e["t"], "im": im, "v": kind == "v"})
-    for x in segs:   # the opposites part: each pair joins the list once both cards have popped
-        if x["kind"] == "pair" and x.get("new_pair") and in_rng(x["start"]):
+        if kind == "o": right.append({"t": e["t"], "im": P.opp_item(*e["it"], e["col"])})
+        else: left.append({"t": e["t"], "im": P.verb_item(*e["it"], e["col"]) if kind == "v" else P.word_item(*e["it"], e["col"])})
+    for x in segs:
+        if x["kind"] == "pair" and x.get("new_pair") and in_rng(x["span"][0] + 0.1):
             kk = ("p", repr(x["pair"]))
             if kk in seen: continue
             seen.add(kk)
-            items.append({"t": x["pops"][1]["t"] + 0.6, "im": P.opp_item(x["pair"][0], x["pair"][1], WORD_COLS[len(items) % len(WORD_COLS)])})
-    items.sort(key=lambda i: i["t"])
-    if any(i.get("v") for i in items):   # past / future: only the verbs at the top (owner 2026-11-11: "this includes the verbs")
-        items = [i for i in items if i.get("v")]
-    # stars
-    SW = 165; stars = [Image.open(ROOT / f"assets/stars/{n}.png").convert("RGBA").resize((SW, int(SW * 135 / 140)), Image.LANCZOS) for n in ("grey", "gold")]
-    STAR_Y = 118
-    WY0 = STAR_Y + stars[0].height + 18
-    # word area: flow the items into ≤ 3 centred rows, right to left (Arabic order), at the largest scale that fits
-    def flow(sc):
-        rows, cur, w = [], [], 0
-        for it in items:
-            iw = it["im"].width * sc; g = 30 * sc
-            if cur and w + g + iw > VW - 40:
-                rows.append(cur); cur, w = [], 0
-            w += (g if cur else 0) + iw; cur.append(it)
-        return rows + ([cur] if cur else [])
-    def flow_h(sc):
-        return sum(max(it["im"].height for it in row) * sc + 8 for row in flow(sc))
-    sc = 1.0
-    for sc in (1.0, 0.92, 0.85, 0.78, 0.72, 0.66, 0.6, 0.55):   # the biggest words that fit ≤ 500 px (picture shrinks a bit)
-        if flow_h(sc) <= 500: break
-    rows = flow(sc); y = WY0
-    for row in rows:
-        rh = max(it["im"].height for it in row) * sc
-        tw = sum(it["im"].width * sc for it in row) + 30 * sc * (len(row) - 1); xr = VW / 2 + tw / 2
-        for it in row:
-            im = it["im"].resize((max(1, int(it["im"].width * sc)), max(1, int(it["im"].height * sc))), Image.LANCZOS) if sc < 1 else it["im"]
-            it.update(sim=im, right=xr, cy=y + rh / 2); xr -= im.width + 30 * sc
-        y += rh + 8
+            right.append({"t": x["pops"][1]["t"] + 0.6, "im": P.opp_item(x["pair"][0], x["pair"][1], WORD_COLS[len(right) % len(WORD_COLS)])})
+    items = left + right
+    SW = 160; stars = [Image.open(ROOT / f"assets/stars/{n}.png").convert("RGBA").resize((SW, int(SW * 135 / 140)), Image.LANCZOS) for n in ("grey", "gold")]
+    STAR_Y = 46; WY0 = STAR_Y + stars[0].height + 16
+    # columns: the biggest scale (then the fewest rows) whose columns fit the width and ≤ 470 px of height
+    def cols(group, rows):
+        return [group[i:i + rows] for i in range(0, len(group), rows)]
+    def width(group, rows, sc):
+        cs = cols(group, rows)
+        return sum(max(it["im"].width for it in c) * sc for c in cs) + 26 * sc * max(0, len(cs) - 1)
+    best = None
+    if items:
+        mh = max(it["im"].height for it in items)
+        for sc in (1.0, 0.92, 0.85, 0.78, 0.72, 0.66, 0.6, 0.55, 0.5, 0.45):
+            rh = mh * sc + 4
+            for rows in range(max(1, int(470 // rh)), 0, -1):   # a list: as many rows as fit (owner: "list form, columns")
+                tw = width(left, rows, sc) + width(right, rows, sc) + (50 if left and right else 0)
+                if tw <= VW - 40: best = (sc, rows, rh); break
+            if best: break
+        best = best or (0.45, max(len(left), len(right)), mh * 0.45 + 4)
+        sc, rows, rh = best
+        def place(group, x_right):
+            x = x_right
+            for c in cols(group, rows):
+                cw = max(it["im"].width for it in c) * sc
+                for i, it in enumerate(c):
+                    it["sim"] = it["im"].resize((max(1, int(it["im"].width * sc)), max(1, int(it["im"].height * sc))), Image.LANCZOS) if sc < 1 else it["im"]
+                    it.update(right=x, cy=WY0 + i * rh + rh / 2)
+                x -= cw + 26 * sc
+        place(right, VW - 20)
+        place(left, 20 + width(left, rows, sc))
+        words_end = WY0 + rows * rh
+    else:
+        words_end = WY0
     head = a.heading.split("|") if a.heading else []
-    YC = int(max(y, WY0 + (285 if head else 0)) + 22)          # where the content starts (fixed for the whole Short)
-    # the picture: full width unless the longest text of the Short needs the room
+    if head: words_end = max(words_end, WY0 + 70 + 124 + (62 if len(head) > 1 else 0) + (80 if len(head) > 2 else 0))
+    FS, FE, FQ, FQE = AR(80), ENI(45), AR(74), ENI(42)
     def text_h(x):
         if x["kind"] == "story":
-            return len(ar_lines(ar_text(x["ar"]).split(), AR(70), 1040)) * int(70 * 1.45) + len(wrap_en(x["en"], ENI(39), 1040)) * int(39 * 1.3)
+            return len(ar_lines(ar_text(x["ar"]).split(), FS, 1040)) * int(FS.size * 1.45) + len(wrap_en(x["en"], FE, 1040)) * int(FE.size * 1.3)
         if x["kind"] == "qa":
-            return (len(ar_lines(ar_text(x["q"]).split(), AR(66), 1040)) + len(ar_lines(ar_text(x["a"]).split(), AR(66), 1040))) * int(66 * 1.45) \
-                + (len(wrap_en(x["qe"], ENI(37), 1040)) + len(wrap_en(x["ae"], ENI(37), 1040))) * int(37 * 1.3) + 10
-        return 0
-    th = max([text_h(x) for x in segs if x["kind"] in ("story", "qa") and in_rng(x["start"])] + [300])
-    pic_hmax = V_BOTTOM - YC - th - 36
-    def pic(n):
+            return (len(ar_lines(ar_text(x["q"]).split(), FQ, 1040)) + len(ar_lines(ar_text(x["a"]).split(), FQ, 1040))) * int(FQ.size * 1.45) \
+                + (len(wrap_en(x["qe"], FQE, 1040)) + len(wrap_en(x["ae"], FQE, 1040))) * int(FQE.size * 1.3) + 50
+        return int(FS.size * 1.45) + 2 * int(FE.size * 1.3)
+    t_of = lambda x: (x.get("q_span") or x.get("span") or (x["start"] + x["subs"][0][0], 0))[0] + 0.1
+    vis = [x for x in segs if x["kind"] in ("story", "qa", "camera") and in_rng(t_of(x))]
+    th = max([text_h(x) for x in vis] + [200])
+    def trimmed(n):
         p = P.picture(n)
-        g = p.convert("L").point(lambda v: 255 if v < 228 else 0)          # trim the empty paper around the drawing
-        bb = g.getbbox()
-        if bb:
-            pad = 14; p = p.crop((max(0, bb[0] - pad), max(0, bb[1] - pad), min(p.width, bb[2] + pad), min(p.height, bb[3] + pad)))
-        k_ = min(VW / p.width, pic_hmax / p.height)
-        return p.resize((int(p.width * k_), int(p.height * k_)), Image.LANCZOS)
+        bb = p.convert("L").point(lambda v: 255 if v < 228 else 0).getbbox()
+        return p.crop(bb) if bb else p
     pics = {}
+    hmax = max([int(trimmed(x["pic"]).height * VW / trimmed(x["pic"]).width) for x in vis if x.get("pic")] + [600])
+    PIC_Y = int(max(words_end + 24, VH - 40 - th - 24 - hmax))
+    room = VH - 40 - th - 24 - PIC_Y          # the picture's height budget (full width when it fits)
+    def pic(n):
+        p = trimmed(n); k_ = min(VW / p.width, room / p.height)
+        return p.resize((int(p.width * k_), int(p.height * k_)), Image.LANCZOS)
 
     def frame(t, tl, s, k, key, body):
         f = Image.new("RGB", (VW, VH), PAPER); d = ImageDraw.Draw(f)
-        for j in range(3):   # the stars
+        for j in range(3):
             done = tl >= star_t[j]; im = stars[1 if done else 0]
             if done and tl - star_t[j] < 0.45:
                 z = 1 + 0.35 * math.sin(math.pi * (tl - star_t[j]) / 0.45); im = im.resize((int(im.width * z), int(im.height * z)), Image.BICUBIC)
-            cx = VW * (1 + 2 * j) / 6
+            cx = VW / 2 + (j - 1) * 215
             f.paste(im, (int(cx - im.width / 2), int(STAR_Y + stars[0].height / 2 - im.height / 2)), im)
         shown = [it for it in items if it["t"] <= t]
-        if head and not shown:   # the heading: what this Short is about
-            hy = WY0 + 6
+        if head and not shown:
+            hy = WY0 + 50
             d.text((VW / 2, hy), head[0], font=ENB(104), fill=LIT, anchor="ma"); hy += 124
-            if len(head) > 1: d.text((VW / 2, hy), head[1], font=ENB(44), fill=INK, anchor="ma"); hy += 62
+            if len(head) > 1: d.text((VW / 2, hy), head[1], font=ENB(46), fill=INK, anchor="ma"); hy += 62
             if len(head) > 2: draw_ar_tokens(d, ar_text(head[2]).split(), [GREEN] * len(ar_text(head[2]).split()), AR(58), VW / 2, hy - 8, 1000)
         for it in shown:
             paste_item(f, it["sim"], it["right"], it["cy"], t - it["t"])
-        if k in ("story", "qa") or (k == "camera" and s.get("pic")):
-            n = s["pic"]
-            if n not in pics: pics[n] = pic(n)
-            im = pics[n]; x0 = (VW - im.width) // 2
-            f.paste(im, (x0, YC)); y_ = YC + im.height + 26
+        if k in ("story", "qa", "camera"):
+            n = s.get("pic")
+            if n:
+                if n not in pics: pics[n] = pic(n)
+                im = pics[n]; f.paste(im, ((VW - im.width) // 2, PIC_Y)); y_ = PIC_Y + im.height + 24
+            else:
+                y_ = PIC_Y
             if k == "story":
-                toks = ar_text(s["ar"]).split(); cols = [INK] * len(toks)
+                toks = ar_text(s["ar"]).split(); cols_ = [INK] * len(toks)
                 for p_ in s.get("lit_l", []) + s.get("lit", []):
-                    if t >= p_["t"] and p_["tok"] is not None: cols[p_["tok"]] = p_["e"]["col"]
-                y_ = draw_ar_tokens(d, toks, cols, AR(70), VW / 2, y_, 1040)
-                draw_en(d, s["en"], ENI(39), VW / 2, y_ - 4, 1040)
+                    if t >= p_["t"] and p_["tok"] is not None: cols_[p_["tok"]] = p_["e"]["col"]
+                y_ = draw_ar_tokens(d, toks, cols_, FS, VW / 2, y_, 1040)
+                draw_en(d, s["en"], FE, VW / 2, y_ - 4, 1040)
             elif k == "qa":
                 q0, q1 = s["q_span"]; a0, a1 = s["a_span"]
-                qt = ar_text(s["q"]).split()
-                y_ = draw_ar_tokens(d, qt, [INK] * len(qt), AR(66), VW / 2, y_, 1040)
-                y_ = draw_en(d, s["qe"], ENI(37), VW / 2, y_ - 6, 1040)
+                y_ = v_text(d, s["q"], s["qe"], y_, FQ, FQE)
                 if q1 + 0.2 <= t < a0:
                     nd = min(3, int((t - q1 - 0.2) / max(0.3, (a0 - q1 - 0.2) / 3)) + 1)
                     for j in range(3):
                         cx = VW / 2 - 50 + j * 50
                         d.ellipse((cx - 12, y_ + 14, cx + 12, y_ + 38), fill=GREEN if j < nd else (215, 210, 200))
                 if t >= a0:
-                    at = ar_text(s["a"]).split()
-                    y2 = draw_ar_tokens(d, at, [GREEN] * len(at), AR(66), VW / 2, y_ + 2, 1040)
-                    draw_en(d, s["ae"], ENI(37), VW / 2, y2 - 6, 1040, fill=GREEN)
-            else:   # the hook line over the picture
-                for j, (b0, b1) in enumerate(s["subs"]):
-                    if b0 <= t < b1 + 0.2:
-                        lines = wrap_en(s["en"][j], ENB(48), 940); bh = len(lines) * 62 + 30
-                        box = Image.new("RGBA", (VW, VH), (0, 0, 0, 0))
-                        ImageDraw.Draw(box).rounded_rectangle((50, y_, VW - 50, y_ + bh), 24, fill=(0, 0, 0, 160)); f.paste(box, (0, 0), box)
-                        yy = y_ + 15
-                        for ln in lines:
-                            d.text((VW / 2, yy), ln, font=ENB(48), fill=(255, 255, 255), anchor="ma"); yy += 62
+                    v_text(d, s["a"], s["ae"], y_ + 2, FQ, FQE, GREEN, GREEN)
+            else:   # the hook: Arabic + English like the story sentences (owner 2026-11-11)
+                v_text(d, s.get("ar_subs", [""])[0], s["en"][0], y_, FS, FE)
             return f
-        if k == "pair":   # the current pair big, arrow centred between the two cards (owner: it was misaligned)
+        top = words_end + 24
+        if k == "pair":   # the pair as one group centred on the screen, the arrow between (wide words stay inside)
             p0 = segs.index(s); first = next(x for x in reversed(segs[:p0 + 1]) if x.get("new_pair"))
-            cy = YC + 95; g = 70
             ims = [P.pair_card(*s["pair"][j], col) for j, col in ((0, CRAYON[0]), (1, CRAYON[2]))]
-            cxs = [VW / 2 + g + ims[0].width / 2, VW / 2 - g - ims[1].width / 2]   # first word on the right (Arabic order)
+            g = 50; tw = ims[0].width + ims[1].width + 2 * g + 40
+            if tw > VW - 40:
+                z = (VW - 40) / tw; ims = [im.resize((int(im.width * z), int(im.height * z)), Image.LANCZOS) for im in ims]; tw = VW - 40
+            x0 = (VW - tw) / 2; ch = max(im.height for im in ims); cy = top + ch / 2 + 10
+            cxs = [x0 + tw - ims[0].width / 2, x0 + ims[1].width / 2]       # first word on the right (Arabic order)
+            ax = x0 + ims[1].width + g + 20
             for j in range(2):
                 pt = first["pops"][j]["t"]
-                if t >= pt: paste_card(f, ims[j], int(cxs[j]), cy, t - pt)
+                if t >= pt: paste_card(f, ims[j], int(cxs[j]), int(cy), t - pt)
             if t >= first["pops"][1]["t"]:
-                d.text((VW / 2, cy), "↔", font=SYM(64), fill=GREY, anchor="mm")
-            top = cy + max(im.height for im in ims) / 2 + 24
-        else:
-            top = YC
-        ar_, en_ = s.get("ar", ""), s.get("en", "")
+                d.text((ax, cy), "↔", font=SYM(64), fill=GREY, anchor="mm")
+            top = cy + ch / 2 + 26
+        ar_, en_ = s.get("ar_v") or s.get("ar", ""), s.get("en_v") or s.get("en", "")
         if s.get("span") and s["span"][0] < ranges[0][0] - 0.3 and s["start"] < ranges[0][0] <= s["end"]:
-            ar_ = ar_.split("!", 1)[1].strip() if "!" in ar_[:12] else ar_     # the Short starts after a cut first word
-            en_ = en_.split("!", 1)[1].strip() if "!" in en_[:12] else en_     # ("رائع!" / "Great!") — the caption too
-        bot = caption_box(f, ar_, en_, 40, VW - 40, top=top, fs=52) if ar_ else top
+            ar_ = ar_.split("!", 1)[1].strip() if "!" in ar_[:12] else ar_
+            en_ = en_.split("!", 1)[1].strip() if "!" in en_[:12] else en_
+        bot = v_text(d, ar_, en_, top, AR(64), ENI(42)) if ar_ else top
         im = nar.transform(big[key], *body)
-        hy = bot + 26; z = max(0.9, (VH + 30 - hy) / im.height)
+        hy = bot + 30; z = max(0.85, (VH + 30 - hy) / im.height)
         im = im.resize((int(im.width * z), int(im.height * z)), Image.LANCZOS)
         f.paste(im, ((VW - im.width) // 2, int(hy)), im)
         return f
@@ -649,7 +704,7 @@ def main():
     a = ap.parse_args()
     spec = json.loads((ROOT / a.spec).read_text())
     segs, voice, mouthv, total = build(spec, a.preview)
-    if a.captions:
+    if a.captions and not a.vertical:
         return write_captions(segs, total, ROOT / a.out)
     if a.segments:
         for x in segs:
@@ -657,6 +712,9 @@ def main():
         return
     if a.vertical:
         ranges = [tuple(map(float, r.split("-"))) for r in a.ranges.split(",")] if a.ranges else [(a.t0, a.t1 or total)]
+        ranges = vertical_keep(segs, ranges)
+        write_vcaptions(segs, ranges, ROOT / a.out)
+        if a.captions: return
     star_times = [x for s in segs for x in s.get("stars", [])]
     t1 = min(a.t1 or total, total)
 
@@ -747,7 +805,7 @@ def main():
             full = np.clip(vtrack + sfx, -1, 1)
             short = np.concatenate([full[int(r0 * SR):int(r1 * SR)] for r0, r1 in ranges])
             dloc = len(short) / SR
-            v_stars_t = [dloc / 3, 2 * dloc / 3, dloc - 1.0]   # 3 stars, one chime every third (owner 2026-11-11)
+            v_stars_t = [dloc / 3, 2 * dloc / 3 - 0.1 * dloc, dloc - 6.0]   # owner 2026-11-11: 2nd 10 % earlier, 3rd 5 s earlier
             for st in v_stars_t:
                 p = max(0, int(st * SR)); n_ = len(short[p:p + len(chime)]); short[p:p + n_] += chime[:n_]
             sf.write(tmp / "short.wav", np.clip(short, -1, 1), SR)

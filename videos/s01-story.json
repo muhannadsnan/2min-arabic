@@ -3,135 +3,1231 @@
  "sheet": "videos/_s01-whatsapp.txt",
  "pictures": "library/work/story01/final",
  "clips": "footage/recordings/s01/lines",
- "camera": {"intro": "footage/recordings/s01/intro.mp4", "outro": "footage/recordings/s01/outro.mp4"},
+ "camera": {
+  "intro": "footage/recordings/s01/intro.mp4",
+  "outro": "footage/recordings/s01/outro.mp4"
+ },
  "opposites": [
-  {"a": ["سريع", "fast"], "b": ["بطيء", "slow"], "forms": ["سريع", "سريعا", "بطيء", "بطيئا", "بسرعة", "ببطء"]},
-  {"a": ["قبل", "before"], "b": ["بعد", "after"], "forms": ["قبل", "بعد"]},
-  {"a": ["مع", "with"], "b": ["بدون", "without"], "forms": ["مع", "بدون"]},
-  {"a": ["ينام", "sleeps"], "b": ["يستيقظ", "wakes up"], "forms": ["ينام", "نام", "سينام", "يستيقظ", "استيقظ", "سيستيقظ"]},
-  {"a": ["هنا", "here"], "b": ["هناك", "there"], "forms": ["هنا", "هناك"]}
+  {
+   "a": [
+    "سريع",
+    "fast"
+   ],
+   "b": [
+    "بطيء",
+    "slow"
+   ],
+   "forms": [
+    "سريع",
+    "سريعا",
+    "بطيء",
+    "بطيئا",
+    "بسرعة",
+    "ببطء"
+   ]
+  },
+  {
+   "a": [
+    "قبل",
+    "before"
+   ],
+   "b": [
+    "بعد",
+    "after"
+   ],
+   "forms": [
+    "قبل",
+    "بعد"
+   ]
+  },
+  {
+   "a": [
+    "مع",
+    "with"
+   ],
+   "b": [
+    "بدون",
+    "without"
+   ],
+   "forms": [
+    "مع",
+    "بدون"
+   ]
+  },
+  {
+   "a": [
+    "ينام",
+    "sleeps"
+   ],
+   "b": [
+    "يستيقظ",
+    "wakes up"
+   ],
+   "forms": [
+    "ينام",
+    "نام",
+    "سينام",
+    "يستيقظ",
+    "استيقظ",
+    "سيستيقظ"
+   ]
+  },
+  {
+   "a": [
+    "هنا",
+    "here"
+   ],
+   "b": [
+    "هناك",
+    "there"
+   ],
+   "forms": [
+    "هنا",
+    "هناك"
+   ]
+  }
  ],
  "segments": [
-  {"kind": "camera", "file": "intro", "lines": [1, 2, 3, 4], "pic": 12, "subs": [[0.81, 3.45], [3.89, 7.63], [8.41, 11.56], [12.53, 22.62]],
-   "en": ["A turtle arrives before a horse! How?", "Hello, and welcome to the 2 Minute Arabic channel.", "Today I'll tell you the story of the horse and the turtle.", "Listen to the story carefully, and at the end you will tell it yourselves, in three tenses: the present, the past and the future. Let's go!"]},
-
-  {"kind": "story", "line": 6, "pic": 1, "ar": "هذا رامي الحصان. رامي يذهب إلى السوق.", "en": "This is Rami the horse. Rami goes to the market.",
-   "words": [["هذا", "this"], ["يذهب", "goes"]]},
-  {"kind": "story", "line": 7, "pic": 2, "ar": "وهنا ماهر السلحفاة. ماهر يذهب إلى السوق أيضا.", "en": "And here is Maher the turtle. Maher goes to the market too.",
-   "words": [["هنا", "here"], ["أيضا", "too"]]},
-  {"kind": "story", "line": 8, "pic": 3, "ar": "رامي سريع لأنه حصان، يمشي بسرعة.", "en": "Rami is fast because he is a horse; he walks fast.",
-   "words": [["لأنه", "because he"], ["يمشي", "walks"]]},
-  {"kind": "story", "line": 9, "pic": 4, "ar": "وماهر بطيء لأنه سلحفاة، يمشي ببطء.", "en": "And Maher is slow because he is a turtle; he walks slowly.",
-   "words": [["يمشي", "walks"]]},
-  {"kind": "story", "line": 10, "pic": 5, "ar": "مازن الثعلب يقول: الحصان يصل قبل السلحفاة!", "en": "Mazen the fox says: the horse will arrive before the turtle!",
-   "words": [["يقول", "says"], ["يصل", "arrives"], ["قبل", "before"]]},
-  {"kind": "story", "line": 11, "pic": 6, "ar": "في الطريق، يرى رامي صديقه هاني الخروف.", "en": "On the way, Rami sees his friend Hani the sheep.",
-   "words": [["يرى", "sees"]]},
-  {"kind": "story", "line": 12, "pic": 7, "ar": "رامي يشرب الشاي مع الخروف.", "en": "Rami drinks tea with the sheep.",
-   "words": [["يشرب", "drinks"], ["مع", "with"]]},
-  {"kind": "story", "line": 13, "pic": 8, "ar": "بعد الشاي، ينام رامي تحت الشجرة.", "en": "After the tea, Rami sleeps under the tree.",
-   "words": [["بعد", "after"], ["ينام", "sleeps"], ["تحت", "under"]]},
-  {"kind": "story", "line": 14, "pic": 9, "ar": "بينما ماهر السلحفاة لا ينام، يستمر بالمشي.", "en": "But Maher the turtle doesn't sleep; he keeps walking.",
-   "words": [["بينما", "while"], ["لا", "not"], ["يستمر", "keeps going"]]},
-  {"kind": "story", "line": 15, "pic": 10, "ar": "العصفور كامل يرى ماهر ويقول: ممتاز!", "en": "Kamel the bird sees Maher and says: excellent!",
-   "words": [["يرى", "sees"], ["يقول", "says"]]},
-  {"kind": "story", "line": 16, "pic": 11, "ar": "ويصل ماهر إلى السوق قبل رامي!", "en": "And Maher arrives at the market before Rami!",
-   "words": [["يصل", "arrives"], ["قبل", "before"]]},
-  {"kind": "star"},
-  {"kind": "talk", "line": 17, "ar": "هذه هي القصة. هل فهمتم كل شيء؟ لنرى.", "en": "That's the story. Did you understand everything? Let's see."},
-  {"kind": "talk", "line": 18, "ar": "الآن نقرأ القصة جملة جملة، ونفهم كل كلمة. وأسألكم أسئلة سهلة. جاوبوا قبلي!", "en": "Now we read the story sentence by sentence and understand every word. I'll ask you easy questions. Answer before me!"},
-
-  {"kind": "story", "line": 6, "pic": 1, "replay": true},
-  {"kind": "qa", "line": 19, "pic": 1, "ar": "من يذهب إلى السوق؟ … رامي.", "en": "Who goes to the market? … Rami."},
-  {"kind": "qa", "line": 20, "pic": 1, "ar": "من رامي؟ … رامي الحصان.", "en": "Who is Rami? … Rami the horse."},
-  {"kind": "qa", "line": 21, "pic": 1, "ar": "هل رامي قط؟ … لا، بل رامي حصان.", "en": "Is Rami a cat? … No, Rami is a horse."},
-  {"kind": "qa", "line": 22, "pic": 1, "ar": "إلى أين يذهب رامي؟ … إلى السوق.", "en": "Where does Rami go? … To the market."},
-  {"kind": "story", "line": 7, "pic": 2, "replay": true},
-  {"kind": "qa", "line": 23, "pic": 2, "ar": "من هو ماهر؟ … ماهر سلحفاة.", "en": "Who is Maher? … Maher is a turtle."},
-  {"kind": "qa", "line": 24, "pic": 2, "ar": "هل ماهر أيضاً حصان؟ … لا لا لا، ماهر سلحفاة.", "en": "Is Maher a horse too? … No, no, no: Maher is a turtle."},
-  {"kind": "qa", "line": 25, "pic": 2, "ar": "ماذا يفعل ماهر؟ … يذهب إلى السوق أيضا.", "en": "What does Maher do? … He goes to the market too."},
-  {"kind": "story", "line": 8, "pic": 3, "replay": true},
-  {"kind": "qa", "line": 26, "pic": 3, "ar": "هل رامي سريع؟ … نعم، رامي سريع.", "en": "Is Rami fast? … Yes, Rami is fast."},
-  {"kind": "qa", "line": 27, "pic": 3, "ar": "لماذا هو سريع؟ … لأنه حصان.", "en": "Why is he fast? … Because he is a horse."},
-  {"kind": "story", "line": 9, "pic": 4, "replay": true},
-  {"kind": "qa", "line": 28, "pic": 4, "ar": "هل ماهر سريع مثله؟ … لا، بالعكس، ماهر بطيء.", "en": "Is Maher fast like him? … No, the opposite: Maher is slow."},
-  {"kind": "qa", "line": 29, "pic": 4, "ar": "لماذا ماهر بطيء؟ … طبعاً... لأنه سلحفاة.", "en": "Why is Maher slow? … Of course... because he is a turtle."},
-  {"kind": "qa", "line": 30, "pic": 4, "ar": "كيف تمشي السلحفاة؟ … ببطء.", "en": "How does the turtle walk? … Slowly."},
-  {"kind": "story", "line": 10, "pic": 5, "replay": true},
-  {"kind": "qa", "line": 31, "pic": 5, "ar": "ماذا قال مازن؟ … قال الحصان يصل قبل السلحفاة.", "en": "What did Mazen say? … He said the horse arrives before the turtle."},
-  {"kind": "story", "line": 11, "pic": 6, "replay": true},
-  {"kind": "qa", "line": 32, "pic": 6, "ar": "من رأى هاني في الطريق؟ … رامي. هاني رأى رامي.", "en": "Who saw Hani on the way? … Rami. Hani saw Rami."},
-  {"kind": "story", "line": 12, "pic": 7, "replay": true},
-  {"kind": "qa", "line": 33, "pic": 7, "ar": "مع من جلس رامي؟ … مع هاني.", "en": "Who did Rami sit with? … With Hani."},
-  {"kind": "qa", "line": 34, "pic": 7, "ar": "ماذا يفعلان؟ … يشربان الشاي.", "en": "What are the two of them doing? … They are drinking tea."},
-  {"kind": "qa", "line": 35, "pic": 7, "ar": "هل يشربان القهوة؟ … لا لا لا، بل يشربان الشاي.", "en": "Do they drink coffee? … No, no, no: they drink tea."},
-  {"kind": "story", "line": 13, "pic": 8, "replay": true},
-  {"kind": "qa", "line": 36, "pic": 8, "ar": "هل يستمر رامي في المشي بعد الشاي؟ … لا، بل ينام.", "en": "Does Rami keep walking after the tea? … No, he sleeps."},
-  {"kind": "qa", "line": 37, "pic": 8, "ar": "أين نام رامي؟ … تحت الشجرة.", "en": "Where did Rami sleep? … Under the tree."},
-  {"kind": "qa", "line": 38, "pic": 8, "ar": "من ينام؟ هاني؟ … لا، في الحقيقة رامي ينام.", "en": "Who sleeps? Hani? … No, actually Rami sleeps."},
-  {"kind": "story", "line": 14, "pic": 9, "replay": true},
-  {"kind": "qa", "line": 39, "pic": 9, "ar": "هل ينام ماهر أيضا؟ … لا.", "en": "Does Maher sleep too? … No."},
-  {"kind": "qa", "line": 40, "pic": 9, "ar": "هل يستمر ماهر؟ … نعم، يستمر ولا يتوقف.", "en": "Does Maher keep going? … Yes, he keeps going and doesn't stop."},
-  {"kind": "qa", "line": 41, "pic": 9, "ar": "كيف يمشي، بسرعة أم ببطء؟ … يمشي ببطء، لأنه سلحفاة.", "en": "How does he walk, fast or slowly? … He walks slowly, because he is a turtle."},
-  {"kind": "story", "line": 15, "pic": 10, "replay": true},
-  {"kind": "qa", "line": 42, "pic": 10, "ar": "من يرى ماهر في النهاية؟ … كامل العصفور يرى ماهر.", "en": "Who sees Maher at the end? … Kamel the bird sees Maher."},
-  {"kind": "qa", "line": 43, "pic": 10, "ar": "ماذا يقول كامل؟ … لقد قال: ممتاز!", "en": "What does Kamel say? … He said: excellent!"},
-  {"kind": "qa", "line": 44, "pic": 10, "ar": "هل قال كامل: جيد جداً؟ … في الحقيقة نعم، نفس المعنى تقريباً، قال: ممتاز!", "en": "Did Kamel say \"very good\"? … Actually yes, almost the same meaning: he said \"excellent!\""},
-  {"kind": "story", "line": 16, "pic": 11, "replay": true},
-  {"kind": "qa", "line": 45, "pic": 12, "ar": "من وصل أولاً؟ … ماهر هو الأول.", "en": "Who arrived first? … Maher is the first."},
-  {"kind": "qa", "line": 46, "pic": 12, "ar": "هل وصل رامي قبل ماهر؟ … لا، بل على العكس، رامي وصل متأخراً.", "en": "Did Rami arrive before Maher? … No, the opposite: Rami arrived late."},
-  {"kind": "qa", "line": 47, "pic": 12, "ar": "لماذا وصل ماهر قبل رامي؟ … لأن رامي نام، أما ماهر لا.", "en": "Why did Maher arrive before Rami? … Because Rami slept, but Maher didn't."},
-  {"kind": "talk", "line": 48, "ar": "ممتاز! لقد فهمت القصة كلها.", "en": "Excellent! You understood the whole story."},
-  {"kind": "star", "gap": 0},
-
-  {"kind": "talk", "line": 49, "ar": "الآن كلمات مهمة من القصة. كل كلمة مع عكسها، هكذا أسهل للتذكر.", "en": "Now, important words from the story. Each word with its opposite: that way they are easier to remember."},
-  {"kind": "pair", "line": 50, "pair": [["سريع", "fast"], ["بطيء", "slow"]], "ar": "سريع … بطيء.", "en": "fast … slow"},
-  {"kind": "pair", "line": 51, "pair": [["سريع", "fast"], ["بطيء", "slow"]], "ar": "رامي سريع، مثل السيارة. وماهر بطيء، مثل… السلحفاة!", "en": "Rami is fast, like a car. And Maher is slow, like… a turtle!"},
-  {"kind": "pair", "line": 52, "pair": [["سريع", "fast"], ["بطيء", "slow"]], "ar": "نقول: أمشي بسرعة، أو: أمشي ببطء. من فضلك، تكلم ببطء!", "en": "We say: I walk fast, or: I walk slowly. Please, speak slowly!"},
-  {"kind": "pair", "line": 53, "pair": [["قبل", "before"], ["بعد", "after"]], "ar": "قبل … بعد.", "en": "before … after"},
-  {"kind": "pair", "line": 54, "pair": [["قبل", "before"], ["بعد", "after"]], "ar": "قبل الشاي، بعد الشاي.", "en": "Before the tea, after the tea."},
-  {"kind": "pair", "line": 55, "pair": [["قبل", "before"], ["بعد", "after"]], "ar": "نقولها كل يوم: قبل الدرس، بعد الدرس. قبل النوم، بعد النوم.", "en": "We say them every day: before the lesson, after the lesson. Before sleep, after sleep."},
-  {"kind": "pair", "line": 56, "pair": [["مع", "with"], ["بدون", "without"]], "ar": "مع … بدون.", "en": "with … without"},
-  {"kind": "pair", "line": 57, "pair": [["مع", "with"], ["بدون", "without"]], "ar": "قهوة مع حليب، وشاي بدون سكر.", "en": "Coffee with milk, and tea without sugar."},
-  {"kind": "pair", "line": 58, "pair": [["مع", "with"], ["بدون", "without"]], "ar": "أذهب مع صديقي. أذهب بدون صديقي.", "en": "I go with my friend. I go without my friend."},
-  {"kind": "pair", "line": 59, "pair": [["ينام", "sleeps"], ["يستيقظ", "wakes up"]], "ar": "ينام … يستيقظ.", "en": "sleeps … wakes up"},
-  {"kind": "pair", "line": 60, "pair": [["ينام", "sleeps"], ["يستيقظ", "wakes up"]], "ar": "في الليل أنام، وفي الصباح أستيقظ.", "en": "At night I sleep, and in the morning I wake up."},
-  {"kind": "pair", "line": 61, "pair": [["ينام", "sleeps"], ["يستيقظ", "wakes up"]], "ar": "رامي نام تحت الشجرة… ومتى استيقظ؟ بعد وصول ماهر!", "en": "Rami slept under the tree… and when did he wake up? After Maher arrived!"},
-  {"kind": "pair", "line": 62, "pair": [["هنا", "here"], ["هناك", "there"]], "ar": "هنا … هناك.", "en": "here … there"},
-  {"kind": "pair", "line": 63, "pair": [["هنا", "here"], ["هناك", "there"]], "ar": "هنا للقريب، وهناك للبعيد. أين السوق؟ هناك!", "en": "\"Here\" is for near, and \"there\" for far. Where is the market? There!"},
-  {"kind": "pair", "line": 64, "pair": [["هنا", "here"], ["هناك", "there"]], "ar": "أين أنت؟ أنا هنا!", "en": "Where are you? I'm here!"},
-  {"kind": "star"},
-
-  {"kind": "talk", "line": 65, "ar": "رائع! الآن نحكي القصة في الماضي. القصة كانت أمس.", "en": "Great! Now we tell the story in the past. The story was yesterday."},
-  {"kind": "talk", "line": 66, "ar": "انتبهوا: الفعل يتغير قليلا. يذهب… ذهب. يشرب… شرب. ينام… نام.", "en": "Pay attention: the verb changes a little. goes… went. drinks… drank. sleeps… slept."},
-  {"kind": "story", "line": 67, "pic": 1, "ar": "ذهب رامي الحصان إلى السوق.", "en": "Rami the horse went to the market.", "verbs": [["يذهب", "ذهب", "went"]]},
-  {"kind": "story", "line": 68, "pic": 2, "ar": "وذهب ماهر السلحفاة إلى السوق أيضا.", "en": "And Maher the turtle went to the market too.", "verbs": [["يذهب", "ذهب", "went"]]},
-  {"kind": "story", "line": 69, "pic": 3, "ar": "كان رامي سريعا لأنه حصان، مشى بسرعة.", "en": "Rami was fast because he is a horse; he walked fast.", "verbs": [["يكون", "كان", "was"], ["يمشي", "مشى", "walked"]]},
-  {"kind": "story", "line": 70, "pic": 4, "ar": "وكان ماهر بطيئا لأنه سلحفاة. مشى ببطء.", "en": "And Maher was slow because he is a turtle. He walked slowly.", "verbs": [["يكون", "كان", "was"], ["يمشي", "مشى", "walked"]]},
-  {"kind": "story", "line": 71, "pic": 5, "ar": "قال مازن الثعلب: الحصان سيصل قبل السلحفاة!", "en": "Mazen the fox said: the horse will arrive before the turtle!", "verbs": [["يقول", "قال", "said"]]},
-  {"kind": "story", "line": 72, "pic": 6, "ar": "في الطريق، رأى رامي صديقه هاني الخروف.", "en": "On the way, Rami saw his friend Hani the sheep.", "verbs": [["يرى", "رأى", "saw"]]},
-  {"kind": "story", "line": 73, "pic": 7, "ar": "شرب رامي الشاي مع الخروف.", "en": "Rami drank tea with the sheep.", "verbs": [["يشرب", "شرب", "drank"]]},
-  {"kind": "story", "line": 74, "pic": 8, "ar": "بعد الشاي، نام رامي تحت الشجرة.", "en": "After the tea, Rami slept under the tree.", "verbs": [["ينام", "نام", "slept"]]},
-  {"kind": "story", "line": 75, "pic": 9, "ar": "لكن ماهر لم ينم، واستمر ببطء.", "en": "But Maher didn't sleep, and kept going slowly.", "verbs": [["لا ينام", "لم ينم", "didn't sleep"], ["يستمر", "استمر", "kept going"]]},
-  {"kind": "story", "line": 76, "pic": 10, "ar": "رأى كامل العصفور ماهر وقال: ممتاز!", "en": "Kamel the bird saw Maher and said: excellent!", "verbs": [["يرى", "رأى", "saw"], ["يقول", "قال", "said"]]},
-  {"kind": "story", "line": 77, "pic": 11, "ar": "ووصل ماهر إلى السوق قبل رامي!", "en": "And Maher arrived at the market before Rami!", "verbs": [["يصل", "وصل", "arrived"]]},
-  {"kind": "star"},
-
-  {"kind": "talk", "line": 78, "ar": "والآن، القصة في المستقبل: غدا!", "en": "And now, the story in the future: tomorrow!"},
-  {"kind": "talk", "line": 79, "ar": "نضع سين قبل الفعل: يذهب… سيذهب. يشرب… سيشرب. سهل!", "en": "We put \"sa\" before the verb: goes… will go. drinks… will drink. Easy!"},
-  {"kind": "story", "line": 80, "pic": 1, "ar": "غدا، سيذهب رامي الحصان إلى السوق.", "en": "Tomorrow, Rami the horse will go to the market.", "verbs": [["يذهب", "سيذهب", "will go"]]},
-  {"kind": "story", "line": 81, "pic": 2, "ar": "وسيذهب ماهر السلحفاة إلى السوق أيضا.", "en": "And Maher the turtle will go to the market too.", "verbs": [["يذهب", "سيذهب", "will go"]]},
-  {"kind": "story", "line": 82, "pic": 6, "ar": "سيرى رامي صديقه هاني الخروف.", "en": "Rami will see his friend Hani the sheep.", "verbs": [["يرى", "سيرى", "will see"]]},
-  {"kind": "story", "line": 83, "pic": 7, "ar": "سيشرب رامي الشاي مع الخروف.", "en": "Rami will drink tea with the sheep.", "verbs": [["يشرب", "سيشرب", "will drink"]]},
-  {"kind": "story", "line": 84, "pic": 8, "ar": "بعد الشاي، سينام رامي تحت الشجرة.", "en": "After the tea, Rami will sleep under the tree.", "verbs": [["ينام", "سينام", "will sleep"]]},
-  {"kind": "story", "line": 85, "pic": 9, "ar": "لكن ماهر لن ينام، سيستمر ببطء.", "en": "But Maher won't sleep; he will keep going slowly.", "verbs": [["لا ينام", "لن ينام", "won't sleep"], ["يستمر", "سيستمر", "will keep going"]]},
-  {"kind": "story", "line": 86, "pic": 10, "ar": "سيرى كامل العصفور ماهر وسيقول: ممتاز!", "en": "Kamel the bird will see Maher and will say: excellent!", "verbs": [["يرى", "سيرى", "will see"], ["يقول", "سيقول", "will say"]]},
-  {"kind": "story", "line": 87, "pic": 11, "ar": "وسيصل ماهر إلى السوق قبل رامي!", "en": "And Maher will arrive at the market before Rami!", "verbs": [["يصل", "سيصل", "will arrive"]]},
-  {"kind": "star"},
-
-  {"kind": "camera", "file": "outro", "lines": [88, 89, 90, 91], "subs": [[0.12, 6.7], [8.3, 13.59], [14.5, 17.51], [18.73, 21.12]],
-   "en": ["Well done! Now you know the story in the present, the past and the future.", "Write the story in the comments, or just one sentence you remember.", "Don't forget to like the video and subscribe to the channel.", "See you in the next story, goodbye!"]},
-
-  {"kind": "card", "image": "assets/end-card-1920.png", "dur": 10}
+  {
+   "kind": "camera",
+   "file": "intro",
+   "lines": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "pic": 12,
+   "subs": [
+    [
+     0.81,
+     3.45
+    ],
+    [
+     3.89,
+     7.63
+    ],
+    [
+     8.41,
+     11.56
+    ],
+    [
+     12.53,
+     22.62
+    ]
+   ],
+   "en": [
+    "A turtle arrives before a horse! How?",
+    "Hello, and welcome to the 2 Minute Arabic channel.",
+    "Today I'll tell you the story of the horse and the turtle.",
+    "Listen to the story carefully, and at the end you will tell it yourselves, in three tenses: the present, the past and the future. Let's go!"
+   ],
+   "ar_subs": [
+    "سلحفاة تصل قبل حصان! كيف؟"
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 6,
+   "pic": 1,
+   "ar": "هذا رامي الحصان. رامي يذهب إلى السوق.",
+   "en": "This is Rami the horse. Rami goes to the market.",
+   "words": [
+    [
+     "هذا",
+     "this"
+    ],
+    [
+     "يذهب",
+     "goes"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 7,
+   "pic": 2,
+   "ar": "وهنا ماهر السلحفاة. ماهر يذهب إلى السوق أيضا.",
+   "en": "And here is Maher the turtle. Maher goes to the market too.",
+   "words": [
+    [
+     "هنا",
+     "here"
+    ],
+    [
+     "أيضا",
+     "too"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 8,
+   "pic": 3,
+   "ar": "رامي سريع لأنه حصان، يمشي بسرعة.",
+   "en": "Rami is fast because he is a horse; he walks fast.",
+   "words": [
+    [
+     "لأنه",
+     "because he"
+    ],
+    [
+     "يمشي",
+     "walks"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 9,
+   "pic": 4,
+   "ar": "وماهر بطيء لأنه سلحفاة، يمشي ببطء.",
+   "en": "And Maher is slow because he is a turtle; he walks slowly.",
+   "words": [
+    [
+     "يمشي",
+     "walks"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 10,
+   "pic": 5,
+   "ar": "مازن الثعلب يقول: الحصان يصل قبل السلحفاة!",
+   "en": "Mazen the fox says: the horse will arrive before the turtle!",
+   "words": [
+    [
+     "يقول",
+     "says"
+    ],
+    [
+     "يصل",
+     "arrives"
+    ],
+    [
+     "قبل",
+     "before"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 11,
+   "pic": 6,
+   "ar": "في الطريق، يرى رامي صديقه هاني الخروف.",
+   "en": "On the way, Rami sees his friend Hani the sheep.",
+   "words": [
+    [
+     "يرى",
+     "sees"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 12,
+   "pic": 7,
+   "ar": "رامي يشرب الشاي مع الخروف.",
+   "en": "Rami drinks tea with the sheep.",
+   "words": [
+    [
+     "يشرب",
+     "drinks"
+    ],
+    [
+     "مع",
+     "with"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 13,
+   "pic": 8,
+   "ar": "بعد الشاي، ينام رامي تحت الشجرة.",
+   "en": "After the tea, Rami sleeps under the tree.",
+   "words": [
+    [
+     "بعد",
+     "after"
+    ],
+    [
+     "ينام",
+     "sleeps"
+    ],
+    [
+     "تحت",
+     "under"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 14,
+   "pic": 9,
+   "ar": "بينما ماهر السلحفاة لا ينام، يستمر بالمشي.",
+   "en": "But Maher the turtle doesn't sleep; he keeps walking.",
+   "words": [
+    [
+     "بينما",
+     "while"
+    ],
+    [
+     "لا",
+     "not"
+    ],
+    [
+     "يستمر",
+     "keeps going"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 15,
+   "pic": 10,
+   "ar": "العصفور كامل يرى ماهر ويقول: ممتاز!",
+   "en": "Kamel the bird sees Maher and says: excellent!",
+   "words": [
+    [
+     "يرى",
+     "sees"
+    ],
+    [
+     "يقول",
+     "says"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 16,
+   "pic": 11,
+   "ar": "ويصل ماهر إلى السوق قبل رامي!",
+   "en": "And Maher arrives at the market before Rami!",
+   "words": [
+    [
+     "يصل",
+     "arrives"
+    ],
+    [
+     "قبل",
+     "before"
+    ]
+   ]
+  },
+  {
+   "kind": "star"
+  },
+  {
+   "kind": "talk",
+   "line": 17,
+   "ar": "هذه هي القصة. هل فهمتم كل شيء؟ لنرى.",
+   "en": "That's the story. Did you understand everything? Let's see."
+  },
+  {
+   "kind": "talk",
+   "line": 18,
+   "ar": "الآن نقرأ القصة جملة جملة، ونفهم كل كلمة. وأسألكم أسئلة سهلة. جاوبوا قبلي!",
+   "en": "Now we read the story sentence by sentence and understand every word. I'll ask you easy questions. Answer before me!"
+  },
+  {
+   "kind": "story",
+   "line": 6,
+   "pic": 1,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 19,
+   "pic": 1,
+   "ar": "من يذهب إلى السوق؟ … رامي.",
+   "en": "Who goes to the market? … Rami."
+  },
+  {
+   "kind": "qa",
+   "line": 20,
+   "pic": 1,
+   "ar": "من رامي؟ … رامي الحصان.",
+   "en": "Who is Rami? … Rami the horse."
+  },
+  {
+   "kind": "qa",
+   "line": 21,
+   "pic": 1,
+   "ar": "هل رامي قط؟ … لا، بل رامي حصان.",
+   "en": "Is Rami a cat? … No, Rami is a horse."
+  },
+  {
+   "kind": "qa",
+   "line": 22,
+   "pic": 1,
+   "ar": "إلى أين يذهب رامي؟ … إلى السوق.",
+   "en": "Where does Rami go? … To the market."
+  },
+  {
+   "kind": "story",
+   "line": 7,
+   "pic": 2,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 23,
+   "pic": 2,
+   "ar": "من هو ماهر؟ … ماهر سلحفاة.",
+   "en": "Who is Maher? … Maher is a turtle."
+  },
+  {
+   "kind": "qa",
+   "line": 24,
+   "pic": 2,
+   "ar": "هل ماهر أيضاً حصان؟ … لا لا لا، ماهر سلحفاة.",
+   "en": "Is Maher a horse too? … No, no, no: Maher is a turtle."
+  },
+  {
+   "kind": "qa",
+   "line": 25,
+   "pic": 2,
+   "ar": "ماذا يفعل ماهر؟ … يذهب إلى السوق أيضا.",
+   "en": "What does Maher do? … He goes to the market too."
+  },
+  {
+   "kind": "story",
+   "line": 8,
+   "pic": 3,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 26,
+   "pic": 3,
+   "ar": "هل رامي سريع؟ … نعم، رامي سريع.",
+   "en": "Is Rami fast? … Yes, Rami is fast."
+  },
+  {
+   "kind": "qa",
+   "line": 27,
+   "pic": 3,
+   "ar": "لماذا هو سريع؟ … لأنه حصان.",
+   "en": "Why is he fast? … Because he is a horse."
+  },
+  {
+   "kind": "story",
+   "line": 9,
+   "pic": 4,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 28,
+   "pic": 4,
+   "ar": "هل ماهر سريع مثله؟ … لا، بالعكس، ماهر بطيء.",
+   "en": "Is Maher fast like him? … No, the opposite: Maher is slow."
+  },
+  {
+   "kind": "qa",
+   "line": 29,
+   "pic": 4,
+   "ar": "لماذا ماهر بطيء؟ … طبعاً... لأنه سلحفاة.",
+   "en": "Why is Maher slow? … Of course... because he is a turtle."
+  },
+  {
+   "kind": "qa",
+   "line": 30,
+   "pic": 4,
+   "ar": "كيف تمشي السلحفاة؟ … ببطء.",
+   "en": "How does the turtle walk? … Slowly."
+  },
+  {
+   "kind": "story",
+   "line": 10,
+   "pic": 5,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 31,
+   "pic": 5,
+   "ar": "ماذا قال مازن؟ … قال الحصان يصل قبل السلحفاة.",
+   "en": "What did Mazen say? … He said the horse arrives before the turtle."
+  },
+  {
+   "kind": "story",
+   "line": 11,
+   "pic": 6,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 32,
+   "pic": 6,
+   "ar": "من رأى هاني في الطريق؟ … رامي. هاني رأى رامي.",
+   "en": "Who saw Hani on the way? … Rami. Hani saw Rami."
+  },
+  {
+   "kind": "story",
+   "line": 12,
+   "pic": 7,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 33,
+   "pic": 7,
+   "ar": "مع من جلس رامي؟ … مع هاني.",
+   "en": "Who did Rami sit with? … With Hani."
+  },
+  {
+   "kind": "qa",
+   "line": 34,
+   "pic": 7,
+   "ar": "ماذا يفعلان؟ … يشربان الشاي.",
+   "en": "What are the two of them doing? … They are drinking tea."
+  },
+  {
+   "kind": "qa",
+   "line": 35,
+   "pic": 7,
+   "ar": "هل يشربان القهوة؟ … لا لا لا، بل يشربان الشاي.",
+   "en": "Do they drink coffee? … No, no, no: they drink tea."
+  },
+  {
+   "kind": "story",
+   "line": 13,
+   "pic": 8,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 36,
+   "pic": 8,
+   "ar": "هل يستمر رامي في المشي بعد الشاي؟ … لا، بل ينام.",
+   "en": "Does Rami keep walking after the tea? … No, he sleeps."
+  },
+  {
+   "kind": "qa",
+   "line": 37,
+   "pic": 8,
+   "ar": "أين نام رامي؟ … تحت الشجرة.",
+   "en": "Where did Rami sleep? … Under the tree."
+  },
+  {
+   "kind": "qa",
+   "line": 38,
+   "pic": 8,
+   "ar": "من ينام؟ هاني؟ … لا، في الحقيقة رامي ينام.",
+   "en": "Who sleeps? Hani? … No, actually Rami sleeps."
+  },
+  {
+   "kind": "story",
+   "line": 14,
+   "pic": 9,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 39,
+   "pic": 9,
+   "ar": "هل ينام ماهر أيضا؟ … لا.",
+   "en": "Does Maher sleep too? … No."
+  },
+  {
+   "kind": "qa",
+   "line": 40,
+   "pic": 9,
+   "ar": "هل يستمر ماهر؟ … نعم، يستمر ولا يتوقف.",
+   "en": "Does Maher keep going? … Yes, he keeps going and doesn't stop."
+  },
+  {
+   "kind": "qa",
+   "line": 41,
+   "pic": 9,
+   "ar": "كيف يمشي، بسرعة أم ببطء؟ … يمشي ببطء، لأنه سلحفاة.",
+   "en": "How does he walk, fast or slowly? … He walks slowly, because he is a turtle."
+  },
+  {
+   "kind": "story",
+   "line": 15,
+   "pic": 10,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 42,
+   "pic": 10,
+   "ar": "من يرى ماهر في النهاية؟ … كامل العصفور يرى ماهر.",
+   "en": "Who sees Maher at the end? … Kamel the bird sees Maher."
+  },
+  {
+   "kind": "qa",
+   "line": 43,
+   "pic": 10,
+   "ar": "ماذا يقول كامل؟ … لقد قال: ممتاز!",
+   "en": "What does Kamel say? … He said: excellent!"
+  },
+  {
+   "kind": "qa",
+   "line": 44,
+   "pic": 10,
+   "ar": "هل قال كامل: جيد جداً؟ … في الحقيقة نعم، نفس المعنى تقريباً، قال: ممتاز!",
+   "en": "Did Kamel say \"very good\"? … Actually yes, almost the same meaning: he said \"excellent!\""
+  },
+  {
+   "kind": "story",
+   "line": 16,
+   "pic": 11,
+   "replay": true
+  },
+  {
+   "kind": "qa",
+   "line": 45,
+   "pic": 12,
+   "ar": "من وصل أولاً؟ … ماهر هو الأول.",
+   "en": "Who arrived first? … Maher is the first."
+  },
+  {
+   "kind": "qa",
+   "line": 46,
+   "pic": 12,
+   "ar": "هل وصل رامي قبل ماهر؟ … لا، بل على العكس، رامي وصل متأخراً.",
+   "en": "Did Rami arrive before Maher? … No, the opposite: Rami arrived late."
+  },
+  {
+   "kind": "qa",
+   "line": 47,
+   "pic": 12,
+   "ar": "لماذا وصل ماهر قبل رامي؟ … لأن رامي نام، أما ماهر لا.",
+   "en": "Why did Maher arrive before Rami? … Because Rami slept, but Maher didn't."
+  },
+  {
+   "kind": "talk",
+   "line": 48,
+   "ar": "ممتاز! لقد فهمت القصة كلها.",
+   "en": "Excellent! You understood the whole story."
+  },
+  {
+   "kind": "star",
+   "gap": 0
+  },
+  {
+   "kind": "talk",
+   "line": 49,
+   "ar": "الآن كلمات مهمة من القصة. كل كلمة مع عكسها، هكذا أسهل للتذكر.",
+   "en": "Now, important words from the story. Each word with its opposite: that way they are easier to remember."
+  },
+  {
+   "kind": "pair",
+   "line": 50,
+   "pair": [
+    [
+     "سريع",
+     "fast"
+    ],
+    [
+     "بطيء",
+     "slow"
+    ]
+   ],
+   "ar": "سريع … بطيء.",
+   "en": "fast … slow"
+  },
+  {
+   "kind": "pair",
+   "line": 51,
+   "pair": [
+    [
+     "سريع",
+     "fast"
+    ],
+    [
+     "بطيء",
+     "slow"
+    ]
+   ],
+   "ar": "رامي سريع، مثل السيارة. وماهر بطيء، مثل… السلحفاة!",
+   "en": "Rami is fast, like a car. And Maher is slow, like… a turtle!"
+  },
+  {
+   "kind": "pair",
+   "line": 52,
+   "pair": [
+    [
+     "سريع",
+     "fast"
+    ],
+    [
+     "بطيء",
+     "slow"
+    ]
+   ],
+   "ar": "نقول: أمشي بسرعة، أو: أمشي ببطء. من فضلك، تكلم ببطء!",
+   "en": "We say: I walk fast, or: I walk slowly. Please, speak slowly!"
+  },
+  {
+   "kind": "pair",
+   "line": 53,
+   "pair": [
+    [
+     "قبل",
+     "before"
+    ],
+    [
+     "بعد",
+     "after"
+    ]
+   ],
+   "ar": "قبل … بعد.",
+   "en": "before … after"
+  },
+  {
+   "kind": "pair",
+   "line": 54,
+   "pair": [
+    [
+     "قبل",
+     "before"
+    ],
+    [
+     "بعد",
+     "after"
+    ]
+   ],
+   "ar": "قبل الشاي، بعد الشاي.",
+   "en": "Before the tea, after the tea."
+  },
+  {
+   "kind": "pair",
+   "line": 55,
+   "pair": [
+    [
+     "قبل",
+     "before"
+    ],
+    [
+     "بعد",
+     "after"
+    ]
+   ],
+   "ar": "نقولها كل يوم: قبل الدرس، بعد الدرس. قبل النوم، بعد النوم.",
+   "en": "We say them every day: before the lesson, after the lesson. Before sleep, after sleep."
+  },
+  {
+   "kind": "pair",
+   "line": 56,
+   "pair": [
+    [
+     "مع",
+     "with"
+    ],
+    [
+     "بدون",
+     "without"
+    ]
+   ],
+   "ar": "مع … بدون.",
+   "en": "with … without"
+  },
+  {
+   "kind": "pair",
+   "line": 57,
+   "pair": [
+    [
+     "مع",
+     "with"
+    ],
+    [
+     "بدون",
+     "without"
+    ]
+   ],
+   "ar": "قهوة مع حليب، وشاي بدون سكر.",
+   "en": "Coffee with milk, and tea without sugar."
+  },
+  {
+   "kind": "pair",
+   "line": 58,
+   "pair": [
+    [
+     "مع",
+     "with"
+    ],
+    [
+     "بدون",
+     "without"
+    ]
+   ],
+   "ar": "أذهب مع صديقي. أذهب بدون صديقي.",
+   "en": "I go with my friend. I go without my friend."
+  },
+  {
+   "kind": "pair",
+   "line": 59,
+   "pair": [
+    [
+     "ينام",
+     "sleeps"
+    ],
+    [
+     "يستيقظ",
+     "wakes up"
+    ]
+   ],
+   "ar": "ينام … يستيقظ.",
+   "en": "sleeps … wakes up"
+  },
+  {
+   "kind": "pair",
+   "line": 60,
+   "pair": [
+    [
+     "ينام",
+     "sleeps"
+    ],
+    [
+     "يستيقظ",
+     "wakes up"
+    ]
+   ],
+   "ar": "في الليل أنام، وفي الصباح أستيقظ.",
+   "en": "At night I sleep, and in the morning I wake up."
+  },
+  {
+   "kind": "pair",
+   "line": 61,
+   "pair": [
+    [
+     "ينام",
+     "sleeps"
+    ],
+    [
+     "يستيقظ",
+     "wakes up"
+    ]
+   ],
+   "ar": "رامي نام تحت الشجرة… ومتى استيقظ؟ بعد وصول ماهر!",
+   "en": "Rami slept under the tree… and when did he wake up? After Maher arrived!"
+  },
+  {
+   "kind": "pair",
+   "line": 62,
+   "pair": [
+    [
+     "هنا",
+     "here"
+    ],
+    [
+     "هناك",
+     "there"
+    ]
+   ],
+   "ar": "هنا … هناك.",
+   "en": "here … there"
+  },
+  {
+   "kind": "pair",
+   "line": 63,
+   "pair": [
+    [
+     "هنا",
+     "here"
+    ],
+    [
+     "هناك",
+     "there"
+    ]
+   ],
+   "ar": "هنا للقريب، وهناك للبعيد. أين السوق؟ هناك!",
+   "en": "\"Here\" is for near, and \"there\" for far. Where is the market? There!"
+  },
+  {
+   "kind": "pair",
+   "line": 64,
+   "pair": [
+    [
+     "هنا",
+     "here"
+    ],
+    [
+     "هناك",
+     "there"
+    ]
+   ],
+   "ar": "أين أنت؟ أنا هنا!",
+   "en": "Where are you? I'm here!"
+  },
+  {
+   "kind": "star"
+  },
+  {
+   "kind": "talk",
+   "line": 65,
+   "ar": "رائع! الآن نحكي القصة في الماضي. القصة كانت أمس.",
+   "en": "Great! Now we tell the story in the past. The story was yesterday."
+  },
+  {
+   "kind": "talk",
+   "line": 66,
+   "ar": "انتبهوا: الفعل يتغير قليلا. يذهب… ذهب. يشرب… شرب. ينام… نام.",
+   "en": "Pay attention: the verb changes a little. goes… went. drinks… drank. sleeps… slept.",
+   "ar_v": "انتبهوا: الفعل يتغير قليلا.\nيذهب… ذهب.\nيشرب… شرب.\nينام… نام.",
+   "en_v": "Pay attention: the verb changes a little.\ngoes… went. drinks… drank. sleeps… slept."
+  },
+  {
+   "kind": "story",
+   "line": 67,
+   "pic": 1,
+   "ar": "ذهب رامي الحصان إلى السوق.",
+   "en": "Rami the horse went to the market.",
+   "verbs": [
+    [
+     "يذهب",
+     "ذهب",
+     "went"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 68,
+   "pic": 2,
+   "ar": "وذهب ماهر السلحفاة إلى السوق أيضا.",
+   "en": "And Maher the turtle went to the market too.",
+   "verbs": [
+    [
+     "يذهب",
+     "ذهب",
+     "went"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 69,
+   "pic": 3,
+   "ar": "كان رامي سريعا لأنه حصان، مشى بسرعة.",
+   "en": "Rami was fast because he is a horse; he walked fast.",
+   "verbs": [
+    [
+     "يكون",
+     "كان",
+     "was"
+    ],
+    [
+     "يمشي",
+     "مشى",
+     "walked"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 70,
+   "pic": 4,
+   "ar": "وكان ماهر بطيئا لأنه سلحفاة. مشى ببطء.",
+   "en": "And Maher was slow because he is a turtle. He walked slowly.",
+   "verbs": [
+    [
+     "يكون",
+     "كان",
+     "was"
+    ],
+    [
+     "يمشي",
+     "مشى",
+     "walked"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 71,
+   "pic": 5,
+   "ar": "قال مازن الثعلب: الحصان سيصل قبل السلحفاة!",
+   "en": "Mazen the fox said: the horse will arrive before the turtle!",
+   "verbs": [
+    [
+     "يقول",
+     "قال",
+     "said"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 72,
+   "pic": 6,
+   "ar": "في الطريق، رأى رامي صديقه هاني الخروف.",
+   "en": "On the way, Rami saw his friend Hani the sheep.",
+   "verbs": [
+    [
+     "يرى",
+     "رأى",
+     "saw"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 73,
+   "pic": 7,
+   "ar": "شرب رامي الشاي مع الخروف.",
+   "en": "Rami drank tea with the sheep.",
+   "verbs": [
+    [
+     "يشرب",
+     "شرب",
+     "drank"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 74,
+   "pic": 8,
+   "ar": "بعد الشاي، نام رامي تحت الشجرة.",
+   "en": "After the tea, Rami slept under the tree.",
+   "verbs": [
+    [
+     "ينام",
+     "نام",
+     "slept"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 75,
+   "pic": 9,
+   "ar": "لكن ماهر لم ينم، واستمر ببطء.",
+   "en": "But Maher didn't sleep, and kept going slowly.",
+   "verbs": [
+    [
+     "لا ينام",
+     "لم ينم",
+     "didn't sleep"
+    ],
+    [
+     "يستمر",
+     "استمر",
+     "kept going"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 76,
+   "pic": 10,
+   "ar": "رأى كامل العصفور ماهر وقال: ممتاز!",
+   "en": "Kamel the bird saw Maher and said: excellent!",
+   "verbs": [
+    [
+     "يرى",
+     "رأى",
+     "saw"
+    ],
+    [
+     "يقول",
+     "قال",
+     "said"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 77,
+   "pic": 11,
+   "ar": "ووصل ماهر إلى السوق قبل رامي!",
+   "en": "And Maher arrived at the market before Rami!",
+   "verbs": [
+    [
+     "يصل",
+     "وصل",
+     "arrived"
+    ]
+   ]
+  },
+  {
+   "kind": "star"
+  },
+  {
+   "kind": "talk",
+   "line": 78,
+   "ar": "والآن، القصة في المستقبل: غدا!",
+   "en": "And now, the story in the future: tomorrow!"
+  },
+  {
+   "kind": "talk",
+   "line": 79,
+   "ar": "نضع سين قبل الفعل: يذهب… سيذهب. يشرب… سيشرب. سهل!",
+   "en": "We put \"sa\" before the verb: goes… will go. drinks… will drink. Easy!",
+   "ar_v": "نضع سين قبل الفعل:\nيذهب… سيذهب.\nيشرب… سيشرب.\nسهل!",
+   "en_v": "We put \"sa\" before the verb:\ngoes… will go. drinks… will drink. Easy!"
+  },
+  {
+   "kind": "story",
+   "line": 80,
+   "pic": 1,
+   "ar": "غدا، سيذهب رامي الحصان إلى السوق.",
+   "en": "Tomorrow, Rami the horse will go to the market.",
+   "verbs": [
+    [
+     "يذهب",
+     "سيذهب",
+     "will go"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 81,
+   "pic": 2,
+   "ar": "وسيذهب ماهر السلحفاة إلى السوق أيضا.",
+   "en": "And Maher the turtle will go to the market too.",
+   "verbs": [
+    [
+     "يذهب",
+     "سيذهب",
+     "will go"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 82,
+   "pic": 6,
+   "ar": "سيرى رامي صديقه هاني الخروف.",
+   "en": "Rami will see his friend Hani the sheep.",
+   "verbs": [
+    [
+     "يرى",
+     "سيرى",
+     "will see"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 83,
+   "pic": 7,
+   "ar": "سيشرب رامي الشاي مع الخروف.",
+   "en": "Rami will drink tea with the sheep.",
+   "verbs": [
+    [
+     "يشرب",
+     "سيشرب",
+     "will drink"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 84,
+   "pic": 8,
+   "ar": "بعد الشاي، سينام رامي تحت الشجرة.",
+   "en": "After the tea, Rami will sleep under the tree.",
+   "verbs": [
+    [
+     "ينام",
+     "سينام",
+     "will sleep"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 85,
+   "pic": 9,
+   "ar": "لكن ماهر لن ينام، سيستمر ببطء.",
+   "en": "But Maher won't sleep; he will keep going slowly.",
+   "verbs": [
+    [
+     "لا ينام",
+     "لن ينام",
+     "won't sleep"
+    ],
+    [
+     "يستمر",
+     "سيستمر",
+     "will keep going"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 86,
+   "pic": 10,
+   "ar": "سيرى كامل العصفور ماهر وسيقول: ممتاز!",
+   "en": "Kamel the bird will see Maher and will say: excellent!",
+   "verbs": [
+    [
+     "يرى",
+     "سيرى",
+     "will see"
+    ],
+    [
+     "يقول",
+     "سيقول",
+     "will say"
+    ]
+   ]
+  },
+  {
+   "kind": "story",
+   "line": 87,
+   "pic": 11,
+   "ar": "وسيصل ماهر إلى السوق قبل رامي!",
+   "en": "And Maher will arrive at the market before Rami!",
+   "verbs": [
+    [
+     "يصل",
+     "سيصل",
+     "will arrive"
+    ]
+   ]
+  },
+  {
+   "kind": "star"
+  },
+  {
+   "kind": "camera",
+   "file": "outro",
+   "lines": [
+    88,
+    89,
+    90,
+    91
+   ],
+   "subs": [
+    [
+     0.12,
+     6.7
+    ],
+    [
+     8.3,
+     13.59
+    ],
+    [
+     14.5,
+     17.51
+    ],
+    [
+     18.73,
+     21.12
+    ]
+   ],
+   "en": [
+    "Well done! Now you know the story in the present, the past and the future.",
+    "Write the story in the comments, or just one sentence you remember.",
+    "Don't forget to like the video and subscribe to the channel.",
+    "See you in the next story, goodbye!"
+   ]
+  },
+  {
+   "kind": "card",
+   "image": "assets/end-card-1920.png",
+   "dur": 10
+  }
  ]
 }

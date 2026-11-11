@@ -1,6 +1,6 @@
 # Story 1 Short · Upload sheet
 
-**File to upload:** `output/s01-2-who-arrives-first/s01-2-who-arrives-first.mp4` (vertical, 1:10 → **Short**, made from Story 1: the horse and the turtle)
+**File to upload:** `output/s01-2-who-arrives-first/s01-2-who-arrives-first.mp4` (vertical, 1:01 → **Short**, made from Story 1: the horse and the turtle)
 **Thumbnail:** Upload file → `output/s01-2-who-arrives-first/s01-2-who-arrives-first-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -92,7 +92,7 @@ How many did you answer before me? 👇 Write your score (all = ⁧ممتاز!�
 
 ## Quality check (Claude)
 
-- New material for the Shorts tab: Story 1 was only a 16:9 long video. Re-rendered natively in 9:16 (tools/story_episode.py --vertical): 3 big stars across the top, one chime every third of the Short · ALL its words below them, popping in as said and staying to the end · the picture full width + the sentence · presenter parts with the caption ABOVE him (never on his face) · nothing in the bottom part the Shorts UI covers.
+- New material for the Shorts tab: Story 1 was only a 16:9 long video. Re-rendered natively in 9:16 (tools/story_episode.py --vertical, owner feedback 11 Nov): 3 stars close together at the top (chimes at ⅓, ~57 % and 6 s before the end) · the words as lists in columns — opposites on the right, words/verbs on the left — popping in and staying · the picture full width in the lower half, the sentence bigger under it · presenter parts as plain text (no card) above him · the pauses between sentences cut (the thinking pause of each question kept).
 - Opens on the story sentence "Kamel the bird sees Maher and says: excellent!" with its picture; ends at the end of its section (its star chime).
-- Arabic = your recording; −14 LUFS; captions cut from Story 1's synced captions.
+- Arabic = your recording; −14.5 LUFS; captions on the cut timeline (tools/story_episode.py --vertical --captions).
 - Thumbnail: STORY 1 badge + big subject words + one Arabic line from the video (no tashkeel, learner rule).
