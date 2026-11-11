@@ -25,6 +25,8 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          IG_QUEUE_KEY: ${{ secrets.IG_QUEUE_KEY }}   # Page-only videos (fb-extra release) are encrypted like the IG queues
+          GH_TOKEN: ${{ github.token }}
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then python3 tools/fb_hits.py --dry-run; exit 0; fi
           python3 tools/fb_hits.py

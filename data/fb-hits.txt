@@ -16,4 +16,5 @@
 18135572248632739  # 234 · Day 7 of 30 — the week 1 quiz: 10 questions from Days 1
 18356936845175508  # 207 · Day 13 of 30 — Lina shows Sami her family photos. A sho
 17918343048260062  # 190 · Day 16 of 30 — order your coffee exactly how you like i
+release:fb-012-hi-fresh.bin  # Hindi Day 12 «मेरा» — NEW look (Sami, purple) for the Page; its IG twin had 10,423 views (owner 2026-11-11: end of the list)
 # last posted: 2026-11-11

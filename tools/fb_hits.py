@@ -45,13 +45,27 @@ def main():
             print("fb-hits.txt is empty — nothing to post"); return
         ROOT_DONE.write_text("")
     i = todo[0]; mid = lines[i].split()[0]
-    m = ig.call(mid, fields="media_url,caption,timestamp")
-    cap = (m.get("caption") or "").strip()
-    print(f"{mid}: {cap.splitlines()[0][:80] if cap else ''}")
-    if "--dry-run" in sys.argv:
-        print("dry run"); return
     tmp = pathlib.Path(_scratch()) / "v.mp4"
-    urllib.request.urlretrieve(m["media_url"], tmp)
+    if mid.startswith("release:"):
+        # a video made only for the Page (owner 2026-11-11: a fresh-look version instead of reposting the same Reel):
+        # an encrypted bundle (video.mp4 + caption.txt) in the private-key `fb-extra` release, like the Instagram queues
+        import os, subprocess
+        name = mid.split(":", 1)[1]; w = tmp.parent
+        if "--dry-run" in sys.argv:
+            print(f"{name}: (fb-extra bundle)"); print("dry run"); return
+        subprocess.run(["gh", "release", "download", "fb-extra", "-p", name, "-D", str(w)], check=True)
+        (w / "key").write_text(os.environ["IG_QUEUE_KEY"])
+        subprocess.run(f'openssl enc -d -aes-256-cbc -pbkdf2 -pass file:"{w / "key"}" -in "{w / name}" | tar -xf - -C "{w}"',
+                       shell=True, check=True)
+        (w / "video.mp4").rename(tmp); cap = (w / "caption.txt").read_text(encoding="utf-8").strip()
+        print(f"{name}: {cap.splitlines()[0][:80]}")
+    else:
+        m = ig.call(mid, fields="media_url,caption,timestamp")
+        cap = (m.get("caption") or "").strip()
+        print(f"{mid}: {cap.splitlines()[0][:80] if cap else ''}")
+        if "--dry-run" in sys.argv:
+            print("dry run"); return
+        urllib.request.urlretrieve(m["media_url"], tmp)
     vid = fb.post_video(tmp, cap)
     print(f"✅ Facebook: {vid} · {len(todo) - 1} hits left")
     with ROOT_DONE.open("a") as f: f.write(mid + "\n")

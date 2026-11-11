@@ -138,6 +138,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("stem"); ap.add_argument("lang")
     ap.add_argument("--audio"); ap.add_argument("--hook", help="hook line in that language (default: the first sentence)")
+    ap.add_argument("--char", help="force the cover character (sami/omar/waiter — the narrator is a man's voice)")
+    ap.add_argument("--variant", default="", help="a second version with a NEW look (e.g. 'fb' for the Facebook Page) → ig-<lang>-<variant>.mp4")
     a = ap.parse_args()
     out_dir = ROOT / "output" / a.stem
     nocap = next(out_dir.glob("*-nocap.mp4"))
@@ -161,10 +163,12 @@ def main():
     hook = a.hook or head or re.split(r"(?<=[.!?۔।])\s", spec[a.lang]["1"])[0]
     if a.lang in ("ur", "fa"):   # the Nastaliq font has no Western digits ("3" vanished, Day 8) and bends straight quotes
         hook = re.sub(r'"([^"]*)"', r"«\1»", hook).translate(str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹"))
-    look = pick_look(a.stem, a.lang)
+    look = pick_look(a.stem + (f"#{a.variant}" if a.variant else ""), a.lang)
+    if a.char: look = dict(look, char=a.char)
     font, size = FONT.get(a.lang, "Noto Sans"), SIZE.get(a.lang, 84)
 
-    work = out_dir / f"ig-{a.lang}-look"; work.mkdir(exist_ok=True)
+    tag = a.lang + (("-" + a.variant.rstrip("0123456789")) if a.variant else "")   # fb4 → ig-hi-fb.mp4
+    work = out_dir / f"ig-{tag}-look"; work.mkdir(exist_ok=True)
     cover_frames(look, work)
     box = frame_overlay(look, work / "frame.png")
     day = re.match(r"(\d{3})-", a.stem)
@@ -189,13 +193,13 @@ def main():
         if arabic.search(txt) or sec(s) < COVER:
             continue
         ass.append(f"Dialogue: 0,{ts(sec(s))},{ts(sec(e))},Sub,,0,0,0,,{txt.replace(chr(10), ' ')}")
-    af = out_dir / f"ig-{a.lang}.ass"; af.write_text("\n".join(ass) + "\n", encoding="utf-8")
+    af = out_dir / f"ig-{tag}.ass"; af.write_text("\n".join(ass) + "\n", encoding="utf-8")
     z = look["zoom"]
     vf = (f"[0:v]scale={round(W * z / 2) * 2}:{round(H * z / 2) * 2},crop={W}:{H}:{crop_x(look)}:0,"
           f"hue=h={look['hue']}:s=1.08[v];"
           f"[v][2:v]overlay=0:0:eof_action=pass[c];[c][3:v]overlay=0:0,"
           f"ass={af}:fontsdir=/usr/share/fonts/truetype/noto[out]")
-    out = out_dir / f"ig-{a.lang}.mp4"
+    out = out_dir / f"ig-{tag}.mp4"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(nocap), "-i", str(audio),
                     "-framerate", str(FPS), "-i", str(work / "c%03d.png"), "-loop", "1", "-i", str(work / "frame.png"),
                     "-filter_complex", vf, "-map", "[out]", "-map", "1:a", "-c:v", "libx264", "-crf", "18",
