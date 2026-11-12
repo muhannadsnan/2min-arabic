@@ -47,17 +47,27 @@ def duration(path):
 def with_hook(path, caption):
     """Facebook hook cover (owner 2026-11-11: only 11 % of Page views lasted 3 s): if data/fb-hooks/ has a picture for
     this caption's first line (big subject words + an Arabic word, made by Claude ahead of time), lay it over the
-    first 1.6 s. Needs only ffmpeg (GitHub runners have it); without a picture the video goes up unchanged."""
+    first 1.6 s. Needs only ffmpeg (on GitHub: the imageio-ffmpeg pip build); without a picture the video goes up unchanged."""
     import hashlib
     first = (caption or "").strip().splitlines()[0].strip() if (caption or "").strip() else ""
     png = pathlib.Path(__file__).resolve().parent.parent / "data" / "fb-hooks" / f"{hashlib.sha1(first.encode()).hexdigest()[:12]}.png"
     if not first or not png.exists():
         return pathlib.Path(path)
+    import shutil
+    exe = shutil.which("ffmpeg")
+    if not exe:   # GitHub's runner has no ffmpeg (12 Nov: both hit runs failed) → the pip build (workflow installs it)
+        try:
+            import imageio_ffmpeg; exe = imageio_ffmpeg.get_ffmpeg_exe()
+        except Exception as e:
+            print(f"no ffmpeg, posting without the hook: {e}"); return pathlib.Path(path)
     out = pathlib.Path(_scratch()) / "hooked.mp4"
-    r = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(path), "-i", str(png), "-filter_complex",
-                        "[1:v][0:v]scale2ref[h][v];[v][h]overlay=0:0:enable='lt(t,1.6)'", "-c:v", "libx264",
-                        "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy", str(out)],
-                       capture_output=True, text=True)
+    try:
+        r = subprocess.run([exe, "-v", "error", "-y", "-i", str(path), "-i", str(png), "-filter_complex",
+                            "[1:v][0:v]scale2ref[h][v];[v][h]overlay=0:0:enable='lt(t,1.6)'", "-c:v", "libx264",
+                            "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy", str(out)],
+                           capture_output=True, text=True)
+    except OSError as e:   # a hook must never stop the day's post
+        print(f"hook overlay failed, posting without: {e}"); return pathlib.Path(path)
     if r.returncode != 0 or not out.exists():
         print(f"hook overlay failed, posting without: {r.stderr[:200]}"); return pathlib.Path(path)
     print(f"hook cover: {png.name}")

@@ -23,6 +23,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: ffmpeg for the Facebook hook cover (the Ubuntu 26 runner has none — 12 Nov)
+        run: python3 -m pip install --quiet --user --break-system-packages imageio-ffmpeg || python3 -m pip install --quiet --user imageio-ffmpeg || true
       - name: Post the next Reel
         env:
           GH_TOKEN: ${{ github.token }}
