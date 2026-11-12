@@ -161,7 +161,7 @@ def main():
         parts = [p.strip().strip("*") for p in (s or "").split("·")]
         if len(parts) >= 4 and re.fullmatch(r"([A-Z][a-z]+ )?\d+/\d+", parts[-1]) or i in EXTRA:
             words.append((i, minimal(parts[0]), parts[1], parts[2]))   # harakat only where needed (owner 2026-11-03)
-    if not words:
+    if not words and not opt.get("cards"):   # with cards= the script needs no N/M cards (v01 café, 2026-11-12)
         sys.exit("no 'N/M' word cards in this script")
     if pick:
         words = [words[k - 1] for k in pick]
