@@ -1,6 +1,5 @@
 # Facebook page: one proven Instagram hit a day at 12:00 Oslo (owner 2026-10-31: "start with the best videos").
 # Order = Instagram views on 31 Oct. tools/fb_hits.py posts the first line and removes it. <instagram media id>  # views · title
-18112199075587536  # 468 · Arabic Extras — in the textbook, "I want" is uriidu. In
 17965579872229088  # 2071 · Urdu — عربی میں «میرا» کا کوئی لفظ نہیں (hi/ur test on the Page, owner 2026-11-11)
 # — the rest of the older Reels (republish everything, owner 2026-10-31) —
 18131166208694481  # 363 · Day 15 of 30 — two little words to order anything in an
@@ -17,4 +16,4 @@
 18356936845175508  # 207 · Day 13 of 30 — Lina shows Sami her family photos. A sho
 17918343048260062  # 190 · Day 16 of 30 — order your coffee exactly how you like i
 release:fb-012-hi-fresh.bin  # Hindi Day 12 «मेरा» — NEW look (Sami, purple) for the Page; its IG twin had 10,423 views (owner 2026-11-11: end of the list)
-# last posted: 2026-11-11
+# last posted: 2026-11-12
