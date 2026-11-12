@@ -373,5 +373,20 @@
   "zoom": 1.098,
   "shift": -0.52,
   "hue": 8
+ },
+ {
+  "stem": "012-grammar-no-word-for-my#fb",
+  "lang": "hi",
+  "char": "lina",
+  "pose": "cB",
+  "bg": "cafe",
+  "color": [
+   109,
+   40,
+   217
+  ],
+  "zoom": 1.1,
+  "shift": 0.2,
+  "hue": -6
  }
 ]
