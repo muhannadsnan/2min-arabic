@@ -73,6 +73,7 @@ def main():
         if sub:
             times.append(sub["start"] + 2.5)
         times.append(dur - 1.2)
+    times = [min(t, dur - 0.4) for t in times]   # a frame time past the end gave no picture (v05: subscribe line at the very end)
     if times:
         from PIL import Image
         tiles = []
