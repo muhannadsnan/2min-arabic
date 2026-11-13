@@ -3,6 +3,8 @@
 **File to upload:** `output/v05-jobs/jobs-in-arabic-20-professions-what-do-you-do.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/v05-jobs/jobs-in-arabic-20-professions-what-do-you-do-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `V2Gf1l1bYFk`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
