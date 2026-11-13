@@ -45,7 +45,7 @@ Coffee. Arabs were drinking it long before Europe had its first cup.
 🔤 **On screen:** سكر · *sukkar* · sugar · 2/10
 
 ```say:narrator
-Sugar. Listen, it's almost the same word.
+Sugar is almost the same word. Listen.
 ```
 ```say:teacher
 سكر
@@ -94,7 +94,7 @@ Giraffe.
 ### 🎬 Scene 7 — Safari
 
 🖼️ **Image:** w06 (pencil)
-🔤 **On screen:** سفر · *safar* · travel → safari · 6/10
+🔤 **On screen:** سفر · *safar* · safari (journey) · 6/10
 
 ```say:narrator
 Safari. In Arabic it simply means a journey.
@@ -107,7 +107,7 @@ Safari. In Arabic it simply means a journey.
 ### 🎬 Scene 8 — Zero
 
 🖼️ **Image:** w07 (pencil)
-🔤 **On screen:** صفر · *Sifr* · empty → zero · 7/10
+🔤 **On screen:** صفر · *Sifr* · zero (empty) · 7/10
 
 ```say:narrator
 Zero. It reached Europe through Arabic, and it means empty.
@@ -133,7 +133,7 @@ Algebra. Yes, you can blame Arabic for that one.
 ### 🎬 Scene 10 — Magazine
 
 🖼️ **Image:** w09 (pencil)
-🔤 **On screen:** مخازن · *makhaazin* · storehouses → magazine · 9/10
+🔤 **On screen:** مخازن · *makhaazin* · magazine (storehouses) · 9/10
 
 ```say:narrator
 Magazine. First it meant storehouses, full of everything.
@@ -146,7 +146,7 @@ Magazine. First it meant storehouses, full of everything.
 ### 🎬 Scene 11 — Mattress
 
 🖼️ **Image:** w10 (pencil)
-🔤 **On screen:** مطرح · *maTraH* · a place to lie down → mattress · 10/10
+🔤 **On screen:** مطرح · *maTraH* · mattress (a place to lie down) · 10/10
 
 ```say:narrator
 And the one you slept on last night: mattress.
