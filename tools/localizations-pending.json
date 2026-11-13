@@ -1,57 +1,57 @@
 {
- "v05-jobs": {
-  "name": "Jobs in Arabic: 20 Professions + \"What Do You Do?\"",
+ "x09-secretly-arabic": {
+  "name": "10 English Words From Arabic (You Use Them Daily)",
   "hi": [
-   "अरबी में 20 पेशे + “आप क्या काम करते हैं?” | अरबी सीखें",
-   "अरबी में 20 पेशों के नाम सीखें, वो सवाल जो हर अरब आपके नाम के बाद पूछता है, और उसका जवाब। रोज़ सिर्फ 2 मिनट में अरबी।"
+   "अंग्रेज़ी के 10 शब्द जो अरबी से आए | अरबी सीखें",
+   "आप पहले से थोड़ी अरबी बोलते हैं: कॉफ़ी, शुगर, ज़ीरो… अंग्रेज़ी के 10 शब्द जो अरबी से आए, एक अरब की आवाज़ में। रोज़ सिर्फ 2 मिनट में अरबी।"
   ],
   "ur": [
-   "عربی میں 20 پیشے + “آپ کیا کام کرتے ہیں؟” | عربی سیکھیں",
-   "عربی میں 20 پیشوں کے نام سیکھیں، وہ سوال جو ہر عرب آپ کے نام کے بعد پوچھتا ہے، اور اس کا جواب۔ روزانہ صرف 2 منٹ میں عربی۔"
+   "انگریزی کے 10 الفاظ جو عربی سے آئے | عربی سیکھیں",
+   "آپ پہلے سے تھوڑی عربی بولتے ہیں: کافی، شوگر، زیرو… انگریزی کے 10 الفاظ جو عربی سے آئے، ایک عرب کی آواز میں۔ روزانہ صرف 2 منٹ میں عربی۔"
   ],
   "id": [
-   "Nama Pekerjaan dalam Bahasa Arab: 20 Profesi + “Apa Pekerjaanmu?”",
-   "Belajar 20 nama pekerjaan dalam bahasa Arab, pertanyaan yang ditanyakan setiap orang Arab setelah namamu, dan cara menjawabnya. Bahasa Arab 2 menit sehari."
+   "10 Kata Bahasa Inggris dari Bahasa Arab | Belajar Bahasa Arab",
+   "Kamu sudah bisa sedikit bahasa Arab: coffee, sugar, zero… 10 kata bahasa Inggris yang berasal dari bahasa Arab. Bahasa Arab 2 menit sehari."
   ],
   "bn": [
-   "আরবিতে ২০টি পেশা + “আপনি কী করেন?” | আরবি শিখুন",
-   "আরবিতে ২০টি পেশার নাম শিখুন, নামের পরেই প্রত্যেক আরব যে প্রশ্নটি করে, আর তার উত্তর। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+   "ইংরেজির ১০টি শব্দ যা আরবি থেকে এসেছে | আরবি শিখুন",
+   "আপনি আগে থেকেই একটু আরবি জানেন: কফি, সুগার, জিরো… ইংরেজির ১০টি শব্দ যা আরবি থেকে এসেছে। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
   ],
   "tr": [
-   "Arapça Meslekler: 20 Meslek + “Ne İş Yapıyorsun?” | Arapça Öğren",
-   "20 Arapça meslek adı, her Arabın adından hemen sonra sorduğu soru ve cevabı. Günde 2 dakikada Arapça."
+   "Arapçadan Gelen 10 İngilizce Kelime | Arapça Öğren",
+   "Zaten biraz Arapça biliyorsun: coffee, sugar, zero… Arapçadan İngilizceye geçen 10 kelime. Günde 2 dakikada Arapça."
   ],
   "fa": [
-   "شغل‌ها به عربی: ۲۰ شغل + «چه کاره‌ای؟» | آموزش زبان عربی از صفر",
-   "نام ۲۰ شغل را به عربی یاد بگیر، سؤالی که هر عرب بعد از اسمت می‌پرسد، و جوابش. روزی ۲ دقیقه آموزش زبان عربی."
+   "۱۰ کلمه انگلیسی که از عربی آمده‌اند | آموزش زبان عربی از صفر",
+   "تو همین حالا هم کمی عربی بلدی: coffee، sugar، zero… ۱۰ کلمه انگلیسی که از عربی آمده‌اند. روزی ۲ دقیقه آموزش زبان عربی."
   ],
   "ms": [
-   "Nama Pekerjaan dalam Bahasa Arab: 20 Profesion + “Apa Kerja Anda?”",
-   "Belajar 20 nama pekerjaan dalam bahasa Arab, soalan yang setiap orang Arab tanya selepas nama anda, dan cara menjawabnya. Bahasa Arab 2 minit sehari."
+   "10 Perkataan Inggeris daripada Bahasa Arab | Belajar Bahasa Arab",
+   "Anda sudah tahu sedikit bahasa Arab: coffee, sugar, zero… 10 perkataan Inggeris yang berasal daripada bahasa Arab. Bahasa Arab 2 minit sehari."
   ],
   "fr": [
-   "Les métiers en arabe : 20 professions + « Tu fais quoi ? » | Apprendre l'arabe",
-   "Apprends 20 métiers en arabe, la question que chaque Arabe pose juste après ton nom, et comment y répondre. L'arabe en 2 minutes par jour."
+   "10 mots anglais venus de l'arabe | Apprendre l'arabe",
+   "Tu parles déjà un peu arabe : coffee, sugar, zero… 10 mots anglais (et souvent français !) venus de l'arabe. L'arabe en 2 minutes par jour."
   ],
   "ru": [
-   "Профессии на арабском: 20 слов + «Кем ты работаешь?» | Арабский язык",
-   "Выучите 20 профессий на арабском, вопрос, который каждый араб задаёт сразу после имени, и как на него ответить. Арабский за 2 минуты в день."
+   "10 английских слов из арабского | Арабский язык",
+   "Вы уже немного говорите по-арабски: coffee, sugar, zero… 10 английских слов, пришедших из арабского. Арабский за 2 минуты в день."
   ],
   "de": [
-   "Berufe auf Arabisch: 20 Berufe + „Was machst du beruflich?“ | Arabisch lernen",
-   "Lerne 20 Berufe auf Arabisch, die Frage, die jeder Araber gleich nach deinem Namen stellt, und wie du antwortest. Arabisch in 2 Minuten am Tag."
+   "10 englische Wörter aus dem Arabischen | Arabisch lernen",
+   "Du sprichst schon ein bisschen Arabisch: coffee, sugar, zero… 10 englische Wörter, die aus dem Arabischen kommen. Arabisch in 2 Minuten am Tag."
   ],
   "so": [
-   "Shaqooyinka Af-Carabi: 20 Xirfadood + “Maxaad Qabataa?” | Baro Af-Carabi",
-   "Baro 20 magac oo shaqo ah oo Af-Carabi ah, su'aasha Carab kasta ku weydiiyo magacaaga kadib, iyo sida looga jawaabo. Af-Carabi 2 daqiiqo maalintii."
+   "10 Erey Ingiriisi ah oo Carabi ka yimid | Baro Af-Carabi",
+   "Horeba waxoogaa Carabi ah ayaad taqaan: coffee, sugar, zero… 10 erey Ingiriisi ah oo Carabi ka yimid. Af-Carabi 2 daqiiqo maalintii."
   ],
   "sw": [
-   "Kazi kwa Kiarabu: Kazi 20 + “Unafanya Kazi Gani?” | Jifunze Kiarabu",
-   "Jifunze majina 20 ya kazi kwa Kiarabu, swali ambalo kila Mwarabu anauliza baada ya jina lako, na jinsi ya kujibu. Kiarabu dakika 2 kwa siku."
+   "Maneno 10 ya Kiingereza Kutoka Kiarabu | Jifunze Kiarabu",
+   "Tayari unajua Kiarabu kidogo: coffee, sugar, zero, hata safari… maneno 10 ya Kiingereza yaliyotoka Kiarabu. Kiarabu dakika 2 kwa siku."
   ],
   "es": [
-   "Profesiones en árabe: 20 trabajos + «¿A qué te dedicas?» | Aprende árabe",
-   "Aprende 20 profesiones en árabe, la pregunta que todo árabe hace justo después de tu nombre, y cómo responderla. Árabe en 2 minutos al día."
+   "10 palabras inglesas que vienen del árabe | Aprende árabe",
+   "Ya hablas un poco de árabe: coffee, sugar, zero… 10 palabras inglesas que vienen del árabe (¡y muchas españolas también!). Árabe en 2 minutos al día."
   ]
  }
 }
