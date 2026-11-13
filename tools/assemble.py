@@ -374,7 +374,8 @@ def main():
                       encoding="utf-8")
     # scenes marked "captions": "high" in prompts.json (a close-up whose face fills the lower half) get captions above the head
     high = ",".join(f"{s['start']:.2f}-{s['end']:.2f}" for i, s in enumerate(tl["scenes"], 1) if opts.get(i, {}).get("captions") == "high")
-    run([sys.executable, str(HERE / "captions" / "srt_to_burnin_ass.py"), str(en_srt), str(ass)] + ([f"high={high}"] if high else []))
+    top = ",".join(f"{s['start']:.2f}-{s['end']:.2f}" for i, s in enumerate(tl["scenes"], 1) if opts.get(i, {}).get("captions") == "top")
+    run([sys.executable, str(HERE / "captions" / "srt_to_burnin_ass.py"), str(en_srt), str(ass)] + ([f"high={high}"] if high else []) + ([f"top={top}"] if top else []))
 
     # 3. final: YOUR TURN during pauses, captions, voiceover at -14 LUFS (mono measured -17 → dual-mono -14)
     enable = "+".join(f"between(t,{p['start']:.2f},{p['end']:.2f})" for p in tl["pauses"]) or "0"
