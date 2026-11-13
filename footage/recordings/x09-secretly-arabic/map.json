@@ -1,0 +1,102 @@
+[
+ {
+  "n": 1,
+  "speaker": "teacher",
+  "text": "قهوة",
+  "file": "footage/recordings/_A-combined/lines/28-teacher.wav",
+  "heard": "قهوة",
+  "cer": 0.0,
+  "start": 90.98,
+  "end": 91.82
+ },
+ {
+  "n": 2,
+  "speaker": "teacher",
+  "text": "سكر",
+  "file": "footage/recordings/_A-combined/lines/27-teacher.wav",
+  "heard": "سكر",
+  "cer": 0.0,
+  "start": 88.48,
+  "end": 89.46
+ },
+ {
+  "n": 3,
+  "speaker": "teacher",
+  "text": "ليمون",
+  "file": "footage/recordings/_A-combined/lines/31-teacher.wav",
+  "heard": "ليمون",
+  "cer": 0.0,
+  "start": 99.78,
+  "end": 100.98
+ },
+ {
+  "n": 4,
+  "speaker": "teacher",
+  "text": "قطن",
+  "file": "footage/recordings/_A-combined/lines/29-teacher.wav",
+  "heard": "قطن",
+  "cer": 0.0,
+  "start": 93.18,
+  "end": 94.02
+ },
+ {
+  "n": 5,
+  "speaker": "teacher",
+  "text": "زرافة",
+  "file": "footage/recordings/_A-combined/lines/32-teacher.wav",
+  "heard": "زرافة",
+  "cer": 0.0,
+  "start": 102.5,
+  "end": 103.58
+ },
+ {
+  "n": 6,
+  "speaker": "teacher",
+  "text": "سفر",
+  "file": "footage/recordings/_A-combined/lines/33-teacher.wav",
+  "heard": "صفار",
+  "cer": 0.667,
+  "start": 105.54,
+  "end": 106.36
+ },
+ {
+  "n": 7,
+  "speaker": "teacher",
+  "text": "صفر",
+  "file": "footage/recordings/_A-combined/lines/35-teacher.wav",
+  "heard": "صفر",
+  "cer": 0.0,
+  "start": 111.96,
+  "end": 112.86
+ },
+ {
+  "n": 8,
+  "speaker": "teacher",
+  "text": "الجبر",
+  "file": "footage/recordings/_A-combined/lines/30-teacher.wav",
+  "heard": "الجبر",
+  "cer": 0.0,
+  "start": 95.48,
+  "end": 96.5
+ },
+ {
+  "n": 9,
+  "speaker": "teacher",
+  "text": "مخازن",
+  "file": "footage/recordings/_A-combined/lines/34-teacher.wav",
+  "heard": "مخازن",
+  "cer": 0.0,
+  "start": 108.1,
+  "end": 109.34
+ },
+ {
+  "n": 10,
+  "speaker": "teacher",
+  "text": "مطرح",
+  "file": "footage/recordings/_A-combined/lines/36-teacher.wav",
+  "heard": "مطرح",
+  "cer": 0.0,
+  "start": 128.22,
+  "end": 130.14
+ }
+]
