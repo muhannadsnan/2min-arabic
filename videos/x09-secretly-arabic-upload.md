@@ -2,6 +2,7 @@
 
 **File to upload:** `output/x09-secretly-arabic/10-english-words-from-arabic-you-use-them-daily.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/x09-secretly-arabic/10-english-words-from-arabic-you-use-them-daily-thumbnail.jpg`
+> ✅ **Uploaded + filled by Claude** — video id `kPPKjrxXYf4`
 
 ## Fast way (Claude fills everything)
 
