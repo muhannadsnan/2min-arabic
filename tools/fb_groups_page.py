@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-10b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-14"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -255,11 +255,20 @@ function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = Date.now() : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
 // groups whose last post still waits for admin approval (owner 2026-11-06): {{name: {{day, date, n}}}} — n = rounds in a row
 function pends() {{ try {{ return JSON.parse(localStorage.getItem("fbgp") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
-// owner 2026-11-09: a group still pending in its 3rd round is dropped — skipped from then on, listed to leave
+// owner 2026-11-14 — a group whose posts stay pending: 3 weeks pending → 3 weeks paused → post anyway (a fresh post for
+// the admin) → 3 weeks pending → 3 weeks paused → one last check: still pending → leave it for good (and never re-join).
+// fbgp[name] = {{day, date (last tap), n, since (pending since), stage, until (end of a pause), posted (the fresh post)}}
+// stage 1 waiting · 2 paused · 3 waiting after the fresh post · 4 second pause · 5 dropped (replaces the 9 Nov
+// "3 rounds after 15 Jan" rule)
 const dateOf = day => {{ const d = new Date(Date.parse(D.start + "T00:00:00Z") + day * 864e5); return d.toISOString().slice(0, 10); }};
 const paused = (g, day) => !!(g.pause && dateOf(day) < g.pause);
-const PAGE_OK = "2027-01-15";   // the Page is 3 months old: groups' "new profile" filters stop holding it back
-const dead = name => {{ const p = pends()[name]; return !!(p && (p.n3 || 0) >= 3); }};   // only rounds after PAGE_OK count
+const WAIT = 21, plus = (ds, n) => {{ const d = new Date(ds + "T12:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }};
+const stageOf = p => p ? p.stage || 1 : 0;
+const pendOn = (p, day) => !!(p && p.day === day && !p.posted);   // tapped Still pending on that day's card
+const pPaused = (name, day) => {{ const p = pends()[name]; return !!(p && p.until && p.day < day && dateOf(day) < p.until); }};
+const dead = name => stageOf(pends()[name]) >= 5;
+const postDate = name => {{ const ds = Object.keys(sentLog()).filter(k => k.endsWith("-" + name)).map(k => parseInt(k, 10)); return ds.length ? dateOf(Math.max(...ds)) : null; }};
+const offToday = (g, day) => g.left || g.dropped || paused(g, day) || pPaused(g.name, day) || (dead(g.name) && pends()[g.name].day < day);
 function setPend(name, v) {{ try {{ const p = pends(); v ? p[name] = v : delete p[name]; localStorage.setItem("fbgp", JSON.stringify(p)); }} catch (e) {{}} }}
 // which video each group got (owner 2026-11-07: "that group has not got the x03"): {{"day-name": video index}}. A group
 // skipped as pending gets the video it missed next time and never jumps one; on-time groups follow the round.
@@ -287,7 +296,7 @@ function videoIdx(g, day, i, n) {{
 const GAP = 6 * 3600e3;
 function eveningOpensAt(day) {{
   const t = ticks(), times = slots(day).slice(0, 3).map(g => t[day + "-" + g.name]);
-  if (slots(day).slice(0, 3).some((g, k) => !times[k] && !g.dropped)) return null;                                   // morning not finished yet
+  if (slots(day).slice(0, 3).some((g, k) => !times[k] && !offToday(g, day))) return null;                                   // morning not finished yet
   return Math.max(0, ...times.filter(Boolean).map(x => x === 1 ? 0 : x)) + GAP;               // 1 = ticked before this rule: open now
 }}
 // 3 a day until 2 Nov, 5 a day from 3 Nov (owner 2026-11-02) — the rotation continues where it was
@@ -298,8 +307,8 @@ function slots(day) {{ const ep = epOf(day); return Array.from({{length: per(day
 // a dropped group (no posting allowed) counts as done, so its session can still finish and it shows as a slim note
 const isDone = (t, day, g) => g.dropped || !!t[day + "-" + g.name];
 function card(g, i, day, enIdx) {{
-  const key = day + "-" + g.name, done = !!ticks()[key], pr = pends()[g.name], pendNow = !!(pr && pr.day === day);
-  const pendOld = pr && pr.day < day ? pr : null;
+  const key = day + "-" + g.name, done = !!ticks()[key], pr = pends()[g.name], pendNow = pendOn(pr, day);
+  const pendOld = pr && pr.day < day ? pr : null, st = stageOf(pendOld), since = pendOld && (pendOld.since || postDate(g.name) || plus(pendOld.date, -8 * ((pendOld.n || 1) - 1)));
   let body;
   // the round this card belongs to (round 0 = 31 Oct–4 Nov, the first one the owner posted): the same video for all groups
   let shown = 0;   // the video index this card shows (logged when ticked Posted)
@@ -317,18 +326,22 @@ function card(g, i, day, enIdx) {{
   const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
   c.innerHTML = `<div class="top"><button class="name">Copy name</button>
     ${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<span class="g">${{esc(g.name)}}</span>`}}
-    <span class="right"><button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? "Pending — skipped" : "Still pending"}}</button><label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{day === dayNo || day === dayNo - 1 ? i + 1 : "+"}}</span></span></div>` +
-    (pendOld ? `<p class="note">${{pendOld.n >= 2 ? `Still pending ${{pendOld.n}} rounds in a row (last: ${{pendOld.date}}).${{ymd(now) < PAGE_OK ? " Kept for now: from " + PAGE_OK + " (the Page is 3 months old) 3 more pending rounds drop it." : (pendOld.n3 || 0) >= 2 ? " Still waiting this time too? Tap Still pending — that's round 3 and the group is dropped." : ""}}`
-      : `Your last post here was still waiting for approval (${{pendOld.date}}). Open the group first: if Facebook says a post is pending, tap Still pending.`}}</p>` : "") +
+    <span class="right">${{st === 2 && !pendNow ? "" : `<button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? (dead(g.name) ? "Pending — leave it" : "Pending — skipped") : st === 4 ? "Still pending → leave" : "Still pending"}}</button>`}}<label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{day === dayNo || day === dayNo - 1 ? i + 1 : "+"}}</span></span></div>` +
+    (pendOld ? `<p class="note">${{st === 2 ? `Paused 3 weeks because your post stayed pending. Post this one anyway, even if Facebook says a post is pending — the admin gets a fresh one to approve. Then tick Posted.`
+      : st === 4 ? `Last check (pending, paused twice): open the group. Did the admin publish one of your posts? Yes → post this one and tick Posted. Still pending → tap "Still pending → leave": the group goes on the leave list for good.`
+      : pendOld.posted ? `You posted here anyway on ${{pendOld.date}}. Open the group first: if Facebook says a post is pending, tap Still pending.`
+      : `Your last post here is still waiting for approval (pending since ${{since}}, ${{(d => d < 14 ? d + " days" : Math.floor(d / 7) + " weeks")(Math.round((Date.parse(ymd(now)) - Date.parse(since)) / 864e5))}}). Open the group first: if Facebook says a post is pending, tap Still pending.${{st === 3 ? " After 3 weeks it pauses once more, then one last check." : " After 3 weeks the group pauses for 3 weeks, then you post again anyway."}}`}}</p>` : "") +
     body.replace('<div class="btns">', `<div class="btns">`).replace("</div><pre>", `<span class="meta">${{g.members}} members <span class="lang ${{g.code}}">${{g.lang}}</span></span></div><div class="box"><pre>`).replace('<button class="copy">Copy text</button>', '<button class="copy">Copy text</button></div>');
   const b = c.querySelector("button.copy"), text = g._text;
   c.querySelector("button.name").onclick = e => navigator.clipboard.writeText(g.name.replace(/ \\(.*\\)$/, "")).then(() => {{ e.target.textContent = "Copied ✓"; setTimeout(() => e.target.textContent = "Copy name", 1500); }});
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
-  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); logSent(key, e.target.checked ? shown : null); if (e.target.checked) setPend(g.name, null); c.classList.toggle("done", e.target.checked); if (i < 3) render(); }};
-  c.querySelector("button.pend").onclick = () => {{
-    if (pendNow) {{ setPend(g.name, null); tick(key, false); }}                       // tapped by mistake: undo
-    else {{ const after = ymd(now) >= PAGE_OK;
-      setPend(g.name, {{day, date: ymd(now), n: (pendOld ? pendOld.n : 0) + 1, n3: (pendOld ? pendOld.n3 || 0 : 0) + (after ? 1 : 0)}}); tick(key, true); }}   // counts as done, so the session can finish
+  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); logSent(key, e.target.checked ? shown : null); setPend(g.name, !e.target.checked ? pendOld : st === 2 ? {{day, date: ymd(now), n: 0, stage: 3, since: ymd(now), posted: true}} : null); c.classList.toggle("done", e.target.checked); if (i < 3) render(); }};
+  if (c.querySelector("button.pend")) c.querySelector("button.pend").onclick = () => {{
+    if (pendNow) {{ setPend(g.name, pendOld); tick(key, false); }}                       // tapped by mistake: undo
+    else {{ const today = ymd(now), v = {{day, date: today, n: (pendOld ? pendOld.n : 0) + 1, stage: st || 1, since: since || postDate(g.name) || today}};
+      if (st === 4) v.stage = 5;                                                       // the last check: leave for good
+      else if ((v.stage === 1 || v.stage === 3) && today >= plus(v.since, WAIT)) {{ v.stage++; v.until = plus(today, WAIT); }}   // 3 weeks pending → 3 weeks paused
+      setPend(g.name, v); tick(key, true); }}   // counts as done, so the session can finish
     render(); fill("yesterday", dayNo - 1, false);
   }};
   return c;
@@ -340,8 +353,8 @@ const span2 = ms => {{ const m = Math.max(1, Math.round(ms / 60000)), h = Math.f
 function xpicks() {{ try {{ return JSON.parse(localStorage.getItem("fbgx") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function extras(box, day, from, to) {{
   const t = ticks(), p = pends(), today = new Set(slots(day).map(g => g.name)), X = xpicks(), mine = X[day] || [];
-  const need = slots(day).slice(from, to).filter(g => g.dropped || paused(g, day) || dead(g.name) || (p[g.name] && p[g.name].day === day)).length;
-  const skipped = x => p[x.n] && p[x.n].day === x.d;   // an extra marked Still pending → it needs a replacement too
+  const need = slots(day).slice(from, to).filter(g => !g.left && (offToday(g, day) || dead(g.name) || pendOn(p[g.name], day))).length;
+  const skipped = x => pendOn(p[x.n], x.d);   // an extra marked Still pending → it needs a replacement too
   const used = new Set(Object.values(X).flat().map(x => x.n)), out = [], ok = () => out.filter(x => !skipped(x)).length;
   mine.filter(x => x.s === from).forEach(x => out.push(x));                                          // kept picks stay put
   // candidates: first the groups we never posted to (joined 8 Nov — nothing can be pending there), then the rest in line
@@ -366,7 +379,7 @@ function fill(id, day, lockEvening) {{
     if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Evening" : "Morning"}}</h3>`);
     const isEn = g.code === "en", idx = isEn ? en++ : 0;
     if (g.left) return;   // owner 2026-11-10: groups he has left disappear from the page (their slot still gets an extra)
-    if (g.dropped || paused(g, day) || (dead(g.name) && pends()[g.name].day < day)) {{ box.insertAdjacentHTML("beforeend", `<div class="card done"><span class="g">${{esc(g.name)}}</span> <span class="meta">— skipped: ${{g.dropped ? "no posting allowed" : paused(g, day) ? "paused until " + g.pause + " (declines new accounts)" : "dropped (pending 3 rounds)"}}</span></div>`); return; }}
+    if (offToday(g, day)) {{ box.insertAdjacentHTML("beforeend", `<div class="card done"><span class="g">${{esc(g.name)}}</span> <span class="meta">— skipped: ${{g.dropped ? "no posting allowed" : paused(g, day) ? "paused until " + g.pause + " (declines new accounts)" : pPaused(g.name, day) ? "paused until " + pends()[g.name].until + " (posts stay pending)" : "dropped (pending twice, 12 weeks) — leave it"}}</span></div>`); return; }}
     if (lockEvening && i >= 3 && !t[day + "-" + g.name] && (opens === null || Date.now() < opens)) {{
       if (!box.querySelector(".locked")) box.insertAdjacentHTML("beforeend", `<div class="card locked"><p class="none">${{opens === null
         ? "Opens 6 hours after you tick the 3rd morning group."
@@ -401,7 +414,7 @@ function todoCard() {{
   const box = document.getElementById("todo"); box.innerHTML = "";
   if (!leave.length && !test.length) return;
   box.innerHTML = `<h3>Facebook to-dos</h3><div class="card">` +
-    (leave.length ? `<p class="meta" style="margin:0 0 6px">Leave these groups (no posting allowed, or still pending after 3 rounds — tell Claude too) — open → Joined ▾ → Leave group:</p>` +
+    (leave.length ? `<p class="meta" style="margin:0 0 6px">Leave these groups (no posting allowed, or posts pending through both pauses — never join them again; tell Claude too) — open → Joined ▾ → Leave group:</p>` +
       leave.map(g => `<label class="tick" style="margin:4px 0"><input type="checkbox" data-n="${{esc(g.name)}}"> ${{esc(g.name)}}</label>`).join("") : "") +
     (test.length ? `<p class="meta" style="margin:${{leave.length ? 12 : 0}}px 0 6px">To check, then tell Claude:</p>` +
       test.map(g => `<p style="margin:4px 0"><b>${{esc(g.name)}}</b> — ${{esc(g.todo)}}</p>`).join("") : "") + `</div>`;
@@ -478,10 +491,12 @@ function allTable() {{
       const g = D.groups[gi]; let next = "—";
       if (g.dropped) next = "dropped";
       else if (g.pause && dateOf(dayNo) < g.pause) next = `paused until ${{g.pause}}`;
+      else if (dead(g.name)) next = "dropped — leave it";
+      else if (pPaused(g.name, dayNo)) next = `paused until ${{pends()[g.name].until}} (pending)`;
       else {{
         const nt = nextTurn(g.name), list = g.code === "en" || g.share ? D.en : (D.files[g.code] || []);
         if (nt && list.length) {{ const v = list[videoIdx(g, nt[0], nt[1], list.length)];
-          next = `<span class="vt" title="${{esc(v.title)}}">${{esc(v.title)}}</span><span class="meta">${{when(nt[0])}}, ${{nt[1] < 3 ? "morning" : "evening"}}${{pends()[g.name] ? " · was pending" : ""}}</span>`; }}
+          next = `<span class="vt" title="${{esc(v.title)}}">${{esc(v.title)}}</span><span class="meta">${{when(nt[0])}}, ${{nt[1] < 3 ? "morning" : "evening"}}${{pends()[g.name] ? (stageOf(pends()[g.name]) === 2 ? " · post anyway" : stageOf(pends()[g.name]) === 4 ? " · last check" : " · was pending") : ""}}</span>`; }}
       }}
       return `<tr><td>${{i + 1}}</td><td><span class="lang ${{g.code}}">${{g.lang}}</span> ${{esc(g.name)}}</td><td>${{next}}</td></tr>`;
     }}).join("") + "</table>";
