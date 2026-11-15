@@ -1,7 +1,7 @@
 # Story 1 Short · Upload sheet
 
-**File to upload:** `output/s01-3-opposites/s01-3-opposites.mp4` (vertical, 1:08 → **Short**, made from Story 1: the horse and the turtle)
-> 🔁 **New version 15 Nov (owner OK):** English hook first (your voice clone, ~5 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `6MeUnhxKr8A` (set to Private; Claude deletes it after the new upload).
+**File to upload:** `output/s01-3-opposites/s01-3-opposites.mp4` (vertical, 1:10 → **Short**, made from Story 1: the horse and the turtle)
+> 🔁 **New version 15 Nov (owner OK):** English hook first (narrator from your new English recording, ~6 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `6MeUnhxKr8A` (set to Private; Claude deletes it after the new upload).
 **Thumbnail:** Upload file → `output/s01-3-opposites/s01-3-opposites-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)

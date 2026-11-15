@@ -1,7 +1,7 @@
 # Story 1 Short (with English guidance) · Upload sheet
 
-**File to upload:** `output/s01-1-story-guided/s01-1-story-guided.mp4` (vertical, 1:42 → **Short**, made from Story 1: the horse and the turtle)
-> 🔁 **New version 15 Nov (owner):** every sentence first in English (narrator), then your Arabic — replaces the all-Arabic Story Short `STtDhm_8q2U` (7 views; set it to Private, Claude deletes it after this one is up).
+**File to upload:** `output/s01-1-story-guided/s01-1-story-guided.mp4` (vertical, 2:02 → **Short**, made from Story 1: the horse and the turtle)
+> 🔁 **New version 15 Nov (owner):** every sentence first in English (narrator), then your Arabic — the all-Arabic Story Short `STtDhm_8q2U` stays public (owner 15 Nov); narrator from your new English recording.
 **Thumbnail:** Upload file → `output/s01-1-story-guided/s01-1-story-guided-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
