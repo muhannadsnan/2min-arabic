@@ -7,7 +7,8 @@ narrator's English line (over that sentence's frame, held still) followed by the
 Needs: output/<stem>/<stem>.mp4 (the Arabic-only Short), its captions-upload.srt (cue 1 = the Arabic hook, then one
 cue per sentence), <stem>-thumbnail.jpg, and narrator wavs e00 (hook) + e01… (one per sentence) in the audio folder.
 Writes output/<stem>-guided/<stem>-guided.mp4 + captions-upload.srt. Narrator lines are levelled ~0.7 dB above the
-owner's Arabic (owner: the narrator must not sound lower than his recording), true peak ≤ -1.5 dB.
+owner's Arabic (owner: the narrator must not sound lower than his recording), true peak ≤ -1.5 dB. Pauses inside a
+line longer than 0.2 s are cut to 0.15 s (owner 2026-11-15: "he pauses/breathes before the meaning completes").
 """
 import json, pathlib, re, subprocess, sys, tempfile
 
@@ -53,9 +54,12 @@ target = lufs(src) + 0.7
 with tempfile.TemporaryDirectory() as tmp:
     tmp = pathlib.Path(tmp); parts, srt, t = [], [], 0.0
     def narr(k):
-        o = tmp / f"n{k}.wav"
-        sh("ffmpeg", "-v", "error", "-y", "-i", str(adir / f"e{k:02}.wav"), "-af",
-           f"silenceremove=start_periods=1:start_threshold=-60dB:start_silence=0.1,areverse,silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.1,areverse,"
+        # two passes: the whole chain in one ffmpeg 6.1 graph hangs forever on some files (2026-11-15, s01-4 hook)
+        o, t1 = tmp / f"n{k}.wav", tmp / f"n{k}-trim.wav"
+        sh("timeout", "60", "ffmpeg", "-v", "error", "-y", "-i", str(adir / f"e{k:02}.wav"), "-af",
+           "silenceremove=start_periods=1:start_threshold=-60dB:start_silence=0.1,areverse,silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.1,areverse",
+           str(t1))
+        sh("timeout", "60", "ffmpeg", "-v", "error", "-y", "-i", str(t1), "-af",
            f"acompressor=threshold=-22dB:ratio=3:attack=5:release=80:makeup=2,loudnorm=I={target:.1f}:TP=-1.5:LRA=7,apad=pad_dur={GAP}",
            "-ar", "48000", "-ac", "1", str(o))
         return o
