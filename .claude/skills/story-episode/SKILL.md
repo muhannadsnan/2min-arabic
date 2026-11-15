@@ -97,6 +97,10 @@ Layout rules (all from the owner's rounds of feedback — keep them):
 - **Presenter parts:** text above him, never on his face; a pair = two cards centred as a group, arrow between.
 - **Pace:** pauses between sentences cut, pauses inside a sentence halved, nothing longer than 1 s (a question's
   thinking pause included). Cuts on whole frames (sound stays in sync).
-- **Openings:** the hook in Arabic + English (Short 1, no frames of the filmed face after it); a big heading for the
+- **English first (owner 2026-11-15, after the all-Arabic Story Short 1 got 7 views):** every Story Short opens with an
+  English narrator hook (owner's English clone, ~4–5 s) over its thumbnail; Short 1 (the story) also gets the English
+  line before EVERY Arabic sentence (library/work/story-guided.py) to guide low-level viewers. The narrator is levelled
+  at or slightly above the owner's Arabic (compressor + loudnorm to Arabic +0.7 dB, true peak ≤ −1.5) — never lower.
+- **Openings:** the hook (Short 1, no frames of the filmed face after it); a big heading for the
   grammar Shorts (OPPOSITES · PAST TENSE … ); drop a filler first word ("رائع!", "الآن") — start on the content.
 - Captions come from the same run (`--captions` with the same --ranges) on the cut timeline.
