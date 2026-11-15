@@ -35,7 +35,19 @@ for b in open(src.parent / "captions-upload.srt", encoding="utf-8").read().strip
 ar_of = {s["en"]: s["ar"] for s in story["segments"] if s.get("kind") == "story" and "en" in s and "ar" in s}
 total = dur(src)
 sent = cues[1:]                                                   # cue 0 = the Arabic hook (replaced by the English one)
-bounds = [(sent[i - 1][1] + sent[i][0]) / 2 if i else (cues[0][1] + sent[0][0]) / 2 for i in range(len(sent))] + [total]
+mids = [(sent[i - 1][1] + sent[i][0]) / 2 if i else (cues[0][1] + sent[0][0]) / 2 for i in range(len(sent))]
+
+
+def picture_change(lo, hi, fallback):
+    """First frame of the sentence's new picture between lo and hi (scene detection) — the English line must hold the
+    NEW picture, not the last frame of the previous sentence (owner 2026-11-15: the frame jumped at every join)."""
+    r = subprocess.run(["ffmpeg", "-v", "info", "-ss", f"{lo:.3f}", "-to", f"{hi:.3f}", "-i", str(src), "-an", "-vf",
+                        "select='gt(scene,0.08)',showinfo", "-f", "null", "-"], capture_output=True, text=True)
+    t = [float(x) for x in re.findall(r"pts_time:([\d.]+)", r.stderr)]
+    return lo + t[0] if t else fallback
+
+
+bounds = [picture_change(max(mids[i] - 1.0, 0), sent[i][0] + 0.6, mids[i]) for i in range(len(sent))] + [total]
 target = lufs(src) + 0.7
 
 with tempfile.TemporaryDirectory() as tmp:
@@ -57,14 +69,17 @@ with tempfile.TemporaryDirectory() as tmp:
     hook_en = json.loads((adir / "e00.json").read_text())["text"] if (adir / "e00.json").exists() else ""
     srt.append((0, d - 0.1, hook_en)); t = d
     for i, (a, z, en) in enumerate(sent):
-        k = i + 1; w = narr(k)
-        frame = tmp / f"f{k}.png"
-        sh("ffmpeg", "-v", "error", "-y", "-ss", f"{a + 0.35:.3f}", "-i", str(src), "-frames:v", "1", str(frame))
-        clip, d = still(frame, w, f"e{k}"); parts.append(clip)
-        srt.append((t, t + d - 0.1, en)); t += d
+        # owner 2026-11-15 "the frame flickers each time": the English line now holds the sentence's OWN first frame
+        # (tpad clone in the same encode — no PNG round trip, so no colour shift and no word popping twice)
+        k = i + 1; w = narr(k); d = dur(w)
         seg = tmp / f"s{k}.mp4"; s0, s1 = bounds[i], bounds[i + 1]
-        sh("ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.3f}", "-to", f"{s1:.3f}", "-i", str(src), *ENC, str(seg))
-        sd = dur(seg); parts.append(seg)
+        sh("ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.3f}", "-to", f"{s1:.3f}", "-i", str(src), "-i", str(w),
+           "-filter_complex", f"[0:v]tpad=start_duration={d:.3f}:start_mode=clone,setsar=1[v];"
+           "[1:a]aformat=sample_rates=48000:channel_layouts=mono[n];[0:a]aformat=sample_rates=48000:channel_layouts=mono[s];"
+           "[n][s]concat=n=2:v=0:a=1[a]", "-map", "[v]", "-map", "[a]", *ENC, str(seg))
+        parts.append(seg)
+        srt.append((t, t + d - 0.1, en)); t += d
+        sd = dur(seg) - d
         srt.append((t + (a - s0), t + (z - s0), ar_of.get(en, en))); t += sd
     lst = tmp / "list.txt"; lst.write_text("".join(f"file '{p}'\n" for p in parts))
     sh("ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), *ENC, "-movflags", "+faststart", str(out))
