@@ -140,6 +140,7 @@ yt-content-planner) — all MIT.
 - [ ] Story, list or practical topic — not a quiz, not abstract grammar
 - [ ] Story: one place, two characters, one twist, ≤ 4 new words
 - [ ] Grammar opens with an example
+- [ ] Explainable in ONE sentence to someone who knows no Arabic, and timeless (still works in a year) (source: learning/notes/2026-11-15-drplants-story-over-schedule.md)
 - [ ] Share hook at the end
 - [ ] Translated title + description (Persian first) and language tags (upload-handover → Localize)
 - [ ] Instagram: worth saving, with a carousel version

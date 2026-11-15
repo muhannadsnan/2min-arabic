@@ -62,6 +62,7 @@ Shorts cut from it promote it and fill days.
 7. **The story in the future** — سـ + the verb (سيذهب). ⭐5
 8. Outro: "tell the story in the comments", subscribe, Episode link. No goodbye clip needed.
 
+Write one **emotion line** per section before the script (e.g. sympathy → surprise → worry → relief) and bring in a word or fact only where it pushes the story forward (source: learning/notes/2026-11-15-drplants-story-over-schedule.md).
 Keep every section short (≤ 3–4 min) and change the view every few seconds (picture ↔ narrator full ↔ word pop-ups) — no boring stretches.
 
 ## Production
