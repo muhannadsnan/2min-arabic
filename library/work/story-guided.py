@@ -49,7 +49,7 @@ def picture_change(lo, hi, fallback):
 
 
 bounds = [picture_change(max(mids[i] - 1.0, 0), sent[i][0] + 0.6, mids[i]) for i in range(len(sent))] + [total]
-target = lufs(src) + 1.5   # +1.5: the de-echoed narrator came out 0.5 dB under the Arabic at +0.7
+target = lufs(src) + 2.0   # the de-echoed narrator needs +2.0 to sit at or above the Arabic (+0.7 gave -0.5 dB)
 
 with tempfile.TemporaryDirectory() as tmp:
     tmp = pathlib.Path(tmp); parts, srt, t = [], [], 0.0
