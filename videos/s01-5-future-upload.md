@@ -1,7 +1,7 @@
 # Story 1 Short · Upload sheet
 
 **File to upload:** `output/s01-5-future/s01-5-future.mp4` (vertical, 0:51 → **Short**, made from Story 1: the horse and the turtle)
-> 🔁 **New version 15 Nov (owner OK):** English hook first (your usual narrator voice, pauses tightened, ~6 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `TXb-BQbDhtk` (set to Private; Claude deletes it after the new upload).
+> 🔁 **New version 15 Nov (owner OK):** English hook first (your narrator voice from the gently de-echoed sample (C2), pauses tightened, ~6 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `TXb-BQbDhtk` (set to Private; Claude deletes it after the new upload).
 **Thumbnail:** Upload file → `output/s01-5-future/s01-5-future-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
