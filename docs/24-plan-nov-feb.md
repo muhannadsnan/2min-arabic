@@ -40,6 +40,7 @@ previous 1–3 weeks) + the long video on Saturday. Story weeks: the 5 Story Sho
 **Monthly story = Sami (owner 2026-11-15: "they are real stories!")** — a grown-up in a real situation, not animals
 (Story 1's animal story: 27 views long / 10 Short; Day 4 "Sami and the coffee" = our best-held video, 92 %).
 
+**Saturday times (owner 2026-11-15):** the long video at **12:00**, the Saturday filler Short at **17:00** — each its own moment.
 Fillers marked (t) are tentative — fixed when that week is planned (words of the 1–3 weeks before).
 
 | Week | Mon | Tue | Wed | Thu — filler | Fri | Sat — filler | Sun | Long video (Sat) |

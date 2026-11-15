@@ -36,7 +36,7 @@ Template: Part 1 = `videos/w01-review.md` + `parts/part-01.json` + `videos/w01-u
    different one on every Part — never مرحبا / أهلا وسهلا (they repeat across the channel page and look too basic).
    Topics from the **learner's point of view** — they are the visitor in an Arab country ("Talking to native speakers", not
    "Meeting a tourist", owner 2026-10-19). Check the phone-size preview and the three Parts side by side.
-7. **Upload sheet** via the upload-handover skill, including chapters from `chapters.txt` in the description and the
+7. **Schedule: Saturday 12:00 Oslo** (owner 2026-11-15; the Saturday Short keeps 17:00). **Upload sheet** via the upload-handover skill, including chapters from `chapters.txt` in the description and the
    **Video elements** section (end screen, playlist card, quiz). Playlist row: `30 Days to Your First Arabic Conversation + Full Arabic Lessons for Beginners` (fill adds it to both; owner created "Full Arabic Lessons for Beginners" 2026-11-15 for every long video).
 
 ## Captions
