@@ -1,5 +1,35 @@
 # 12 — Channel reviews (newest on top)
 
+## 2026-11-15 (YouTube, Studio screenshots to 13 Nov + API to 12 Nov)
+
+**28 days to 13 Nov: 3 590 views · 32.8 watch hours · +56 subscribers → 80** (20 Oct: 1 715 views total, 27 subs).
+Daily views 90–280 (avg ~140 in Nov) vs 100–180 mid-Oct: flat to slightly up, spikes only on days a new Short gets
+pushed (3 Nov 277, 10 Nov 186). Monthly audience 799, rising steadily (~450 → ~850). **92 % new viewers, 7 % casual,
+0 % regular.** Top demographic male 55–64. Impressions 21 586, CTR 4.3 %.
+Shorts (28 d): 3 097 views, 1 369 engaged, **55 % stayed / 45 % swiped** (below the 60 % line), 69 shares, +27 subs.
+Shorts sources: Shorts feed 36 % · browse 36 % · **search 16 %** · channel pages 8 %. Channel-wide: browse 36 % ·
+suggested 34 % · **search 9 %** (Oct: 28–44 %).
+
+| Video (published 8–14 Nov) | Format | Views (7 d) | Avg % viewed | Subs | Notes |
+|---|---|---|---|---|---|
+| x08 Habibi (9 Nov) | Extra ("what does X mean") | **148** | 49 % | 0 | outlier (4× median); CTR 7.1 %, best of the channel |
+| vocab04 Food (10 Nov) | Vocab list | 85 | 58 % | 0 | 2 comments |
+| Day 30 challenge (8 Nov) | Challenge | 49 | 44 % | 0 | |
+| Story 1 long (8 Nov) | Long story 16:9 | 25 | 21 % (2:27) | 1 | |
+| Part 6 (11 Nov) | Long (Part) | 12 | **5 %** (25 s) | 0 | miss; no retention data yet |
+| Story Short 1 (13 Nov) | Story cut (Short) | 7 (1 d 17 h) | 40 % | 0 | miss; barely shown in the feed |
+
+Median 37. **Subs per 100 views (28 d):** old long lessons ~3 (Part 2 3/105, Lesson 3 3/104, Full Beginner Lesson
+3/92, each 8–9 % of watch hours) vs Shorts 0.9 (27/3 097); Introduce Yourself 4/177 (2.3) still the best Short.
+CTR: Part 2 7.5 % · Habibi 7.1 % · Yes/No 6.6 % · low: "I want" Syrian 3.0 %, Body parts 2.8 %.
+Search terms (28 d): arabic language learning 5 · arabic words 4 · آموزش زبان عربی 4 + زبان عربی 3 (Persian) ·
+**anggota badan (dalam) bahasa arab 5 + tubuh badan 1** (Indonesian, body parts) · arabic 11 to 20 3 · bahasa arab
+tahun 2 / arab tahun 2 (Malaysian school year 2) · أيام الأسبوع بالانجليزي 3 (Arabic speakers learning English — not ours).
+→ Indonesian body-part terms added to v02, "arabic 11 to 20" to x06.
+Comments: 1 viewer comment (@wildqazaq11 on Food, answered). Audit: 54/59 → Days of the Week, Make Plans, Part 5 fixed;
+Part 4 + full course (no room for a mixed tag; full course in no playlist) wait for quota.
+Instagram / Facebook: not in this review (carousel verdict 25 Nov).
+
 ## 2026-10-20 (YouTube + Instagram)
 
 **YouTube** (analytics to 17 Oct): **1 715 views · 27 subscribers** (+28 / −2 since the start). Daily views 35–95 (2–9 Oct)

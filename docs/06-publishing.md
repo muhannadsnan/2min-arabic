@@ -226,3 +226,10 @@ Priority (owner): 1. titles + descriptions → 2. top-language tags → 3. subti
 - 2026-10-31: **Facebook shows nothing posted while the Meta app is in development mode.** 22 Reels (20–29 Oct): 0–3
   views; the first Reel after switching to Live (Day 17): 125 views — but 2 s average watch from 100 % non-followers
   (evidence: Business Dashboard 31 Oct). → App stays Live; watch whether Facebook finds the right audience.
+- 2026-11-15: **Long lessons bring ~3× more subscribers per view than Shorts.** Part 2, Lesson 3 and the Full Beginner
+  Lesson: 3 subs per ~100 views each (8–9 % of all watch hours each) vs Shorts 27 subs from 3 097 views (0.9 per 100)
+  (evidence: Studio content table, 28 days to 13 Nov). → Keep one long video a month; new Parts start slowly (Part 6:
+  12 views in 4 days), the old ones keep converting through browse/suggested.
+- 2026-11-15: **Share hooks work.** 69 shares on Shorts in 28 days vs 8 shares in total before the share hook (17 Oct)
+  (evidence: Studio Shorts tab, 28 days to 13 Nov). → Keep a share/answer-me line at the end of every video.
+
