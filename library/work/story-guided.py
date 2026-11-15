@@ -55,7 +55,7 @@ with tempfile.TemporaryDirectory() as tmp:
     def narr(k):
         o = tmp / f"n{k}.wav"
         sh("ffmpeg", "-v", "error", "-y", "-i", str(adir / f"e{k:02}.wav"), "-af",
-           f"silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+           f"silenceremove=start_periods=1:start_threshold=-60dB:start_silence=0.1,areverse,silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.1,areverse,"
            f"acompressor=threshold=-22dB:ratio=3:attack=5:release=80:makeup=2,loudnorm=I={target:.1f}:TP=-1.5:LRA=7,apad=pad_dur={GAP}",
            "-ar", "48000", "-ac", "1", str(o))
         return o

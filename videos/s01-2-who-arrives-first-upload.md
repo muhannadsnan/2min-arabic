@@ -1,7 +1,7 @@
 # Story 1 Short · Upload sheet
 
 **File to upload:** `output/s01-2-who-arrives-first/s01-2-who-arrives-first.mp4` (vertical, 2:38 → **Short**, made from Story 1: the horse and the turtle)
-> 🔁 **New version 15 Nov (owner OK):** English hook first (your voice clone, ~5 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `vAa47UeckmM` (set to Private; Claude deletes it after the new upload).
+> 🔁 **New version 15 Nov (owner OK; renamed — no "quiz", owner):** English hook first (your voice clone, ~5 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `vAa47UeckmM` (set to Private; Claude deletes it after the new upload).
 **Thumbnail:** Upload file → `output/s01-2-who-arrives-first/s01-2-who-arrives-first-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -13,7 +13,7 @@
 ## Title
 
 ```
-Arabic Listening Quiz: 29 Easy Questions | Story 1
+Understand an Arabic Story: Easy Questions | Story 1
 ```
 
 ## Description
@@ -53,7 +53,7 @@ Español: Aprende árabe en 2 minutos al día
 ## Tags
 
 ```
-arabic listening quiz, arabic listening practice for beginners, arabic questions and answers, arabic comprehension for beginners, arabic short story for beginners, easy arabic questions, who in arabic, why in arabic, man and limadha, من وصل أولا, أسئلة بالعربية, ممتاز, لماذا, ممتاز meaning, تعليم اللغة العربية لغير الناطقين بها, learn arabic, arabic for beginners, shorts
+understand arabic story, arabic listening practice for beginners, arabic questions and answers, arabic comprehension for beginners, arabic short story for beginners, easy arabic questions, who in arabic, why in arabic, man and limadha, من وصل أولا, أسئلة بالعربية, ممتاز, لماذا, ممتاز meaning, تعليم اللغة العربية لغير الناطقين بها, learn arabic, arabic for beginners, shorts
 ```
 
 ## Settings
@@ -88,7 +88,7 @@ How many did you answer before me? 👇 Write your score (all = ⁧ممتاز!�
 | Title | Formula | Thumbnail text |
 |---|---|---|
 | Can You Answer These Arabic Questions? | challenge | ANSWER IT? |
-| Who Won? An Arabic Story Quiz | curiosity | WHO WON? |
+| Who Won? Understand This Arabic Story | curiosity | WHO WON? |
 | 5 Easy Arabic Questions About a Story | number | 5 QUESTIONS |
 
 ## Quality check (Claude)
