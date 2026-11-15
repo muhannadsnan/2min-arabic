@@ -667,9 +667,11 @@ def fill(a):
             print("  ✅ English captions")
         else:
             print("  = English captions already there")
-    if playlist:
-        name = re.sub(r"\s*\(.*?\)\s*$", "", playlist).strip()
-        pls = y.playlists().list(part="snippet", mine=True, maxResults=50).execute(num_retries=3)["items"]
+    # several playlists: "30 Days to Your First Arabic Conversation + Full Arabic Lessons for Beginners" (owner 2026-11-15:
+    # every long video also goes into Full Arabic Lessons for Beginners)
+    names = [re.sub(r"\s*\(.*?\)\s*$", "", p.strip("* ")).strip() for p in re.split(r"\s\+\s|;", playlist)] if playlist else []
+    pls = y.playlists().list(part="snippet", mine=True, maxResults=50).execute(num_retries=3)["items"] if names else []
+    for name in names:
         pl = next((p for p in pls if p["snippet"]["title"].lower() == name.lower()), None)
         if pl is None:
             print(f"  ⚠️ playlist '{name}' not found — create it in Studio once, then re-run")

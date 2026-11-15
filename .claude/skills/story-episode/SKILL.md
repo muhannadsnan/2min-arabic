@@ -74,7 +74,7 @@ Keep every section short (≤ 3–4 min) and change the view every few seconds (
   (layout check), `--from/--to` = a part. Clips: the recording cut by split_recording.py into `footage/recordings/sNN/lines/NN-*.wav`
   (NN = the sheet's line number); the filmed intro/outro: `footage/recordings/sNN/intro.mp4`, `outro.mp4`. Renders ≈ 2× real time (CPU only).
 - Shorts (vertical): the story · "can you answer these 3 questions?" · present → past · the future.
-- Then pre-upload-gate + upload-handover as usual (playlist "Arabic Stories", Related = the month's Episode).
+- Then pre-upload-gate + upload-handover as usual (playlist row "Arabic Stories + Full Arabic Lessons for Beginners" for the long story — fill adds it to both; the Story Shorts: "Arabic Stories" only; Related = the month's Episode).
 
 ## Story Shorts — the template (owner approved 2026-11-11, Story 1 → 5 Shorts)
 
