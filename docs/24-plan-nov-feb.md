@@ -14,22 +14,31 @@ school, shop, doctor (+ travel places: airport, taxi, hotel, restaurant). Each l
 already have (colours v03, food v04, jobs v05, numbers/time from the numbers month) and ends with "your answer in the
 comments".
 
-## The weekly shape (5-day rhythm, owner 2026-11-10)
+## The weekly shape (5 main Shorts + 2 fillers, owner 2026-11-10 / 2026-11-15)
 
 | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |---|---|---|---|---|---|---|
-| course (Month 2) / numbers | **letters** series | course / numbers | off | course or Extra | long video (Part · Episode · Story · Top 100) | Extra: Top N · names · curiosity · dialects · seasonal |
+| course (Month 2) / numbers | **letters** series | course / numbers | **filler Short** | course or Extra | **filler Short** + long video (Part · Episode · Story · Top 100) | Extra: Top N · names · curiosity · dialects · seasonal |
 
+- **Fillers (owner 2026-11-15):** Thu + Sat Shorts built ONLY from Arabic we already recorded (no recording, the owner
+  approves + uploads). They are **extra** — they never take a topic from the 13 weeks below, so the plan keeps its length.
+  Words come from the **previous 1–3 weeks** (and Days 1–30), never the same week: one and two weeks later is the review
+  gap that makes words stick, and a same-week repeat would feel like the same video twice. Each filler = a new angle +
+  its own searched title + new pictures + an English line first; never a re-cut. Built in the same session as the week's
+  5 main ones; keep 2–4 ready ahead as a buffer (a late recording → a filler moves in, the main one moves to its day).
+  Filler bank: 5 questions Arabs always ask you · 10 phrases you'll use every day · "I love…" in Arabic · count to 20
+  challenge · backlog 7 ("How to say…" one-question Shorts: thank you, what is your name) · "you can already say this"
+  recaps of a Part's words · one-word "What does X mean?" from recorded words.
 - **One story week a month:** the monthly Story (long) + its 5 Shorts take that week's 5 slots (template: story-episode skill).
 - **New style:** new videos use the pencil characters (approved 10 Nov); the 3D style stays for older series.
 - **Recording:** one sheet every 2 weeks (owner; Koki for Lina) — dates in the table.
 
 ## The 13 weeks
 
-| Week | Mon | Tue | Wed | Fri | Sun | Long (Sat) | Also |
+| Week | Mon | Tue | Wed | Fri | Sun | Long (Sat) | Also (fillers Thu + Sat) |
 |---|---|---|---|---|---|---|---|
-| **16 Nov** | Story 1: Opposites | Story 1: Past | Story 1: Future | **Jobs: Top 20 — "What do you do?"** (v05, life question) | **10 English words that are secretly Arabic** (edition 1 of "your language is full of Arabic words") | — | 🎙️ session A (jobs, secretly-Arabic, names 1, letters 1–3, Days 31–33) |
-| **23 Nov** | Day 31: **What's your favourite colour?** | Letter 1 | Day 32: **What's your favourite food?** | Day 33: **What do you do at the weekend?** | **Your Arabic name: 10 boys' names** | **Episode 2** (November) | 25 Nov: carousel verdict + FB hook / trials review |
+| **16 Nov** | Story 1: Opposites | Story 1: Past | Story 1: Future | **Jobs: Top 20 — "What do you do?"** (v05, life question) | **10 English words that are secretly Arabic** (edition 1 of "your language is full of Arabic words") | — | 🎙️ session A (jobs, secretly-Arabic, names 1, letters 1–3, Days 31–33) · **fillers: Thu 19 "5 questions Arabs always ask you" · Sat 21 "10 phrases you'll use every day"** |
+| **23 Nov** | Day 31: **What's your favourite colour?** | Letter 1 | Day 32: **What's your favourite food?** | Day 33: **What do you do at the weekend?** | **Your Arabic name: 10 boys' names** | **Episode 2** (November) | 25 Nov: carousel verdict + FB hook / trials review · **fillers: Thu 26 "I love… in Arabic" · Sat 28 count-to-20 challenge** |
 | **30 Nov** | Day 34: **What's your hobby?** | Letter 2 | Day 35: **Do you sleep early or late?** | **Top 20 animals** | **Hindi & Urdu words that are Arabic** (+ Hindi/Urdu trials) | Part 7 (Days 31–35) | drop the weakest trial language ~5 Dec · 🎙️ session B |
 | **7 Dec** | Day 36: **What's your favourite sport?** | Letter 3 | Day 37: **Where do you live?** (house, flat, city, village) | **Same thing, 4 dialects #1** (how are you: Syria · Egypt · Morocco · Gulf) | **Your Arabic name: 10 girls' names** | **Story 2** | |
 | **14 Dec** | Story 2 Short 1 | Short 2 | Short 3 | Short 4 | Short 5 | — | 🎙️ session C = the numbers sheet |
