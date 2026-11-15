@@ -2,6 +2,7 @@
 
 **File to upload:** `output/s01-1-story-guided/s01-1-story-guided.mp4` (vertical, 1:42 → **Short**, made from Story 1: the horse and the turtle)
 > 🔁 **New version 15 Nov (owner):** every sentence first in English (narrator), then your Arabic — the all-Arabic Story Short `STtDhm_8q2U` stays public (owner 15 Nov); your narrator voice from the gently de-echoed sample (C2), pauses tightened.
+> ✅ **Uploaded + filled** — video id `jL1VaHyyIPM` (owner filled it by hand 15 Nov and chose the title; Claude adds the translations)
 **Thumbnail:** Upload file → `output/s01-1-story-guided/s01-1-story-guided-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -13,7 +14,7 @@
 ## Title
 
 ```
-A Turtle Beats a Horse: Easy Arabic Story | Story 1
+Learn Arabic with mini Story - Turtle Beats Horse | Story 1
 ```
 
 ## Description
