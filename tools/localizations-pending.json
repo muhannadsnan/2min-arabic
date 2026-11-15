@@ -1,1 +1,57 @@
-{}
+{
+ "s01-1-story-guided": {
+  "name": "Story 1 Short · guided (English + Arabic)",
+  "hi": [
+   "कछुआ घोड़े से जीत गया: आसान अरबी कहानी | कहानी 1",
+   "कछुआ घोड़े से पहले पहुँचता है! कैसे? शुरुआती लोगों के लिए 11 आसान वाक्यों में छोटी अरबी कहानी, हर वाक्य के साथ तस्वीर और अंग्रेज़ी।"
+  ],
+  "ur": [
+   "کچھوا گھوڑے سے جیت گیا: آسان عربی کہانی | کہانی 1",
+   "کچھوا گھوڑے سے پہلے پہنچتا ہے! کیسے؟ مبتدیوں کے لیے 11 آسان جملوں میں مختصر عربی کہانی، ہر جملے کے ساتھ تصویر اور انگریزی۔"
+  ],
+  "id": [
+   "Kura-kura Mengalahkan Kuda: Cerita Bahasa Arab Mudah | Cerita 1",
+   "Kura-kura sampai lebih dulu daripada kuda! Bagaimana? Cerita pendek bahasa Arab untuk pemula dalam 11 kalimat mudah, dengan gambar dan terjemahan Inggris."
+  ],
+  "bn": [
+   "কচ্ছপ ঘোড়াকে হারাল: সহজ আরবি গল্প | গল্প ১",
+   "কচ্ছপ ঘোড়ার আগে পৌঁছায়! কীভাবে? নতুনদের জন্য ১১টি সহজ বাক্যে ছোট আরবি গল্প, প্রতিটি বাক্যের সাথে ছবি ও ইংরেজি।"
+  ],
+  "tr": [
+   "Kaplumbağa Atı Geçiyor: Kolay Arapça Hikâye | Hikâye 1",
+   "Kaplumbağa attan önce varıyor! Nasıl? Yeni başlayanlar için 11 kolay cümlelik kısa bir Arapça hikâye, her cümlede resim ve İngilizce çeviri."
+  ],
+  "fa": [
+   "لاک‌پشت از اسب می‌برد: داستان ساده عربی | داستان ۱",
+   "لاک‌پشت زودتر از اسب می‌رسد! چطور؟ یک داستان کوتاه عربی برای مبتدی‌ها در ۱۱ جمله ساده، با تصویر و ترجمه انگلیسی برای هر جمله."
+  ],
+  "ms": [
+   "Kura-kura Mengalahkan Kuda: Cerita Bahasa Arab Mudah | Cerita 1",
+   "Kura-kura tiba lebih awal daripada kuda! Bagaimana? Cerita pendek bahasa Arab untuk pemula dalam 11 ayat mudah, dengan gambar dan terjemahan Inggeris."
+  ],
+  "fr": [
+   "La tortue bat le cheval : histoire facile en arabe | Histoire 1",
+   "Une tortue arrive avant un cheval ! Comment ? Une petite histoire en arabe pour débutants en 11 phrases faciles, avec une image et l'anglais pour chaque phrase."
+  ],
+  "ru": [
+   "Черепаха обгоняет коня: простой рассказ на арабском | История 1",
+   "Черепаха приходит раньше коня! Как? Короткая арабская история для начинающих из 11 простых предложений, с картинкой и английским переводом."
+  ],
+  "de": [
+   "Die Schildkröte schlägt das Pferd: einfache arabische Geschichte | Geschichte 1",
+   "Eine Schildkröte kommt vor einem Pferd an! Wie? Eine kurze arabische Geschichte für Anfänger in 11 einfachen Sätzen, mit Bild und Englisch zu jedem Satz."
+  ],
+  "so": [
+   "Diinku wuxuu ka adkaaday faraska: sheeko Carabi ah oo fudud | Sheeko 1",
+   "Diintu waxay gaartaa faraska ka hor! Sidee? Sheeko gaaban oo Carabi ah oo bilowga ah, 11 weedhood oo fudud, sawir iyo Ingiriisi weedh kasta."
+  ],
+  "sw": [
+   "Kobe Amshinda Farasi: Hadithi Rahisi ya Kiarabu | Hadithi 1",
+   "Kobe anafika kabla ya farasi! Vipi? Hadithi fupi ya Kiarabu kwa wanaoanza katika sentensi 11 rahisi, na picha na Kiingereza kwa kila sentensi."
+  ],
+  "es": [
+   "La tortuga gana al caballo: historia fácil en árabe | Historia 1",
+   "¡Una tortuga llega antes que un caballo! ¿Cómo? Una historia corta en árabe para principiantes en 11 frases fáciles, con imagen e inglés en cada frase."
+  ]
+ }
+}

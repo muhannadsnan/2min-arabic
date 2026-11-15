@@ -1,0 +1,101 @@
+# Story 1 Short (with English guidance) · Upload sheet
+
+**File to upload:** `output/s01-1-story-guided/s01-1-story-guided.mp4` (vertical, 1:42 → **Short**, made from Story 1: the horse and the turtle)
+> 🔁 **New version 15 Nov (owner):** every sentence first in English (narrator), then your Arabic — replaces the all-Arabic Story Short `STtDhm_8q2U` (7 views; set it to Private, Claude deletes it after this one is up).
+**Thumbnail:** Upload file → `output/s01-1-story-guided/s01-1-story-guided-thumbnail.jpg`
+
+## Fast way (Claude fills everything)
+
+1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
+2. Tell Claude "uploaded". Claude fills everything and schedules it (**Mon 16 Nov, 17:00 Oslo**).
+3. After it's live (desktop notification): pin the comment and set **Related video = Story 1 (the whole story)**.
+
+## Title
+
+```
+A Turtle Beats a Horse: Easy Arabic Story | Story 1
+```
+
+## Description
+
+```
+A turtle arrives before a horse! How? A short Arabic story for beginners in 11 easy sentences: you hear each sentence in English first, then in Arabic, with a picture, the text and the key words on screen.
+
+📝 Words from this part:
+haadhaa raamii l-HiSaan — this is Rami the horse — ⁧هذا رامي الحصان⁩
+yadh-hab ilaa s-suuq — he goes to the market — ⁧يذهب إلى السوق⁩
+sarii' — fast — ⁧سريع⁩
+baTii' — slow — ⁧بطيء⁩
+yanaam — he sleeps — ⁧ينام⁩
+qabla — before — ⁧قبل⁩
+
+▶️ The whole story (12 min, with questions, past and future): https://youtu.be/tOjNrNYfbX8
+▶️ Start from Day 1: https://youtu.be/XTQXhypYDLU
+📄 Free PDFs: https://muhannadsnan.github.io/2min-arabic/free/
+🔔 Subscribe so you don't break your streak.
+
+🌍 Learn Arabic in your language too:
+Hindi / Urdu: Arabi seekhein, roz sirf 2 minute · ⁧عربی سیکھیں، روزانہ صرف ۲ منٹ⁩
+Indonesia: Belajar bahasa Arab dari nol, 2 menit sehari
+বাংলা: প্রতিদিন ২ মিনিটে আরবি শিখুন
+Türkçe: Günde 2 dakikada sıfırdan Arapça öğren
+Farsi: ⁧یادگیری زبان عربی از صفر، روزی ۲ دقیقه⁩
+Melayu: Belajar bahasa Arab, 2 minit sehari
+Français : Apprendre l'arabe en 2 minutes par jour
+Русский: Арабский язык с нуля, 2 минуты в день
+Deutsch: Arabisch lernen, 2 Minuten am Tag
+Soomaali: Baro Af-Carabi, 2 daqiiqo maalintii
+Kiswahili: Jifunze Kiarabu, dakika 2 kwa siku
+Español: Aprende árabe en 2 minutos al día
+(Subtitles in your language: ⚙️ → Subtitles)
+
+#learnarabic #arabicforbeginners #2minutearabic
+```
+
+## Tags
+
+```
+arabic short story for beginners, arabic short story, easy arabic stories for beginners, arabic story with english translation, learn arabic with stories, arabic reading for beginners, the tortoise and the hare in arabic, arabic listening practice, hisaan, sulahfaa, قصة قصيرة بالعربية, قصص عربية للمبتدئين, حصان, سلحفاة, سلحفاة meaning, تعليم اللغة العربية لغير الناطقين بها, learn arabic, arabic for beginners, shorts
+```
+
+## Settings
+
+| Setting | Value |
+|---|---|
+| Playlist | Arabic Stories |
+| Audience | No, it's not made for kids |
+| **AI use** | **No — your own recorded Arabic voice + your own English voice clone, and illustrations.** |
+| Paid promotion | No |
+| Related video | Story 1 — Horse and Turtle (tOjNrNYfbX8), only after it's live |
+| Category / Type | Education / Concept overview · Level Beginner |
+| Video + title/description language | English |
+| License, embedding, notify subscribers | Standard / ✅ / ✅ |
+| Shorts remixing | Allow video and audio remixing |
+| Visibility | Schedule: Mon 16 Nov, 17:00 Oslo |
+
+Automatic dubbing stays **OFF** (channel setting).
+
+## Subtitles
+
+Studio → Subtitles → Add language English → Upload file → With timing → `output/s01-1-story-guided/captions-upload.srt` → Publish.
+
+## Pinned comment (after it's live)
+
+```
+Did you understand the story? Tell me in one Arabic word 👇 (⁧نعم⁩ na'am = yes · ⁧قليلا⁩ qaliilan = a little)
+```
+
+## Backup titles (for a 48-hour re-upload)
+
+| Title | Formula | Thumbnail text |
+|---|---|---|
+| Can You Understand This Arabic Story? | challenge | UNDERSTAND? |
+| A Turtle Beats a Horse (Arabic Story) | story | TURTLE WINS |
+| 11 Easy Arabic Sentences: One Story | number | 11 SENTENCES |
+
+## Quality check (Claude)
+
+- New material for the Shorts tab: Story 1 was only a 16:9 long video. Re-rendered natively in 9:16 (tools/story_episode.py --vertical, owner feedback 11 Nov): 3 stars close together at the top (chimes at ⅓, ~57 % and 6 s before the end) · the words as lists in columns — opposites on the right, words/verbs on the left — popping in and staying · the picture full width in the lower half, the sentence bigger under it · presenter parts as plain text (no card) above him · pauses between sentences cut, inside sentences halved, none longer than 1 s · the layout is the story-Shorts template (story-episode skill).
+- Opens on the story's ending first: "A turtle arrives before a horse! How?" over the market picture; straight into the story (no frames of your face after the hook line); ends at the end of the story.
+- Arabic = your recording; −14.5 LUFS; captions on the cut timeline (tools/story_episode.py --vertical --captions).
+- Thumbnail: STORY 1 badge + big subject words + one Arabic line from the video (no tashkeel, learner rule).
