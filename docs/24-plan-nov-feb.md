@@ -35,21 +35,38 @@ comments".
 
 ## The 13 weeks
 
-| Week | Mon | Tue | Wed | Fri | Sun | Long (Sat) | Also (fillers Thu + Sat) |
-|---|---|---|---|---|---|---|---|
-| **16 Nov** | Story 1: Opposites | Story 1: Past | Story 1: Future | **Jobs: Top 20 — "What do you do?"** (v05, life question) | **10 English words that are secretly Arabic** (edition 1 of "your language is full of Arabic words") | — | 🎙️ session A (jobs, secretly-Arabic, names 1, letters 1–3, Days 31–33) · **fillers: Thu 19 "5 questions Arabs always ask you" · Sat 21 "10 phrases you'll use every day"** |
-| **23 Nov** | Day 31: **What's your favourite colour?** | Letter 1 | Day 32: **What's your favourite food?** | Day 33: **What do you do at the weekend?** | **Your Arabic name: 10 boys' names** | **Episode 2** (November) | 25 Nov: carousel verdict + FB hook / trials review · **fillers: Thu 26 "I love… in Arabic" · Sat 28 count-to-20 challenge** |
-| **30 Nov** | Day 34: **What's your hobby?** | Letter 2 | Day 35: **Do you sleep early or late?** | **Top 20 animals** | **Hindi & Urdu words that are Arabic** (+ Hindi/Urdu trials) | Part 7 (Days 31–35) | drop the weakest trial language ~5 Dec · 🎙️ session B |
-| **7 Dec** | Day 36: **What's your favourite sport?** | Letter 3 | Day 37: **Where do you live?** (house, flat, city, village) | **Same thing, 4 dialects #1** (how are you: Syria · Egypt · Morocco · Gulf) | **Your Arabic name: 10 girls' names** | **Story 2** | |
-| **14 Dec** | Story 2 Short 1 | Short 2 | Short 3 | Short 4 | Short 5 | — | 🎙️ session C = the numbers sheet |
-| **21 Dec** | **Merry Christmas & Happy New Year in Arabic** (before the 25th) | Letter 4 | Numbers 20–100 | 21–99 "backwards" | Phone numbers | **Arabic numbers 1 to 100** (long) | numbers month starts (docs/23) |
-| **28 Dec** | 100 · 1,000 · million | Letter 5 | "Two" is special (dual) | How many brothers? | Days of the week = numbers | **Episode 3** (December) | |
-| **4 Jan** | What time is it? | Letter 6 | Half / quarter past | Prices: بكم؟ | Kilo, half kilo | Part (numbers) | 🎙️ session D (Ramadan + travel) |
-| **11 Jan** | How tall are you? | Letter 7 | How far? | It's 30 degrees | **Ramadan #1: what to say** (4 weeks early) | **Story 3** (market, with numbers) | |
-| **18 Jan** | Story 3 Short 1 | Short 2 | Short 3 | Short 4 | Short 5 | — | |
-| **25 Jan** | Ramadan #2: iftar & suhoor words | Letter 8 | **Arabic by place: at the airport** | **Arabic by place: in a taxi** | **10 Egyptian slang words** | **Episode 4** (numbers month) | 🎙️ session E · ("What year were you born?" moves to the backlog) |
-| **1 Feb** | Ramadan #3: "I'm fasting" + the day | Letter 9 | **Arabic by place: at the hotel** | **Arabic by place: at the doctor** | **Ramadan #4: Ramadan Mubarak / Kareem + the answer** (7 Feb) | **100 everyday Arabic words** (long) | names of prophets → backlog |
-| **8 Feb** (Ramadan) | **Arabic by place: at the shop** | Letter 10 | **Arabic by place: in the street** (asking the way) | **Same thing, 4 dialects #2** (I want) | **Spanish words from Arabic** (ojalá!) | Part / compilation | plan the next 3 months |
+Every week: 5 main Shorts (Mon · Tue · Wed · Fri · Sun) + 2 fillers (Thu · Sat, from recordings we have, words of the
+previous 1–3 weeks) + the long video on Saturday. Story weeks: the 5 Story Shorts take the main slots.
+**Monthly story = Sami (owner 2026-11-15: "they are real stories!")** — a grown-up in a real situation, not animals
+(Story 1's animal story: 27 views long / 10 Short; Day 4 "Sami and the coffee" = our best-held video, 92 %).
+
+| Week | Mon | Tue | Wed | Thu (filler) | Fri | Sat (filler + long) | Sun | Also |
+|---|---|---|---|---|---|---|---|---|
+| **16 Nov** | Story 1 Short: Understand the story | Story 1: Opposites | Story 1: Past | Story 1: Future | **Jobs: Top 20** (vocab05) | filler: 5 questions Arabs always ask you | **10 English words from Arabic** (extra09) | Story 1 Short with English guidance went out Sun 15 · Koki's 6 Lina lines ~19 Nov |
+| **23 Nov** | Day 31: favourite colour? | Letter 1 | Day 32: favourite food? | filler: "I love…" in Arabic | Day 33: what do you do at the weekend? | filler: count to 20 challenge · **Episode 2** | Your Arabic name: 10 boys' names | 25 Nov carousel verdict + trials review · Day 31 on hold until the owner says go |
+| **30 Nov** | Day 34: your hobby? | Letter 2 | Day 35: sleep early or late? | filler: 10 phrases you'll use every day | Top 20 animals | filler: thank you / you're welcome · **Part 7** (Days 31–35) | Hindi & Urdu words that are Arabic | drop the weakest trial language ~5 Dec · 🎙️ session B (+ Story 2 lines, Koki as Lina) |
+| **7 Dec** | Day 36: favourite sport? | Letter 3 | Day 37: where do you live? | filler: "What's your name?" — one question | Same thing, 4 dialects #1 | filler: "you can already say this" (Part 7) · **Story 2: Sami's lazy weekend** | Your Arabic name: 10 girls' names | |
+| **14 Dec** | Story 2 Short 1 | Story 2 Short 2 | Story 2 Short 3 | filler | Story 2 Short 4 | filler | Story 2 Short 5 | 🎙️ session C = the numbers sheet |
+| **21 Dec** | **Merry Christmas & Happy New Year in Arabic** | Letter 4 | Numbers 20–100 | filler | 21–99 "backwards" | filler · **Arabic numbers 1 to 100** (long) | Phone numbers | numbers month starts (docs/23) |
+| **28 Dec** | 100 · 1,000 · million | Letter 5 | "Two" is special (dual) | filler | How many brothers? | filler · **Episode 3** (December) | Days of the week = numbers | |
+| **4 Jan** | What time is it? | Letter 6 | Half / quarter past | filler | Prices: بكم؟ | filler · Part (numbers) | Kilo, half kilo | 🎙️ session D (Ramadan + travel + Story 3 lines) |
+| **11 Jan** | How tall are you? | Letter 7 | How far? | filler | It's 30 degrees | filler · **Story 3: Sami at the market — too expensive!** | **Ramadan #1: what to say** (4 weeks early) | |
+| **18 Jan** | Story 3 Short 1 | Story 3 Short 2 | Story 3 Short 3 | filler | Story 3 Short 4 | filler | Story 3 Short 5 | |
+| **25 Jan** | Ramadan #2: iftar & suhoor words | Letter 8 | Arabic by place: at the airport | filler | Arabic by place: in a taxi | filler · **Episode 4** (numbers month) | 10 Egyptian slang words | 🎙️ session E (+ Story 4 lines) |
+| **1 Feb** | Ramadan #3: "I'm fasting" + the day | Letter 9 | Arabic by place: at the hotel | filler | Arabic by place: at the doctor | filler · **100 everyday Arabic words** (long) | Ramadan #4: Ramadan Mubarak / Kareem (7 Feb) | |
+| **8 Feb** (Ramadan) | Arabic by place: at the shop | Letter 10 | Arabic by place: in the street | filler | Same thing, 4 dialects #2 (I want) | filler · **Story 4: Sami's first day at work** | Spanish words from Arabic (ojalá!) | Story 4 Shorts the week of 15 Feb · plan the next 3 months |
+
+### The Sami stories (owner 2026-11-15)
+- **Story 2 — Sami's lazy weekend** (Dec): Lina plans a busy Saturday (market, food, colours); Sami only wants to
+  sleep; twist: he oversleeps and misses everything. Ends on Lina: «سامي! لا تنم كثيرا!» (Koki already records it).
+  Re-uses Days 31–35 (weekend, favourite food, colour, sleeping early or late).
+- **Story 3 — Sami at the market: too expensive!** (Jan, numbers month): Sami wants a red shirt; the seller's price
+  keeps changing. Colours + numbers + بكم؟
+- **Story 4 — Sami's first day at work** (Feb): he mixes up the jobs (thinks the boss is the waiter). Re-uses the 20
+  jobs (vocab05).
+Each: one place, two characters, one twist, ≤ 4 new words; story text to the owner first; English guidance in every
+Short (English line before each Arabic sentence in the story Short); pencil style, Sami recognisable (red hoodie,
+curly hair, beard).
 
 **Instagram/Facebook alongside (automatic unless noted):** daily Reel · daily trial (Hindi/Urdu/Turkish/Indonesian/Malay +
 Spanish/French test → drop the weakest) · carousels Wed + Sun until the 25 Nov verdict · Facebook hit of the day with the hook
@@ -57,6 +74,7 @@ cover (Claude makes the hooks ahead) + Hindi/Urdu test · YouTube Posts with the
 
 ## Backlog — after February, in this order
 
+0. The Part / compilation of 8 Feb (moved for Story 4) · Story 5+: more Sami/Lina real-life stories (a story week a month)
 1. Month 2 continues (Days 38+): more life questions ("What year were you born?", "Are you married?", "Do you have brothers/sisters?", "What's your favourite season?") + **Arabic by place: at home · at work · at school · at a restaurant**
 2. "Your language is full of Arabic words": Turkish, Indonesian/Malay, Swahili, Persian editions (each also as a trial in that language)
 3. Travel #5–6 (shop, emergency) + the long "Travel Arabic" compilation
