@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-14"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-15b"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -224,7 +224,7 @@ button.pend{{background:var(--bg);color:var(--soft);border:1px solid var(--line)
 <h2>Instagram</h2><div id="ig"></div>
 <h2>Facebook</h2><div id="todo"></div><h3>Today's groups</h3><div id="today"></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
-<details><summary id="allsum">All groups, in rotation order</summary><div id="all"></div></details>
+<details><summary id="allsum">All groups, next turn first</summary><div id="all"></div></details>
 </div><p class="foot" id="foot" data-built="{built}" data-fp="{fp}"></p>
 </div><script>
 const SEALED = "{blob}";
@@ -487,7 +487,9 @@ function allTable() {{
   const when = d => {{ const x = new Date(now); x.setDate(x.getDate() + d - dayNo);
     return d === dayNo ? "today" : d === dayNo + 1 ? "tomorrow" : x.toLocaleDateString("en-GB", {{weekday: "short", day: "numeric", month: "short"}}); }};
   document.getElementById("all").innerHTML = "<table><tr><th>#</th><th>Group</th><th>Next video</th></tr>" +
-    D.order.filter(gi => !D.groups[gi].left).map((gi, i) => {{
+    // owner 2026-11-15: sorted by the next turn (soonest first) — rotation order made row 1 look like "next" though it was 4 days away
+    D.order.filter(gi => !D.groups[gi].left).map(gi => {{ const nt = nextTurn(D.groups[gi].name); return [gi, nt ? nt[0] * 10 + nt[1] : 1e9]; }})
+      .sort((a, b) => a[1] - b[1]).map(x => x[0]).map((gi, i) => {{
       const g = D.groups[gi]; let next = "—";
       if (g.dropped) next = "dropped";
       else if (g.pause && dateOf(dayNo) < g.pause) next = `paused until ${{g.pause}}`;
@@ -500,7 +502,7 @@ function allTable() {{
       }}
       return `<tr><td>${{i + 1}}</td><td><span class="lang ${{g.code}}">${{g.lang}}</span> ${{esc(g.name)}}</td><td>${{next}}</td></tr>`;
     }}).join("") + "</table>";
-  document.getElementById("allsum").textContent = `All groups (${{D.groups.filter(g => !g.left).length}}), in rotation order`;
+  document.getElementById("allsum").textContent = `All groups (${{D.groups.filter(g => !g.left).length}}), next turn first`;
 }}
 allTable();
 }}
