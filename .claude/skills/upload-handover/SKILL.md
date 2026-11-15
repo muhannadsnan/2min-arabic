@@ -19,6 +19,8 @@ and no duplicate copies (owner, 2026-10-01). The sheet points at that file. `fin
 
 Default: **the day after the latest (scheduled) video of the same kind — Shorts and long videos (Parts) have separate daily chains — same time of day** — `fill <stem> <id> --publish-at next`
 works it out from the channel (owner's rule, 2026-09-30). Only use a fixed time when the owner asks for one.
+**7 days a week for Shorts again (owner 2026-11-15; 5/week was tried 10–14 Nov):** Thursday and Saturday get Shorts
+built from recordings we already have (no new recording). `OFF_DAYS` in tools/youtube_api.py is empty.
 
 ## The sheet — `videos/<stem>-upload.md`
 

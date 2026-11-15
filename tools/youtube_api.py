@@ -252,9 +252,9 @@ def seconds(iso):
     return d * 86400 + h * 3600 + mi * 60 + se
 
 
-# 5 days a week (owner 2026-11-10): Shorts are not published on these weekdays (Mon=0 … Sun=6). Thu + Sat: our
-# weekday views are flat (89–139/day, Sep–Nov), and spread-out days off never leave two silent days in a row.
-OFF_DAYS = {3, 5}
+# weekdays with no Shorts (Mon=0 … Sun=6). 10–14 Nov: Thu + Sat off (owner); back to 7 a week from 15 Nov (owner:
+# every new Short ≈ 100 views in its first two weeks; Thu + Sat get Shorts built from recordings we already have).
+OFF_DAYS = set()
 from zoneinfo import ZoneInfo as _ZI
 OSLO_TZ = _ZI("Europe/Oslo")
 
