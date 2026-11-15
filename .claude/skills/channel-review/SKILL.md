@@ -71,7 +71,7 @@ Read screenshots with the Read tool. Anything not given is **"not given"**, neve
   Still ~0 views → the owner deletes it and **re-uploads on another day with a new title**. Take one of the gate's
   `## Backup titles` from the sheet. Afterwards, fix the order in the 30-day playlist. Don't re-upload over and over:
   one retry, then learn from it.
-- **Viewed vs swiped away:** ≥ 70 % good · 60–70 % watch it · < 60 % the hook is the problem. Rewrite the hook shape
+- **Viewed vs swiped away:** ≥ 70 % good · 60–70 % watch it · < 60 % the hook is the problem. **But (2026-11-15):** the number mostly reflects where the views come from — compare a Short only with other Shorts of a similar Shorts-feed share (feed-heavy norm ≈ 45–50 %; search/browse-heavy ones show 80–90 %). Get the share per video with an Analytics query `dimensions=insightTrafficSourceType, filters=video==<id>`. Rewrite the hook shape
   on the next days, not just this one.
 - **Retention curve**, read against the script's scene times (`videos/<stem>.md`, `audio/<video>/timeline.json`):
   - cliff at 0–3 s → hook;

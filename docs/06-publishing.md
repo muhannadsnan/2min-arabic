@@ -232,4 +232,9 @@ Priority (owner): 1. titles + descriptions → 2. top-language tags → 3. subti
   12 views in 4 days), the old ones keep converting through browse/suggested.
 - 2026-11-15: **Share hooks work.** 69 shares on Shorts in 28 days vs 8 shares in total before the share hook (17 Oct)
   (evidence: Studio Shorts tab, 28 days to 13 Nov). → Keep a share/answer-me line at the end of every video.
+- 2026-11-15: **"Stayed to watch" measures the traffic mix more than the hook.** Shorts whose views come from search/browse
+  (feed 0–10 %: x03, Days 1, 6, 13, x01, x02) show 82–90 % stayed; Shorts mostly seen in the swipe feed (feed 54–69 %:
+  Day 26, Food, Habibi, Body, Biddi, Waiter, Inshallah) all sit at 38–51 % (evidence: Studio Advanced mode "Stayed to
+  watch" + API traffic sources, 28 days to 13 Nov). → Judge hooks only against other feed-heavy Shorts (our norm ≈ 45–50 %);
+  no hook shape stands out yet.
 

@@ -29,6 +29,9 @@ tahun 2 / arab tahun 2 (Malaysian school year 2) · أيام الأسبوع با
 Comments: 1 viewer comment (@wildqazaq11 on Food, answered). Audit: 54/59 → Days of the Week, Make Plans, Part 5 fixed;
 Part 4 + full course (no room for a mixed tag; full course in no playlist) wait for quota.
 Instagram / Facebook: not in this review (carousel verdict 25 Nov).
+**Stayed to watch (owner's screenshot, 28 d):** feed-heavy Shorts 38–51 % (Day 26 38 · Body 42.5 · Habibi 45 · Food 46 ·
+Biddi 49 · Waiter 51 · Inshallah 51); search/browse-heavy 82–90 % (x03 90 · Day 6 88 · Day 13 87 · Day 1 85 · x01/x02 82).
+→ traffic mix, not hook quality (docs/06 learning). Off days Thu+Sat: 1 week only — too early to measure.
 
 ## 2026-10-20 (YouTube + Instagram)
 
