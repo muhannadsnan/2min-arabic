@@ -1,6 +1,7 @@
 # Story 1 Short · Upload sheet
 
-**File to upload:** `output/s01-4-past/s01-4-past.mp4` (vertical, 1:04 → **Short**, made from Story 1: the horse and the turtle)
+**File to upload:** `output/s01-4-past/s01-4-past.mp4` (vertical, 1:09 → **Short**, made from Story 1: the horse and the turtle)
+> 🔁 **New version 15 Nov (owner OK):** English hook first (your voice clone, ~5 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `bXSVMl0QO5s` (set to Private; Claude deletes it after the new upload).
 **Thumbnail:** Upload file → `output/s01-4-past/s01-4-past-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
