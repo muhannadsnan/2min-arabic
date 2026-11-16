@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-16"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-16b"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -231,7 +231,7 @@ button.pend{{background:var(--bg);color:var(--soft);border:1px solid var(--line)
 </span></div><p class="sub" id="date"></p>
 <h2>YouTube</h2><div id="yt"></div>
 <h2>Instagram</h2><div id="ig"></div>
-<h2>Facebook</h2><div id="todo"></div><h3>Today's groups</h3><div id="today"></div>
+<h2>Facebook</h2><div id="todo"></div><h3>Today's groups</h3><div id="today"></div><div id="aheadwrap" hidden><h3>Done for today ✓ — tomorrow's groups (post early if you like; they count for tomorrow)</h3><div id="ahead"></div></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
 <details><summary id="allsum">All groups, next turn first</summary><div id="all"></div></details>
 </div><p class="foot" id="foot" data-built="{built}" data-fp="{fp}"></p>
@@ -446,7 +446,14 @@ function igSection() {{
   if (low.length) box.innerHTML = `<div class="card">${{low.join("")}}</div>`;
   else box.innerHTML = `<p class="none">Nothing to do — posting by itself.${{t ? " Trials: " + t.left + " queued (to " + day(t.last) + ")." : ""}}${{c ? " Carousels: " + c.left + " queued." : ""}}</p>`;
 }}
-function render() {{ todoCard(); if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); ytSection(); igSection(); }}
+function render() {{ todoCard(); if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); ahead(); ytSection(); igSection(); }}
+// owner 2026-11-16 "just give me the new bunch": when every card of today is done, tomorrow's groups appear below to post
+// early — ticks use tomorrow's key, so tomorrow shows them as done (the 6-hour gap still applies to their evening 3)
+function ahead() {{
+  const w = document.getElementById("aheadwrap"), todayOpen = document.querySelector("#today .card:not(.done)");
+  w.hidden = !!todayOpen; if (todayOpen) return;
+  fill("ahead", dayNo + 1, true);
+}}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
 const UPD = Array.from({{length: 16}}, (_, k) => 5 + k).map(h => h);  // checks at :05 (laptop) and :25 (GitHub)
 function footer() {{
@@ -489,7 +496,7 @@ function allTable() {{
   const nextTurn = name => {{
     for (let d = dayNo; d < dayNo + 60; d++) {{
       const k = slots(d).findIndex(x => x.name === name);
-      if (k >= 0 && !(d === dayNo && t[d + "-" + name])) return [d, k];
+      if (k >= 0 && !t[d + "-" + name]) return [d, k];   // posted early → its next turn
     }}
     return null;
   }};
