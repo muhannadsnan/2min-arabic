@@ -2,6 +2,7 @@
 
 **File to upload:** `output/s01-2-who-arrives-first/s01-2-who-arrives-first.mp4` (vertical, 2:12 → **Short**, made from Story 1: the horse and the turtle)
 > 🔁 **New version 16 Nov (owner: "only the opener is English, new beginners won't like it"):** C2 narrator, the narrator asks each question in English, then your Arabic question and answer — 19 of the 29 questions (to stay under 3 min); the English line holds the sentence's own picture (no jump). The 15 Nov hook-only upload was deleted by the owner. Built by library/work/story-guided-units.py.
+> ✅ **Uploaded + filled by the owner (16 Nov, published now)** — video id `fQ_Th-gYF2I`
 **Thumbnail:** Upload file → `output/s01-2-who-arrives-first/s01-2-who-arrives-first-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
