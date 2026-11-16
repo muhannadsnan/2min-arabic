@@ -1,15 +1,15 @@
 {
- "_note": "English Reels for the Facebook groups, in sharing order (owner 2026-11-16: best Reels, one round per Reel). Positions 0-3 were already shared before the re-order and stay. Then best first by Instagram views; Reels younger than a week on Instagram at the end (re-rank at the Sunday review). New Reels not listed are appended by date by tools/fb_groups_page.py.",
+ "_note": "English Reels for the Facebook groups, in sharing order (owner 2026-11-16: best Reels, one round per Reel). 16 Nov: Day 17 + 18 (weakest, 424/291 IG views) left out ('skip'); positions 2-3 (Day 5, Day 3) kept for the groups already there; groups at 0-1 start with Day 12, Day 27. Then best first by Instagram views; new Reels re-ranked on Sundays.",
  "order": [
   {
-   "url": "/reel/1155314673585791/",
-   "title": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun",
-   "ig_views": 424
+   "url": "/reel/1426122015892428/",
+   "title": "Day 12 of 30 — Arabic has no word for \"my\". You add one soun",
+   "ig_views": 1796
   },
   {
-   "url": "/reel/1181769751473235/",
-   "title": "Day 18 of 30 — five Arabic question words: what, who, where,",
-   "ig_views": 291
+   "url": "/reel/1076139212144341/",
+   "title": "Day 27 of 30 — \"Do you speak Arabic?\" is the first question ",
+   "ig_views": 1757
   },
   {
    "url": "/reel/3547497835407455/",
@@ -20,16 +20,6 @@
    "url": "/reel/1658546975725161/",
    "title": "Day 3 of 30 — Sami meets Lina: Follow for a new Arabic lesso",
    "ig_views": 2109
-  },
-  {
-   "url": "/reel/1426122015892428/",
-   "title": "Day 12 of 30 — Arabic has no word for \"my\". You add one soun",
-   "ig_views": 1796
-  },
-  {
-   "url": "/reel/1076139212144341/",
-   "title": "Day 27 of 30 — \"Do you speak Arabic?\" is the first question ",
-   "ig_views": 1757
   },
   {
    "url": "/reel/1675411937708498/",
@@ -145,6 +135,18 @@
    "url": "/reel/1190209046687461/",
    "title": "Day 29 of 30 — the same conversation as Day 28, but now you ",
    "ig_views": 215
+  }
+ ],
+ "skip": [
+  {
+   "url": "/reel/1155314673585791/",
+   "title": "Day 17 of 30 — the word \"the\" in Arabic is al-, but with sun",
+   "ig_views": 424
+  },
+  {
+   "url": "/reel/1181769751473235/",
+   "title": "Day 18 of 30 — five Arabic question words: what, who, where,",
+   "ig_views": 291
   }
  ]
 }

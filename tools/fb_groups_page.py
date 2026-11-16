@@ -168,9 +168,11 @@ def content():
     # already shared keep their places, then best first by Instagram views); Reels not listed yet follow by date
     order_file = ROOT / "data" / "fb-group-reels.json"
     if order_file.exists():
-        want = [x["url"] for x in json.loads(order_file.read_text(encoding="utf-8"))["order"]]
+        of = json.loads(order_file.read_text(encoding="utf-8"))
+        want = [x["url"] for x in of["order"]]
+        skip = {x["url"] for x in of.get("skip", [])}   # weak Reels left out of the group rotation (owner 2026-11-16)
         pos = {u: i for i, u in enumerate(want)}
-        en = sorted(en, key=lambda v: (pos.get(v["permalink_url"], len(want)), v["created_time"]))
+        en = sorted([v for v in en if v["permalink_url"] not in skip], key=lambda v: (pos.get(v["permalink_url"], len(want)), v["created_time"]))
     files = json.loads((ROOT / "data" / "fb-group-files.json").read_text(encoding="utf-8"))
     return {
         "en": [{"url": "https://www.facebook.com" + v["permalink_url"], "title": v["description"].splitlines()[0][:90],
