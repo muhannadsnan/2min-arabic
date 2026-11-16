@@ -1,0 +1,148 @@
+[00:00] Every YouTube guru out there is going to tell you that to succeed right now,
+[00:03] you need to hustle non-stop, burn millions of tokens, and make insane high effort faceless
+[00:09] videos just to fight for every single second of watch time. But there's actually an entire
+[00:14] corner of YouTube that completely breaks the algorithm, and it's sleep videos.
+[00:21] Instead of fighting for a 4 minute view, you get viewers who are just going to click play,
+[00:26] turn off the lights, and let your video run all night.
+[00:29] Take a look at this video. It's got over 540 million views. And even if we count it as low
+[00:35] as possible, at just $1.50 for every thousand views, it's made at least $810,000. To put that
+[00:43] into perspective, that is literally a middle manager's salary for 10 entire years sitting
+[00:48] inside of one single video file. And it's still printing money to date. Right now, it's pulling
+[00:54] in around 7,000ish views every hour, which is $10.50 an hour, $2.50 a day, or over $7,500
+[01:01] in a single month, while the creator is literally asleep in their bed. Now down in the corner of the
+[01:07] screen, I'm going to keep a live revenue counter running, tracking just for this one single channel
+[01:12] called Soothing Relaxation, so that you can see and understand exactly how much passive cash
+[01:18] it's pulling in while you're watching this breakdown. Now in this video, I'm going to walk
+[01:22] you through the entire process, from choosing the right niche to getting a finished video uploaded
+[01:28] to your channel. And to be honest, the process is actually way easier than it looks, because
+[01:33] we're not going to be bouncing between five different expensive subscriptions, we're simply
+[01:36] going to do the entire thing right in one single place. And by the way, as always, all of the links
+[01:43] to the tools and the exact prompts that I used today are down in the description below, so make
+[01:48] sure to check that out and hit the subscribe button so that you don't miss the next breakdown.
+[01:53] So let's start our path to the highest AVD and the easiest monetization of your entire life.
+[02:03] Now the very first thing we need to do is to pick our niche. But before you go off and type
+[02:07] anything into a search bar, remember this, the biggest search term is almost always a trap. Now
+[02:13] most beginners are going to go straight for that highest volume keyword, but you actually want are
+[02:17] those sweet spots where search volume is massive, but competition is relatively near the bottom.
+[02:23] So let's look at these two scales, monthly searches on the left and competition rated from
+[02:28] zero to 100 on the right. And here's what's completely overheated. White Noise gets 2.34
+[02:35] million searches a month, but competition is at 65. Rain Sounds gets 1.63 million searches
+[02:42] with a competition of 56, and Relaxing Jazz sits at 334k searches with a competition score of 66.
+[02:49] And this is where legacy giants live. Channels like Relaxing White Noise with 4.5 million
+[02:56] subscribers, and even in a great niche, those generic keywords are pretty much already locked
+[03:02] down by other competitors. Now at the same time, you can't just blindly chase low competition.
+[03:08] For example, Spaceship Ambiance has low competition, but only 17k searches a month,
+[03:13] and search interest is completely dropped by 71%. Medieval Tavern Ambiance has a super low
+[03:20] competition score of 18, but only 18k monthly searches and an interest rate that's down 39%.
+[03:27] Low competition in and of itself is useless. You need three things working together, high search
+[03:34] volume, low competition, and positive historical growth. Now here's three actual winning niches
+[03:41] that I think you should target. Niche number one, Rain plus Fireplace. Fireplace Ambiance
+[03:46] gets 307,000 searches with a competition score of just 19, and it's actually up 31% over the last
+[03:53] month. Rain Sounds for Sleeping No Ads gets 242k searches with a competition score of just 24.
+[04:01] And Autumn Ambiance pulls 436,000 searches at a competition score of 23. Just look at this channel,
+[04:08] Cozy Dream Window. Now they only have 3900 subscribers, and one of their videos is already
+[04:14] sitting at 803,000 views. In this specific niche, pure audio atmosphere does all of the selling.
+[04:22] Niche number two, Cozy Jazz. Cozy Jazz pulls 514,000 searches with a competition score of 25,
+[04:30] up 30%. And here's the proof, Tiny Cafe Jazz. With only 4k subscribers, their video, Cozy Rain
+[04:38] Autumn Cafe, has hit 1.1 million views. And here, the warm instrumental music sells the click.
+[04:45] And your third niche, Fantasy Worlds. Fantasy Music gets 371,000 searches with a competition score of
+[04:52] 35 and 19% growth. Now let's look at Fantasy Medieval Journey. This channel was created recently,
+[04:59] and it's already got 4.85 million views, with their highest Night Village video hitting 902,000
+[05:06] views. This niche sells what I call pure escapism, worlds that only AI can create, and pays super
+[05:14] close attention to seasonality as well. Searches for things like Fireplaces are up 26%. Fireplace
+[05:21] Ambience is up 31%, and Cozy Jazz is up 30% in just the last 30 days. Clearly, fall and winter
+[05:30] are at the peak season for Cozy content, and it's only just starting. Now, let's build our first
+[05:41] video. The entire workflow breaks down into four simple generations, and we're going to be doing
+[05:45] all of them directly inside of Higgs Field. So generation one, the scene. To create your core
+[05:51] visual, we're going to open Higgs Field. Set our aspect ratio to 16 by 9, and use either NanoBanana
+[05:57] 2.1 with resolution set to 4K, or use the sole location model. Now, there's going to be three
+[06:03] golden rules for this scene. First is the window rule. The inside needs to be warm and safe,
+[06:09] while the outside needs to have raw weather. The search query rain or window gets 338,000 searches
+[06:16] on its own because that contrast triggers deep comfort. Second, we need a single story anchor.
+[06:22] So we'll include one object that adds life to the room. Something like a sleeping cat, an open book
+[06:28] or blanket, or a steaming ceramic mug. And third is zero people. It's going to be an empty room that
+[06:35] lets the viewer project themselves into the space. And here's the exact prompt that I used, so feel
+[06:41] free to pause and screenshot. Now, generate two or three variations and then pick the one that
+[06:46] looks best. And look at the result. We've got warm lighting, defined raindrops on the glass,
+[06:52] and these deep shadows that are visually attractive. That visual is actually your
+[06:57] product because viewers buy it with their eyes. Generation two is the live loop. So next, we need
+[07:04] to bring this image to life in a seamless fashion. We want to stay right inside of Higgs Field and
+[07:09] switch the CDance 2.5 video model. Now out of the 40 models available, this is the one of very few
+[07:16] models that can generate up to 30 second videos with frame looping and audio generation all at
+[07:22] once. We're going to place our generated image into the first frame and last frame slots. We'll
+[07:28] set the length to 30 seconds, again, a 16 by nine ratio, and we'll make sure that the audio toggle
+[07:33] is turned on. Now here's a quick tip to save credits. You're going to use the draft mode to
+[07:38] run a cheap 480p preview first, and you're going to check the scene between the end
+[07:43] and the beginning. When it looks smooth, you're not just going to be generating a new 1080p prompt
+[07:48] or creating a completely different video that breaks that seamless loop and costs you more
+[07:53] credits. Now because the camera is locked in place and only micro elements are moving,
+[07:58] so things like raindrops trickling down the glass, fire flickering in the fireplace, the last frame
+[08:03] is going to connect back to the first frame with zero visible cuts. It's going to end up looping
+[08:09] forever. Now generation three, the sound stack. So now for audio, we're going to need a high
+[08:15] retention track which uses two layers. First is going to be the organic ambient sound that
+[08:20] C-Dance 2.5 generated directly with the video. It's going to be natural rain on glass and a soft
+[08:27] fireplace crackling. And second is the relaxing music. You don't need any expensive audio tools
+[08:33] or subscriptions here. All the code to generate and loop your relaxing music is simply generated
+[08:39] in Claude with a super simple prompt. You just ask Claude to write the soft piano track, run it,
+[08:44] and it outputs a beautiful continuous melody that perfectly matches to your vibe. Rain paired with
+[08:50] gentle piano is one of the most proven combinations on YouTube actually powering viral hits with 600,
+[08:57] 300, and 240,000 views. Now listen to the rain alone and now listen with a soft piano layered
+[09:11] underneath. It instantly transforms into that deep sleep atmosphere that we're aiming for.
+[09:23] Generation four is a thumbnail. For your thumbnail, you're going to go back to Hicksfield's image
+[09:28] generation using your scene image as a reference. We want to crank up the warmth, make the fireplace
+[09:33] grow richer, and sharpen the rain on the window. We'll add two to four words of clean text like
+[09:39] fall asleep fast. And put it side by side with the top ranking videos, run a test and compare
+[09:45] across three variations, and pick the one that pops out to you the most. Now assembly. And for
+[09:51] example, look at recent viral hits. For example, that 803k video is actually only one hour and 31
+[09:58] minutes long. Other top performers are around three hours. Take your two to three minute loop
+[10:04] and your audio track into literally any editor, CapCut, Premiere, or you can even actually ask
+[10:09] Claude to run a simple command and duplicate them across the timeline until you hit two to three
+[10:15] hours. At 1080p, an 11 gigabyte file exports fast and isn't going to overload your machine.
+[10:22] Now the next step is packaging and uploading. We're going to follow this exact formula for
+[10:27] all three niches. So for your title, we're going to do promise plus no mineral ads plus scene
+[10:34] plus purpose. So for example, that might sound something like fall asleep in five minutes,
+[10:40] parentheses, no mineral ads with cozy bedroom rain and a fireplace glow for deep sleep and
+[10:46] relaxation. In the description, we'll pack the top lines with your keyword cluster, fireplace
+[10:52] ambiance, rain on window and sleep sounds. For things like ad monetization, we're going to
+[10:58] leave pre-rolls turned on, but we'll turn mineral ads completely off. If you claim no ads and viewers
+[11:06] get hit with an ad before the video, then they're going to feel super misled. So no mineral ads is
+[11:11] exactly 100% honest and viewers are still going to love you for not blasting them awake at 3am.
+[11:17] In YouTube Studio, we'll make sure to check yes under AI content. And remember the monetization
+[11:23] math. You need a thousand subscribers and 4,000 watch hours. That single video with 803,000 views,
+[11:30] even at a modest 10 minute average view duration, generated over 130,000 watch hours. In other words,
+[11:38] that clears the YouTube Partner Program threshold more than 30 times over from just one video.
+[11:48] Now, let me show you how this exact same 4-step pipeline applies to the other two niches and how
+[11:54] this entire thing takes literally under 2 minutes. So niche two, going back to it, is cozy jazz.
+[12:00] 514,000 searches, up 30%, and tiny cafe jazz did 1.1 million views. Step one is going to be the
+[12:09] scene. Imagine a night cafe in the rain, warm street lamps outside the window, steaming coffee,
+[12:16] maybe a vinyl record player, and a corner fireplace. Step two is the loop. Incidents 2.5,
+[12:22] steam drifting, the vinyl record spinning, raindrops sliding down the window, and step three,
+[12:28] the music. All the code is going to be generated in Claude with a super simple prompt. We're just
+[12:34] going to ask for the code to get that smooth jazz, soft piano, and brushed drums vibe. And step four,
+[12:40] again, the packaging. We'll title it Rainy Autumn Cafe, Warm Jazz, and Fireplace Glow for Study,
+[12:48] Sleep, and Relaxation. Niche three, fantasy worlds. 371,000 searches, up 19%, and fantasy
+[12:56] medieval journey did 4.85 million views. Step one, again, the scene. Imagine a medieval village,
+[13:04] deep at night, glowing lanterns, morning mist, and warm light spilling from tavern windows.
+[13:10] Step two is the loop. Incidents 2.5, again, will have lanterns flickering, chimney smoke rising,
+[13:17] fireflies drifting through the air, and light snow falling. Step three is the music. All the code,
+[13:22] once again, is generated inside Claude, and step four is the package. Let's title it The Quiet Night
+[13:28] in a Medieval Village, Relaxing Fantasy Music for Sleep and Study. And literally, just like that,
+[13:35] the whole video is finished. It's the exact same four steps that I repeated every single time.
+[13:41] And what you're doing is actually actively tapping into a half a million monthly searches
+[13:45] that are actively blowing up right now, and the entire thing took under two minutes to put together.
+[13:56] Look at the revenue counter on the screen right now. Just in the time that you spent watching this
+[14:00] video, this single channel has racked up roughly $15 in passive income right in front of you.
+[14:06] It's $61 in one hour and $1,460 in a single day. And none of that went into your pocket
+[14:13] simply because your video has yet to be uploaded. So take a screenshot of this formula right now.
+[14:20] Three niches, rain plus fireplace, cozy jazz, and fantasy worlds. Four generations, scene,
+[14:27] live loop with CDance 2.5, thumbnail, all done directly inside Hicksfield,
+[14:32] and sound is generated inside Claude. Video length should be 1.5 hours to three hours
+[14:37] with packaging that follows a promise, no mid-roll ads, scene, and purpose structure.
+[14:43] We'll have mid-roll ads off, pre-roll ads on, and the AI content toggle checked.
+[14:49] The Cozy Halloween Cafe video did 478,000 views in under a month. A channel that started
+[14:55] in August pulled in nearly half a million views. And the cozy season conveniently is at its peak
+[15:02] right now. And it's not going to wait for you to be ready. So everything that we used in Hicksfield
+[15:07] and all of the prompts are linked in the description below. Pick just one of these
+[15:12] three niches, run your first four generations, and get your video live on YouTube today.
+[15:18] So as always, hit subscribe, drop a like if this breakdown helped you,
+[15:22] and I'll see you guys in the next one.
