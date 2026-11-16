@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-16b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-16c"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -231,7 +231,7 @@ button.pend{{background:var(--bg);color:var(--soft);border:1px solid var(--line)
 </span></div><p class="sub" id="date"></p>
 <h2>YouTube</h2><div id="yt"></div>
 <h2>Instagram</h2><div id="ig"></div>
-<h2>Facebook</h2><div id="todo"></div><h3>Today's groups</h3><div id="today"></div><div id="aheadwrap" hidden><h3>Done for today ✓ — tomorrow's groups (post early if you like; they count for tomorrow)</h3><div id="ahead"></div></div>
+<h2>Facebook</h2><div id="todo"></div><h3>Today's groups</h3><div id="today"></div><div id="aheadwrap" hidden><h3 id="aheadh">Next groups</h3><div id="ahead"></div></div>
 <details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
 <details><summary id="allsum">All groups, next turn first</summary><div id="all"></div></details>
 </div><p class="foot" id="foot" data-built="{built}" data-fp="{fp}"></p>
@@ -452,7 +452,14 @@ function render() {{ todoCard(); if (document.getElementById("all").innerHTML) a
 function ahead() {{
   const w = document.getElementById("aheadwrap"), todayOpen = document.querySelector("#today .card:not(.done)");
   w.hidden = !!todayOpen; if (todayOpen) return;
-  fill("ahead", dayNo + 1, true);
+  // the first coming day that still has open groups (owner: "just give me the new bunch" — batch after batch)
+  const t = ticks();
+  for (let d = dayNo + 1; d < dayNo + 30; d++) {{
+    if (!slots(d).some(g => !offToday(g, d) && !t[d + "-" + g.name])) continue;
+    const dt = new Date(now); dt.setDate(dt.getDate() + d - dayNo);
+    document.getElementById("aheadh").textContent = `Done for today ✓ — next groups: ${{dt.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "short"}})}}'s (they count for that day)`;
+    fill("ahead", d, true); return;
+  }}
 }}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
 const UPD = Array.from({{length: 16}}, (_, k) => 5 + k).map(h => h);  // checks at :05 (laptop) and :25 (GitHub)
