@@ -12,7 +12,7 @@
 ## Title
 
 ```
-Easy Arabic Story in 60 Seconds: Horse and Turtle | Story 1
+Easy Arabic Story in 60 Sec: (AR only) Horse and Turtle | Story 1 - only Arabic
 ```
 
 ## Description

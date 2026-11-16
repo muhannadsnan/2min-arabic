@@ -14,7 +14,7 @@
 ## Title
 
 ```
-Understand an Arabic Story: Easy Questions | Story 1
+Understand Arabic: Easy Questions (ENG-guided) | Story 1
 ```
 
 ## Description

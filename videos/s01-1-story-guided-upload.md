@@ -14,7 +14,7 @@
 ## Title
 
 ```
-Learn Arabic with mini Story - Turtle Beats Horse | Story 1
+Learn Arabic with mini Story (ENG-guided) Turtle Beats Horse | Story 1
 ```
 
 ## Description
