@@ -97,17 +97,37 @@ def build(stem):
         parts.append(clip)
         hook_en = json.loads(pathlib.Path(f"audio/s01-hooks-c2t/{stem}.json").read_text())["text"]
         srt.append((0, d - 0.1, hook_en)); t = dur(clip)
+        lead = []                 # English-only units (no cues): their line runs straight into the next unit's line
+        outro = PLAN[stem].get("outro")   # owner 2026-11-16: like + subscribe after the last Arabic line (last frame held)
+        ow = narr(adir / "outro.wav", "outro", 0.4) if outro else None
         for k, u in enumerate(units, 1):
-            w = narr(adir / f"u{k:02}.wav", f"u{k:02}"); d = dur(w)
+            w = narr(adir / f"u{k:02}.wav", f"u{k:02}")
+            if not u["cues"]:     # owner 2026-11-16 (s01-3): the Arabic intro sentence is cut, its English line stays
+                lead.append((w, u["en"])); continue
+            if lead:
+                ws = [x for x, _ in lead] + [w]; w2 = tmp / f"u{k:02}-lead.wav"
+                sh("ffmpeg", "-v", "error", "-y", *sum((["-i", str(x)] for x in ws), []), "-filter_complex",
+                   "".join(f"[{i}:a]" for i in range(len(ws))) + f"concat=n={len(ws)}:v=0:a=1[a]", "-map", "[a]", str(w2))
+                for x, en in lead:
+                    srt.append((t, t + dur(x) - 0.1, en)); t += dur(x)
+                tl = sum(dur(x) for x, _ in lead); lead = []
+            else:
+                w2, tl = w, 0.0
+            d = dur(w2)
             c0, c1 = u["cues"][0], u["cues"][-1]
             (s0, hold), s1 = start_of(c0), end_of(c1)
             skip = hold - s0
             seg = tmp / f"s{k:02}.mp4"
-            sh("ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.3f}", "-to", f"{s1:.3f}", "-i", str(src), "-i", str(w),
-               "-filter_complex", f"[0:v]trim=start={skip:.3f},setpts=PTS-STARTPTS,tpad=start_duration={d + skip:.3f}:start_mode=clone,setsar=1[v];"
+            last = k == len(units) and ow is not None
+            vpad = f":stop_duration={dur(ow):.3f}:stop_mode=clone" if last else ""   # ONE tpad: a second chained tpad loses ~2 s (ffmpeg 6.1)
+            ins = ["-i", str(ow)] if last else []
+            amix = "[2:a]aformat=sample_rates=48000:channel_layouts=mono[o];[n][s][o]concat=n=3:v=0:a=1[a]" if last else "[n][s]concat=n=2:v=0:a=1[a]"
+            sh("ffmpeg", "-v", "error", "-y", "-ss", f"{s0:.3f}", "-to", f"{s1:.3f}", "-i", str(src), "-i", str(w2), *ins,
+               "-filter_complex", f"[0:v]trim=start={skip:.3f},setpts=PTS-STARTPTS,tpad=start_duration={d + skip:.3f}:start_mode=clone{vpad},setsar=1[v];"
                "[1:a]aformat=sample_rates=48000:channel_layouts=mono[n];[0:a]aformat=sample_rates=48000:channel_layouts=mono[s];"
-               "[n][s]concat=n=2:v=0:a=1[a]", "-map", "[v]", "-map", "[a]", *ENC, str(seg))
+               + amix, "-map", "[v]", "-map", "[a]", *ENC, str(seg))
             parts.append(seg)
+            d -= tl
             srt.append((t, t + d - 0.1, u["en"]))
             for c in u["cues"]:
                 a, z, en = cues[c - 1]
@@ -115,7 +135,9 @@ def build(stem):
                 said = norm(en) in norm(u["en"]) or norm(u["en"]) in norm(en)
                 txt = en if not ar else (ar if said else f"{ar}\n{en}")
                 srt.append((t + d + (a - s0), t + d + (z - s0), txt))
-            t += dur(seg)
+            t += dur(seg) - tl    # t already moved past the lead lines
+        if ow is not None:
+            srt.append((t - dur(ow), t - 0.1, outro["en"]))
         out = src.parent / f"{stem}.mp4"
         old = src.parent / f"{stem}-hook-only.mp4"
         if out.exists() and not old.exists(): shutil.copy2(out, old)

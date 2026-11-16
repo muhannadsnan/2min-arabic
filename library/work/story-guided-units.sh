@@ -11,6 +11,7 @@ for stem, v in P.items():
     if stem.startswith("_"): continue
     folder = pathlib.Path(f"audio/s01-shorts-guided/{stem}"); folder.mkdir(parents=True, exist_ok=True)
     todo = {folder / f"u{k:02}.wav": ("narrator-wpe", say(u.get("say", u["en"]))) for k, u in enumerate(v["units"], 1)}
+    if v.get("outro"): todo[folder / "outro.wav"] = ("narrator-wpe", say(v["outro"].get("say", v["outro"]["en"])))
     for j in sorted(M.synthesize_missing(todo, folder, 6), key=lambda j: j["cache"]):
         print("u", stem[:6], pathlib.Path(j["cache"]).stem, "cer", round(j["cer"], 2), "|", j["heard"][:90], flush=True)
 PY

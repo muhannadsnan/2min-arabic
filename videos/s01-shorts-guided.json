@@ -146,9 +146,7 @@
  "s01-3-opposites": {
   "units": [
    {
-    "cues": [
-     1
-    ],
+    "cues": [],
     "en": "Words from the story, and their opposites."
    },
    {
@@ -246,7 +244,10 @@
     ],
     "en": "Where are you? I'm here!"
    }
-  ]
+  ],
+  "outro": {
+   "en": "Like this video if it helped, and subscribe: next, the story in the past!"
+  }
  },
  "s01-4-past": {
   "units": [
@@ -328,7 +329,10 @@
     ],
     "en": "And Maher arrived at the market before Rami!"
    }
-  ]
+  ],
+  "outro": {
+   "en": "Like this video if it helped, and subscribe: next, the story in the future!"
+  }
  },
  "s01-5-future": {
   "units": [
@@ -393,7 +397,10 @@
     ],
     "en": "And Maher will arrive at the market before Rami!"
    }
-  ]
+  ],
+  "outro": {
+   "en": "Like this video if it helped, and subscribe for more easy Arabic stories!"
+  }
  },
  "_note": "owner 2026-11-16: English narrator line before every Arabic line in Story Shorts 2-5; built by library/work/story-guided-units.py"
 }
