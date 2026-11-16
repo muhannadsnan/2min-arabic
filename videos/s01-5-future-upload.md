@@ -1,13 +1,13 @@
 # Story 1 Short · Upload sheet
 
-**File to upload:** `output/s01-5-future/s01-5-future.mp4` (vertical, 0:51 → **Short**, made from Story 1: the horse and the turtle)
-> 🔁 **New version 15 Nov (owner OK):** English hook first (your narrator voice from the gently de-echoed sample (C2), pauses tightened, ~6 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `TXb-BQbDhtk` (set to Private; Claude deletes it after the new upload).
+**File to upload:** `output/s01-5-future/s01-5-future.mp4` (vertical, 1:25 → **Short**, made from Story 1: the horse and the turtle)
+> 🔁 **New version 16 Nov (owner: "only the opener is English, new beginners won't like it"):** C2 narrator, an English line before every Arabic sentence, like Story Short 1; the English line holds the sentence's own picture (no jump). The 15 Nov hook-only upload was deleted by the owner. Built by library/work/story-guided-units.py.
 **Thumbnail:** Upload file → `output/s01-5-future/s01-5-future-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
-2. Tell Claude "uploaded". Claude fills everything and schedules it (**Wed 18 Nov, 17:00 Oslo**).
+2. Tell Claude "uploaded". Claude fills everything and schedules it (**Sat 21 Nov, 17:00 Oslo**).
 3. After it's live (desktop notification): pin the comment and set **Related video = Story 1 (the whole story)**.
 
 ## Title
@@ -70,7 +70,7 @@ future tense in arabic, arabic future tense for beginners, present and future te
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |
 | Shorts remixing | Allow video and audio remixing |
-| Visibility | Schedule: Wed 18 Nov, 17:00 Oslo |
+| Visibility | Schedule: Sat 21 Nov, 17:00 Oslo |
 
 Automatic dubbing stays **OFF** (channel setting).
 

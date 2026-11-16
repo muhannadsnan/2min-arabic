@@ -1,13 +1,13 @@
 # Story 1 Short · Upload sheet
 
-**File to upload:** `output/s01-3-opposites/s01-3-opposites.mp4` (vertical, 1:09 → **Short**, made from Story 1: the horse and the turtle)
-> 🔁 **New version 15 Nov (owner OK):** English hook first (your narrator voice from the gently de-echoed sample (C2), pauses tightened, ~6 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `6MeUnhxKr8A` (set to Private; Claude deletes it after the new upload).
+**File to upload:** `output/s01-3-opposites/s01-3-opposites.mp4` (vertical, 2:01 → **Short**, made from Story 1: the horse and the turtle)
+> 🔁 **New version 16 Nov (owner: "only the opener is English, new beginners won't like it"):** C2 narrator, an English line before every Arabic line ("Fast, and slow." → سريع … بطيء); the English line holds the sentence's own picture (no jump). The 15 Nov hook-only upload was deleted by the owner. Built by library/work/story-guided-units.py.
 **Thumbnail:** Upload file → `output/s01-3-opposites/s01-3-opposites-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
-2. Tell Claude "uploaded". Claude fills everything and schedules it (**Mon 16 Nov, 17:00 Oslo**).
+2. Tell Claude "uploaded". Claude fills everything and schedules it (**Wed 18 Nov, 17:00 Oslo**).
 3. After it's live (desktop notification): pin the comment and set **Related video = Story 1 (the whole story)**.
 
 ## Title
@@ -70,7 +70,7 @@ arabic opposites, arabic adjectives and opposites, opposite words in arabic, fas
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |
 | Shorts remixing | Allow video and audio remixing |
-| Visibility | Schedule: Mon 16 Nov, 17:00 Oslo |
+| Visibility | Schedule: Wed 18 Nov, 17:00 Oslo |
 
 Automatic dubbing stays **OFF** (channel setting).
 

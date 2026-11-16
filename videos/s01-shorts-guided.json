@@ -1,0 +1,399 @@
+{
+ "s01-2-who-arrives-first": {
+  "units": [
+   {
+    "cues": [
+     1,
+     2
+    ],
+    "en": "Who goes to the market?"
+   },
+   {
+    "cues": [
+     5,
+     6
+    ],
+    "en": "Is Rami a cat?"
+   },
+   {
+    "cues": [
+     7,
+     8
+    ],
+    "en": "Where does Rami go?"
+   },
+   {
+    "cues": [
+     9,
+     10
+    ],
+    "en": "Who is Maher?"
+   },
+   {
+    "cues": [
+     13,
+     14
+    ],
+    "en": "What does Maher do?"
+   },
+   {
+    "cues": [
+     15,
+     16
+    ],
+    "en": "Is Rami fast?"
+   },
+   {
+    "cues": [
+     17,
+     18
+    ],
+    "en": "Why is he fast?"
+   },
+   {
+    "cues": [
+     21,
+     22
+    ],
+    "en": "Why is Maher slow?"
+   },
+   {
+    "cues": [
+     25,
+     26
+    ],
+    "en": "What did Mazen say?"
+   },
+   {
+    "cues": [
+     27,
+     28
+    ],
+    "en": "Who saw Hani on the way?"
+   },
+   {
+    "cues": [
+     31,
+     32
+    ],
+    "en": "What are the two of them doing?"
+   },
+   {
+    "cues": [
+     33,
+     34
+    ],
+    "en": "Do they drink coffee?"
+   },
+   {
+    "cues": [
+     35,
+     36
+    ],
+    "en": "Does Rami keep walking after the tea?"
+   },
+   {
+    "cues": [
+     37,
+     38
+    ],
+    "en": "Where did Rami sleep?"
+   },
+   {
+    "cues": [
+     41,
+     42
+    ],
+    "en": "Does Maher sleep too?"
+   },
+   {
+    "cues": [
+     47,
+     48
+    ],
+    "en": "Who sees Maher at the end?",
+    "say": "Who... sees Maher, at the end?"
+   },
+   {
+    "cues": [
+     49,
+     50
+    ],
+    "en": "What does Kamel say?"
+   },
+   {
+    "cues": [
+     53,
+     54
+    ],
+    "en": "Who arrived first?"
+   },
+   {
+    "cues": [
+     57,
+     58
+    ],
+    "en": "Why did Maher arrive before Rami?"
+   },
+   {
+    "cues": [
+     59
+    ],
+    "en": "Excellent! You understood the whole story."
+   }
+  ]
+ },
+ "s01-3-opposites": {
+  "units": [
+   {
+    "cues": [
+     1
+    ],
+    "en": "Words from the story, and their opposites."
+   },
+   {
+    "cues": [
+     2
+    ],
+    "en": "Fast, and slow.",
+    "say": "Fast... and slow."
+   },
+   {
+    "cues": [
+     3
+    ],
+    "en": "Rami is fast, like a car. And Maher is slow, like… a turtle!"
+   },
+   {
+    "cues": [
+     4
+    ],
+    "en": "We say: I walk fast, or: I walk slowly. Please, speak slowly!"
+   },
+   {
+    "cues": [
+     5
+    ],
+    "en": "Before, and after.",
+    "say": "Before... and after."
+   },
+   {
+    "cues": [
+     6
+    ],
+    "en": "Before the tea, after the tea."
+   },
+   {
+    "cues": [
+     7
+    ],
+    "en": "We say them every day: before the lesson, after the lesson. Before sleep, after sleep."
+   },
+   {
+    "cues": [
+     8
+    ],
+    "en": "With, and without.",
+    "say": "With... and without."
+   },
+   {
+    "cues": [
+     9
+    ],
+    "en": "Coffee with milk, and tea without sugar."
+   },
+   {
+    "cues": [
+     10
+    ],
+    "en": "I go with my friend. I go without my friend."
+   },
+   {
+    "cues": [
+     11
+    ],
+    "en": "Sleeps, and wakes up.",
+    "say": "Sleeps... and wakes up."
+   },
+   {
+    "cues": [
+     12
+    ],
+    "en": "At night I sleep, and in the morning I wake up."
+   },
+   {
+    "cues": [
+     13
+    ],
+    "en": "Rami slept under the tree… and when did he wake up? After Maher arrived!"
+   },
+   {
+    "cues": [
+     14
+    ],
+    "en": "Here, and there.",
+    "say": "Here... and there."
+   },
+   {
+    "cues": [
+     15
+    ],
+    "en": "\"Here\" is for near, and \"there\" for far. Where is the market? There!"
+   },
+   {
+    "cues": [
+     16
+    ],
+    "en": "Where are you? I'm here!"
+   }
+  ]
+ },
+ "s01-4-past": {
+  "units": [
+   {
+    "cues": [
+     1
+    ],
+    "en": "Now we tell the story in the past. The story was yesterday."
+   },
+   {
+    "cues": [
+     2
+    ],
+    "en": "Pay attention: the verb changes a little. Goes, went. Drinks, drank. Sleeps, slept."
+   },
+   {
+    "cues": [
+     3
+    ],
+    "en": "Rami the horse went to the market."
+   },
+   {
+    "cues": [
+     4
+    ],
+    "en": "And Maher the turtle went to the market too."
+   },
+   {
+    "cues": [
+     5
+    ],
+    "en": "Rami was fast because he is a horse; he walked fast."
+   },
+   {
+    "cues": [
+     6
+    ],
+    "en": "And Maher was slow because he is a turtle. He walked slowly."
+   },
+   {
+    "cues": [
+     7
+    ],
+    "en": "Mazen the fox said: the horse will arrive before the turtle!"
+   },
+   {
+    "cues": [
+     8
+    ],
+    "en": "On the way, Rami saw his friend Hani the sheep."
+   },
+   {
+    "cues": [
+     9
+    ],
+    "en": "Rami drank tea with the sheep."
+   },
+   {
+    "cues": [
+     10
+    ],
+    "en": "After the tea, Rami slept under the tree."
+   },
+   {
+    "cues": [
+     11
+    ],
+    "en": "But Maher didn't sleep, and kept going slowly."
+   },
+   {
+    "cues": [
+     12
+    ],
+    "en": "Kamel the bird saw Maher and said: excellent!"
+   },
+   {
+    "cues": [
+     13
+    ],
+    "en": "And Maher arrived at the market before Rami!"
+   }
+  ]
+ },
+ "s01-5-future": {
+  "units": [
+   {
+    "cues": [
+     1
+    ],
+    "en": "And now, the story in the future: tomorrow!"
+   },
+   {
+    "cues": [
+     2
+    ],
+    "en": "We put \"sa\" before the verb: goes, will go. Drinks, will drink. Easy!",
+    "say": "We put the sound \"sa\" before the verb. Goes... it will go. Drinks... it will drink. Easy!"
+   },
+   {
+    "cues": [
+     3
+    ],
+    "en": "Tomorrow, Rami the horse will go to the market."
+   },
+   {
+    "cues": [
+     4
+    ],
+    "en": "And Maher the turtle will go to the market too."
+   },
+   {
+    "cues": [
+     5
+    ],
+    "en": "Rami will see his friend Hani the sheep."
+   },
+   {
+    "cues": [
+     6
+    ],
+    "en": "Rami will drink tea with the sheep."
+   },
+   {
+    "cues": [
+     7
+    ],
+    "en": "After the tea, Rami will sleep under the tree."
+   },
+   {
+    "cues": [
+     8
+    ],
+    "en": "But Maher won't sleep; he will keep going slowly."
+   },
+   {
+    "cues": [
+     9
+    ],
+    "en": "Kamel the bird will see Maher and will say: excellent!"
+   },
+   {
+    "cues": [
+     10
+    ],
+    "en": "And Maher will arrive at the market before Rami!"
+   }
+  ]
+ },
+ "_note": "owner 2026-11-16: English narrator line before every Arabic line in Story Shorts 2-5; built by library/work/story-guided-units.py"
+}

@@ -1,13 +1,13 @@
 # Story 1 Short · Upload sheet
 
-**File to upload:** `output/s01-2-who-arrives-first/s01-2-who-arrives-first.mp4` (vertical, 2:37 → **Short**, made from Story 1: the horse and the turtle)
-> 🔁 **New version 15 Nov (owner OK; renamed — no "quiz", owner):** English hook first (your narrator voice from the gently de-echoed sample (C2), pauses tightened, ~6 s over the thumbnail), then the Arabic as before — the all-Arabic Story Short got 7 views. Replaces `vAa47UeckmM` (set to Private; Claude deletes it after the new upload).
+**File to upload:** `output/s01-2-who-arrives-first/s01-2-who-arrives-first.mp4` (vertical, 2:12 → **Short**, made from Story 1: the horse and the turtle)
+> 🔁 **New version 16 Nov (owner: "only the opener is English, new beginners won't like it"):** C2 narrator, the narrator asks each question in English, then your Arabic question and answer — 19 of the 29 questions (to stay under 3 min); the English line holds the sentence's own picture (no jump). The 15 Nov hook-only upload was deleted by the owner. Built by library/work/story-guided-units.py.
 **Thumbnail:** Upload file → `output/s01-2-who-arrives-first/s01-2-who-arrives-first-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
-2. Tell Claude "uploaded". Claude fills everything and schedules it (**Sun 15 Nov, 17:00 Oslo**).
+2. Tell Claude "uploaded". Claude fills everything and schedules it (**Tue 17 Nov, 17:00 Oslo**).
 3. After it's live (desktop notification): pin the comment and set **Related video = Story 1 (the whole story)**.
 
 ## Title
@@ -19,7 +19,7 @@ Understand an Arabic Story: Easy Questions | Story 1
 ## Description
 
 ```
-29 easy questions in Arabic about the story of the horse and the turtle: who, where, why, fast or slow? Answer out loud before you hear the answer!
+19 easy questions in Arabic about the story of the horse and the turtle: who, where, why, fast or slow? Answer out loud before you hear the answer!
 
 📝 Words from this part:
 man waSala awwalan? — who arrived first? — ⁧من وصل أولا؟⁩
@@ -69,7 +69,7 @@ understand arabic story, arabic listening practice for beginners, arabic questio
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |
 | Shorts remixing | Allow video and audio remixing |
-| Visibility | Schedule: Sun 15 Nov, 17:00 Oslo |
+| Visibility | Schedule: Tue 17 Nov, 17:00 Oslo |
 
 Automatic dubbing stays **OFF** (channel setting).
 
