@@ -128,6 +128,11 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
   framed differently gets a new side picture framed like Sami's (`--ref <identity> --ref sami_side.png`).
 - Dark clothes keep their green bounce light → compose_talk.py keeps anything darker than the screen solid (the
   waiter's trousers were see-through, 29 Oct). Check every new character on a pink background before use.
+- **New mouth sets: inpaint, don't re-edit the whole picture (owner 2026-11-03).** A whole-picture klein edit redraws the
+  beard/face a little, and blending its mouth back leaves a ghost ("shadow of the mustache"). Make the mouth shapes with
+  `tools/images/generate.py --ref still.png --mask mouthmask.png` (white ellipse over lips + chin), then composite with the
+  mask so everything outside is the still's own pixels. Same for a blink (eye mask). Frozen hands look unnatural: frame
+  chest-up, and give a long narrator some body life (breathing, sway — tools/animate/narrator.py).
 - Speaking intervals: `tools/animate/voiced.py` → `speaking(stem)` (voiced parts only, breaths < 0.15 s ignored).
 - Two-person scenes: they **face each other** (three-quarter side views), each moves **only during their own line**
   (speaking times from audio/<video>/timeline.json); expressions (laugh, smile, hopeful) as single "react" pictures.

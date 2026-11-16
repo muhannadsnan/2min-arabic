@@ -54,7 +54,7 @@ Fillers marked (t) are tentative — fixed when that week is planned (words of t
 | **28 Dec** | 100 · 1,000 · million | Letter 5 | "Two" is special | How many? challenge (t) | How many brothers? | Big numbers challenge (t) | Days of the week = numbers | **Episode 3** |
 | **4 Jan** | What time is it? | Letter 6 | Half / quarter past | Two of everything — dual recap (t) | Prices: بكم؟ | Family + numbers recap (t) | Kilo, half kilo | **Part (numbers)** |
 | **11 Jan** | How tall are you? | Letter 7 | How far? | What time is it? challenge (t) | It's 30 degrees | How much? at the market (t) | Ramadan #1: what to say | **Story 3: Sami at the market — too expensive!** |
-| **18 Jan** | Story 3 Short 1 | Story 3 Short 2 | Story 3 Short 3 | Tall, far, hot — recap (t) | Story 3 Short 4 | 5 questions about your city (t) | Story 3 Short 5 | sleep02 (t) — only if the pilot works |
+| **18 Jan** | Story 3 Short 1 | Story 3 Short 2 | Story 3 Short 3 | Tall, far, hot — recap (t) | Story 3 Short 4 | 5 questions about your city (t) | Story 3 Short 5 | sleep03 (t) — only if the pilot works |
 | **25 Jan** | Ramadan #2: iftar & suhoor | Letter 8 | At the airport | Ramadan words recap (t) | In a taxi | Market numbers recap (t) | 10 Egyptian slang words | **Episode 4** |
 | **1 Feb** | Ramadan #3: "I'm fasting" | Letter 9 | At the hotel | Travel phrases: airport + taxi (t) | At the doctor | What would you say? challenge (t) | Ramadan Mubarak / Kareem (7 Feb) | **100 everyday Arabic words** |
 | **8 Feb** (Ramadan) | At the shop | Letter 10 | In the street | Hotel + doctor recap (t) | 4 dialects #2 (I want) | Ramadan greetings recap (t) | Spanish words from Arabic | **Story 4: Sami's first day at work** |

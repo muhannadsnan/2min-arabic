@@ -17,6 +17,8 @@ import json, pathlib, re, subprocess, sys, tempfile, shutil
 PLAN = json.load(open("videos/s01-shorts-guided.json", encoding="utf-8"))
 STORY = json.load(open("videos/s01-story.json", encoding="utf-8"))
 GAP = 0.15
+# owner 2026-11-16: "we agreed on sample C, the clearest" → narrator-dry (C) instead of narrator-wpe (C2) for 3–5
+HOOKS, UNITS = "audio/s01-hooks-c2c", "audio/s01-shorts-guided-c2c"   # owner 2026-11-17: voice "c2 70-30"
 ENC = ["-c:v", "libx264", "-preset", "medium", "-crf", "18", "-r", "30", "-pix_fmt", "yuv420p",
        "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "1"]
 TIGHT = "silenceremove=stop_periods=-1:stop_duration=0.2:stop_threshold=-42dB:stop_silence=0.15"
@@ -74,7 +76,7 @@ def build(stem):
         return total if c == len(cues) else start_of(c + 1)[0]
 
     units = PLAN[stem]["units"]
-    adir = pathlib.Path(f"audio/s01-shorts-guided/{stem}")
+    adir = pathlib.Path(f"{UNITS}/{stem}")
     target = lufs(src) + 1.0   # narrator at or slightly above the owner's Arabic
     with tempfile.TemporaryDirectory() as tmp:
         tmp = pathlib.Path(tmp)
@@ -90,12 +92,12 @@ def build(stem):
             return o
 
         parts, srt = [], []
-        h = narr(pathlib.Path(f"audio/s01-hooks-c2t/{stem}.wav"), "hook", 0.25); d = dur(h)
+        h = narr(pathlib.Path(f"{HOOKS}/{stem}.wav"), "hook", 0.25); d = dur(h)
         clip = tmp / "hook.mp4"
         sh("ffmpeg", "-v", "error", "-y", "-loop", "1", "-framerate", "30", "-t", f"{d:.3f}", "-i", str(src.parent / f"{stem}-thumbnail.jpg"),
            "-i", str(h), "-vf", "scale=1080:1920,setsar=1", "-shortest", *ENC, str(clip))
         parts.append(clip)
-        hook_en = json.loads(pathlib.Path(f"audio/s01-hooks-c2t/{stem}.json").read_text())["text"]
+        hook_en = json.loads(pathlib.Path(f"{HOOKS}/{stem}.json").read_text())["text"]
         srt.append((0, d - 0.1, hook_en)); t = dur(clip)
         lead = []                 # English-only units (no cues): their line runs straight into the next unit's line
         outro = PLAN[stem].get("outro")   # owner 2026-11-16: like + subscribe after the last Arabic line (last frame held)

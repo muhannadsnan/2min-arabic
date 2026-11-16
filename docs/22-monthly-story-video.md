@@ -16,8 +16,9 @@ full story read first then sentence-by-sentence with many easy logical questions
   per story sentence, the same animal characters throughout. Clean animals only (horse, sheep, camel, fox, turtle,
   rabbit, birds…; no dogs, no pigs).
 - **Arabic on screen without tashkeel** (beginner text), only where needed to avoid a wrong reading.
-- The narrator is shown: sometimes alone, full screen (a presenter close-up talking to the camera), sometimes in a
-  small square while a story picture + its sentence fill the screen.
+- The narrator is shown alone, full screen (half body), from time to time between the story parts. **No small square
+  over the story** (owner 2026-11-03: "just disturbing to the learner" — keep the attention on the story; may come
+  back after the recording: `tools/story_episode.py --square`).
 - A strong hook, no boring stretches: every section ≤ 3–4 min, a change of view every few seconds.
 
 ## Shape (≈ 12–15 min)

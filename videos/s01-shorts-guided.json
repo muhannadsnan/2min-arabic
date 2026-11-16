@@ -147,7 +147,8 @@
   "units": [
    {
     "cues": [],
-    "en": "Words from the story, and their opposites."
+    "en": "Words from the story, and their opposites.",
+    "say": "Words from the story... and their opposites."
    },
    {
     "cues": [
@@ -274,7 +275,8 @@
     "cues": [
      4
     ],
-    "en": "And Maher the turtle went to the market too."
+    "en": "And Maher the turtle went to the market too.",
+    "say": "And Maher, the turtle, went to the market too."
    },
    {
     "cues": [
@@ -349,7 +351,7 @@
      2
     ],
     "en": "We put \"sa\" before the verb: goes, will go. Drinks, will drink. Easy!",
-    "say": "We put the sound \"sa\" before the verb. Goes... it will go. Drinks... it will drink. Easy!"
+    "say": "We put the sound \"sa\" in front of the verb. Goes... it will go. Drinks... it will drink. Easy!"
    },
    {
     "cues": [
@@ -385,13 +387,15 @@
     "cues": [
      8
     ],
-    "en": "But Maher won't sleep; he will keep going slowly."
+    "en": "But Maher won't sleep; he will keep going slowly.",
+    "say": "But Maher... won't sleep. He will keep going slowly."
    },
    {
     "cues": [
      9
     ],
-    "en": "Kamel the bird will see Maher and will say: excellent!"
+    "en": "Kamel the bird will see Maher and will say: excellent!",
+    "say": "Kamel, the bird, will see Maher, and will say: excellent!"
    },
    {
     "cues": [
