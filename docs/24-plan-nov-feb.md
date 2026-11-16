@@ -45,19 +45,21 @@ Fillers marked (t) are tentative — fixed when that week is planned (words of t
 
 | Week | Mon | Tue | Wed | Thu — filler | Fri | Sat — filler | Sun | Long video (Sat) |
 |---|---|---|---|---|---|---|---|---|
-| **16 Nov** | Story 1: Understand the story | Story 1: Opposites | Story 1: Past | Story 1: Future *(story week: no filler)* | **Jobs: Top 20** (vocab05) | 5 questions Arabs always ask you | **10 English words from Arabic** (extra09) | none |
+| **16 Nov** | Story 1: Understand the story | Story 1: Opposites | Story 1: Past | Story 1: Future *(story week: no filler)* | **Jobs: Top 20** (vocab05) | 5 questions Arabs always ask you | **10 English words from Arabic** (extra09) | **sleep01 pilot** — 1 h listening practice, Sat 21 Nov 12:00 |
 | **23 Nov** | Day 31: favourite colour? | Letter 1 | Day 32: favourite food? | "I love…" in Arabic | Day 33: your weekend? | Count to 20 challenge | 10 boys' names | **Episode 2** |
 | **30 Nov** | Day 34: your hobby? | Letter 2 | Day 35: sleep early or late? | 10 phrases you'll use every day | Top 20 animals | Thank you / you're welcome | Hindi & Urdu words from Arabic | **Part 7** (Days 31–35) |
 | **7 Dec** | Day 36: favourite sport? | Letter 3 | Day 37: where do you live? | "What's your name?" (t) | 4 dialects #1 | You can already say this — Part 7 (t) | 10 girls' names | **Story 2: Sami's lazy weekend** |
-| **14 Dec** | Story 2 Short 1 | Story 2 Short 2 | Story 2 Short 3 | Colours + food: what do you love? (t) | Story 2 Short 4 | Weekend words (t) | Story 2 Short 5 | none (story Shorts week) |
+| **14 Dec** | Story 2 Short 1 | Story 2 Short 2 | Story 2 Short 3 | Colours + food: what do you love? (t) | Story 2 Short 4 | Weekend words (t) | Story 2 Short 5 | sleep02 (t) — only if the pilot works |
 | **21 Dec** | Christmas & New Year in Arabic | Letter 4 | Numbers 20–100 | Sport & hobby recap (t) | 21–99 "backwards" | Count by tens (t) | Phone numbers | **Arabic numbers 1 to 100** |
 | **28 Dec** | 100 · 1,000 · million | Letter 5 | "Two" is special | How many? challenge (t) | How many brothers? | Big numbers challenge (t) | Days of the week = numbers | **Episode 3** |
 | **4 Jan** | What time is it? | Letter 6 | Half / quarter past | Two of everything — dual recap (t) | Prices: بكم؟ | Family + numbers recap (t) | Kilo, half kilo | **Part (numbers)** |
 | **11 Jan** | How tall are you? | Letter 7 | How far? | What time is it? challenge (t) | It's 30 degrees | How much? at the market (t) | Ramadan #1: what to say | **Story 3: Sami at the market — too expensive!** |
-| **18 Jan** | Story 3 Short 1 | Story 3 Short 2 | Story 3 Short 3 | Tall, far, hot — recap (t) | Story 3 Short 4 | 5 questions about your city (t) | Story 3 Short 5 | none (story Shorts week) |
+| **18 Jan** | Story 3 Short 1 | Story 3 Short 2 | Story 3 Short 3 | Tall, far, hot — recap (t) | Story 3 Short 4 | 5 questions about your city (t) | Story 3 Short 5 | sleep02 (t) — only if the pilot works |
 | **25 Jan** | Ramadan #2: iftar & suhoor | Letter 8 | At the airport | Ramadan words recap (t) | In a taxi | Market numbers recap (t) | 10 Egyptian slang words | **Episode 4** |
 | **1 Feb** | Ramadan #3: "I'm fasting" | Letter 9 | At the hotel | Travel phrases: airport + taxi (t) | At the doctor | What would you say? challenge (t) | Ramadan Mubarak / Kareem (7 Feb) | **100 everyday Arabic words** |
 | **8 Feb** (Ramadan) | At the shop | Letter 10 | In the street | Hotel + doctor recap (t) | 4 dialects #2 (I want) | Ramadan greetings recap (t) | Spanish words from Arabic | **Story 4: Sami's first day at work** |
+
+**Sleep / listening-practice videos (owner 2026-11-17):** a long "Arabic listening practice while you sleep" video built only from recorded lines (English line → Arabic → pause → Arabic; dark calm picture; no new recording) — source: learning/notes/2026-11-17-sanji-sleep-videos.md. **Pilot sleep01 on Sat 21 Nov 12:00** (the story week's free long slot); verdict ~5 Dec (watch hours, average view duration, subs). If it works: one a month in the story weeks' free Saturday (14 Dec, 18 Jan), then the 3/7/8-hour versions people search for and a Levantine edition. If not, those Saturdays stay empty or take a Part.
 
 Also: Story 1 Short with English guidance went out Sun 15 Nov · Koki's Lina lines ~19 Nov · Day 31 on hold until the
 owner says go · 25 Nov carousel verdict · ~5 Dec drop the weakest trial language · recording sessions: B end of Nov
