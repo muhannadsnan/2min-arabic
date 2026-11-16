@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-15b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-16"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -164,6 +164,13 @@ def content():
     # oldest first: round r of the rotation shares English Reel r with every English group (owner 2026-11-01: "the previous
     # one hasn't gone to all groups") — one Reel goes round all groups, then the next
     en = [v for v in sorted(reels(), key=lambda v: v["created_time"]) if is_english(v["description"])]
+    # owner 2026-11-16: "share the best Reels rotated" — data/fb-group-reels.json fixes the sharing order (the Reels
+    # already shared keep their places, then best first by Instagram views); Reels not listed yet follow by date
+    order_file = ROOT / "data" / "fb-group-reels.json"
+    if order_file.exists():
+        want = [x["url"] for x in json.loads(order_file.read_text(encoding="utf-8"))["order"]]
+        pos = {u: i for i, u in enumerate(want)}
+        en = sorted(en, key=lambda v: (pos.get(v["permalink_url"], len(want)), v["created_time"]))
     files = json.loads((ROOT / "data" / "fb-group-files.json").read_text(encoding="utf-8"))
     return {
         "en": [{"url": "https://www.facebook.com" + v["permalink_url"], "title": v["description"].splitlines()[0][:90],
