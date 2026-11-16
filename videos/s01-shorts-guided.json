@@ -166,7 +166,7 @@
     "cues": [
      4
     ],
-    "en": "We say: I walk fast, or: I walk slowly. Please, speak slowly!"
+    "en": "We say: walk fast, or: walk slowly. Please, speak slowly!"
    },
    {
     "cues": [
@@ -246,7 +246,8 @@
    }
   ],
   "outro": {
-   "en": "Like this video if it helped, and subscribe: next, the story in the past!"
+   "en": "Like this video if it helped, and subscribe: next, the story in the past!",
+   "y": 760
   }
  },
  "s01-4-past": {
@@ -331,7 +332,8 @@
    }
   ],
   "outro": {
-   "en": "Like this video if it helped, and subscribe: next, the story in the future!"
+   "en": "Like this video if it helped, and subscribe: next, the story in the future!",
+   "y": 1235
   }
  },
  "s01-5-future": {
@@ -399,7 +401,8 @@
    }
   ],
   "outro": {
-   "en": "Like this video if it helped, and subscribe for more easy Arabic stories!"
+   "en": "Like this video if it helped, and subscribe for more easy Arabic stories!",
+   "y": 1150
   }
  },
  "_note": "owner 2026-11-16: English narrator line before every Arabic line in Story Shorts 2-5; built by library/work/story-guided-units.py"

@@ -144,7 +144,22 @@ def build(stem):
         old_srt = src.parent / "captions-hook-only.srt"
         if not old_srt.exists(): shutil.copy2(src.parent / "captions-upload.srt", old_srt)
         lst = tmp / "list.txt"; lst.write_text("".join(f"file '{p}'\n" for p in parts))
-        sh("ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), *ENC, "-movflags", "+faststart", str(out))
+        if ow is None:
+            sh("ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), *ENC, "-movflags", "+faststart", str(out))
+        else:
+            # owner 2026-11-16: LIKE + SUBSCRIBE + bell clicked (tools/make_like_subscribe.py) under the outro line, with a
+            # click per button and the bell ding; y per Short (plan "outro.y") so it never covers a face
+            sys.path.insert(0, "tools"); from make_like_subscribe import CLICK_TIMES, DING_TIME
+            st = t - dur(ow) - 0.1; y = outro.get("y", 1000)
+            snd = [("assets/click.wav", c, 0.5) for c in CLICK_TIMES] + [("assets/ding.wav", DING_TIME, 0.35)]
+            ins = sum((["-i", f] for f, _, _ in snd), [])
+            ach = "".join(f";[{2 + j}:a]volume={v},aformat=sample_rates=48000:channel_layouts=mono,adelay={round((st + a) * 1000)}:all=1[x{j}]"
+                          for j, (_, a, v) in enumerate(snd))
+            sh("ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-i", "assets/like-subscribe.mov", *ins, "-filter_complex",
+               f"[1:v]format=rgba,setpts=PTS-STARTPTS+{st:.3f}/TB[o];[0:v][o]overlay=0:{y}:eof_action=pass[v];"
+               f"[0:a]aresample=48000:async=1:first_pts=0,aformat=sample_rates=48000:channel_layouts=mono[m]{ach};"   # async: keep the gaps between parts (amix drops them → drift)
+               "[m]" + "".join(f"[x{j}]" for j in range(len(snd))) + f"amix=inputs={1 + len(snd)}:duration=first:normalize=0,alimiter=limit=0.84:level=false[a]",
+               "-map", "[v]", "-map", "[a]", *ENC, "-movflags", "+faststart", str(out))
     (src.parent / "captions-upload.srt").write_text(
         "\n\n".join(f"{n}\n{ts(a)} --> {ts(z)}\n{x}" for n, (a, z, x) in enumerate(srt, 1)) + "\n", encoding="utf-8")
     print(out, f"{dur(out):.1f} s", f"narrator target {target:.1f} LUFS", len(units), "units", len(srt), "captions", flush=True)
