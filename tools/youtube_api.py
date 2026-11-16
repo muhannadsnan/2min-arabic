@@ -341,6 +341,18 @@ AR = re.compile("[\u0600-\u06ff]")
 GENERIC_AR = ("شورتس", "فيرال", "ترند", "اكسبلور")   # generic Arabic reach tags → wrong audience (Arabic speakers)
 
 
+def clean_playlists(a):
+    """Remove "Deleted video" placeholders from every playlist (after a re-upload, owner 2026-11-16). "Private video"
+    entries stay: scheduled videos are private until they go out."""
+    y = yt(a.channel); n = 0
+    for p in y.playlists().list(part="snippet", mine=True, maxResults=50).execute(num_retries=3)["items"]:
+        for i in y.playlistItems().list(part="snippet", playlistId=p["id"], maxResults=50).execute(num_retries=3)["items"]:
+            if i["snippet"]["title"] == "Deleted video":
+                y.playlistItems().delete(id=i["id"]).execute(num_retries=3); n += 1
+                print(f"  removed 'Deleted video' from {p['snippet']['title']}")
+    print(f"{n} placeholder(s) removed")
+
+
 def audit(a):
     """Every video on the channel against our upload + tag rules (weekly, in channel-review)."""
     y = yt(a.channel)
@@ -728,6 +740,7 @@ def main():
     p = sub.add_parser("search-terms"); p.add_argument("--days", type=int, default=28); p.set_defaults(fn=search_terms)
     p = sub.add_parser("comments"); p.add_argument("--max", type=int, default=50); p.set_defaults(fn=comments)
     sub.add_parser("audit").set_defaults(fn=audit)
+    sub.add_parser("clean-playlists").set_defaults(fn=clean_playlists)
     p = sub.add_parser("niche"); p.add_argument("queries", nargs="+"); p.add_argument("--days", type=int, default=365); p.add_argument("--max", type=int, default=10); p.set_defaults(fn=niche)
     p = sub.add_parser("captions"); p.add_argument("video"); p.add_argument("--replace"); p.set_defaults(fn=captions)
     p = sub.add_parser("subtitle"); p.add_argument("video"); p.add_argument("lang"); p.add_argument("srt"); p.set_defaults(fn=subtitle)
