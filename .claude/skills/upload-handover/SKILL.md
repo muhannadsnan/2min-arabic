@@ -133,6 +133,9 @@ a Real Street Conversation") got 37–57. Shorts thumbnails are shown in a **16:
   (owner, 2026-10-16); never a big Arabic word. `tools/thumbnail.py` default style "subject" does exactly this; `--crop`
   zooms into an object inside one of the video's own images.
   The words may repeat the title's subject — clarity beats cleverness.
+- **Thumbnail picture = a picture FROM THE VIDEO, as it appears there, and BIG** (owner 2026-11-17, extra10): take the
+  clearest scene picture of the video (not a separate cover drawing), scale it to the full width, starting just under the
+  badge — the big words may sit over its lower part. Draw a separate cover only when no scene picture works, and say so.
 - **Thumbnail picture = one big object or place that IS the subject** (a coffee cup, a family photo frame, a street with
   an arrow, a chalkboard, a hand) rather than small characters; a person only when the person is the subject, and then
   close-up. Check the `-phone-size.png` AND a 16:9 mock (centre strip) — both must read at a glance.
