@@ -1,0 +1,239 @@
+[00:00] I'm going to show you how these channels make $30,000 a month posting faceless YouTube
+[00:04] shorts using Claude to do 90% of the heavy lifting.
+[00:07] Now just take a look at this channel.
+[00:10] If I pull up its stats with vidIQ, you can see it's getting millions of views, and vidIQ
+[00:14] estimates that it's earning around 50k a month.
+[00:17] And this isn't some one in a million lucky channel, it's an actual, recreatable formula.
+[00:23] Here's another channel, a completely different niche, but the same exact model, and it's
+[00:27] pulling in hundreds of thousands of views and an estimated 5 figures in revenue every
+[00:31] single month.
+[00:33] And check out this third channel.
+[00:34] Now it was started just less than a year ago, but it's already on track to make 6 figures
+[00:39] this year.
+[00:40] And here's the best part.
+[00:42] These are faceless channels, which means no filming, no studio, no team, and basically
+[00:47] zero expenses.
+[00:48] It's almost purely profit.
+[00:50] So all that is to say that this business model is printing money right now.
+[00:55] And in this video, I'm gonna break down for you guys exactly how it works so that you
+[00:58] can go out there and do the same exact thing.
+[01:01] But first, I need to show you why right now, in this exact moment, is one of the biggest
+[01:06] opportunities to make money online.
+[01:08] And literally nobody is talking about it.
+[01:10] Now there's been a huge decline in the number of people who are starting YouTube automation,
+[01:14] but fewer people starting means less competition for you when it comes to posting faceless
+[01:19] videos.
+[01:20] And I'm not just saying this randomly, there's actually real data out there to back it up.
+[01:24] Now, this is the Google Trends graph for YouTube automation.
+[01:27] It got really popular back in 2023, then peaked again in 2025, but since then, it's been
+[01:33] in constant decline.
+[01:34] Right now, search interest is at one of its lowest points since the end of 2022.
+[01:40] That's to say that there are fewer people looking to start YouTube automation than at
+[01:44] any point in the last four years.
+[01:47] So when somebody out there tells you, oh, YouTube automation is oversaturated, the data
+[01:51] actually says the exact opposite, which means it's actually easier to go viral right now.
+[01:57] But at the same time, something interesting also happened.
+[02:01] RPM for shorts, which essentially is how much YouTube pays per thousand views, has gone
+[02:06] way up.
+[02:07] Now let me show you what that means in practice.
+[02:09] Remember the first channel we were looking at?
+[02:11] Just look at this short, 14 million views in about two weeks.
+[02:16] Now not every single view gets monetized.
+[02:18] Realistically, around half of those count as qualified views.
+[02:22] But US shorts RPM right now are hitting 40 plus cents.
+[02:26] So let's run the math, roughly seven million qualified views at a 40 cent RPM.
+[02:31] That's around $2,800 from one short.
+[02:35] And here's where the opportunity becomes really insane.
+[02:38] Claude has made it stupidly easy to automate the entire content creation process for faceless
+[02:44] videos.
+[02:46] And with a few other AI tools, editing YouTube shorts becomes just as easy.
+[02:57] So you can go from research to idea to a fully edited posted video.
+[03:02] And the entire process takes around 10 minutes per short.
+[03:06] So with all that being said, let me get into how to actually do this and build your first
+[03:10] profitable faceless YouTube channel and take advantage of this insane opportunity.
+[03:15] Now everybody knows that the niche you pick for your channel is literally the most important
+[03:20] part.
+[03:21] If you pick a bad niche from day one, you're never going to get views.
+[03:23] If you pick a good niche, you could potentially scale to hundreds of millions of views.
+[03:28] And in this video, I'm not going to sit here and show you 20 different niches and say you
+[03:32] choose the best one.
+[03:33] I'm just going to show you the one best niche that I'm seeing new channels go viral with
+[03:37] the fastest in 2026.
+[03:39] This channel right here just started three months ago and they're consistently getting
+[03:43] millions of views on every single video.
+[03:46] Like here's a video from a few days ago, 3.4 million views, two weeks ago, 6.2 million
+[03:52] views.
+[03:53] And the niche that they're doing is literally just making ranking videos.
+[03:57] Everybody knows it.
+[03:58] You basically make videos where you compile a bunch of clips from other platforms like
+[04:02] TikTok and Instagram, then you mash them together and you rank them.
+[04:06] So add your opinion on which ones are the funniest or whatever you choose to rank them
+[04:11] on.
+[04:12] And channels in this niche have made hundreds of thousands of dollars with this exact format.
+[04:16] So I can tell you confidently, this is the niche I would start with today because channels
+[04:20] running it are making thousands of dollars every single day right now.
+[04:24] And you can verify that for yourself.
+[04:26] Pull up vidIQ on this channel and just look at the estimated earnings.
+[04:29] Here's another really good channel to look at for inspiration.
+[04:32] They only posted just over 300 videos and they already have almost 2 million subscribers
+[04:37] and more than 3 billion views generated.
+[04:40] Every video that they post gets millions of views.
+[04:43] This one they posted just a few days ago has 9 million views already, literally just ranking
+[04:49] the funniest football moments.
+[04:51] This is the easiest content you could be making right now.
+[04:53] So I'm going to show you exactly how to make these videos super quickly and how to use
+[04:57] AI to do 99% of the work for you.
+[05:01] First off, you need inspiration channels to take your ideas from.
+[05:04] So I've already given you one super good one, but here's another really good one.
+[05:08] And here's a third great channel to reference.
+[05:11] And you can look all of these up.
+[05:13] And if you just go through their videos and you like and comment on a bunch of them, your
+[05:17] whole feed will become ranking content almost right away.
+[05:21] And then you can literally just scroll shorts and it'll show you more and more new ranking
+[05:25] channels.
+[05:26] Now once you've done your research and have a bunch of great ranking channels whose strategy
+[05:29] you want to replicate, this is where we use Claude to do all the ideation and the research
+[05:33] on which videos you should actually make.
+[05:36] So first you're going to head over to Claude, but before you can actually use it for this,
+[05:40] you need to add a little extension to it called vidIQ.
+[05:43] And don't worry, it's completely free.
+[05:45] Just go on Google and look up vidIQ Chrome extension.
+[05:50] It's going to look something like this vidIQ extension for YouTube and Instagram.
+[05:54] And again, it's completely free.
+[05:56] Just install it onto your Chrome browser.
+[05:59] Once you have vidIQ installed, go to Claude and create a free Claude account.
+[06:03] And when you refresh your screen, you'll see that vidIQ appears just right there.
+[06:08] The Chrome extension actually automatically adds itself to your Claude, but you do need
+[06:12] to set it up.
+[06:13] So you're going to need to click the little vidIQ drop down and then go to connect to
+[06:18] YouTube insights.
+[06:19] It's going to take you to a page like this where all that you have to do is click authorize
+[06:24] And literally just like that with a single click, it's done.
+[06:28] If I hit the little drop down now, it'll show as connected.
+[06:32] So this is where things really start to get insane.
+[06:35] You're going to go to one of your inspiration channels that you found.
+[06:38] Now I'm going to use this one as an example because they're already getting hundreds
+[06:40] of thousands, if not millions of views on every single video.
+[06:45] And they're kind of a newer channel.
+[06:46] So I think it's a good one for you guys to get inspired.
+[06:49] You're going to click more and then this little pop-up is going to appear.
+[06:53] Go to the bottom and click share channel.
+[06:56] Then all you have to do is click copy channel ID right down there.
+[07:00] Then you're going to go back to Claude.
+[07:02] You're going to click the little plus right here, click connectors, and then go to add
+[07:06] from vidIQ for Claude using that new extension we just added.
+[07:11] Then you're going to click where it says competitor breakdown, and it's going to ask you to paste
+[07:16] in that channel ID.
+[07:17] So you just paste the ID that you copied and you click add prompt.
+[07:21] It'll add this little bubbly automatically for you.
+[07:24] And then you just hit send and you can see that it's going to automatically start running.
+[07:28] And as it goes, it's going to start asking you for some permissions.
+[07:31] All that you need to do is click always allow on most of the things that it asks, then just
+[07:36] let it run.
+[07:37] It's going to take about five minutes to do a full research breakdown for you.
+[07:41] And there you go.
+[07:42] It's done.
+[07:43] You can see that it gave me this insane report with charts and analytics.
+[07:46] It shows me all of the top videos from that channel and it shows me their growth over
+[07:51] So I get a full chart with all of their metrics.
+[07:54] And now I can actually chat with Claude about this channel.
+[07:57] And the way they use this data is simple.
+[07:59] You use it to get the best video ideas for your ranking videos.
+[08:03] Because we all know ideas are what make the ranking videos go viral.
+[08:07] Look at the biggest channels in this niche.
+[08:09] They get millions of views on every single post.
+[08:12] Now this one from last week, 15 million views.
+[08:15] And it's because their video ideas are better than other people's.
+[08:18] They're creative and they're unique.
+[08:20] So in the same Claude chat, I'm just going to ask it to give me a list of viral ranking
+[08:24] video topics based on what's already worked best for this exact channel.
+[08:28] And just like that, it gives me the exact proven winning video topics from their channel.
+[08:33] The top performers that are most likely to go viral if you were to recreate them.
+[08:38] Ranking the most insane near miss driving moments.
+[08:41] These are such good high performing content ideas.
+[08:45] So from here, all that you need to do is choose a video topic that you really like.
+[08:49] And then you're going to take that topic and go over to this tool.
+[08:53] Rank Reel.
+[08:54] This is going to automate all of the editing and actually making the videos for you.
+[08:58] And honestly, this is probably the most powerful part of the whole system.
+[09:02] I'm going to leave a link for the description below so that you can get set up as well.
+[09:06] Now once you're inside Rank Reel, you'll see that this thing is built specifically
+[09:09] for making ranking videos.
+[09:12] You're going to enter your video title, paste TikTok clips into the ranked slots, give each
+[09:16] clip a name, and set a custom playback order.
+[09:19] It's going to generate a finished vertical video for you all in one place.
+[09:23] So now, right at the top of your app, you just entered that video topic you picked from
+[09:27] Clot.
+[09:28] For me, I'm going to go with ranking best football moments.
+[09:32] Now you'll notice, yeah, this looks super basic.
+[09:34] And if you go look at the big ranking channels, you'll see that their titles always look
+[09:38] really clean and exist in one specific format.
+[09:42] Always two lines of text, not three, not one, always two.
+[09:47] And with colors that break up the keywords.
+[09:50] So in my app, I'm just going to hit return about halfway through the text to split it
+[09:53] into two lines.
+[09:55] Then you need to highlight the keywords, the words that make a viewer instantly understand
+[10:00] what the video is about.
+[10:02] For me, that's football moments, because best doesn't really add anything.
+[10:06] And then you just give it a color.
+[10:09] Blue works.
+[10:10] Honestly, I think teal looks the cleanest.
+[10:12] And now when somebody lands on this video, their brain instantly reads football moments,
+[10:17] and they know exactly what they're watching.
+[10:19] That's what stops people from scrolling away and killing your performance.
+[10:23] Once your title is optimized, you'll need to actually go find clips to rank.
+[10:27] And by far the best way to do this is in TikTok, because they have such a good video search
+[10:31] engine.
+[10:32] Just look up your video topic in the search bar.
+[10:34] And just like that, you'll get a bunch of viral clips with millions of views that you
+[10:38] can use in your videos.
+[10:40] Like this clip, for example, right here, 2.1 million views.
+[10:45] And this is really important.
+[10:46] You only want to use viral clips.
+[10:49] Don't grab some clip with a few hundred likes, because the original didn't go viral on its
+[10:53] own.
+[10:54] So why would it go viral for you?
+[10:56] So I'm going to download this clip, go back into my app and paste it into the first ranking
+[11:01] slot, rank one, and I hit send.
+[11:04] And just like that, it pulls the clip into my ranking video.
+[11:07] From here, you give the clip a short title.
+[11:09] So viewers know what each clip is or the ranking.
+[11:11] The big channels all do this, right?
+[11:14] Like this one, I gave it a clip, the name Red Cart, and I ranked it number three.
+[11:18] I'm just going to call mine Instant Karma.
+[11:20] And from there, you just repeat this process.
+[11:23] Find four or five more viral clips, paste them in, name them.
+[11:27] And here's an important thing.
+[11:29] You need to rank the right number of clicks.
+[11:31] Too many and people won't finish the video.
+[11:34] Too few and you're not going to get enough watch time.
+[11:36] If you look at the top performing ranking videos, they almost all land around six clips.
+[11:41] Honestly, I think five to seven is the zone that you really want to stay in.
+[11:45] Once you've added all your clips, here's the next most important step.
+[11:49] Custom playback order.
+[11:50] Now watch the big ranking videos that are out there really closely.
+[11:54] They don't rank in a clean descending order, seven, six, five.
+[11:57] They jump around all the time.
+[11:59] They'll show number two first, then six, then jump back up.
+[12:03] And obviously they'll save number one for last.
+[12:05] It's a super smart little retention trick because the viewer never knows what's coming.
+[12:09] So it feels less repetitive and they keep on watching.
+[12:13] So in your app, just turn on custom playback order and hit shuffle.
+[12:17] It rearranges everything automatically and you can drag clips around manually if you'd like.
+[12:22] Then scroll down, hit generate video, and you've got a finished ranking video.
+[12:28] Now from here, what you need to do is post one to two shorts every single day.
+[12:33] You need to be insanely consistent and you cannot mess this up.
+[12:37] It's critical.
+[12:38] When you skip days, and I can promise you this right now, you will not go viral.
+[12:43] And don't just take my word for it.
+[12:44] Go look at any of those channels I showed you at the start of this video and open up
+[12:49] their videos tab.
+[12:51] Every single day, there's a new short, sometimes two.
+[12:54] That channel that's pulling in an estimated 50K a month.
+[12:57] It's got daily uploads without missing once.
+[13:00] That consistency is not a coincidence, it's the reason.
+[13:04] So if you go out there and you do everything I showed you in this video, you use Claude
+[13:08] for all your research, you make your videos in Rank Reel, and you post every single day,
+[13:13] no matter what, a few weeks from now, it is totally possible that you now have a monetized
+[13:18] channel earning money and getting millions of views every single day.
+[13:22] So go out there, lock in, make some videos, and I'll see you in the next one.

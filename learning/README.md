@@ -14,6 +14,7 @@ in a source are never adopted just because they're mentioned (licence rule, docs
 
 | Date | Source | Note | Adopted |
 |---|---|---|---|
+| 2026-11-17 | Sanji Nai-Chien — "The $30K/Month AI Faceless Shorts Method" (13.5 min, audio) | [note](notes/2026-11-17-sanji-faceless-ranking-shorts.md) | model rejected (re-used TikTok clips; vidIQ + Rank Reel adverts); **proposal:** a ranked 5–7 item Top-N Short, #1 saved for last (one test) |
 | 2026-11-17 | Sanji Nai-Chien — "Sleeping Videos Made Me Generational Profit ($250/Day)" (15 min, audio) | [note](notes/2026-11-17-sanji-sleep-videos.md) | nothing new in the method; Higgsfield rejected (paid advert); **proposal:** long "Arabic listening practice while you sleep" video from existing recordings |
 | 2026-11-15 | Think Media Podcast — DrPlants, "6M subscribers with only 12 videos" (42 min, audio) | [note](notes/2026-11-15-drplants-story-over-schedule.md) | idea rubric (one sentence, timeless) in plan-lessons; emotion line + facts-push-the-story in story-episode; stranger test + recording sound (proposals) |
 | 2026-10-28 | Danny Why — Claude Code monetized my channel in 14 days | [note](notes/2026-10-28-danny-why-claude-code-monetized-14-days.md) | nothing new: confirms topic transfer + code-animated stills; Higgsfield rejected (paid) |
