@@ -86,9 +86,7 @@ Rounds 3–8 are rendered once and copied (the same file 6×) — honest: the ti
 - **Description:** what it is in one line ("one hour of beginner Arabic, repeated 8 times — the later rounds slower and
   quieter"), the 10 topics, "Start from Day 1", the language line, 3 hashtags. AI label: No (owner's voice clone + real
   recordings). Playlist: Full Lessons. Related video: Episode 1 (Full Course).
-- **Free PDF of all 250 phrases** (Arabic · transliteration · English, by chapter) on the free-PDF page (docs/20),
-  linked first in the description and in the pinned comment — Arabic Shehab's 4.8 M sleep video does the same
-  (its PDF is the reason people save and come back). Built with the line list, no owner work.
+- **Free PDF:** not made public (owner 17 Nov: the phrases are already in our course PDFs — the video is a compilation of existing channel content). The description keeps the usual "📄 Free PDFs" link.
 - **Pinned comment:** "How far did you get before you fell asleep? 😴 Tell me which chapter."
 
 ## Build steps (after the owner's OK and his game)

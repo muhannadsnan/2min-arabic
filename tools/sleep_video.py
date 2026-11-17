@@ -32,6 +32,8 @@ TRIM = ("silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.05,
 # learn (English → Arabic → Arabic), a mini review after every BLOCK lines (Arabic first → recall pause → English),
 # and in the normal rounds a chapter review at the end — each phrase comes back 4× per hour, spread out.
 BLOCK = 5
+# owner 17 Nov: Koki's (Lina's) higher voice ~15 % quieter than the men's — softer for falling asleep (−2.3 dB ≈ 15 % less loud to the ear)
+SPEAKER_GAIN = {"lina": 10 ** (-2.3 / 20)}
 VARIANTS = {"normal": dict(gap=0.5, learn=(1.5, 1.2), review=(1.2, 1.0), chapter_review=(1.0, 1.0), chapter_line=True,
                            lufs=-20.0, text_alpha=1.0, dim=0.45),
             "slow":   dict(gap=0.8, learn=(2.5, 2.0), review=(1.8, 1.8), chapter_review=None, chapter_line=False,
@@ -83,7 +85,7 @@ def build_round(stem, C, nar, clips_dir, tmp, variant, opening, fade_end, tag):
     v = VARIANTS[variant]
     lines = [(i, j, l) for i, c in enumerate(C, 1) for j, l in enumerate(c["lines"], 1)]
     eng = {(i, j): load(clips_dir / f"n-c{i:02}-{j:02}.wav") for i, j, _ in lines}
-    arb = {(i, j): load(clips_dir / f"a-c{i:02}-{j:02}.wav") for i, j, _ in lines}
+    arb = {(i, j): load(clips_dir / f"a-c{i:02}-{j:02}.wav") * SPEAKER_GAIN.get(l["speaker"], 1.0) for i, j, l in lines}
     chl = {i: load(clips_dir / f"n-ch{i:02}.wav") for i in range(1, len(C) + 1)}
     print(f"  {tag}: {len(lines)} lines, learn + review every {BLOCK}" + (" + chapter review" if v["chapter_review"] else ""), flush=True)
     sil = lambda s: np.zeros(int(s * SR), dtype="float32")

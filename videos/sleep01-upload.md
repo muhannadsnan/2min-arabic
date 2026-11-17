@@ -22,7 +22,7 @@ One hour of beginner Arabic, repeated 8 times. Close your eyes and listen: first
 
 234 basic Arabic phrases in 10 topics: greetings, introducing yourself, questions and answers, polite words, numbers 1 to 20 and the days, family and jobs, the café and food, everyday verbs, finding your way, and a short story.
 
-📄 Free PDF — all 234 phrases of this video (Arabic · transliteration · English): https://muhannadsnan.github.io/2min-arabic/free/
+📄 Free PDFs: https://muhannadsnan.github.io/2min-arabic/free/
 
 ⏱️ Chapters:
 0:00 Close your eyes and listen
