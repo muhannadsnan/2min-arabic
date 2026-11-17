@@ -679,6 +679,8 @@ def fill(a):
             print("  ✅ English captions")
         else:
             print("  = English captions already there")
+    else:   # 2026-11-17 (x10): the sheet's srt didn't exist and the fill skipped the captions without a word
+        print(f"  ⚠️ NO English captions uploaded: {srt or 'no srt in the sheet'} not found — run tools/upload_captions.py first")
     # several playlists: "30 Days to Your First Arabic Conversation + Full Arabic Lessons for Beginners" (owner 2026-11-15:
     # every long video also goes into Full Arabic Lessons for Beginners)
     names = [re.sub(r"\s*\(.*?\)\s*$", "", p.strip("* ")).strip() for p in re.split(r"\s\+\s|;", playlist)] if playlist else []

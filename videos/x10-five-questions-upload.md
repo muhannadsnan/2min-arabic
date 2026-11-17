@@ -2,6 +2,7 @@
 
 **File to upload:** `output/x10-five-questions/basic-arabic-questions-and-answers-5-you-ll-hear.mp4` (vertical, 1:14 → **Short**)
 **Thumbnail:** Upload file → `output/x10-five-questions/basic-arabic-questions-and-answers-5-you-ll-hear-thumbnail.jpg`
+> ✅ **Uploaded + filled by Claude** — video id `vVeMAIYkRFc`
 
 ## Fast way (Claude fills everything)
 
