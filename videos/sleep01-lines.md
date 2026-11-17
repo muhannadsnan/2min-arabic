@@ -44,7 +44,7 @@ English (your voice clone) → your Arabic → 3 s → Arabic again → 2 s. Bui
 | بخير، شكرا. ما خطتك اليوم؟ | bikhayr, shukran. maa khuttatuka l-yawm? | Fine, thanks. What's your plan today? |
 | أدرس العربية. وأنت؟ | adrusu l-'arabiyya. wa anti? | I'm studying Arabic. And you? |
 | أعمل في المكتبة | a'malu fi l-maktaba | I work at the bookshop. |
-| أعمل في المكتبة. مع السلامة | a'malu fi l-maktaba. ma'a s-salaama | ma'a s-salaama |
+| أعمل في المكتبة. مع السلامة | a'malu fi l-maktaba. ma'a s-salaama | I work at the bookshop. Goodbye. |
 | أنا طالب | ana taalib | I am a student |
 | أنا | ana | I |
 | أنت | anta | you (to a man) |
