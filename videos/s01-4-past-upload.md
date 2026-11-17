@@ -1,6 +1,6 @@
 # Story 1 Short · Upload sheet
 
-**File to upload:** `output/s01-4-past/s01-4-past.mp4` (vertical, 2:01 → **Short**, made from Story 1: the horse and the turtle)
+**File to upload:** `output/s01-4-past/s01-4-past.mp4` (vertical, 1:58 → **Short**, made from Story 1: the horse and the turtle)
 > 🔁 **New version 16 Nov (owner: "only the opener is English, new beginners won't like it"):** C2 narrator, an English line before every Arabic sentence, like Story Short 1; the English line holds the sentence's own picture (no jump). The 15 Nov hook-only upload was deleted by the owner. Built by library/work/story-guided-units.py.
 **Thumbnail:** Upload file → `output/s01-4-past/s01-4-past-thumbnail.jpg`
 
