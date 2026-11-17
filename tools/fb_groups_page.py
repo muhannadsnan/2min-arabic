@@ -227,7 +227,7 @@ button.pend{{background:var(--bg);color:var(--soft);border:1px solid var(--line)
 <div id="locked" hidden><h1>Private page</h1><p class="sub">This page is private.</p></div>
 <div id="app" hidden><div class="head"><h1>Tasks</h1><span class="tips">
 <button class="tip" type="button">English ?<span class="pop"><b>English:</b> Copy text → Open the Reel → <b>Share</b> → click <b>Group</b> at the bottom (don't type in the first box, don't press "Share now") → pick the group → paste into <b>"Create a public post…"</b> → <b>Post</b>.</span></button>
-<button class="tip" type="button">Other ?<span class="pop"><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.<br><br><b>"You have a pending post"</b> in a group (the admins haven't approved the last one yet)? Don't post again: tap <b>Still pending</b>. The group is skipped today, gets the video it missed next round, and its card reminds you to check first.<br><br>Every day: a morning 3 and an evening 3, about 6 hours apart (the same on every device). Skipped ones come back in the next round.</span></button>
+<button class="tip" type="button">Other ?<span class="pop"><b>Other languages:</b> open the group → <b>Create post</b> → <b>Photo/video</b> → pick the file from <b>Downloads → fb-groups</b> → <b>paste</b> → Post.<br><br><b>"You have a pending post"</b> in a group (the admins haven't approved the last one yet)? Don't post again: tap <b>Still pending</b>. The group is skipped today, gets the video it missed next round, and its card reminds you to check first.<br><br>Every day: a first 3 and a second 3, 6 hours apart (the same on every device). Posted the first 3 early (the day before)? Then the second 3 can already be open in the morning. Skipped ones come back in the next round.</span></button>
 </span></div><p class="sub" id="date"></p>
 <h2>YouTube</h2><div id="yt"></div>
 <h2>Instagram</h2><div id="ig"></div>
@@ -384,15 +384,15 @@ function fill(id, day, lockEvening) {{
   const box = document.getElementById(id); box.innerHTML = ""; let en = 0;
   const opens = eveningOpensAt(day), t = ticks();
   slots(day).forEach((g, i) => {{
-    if (lockEvening && i === 3) extras(box, day, 0, 3);   // after the morning 3, before the Evening heading
-    if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Evening" : "Morning"}}</h3>`);
+    if (lockEvening && i === 3) extras(box, day, 0, 3);   // after the first 3, before the "Second 3" heading
+    if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Second 3 — 6 h after the first" : "First 3"}}</h3>`);
     const isEn = g.code === "en", idx = isEn ? en++ : 0;
     if (g.left) return;   // owner 2026-11-10: groups he has left disappear from the page (their slot still gets an extra)
     if (offToday(g, day)) {{ box.insertAdjacentHTML("beforeend", `<div class="card done"><span class="g">${{esc(g.name)}}</span> <span class="meta">— skipped: ${{g.dropped ? "no posting allowed" : paused(g, day) ? "paused until " + g.pause + " (declines new accounts)" : pPaused(g.name, day) ? "paused until " + pends()[g.name].until + " (posts stay pending)" : "dropped (pending twice, 12 weeks) — leave it"}}</span></div>`); return; }}
     if (lockEvening && i >= 3 && !t[day + "-" + g.name] && (opens === null || Date.now() < opens)) {{
       if (!box.querySelector(".locked")) box.insertAdjacentHTML("beforeend", `<div class="card locked"><p class="none">${{opens === null
-        ? "Opens 6 hours after you tick the 3rd morning group."
-        : `Opens in ${{span2(opens - Date.now())}} (at ${{new Date(opens).toLocaleTimeString("en-GB", {{hour: "2-digit", minute: "2-digit"}})}}) — 6 hours after your morning posts.`}}</p></div>`);
+        ? "Opens 6 hours after you tick the 3rd group of the first 3."
+        : `Opens in ${{span2(opens - Date.now())}} (at ${{new Date(opens).toLocaleTimeString("en-GB", {{hour: "2-digit", minute: "2-digit"}})}}) — 6 hours after your first 3.`}}</p></div>`);
       return;
     }}
     box.appendChild(card(Object.assign({{}}, g), i, day, idx));
@@ -521,7 +521,7 @@ function allTable() {{
       else {{
         const nt = nextTurn(g.name), list = g.code === "en" || g.share ? D.en : (D.files[g.code] || []);
         if (nt && list.length) {{ const v = list[videoIdx(g, nt[0], nt[1], list.length)];
-          next = `<span class="vt" title="${{esc(v.title)}}">${{esc(v.title)}}</span><span class="meta">${{when(nt[0])}}, ${{nt[1] < 3 ? "morning" : "evening"}}${{pends()[g.name] ? (stageOf(pends()[g.name]) === 2 ? " · post anyway" : stageOf(pends()[g.name]) === 4 ? " · last check" : " · was pending") : ""}}</span>`; }}
+          next = `<span class="vt" title="${{esc(v.title)}}">${{esc(v.title)}}</span><span class="meta">${{when(nt[0])}}, ${{nt[1] < 3 ? "first 3" : "second 3"}}${{pends()[g.name] ? (stageOf(pends()[g.name]) === 2 ? " · post anyway" : stageOf(pends()[g.name]) === 4 ? " · last check" : " · was pending") : ""}}</span>`; }}
       }}
       return `<tr><td>${{i + 1}}</td><td><span class="lang ${{g.code}}">${{g.lang}}</span> ${{esc(g.name)}}</td><td>${{next}}</td></tr>`;
     }}).join("") + "</table>";
