@@ -12,6 +12,7 @@ import json
 import pathlib
 import re
 import subprocess
+import sys
 import unicodedata
 
 
@@ -24,14 +25,18 @@ OUT = ROOT / "output" / "free-pdfs"
 CARD = re.compile(r"^🔤 \*\*On screen:\*\* (.+)$", re.M)
 TITLE = re.compile(r"^# (?:Day \d+|Arabic Extras|Arabic Vocab)\s*[—-]\s*(?:[A-Za-z]+:\s*)?(.+)$", re.M)
 NOISE = re.compile(r"\s*·?\s*(Word|Verb|Step|Question|Lifesaver|Round|Quiz|Day)\s*\d+(/\d+)?.*$")
-CLEAN = [re.compile(x) for x in (r"\s*·\s*NEW(:.*)?$", r"\s*·\s*\d+/\d+$", r"\s*·\s*you know it from.*$", r"\s*·\s*special$")]
+CLEAN = [re.compile(x) for x in (r"\s*·\s*NEW(:.*)?$", r"\s*·\s*\d+/\d+$", r"\s*·\s*you know it from.*$", r"\s*·\s*special$",
+                                 r"\s*·\s*(Phrase|Line|Use|Way|Step)\s*\d+/\d+$", r"\s*·\s*Days?\s*\d+\s*[–-]\s*\d+$")]
+# owner 2026-11-03: Arabic for learners without harakat except where a word would be misread (PDFs from Days 21–30 on)
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from arabic_text import minimal   # noqa: E402
 
 
 def cards(path):
     text = path.read_text(encoding="utf-8")
     title = (TITLE.search(text).group(1) if TITLE.search(text) else path.stem).strip()
     title = re.sub(r"\s*\(.*?\)\s*$", "", title).strip()
-    title = title[0].upper() + title[1:]
+    title = minimal(title[0].upper() + title[1:])
     out, seen = [], set()
     for line in CARD.findall(text):
         parts = [p.strip() for p in line.split(" · ")]
@@ -44,7 +49,7 @@ def cards(path):
             en = c.sub("", en).strip(" ·")
         if not en or norm(ar) in seen or "Your turn" in en:
             continue
-        seen.add(norm(ar)); out.append([ar, tr, en])
+        seen.add(norm(ar)); out.append([minimal(ar), tr, en])
     return title, out
 
 
@@ -77,7 +82,7 @@ def main():
 <div class="cover">
  <div class="badge">FREE · DAYS {a.a}–{a.b}</div>
  <h1>{total} more<br>Arabic words &amp; phrases</h1>
- <div class="ar" dir="rtl">أُرِيدُ قَهْوَةْ، مِنْ فَضْلِكْ</div>
+ <div class="ar" dir="rtl">{minimal("أُرِيدُ قَهْوَةْ، مِنْ فَضْلِكْ")}</div>
  <p>Every word from Days {a.a}–{a.b} of the free course, plus the bonus videos</p>
  <p>Arabic · transliteration · meaning</p>
  <div class="foot">2 Minute Arabic · youtube.com/@2MinArabic · instagram.com/2minutearabic</div>
