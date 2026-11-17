@@ -7,7 +7,7 @@
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
-2. Tell Claude "uploaded". Claude fills everything and schedules it (**Thu 19 Nov, 17:00 Oslo**).
+2. Tell Claude "uploaded". Claude fills everything and schedules it (**Wed 18 Nov, 17:00 Oslo**).
 3. After it's live (desktop notification): pin the comment and set **Related video = Story 1 (the whole story)**.
 
 ## Title
@@ -70,7 +70,7 @@ past tense in arabic, arabic past tense for beginners, past simple in arabic, ar
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |
 | Shorts remixing | Allow video and audio remixing |
-| Visibility | Schedule: Thu 19 Nov, 17:00 Oslo |
+| Visibility | Schedule: Wed 18 Nov, 17:00 Oslo |
 
 Automatic dubbing stays **OFF** (channel setting).
 
