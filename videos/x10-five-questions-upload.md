@@ -1,7 +1,7 @@
 # Arabic Extras · Upload sheet — extra10 five questions
 
-**File to upload:** `output/x10-five-questions/FILE.mp4` (vertical → **Short**)
-**Thumbnail:** Upload file → `output/x10-five-questions/FILE-thumbnail.jpg`
+**File to upload:** `output/x10-five-questions/basic-arabic-questions-and-answers-5-you-ll-hear.mp4` (vertical, 1:14 → **Short**)
+**Thumbnail:** Upload file → `output/x10-five-questions/basic-arabic-questions-and-answers-5-you-ll-hear-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
 
@@ -100,4 +100,7 @@ Your turn: answer all 5 in Arabic here 👇 Start with ⁧اسمي …⁩ (ismi 
 
 ## Quality check (Claude)
 
-- (filled after the build)
+- No new recording: all 10 Arabic lines from the pool (your voice; the age question = Koki as Lina, Day 26).
+- final_check 17 Nov: 1:13.6 ✅, −14.2 LUFS, peak −2.2 dB, 0 overlaps; every Arabic line heard in place. The transcriber writes "taalib" as "Tawaf" (an Arabic word inside an English line) — listen to that one line.
+- Pencil pictures (one object per question, checked at full size): handshake · globe (passport painted out) · birthday cake · school backpack · speech bubbles; cover = tea tray. The question counter sits in the English line so captions never cover the card.
+- Narrator = the default narrator voice (as in all Extras). 6 lines carried a soft accent flag (the Arabic words inside English lines) after one re-voice — like extra09, approved by ear.
