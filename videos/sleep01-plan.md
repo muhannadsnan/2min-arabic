@@ -47,7 +47,7 @@ phrase "(English - Arabic)" goes first in the title.
 ≈ 250 lines × ~14 s ≈ 58 min. Lines are picked from footage/recordings/*/map.json (the best take of each), short and
 useful first; each line once per round.
 
-**One line =** English (soft) → the Arabic → pause → the Arabic again → pause → a third time → pause (option B, owner 17 Nov: more of the voice, less empty silence; pauses sized so one round ≈ 60 min).
+**Spaced repetition (option C, owner 17 Nov: "why not repeating things over, which is proven to be better?"):** learn each line (English → Arabic → short pause → Arabic); after every 5 lines a **mini review** of those 5 (**Arabic first** → a recall pause → English); at the end of each chapter (normal rounds) a **chapter review** (Arabic → English). Every phrase comes back 4× per hour, spread out — and the whole hour repeats 8×. During a review the screen shows the Arabic first, the English only when it's spoken.
 **Chapter change =** a 2-second slow crossfade to the next picture + one soft English line ("Chapter 5: numbers.").
 Opening (round 1 only): 15 s — "Close your eyes and just listen. You don't have to remember anything." No hook,
 no stars, no sound effects, no subscribe animation, no ending line: round 8 fades out at the very end.
@@ -56,8 +56,8 @@ no stars, no sound effects, no subscribe animation, no ending line: round 8 fade
 
 | Rounds | Pace | Level |
 |---|---|---|
-| 1–2 | normal (as above) | −20 LUFS (quieter than our −14 videos — it's for falling asleep) |
-| 3–8 | slower: 4 s + 3 s pauses, no chapter lines | −24 LUFS, the picture a little darker each round |
+| 1–2 | normal (learn + mini reviews + chapter review, ~69 min) | −20 LUFS (quieter than our −14 videos — it's for falling asleep) |
+| 3–8 | slower pauses, learn + mini reviews only, no chapter lines (~64 min) | −24 LUFS, the picture a little darker each round |
 
 Rounds 3–8 are rendered once and copied (the same file 6×) — honest: the title and chapters say it repeats.
 

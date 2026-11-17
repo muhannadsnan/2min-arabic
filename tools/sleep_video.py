@@ -8,9 +8,10 @@ audio/<stem>-narration/ (c01-01.wav …, ch01.wav, open.wav — voiced by librar
 pictures images/<stem>/c01.png … (1920×1080). Output: output/<stem>/<stem>.mp4 (= round 1 + round 2 + slow rounds) +
 chapters.txt + check frames.
 
-One line = English → 0.6 s → the owner's Arabic → pause → again → pause → again → pause (option B, owner 17 Nov). Rounds 1–2 "normal" (chapter
-line, −20 LUFS); rounds 3–N "slow" (longer pauses, no chapter lines, dimmer text, −24 LUFS) — the slow round is
-rendered once and copied (said openly in the title). Pauses are sized so one round ≈ 60 minutes.
+Per line: English → the owner's Arabic → pause → Arabic; after every 5 lines a review (Arabic → recall pause → English),
+and a chapter review in the normal rounds (option C, owner 17 Nov: spaced repetition beats pauses). Rounds 1–2 "normal" (chapter
+line, −20 LUFS); rounds 3–N "slow" (longer pauses, no chapter lines or chapter review, dimmer text, −24 LUFS) — the slow round is
+rendered once and copied (said openly in the title).
 Static pictures (a very slow zoom shimmered), darkened; each chapter fades in/out over 1 s. Nothing flashes.
 """
 import argparse, json, pathlib, re, subprocess, sys, tempfile, shutil
@@ -27,9 +28,14 @@ FONTS = pathlib.Path("/usr/share/fonts/truetype/noto")
 AR_FONT, LAT, LAT_I = FONTS / "NotoNaskhArabic-Bold.ttf", FONTS / "NotoSans-Regular.ttf", FONTS / "NotoSans-Italic.ttf"
 TRIM = ("silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.05,areverse,"
         "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.08,areverse")
-# owner 17 Nov, option B: the Arabic three times (more of his voice, less empty silence)
-VARIANTS = {"normal": dict(gap=0.6, pauses=(4.0, 4.0, 3.0), chapter_line=True, lufs=-20.0, text_alpha=1.0, dim=0.45),
-            "slow":   dict(gap=0.8, pauses=(5.0, 5.0, 4.0), chapter_line=False, lufs=-24.0, text_alpha=0.7, dim=0.38)}
+# owner 17 Nov "why not repeating things over, which is proven to be better?" → spaced repetition (option C):
+# learn (English → Arabic → Arabic), a mini review after every BLOCK lines (Arabic first → recall pause → English),
+# and in the normal rounds a chapter review at the end — each phrase comes back 4× per hour, spread out.
+BLOCK = 5
+VARIANTS = {"normal": dict(gap=0.5, learn=(1.5, 1.2), review=(1.2, 1.0), chapter_review=(1.0, 1.0), chapter_line=True,
+                           lufs=-20.0, text_alpha=1.0, dim=0.45),
+            "slow":   dict(gap=0.8, learn=(2.5, 2.0), review=(1.8, 1.8), chapter_review=None, chapter_line=False,
+                           lufs=-24.0, text_alpha=0.7, dim=0.38)}
 
 
 def sh(*a, **k): return subprocess.run(a, check=True, capture_output=True, text=True, **k)
@@ -75,20 +81,11 @@ def card(path, ar, tr, en, chapter, alpha):
 
 def build_round(stem, C, nar, clips_dir, tmp, variant, opening, fade_end, tag):
     v = VARIANTS[variant]
-    # pauses sized so the round lasts ~60 min: measure first, then stretch the two pauses evenly
     lines = [(i, j, l) for i, c in enumerate(C, 1) for j, l in enumerate(c["lines"], 1)]
     eng = {(i, j): load(clips_dir / f"n-c{i:02}-{j:02}.wav") for i, j, _ in lines}
     arb = {(i, j): load(clips_dir / f"a-c{i:02}-{j:02}.wav") for i, j, _ in lines}
     chl = {i: load(clips_dir / f"n-ch{i:02}.wav") for i in range(1, len(C) + 1)}
-    fixed = sum(len(eng[k]) + 3 * len(arb[k]) for k in eng) / SR + len(lines) * (v["gap"] + sum(v["pauses"]))
-    if v["chapter_line"]:
-        fixed += sum(len(x) / SR + 2.5 for x in chl.values())
-    if opening:
-        fixed += len(load(clips_dir / "n-open.wav")) / SR + 2.0
-    fixed += len(C) * 3.0                                       # 1.5 s air at each chapter start and end
-    spare = max(0.0, 3600.0 - fixed) / len(lines)
-    P = [x + spare * x / sum(v["pauses"]) for x in v["pauses"]]
-    print(f"  {tag}: {len(lines)} lines, pauses " + " + ".join(f"{x:.1f}" for x in P) + " s", flush=True)
+    print(f"  {tag}: {len(lines)} lines, learn + review every {BLOCK}" + (" + chapter review" if v["chapter_review"] else ""), flush=True)
     sil = lambda s: np.zeros(int(s * SR), dtype="float32")
     segs, chapters, t = [], [], 0.0
     for i, c in enumerate(C, 1):
@@ -104,9 +101,23 @@ def build_round(stem, C, nar, clips_dir, tmp, variant, opening, fade_end, tag):
         if v["chapter_line"]:
             audio += [chl[i], sil(2.5)]
         pos = sum(len(x) for x in audio) / SR
-        for j, l in enumerate(c["lines"], 1):
-            k = (i, j); seq = [eng[k], sil(v["gap"]), arb[k], sil(P[0]), arb[k], sil(P[1]), arb[k], sil(P[2])]
-            cards.append((pos, l)); audio += seq; pos += sum(len(x) for x in seq) / SR
+        def put(seq, card_):   # append audio, remember which card shows from here
+            nonlocal pos
+            cards.append((pos,) + card_); audio.extend(seq); pos += sum(len(x) for x in seq) / SR
+        def review(keys, pauses, name):
+            for k in keys:
+                l = c["lines"][k[1] - 1]
+                put([arb[k], sil(pauses[0])], (l["ar"], l["tr"], "", name))          # Arabic first: try to remember
+                put([eng[k], sil(pauses[1])], (l["ar"], l["tr"], l["en"], name))    # then the meaning
+        keys = [(i, j) for j in range(1, len(c["lines"]) + 1)]
+        for b0 in range(0, len(keys), BLOCK):
+            for k in keys[b0:b0 + BLOCK]:
+                l = c["lines"][k[1] - 1]
+                put([eng[k], sil(v["gap"]), arb[k], sil(v["learn"][0]), arb[k], sil(v["learn"][1])], (l["ar"], l["tr"], l["en"], ""))
+            put([sil(0.8)], ("", "", "", "")); review(keys[b0:b0 + BLOCK], v["review"], "review")
+            put([sil(0.8)], ("", "", "", ""))
+        if v["chapter_review"]:
+            review(keys, v["chapter_review"], "chapter review")
         audio.append(sil(1.5)); a = np.concatenate(audio); dur = len(a) / SR
         if fade_end and i == len(C):
             n = int(30 * SR); a[-n:] *= np.linspace(1, 0, n, dtype="float32")
@@ -119,8 +130,12 @@ def build_round(stem, C, nar, clips_dir, tmp, variant, opening, fade_end, tag):
         with open(lst, "w") as f:
             if cards[0][0] > 0:
                 f.write(f"file '{blank}'\nduration {cards[0][0]:.3f}\n")
-            for n, (st, l) in enumerate(cards):
-                png = tmp / f"{tag}-c{i:02}-{n:03}.png"; card(png, l["ar"], l["tr"], l["en"], label, v["text_alpha"])
+            for n, (st, ar, tr, en, note) in enumerate(cards):
+                png = tmp / f"{tag}-c{i:02}-{n:03}.png"
+                if ar:
+                    card(png, ar, tr, en, label + (f"  ·  {note}" if note else ""), v["text_alpha"])
+                else:
+                    png = blank
                 end = cards[n + 1][0] if n + 1 < len(cards) else dur
                 f.write(f"file '{png}'\nduration {end - st:.3f}\n")
             f.write(f"file '{png}'\n")
