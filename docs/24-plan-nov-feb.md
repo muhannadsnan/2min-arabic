@@ -47,7 +47,7 @@ Fillers marked (t) are tentative — fixed when that week is planned (words of t
 |---|---|---|---|---|---|---|---|---|
 | **16 Nov** | Story 1: Understand the story | Story 1: Opposites | Story 1: Past | Story 1: Future *(story week: no filler)* | **Jobs: Top 20** (vocab05) | 5 questions Arabs always ask you | **10 English words from Arabic** (extra09) | **sleep01 pilot** — 1 h listening practice, Sat 21 Nov 12:00 |
 | **23 Nov** | Day 31: favourite colour? | Letter 1 | Day 32: favourite food? | "I love…" in Arabic | Day 33: your weekend? | Count to 20 challenge | 10 boys' names | **Episode 2** |
-| **30 Nov** | Day 34: your hobby? | Letter 2 | Day 35: sleep early or late? | 10 phrases you'll use every day | Top 20 animals | Thank you / you're welcome | Hindi & Urdu words from Arabic | **Part 7** (Days 31–35) |
+| **30 Nov** | Day 34: your hobby? | Letter 2 | Day 35: sleep early or late? | **Top 7 phrases you'll use every day, RANKED** (test: #1 last, shown out of order — learning/notes/2026-11-17-sanji-faceless…) | Top 20 animals | Thank you / you're welcome | Hindi & Urdu words from Arabic | **Part 7** (Days 31–35) |
 | **7 Dec** | Day 36: favourite sport? | Letter 3 | Day 37: where do you live? | "What's your name?" (t) | 4 dialects #1 | You can already say this — Part 7 (t) | 10 girls' names | **Story 2: Sami's lazy weekend** |
 | **14 Dec** | Story 2 Short 1 | Story 2 Short 2 | Story 2 Short 3 | Colours + food: what do you love? (t) | Story 2 Short 4 | Weekend words (t) | Story 2 Short 5 | sleep02 (t) — only if the pilot works |
 | **21 Dec** | Christmas & New Year in Arabic | Letter 4 | Numbers 20–100 | Sport & hobby recap (t) | 21–99 "backwards" | Count by tens (t) | Phone numbers | **Arabic numbers 1 to 100** |

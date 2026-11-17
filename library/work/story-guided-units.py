@@ -41,6 +41,8 @@ AR = {}
 for s in STORY["segments"]:
     if "en" not in s or "ar" not in s: continue
     AR[norm(s["en"])] = s["ar"]
+    if s["en"].startswith("Great! ") and s["ar"].startswith("رائع! "):   # the Shorts cut the "Great!" off (s01-4, 17 Nov)
+        AR[norm(s["en"][7:])] = s["ar"][6:]
     if s.get("en_v"): AR[norm(s["en_v"])] = s.get("ar_v", s["ar"]).replace("\n", " ")
     if s.get("kind") == "qa":
         for e, a in zip(s["en"].split(" … "), s["ar"].split(" … ")): AR[norm(e)] = a
