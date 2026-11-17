@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-17a"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-17b"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -262,6 +262,19 @@ const EP = D.epochs.map(e => ({{E: Math.round((Date.parse(e.date + "T00:00:00Z")
 const epOf = day => {{ let r = -1; EP.forEach((e, i) => {{ if (day >= e.E) r = i; }}); return r; }};
 function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = Date.now() : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
+// owner 2026-11-17: "I shouldn't be getting so many at a time" — at most DAILY_MAX group posts per REAL day (by the
+// clock, whichever day a batch counts for); the early batch and the extras stay inside that limit (spam safety)
+const DAILY_MAX = 6;
+function postedToday() {{ const t = ticks(), d0 = new Date(); d0.setHours(0, 0, 0, 0);
+  return Object.entries(t).filter(([k, v]) => /^-?\\d+-/.test(k) && typeof v === "number" && v > d0.getTime()).length; }}
+// hide open cards beyond the budget (from the end: the first ones stay), with one note; returns the budget left
+function capBox(box, budget) {{
+  const open = [...box.querySelectorAll(".card")].filter(c => {{ const i = c.querySelector("input[type=checkbox]"); return i && !i.checked && !c.classList.contains("done"); }});
+  open.slice(Math.max(0, budget)).forEach(c => c.hidden = true);
+  if (open.length > budget && !box.querySelector(".capped"))
+    box.insertAdjacentHTML("beforeend", `<div class="card locked capped"><p class="none">${{DAILY_MAX}} posts a day is the limit (Facebook flags many posts at once). The rest open tomorrow.</p></div>`);
+  return Math.max(0, budget - open.length);
+}}
 // groups whose last post still waits for admin approval (owner 2026-11-06): {{name: {{day, date, n}}}} — n = rounds in a row
 function pends() {{ try {{ return JSON.parse(localStorage.getItem("fbgp") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 // owner 2026-11-14 — a group whose posts stay pending: 3 weeks pending → 3 weeks paused → post anyway (a fresh post for
@@ -446,19 +459,21 @@ function igSection() {{
   if (low.length) box.innerHTML = `<div class="card">${{low.join("")}}</div>`;
   else box.innerHTML = `<p class="none">Nothing to do — posting by itself.${{t ? " Trials: " + t.left + " queued (to " + day(t.last) + ")." : ""}}${{c ? " Carousels: " + c.left + " queued." : ""}}</p>`;
 }}
-function render() {{ todoCard(); if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); ahead(); ytSection(); igSection(); }}
+function render() {{ todoCard(); if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); const left = capBox(document.getElementById("today"), DAILY_MAX - postedToday()); ahead(left); ytSection(); igSection(); }}
 // owner 2026-11-16 "just give me the new bunch": when every card of today is done, tomorrow's groups appear below to post
 // early — ticks use tomorrow's key, so tomorrow shows them as done (the 6-hour gap still applies to their evening 3)
-function ahead() {{
-  const w = document.getElementById("aheadwrap"), todayOpen = document.querySelector("#today .card:not(.done)");
-  w.hidden = !!todayOpen; if (todayOpen) return;
+function ahead(left) {{
+  const w = document.getElementById("aheadwrap"), todayOpen = document.querySelector("#today .card:not(.done):not([hidden])");
+  w.hidden = !!todayOpen || !(left > 0); if (todayOpen) return;
+  if (!(left > 0)) {{ const n = document.getElementById("todaydone") || document.getElementById("today").appendChild(Object.assign(document.createElement("p"), {{id: "todaydone", className: "none"}}));
+    n.textContent = `Done for today ✓ — ${{postedToday()}} posts today. The next groups open tomorrow.`; return; }}
   // the first coming day that still has open groups (owner: "just give me the new bunch" — batch after batch)
   const t = ticks();
   for (let d = dayNo + 1; d < dayNo + 30; d++) {{
     if (!slots(d).some(g => !offToday(g, d) && !t[d + "-" + g.name])) continue;
     const dt = new Date(now); dt.setDate(dt.getDate() + d - dayNo);
     document.getElementById("aheadh").textContent = `Done for today ✓ — next groups: ${{dt.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "short"}})}}'s (they count for that day)`;
-    fill("ahead", d, true); return;
+    fill("ahead", d, true); capBox(document.getElementById("ahead"), left); return;
   }}
 }}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
