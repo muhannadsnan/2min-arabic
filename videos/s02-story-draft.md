@@ -15,30 +15,33 @@ before ↔ after) and Day 4's café words.
 |---|---|---|---|---|
 | 1 | اليوم السبت. لا عمل، ولا درس. | Today is Saturday. No work, and no lesson. | you | |
 | 2 | لينا تقول: يا سامي، نذهب إلى السوق؟ | Lina says: Sami, shall we go to the market? | you · Lina's words: **Koki** | |
-| 3 | سامي يقول: لا… أنا أنام. | Sami says: No… I'm sleeping. | you · Sami's words: you as Sami | |
+| 3 | سامي يقول: لا… بل أريد النوم. | Sami says: No… I'd rather sleep. | you · Sami's words: you as Sami | بل (rather) |
 | 4 | في السوق فلافل… طعامك المفضل! | At the market there's falafel… your favourite food! | Koki | (Day 32) |
 | 5 | سامي يقول: بعد ساعة… | Sami says: In an hour… | you as Sami | ساعة (hour) |
-| 6 | لينا تذهب إلى السوق وحدها. | Lina goes to the market alone. | you | وحدها (alone) |
+| 6 | لينا تذهب إلى السوق. | Lina goes to the market. | you | |
 | 7 | لينا تشتري قميصا أزرق لسامي، لونه المفضل. | Lina buys a blue shirt for Sami, his favourite colour. | you | قميص (shirt) |
-| 8 | لينا تأكل الفلافل، وتشرب القهوة مع أصدقائها. | Lina eats falafel, and drinks coffee with her friends. | you | (Days 4, 33) |
+| 8 | لينا تشرب القهوة مع أصدقائها، ثم تأكل الفلافل. | Lina drinks coffee with her friends, then she eats the falafel. | you | ثم (then) |
 | 9 | في المساء، لينا ترجع إلى البيت. | In the evening, Lina comes back home. | you | مساء (evening) |
 | 10 | سامي يستيقظ ويقول: صباح الخير! نذهب إلى السوق؟ | Sami wakes up and says: Good morning! Shall we go to the market? | you · Sami's words: you as Sami | |
-| 11 | لينا تضحك: صباح الخير؟ الساعة سبعة مساء! | Lina laughs: Good morning? It's seven in the evening! | you · Lina's words: Koki | |
-| 12 | سامي! لا تنم كثيرا! | Sami! Don't sleep so much! | Koki (already on her sheet) | |
+| 11 | لينا تضحك: صباح الخير؟ صار المساء! | Lina laughs: Good morning? It's already evening! | you · Lina's words: Koki | |
+| 12 | والفلافل؟ أكلتها أنا! | And the falafel? I ate it! | Koki | |
 
-**Twist:** Sami says "in an hour"… and wakes up in the evening — he missed the whole Saturday (and the falafel).
-**New words (4):** ساعة hour · وحدها alone · قميص shirt · مساء evening — everything else is already in the course.
+**Twist:** Sami says "in an hour"… and wakes up in the evening — he missed the whole Saturday, and Lina ate his favourite falafel.
+**New words (5):** بل rather · ساعة hour · قميص shirt · ثم then · مساء evening — everything else is already in the course (أريد Day 15, النوم ← ينام, أكلتها ← past tense from Story 1).
+**Owner's edits 17 Nov:** S3, S8, S11, S12 (S12 picked from 3 options); «وحدها» dropped from S6 to keep 5 new words.
+**Characters:** always the brand pair Sami + Lina.
 
 ## What the long video adds (as Story 1)
 
 - **Questions** after each sentence (easy, logical): Is today Monday? · Where does Lina want to go? · What is Sami's
   favourite food? · What colour is the shirt? · Who drinks coffee? · When does Sami wake up?
-- **Opposites:** sleeps ↔ wakes up · morning ↔ evening · alone ↔ with her friends · before ↔ after.
+- **Opposites:** sleeps ↔ wakes up · morning ↔ evening · before ↔ after · eats ↔ drinks (pair).
 - **Past** ("Yesterday was Saturday…") and **future** ("Tomorrow is Saturday…") — the owner reads both versions.
 - **5 Shorts:** the story · the questions · the opposites · the past · the future (as Story 1).
 
-## To decide (owner)
+## Decided (owner, 17 Nov)
 
-1. The story itself: OK, or change something (names, the twist, the falafel)?
-2. "Seven in the evening" (الساعة سبعة مساء) brings in time before the numbers month (Dec–Jan) — keep it as a
-   preview, or say just "It's evening!" (الآن مساء!)?
+1. Story and characters OK; the four sentence changes above.
+2. No clock time before the numbers month: «صار المساء!».
+3. English guidance for the full long video: decided ~Tue 1 Dec from Story 1's numbers (plan: guided if the
+   Arabic-only opening keeps losing ≥ 50 % in the first minute and guided Shorts keep winning).

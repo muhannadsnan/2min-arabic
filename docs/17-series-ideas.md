@@ -79,3 +79,17 @@ similar words". Editions, by our audience strength:
 4. **Spanish** (ojalá, aceite, azúcar, almohada, ojalá, hasta, aldea…) · 5. **Swahili** (kitabu, saa, habari, dunia, salama…) · 6. Persian · 7. English (sugar, coffee, algebra, cotton…)
 Each edition goes out on YouTube (English narration, the language in the title + translations) AND as an Instagram trial
 narrated in that language — the viewer hears his own words. Every word is checked (real Arabic origin, everyday use).
+
+## Topic packs (owner 2026-11-17)
+
+One topic, many formats — the structure repeats for most topics, so each topic yields 5–7 videos that support each
+other: Top 10/20 words (vocab Short) · sentences ("I wear…", "I buy…") as a course day · 3 key verbs · a Sami/Lina mini
+story · a ranked Top-7 or quiz filler · a long "Top 50/100 words" video. First pack: **clothes** (Story 2 brings in
+قميص). Planned in the early-February plan session (docs/24 backlog −1).
+
+## "It's…" — إنه / إنها (owner 2026-11-17)
+
+Stating a fact with إنه (masculine) / إنها (feminine; the ة rule from Day 9): إنه وقت الغداء · إنها غرفة سامي ·
+إنها سيارة أبي · إنه حذاء أبي · إنها شمس الصيف · إنه فصل الشتاء — and from Story 2: صار المساء… إنه المساء!
+Own course day: **Day 38, Fri 11 Dec** (docs/24); lines on recording sheet B (end of Nov).
+
