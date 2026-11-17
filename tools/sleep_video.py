@@ -8,7 +8,7 @@ audio/<stem>-narration/ (c01-01.wav …, ch01.wav, open.wav — voiced by librar
 pictures images/<stem>/c01.png … (1920×1080). Output: output/<stem>/<stem>.mp4 (= round 1 + round 2 + slow rounds) +
 chapters.txt + check frames.
 
-One line = English → 0.6 s → the owner's Arabic → pause → the Arabic again → pause. Rounds 1–2 "normal" (chapter
+One line = English → 0.6 s → the owner's Arabic → pause → again → pause → again → pause (option B, owner 17 Nov). Rounds 1–2 "normal" (chapter
 line, −20 LUFS); rounds 3–N "slow" (longer pauses, no chapter lines, dimmer text, −24 LUFS) — the slow round is
 rendered once and copied (said openly in the title). Pauses are sized so one round ≈ 60 minutes.
 Static pictures (a very slow zoom shimmered), darkened; each chapter fades in/out over 1 s. Nothing flashes.
@@ -27,8 +27,9 @@ FONTS = pathlib.Path("/usr/share/fonts/truetype/noto")
 AR_FONT, LAT, LAT_I = FONTS / "NotoNaskhArabic-Bold.ttf", FONTS / "NotoSans-Regular.ttf", FONTS / "NotoSans-Italic.ttf"
 TRIM = ("silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.05,areverse,"
         "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.08,areverse")
-VARIANTS = {"normal": dict(gap=0.6, pause1=3.0, pause2=2.0, chapter_line=True, lufs=-20.0, text_alpha=1.0, dim=0.45),
-            "slow":   dict(gap=0.8, pause1=4.0, pause2=3.0, chapter_line=False, lufs=-24.0, text_alpha=0.7, dim=0.38)}
+# owner 17 Nov, option B: the Arabic three times (more of his voice, less empty silence)
+VARIANTS = {"normal": dict(gap=0.6, pauses=(4.0, 4.0, 3.0), chapter_line=True, lufs=-20.0, text_alpha=1.0, dim=0.45),
+            "slow":   dict(gap=0.8, pauses=(5.0, 5.0, 4.0), chapter_line=False, lufs=-24.0, text_alpha=0.7, dim=0.38)}
 
 
 def sh(*a, **k): return subprocess.run(a, check=True, capture_output=True, text=True, **k)
@@ -79,26 +80,32 @@ def build_round(stem, C, nar, clips_dir, tmp, variant, opening, fade_end, tag):
     eng = {(i, j): load(clips_dir / f"n-c{i:02}-{j:02}.wav") for i, j, _ in lines}
     arb = {(i, j): load(clips_dir / f"a-c{i:02}-{j:02}.wav") for i, j, _ in lines}
     chl = {i: load(clips_dir / f"n-ch{i:02}.wav") for i in range(1, len(C) + 1)}
-    fixed = sum(len(eng[k]) + 2 * len(arb[k]) for k in eng) / SR + len(lines) * v["gap"]
+    fixed = sum(len(eng[k]) + 3 * len(arb[k]) for k in eng) / SR + len(lines) * (v["gap"] + sum(v["pauses"]))
     if v["chapter_line"]:
         fixed += sum(len(x) / SR + 2.5 for x in chl.values())
     if opening:
         fixed += len(load(clips_dir / "n-open.wav")) / SR + 2.0
     fixed += len(C) * 3.0                                       # 1.5 s air at each chapter start and end
     spare = max(0.0, 3600.0 - fixed) / len(lines)
-    p1, p2 = v["pause1"] + spare * 0.55, v["pause2"] + spare * 0.45
-    print(f"  {tag}: {len(lines)} lines, pauses {p1:.1f} s + {p2:.1f} s", flush=True)
+    P = [x + spare * x / sum(v["pauses"]) for x in v["pauses"]]
+    print(f"  {tag}: {len(lines)} lines, pauses " + " + ".join(f"{x:.1f}" for x in P) + " s", flush=True)
     sil = lambda s: np.zeros(int(s * SR), dtype="float32")
     segs, chapters, t = [], [], 0.0
     for i, c in enumerate(C, 1):
         audio, cards, t0 = [sil(1.5)], [], 0.0
-        if opening and i == 1:
-            o = load(clips_dir / "n-open.wav"); audio += [o, sil(2.0)]
+        if opening and i == 1:   # the opening line plays over the thumbnail picture (owner 17 Nov: thumbnail = a picture from the video)
+            o = load(clips_dir / "n-open.wav"); o = np.concatenate([sil(1.5), o, sil(max(2.5, 10.5 - 1.5 - len(o) / SR))])   # ≥ 10.5 s: a YouTube chapter
+            ow = tmp / f"{tag}-open.wav"; sf.write(str(ow), o, SR); od_ = len(o) / SR; seg0 = tmp / f"{tag}-c00.mp4"
+            sh("ffmpeg", "-v", "error", "-y", "-loop", "1", "-framerate", str(FPS), "-t", f"{od_:.3f}", "-i", str(ROOT / "images" / stem / "cover.png"),
+               "-i", str(ow), "-filter_complex", f"[0:v]scale={W}:{H},setsar=1,colorchannelmixer=rr={v['dim']+0.1}:gg={v['dim']+0.1}:bb={v['dim']+0.14},format=yuv420p,fade=t=in:st=0:d=1.5,fade=t=out:st={od_-1:.3f}:d=1[v]",
+               "-map", "[v]", "-map", "1:a", "-t", f"{od_:.3f}", "-r", str(FPS), "-c:v", "libx264", "-preset", "medium", "-crf", "24", "-tune", "stillimage",
+               "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", "-ar", str(SR), "-ac", "1", str(seg0))
+            segs.append(seg0); t += od_
         if v["chapter_line"]:
             audio += [chl[i], sil(2.5)]
         pos = sum(len(x) for x in audio) / SR
         for j, l in enumerate(c["lines"], 1):
-            k = (i, j); seq = [eng[k], sil(v["gap"]), arb[k], sil(p1), arb[k], sil(p2)]
+            k = (i, j); seq = [eng[k], sil(v["gap"]), arb[k], sil(P[0]), arb[k], sil(P[1]), arb[k], sil(P[2])]
             cards.append((pos, l)); audio += seq; pos += sum(len(x) for x in seq) / SR
         audio.append(sil(1.5)); a = np.concatenate(audio); dur = len(a) / SR
         if fade_end and i == len(C):
@@ -164,7 +171,7 @@ def main():
         out = od / f"{stem}.mp4"
         sh("ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", "-movflags", "+faststart", str(out))
         hms = lambda s: f"{int(s // 3600)}:{int(s % 3600 // 60):02}:{int(s % 60):02}"
-        rows = [(s, f"{n}") for s, n in ch1] + [(d1, "Round 2 (repeat)")]
+        rows = [(0, "Close your eyes and listen")] + [(s, f"{n}") for s, n in ch1] + [(d1, "Round 2 (repeat)")]
         tt = d1 + d2
         for k in range(3, a.rounds + 1):
             rows.append((tt, f"Round {k} (slow, quiet)")); tt += ds

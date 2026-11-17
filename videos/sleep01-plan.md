@@ -47,7 +47,7 @@ phrase "(English - Arabic)" goes first in the title.
 ≈ 250 lines × ~14 s ≈ 58 min. Lines are picked from footage/recordings/*/map.json (the best take of each), short and
 useful first; each line once per round.
 
-**One line =** English (soft) → the Arabic → 3 s quiet → the same Arabic again → 2 s quiet.
+**One line =** English (soft) → the Arabic → pause → the Arabic again → pause → a third time → pause (option B, owner 17 Nov: more of the voice, less empty silence; pauses sized so one round ≈ 60 min).
 **Chapter change =** a 2-second slow crossfade to the next picture + one soft English line ("Chapter 5: numbers.").
 Opening (round 1 only): 15 s — "Close your eyes and just listen. You don't have to remember anything." No hook,
 no stars, no sound effects, no subscribe animation, no ending line: round 8 fades out at the very end.
