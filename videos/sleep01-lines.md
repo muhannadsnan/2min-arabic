@@ -55,7 +55,7 @@ English (your voice clone) → your Arabic → 3 s → Arabic again → 2 s. Bui
 | أنا سعيد | ana sa'iid | I am happy (man) |
 | هو سعيد | huwa sa'iid | He is happy. |
 | من أين أنت؟ | min ayna anta? | Where are you from? (to a man) |
-| أنا من | ana min | I am from + your country |
+| أنا من | ana min | I'm from … (+ your country) |
 | من أين أنت يا سامي؟ | min ayna anta yaa Saamii? | Where are you from, Sami? |
 | أنا من سوريا. وأنت؟ | ana min Suuriyaa. wa-anti? | I'm from Syria. And you? |
 | أنا من لبنان | ana min Lubnaan | I'm from Lebanon. |

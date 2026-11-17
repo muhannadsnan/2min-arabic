@@ -373,7 +373,7 @@
    {
     "ar": "أَعْمَلُ فِي الْمَكْتَبَةْ. مَعَ السَّلَامَةْ",
     "tr": "a'malu fi l-maktaba. ma'a s-salaama",
-    "en": "ma'a s-salaama",
+    "en": "I work at the bookshop. Goodbye.",
     "src": "003",
     "file": "footage/recordings/_lina-koki/lines/07-lina.wav",
     "speaker": "lina",
@@ -494,7 +494,7 @@
    {
     "ar": "أَنَا مِنْ",
     "tr": "ana min",
-    "en": "I am from + your country",
+    "en": "I'm from … (+ your country)",
     "src": "008",
     "file": "footage/recordings/_610-combined/lines/10-teacher.wav",
     "speaker": "teacher",
