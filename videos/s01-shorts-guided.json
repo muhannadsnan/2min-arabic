@@ -312,7 +312,8 @@
     "cues": [
      10
     ],
-    "en": "After the tea, Rami slept under the tree."
+    "en": "After the tea, Rami slept under the tree.",
+    "say": "After the tea... Rami slept under the tree."
    },
    {
     "cues": [
@@ -395,7 +396,7 @@
      9
     ],
     "en": "Kamel the bird will see Maher and will say: excellent!",
-    "say": "Kamel, the bird, will see Maher, and will say: excellent!"
+    "say": "Kamel... the bird, will see Maher, and will say: excellent!"
    },
    {
     "cues": [
