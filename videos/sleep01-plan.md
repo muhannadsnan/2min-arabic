@@ -7,6 +7,15 @@ watch hours count toward the 8,000. Source: learning/notes/2026-11-17-sanji-slee
 **No new recording:** all Arabic = the owner's (and Koki's) lines already in the pool; English = the owner's voice
 clone (narrator-c2c, the 70/30 voice).
 
+## Why Arabic Shehab's video is so big (owner asked, 17 Nov)
+
+An outlier, not channel strength or age: published Sep 2023, 2 months after the channel started; 4.8 M views
+(~4,100/day for 3 years, 95 k likes). Their own later sleep videos: "-2" 563 k, "100 NEW phrases" (2024) 65 k (~70/day)
+— the same format gets ~1 % of it. Reasons: it was early and **its title became the autocomplete phrase**; it serves
+both directions (tagged "learn English" + «تعلم الإنجليزية» — NOT for us: our audience is Arabic learners); a big
+South-Asian Muslim audience (channel run from Bangladesh — where our Hindi/Urdu versions do best); phrase counts in
+the chapters (100 / 200) and a free PDF. Expect their "-2" level over time, not millions.
+
 ## Length: why 8 hours (search check, 17 Nov)
 
 | Views | Length | Video |
@@ -77,6 +86,9 @@ Rounds 3–8 are rendered once and copied (the same file 6×) — honest: the ti
 - **Description:** what it is in one line ("one hour of beginner Arabic, repeated 8 times — the later rounds slower and
   quieter"), the 10 topics, "Start from Day 1", the language line, 3 hashtags. AI label: No (owner's voice clone + real
   recordings). Playlist: Full Lessons. Related video: Episode 1 (Full Course).
+- **Free PDF of all 250 phrases** (Arabic · transliteration · English, by chapter) on the free-PDF page (docs/20),
+  linked first in the description and in the pinned comment — Arabic Shehab's 4.8 M sleep video does the same
+  (its PDF is the reason people save and come back). Built with the line list, no owner work.
 - **Pinned comment:** "How far did you get before you fell asleep? 😴 Tell me which chapter."
 
 ## Build steps (after the owner's OK and his game)
