@@ -2,6 +2,7 @@
 
 **File to upload:** `output/sleep01/sleep01.mp4` (16:9, **8:41:59**, 1.6 GB → normal video, long chain)
 **Thumbnail:** Upload file → `output/sleep01/sleep01-thumbnail.jpg`
+> ✅ **Uploaded + filled by Claude** — video id `mQ5_7bdGEEA` (published Wed 18 Nov 12:00, owner: "asap")
 
 ## Fast way
 
@@ -77,14 +78,14 @@ Español: Aprende árabe en 2 minutos al día
 ## Tags
 
 ```
-learn arabic while you sleep, learn arabic while sleeping, learn arabic while sleeping 8 hours, learn arabic while you sleep english arabic, arabic listening practice, arabic listening practice beginner, arabic phrases for beginners, basic arabic phrases, learn arabic for beginners, تعلم العربية أثناء النوم, عبارات عربية للمبتدئين, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب, تصبح على خير, تصبح على خير meaning, learn arabic, arabic for beginners, modern standard arabic
+learn arabic while you sleep, learn arabic while sleeping, learn arabic while sleeping 8 hours, arabic listening practice, arabic listening practice beginner, arabic phrases for beginners, basic arabic phrases, learn arabic for beginners, تعلم العربية أثناء النوم, عبارات عربية للمبتدئين, تعليم اللغة العربية لغير الناطقين بها, تعليم عربي للاجانب, تصبح على خير, تصبح على خير meaning, learn arabic, arabic for beginners
 ```
 
 ## Settings
 
 | Setting | Value |
 |---|---|
-| Playlist | Full Lessons |
+| Playlist | Full Arabic Lessons for Beginners |
 | Audience | No, it's not made for kids |
 | **AI use** | **No — your own recorded Arabic (and Koki's); the English is your own voice clone; the pictures are illustrations.** |
 | Paid promotion | No |
