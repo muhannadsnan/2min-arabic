@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-17b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-18a"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -231,8 +231,8 @@ button.pend{{background:var(--bg);color:var(--soft);border:1px solid var(--line)
 </span></div><p class="sub" id="date"></p>
 <h2>YouTube</h2><div id="yt"></div>
 <h2>Instagram</h2><div id="ig"></div>
-<h2>Facebook</h2><div id="todo"></div><h3>Today's groups</h3><div id="today"></div><div id="aheadwrap" hidden><h3 id="aheadh">Next groups</h3><div id="ahead"></div></div>
-<details id="ydet"><summary>Missed yesterday? Yesterday's groups</summary><div id="yesterday"></div></details>
+<h2>Facebook</h2><div id="todo"></div><h3>Today's groups</h3><div id="today"></div>
+
 <details><summary id="allsum">All groups, next turn first</summary><div id="all"></div></details>
 </div><p class="foot" id="foot" data-built="{built}" data-fp="{fp}"></p>
 </div><script>
@@ -262,18 +262,46 @@ const EP = D.epochs.map(e => ({{E: Math.round((Date.parse(e.date + "T00:00:00Z")
 const epOf = day => {{ let r = -1; EP.forEach((e, i) => {{ if (day >= e.E) r = i; }}); return r; }};
 function ticks() {{ try {{ return JSON.parse(localStorage.getItem("fbg2") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
 function tick(k, on) {{ try {{ const t = ticks(); on ? t[k] = Date.now() : delete t[k]; localStorage.setItem("fbg2", JSON.stringify(t)); }} catch (e) {{}} }}
-// owner 2026-11-17: "I shouldn't be getting so many at a time" — at most DAILY_MAX group posts per REAL day (by the
-// clock, whichever day a batch counts for); the early batch and the extras stay inside that limit (spam safety)
+// owner 2026-11-18 "it used to show 3 posts in morning and 3 in evening": every REAL day shows the next groups IN LINE
+// (whichever rotation day they belong to) — First 3, then Second 3 six hours after the 3rd post, 6 a day at most
+// (owner 2026-11-17: not too many at once). Posting ahead (16 Nov) had made the dated lists run days ahead, so a new
+// morning showed one new card next to an old, finished list — the line never does. A group tapped "Still pending" is
+// skipped and the next one in line moves up (replaces the "extras"); a missed day just comes back first.
 const DAILY_MAX = 6;
-function postedToday() {{ const t = ticks(), d0 = new Date(); d0.setHours(0, 0, 0, 0);
-  return Object.entries(t).filter(([k, v]) => /^-?\\d+-/.test(k) && typeof v === "number" && v > d0.getTime()).length; }}
-// hide open cards beyond the budget (from the end: the first ones stay), with one note; returns the budget left
-function capBox(box, budget) {{
-  const open = [...box.querySelectorAll(".card")].filter(c => {{ const i = c.querySelector("input[type=checkbox]"); return i && !i.checked && !c.classList.contains("done"); }});
-  open.slice(Math.max(0, budget)).forEach(c => c.hidden = true);
-  if (open.length > budget && !box.querySelector(".capped"))
-    box.insertAdjacentHTML("beforeend", `<div class="card locked capped"><p class="none">${{DAILY_MAX}} posts a day is the limit (Facebook flags many posts at once). The rest open tomorrow.</p></div>`);
-  return Math.max(0, budget - open.length);
+function handledToday() {{   // cards ticked today by the real clock, oldest first: {{d, name, at, pend}}
+  const t = ticks(), p = pends(), d0 = new Date(); d0.setHours(0, 0, 0, 0);
+  return Object.entries(t).filter(([k, v]) => /^-?\\d+-/.test(k) && typeof v === "number" && v > d0.getTime())
+    .map(([k, v]) => {{ const d = parseInt(k, 10), name = k.slice(String(d).length + 1); return {{d, name, at: v, pend: pendOn(p[name], d)}}; }})
+    .sort((a, b) => a.at - b.at);
+}}
+function nextInLine(n, skip) {{   // the next n open groups in rotation order, one card per group
+  const t = ticks(), out = [], seen = new Set(skip);
+  for (let d = Math.max(0, dayNo - 3); d < dayNo + 60 && out.length < n; d++)
+    slots(d).forEach((g, i) => {{
+      if (out.length >= n || g.left || offToday(g, d) || t[d + "-" + g.name] || seen.has(g.name)) return;
+      seen.add(g.name); out.push({{name: g.name, d, i}});
+    }});
+  return out;
+}}
+function today() {{
+  const box = document.getElementById("today"); box.innerHTML = "";
+  const h = handledToday(), names = h.map(x => x.name); let num = 0, posts = 0;
+  const show = x => {{ const g = D.groups.find(y => y.name === x.name); if (!g) return;
+    const i = x.i !== undefined ? x.i : Math.max(0, slots(x.d).findIndex(y => y.name === x.name));
+    const c = card(Object.assign({{}}, g), i, x.d, 0), s = c.querySelector(".num"); if (s) s.textContent = ++num; box.appendChild(c); }};
+  const lock = msg => box.insertAdjacentHTML("beforeend", `<div class="card locked"><p class="none">${{msg}}</p></div>`);
+  const morning = [], evening = [];
+  h.forEach(x => {{ if (posts < 3) {{ morning.push(x); if (!x.pend) posts++; }} else evening.push(x); }});
+  box.insertAdjacentHTML("beforeend", "<h3>First 3</h3>");
+  morning.forEach(show);
+  if (posts < 3) {{ nextInLine(3 - posts, names).forEach(show);
+    box.insertAdjacentHTML("beforeend", "<h3>Second 3 — 6 h after the first</h3>"); lock("Opens 6 hours after your 3rd post of the first 3."); return; }}
+  box.insertAdjacentHTML("beforeend", "<h3>Second 3 — 6 h after the first</h3>");
+  evening.forEach(show);
+  const done = h.filter(x => !x.pend).length, opens = h.filter(x => !x.pend)[2].at + GAP;
+  if (done >= DAILY_MAX) {{ box.insertAdjacentHTML("beforeend", `<p class="none">Done for today ✓ — ${{done}} posts. The next groups open tomorrow morning.</p>`); return; }}
+  if (Date.now() < opens) {{ lock(`Opens in ${{span2(opens - Date.now())}} (at ${{new Date(opens).toLocaleTimeString("en-GB", {{hour: "2-digit", minute: "2-digit"}})}}) — 6 hours after your first 3.`); return; }}
+  nextInLine(DAILY_MAX - done, names).forEach(show);
 }}
 // groups whose last post still waits for admin approval (owner 2026-11-06): {{name: {{day, date, n}}}} — n = rounds in a row
 function pends() {{ try {{ return JSON.parse(localStorage.getItem("fbgp") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
@@ -357,47 +385,22 @@ function card(g, i, day, enIdx) {{
   const b = c.querySelector("button.copy"), text = g._text;
   c.querySelector("button.name").onclick = e => navigator.clipboard.writeText(g.name.replace(/ \\(.*\\)$/, "")).then(() => {{ e.target.textContent = "Copied ✓"; setTimeout(() => e.target.textContent = "Copy name", 1500); }});
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
-  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); logSent(key, e.target.checked ? shown : null); setPend(g.name, !e.target.checked ? pendOld : st === 2 ? {{day, date: ymd(now), n: 0, stage: 3, since: ymd(now), posted: true}} : null); c.classList.toggle("done", e.target.checked); if (i < 3) render(); }};
+  c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); logSent(key, e.target.checked ? shown : null); setPend(g.name, !e.target.checked ? pendOld : st === 2 ? {{day, date: ymd(now), n: 0, stage: 3, since: ymd(now), posted: true}} : null); c.classList.toggle("done", e.target.checked); render(); }};
   if (c.querySelector("button.pend")) c.querySelector("button.pend").onclick = () => {{
     if (pendNow) {{ setPend(g.name, pendOld); tick(key, false); }}                       // tapped by mistake: undo
     else {{ const today = ymd(now), v = {{day, date: today, n: (pendOld ? pendOld.n : 0) + 1, stage: st || 1, since: since || postDate(g.name) || today}};
       if (st === 4) v.stage = 5;                                                       // the last check: leave for good
       else if ((v.stage === 1 || v.stage === 3) && today >= plus(v.since, WAIT)) {{ v.stage++; v.until = plus(today, WAIT); }}   // 3 weeks pending → 3 weeks paused
       setPend(g.name, v); tick(key, true); }}   // counts as done, so the session can finish
-    render(); fill("yesterday", dayNo - 1, false);
+    render();
   }};
   return c;
 }}
 const span2 = ms => {{ const m = Math.max(1, Math.round(ms / 60000)), h = Math.floor(m / 60); return h ? `${{h}} h ${{m % 60}} min` : `${{m}} min`; }};
-// extras (owner 2026-11-09: "show more groups if the list contains pending ones … so we don't count them"): for every
-// card skipped today (pending or no posting allowed) one more group: the next one in line, its own later turn brought
-// forward — ticking it ticks that later card (same key), so it is never asked twice and gets that turn's video.
-function xpicks() {{ try {{ return JSON.parse(localStorage.getItem("fbgx") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
-function extras(box, day, from, to) {{
-  const t = ticks(), p = pends(), today = new Set(slots(day).map(g => g.name)), X = xpicks(), mine = X[day] || [];
-  const need = slots(day).slice(from, to).filter(g => !g.left && (offToday(g, day) || dead(g.name) || pendOn(p[g.name], day))).length;
-  const skipped = x => pendOn(p[x.n], x.d);   // an extra marked Still pending → it needs a replacement too
-  const used = new Set(Object.values(X).flat().map(x => x.n)), out = [], ok = () => out.filter(x => !skipped(x)).length;
-  mine.filter(x => x.s === from).forEach(x => out.push(x));                                          // kept picks stay put
-  // candidates: first the groups we never posted to (joined 8 Nov — nothing can be pending there), then the rest in line
-  const cand = [], sent = Object.keys(sentLog());
-  for (let d = day + 1; d < day + 30; d++) slots(d).forEach((g, k) => {{
-    if (g.dropped || paused(g, d) || p[g.name] || today.has(g.name) || used.has(g.name) || t[d + "-" + g.name] || cand.some(c => c.n === g.name)) return;
-    cand.push({{n: g.name, d, k, s: from, fresh: g.fresh && !sent.some(x => x.endsWith("-" + g.name))}});   // posted once → may be pending
-  }});
-  cand.sort((a, b) => (b.fresh ? 1 : 0) - (a.fresh ? 1 : 0));   // stable: keeps the line order inside each group
-  for (const c of cand) {{ if (ok() >= need) break; out.push(c); }}
-  if (!out.length) return;
-  X[day] = mine.filter(x => x.s !== from).concat(out);
-  try {{ localStorage.setItem("fbgx", JSON.stringify(Object.fromEntries(Object.entries(X).filter(([k]) => +k >= day - 1)))); }} catch (e) {{}}
-  box.insertAdjacentHTML("beforeend", `<p class="meta" style="margin:8px 2px 6px">Extra — instead of the skipped one${{out.length > 1 ? "s" : ""}} (its own later turn, brought forward):</p>`);
-  out.forEach(x => {{ const g = D.groups.find(y => y.name === x.n); if (g) box.appendChild(card(Object.assign({{}}, g), x.k, x.d, 0)); }});
-}}
 function fill(id, day, lockEvening) {{
   const box = document.getElementById(id); box.innerHTML = ""; let en = 0;
   const opens = eveningOpensAt(day), t = ticks();
   slots(day).forEach((g, i) => {{
-    if (lockEvening && i === 3) extras(box, day, 0, 3);   // after the first 3, before the "Second 3" heading
     if (per(day) > 3 && i % 3 === 0) box.insertAdjacentHTML("beforeend", `<h3>${{i ? "Second 3 — 6 h after the first" : "First 3"}}</h3>`);
     const isEn = g.code === "en", idx = isEn ? en++ : 0;
     if (g.left) return;   // owner 2026-11-10: groups he has left disappear from the page (their slot still gets an extra)
@@ -410,7 +413,6 @@ function fill(id, day, lockEvening) {{
     }}
     box.appendChild(card(Object.assign({{}}, g), i, day, idx));
   }});
-  if (lockEvening && !box.querySelector(".locked")) extras(box, day, 3, 6);
 }}
 // the YouTube Post on carousel days (Wed + Sun; owner 2026-11-04): the same pictures + text as the Instagram carousel,
 // which Instagram and the Facebook Page get automatically at 19:00. Yesterday's stays until it's ticked.
@@ -459,23 +461,7 @@ function igSection() {{
   if (low.length) box.innerHTML = `<div class="card">${{low.join("")}}</div>`;
   else box.innerHTML = `<p class="none">Nothing to do — posting by itself.${{t ? " Trials: " + t.left + " queued (to " + day(t.last) + ")." : ""}}${{c ? " Carousels: " + c.left + " queued." : ""}}</p>`;
 }}
-function render() {{ todoCard(); if (document.getElementById("all").innerHTML) allTable(); fill("today", dayNo, true); const left = capBox(document.getElementById("today"), DAILY_MAX - postedToday()); ahead(left); ytSection(); igSection(); }}
-// owner 2026-11-16 "just give me the new bunch": when every card of today is done, tomorrow's groups appear below to post
-// early — ticks use tomorrow's key, so tomorrow shows them as done (the 6-hour gap still applies to their evening 3)
-function ahead(left) {{
-  const w = document.getElementById("aheadwrap"), todayOpen = document.querySelector("#today .card:not(.done):not([hidden])");
-  w.hidden = !!todayOpen || !(left > 0); if (todayOpen) return;
-  if (!(left > 0)) {{ const n = document.getElementById("todaydone") || document.getElementById("today").appendChild(Object.assign(document.createElement("p"), {{id: "todaydone", className: "none"}}));
-    n.textContent = `Done for today ✓ — ${{postedToday()}} posts today. The next groups open tomorrow.`; return; }}
-  // the first coming day that still has open groups (owner: "just give me the new bunch" — batch after batch)
-  const t = ticks();
-  for (let d = dayNo + 1; d < dayNo + 30; d++) {{
-    if (!slots(d).some(g => !offToday(g, d) && !t[d + "-" + g.name])) continue;
-    const dt = new Date(now); dt.setDate(dt.getDate() + d - dayNo);
-    document.getElementById("aheadh").textContent = `Done for today ✓ — next groups: ${{dt.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "short"}})}}'s (they count for that day)`;
-    fill("ahead", d, true); capBox(document.getElementById("ahead"), left); return;
-  }}
-}}
+function render() {{ todoCard(); if (document.getElementById("all").innerHTML) allTable(); today(); ytSection(); igSection(); }}
 // footer: last update + countdown to the next one (site-latest.yml runs hourly at :25, 05–20 UTC)
 const UPD = Array.from({{length: 16}}, (_, k) => 5 + k).map(h => h);  // checks at :05 (laptop) and :25 (GitHub)
 function footer() {{
@@ -511,7 +497,7 @@ async function refresh() {{
 setInterval(refresh, 5 * 60000);
 document.addEventListener("visibilitychange", refresh);   // back to the tab → check at once
 document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {{weekday: "long", day: "numeric", month: "long"}});
-render(); setInterval(() => {{ if (document.querySelector(".card.locked")) render(); }}, 60000); fill("yesterday", dayNo - 1, false);
+render(); setInterval(() => {{ if (document.querySelector(".card.locked")) render(); }}, 60000);
 // the table also shows each group's next turn and the video it will get (owner 2026-11-07)
 function allTable() {{
   const t = ticks();
