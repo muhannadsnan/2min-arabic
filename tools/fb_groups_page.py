@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-18a"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-18b"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -278,11 +278,14 @@ function nextInLine(n, skip) {{   // the next n open groups in rotation order, o
   const t = ticks(), out = [], seen = new Set(skip);
   for (let d = Math.max(0, dayNo - 3); d < dayNo + 60 && out.length < n; d++)
     slots(d).forEach((g, i) => {{
-      if (out.length >= n || g.left || offToday(g, d) || t[d + "-" + g.name] || seen.has(g.name)) return;
+      if (out.length >= n || g.left || offToday(g, d) || t[d + "-" + g.name] || seen.has(g.name) || waiting(g.name)) return;
       seen.add(g.name); out.push({{name: g.name, d, i}});
     }});
   return out;
 }}
+// owner 2026-11-18 "so many pending posts for those groups": a group tapped "Still pending" waits OUT of the line until
+// its 3 weeks are up (no re-check every few days); then it comes back once — still pending → the 3-week pause (14 Nov plan)
+const waiting = name => {{ const p = pends()[name], st = stageOf(p); return (st === 1 || st === 3) && p.date < ymd(now) && ymd(now) < plus(p.since || p.date, WAIT); }};
 function today() {{
   const box = document.getElementById("today"); box.innerHTML = "";
   const h = handledToday(), names = h.map(x => x.name); let num = 0, posts = 0;
@@ -290,18 +293,23 @@ function today() {{
     const i = x.i !== undefined ? x.i : Math.max(0, slots(x.d).findIndex(y => y.name === x.name));
     const c = card(Object.assign({{}}, g), i, x.d, 0), s = c.querySelector(".num"); if (s) s.textContent = ++num; box.appendChild(c); }};
   const lock = msg => box.insertAdjacentHTML("beforeend", `<div class="card locked"><p class="none">${{msg}}</p></div>`);
-  const morning = [], evening = [];
-  h.forEach(x => {{ if (posts < 3) {{ morning.push(x); if (!x.pend) posts++; }} else evening.push(x); }});
+  const morning = [], evening = [], skipped = h.filter(x => x.pend);
+  const tail = () => {{ if (!skipped.length) return;   // today's "Still pending" taps: one small list at the end, no numbers
+    const nW = Object.values(pends()).filter(q => [1, 3].includes(stageOf(q)) && ymd(now) < plus(q.since || q.date, WAIT)).length, det = document.createElement("details");
+    det.innerHTML = `<summary class="meta">Skipped today — post still pending (${{skipped.length}}) · ${{nW}} groups wait for an admin; each comes back by itself when its 3 weeks are up</summary>`;
+    skipped.forEach(x => {{ const g = D.groups.find(y => y.name === x.name); if (g) det.appendChild(card(Object.assign({{}}, g), Math.max(0, slots(x.d).findIndex(y => y.name === x.name)), x.d, 0)); }});
+    box.appendChild(det); }};
+  h.filter(x => !x.pend).forEach(x => {{ if (posts < 3) {{ morning.push(x); posts++; }} else evening.push(x); }});
   box.insertAdjacentHTML("beforeend", "<h3>First 3</h3>");
   morning.forEach(show);
   if (posts < 3) {{ nextInLine(3 - posts, names).forEach(show);
-    box.insertAdjacentHTML("beforeend", "<h3>Second 3 — 6 h after the first</h3>"); lock("Opens 6 hours after your 3rd post of the first 3."); return; }}
+    box.insertAdjacentHTML("beforeend", "<h3>Second 3 — 6 h after the first</h3>"); lock("Opens 6 hours after your 3rd post of the first 3."); tail(); return; }}
   box.insertAdjacentHTML("beforeend", "<h3>Second 3 — 6 h after the first</h3>");
   evening.forEach(show);
   const done = h.filter(x => !x.pend).length, opens = h.filter(x => !x.pend)[2].at + GAP;
-  if (done >= DAILY_MAX) {{ box.insertAdjacentHTML("beforeend", `<p class="none">Done for today ✓ — ${{done}} posts. The next groups open tomorrow morning.</p>`); return; }}
-  if (Date.now() < opens) {{ lock(`Opens in ${{span2(opens - Date.now())}} (at ${{new Date(opens).toLocaleTimeString("en-GB", {{hour: "2-digit", minute: "2-digit"}})}}) — 6 hours after your first 3.`); return; }}
-  nextInLine(DAILY_MAX - done, names).forEach(show);
+  if (done >= DAILY_MAX) {{ box.insertAdjacentHTML("beforeend", `<p class="none">Done for today ✓ — ${{done}} posts. The next groups open tomorrow morning.</p>`); tail(); return; }}
+  if (Date.now() < opens) {{ lock(`Opens in ${{span2(opens - Date.now())}} (at ${{new Date(opens).toLocaleTimeString("en-GB", {{hour: "2-digit", minute: "2-digit"}})}}) — 6 hours after your first 3.`); tail(); return; }}
+  nextInLine(DAILY_MAX - done, names).forEach(show); tail();
 }}
 // groups whose last post still waits for admin approval (owner 2026-11-06): {{name: {{day, date, n}}}} — n = rounds in a row
 function pends() {{ try {{ return JSON.parse(localStorage.getItem("fbgp") || "{{}}"); }} catch (e) {{ return {{}}; }} }}
