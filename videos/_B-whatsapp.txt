@@ -93,7 +93,7 @@ One file per part is easiest (each part = one file). "…" = a short pause insid
 73. أسكن في مدينة كبيرة.
 74. أسكن في قرية صغيرة، قريبة من البحر.
 75. أسكن في شقة مع عائلتي.
-76. (Sami) أسكن في بيت صغير… مع لينا!
+76. (Sami) أسكن في بيت صغير… مع أمي!
 77. (Sami) وأنتِ يا لينا، أين تسكنين؟
 78. وأنت، أين تسكن؟
 
@@ -120,7 +120,7 @@ One file per part is easiest (each part = one file). "…" = a short pause insid
 95. لينا … ناعمة
 96. ريم … غزال
 97. سلمى … سلام
-98. عائشة … حية
+98. عائشة … العيش
 99. وأنتِ، ما اسمكِ؟
 
 ══════ PART 9 — Story 2: Sami's lazy weekend (Sat 12 Dec) — read like a story ══════
@@ -168,7 +168,7 @@ One file per part is easiest (each part = one file). "…" = a short pause insid
 134. متى يستيقظ سامي؟ … في المساء!
 135. ماذا يقول سامي؟ … صباح الخير!
 136. هل الوقت صباح؟ … لا، صار المساء.
-137. ماذا تفعل لينا؟ … تضحك.
+137. ماذا ترد لينا؟ … تضحك.
 138. أين الفلافل؟ … لينا أكلتها!
 139. هل أكل سامي الفلافل؟ … لا، بل لينا أكلتها.
 140. ممتاز! لقد فهمتم القصة كلها.
@@ -223,7 +223,7 @@ One file per part is easiest (each part = one file). "…" = a short pause insid
 178. حاء … ح … حليب … بحر … صباح
 
 ══════ PART 11 (optional, ahead) — Christmas & New Year in Arabic (Mon 21 Dec) ══════
-179. عيد ميلاد مجيد!
+179. مبارك عليكم العيد
 180. سنة سعيدة!
 181. كل عام وأنتم بخير!
 182. عام جديد سعيد!
