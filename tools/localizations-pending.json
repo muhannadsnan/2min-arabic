@@ -1,57 +1,222 @@
 {
- "sleep01": {
-  "name": "Learn Arabic While You Sleep (English - Arabic) | 8 Hours, a 1-Hour Lesson Repeated",
+ "031-favorite-color": {
+  "name": "What's Your Favorite Color in Arabic? Ask and Answer | Conversation · Day 31",
   "hi": [
-   "सोते हुए अरबी सीखें (English - Arabic) | 8 घंटे",
-   "एक घंटे का आसान अरबी पाठ, 8 बार दोहराया गया — 234 शुरुआती वाक्य, अंग्रेज़ी के बाद एक अरब की आवाज़ में अरबी। बाद के दौर धीमे और शांत हैं।"
+   "अरबी में आपका पसंदीदा रंग क्या है? पूछें और जवाब दें | बातचीत · दिन 31 | अरबी सीखें",
+   "दिन 31 से दूसरा महीना शुरू: अब सवाल आपके बारे में। अरबी में पूछिए “आपका पसंदीदा रंग क्या है?” (आदमी से और औरत से), अपने रंग से जवाब दीजिए, और सामी और लीना के जवाब सुनिए। रोज़ सिर्फ 2 मिनट में अरबी।"
   ],
   "ur": [
-   "سوتے ہوئے عربی سیکھیں (English - Arabic) | 8 گھنٹے",
-   "ایک گھنٹے کا آسان عربی سبق، 8 بار دہرایا گیا — 234 ابتدائی جملے، انگریزی کے بعد ایک عرب کی آواز میں عربی۔ بعد کے دور آہستہ اور پرسکون ہیں۔"
+   "عربی میں آپ کا پسندیدہ رنگ کیا ہے؟ پوچھیں اور جواب دیں | گفتگو · دن 31 | عربی سیکھیں",
+   "دن 31 سے دوسرا مہینہ شروع: اب سوال آپ کے بارے میں۔ عربی میں پوچھیں “آپ کا پسندیدہ رنگ کیا ہے؟” (مرد سے اور عورت سے)، اپنے رنگ سے جواب دیں، اور سامی اور لینا کے جواب سنیں۔ روزانہ صرف 2 منٹ میں عربی۔"
   ],
   "id": [
-   "Belajar Bahasa Arab Sambil Tidur (English - Arabic) | 8 Jam",
-   "Pelajaran bahasa Arab 1 jam, diulang 8 kali — 234 kalimat dasar, bahasa Inggris lalu bahasa Arab oleh penutur asli. Putaran berikutnya lebih pelan dan tenang."
+   "Apa Warna Favoritmu dalam Bahasa Arab? Tanya dan Jawab | Percakapan · Hari 31",
+   "Hari 31, bulan kedua dimulai: sekarang pertanyaannya tentang kamu. Tanyakan “apa warna favoritmu?” dalam bahasa Arab (ke laki-laki dan ke perempuan), jawab dengan warnamu sendiri, dan dengarkan jawaban Sami dan Lina. Bahasa Arab 2 menit sehari."
   ],
   "bn": [
-   "ঘুমিয়ে ঘুমিয়ে আরবি শিখুন (English - Arabic) | ৮ ঘণ্টা",
-   "১ ঘণ্টার সহজ আরবি পাঠ, ৮ বার পুনরাবৃত্তি — ২৩৪টি শুরুর বাক্য, ইংরেজির পরে একজন আরবের কণ্ঠে আরবি। পরের রাউন্ডগুলো ধীর ও শান্ত।"
+   "আরবিতে তোমার প্রিয় রং কী? প্রশ্ন ও উত্তর | কথোপকথন · দিন ৩১ | আরবি শিখুন",
+   "দিন ৩১, শুরু হলো দ্বিতীয় মাস: এবার প্রশ্ন তোমাকে নিয়ে। আরবিতে জিজ্ঞেস করো “তোমার প্রিয় রং কী?” (পুরুষ ও নারীকে), নিজের রং দিয়ে উত্তর দাও, আর শোনো সামি ও লিনার উত্তর। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
   ],
   "tr": [
-   "Uyurken Arapça Öğren (English - Arabic) | 8 Saat",
-   "1 saatlik kolay Arapça ders, 8 kez tekrarlanıyor — 234 temel cümle, önce İngilizce sonra anadili Arapça olan birinin sesiyle Arapça. Sonraki turlar daha yavaş ve sakin."
+   "Arapça En Sevdiğin Renk Ne? Sor ve Cevapla | Arapça Sohbet · 31. Gün",
+   "31. Gün, ikinci ay başlıyor: artık sorular seninle ilgili. Arapça “en sevdiğin renk ne?” diye sor (bir erkeğe ve bir kadına), kendi renginle cevap ver ve Sami ile Lina'nın cevabını dinle. Günde 2 dakikada Arapça."
   ],
   "fa": [
-   "یادگیری زبان عربی در خواب (English - Arabic) | ۸ ساعت",
-   "یک درس یک‌ساعته‌ی عربی، ۸ بار تکرار — ۲۳۴ جمله‌ی پایه، اول انگلیسی و بعد عربی با صدای یک عرب. دورهای بعدی آرام‌تر و آهسته‌ترند."
+   "رنگ مورد علاقه‌ات به عربی چیست؟ بپرس و جواب بده | مکالمه · روز ۳۱ | آموزش زبان عربی",
+   "روز ۳۱، ماه دوم شروع می‌شود: حالا سؤال‌ها دربارهٔ خود توست. به عربی بپرس «رنگ مورد علاقه‌ات چیست؟» (از یک آقا و از یک خانم)، با رنگ خودت جواب بده و جواب سامی و لینا را بشنو. روزی ۲ دقیقه آموزش زبان عربی."
   ],
   "ms": [
-   "Belajar Bahasa Arab Sambil Tidur (English - Arabic) | 8 Jam",
-   "Pelajaran bahasa Arab 1 jam, diulang 8 kali — 234 ayat asas, bahasa Inggeris kemudian bahasa Arab oleh penutur asli. Pusingan seterusnya lebih perlahan dan tenang."
+   "Apa Warna Kegemaran Anda dalam Bahasa Arab? Tanya dan Jawab | Perbualan · Hari 31",
+   "Hari 31, bulan kedua bermula: kini soalannya tentang anda. Tanya “apa warna kegemaran anda?” dalam bahasa Arab (kepada lelaki dan kepada wanita), jawab dengan warna anda sendiri, dan dengar jawapan Sami dan Lina. Bahasa Arab 2 minit sehari."
   ],
   "fr": [
-   "Apprendre l'arabe en dormant (English - Arabic) | 8 heures",
-   "Une leçon d'arabe d'une heure, répétée 8 fois — 234 phrases de base, l'anglais puis l'arabe par un locuteur natif. Les tours suivants sont plus lents et plus calmes."
+   "Ta couleur préférée en arabe ? Demander et répondre | Conversation · Jour 31",
+   "Jour 31, le mois deux commence : des questions sur TOI. Demande « quelle est ta couleur préférée ? » en arabe (à un homme et à une femme), réponds avec ta couleur, et écoute Sami et Lina répondre. L'arabe en 2 minutes par jour."
   ],
   "ru": [
-   "Учим арабский во сне (English - Arabic) | 8 часов",
-   "Часовой урок арабского, повторённый 8 раз — 234 базовые фразы: английский, затем арабский голосом носителя. Следующие круги медленнее и тише."
+   "Твой любимый цвет по-арабски? Спроси и ответь | Разговор · День 31",
+   "День 31, начинается второй месяц: теперь вопросы о тебе. Спроси по-арабски «какой твой любимый цвет?» (мужчину и женщину), ответь своим цветом и послушай ответы Сами и Лины. Арабский за 2 минуты в день."
   ],
   "de": [
-   "Arabisch lernen im Schlaf (English - Arabic) | 8 Stunden",
-   "Eine einstündige Arabischlektion, 8-mal wiederholt — 234 Grundsätze, erst Englisch, dann Arabisch von einem Muttersprachler. Die späteren Runden sind langsamer und leiser."
+   "Deine Lieblingsfarbe auf Arabisch? Fragen und antworten | Gespräch · Tag 31",
+   "Tag 31, Monat zwei beginnt: jetzt geht es um DICH. Frag auf Arabisch „Was ist deine Lieblingsfarbe?“ (einen Mann und eine Frau), antworte mit deiner Farbe und hör, was Sami und Lina sagen. Arabisch in 2 Minuten am Tag."
   ],
   "so": [
-   "Baro Af-Carabi Adigoo Hurdaya (English - Arabic) | 8 Saacadood",
-   "Cashar Carabi ah oo hal saac ah, 8 jeer lagu celiyay — 234 weedho bilow ah, Ingiriisi kadibna Carabi cod qof Carab ah. Wareegyada dambe way gaabis yihiin oo deggan yihiin."
+   "Midabka Aad Jeceshahay Af-Carabi? Weydii oo Jawaab | Wadahadal · Maalinta 31",
+   "Maalinta 31, bisha labaad way bilaabatay: hadda su'aalaha adiga ayay kugu saabsan yihiin. Carabi ku weydii “midabkee baad ugu jeceshahay?” (nin iyo haweeney), midabkaaga ku jawaab, oo dhageyso jawaabta Sami iyo Lina. Af-Carabi 2 daqiiqo maalintii."
   ],
   "sw": [
-   "Jifunze Kiarabu Ukiwa Umelala (English - Arabic) | Saa 8",
-   "Somo la Kiarabu la saa moja, linarudiwa mara 8 — sentensi 234 za msingi, Kiingereza kisha Kiarabu kwa sauti ya Mwarabu. Raundi zinazofuata ni za polepole na tulivu."
+   "Rangi Unayoipenda kwa Kiarabu? Uliza na Ujibu | Mazungumzo · Siku ya 31",
+   "Siku ya 31, mwezi wa pili unaanza: sasa maswali ni kuhusu wewe. Uliza kwa Kiarabu “rangi unayoipenda zaidi ni ipi?” (kwa mwanamume na kwa mwanamke), jibu kwa rangi yako, na usikilize majibu ya Sami na Lina. Kiarabu dakika 2 kwa siku."
   ],
   "es": [
-   "Aprende árabe mientras duermes (English - Arabic) | 8 horas",
-   "Una lección de árabe de una hora, repetida 8 veces — 234 frases básicas, inglés y luego árabe con voz nativa. Las rondas siguientes son más lentas y tranquilas."
+   "¿Tu color favorito en árabe? Pregunta y responde | Conversación · Día 31",
+   "Día 31, empieza el mes dos: ahora las preguntas son sobre TI. Pregunta en árabe «¿cuál es tu color favorito?» (a un hombre y a una mujer), responde con tu color y escucha cómo responden Sami y Lina. Árabe en 2 minutos al día."
+  ]
+ },
+ "032-favorite-food": {
+  "name": "What's Your Favorite Food in Arabic? I Love / I Don't Love | Conversation · Day 32",
+  "hi": [
+   "अरबी में आपका पसंदीदा खाना क्या है? मुझे पसंद है / पसंद नहीं | बातचीत · दिन 32 | अरबी सीखें",
+   "दिन 32: अरबी में पूछिए “आपका पसंदीदा खाना क्या है?”, अपने खाने से जवाब दीजिए, और बताइए क्या पसंद नहीं: बस क्रिया के आगे laa लगाइए। फिर लीना के जवाब का अंदाज़ा लगाइए। रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "عربی میں آپ کا پسندیدہ کھانا کیا ہے؟ مجھے پسند ہے / پسند نہیں | گفتگو · دن 32 | عربی سیکھیں",
+   "دن 32: عربی میں پوچھیں “آپ کا پسندیدہ کھانا کیا ہے؟”، اپنے کھانے سے جواب دیں، اور بتائیں کیا پسند نہیں: بس فعل سے پہلے laa لگائیں۔ پھر لینا کے جواب کا اندازہ لگائیں۔ روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Makanan Favoritmu dalam Bahasa Arab? Aku Suka / Tidak Suka | Percakapan · Hari 32",
+   "Hari 32: tanyakan “apa makanan favoritmu?” dalam bahasa Arab, jawab dengan makananmu, dan sebutkan yang TIDAK kamu suka: cukup taruh laa di depan kata kerja. Lalu tebak jawaban Lina. Bahasa Arab 2 menit sehari."
+  ],
+  "bn": [
+   "আরবিতে তোমার প্রিয় খাবার কী? পছন্দ করি / করি না | কথোপকথন · দিন ৩২ | আরবি শিখুন",
+   "দিন ৩২: আরবিতে জিজ্ঞেস করো “তোমার প্রিয় খাবার কী?”, নিজের খাবার দিয়ে উত্তর দাও, আর বলো কী পছন্দ করো না: শুধু ক্রিয়ার আগে laa বসাও। তারপর লিনার উত্তর আন্দাজ করো। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Arapça En Sevdiğin Yemek Ne? Severim / Sevmem | Arapça Sohbet · 32. Gün",
+   "32. Gün: Arapça “en sevdiğin yemek ne?” diye sor, kendi yemeğinle cevap ver ve SEVMEDİĞİNİ de söyle: fiilin önüne laa koyman yeter. Sonra Lina'nın cevabını tahmin et. Günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "غذای مورد علاقه‌ات به عربی چیست؟ دوست دارم / دوست ندارم | مکالمه · روز ۳۲ | آموزش زبان عربی",
+   "روز ۳۲: به عربی بپرس «غذای مورد علاقه‌ات چیست؟»، با غذای خودت جواب بده و بگو چه چیزی را دوست نداری: فقط laa را قبل از فعل بگذار. بعد جواب لینا را حدس بزن. روزی ۲ دقیقه آموزش زبان عربی."
+  ],
+  "ms": [
+   "Makanan Kegemaran dalam Bahasa Arab? Saya Suka / Tidak Suka | Perbualan · Hari 32",
+   "Hari 32: tanya “apa makanan kegemaran anda?” dalam bahasa Arab, jawab dengan makanan anda, dan sebut yang anda TIDAK suka: letak sahaja laa di depan kata kerja. Kemudian teka jawapan Lina. Bahasa Arab 2 minit sehari."
+  ],
+  "fr": [
+   "Ton plat préféré en arabe ? J'aime / Je n'aime pas | Conversation · Jour 32",
+   "Jour 32 : demande « quel est ton plat préféré ? » en arabe, réponds avec ton plat, et dis ce que tu n'aimes PAS : il suffit de mettre laa devant le verbe. Puis devine la réponse de Lina. L'arabe en 2 minutes par jour."
+  ],
+  "ru": [
+   "Твоя любимая еда по-арабски? Люблю / Не люблю | Разговор · День 32",
+   "День 32: спроси по-арабски «какая твоя любимая еда?», ответь своей едой и скажи, что НЕ любишь: просто поставь laa перед глаголом. Потом угадай ответ Лины. Арабский за 2 минуты в день."
+  ],
+  "de": [
+   "Dein Lieblingsessen auf Arabisch? Ich mag / Ich mag nicht | Gespräch · Tag 32",
+   "Tag 32: Frag auf Arabisch „Was ist dein Lieblingsessen?“, antworte mit deinem Essen und sag, was du NICHT magst: einfach laa vor das Verb setzen. Dann rate Linas Antwort. Arabisch in 2 Minuten am Tag."
+  ],
+  "so": [
+   "Cuntada Aad Jeceshahay Af-Carabi? Waan Jeclahay / Ma Jecli | Wadahadal · Maalinta 32",
+   "Maalinta 32: Carabi ku weydii “cuntadee baad ugu jeceshahay?”, cuntadaada ku jawaab, oo sheeg waxaadan jeclayn: kaliya laa dhig falka hortiisa. Kadib qiyaas jawaabta Lina. Af-Carabi 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Chakula Unachokipenda kwa Kiarabu? Napenda / Sipendi | Mazungumzo · Siku ya 32",
+   "Siku ya 32: uliza kwa Kiarabu “chakula unachokipenda zaidi ni kipi?”, jibu kwa chakula chako, na useme USICHOPENDA: weka tu laa mbele ya kitenzi. Kisha kisia jibu la Lina. Kiarabu dakika 2 kwa siku."
+  ],
+  "es": [
+   "¿Tu comida favorita en árabe? Me gusta / No me gusta | Conversación · Día 32",
+   "Día 32: pregunta en árabe «¿cuál es tu comida favorita?», responde con tu comida y di lo que NO te gusta: solo pon laa delante del verbo. Luego adivina la respuesta de Lina. Árabe en 2 minutos al día."
+  ]
+ },
+ "033-weekend": {
+  "name": "What Do You Do at the Weekend in Arabic? Say \"I Go, I Drink\" | Conversation · Day 33",
+  "hi": [
+   "वीकेंड पर आप क्या करते हैं? अरबी में कहें “मैं जाता हूँ, मैं पीता हूँ” | बातचीत · दिन 33",
+   "दिन 33: अरबी में पूछिए “वीकेंड पर आप क्या करते हैं?” और “मैं…” वाली क्रिया से जवाब दीजिए। क्रिया की शुरुआत की एक छोटी सी आवाज़ का मतलब है “मैं”: adh-hab (मैं जाता हूँ), ashrab (मैं पीता हूँ), aqra' (मैं पढ़ता हूँ), anaam (मैं सोता हूँ)। रोज़ सिर्फ 2 मिनट में अरबी।"
+  ],
+  "ur": [
+   "ویک اینڈ پر آپ کیا کرتے ہیں؟ عربی میں کہیں “میں جاتا ہوں، میں پیتا ہوں” | گفتگو · دن 33",
+   "دن 33: عربی میں پوچھیں “ویک اینڈ پر آپ کیا کرتے ہیں؟” اور “میں…” والے فعل سے جواب دیں۔ فعل کے شروع کی ایک چھوٹی سی آواز کا مطلب ہے “میں”: adh-hab (میں جاتا ہوں)، ashrab (میں پیتا ہوں)، aqra' (میں پڑھتا ہوں)، anaam (میں سوتا ہوں)۔ روزانہ صرف 2 منٹ میں عربی۔"
+  ],
+  "id": [
+   "Akhir Pekan dalam Bahasa Arab: Bilang “Aku Pergi, Aku Minum” | Percakapan · Hari 33",
+   "Hari 33: tanyakan “apa yang kamu lakukan di akhir pekan?” dalam bahasa Arab dan jawab dengan kata kerja “aku…”. Satu bunyi kecil di awal kata kerja berarti “aku”: adh-hab (aku pergi), ashrab (aku minum), aqra' (aku membaca), anaam (aku tidur). Bahasa Arab 2 menit sehari."
+  ],
+  "bn": [
+   "সপ্তাহান্তে তুমি কী করো? আরবিতে বলো “আমি যাই, আমি পান করি” | কথোপকথন · দিন ৩৩",
+   "দিন ৩৩: আরবিতে জিজ্ঞেস করো “সপ্তাহান্তে তুমি কী করো?” আর “আমি…” ক্রিয়া দিয়ে উত্তর দাও। ক্রিয়ার শুরুতে একটা ছোট ধ্বনির মানে “আমি”: adh-hab (আমি যাই), ashrab (আমি পান করি), aqra' (আমি পড়ি), anaam (আমি ঘুমাই)। প্রতিদিন মাত্র ২ মিনিটে আরবি।"
+  ],
+  "tr": [
+   "Hafta Sonu Ne Yaparsın? Arapça “Giderim, İçerim” De | Arapça Sohbet · 33. Gün",
+   "33. Gün: Arapça “hafta sonu ne yaparsın?” diye sor ve “ben…” fiiliyle cevap ver. Fiilin başındaki küçük bir ses “ben” demek: adh-hab (giderim), ashrab (içerim), aqra' (okurum), anaam (uyurum). Günde 2 dakikada Arapça."
+  ],
+  "fa": [
+   "آخر هفته چه کار می‌کنی؟ به عربی بگو «می‌روم، می‌نوشم» | مکالمه · روز ۳۳ | آموزش زبان عربی",
+   "روز ۳۳: به عربی بپرس «آخر هفته چه کار می‌کنی؟» و با یک فعل «من…» جواب بده. یک صدای کوچک در اول فعل یعنی «من»: adh-hab (می‌روم)، ashrab (می‌نوشم)، aqra' (می‌خوانم)، anaam (می‌خوابم). روزی ۲ دقیقه آموزش زبان عربی."
+  ],
+  "ms": [
+   "Hujung Minggu dalam Bahasa Arab: Sebut “Saya Pergi, Saya Minum” | Perbualan · Hari 33",
+   "Hari 33: tanya “apa anda buat pada hujung minggu?” dalam bahasa Arab dan jawab dengan kata kerja “saya…”. Satu bunyi kecil di awal kata kerja bermaksud “saya”: adh-hab (saya pergi), ashrab (saya minum), aqra' (saya membaca), anaam (saya tidur). Bahasa Arab 2 minit sehari."
+  ],
+  "fr": [
+   "Que fais-tu le week-end en arabe ? Dis « je vais, je bois » | Conversation · Jour 33",
+   "Jour 33 : demande « que fais-tu le week-end ? » en arabe et réponds avec un verbe en « je… ». Un petit son au début du verbe veut dire « je » : adh-hab (je vais), ashrab (je bois), aqra' (je lis), anaam (je dors). L'arabe en 2 minutes par jour."
+  ],
+  "ru": [
+   "Что ты делаешь на выходных по-арабски? Скажи «иду, пью» | Разговор · День 33",
+   "День 33: спроси по-арабски «что ты делаешь на выходных?» и ответь глаголом на «я…». Один маленький звук в начале глагола значит «я»: adh-hab (я иду), ashrab (я пью), aqra' (я читаю), anaam (я сплю). Арабский за 2 минуты в день."
+  ],
+  "de": [
+   "Was machst du am Wochenende auf Arabisch? Sag „ich gehe, ich trinke“ | Gespräch · Tag 33",
+   "Tag 33: Frag auf Arabisch „Was machst du am Wochenende?“ und antworte mit einem „ich…“-Verb. Ein kleiner Laut am Anfang des Verbs heißt „ich“: adh-hab (ich gehe), ashrab (ich trinke), aqra' (ich lese), anaam (ich schlafe). Arabisch in 2 Minuten am Tag."
+  ],
+  "so": [
+   "Maxaad Samaysaa Dhammaadka Toddobaadka? Af-Carabi: “Waan Tagaa, Waan Cabbaa” · Maalinta 33",
+   "Maalinta 33: Carabi ku weydii “maxaad samaysaa dhammaadka toddobaadka?” oo ku jawaab fal “aniga…” ah. Dhawaaq yar oo falka hortiisa ah wuxuu la macno yahay “aniga”: adh-hab (waan tagaa), ashrab (waan cabbaa), aqra' (waan akhriyaa), anaam (waan seexdaa). Af-Carabi 2 daqiiqo maalintii."
+  ],
+  "sw": [
+   "Unafanya Nini Wikendi kwa Kiarabu? Sema “Naenda, Nakunywa” | Mazungumzo · Siku ya 33",
+   "Siku ya 33: uliza kwa Kiarabu “unafanya nini wikendi?” na ujibu kwa kitenzi cha “mimi…”. Sauti ndogo mwanzoni mwa kitenzi inamaanisha “mimi”: adh-hab (naenda), ashrab (nakunywa), aqra' (nasoma), anaam (nalala). Kiarabu dakika 2 kwa siku."
+  ],
+  "es": [
+   "¿Qué haces el fin de semana en árabe? Di «voy, bebo» | Conversación · Día 33",
+   "Día 33: pregunta en árabe «¿qué haces el fin de semana?» y responde con un verbo en «yo…». Un pequeño sonido al inicio del verbo significa «yo»: adh-hab (voy), ashrab (bebo), aqra' (leo), anaam (duermo). Árabe en 2 minutos al día."
+  ]
+ },
+ "l01-alif": {
+  "name": "Arabic Letter Alif (ا): Sound, Shapes and Words | Letters",
+  "hi": [
+   "अरबी अक्षर अलिफ़ (ا): आवाज़, शक्लें और शब्द | अरबी अक्षर सीखें",
+   "28 में से पहला अक्षर, अलिफ़: इसका नाम, इसकी लंबी “आ” आवाज़, इसकी दो शक्लें, और तीन शब्द जो आप पहले से जानते हैं। इसका एक नियम: अलिफ़ पहले वाले अक्षर से जुड़ता है, बाद वाले से कभी नहीं।"
+  ],
+  "ur": [
+   "عربی حرف الف (ا): آواز، شکلیں اور الفاظ | عربی حروف تہجی سیکھیں",
+   "28 میں سے پہلا حرف، الف: اس کا نام، اس کی لمبی “آ” کی آواز، اس کی دو شکلیں، اور تین الفاظ جو آپ پہلے سے جانتے ہیں۔ اس کا ایک اصول: الف پہلے والے حرف سے جڑتا ہے، بعد والے سے کبھی نہیں۔"
+  ],
+  "id": [
+   "Huruf Arab Alif (ا): Bunyi, Bentuk, dan Kata | Belajar Huruf Hijaiyah",
+   "Huruf 1 dari 28, alif: namanya, bunyi panjang “ah”, dua bentuknya, dan tiga kata yang sudah kamu tahu. Satu aturannya: alif bersambung dengan huruf sebelumnya, tapi tidak pernah dengan huruf sesudahnya."
+  ],
+  "bn": [
+   "আরবি অক্ষর আলিফ (ا): উচ্চারণ, রূপ ও শব্দ | আরবি বর্ণমালা শিখুন",
+   "২৮টির মধ্যে প্রথম অক্ষর, আলিফ: এর নাম, এর লম্বা “আ” ধ্বনি, এর দুটি রূপ, আর তিনটি শব্দ যা তুমি আগেই জানো। এর একটাই নিয়ম: আলিফ আগের অক্ষরের সাথে জোড়ে, পরের অক্ষরের সাথে কখনো না।"
+  ],
+  "tr": [
+   "Arap Harfi Elif (ا): Sesi, Şekilleri ve Kelimeler | Arap Alfabesi Öğren",
+   "28 harfin ilki, elif: adı, uzun “ah” sesi, iki şekli ve zaten bildiğin üç kelime. Tek kuralı: elif kendinden önceki harfe bağlanır, sonrakine asla."
+  ],
+  "fa": [
+   "حرف الف در عربی (ا): صدا، شکل‌ها و کلمه‌ها | آموزش حروف الفبای عربی",
+   "حرف اول از ۲۸ حرف، الف: اسمش، صدای کشیدهٔ «آ»، دو شکلش، و سه کلمه که از قبل بلدی. تنها قانونش: الف به حرف قبلی می‌چسبد، ولی هرگز به حرف بعدی نه."
+  ],
+  "ms": [
+   "Huruf Arab Alif (ا): Bunyi, Bentuk dan Perkataan | Belajar Huruf Hijaiyah",
+   "Huruf 1 daripada 28, alif: namanya, bunyi panjang “ah”, dua bentuknya, dan tiga perkataan yang anda sudah tahu. Satu peraturannya: alif bersambung dengan huruf sebelumnya, tetapi tidak pernah dengan huruf selepasnya."
+  ],
+  "fr": [
+   "La lettre arabe alif (ا) : son, formes et mots | Apprendre l'alphabet arabe",
+   "Lettre 1 sur 28, alif : son nom, son long son « ah », ses deux formes et trois mots que tu connais déjà. Sa seule règle : alif se lie à la lettre d'avant, jamais à celle d'après."
+  ],
+  "ru": [
+   "Арабская буква алиф (ا): звук, формы и слова | Арабский алфавит",
+   "Буква 1 из 28, алиф: её название, долгий звук «а», две формы и три слова, которые ты уже знаешь. Её единственное правило: алиф соединяется с буквой перед ней, но никогда с буквой после."
+  ],
+  "de": [
+   "Der arabische Buchstabe Alif (ا): Laut, Formen und Wörter | Arabisches Alphabet",
+   "Buchstabe 1 von 28, Alif: sein Name, sein langer „ah“-Laut, seine zwei Formen und drei Wörter, die du schon kennst. Seine einzige Regel: Alif verbindet sich mit dem Buchstaben davor, nie mit dem danach."
+  ],
+  "so": [
+   "Xarafka Carabiga Alif (ا): Codka, Qaababka iyo Erayada | Baro Alifbeetada Carabiga",
+   "Xarafka 1 ee 28, alif: magaciisa, codkiisa dheer ee “ah”, labadiisa qaab, iyo saddex eray oo aad horay u taqaannay. Xeerkiisa kaliya: alif wuxuu ku xidhmaa xarafka ka horreeya, weligiis kan ka dambeeya."
+  ],
+  "sw": [
+   "Herufi ya Kiarabu Alif (ا): Sauti, Maumbo na Maneno | Jifunze Alfabeti ya Kiarabu",
+   "Herufi ya 1 kati ya 28, alif: jina lake, sauti yake ndefu ya “ah”, maumbo yake mawili, na maneno matatu unayoyajua tayari. Kanuni yake moja: alif inaungana na herufi iliyo kabla yake, kamwe na iliyo baada yake."
+  ],
+  "es": [
+   "La letra árabe alif (ا): sonido, formas y palabras | Aprende el alfabeto árabe",
+   "Letra 1 de 28, alif: su nombre, su sonido largo «ah», sus dos formas y tres palabras que ya conoces. Su única regla: alif se une a la letra de antes, nunca a la de después."
   ]
  }
 }

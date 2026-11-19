@@ -213,6 +213,8 @@ def main():
         badge_label = "ARABIC EXTRAS"
     elif stem.startswith("ep"):   # monthly Episode (docs/21): no day numbers anywhere
         badge_label = f"EPISODE {int(stem[2:4])}"
+    elif stem.startswith("l") and stem[1:3].isdigit():   # letters series: l01-alif … (owner "go" 2026-11-19)
+        badge_label = f"LETTER {int(stem[1:3])}"
     elif stem.startswith("v"):   # vocabulary Shorts: v01-cafe, v02-street … (owner, 2026-10-05)
         badge_label = "ARABIC VOCAB"
     else:   # part compilations: w01 = Part 1 (Days 1-5), w02 = Part 2 (Days 6-10) …
@@ -375,7 +377,10 @@ def main():
     # scenes marked "captions": "high" in prompts.json (a close-up whose face fills the lower half) get captions above the head
     high = ",".join(f"{s['start']:.2f}-{s['end']:.2f}" for i, s in enumerate(tl["scenes"], 1) if opts.get(i, {}).get("captions") == "high")
     top = ",".join(f"{s['start']:.2f}-{s['end']:.2f}" for i, s in enumerate(tl["scenes"], 1) if opts.get(i, {}).get("captions") == "top")
-    run([sys.executable, str(HERE / "captions" / "srt_to_burnin_ass.py"), str(en_srt), str(ass)] + ([f"high={high}"] if high else []) + ([f"top={top}"] if top else []))
+    # "captions": "card" (2026-11-19, Days 31–33: 3–4 line cards): right under THIS scene's card, whatever its height
+    at = ",".join(f"{s['start']:.2f}-{s['end']:.2f}:{1920 - (card_bottom[i] + 135)}" for i, s in enumerate(tl["scenes"], 1)
+                  if opts.get(i, {}).get("captions") == "card" and i in card_bottom)
+    run([sys.executable, str(HERE / "captions" / "srt_to_burnin_ass.py"), str(en_srt), str(ass)] + ([f"high={high}"] if high else []) + ([f"top={top}"] if top else []) + ([f"at={at}"] if at else []))
 
     # 3. final: YOUR TURN during pauses, captions, voiceover at -14 LUFS (mono measured -17 → dual-mono -14)
     enable = "+".join(f"between(t,{p['start']:.2f},{p['end']:.2f})" for p in tl["pauses"]) or "0"
