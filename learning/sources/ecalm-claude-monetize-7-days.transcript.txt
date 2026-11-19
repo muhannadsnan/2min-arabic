@@ -1,0 +1,390 @@
+[00:00] This video got 2.8 million views in two weeks, and I want that.
+[00:04] So I decided to use hard AI to start a brand new channel to see if I can monetize it within
+[00:08] three to seven days.
+[00:10] And trust me, the results are shocking.
+[00:12] This video has hit more than 500k views.
+[00:15] You can see it's already made me 365 bucks.
+[00:19] Well, I should be making more from this video, but the channel got monetized just five days
+[00:23] ago, so most of the views weren't monetized.
+[00:26] But I think this channel will bring me a decent amount because if we check my recent video,
+[00:30] you can see that's made me over 500 bucks already.
+[00:33] And I will show you why I got that higher RPM later.
+[00:36] But right now, I want to show you the mistakes I avoided and the actual system that gets
+[00:40] my channel monetized faster.
+[00:42] So you won't also repeat same mistakes.
+[00:44] See, let me tell you the truth.
+[00:45] The first mistake lots of beginner creators make is when creating and setting up their
+[00:50] channels.
+[00:51] And believe it or not, this is what most of the successful channels are hiding from
+[00:55] you.
+[00:56] I'm going to tell you something.
+[00:57] But first, let me show something here.
+[00:58] This channel started just two weeks ago and it already has close to eight million views
+[01:02] with just 24 uploads.
+[01:04] If I give them an average RPM of let's say five bucks, which is fair because mine is
+[01:08] around eight bucks.
+[01:09] That's over 40 grand in just two weeks.
+[01:11] But there's one secret that will never catch your attention even if I ask you to show me.
+[01:15] And that's when this account was created.
+[01:17] You see, you might think YouTube doesn't care if your account is new or not.
+[01:21] And I understand because YouTube hasn't officially said that.
+[01:24] But I'm talking from experience using an aged account performs better.
+[01:28] I've tested this so I know what I'm talking about.
+[01:30] I think since the channel is new, it has no data or history.
+[01:34] So when you post a video on that newly created Gmail account, it takes time to enter into
+[01:38] the algorithm because the algorithm is confused and doesn't know who to push the content
+[01:43] to.
+[01:44] And one thing I've noticed is that because the algorithm is confused, when it starts
+[01:47] showing your video to people, it shows right beside other people's videos, which
+[01:52] means it's testing the video to see who might be interested.
+[01:55] So instead of pushing the video to the homepage, it rather shows it to people watching other
+[01:59] people's video.
+[02:00] And that's dangerous because the video might not be pushed to the right audience, meaning
+[02:05] your click through rate and average view duration would be low since those viewers aren't your
+[02:10] targeted audience.
+[02:11] But there's a fix.
+[02:12] And that's not about warming up your account.
+[02:15] It's about optimizing it instead.
+[02:17] Just tell YouTube what your channel is about and your videos will be shown to the right
+[02:21] audience.
+[02:22] Simple.
+[02:23] I'm going to show you how I create my channels that go viral.
+[02:26] But before that, you need to do this after creating your Gmail account.
+[02:30] Just go to my account.google.com, click on security and sign in and make sure two-step
+[02:36] verification is turned on.
+[02:38] It's going to ask you to sign in again by entering your password.
+[02:41] Then you pick any of the options there.
+[02:43] You can use your phone number.
+[02:45] It's simple.
+[02:46] Once you're done, go to YouTube here, click on your profile.
+[02:51] Now go to switch account.
+[02:54] Then click on view all channels.
+[02:57] Click on create a channel.
+[03:00] Then click on verify.
+[03:03] Now you can record a six seconds video of yourself and upload it here or go ahead and upload
+[03:08] your government issued ID.
+[03:10] For me, I use the last option, right?
+[03:12] Click next.
+[03:15] Then click done.
+[03:16] If you don't receive any verification requests, that's fine.
+[03:19] All right.
+[03:20] We need to brand the channel to tell viewers that we're not joking.
+[03:23] So first we need a name for the channel.
+[03:26] And since I want everything to be smooth for you, I prepared this prompt.
+[03:29] The link will be in the video description.
+[03:32] Just make sure it's this exact prompt.
+[03:34] Once you get it, copy the channel branding prompt by clicking here.
+[03:39] Then give it to chat GPT.
+[03:41] We'll use cloud AI too.
+[03:42] But the reason we're using chat GPT is because we're not asking it to generate only
+[03:47] the channel name and description.
+[03:49] We want the logo and banner as well.
+[03:51] And for image generation, I think chat GPT is better than cloud AI.
+[03:55] All right.
+[03:56] Once you give the prompt to chat GPT, it's going to give you 10 channel names and ask
+[04:01] you to choose the name you like.
+[04:02] If you don't like any of it, you can simply ask it to give you more.
+[04:06] Once you get the one you like, just select that, hit continue, and it'll go ahead
+[04:10] and give you 10 channel descriptions.
+[04:12] One thing I didn't say is that since you're not the only one going to use this prompt,
+[04:16] I recommend you edit the prompt a little, especially the logo and the banner part.
+[04:20] Now I asked it to give me the channel logo and the banner, and here's the result.
+[04:26] So you just have to download yours, then upload them here.
+[04:37] Next, grab the name you picked from here, then paste it into the box.
+[04:42] Do the same for the handle and description.
+[04:45] Simple.
+[04:46] You can enter your business email here in case someone wants to reach you for
+[04:50] collaboration, but make sure it's not the same as your channel email.
+[04:54] I'll tell you the reason later, but for the video watermark,
+[04:56] I go to Google search for a subscribe button, then find the one with a
+[05:02] transparent background.
+[05:04] Make sure it's square in shape, something like this.
+[05:07] Save it and upload it here.
+[05:11] Choose entire video, then hit publish.
+[05:16] All right, let's check it.
+[05:18] That's simply amazing, but we're not done yet.
+[05:20] We need to do some settings.
+[05:21] So first you need to check if your account is verified.
+[05:24] So enter youtube.com forward slash verify.
+[05:27] You can see this account isn't verified.
+[05:29] So I just have to enter my phone number here and hit the next button.
+[05:33] Once you get a confirmation that your account is verified, go back to your
+[05:36] YouTube studio and refresh the page.
+[05:39] Click on settings, go to upload default, then click on visibility.
+[05:46] Choose unlisted.
+[05:48] Now go to channel, then go to advanced settings under the made for kids.
+[05:55] Select the middle option.
+[05:57] Now scroll down and enable the auto dubbing feature.
+[06:02] Let's go to basic info.
+[06:04] For the country, you can choose your country or leave it as it is.
+[06:07] But for the keywords, most beginner creators think it doesn't matter.
+[06:11] If it doesn't matter, then why is it there?
+[06:13] You see, these little stuff you ignore are the best ways your channel communicates with
+[06:17] the algorithm, especially tags.
+[06:19] Initially I thought tags are nothing, but why is it there if it's not important?
+[06:22] Do you know tags can get you views?
+[06:25] Let me show you something you've never seen before.
+[06:27] You see this video has over 50k views, but because of good keywords, just check the views
+[06:32] I got from search.
+[06:34] Now check here, it says hash what?
+[06:36] So you see, the things some of you overlook can get you views if you do it the right way.
+[06:41] So how do you get those keywords?
+[06:42] It's simple.
+[06:44] But one thing, don't ask AI for that.
+[06:46] I recommend a better keyword researching tool like VidIQ, TubeBuddy, 1 of 10, or any other
+[06:52] tool you know.
+[06:53] For me, I use VidIQ.
+[06:55] You can also try it for free or just pay $1 to access all the pro features for the first
+[07:00] month.
+[07:01] Once you're here, just click on research, then give it your niche.
+[07:06] What we're doing is about survival, or horror stories.
+[07:09] So I'll just say horror stories and hit search.
+[07:12] Although the competition is high, but the search volume is very high so there's no problem
+[07:16] with that.
+[07:17] You can see, it's getting more than 1 million views every hour.
+[07:21] It's even at 2.2 million views per hour as I'm recording this video.
+[07:25] But even if we make it average of 1.5 views, that's around 36 million views every day.
+[07:31] That's crazy.
+[07:32] So here's what I do.
+[07:33] I pick some of the highly searched keywords, copy it, then paste it here.
+[07:38] You have about 500 characters so you can add more.
+[07:41] Alright, I can hit save and the channel will be ready for upload.
+[07:46] But let me tell you something.
+[07:48] You see, I always try my best for you guys, and I can confidently say that I've helped
+[07:51] lots of people monetize their channels on YouTube.
+[07:54] You see, I'm not asking you for money, but at least giving the video a like tells me
+[07:58] you enjoy what I'm doing.
+[08:00] And if YouTube automation is your thing, then just join the family by hitting subscribe.
+[08:04] Alright, so to be able to be eligible for monetization, we need 4000 watch hours and
+[08:10] 1000 subscribers.
+[08:11] So we need a strategy that could get us to hit these requirements faster.
+[08:14] But you see, for a video to go viral, I'd say about 65% depend on the idea because that's
+[08:20] what will make the viewer click and watch.
+[08:21] See, you can make the best video in the world, but if no one is clicking to watch, who will
+[08:25] know it's the best video?
+[08:27] Because of that, I reverse engineer everything that I did to achieve this result.
+[08:31] And I came up with this prompt.
+[08:33] Just click here to copy, then give it to Claude AI.
+[08:39] You can use the free version.
+[08:40] Now hit send and Claude AI is going to give you 10 interesting results like these.
+[08:47] Just scroll through and pick the one you like.
+[08:49] I think idea number six is interesting.
+[08:52] So I'll go with that.
+[08:54] But you can also get ideas on Reddit and Quora.
+[08:56] Now you can get people to click on your video, but you need to do one thing if you want
+[09:00] to achieve results like these, you see the audience are there.
+[09:03] So if you can make them click and stay to watch, your chance of going viral would
+[09:07] be very high because that's what the algorithm wants.
+[09:10] Make them click and watch.
+[09:11] See, YouTube is simple.
+[09:13] You just need to follow three simple rules.
+[09:15] Make your video reach people, make those people click on the video and make them watch the
+[09:19] video.
+[09:20] Then you'll have a viral video.
+[09:21] You can get the impressions, get the clicks, but the question is, how do you make them watch
+[09:25] your videos?
+[09:26] See, it's simple.
+[09:27] It's all about a good script.
+[09:28] Just write a good script.
+[09:29] If you're good at writing stories, no problem.
+[09:32] You can do that.
+[09:33] But if you're someone like me who doesn't have time to sit and spend hours writing,
+[09:36] don't worry.
+[09:37] Let me show you what I do.
+[09:38] Back to the prompts, then scroll down a little.
+[09:41] You'll see this prompt.
+[09:42] Just grab that, then go back to Cloud AI.
+[09:46] Paste it in the chat, scroll up, then enter your idea number here.
+[09:51] You see, the good thing about this niche is that you can create more than 10 videos
+[09:55] for one topic, like the topic I selected.
+[09:58] You can see it's 60 days, meaning I'm going to create more than 20 episodes.
+[10:02] Alright, let's generate the first episode.
+[10:05] Good.
+[10:06] Episode 1 is ready, and you can create a video right away, which I'll show you in a moment.
+[10:09] But I recommend you read through and correct every error.
+[10:13] It's simple.
+[10:14] Just copy it from here, paste it into Google Doc, then change a few things.
+[10:19] It won't cost you a dime.
+[10:20] And one thing you need to know is that you're going to continue this chat to make sure
+[10:24] you've covered every episode.
+[10:26] So I recommend you pin the chat so you don't have to be searching for it every time.
+[10:30] When you're ready for the next episode, you just have to give it this prompt.
+[10:37] Enter the episode number you want.
+[10:38] So I'll say 2, leave everything as it is, then hit send.
+[10:42] When episode 2 is done, just give it the same prompt for the rest of the episode.
+[10:46] Don't just ask it to give you the next episode, give it the prompt instead.
+[10:50] Now the interesting part, creating the video.
+[10:52] And for this we have the free method and the pay method.
+[10:55] For the free method, you'll have to generate images and give those images to Flow to
+[10:59] convert them into videos.
+[11:01] Because you can't just paste the prompt to Flow, the character won't stay consistent.
+[11:05] But here's the reality.
+[11:06] Flow is limited, meaning you'd have to wait to get free credits before you can continue
+[11:10] the project or just go ahead and pay for a subscription.
+[11:13] And think about this, after spending days gathering all the videos from Flow, you'll still need
+[11:17] to spend time joining them and throwing in some effects in CapCut.
+[11:21] Well, that's not a waste of time.
+[11:23] But imagine your audience loved the first episode and they're waiting for the next
+[11:26] one.
+[11:27] You need to give them that as soon as possible.
+[11:29] Yeah, that's how you hit the monetization faster.
+[11:32] So I don't know your budget, but I think you should use AI to get the job done.
+[11:36] Because with it, you can even get the first five episodes ready and give it to them every
+[11:40] one to two days to boost your channel's momentum and build channel history faster.
+[11:45] The tool I'll recommend is VSUB.
+[11:47] And it's not because I'm an affiliate, it's a tool I personally use.
+[11:51] You can see it has a feature specifically made for such content, meaning you don't have
+[11:55] to worry about voiceover, visuals, editing, like, just give it the script.
+[11:59] That's all.
+[12:00] So click the link in the video description, sign up for an account and you'll get a dashboard
+[12:05] like this.
+[12:06] There are lots of features here, but we're only focusing on this feature right here.
+[12:10] So click on use template.
+[12:12] Make sure the video format is set to long form, then leave everything here and scroll down
+[12:17] to characters.
+[12:18] Here you can choose not to use any character, meaning your video will have random characters
+[12:23] every time.
+[12:24] But I don't recommend that because you need to treat YouTube as a business, not just creating
+[12:29] content.
+[12:30] You need to have your main character appearing in all of your videos.
+[12:33] So we need to draw our character.
+[12:35] Let me show you how.
+[12:36] Go back to where you generated the channel icon and the banner, and ask it to give you
+[12:40] the actual character.
+[12:42] It's simple, just say that give me the actual character, and chatgpt will give you just
+[12:48] that.
+[12:49] Now click on it and download it to your device.
+[12:51] Let's go back to vsub, make sure use character is selected, then click on character library.
+[12:57] If you click here, you'll have the option to pick any of these characters.
+[13:01] But since we have our own character, we need to ask vsub to draw for us.
+[13:05] So let's close this window, then click on new character.
+[13:09] Click on upload image, then click here to upload the character.
+[13:14] Give it a name, then click on create.
+[13:19] This is not going to use the exact image you uploaded.
+[13:22] So it's going to trace it, then make sure you have the highest quality for the content.
+[13:26] You'll get the same character, so don't worry.
+[13:28] You can see it gave us the same character, but the side image has double faces.
+[13:32] So I'll just regenerate it, simple.
+[13:35] This is AI.
+[13:36] And that's why I always recommend checking everything you create.
+[13:40] We're good now, and we can move on.
+[13:42] For the animation, you can animate the first 30 seconds to catch the viewer's attention.
+[13:46] But I recommend you animate the entire video.
+[13:49] That's depending on your budget, it's not compulsory.
+[13:52] Leave this as standard and check the sound effects.
+[13:55] Now pick a voice.
+[13:56] I'm not going to suggest any voice, else most of you would end up with the same voice.
+[14:00] Now go grab your script and paste it into this box.
+[14:07] Next, click on this button, then click continue.
+[14:13] Now if you check here, you'll realize it picks a different character for us.
+[14:17] But we need our main character.
+[14:18] So let's click here, then select our own character.
+[14:22] Now for the side characters, we can choose any, then click on create video.
+[14:28] Alright, the video is ready.
+[14:29] But before we can make any adjustments, you need to watch the entire video to see what
+[14:33] should be improved.
+[14:35] I checked mine, and everything is OK.
+[14:37] For this type of content, you can choose not to add background music.
+[14:40] So let's click on thumbnail.
+[14:44] Now this is not our video title.
+[14:46] So let's go back to where we generated the ideas, then grab the title here.
+[14:50] Let's paste it here.
+[14:55] Next click on create template.
+[14:57] Now this is what I do to get a proven thumbnail.
+[14:59] First I find a channel with similar content style.
+[15:02] Get some of their thumbnails, then upload it here, or just paste the link here.
+[15:06] I don't steal their thumbnails, I just model them.
+[15:09] Once done, I click on load, select three of them, then hit on add template.
+[15:17] Then save template.
+[15:20] Now I can click on this button.
+[15:23] Now you can click here to download.
+[15:25] This is simple, but I think the only downside is the avatar.
+[15:28] So this is what I do.
+[15:29] I'll show you in a moment, but let's download the video by clicking here.
+[15:33] Leave the format to standard and select 60 FPS frame rate.
+[15:38] But for the resolution, use 2K.
+[15:41] But you can still manage the 1080p if you have a low budget.
+[15:44] Alright hit download, and it's going to prepare the video for you to download.
+[15:50] But while waiting, let me show you how I changed the character on the thumbnail.
+[15:54] First go to chatgpt and give it the thumbnail you got from vsub and your character.
+[15:59] Now give it this simple prompt and hit send.
+[16:01] Simple.
+[16:02] But you know, I see lots of beginner creators making lots of mistakes when uploading the
+[16:07] video.
+[16:08] So before I show you the result, let me show you how I upload my video that goes viral.
+[16:12] First a lot of beginner creators confuse whether to put their video in public or unlisted.
+[16:16] Well we'll get to that.
+[16:17] So let's start by uploading the video.
+[16:19] Alright click create and then upload video.
+[16:25] Next click on select file, then go ahead and upload your video.
+[16:28] Now follow this carefully.
+[16:30] First is the video title.
+[16:31] We have it already, so let's go to ClaudeAI and grab it from here.
+[16:37] Let's replace it with this one here.
+[16:41] Next the video description, and this is where it matters the most, especially if it's
+[16:45] a new channel.
+[16:46] Per my experience, if you can manage to get views from search in the early stage, it's
+[16:50] more likely to get views from the browse feature, which is better than the suggested
+[16:55] videos.
+[16:56] So this is what I do when I upload a video on a new channel.
+[16:58] First you need searchable keywords.
+[17:00] So let's go back to vidIQ again, then click on research.
+[17:05] Now if you check the topic of this video, you'll realize it's about survival.
+[17:10] So let's search for it here.
+[17:12] You can see this keyword has a crazy search volume, although it's a high competition keyword.
+[17:18] But the demand for this keyword is very huge.
+[17:20] So if this keyword sits in the topic, that's fine.
+[17:23] But we need to use the same keyword for the video description as well.
+[17:27] So here's what I do.
+[17:28] I select this keyword, then pick other related keywords.
+[17:32] Like 6 or 7 of them, then copy them from here.
+[17:36] Now go to the prompts, then copy the last prompt.
+[17:41] Open Claude AI, then give it the prompt you just copied.
+[17:47] Next paste the keywords here.
+[17:49] Now copy the title, then paste it here.
+[17:56] Lastly, grab your script here and replace it with these texts.
+[18:00] Now hit enter and you'll get this simple but well optimized video description.
+[18:05] Copy it from here, then paste it into this box.
+[18:10] Alright, let's upload the thumbnail.
+[18:13] Now scroll down to Playlist.
+[18:14] Click on this tab, then click on Create Playlist.
+[18:18] Click on New Playlist, then paste the same title here and the description also.
+[18:23] Click on Create.
+[18:25] Now make sure the playlist is selected, then click on Done.
+[18:29] One thing to note is that the playlist we just created is for this video.
+[18:33] So all the next episodes under this topic will use this same playlist.
+[18:37] Now scroll down and click on Show More.
+[18:41] Click Yes here.
+[18:42] This won't affect your channel, so don't worry.
+[18:44] For tags, simply add more keywords in vidIQ, copy it, then paste it into the tags section.
+[18:50] Now this is entertainment content, so I'll change it from people and blogs to entertainment.
+[18:56] Click Next.
+[18:58] Next again, then Next.
+[19:00] Now this is where most beginner creators confuse themselves.
+[19:03] Release the video to the public right away, or unlist it.
+[19:06] Remember, when creating the channel, we select Unlisted.
+[19:10] That's why Unlisted is already selected.
+[19:12] You know what?
+[19:13] Let's save the video, so I'll show you why.
+[19:15] Alright, let's close this window.
+[19:18] Now let's click on Content, then click on the Edit icon here.
+[19:24] Click on Language, and you can see that we need to do some setting here.
+[19:27] You know, this setting is not magically going to get you views, but it can help you reach
+[19:31] more people.
+[19:32] And if your video is good, you'll get views.
+[19:34] Alright, click here and choose the language of your video.
+[19:39] Click Confirm.
+[19:42] Now you can see the video wasn't ready to be released, meaning if you rushed to release
+[19:46] the video, you'd lose those viewers.
+[19:48] So wait for it to be processed before you go ahead and publish the video.
+[19:53] Alright?
+[19:54] This is the result.
+[19:55] Now let me tell you something, YouTube is one of the simplest ways to make money online
+[20:23] right now.
+[20:24] Especially YouTube Shorts.
+[20:26] You know, YouTube is trying to compete with TikTok, so they're pushing Shorts like never
+[20:29] before.
+[20:30] So if you're interested in making money with YouTube Shorts, then this video is for
+[20:34] you.
+[20:35] I shared how I made about $400,000 in only 3 months or so.
+[20:39] See you in the next one.

@@ -11,6 +11,7 @@ Rule: a source is advice, not proof. Our own analytics (docs/12) win when they d
 in a source are never adopted just because they're mentioned (licence rule, docs/14; no-paid-tools rule).
 
 ## Sources (newest on top)
+- 2026-11-19 — E'Calm, "Free Claude AI: Monetize My YouTube Channel in 7 Days" (AI horror-story automation, affiliate-driven) → nothing new for us: 9 of 14 claims already done or match, auto-dubbing ON + faceless AI tools contradicted; optional: watermark, keyword refresh — notes/2026-11-19-ecalm-claude-monetize-7-days.md
 
 | Date | Source | Note | Adopted |
 |---|---|---|---|
