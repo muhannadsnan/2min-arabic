@@ -2,7 +2,6 @@
 # Order = Instagram views on 31 Oct. tools/fb_hits.py posts the first line and removes it. <instagram media id>  # views · title
 # — the rest of the older Reels (republish everything, owner 2026-10-31) —
 # 20 Nov: ordered by what Facebook pushes (docs/06 'What Facebook prefers'): rules / word lists / numbers first, stories, expressions + talk last
-17911790310496988  # 273 · Day 6 of 30 — yes, no, sorry, okay: the little Arabic w
 18094056551675417  # 265 · Arabic Extras — in Syria and much of the Arab world, nu
 18135572248632739  # 234 · Day 7 of 30 — the week 1 quiz: 10 questions from Days 1
 17918343048260062  # 190 · Day 16 of 30 — order your coffee exactly how you like i
@@ -36,4 +35,4 @@ release:fb-012-hi-fresh.bin  # Hindi Day 12 «मेरा» — NEW look (Sami,
 17877210687566487  # repeat · 10 ways to say goodbye
 18112199075587536  # repeat · I want: uriidu vs bidd-
 18135464212731487  # repeat · Day 1 talk
-# last posted: 2026-11-19
+# last posted: 2026-11-20
