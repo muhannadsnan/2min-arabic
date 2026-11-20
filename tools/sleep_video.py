@@ -13,6 +13,7 @@ and a chapter review in the normal rounds (option C, owner 17 Nov: spaced repeti
 line, −20 LUFS); rounds 3–N "slow" (longer pauses, no chapter lines or chapter review, dimmer text, −24 LUFS) — the slow round is
 rendered once and copied (said openly in the title).
 Static pictures (a very slow zoom shimmered), darkened; each chapter fades in/out over 1 s. Nothing flashes.
+Every 5 minutes (from minute 5 of each round) the LIKE + SUBSCRIBE + bell card plays silently at the bottom (owner 2026-11-20).
 """
 import argparse, json, pathlib, re, subprocess, sys, tempfile, shutil
 import numpy as np, soundfile as sf
@@ -158,9 +159,29 @@ def build_round(stem, C, nar, clips_dir, tmp, variant, opening, fade_end, tag):
     r = subprocess.run(["ffmpeg", "-nostats", "-i", str(out), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True)
     lu = float(re.findall(r"\bI:\s+(-?[\d.]+) LUFS", r.stderr)[-1]); g = v["lufs"] - lu
     lev = tmp / f"{tag}-lev.mp4"
-    sh("ffmpeg", "-v", "error", "-y", "-i", str(out), "-c:v", "copy", "-af", f"volume={g:.2f}dB,alimiter=limit=0.7:level=false",
-       "-c:a", "aac", "-b:a", "128k", "-ar", str(SR), "-ac", "1", str(lev))
+    # LIKE + SUBSCRIBE + bell, silent, at the bottom every 5 minutes (owner 2026-11-20) — needs a video re-encode
+    like = like_loop(tmp)
+    sh("ffmpeg", "-v", "error", "-y", "-i", str(out), "-stream_loop", "-1", "-i", str(like), "-filter_complex",
+       f"[0:v][1:v]overlay=(W-w)/2:H-h-36:enable='gte(t,{LIKE_EVERY})'[v]", "-map", "[v]", "-map", "0:a", "-t", f"{t:.3f}",
+       "-r", str(FPS), "-c:v", "libx264", "-preset", "medium", "-crf", "24", "-tune", "stillimage", "-pix_fmt", "yuv420p",
+       "-af", f"volume={g:.2f}dB,alimiter=limit=0.7:level=false", "-c:a", "aac", "-b:a", "128k", "-ar", str(SR), "-ac", "1", str(lev))
     return lev, chapters, t
+
+
+LIKE_EVERY = 300   # s — the like/subscribe card appears every 5 minutes, from minute 5 of each round, no sound
+LIKE_WIDTH = 810   # px of the 1920-wide frame (the card is 1080×300 for the vertical Shorts)
+LIKE_ALPHA = 0.8   # a little see-through: the picture is dark, a full-white card would flash
+
+
+def like_loop(tmp):
+    """assets/like-subscribe.mov (5.2 s) padded with transparent frames to exactly LIKE_EVERY seconds, made once."""
+    out = tmp / "like-loop.mov"
+    if not out.exists():
+        sh("ffmpeg", "-v", "error", "-y", "-i", str(ROOT / "assets" / "like-subscribe.mov"), "-vf",
+           f"fps={FPS},scale={LIKE_WIDTH}:-2,format=rgba,colorchannelmixer=aa={LIKE_ALPHA},"
+           f"tpad=stop_mode=add:stop_duration={LIKE_EVERY}:color=0x00000000,trim=duration={LIKE_EVERY}",
+           "-an", "-c:v", "png", str(out))
+    return out
 
 
 def main():
