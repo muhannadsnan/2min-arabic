@@ -31,7 +31,7 @@ This is the first letter of the Arabic alphabet, and you already know three word
 🔤 **On screen:** ألف · *alif* · the letter alif
 
 ```say:narrator
-Its name is alif.
+First, listen carefully to the name of this letter.
 ```
 ```say:teacher
 ألف
@@ -57,7 +57,7 @@ Its sound is a long ah, just like the sound in the word father.
 🔤 **On screen:** أنا · *ana* · I
 
 ```say:narrator
-You've already said it twice in ana, which means I.
+You've already said it twice in the word that means I.
 ```
 ```say:teacher
 أنا
@@ -70,7 +70,7 @@ You've already said it twice in ana, which means I.
 🔤 **On screen:** أهلا · *ahlan* · hello
 
 ```say:narrator
-It is also the first letter of ahlan, which means hello.
+It is also the very first letter when you say hello in Arabic.
 ```
 ```say:teacher
 أهلا
@@ -83,7 +83,7 @@ It is also the first letter of ahlan, which means hello.
 🔤 **On screen:** كتاب · *kitaab* · book
 
 ```say:narrator
-And in the word kitaab, which means book, it sits right in the middle.
+And when you say book in Arabic, this letter sits right in the middle.
 ```
 ```say:teacher
 كتاب
@@ -96,7 +96,7 @@ And in the word kitaab, which means book, it sits right in the middle.
 🔤 **On screen:** ا ـا · *two shapes* · alone, and joined to the letter before it
 
 ```say:narrator
-Here's its little secret: alif holds hands with the letter before it, but never with the letter after it, so it has only two shapes.
+Here's its little secret: this letter holds hands with the letter before it, but never with the letter after it, so it has only two shapes.
 ```
 
 ### 🎬 Scene 8 — Find the letter
@@ -105,7 +105,7 @@ Here's its little secret: alif holds hands with the letter before it, but never 
 🔤 **On screen:** Which word has an alif?
 
 ```say:narrator
-Quick game. Which word has an alif, qahwa, coffee, or shaay, tea?
+Quick game. Which of these two words has this letter, the word for coffee, or the word for tea?
 ```
 ⏸️ **Pause 2s**
 
@@ -115,7 +115,7 @@ Quick game. Which word has an alif, qahwa, coffee, or shaay, tea?
 🔤 **On screen:** شاي · *shaay* · tea
 
 ```say:narrator
-The answer is shaay, tea, and there it is, standing in the middle.
+The right answer is tea, and there it is, standing in the middle of the word.
 ```
 
 ### 🎬 Scene 10 — Outro
@@ -127,7 +127,7 @@ The answer is shaay, tea, and there it is, standing in the middle.
 Send this to someone who wants to read Arabic.
 ```
 ```say:narrator
-Next week we'll learn letter number two, which is called baa.
+Next week, the second letter of the Arabic alphabet.
 ```
 ```say:narrator
 Subscribe so you don't break your streak.

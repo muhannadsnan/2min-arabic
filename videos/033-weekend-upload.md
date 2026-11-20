@@ -92,6 +92,7 @@ Day 33 ✅ What do YOU do at the weekend? One Arabic word that starts with that 
 
 ## Quality check (Claude)
 
-- Gate: SHIP 7/7 — 033, 19 Nov · 1 Hook ✅ "In Arabic, one small sound at the start of a verb means I…" · 2 Pair ✅ YOUR WEEKEND? + أذهب, the coffee table from the video · 3 Promise ✅ (the a- = I rule) · 4 Length ✅ 2:06.1 · 5 Ending ✅ · 6 Distinct ✅ (one rule + examples) · 7 Metadata ✅
+- Gate: SHIP 7/7 — 033, 19 Nov · 1 Hook ✅ "In Arabic, one small sound at the start of a verb means I…" · 2 Pair ✅ YOUR WEEKEND? + أذهب, the coffee table from the video · 3 Promise ✅ (the a- = I rule) · 4 Length ✅ 2:07.4 · 5 Ending ✅ · 6 Distinct ✅ (one rule + examples) · 7 Metadata ✅
 - Sami's «I sleep… a lot!» sets up Story 2. Lina's «and you, Sami?» click trimmed.
-- 5 narrator lines reworded; the gate's remaining 'hesitation' is the intended 'ah' sound (checked in the transcript). final_check: 2:06.1 ✅, −14.2 LUFS, peak −2.2 dB · captions 56, 4 weak (transliterated words like nihaayat al-usbuu' — timed between their neighbours).
+- 5 narrator lines reworded; the gate's remaining 'hesitation' is the intended 'ah' sound (checked in the transcript). final_check (20 Nov rebuild): 2:07.4 ✅, −14.1 LUFS, peak −2.1 dB · captions 57, 0 weak.
+- **20 Nov (owner): the English narrator says no Arabic words any more** — every transliteration in the narration was reworded into English (the Arabic is heard only from the real recordings); re-voiced, gate clean, rebuilt.

@@ -42,7 +42,7 @@ This is Day 31, the start of month two, and every lesson now is a question about
 🔤 **On screen:** ما لونك المفضل؟ · *maa lawnuk al-mufaddal?* · What's your favorite color? · Step 1/4
 
 ```say:narrator
-Here is the question you will hear, where lawn means color, and al-mufaddal means the favorite one.
+Here is the question you will hear when someone wants to know your favorite color.
 ```
 ```say:teacher
 ما لونك المفضل؟
@@ -55,7 +55,7 @@ Here is the question you will hear, where lawn means color, and al-mufaddal mean
 🔤 **On screen:** ما لونكِ المفضل؟ · *maa lawnuki al-mufaddal?* · What's your favorite color? (to a woman) · Step 2/4
 
 ```say:narrator
-When you ask a woman, only the end of lawn changes, so you say lawnuki.
+If you ask a woman instead, the word for color gets a new ending, so listen closely for it.
 ```
 ```say:teacher
 ما لونكِ المفضل؟
@@ -68,7 +68,7 @@ When you ask a woman, only the end of lawn changes, so you say lawnuki.
 🔤 **On screen:** لوني المفضل الأزرق · *lawni al-mufaddal al-azraq* · My favorite color is blue. · Step 3/4
 
 ```say:narrator
-To answer, start with lawni al-mufaddal, which means my favorite color, and then say the color, like blue.
+To answer, start with the words for my favorite color, and then say the color, like blue.
 ```
 ```say:teacher
 لوني المفضل الأزرق.
@@ -81,7 +81,7 @@ To answer, start with lawni al-mufaddal, which means my favorite color, and then
 🔤 **On screen:** أحمر · *aHmar* · red
 
 ```say:narrator
-If blue isn't your color, pick one of these, and in the sentence it takes al at the front.
+If blue isn't your color, pick one of these, and in the sentence each color gets the Arabic word for the at the front.
 ```
 ```say:teacher
 أَحْمَرْ
@@ -134,7 +134,7 @@ If blue isn't your color, pick one of these, and in the sentence it takes al at 
 🔤 **On screen:** أحب اللون الأخضر · *uHibbu l-lawn al-akhDar* · I love the color green. · Step 4/4
 
 ```say:narrator
-There is also a shorter way, with the word uhibbu, which means I love, so you can say, I love the color green.
+There is also a shorter way that starts with the words I love, so you can say, I love the color green.
 ```
 ```say:teacher
 أحب اللون الأخضر.

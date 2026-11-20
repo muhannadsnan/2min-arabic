@@ -19,6 +19,9 @@ Python: `TTS=/media/msn/GamesLinux/AI/tts/venv/bin/python` for anything that nee
 Every item here cost a rebuild once. Apply them while writing the script and building the audio/images.
 
 **Narration (English, owner's clone) — the narrator is the viewer's teacher, human and calm:**
+- **The narrator never pronounces Arabic (owner, 2026-11-20: "it sounds just wrong"):** no transliterations in
+  narrator lines ("lawn means color", "uhibbu", "alif"). Say it in English ("the word for color", "this letter") or
+  give the word its own real recording (teacher/Koki clip). Sound descriptions are fine ("a soft ah sound").
 - No rapid-fire lists ("Yes, no, sorry, okay."). Put lists inside a sentence: "…four little words: yes, no, sorry and okay."
 - No short casual lines ("Keep that word in mind.") — the clone rushes them (> 3.6 words/s). Write fuller, calmer
   sentences ("Remember this word well, because you will need it again today.").

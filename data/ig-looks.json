@@ -388,5 +388,110 @@
   "zoom": 1.1,
   "shift": 0.2,
   "hue": -6
+ },
+ {
+  "stem": "004-story-sami-and-the-coffee",
+  "lang": "hi",
+  "char": "omar",
+  "pose": "close",
+  "bg": "alley",
+  "color": [
+   13,
+   148,
+   136
+  ],
+  "zoom": 1.077,
+  "shift": 0.04,
+  "hue": 4
+ },
+ {
+  "stem": "004-story-sami-and-the-coffee",
+  "lang": "ur",
+  "char": "sami",
+  "pose": "close",
+  "bg": "cafe",
+  "color": [
+   14,
+   116,
+   184
+  ],
+  "zoom": 1.08,
+  "shift": -0.23,
+  "hue": -4
+ },
+ {
+  "stem": "004-story-sami-and-the-coffee",
+  "lang": "tr",
+  "char": "lina",
+  "pose": "cA",
+  "bg": "desk",
+  "color": [
+   109,
+   40,
+   217
+  ],
+  "zoom": 1.081,
+  "shift": -0.41,
+  "hue": -4
+ },
+ {
+  "stem": "004-story-sami-and-the-coffee",
+  "lang": "es",
+  "char": "waiter",
+  "pose": "close",
+  "bg": "cafe",
+  "color": [
+   190,
+   24,
+   93
+  ],
+  "zoom": 1.087,
+  "shift": -0.3,
+  "hue": -6
+ },
+ {
+  "stem": "004-story-sami-and-the-coffee",
+  "lang": "id",
+  "char": "sami",
+  "pose": "cB",
+  "bg": "alley",
+  "color": [
+   161,
+   98,
+   7
+  ],
+  "zoom": 1.098,
+  "shift": 0.09,
+  "hue": 8
+ },
+ {
+  "stem": "004-story-sami-and-the-coffee",
+  "lang": "fr",
+  "char": "waiter",
+  "pose": "cB",
+  "bg": "desk",
+  "color": [
+   79,
+   70,
+   229
+  ],
+  "zoom": 1.093,
+  "shift": -0.3,
+  "hue": -4
+ },
+ {
+  "stem": "004-story-sami-and-the-coffee",
+  "lang": "ms",
+  "char": "omar",
+  "pose": "cA",
+  "bg": "cafe",
+  "color": [
+   220,
+   38,
+   38
+  ],
+  "zoom": 1.094,
+  "shift": 0.43,
+  "hue": -8
  }
 ]

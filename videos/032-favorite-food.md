@@ -42,7 +42,7 @@ This is Day 32. Yesterday it was your favorite color, so today it's your favorit
 🔤 **On screen:** ما طعامك المفضل؟ · *maa Ta'aamuk al-mufaddal?* · What's your favorite food? · Step 1/4
 
 ```say:narrator
-Ta'aam means food, and the question works just like yesterday's question about color.
+The question works just like yesterday's question about color, but this time it asks about food.
 ```
 ```say:teacher
 ما طعامك المفضل؟
@@ -55,7 +55,7 @@ Ta'aam means food, and the question works just like yesterday's question about c
 🔤 **On screen:** ما طعامكِ المفضل؟ · *maa Ta'aamuki al-mufaddal?* · What's your favorite food? (to a woman) · Step 2/4
 
 ```say:narrator
-And when you ask a woman, it ends in ki, so you say ta'aamuki.
+And when you ask a woman, the word for food gets the same new ending that color got yesterday.
 ```
 ```say:teacher
 ما طعامكِ المفضل؟
@@ -68,7 +68,7 @@ And when you ask a woman, it ends in ki, so you say ta'aamuki.
 🔤 **On screen:** طعامي المفضل الدجاج · *Ta'aami al-mufaddal ad-dajaaj* · My favorite food is chicken. · Step 3/4
 
 ```say:narrator
-To answer, start with ta'aami al-mufaddal, my favorite food, and then the food, like chicken.
+To answer, start with the words for my favorite food, and then say the food, like chicken.
 ```
 ```say:teacher
 طعامي المفضل الدجاج.
@@ -81,7 +81,7 @@ To answer, start with ta'aami al-mufaddal, my favorite food, and then the food, 
 🔤 **On screen:** أحب الأرز، ولا أحب السمك · *uHibbu l-aruzz, wa-laa uHibbu s-samak* · I love rice, and I don't love fish. · Step 4/4
 
 ```say:narrator
-And now the new part: when you put laa in front of uhibbu, I love becomes I don't love.
+And now the new part: put the little word for no in front of I love, and it becomes I don't love.
 ```
 ```say:teacher
 أحب الأرز، ولا أحب السمك.
@@ -94,7 +94,7 @@ And now the new part: when you put laa in front of uhibbu, I love becomes I don'
 🔤 **On screen:** خبز · *khubz* · bread · uHibbu or laa uHibbu?
 
 ```say:narrator
-Quick game, so for each food say uhibbu, or laa uhibbu. Bread.
+Quick game, so for each food, say in Arabic, I love it, or I don't love it, starting with bread.
 ```
 ```say:teacher
 خُبْزْ

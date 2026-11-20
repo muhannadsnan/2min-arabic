@@ -92,8 +92,9 @@ Day 31 ✅ ما لونك المفضل؟ Answer me in Arabic: lawni al-mufaddal�
 
 ## Quality check (Claude)
 
-- Gate: SHIP 7/7 — 031, 19 Nov · 1 Hook ✅ "What's your favorite color? In two minutes you'll answer that in Arabic…" · 2 Pair ✅ FAVORITE COLOR? + لون, the palette from the video · 3 Promise ✅ · 4 Length ✅ 2:07.6 · 5 Ending ✅ share → next → subscribe → goodbye · 6 Distinct ✅ (life question; vs extra10 list, extra09, vocab05) · 7 Metadata ✅ (tags 459 YouTube-counted)
+- Gate: SHIP 7/7 — 031, 19 Nov · 1 Hook ✅ "What's your favorite color? In two minutes you'll answer that in Arabic…" · 2 Pair ✅ FAVORITE COLOR? + لون, the palette from the video · 3 Promise ✅ · 4 Length ✅ 2:05.9 · 5 Ending ✅ share → next → subscribe → goodbye · 6 Distinct ✅ (life question; vs extra10 list, extra09, vocab05) · 7 Metadata ✅ (tags 459 YouTube-counted)
 - First pencil video with Sami and Lina talking: mouths move only on their own lines (tools/animate/pencil_scene_clips.py).
 - All Arabic = your sheet A + vocab03 colors + Koki (_lina-koki-7); 0 extra sounds. 3 narrator lines reworded (gap, rushed, accent slip) → gate clean.
-- final_check: 2:07.6 ✅, −14.1 LUFS, peak −2.1 dB, 0 overlaps · captions synced (54, 0 weak).
+- final_check (20 Nov rebuild): 2:05.9 ✅, −14.1 LUFS, peak −1.9 dB, 0 overlaps · captions synced (53, 0 weak).
+- **20 Nov (owner): the English narrator says no Arabic words any more** — every transliteration in the narration was reworded into English (the Arabic is heard only from the real recordings); re-voiced, gate clean, rebuilt.
 - Your Arabic sounds brighter than the narrator (+8.5 dB above 2 kHz, sheet A came via WhatsApp — same as vocab05); processing unchanged — tell me if it sounds sharp.

@@ -92,6 +92,7 @@ Day 32 ✅ What's your favorite food? Write it in Arabic: Ta'aami al-mufaddal…
 
 ## Quality check (Claude)
 
-- Gate: SHIP 7/7 — 032, 19 Nov · 1 Hook ✅ "At every Arab table someone asks you this…" · 2 Pair ✅ FAVORITE FOOD? + طعام, the chicken from the video · 3 Promise ✅ (incl. «I don't love») · 4 Length ✅ 2:03.1 · 5 Ending ✅ · 6 Distinct ✅ (negation + guessing game vs Day 31's color list) · 7 Metadata ✅
+- Gate: SHIP 7/7 — 032, 19 Nov · 1 Hook ✅ "At every Arab table someone asks you this…" · 2 Pair ✅ FAVORITE FOOD? + طعام, the chicken from the video · 3 Promise ✅ (incl. «I don't love») · 4 Length ✅ 2:06.5 · 5 Ending ✅ · 6 Distinct ✅ (negation + guessing game vs Day 31's color list) · 7 Metadata ✅
 - Koki's two clips had a click/breath ~1 s before she speaks → trimmed (originals kept). Bread picture redrawn (the first was a plain disc).
-- 2 narrator lines reworded → gate clean. final_check: 2:03.1 ✅, −14.2 LUFS, peak −1.9 dB · captions 50, 1 weak (the transliterated 'or laa uhibbu' — timed between its neighbours).
+- 2 narrator lines reworded → gate clean. final_check (20 Nov rebuild): 2:06.5 ✅, −14.2 LUFS, peak −2.1 dB · captions 53, 0 weak.
+- **20 Nov (owner): the English narrator says no Arabic words any more** — every transliteration in the narration was reworded into English (the Arabic is heard only from the real recordings); re-voiced, gate clean, rebuilt.

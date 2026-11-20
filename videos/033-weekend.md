@@ -42,7 +42,7 @@ This is Day 33. First your color, then your food, and now your weekend.
 🔤 **On screen:** ماذا تفعل في نهاية الأسبوع؟ · *maadhaa taf'al fii nihaayat al-usbuu'?* · What do you do at the weekend? · Step 1/4
 
 ```say:narrator
-Here is the question, where nihaayat al-usbuu' means the end of the week, so the weekend.
+Here is the question you will hear, and its long last part means the end of the week, so the weekend.
 ```
 ```say:teacher
 ماذا تفعل في نهاية الأسبوع؟
@@ -55,7 +55,7 @@ Here is the question, where nihaayat al-usbuu' means the end of the week, so the
 🔤 **On screen:** ماذا تفعلين في نهاية الأسبوع؟ · *maadhaa taf'aliin fii nihaayat al-usbuu'?* · What do you do at the weekend? (to a woman) · Step 2/4
 
 ```say:narrator
-And when you ask a woman, taf'al becomes taf'aleen.
+And when you ask a woman, listen carefully, because the verb in the middle gets a longer ending.
 ```
 ```say:teacher
 ماذا تفعلين في نهاية الأسبوع؟
@@ -68,7 +68,7 @@ And when you ask a woman, taf'al becomes taf'aleen.
 🔤 **On screen:** في نهاية الأسبوع، أذهب إلى السوق · *fii nihaayat al-usbuu', adh-hab ilaa s-suuq* · At the weekend, I go to the market. · Step 3/4
 
 ```say:narrator
-To answer, start with fee nihaayat al-usbuu', at the weekend, and then what you do, like I go to the market.
+To answer, start by saying at the weekend, and then what you do, like I go to the market.
 ```
 ```say:teacher
 في نهاية الأسبوع، أذهب إلى السوق.
@@ -81,7 +81,7 @@ To answer, start with fee nihaayat al-usbuu', at the weekend, and then what you 
 🔤 **On screen:** أشرب القهوة مع أصدقائي · *ashrab al-qahwa ma'a aSdiqaa'ii* · I drink coffee with my friends. · Step 4/4
 
 ```say:narrator
-Ashrab means I drink, so this one is, I drink coffee with my friends.
+Next comes a new word that means I drink, so this one is, I drink coffee with my friends.
 ```
 ```say:teacher
 أشرب القهوة مع أصدقائي.
@@ -94,7 +94,7 @@ Ashrab means I drink, so this one is, I drink coffee with my friends.
 🔤 **On screen:** أذهب، أشرب · *adh-hab, ashrab* · The a- at the start means I: I go, I drink
 
 ```say:narrator
-Did you notice that adh-hab and ashrab both start with a soft ah sound, and that this sound at the start means I?
+Did you notice that I go and I drink both start with a soft ah sound, and that this sound at the start means I?
 ```
 
 ### 🎬 Scene 8 — Lina reads
@@ -115,7 +115,7 @@ Now we ask Lina, so listen for the same sound.
 🔤 **On screen:** وأنتَ يا سامي؟ · *wa-anta yaa saamii?* · And you, Sami?
 
 ```say:narrator
-Aqra' means I read, so there's that same sound again, and then she asks Sami.
+Her first word means I read, so there's that same sound again, and then she asks Sami.
 ```
 ```say:lina
 وَأَنْتَ يَا سَامِي؟
@@ -130,7 +130,7 @@ Aqra' means I read, so there's that same sound again, and then she asks Sami.
 في نهاية الأسبوع؟ أنام… كثيرا!
 ```
 ```say:narrator
-He said anaam, I sleep, and kathiiran, a lot, so remember that about Sami, because it's going to matter soon.
+He said that he sleeps a lot at the weekend, so remember that about Sami, because it's going to matter soon.
 ```
 
 ### 🎬 Scene 11 — Your turn
