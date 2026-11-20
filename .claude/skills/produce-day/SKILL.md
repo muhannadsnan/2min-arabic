@@ -64,11 +64,41 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
 phrase-by-phrase generation (a "shhh" at some starts, a robotic echo). Accent improvements = later (a new reference).
 
 **Slides, every Short (owner 2026-11-20: "the transition of intro is great… very nice and don't add to the boreness"):**
-assemble.py does both by itself (not for Parts/Episodes/Stories/sleep): the filmed **hello slides in from the right
-(0.3 s) and out to the left (0.25 s)**, and its end silence is cut to a quarter (footage/clips/hello.mp4, original kept as
-hello-before-2026-11-20.mp4). **Word cards slide in** by a fixed rotation over the scenes that have a card — right→left,
-left→right, none — never the hook card, never a card identical to the previous one. **Slide and swoosh go together** (owner 2026-11-20): a card that gets no swoosh (right after a star chime) never slides; a "none" card in the rotation still gets its swoosh.
-Force one in prompts.json with `"card_slide": "rl" | "lr" | "none"`.
+assemble.py does all of it by itself (not for long videos):
+- **Intro:** the filmed hello slides in from the right (0.3 s) and out to the left (0.25 s); its end silence is cut to a
+  quarter (footage/clips/hello.mp4, original kept as hello-before-2026-11-20.mp4).
+- **Outro:** the filmed goodbye slides in from the right (0.3 s) and never out — the video still ends on its last frame.
+- **Word cards:** a card slides in **only together with its swoosh** (owner: "without the sound no transition, they stay
+  together"). Rotation over the swoosh cards: right→left, left→right, none (the "none" card keeps its swoosh) — so about
+  2 of every 3 cards slide. Never the hook card, never a card identical to the previous one, never a card right after a
+  star chime (no swoosh there). With a cross-fade the card waits for the old one to fade first. Force one in
+  prompts.json: `"card_slide": "rl" | "lr" | "none"`.
+- **Subscribe:** the LIKE + SUBSCRIBE + bell animation (assets/like-subscribe.mov, tools/make_like_subscribe.py: like
+  turns blue, SUBSCRIBED, bell rings; 3 clicks + ding) under "Subscribe so you don't break your streak." (owner
+  2026-11-20; the SUBSCRIBE-only one is only a fallback).
+**Pauses:** "Your turn" waits are **at most 2 s** (`make_audio.py` caps them); easy single words 1.5 s.
+**Fast-paced narration = our style for every Short (owner 2026-11-20: "this fast paced narration style should be our
+style from now on… eliminates the silences"; real Shorts have almost no silence while talking):** `make_audio.py` does it
+by itself for Days, Letters, Extras, Vocab (not Parts/Episodes/Stories/sleep — `LONG_VIDEO`): **0.05 s between two lines**
+(plus the ~0.15 s each clip keeps at its edges), **0.15 s after the hello clip**, **pauses between the narrator's own
+sentences cut to 0.15 s**; the practice waits stay: a ⏸️ after an Arabic line (repeat it) → **1.0 s**, a ⏸️ after the
+narrator's question (Your turn / game) → **1.5 s**. Write the script's ⏸️ values as before; the tool caps them. Days land
+at ~1:45–1:55 now — fine. The audio gate's "rushed" flag now fires on lines whose takes are fine (it counts words per
+second including the removed silences): only a line that sounds rushed TO THE EAR needs a re-take; check cut words in
+the final transcript instead. Never raise these values back without the owner.
+**Slides, every Short (owner 2026-11-20: "the transition of intro is great… very nice and don't add to the boreness"):**
+assemble.py does all of it by itself (not for long videos):
+- **Intro:** the filmed hello slides in from the right (0.3 s) and out to the left (0.25 s); its end silence is cut to a
+  quarter (footage/clips/hello.mp4, original kept as hello-before-2026-11-20.mp4).
+- **Outro:** the filmed goodbye slides in from the right (0.3 s) and never out — the video still ends on its last frame.
+- **Word cards:** a card slides in **only together with its swoosh** (owner: "without the sound no transition, they stay
+  together"). Rotation over the swoosh cards: right→left, left→right, none (the "none" card keeps its swoosh) — so about
+  2 of every 3 cards slide. Never the hook card, never a card identical to the previous one, never a card right after a
+  star chime (no swoosh there). With a cross-fade the card waits for the old one to fade first. Force one in
+  prompts.json: `"card_slide": "rl" | "lr" | "none"`.
+- **Subscribe:** the LIKE + SUBSCRIBE + bell animation (assets/like-subscribe.mov, tools/make_like_subscribe.py: like
+  turns blue, SUBSCRIBED, bell rings; 3 clicks + ding) under "Subscribe so you don't break your streak." (owner
+  2026-11-20; the SUBSCRIBE-only one is only a fallback).
 **Pauses:** "Your turn" waits are **at most 2 s** (`make_audio.py` caps them); easy single words 1.5 s.
 **Shorts pace — no dead air (owner 2026-11-20: "slow rhythm, many silences between transitions… reduce the transition
 silence in short videos so not to bore the viewers"):** `make_audio.py` does it for every Short by itself (Days, Letters,
@@ -221,7 +251,7 @@ burst on its own; a loud burst that isn't part of the line (throat clearing, a c
 
 Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼️ Image`, `🔤 On screen`,
 `⏸️ Pause`, `🎥 Clip: hello` / `🎥 Clip: goodbye`). Rules that matter:
-- Length ~1:50–2:40 when spoken (Shorts pace, 2026-11-20) (never over 2:59 — it's a Short). 5–8 new words, following the curriculum.
+- Length ~1:45–2:40 when spoken (fast-paced narration, 2026-11-20) (never over 2:59 — it's a Short). 5–8 new words, following the curriculum.
 - Sukun on the last letter of every Arabic phrase. Arabic is only ever spoken by Arabic speakers
   (`teacher`, `teacher-slow`, `sami`, `lina`), never by the narrator.
 - From Day 6 on: no English repetition after each Arabic line (the card shows the meaning).

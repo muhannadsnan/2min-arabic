@@ -52,11 +52,11 @@ GAP = 0.35          # seconds of silence between two clips when the script has n
 # transitions — reduce the transition silence in short videos so not to bore the viewers"). Long videos (Parts,
 # Episodes, Stories, sleep) keep the values above.
 LONG_VIDEO = re.compile(r"^(w\d|ep\d|s\d\d|sleep)")
-SHORT_GAP = 0.2            # between two lines
-SHORT_AFTER_FILMED = 0.3   # after the filmed hello
+SHORT_GAP = 0.05           # between two lines (owner 20 Nov, 2nd round: "almost no silence when talking"; was 0.2)
+SHORT_AFTER_FILMED = 0.15  # after the filmed hello (was 0.3)
 SHORT_REPEAT_PAUSE = 1.0   # a ⏸️ right after an Arabic line (repeat it) — the script's 1.2–2 s are capped here
 SHORT_TURN_PAUSE = 1.5     # a ⏸️ after the narrator's question, before the answer (Your turn / game: the clock ticks)
-SHORT_INNER_MAX = 0.35     # a silence inside a narrator line (between its sentences) is shortened to this
+SHORT_INNER_MAX = 0.15     # a silence inside a narrator line (between its sentences) is shortened to this (was 0.35)
 SAMPLE_RATE = 24000
 CLIP_LUFS = -18.0   # per-clip loudness (the final video mix is brought to -14 LUFS)
 

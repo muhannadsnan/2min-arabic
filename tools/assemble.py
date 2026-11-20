@@ -441,7 +441,10 @@ def main():
         s0, s1 = v["start"], v["end"]
         xpos = (f"'if(lt(t,{s0 + SLIDE_IN:.3f}),{W}*(1-(t-{s0:.3f})/{SLIDE_IN}),"
                 f"if(gt(t,{s1 - SLIDE_OUT:.3f}),-{W}*(t-{s1 - SLIDE_OUT:.3f})/{SLIDE_OUT},0))'"
-                if not LONG_VIDEO.match(stem) and v["name"] == "hello" else "0")
+                if not LONG_VIDEO.match(stem) and v["name"] == "hello" else
+                # the goodbye slides in the same way but never out: the video ends on its last frame (loop)
+                f"'if(lt(t,{s0 + SLIDE_IN:.3f}),{W}*(1-(t-{s0:.3f})/{SLIDE_IN}),0)'"
+                if not LONG_VIDEO.match(stem) and v["name"] == "goodbye" else "0")
         vchain += (f";[{idx}:v]fps={FPS},scale={W}:{H},setsar=1,setpts=PTS-STARTPTS+{v['start']:.3f}/TB[c{k}];"
                    f"[{last}][c{k}]overlay=x={xpos}:y=0:eof_action=pass:enable='between(t,{s0:.3f},{s1:.3f})'[v{k + 1}]")
         last = f"v{k + 1}"
@@ -450,21 +453,29 @@ def main():
         mix.append(f"[ca{k}]")
     # our own animated SUBSCRIBE + bell (tools/make_subscribe.py), shown while the narrator asks to subscribe
     # (not at the very end), with a click on each button and a bell "ding"
-    sub_mov = HERE.parent / "assets" / "subscribe.mov"
+    # LIKE + SUBSCRIBE + bell (owner 2026-11-20: "use the new subscribe-like-bell animation… so we have the like
+    # effect"; tools/make_like_subscribe.py) — the older SUBSCRIBE-only one stays as a fallback
+    sub_mov = HERE.parent / "assets" / "like-subscribe.mov"
     click, ding = HERE.parent / "assets" / "click.wav", HERE.parent / "assets" / "ding.wav"
-    if sub_mov.exists() and click.exists() and ding.exists():
-        sys.path.insert(0, str(HERE))
+    sys.path.insert(0, str(HERE))
+    if sub_mov.exists():
+        from make_like_subscribe import CLICK_TIMES, DING_TIME, DUR
+    else:
+        sub_mov = HERE.parent / "assets" / "subscribe.mov"
         from make_subscribe import CLICK_TIMES, DING_TIME, DUR
+    if sub_mov.exists() and click.exists() and ding.exists():
         ask = next((c for c in tl["clips"] if c["speaker"].startswith("narrator") and "subscribe" in c["text"].lower()),
                    None)
         start = max(ask["start"] - 0.5, 0.0) if ask else max(tl["duration"] - DUR, 0.0)
+        # no goodbye clip after it (Letters, Extras): start early enough that the bell rings before the video ends
+        start = max(0.0, min(start, tl["duration"] - DING_TIME - 0.6))
         end = min(start + DUR, tl["duration"])
         idx = 3 + len(tl.get("videos", []))
         inputs += ["-i", str(sub_mov)]   # at chest height (y 1500): the outro is a talking close-up now — 930 covered the face (2026-11-02)
         vchain += (f";[{idx}:v]format=rgba,setpts=PTS-STARTPTS+{start:.3f}/TB[sub];"
                    f"[{last}][sub]overlay=0:1500:eof_action=pass:enable='between(t,{start:.3f},{end:.3f})'[vs]")
         last = "vs"
-        sounds = [(click, CLICK_TIMES[0], 0.5), (click, CLICK_TIMES[1], 0.5), (ding, DING_TIME, 0.35)]
+        sounds = [(click, ct, 0.5) for ct in CLICK_TIMES] + [(ding, DING_TIME, 0.35)]
         for j, (wav, at, vol) in enumerate(sounds):
             inputs += ["-i", str(wav)]
             achain += (f";[{idx + 1 + j}:a]volume={vol},aformat=channel_layouts=mono,"
