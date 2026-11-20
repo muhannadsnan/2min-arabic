@@ -28,6 +28,7 @@ import sys
 from PIL import Image, ImageDraw, ImageFont
 
 W, H, FPS = 1080, 1920, 30
+SLIDE_IN, SLIDE_OUT = 0.3, 0.25   # s: the filmed hello sliding in / out (HELLO_SLIDE=1)
 FONTS = pathlib.Path("/usr/share/fonts/truetype/noto")
 LIBRARY = pathlib.Path(__file__).resolve().parent.parent / "library"   # reusable 3D clips: openers/, loops/, units/
 AR_FONT = FONTS / "NotoNaskhArabic-Bold.ttf"
@@ -410,8 +411,13 @@ def main():
     for k, v in enumerate(tl.get("videos", [])):   # filmed clips: full screen with their own sound
         idx = 3 + k
         inputs += ["-i", str(CLIPS_DIR / f"{v['name']}.mp4")]
+        # the hello clip slides in from the right and out to the left (owner 2026-11-20, test on Day 31: HELLO_SLIDE=1)
+        s0, s1 = v["start"], v["end"]
+        xpos = (f"'if(lt(t,{s0 + SLIDE_IN:.3f}),{W}*(1-(t-{s0:.3f})/{SLIDE_IN}),"
+                f"if(gt(t,{s1 - SLIDE_OUT:.3f}),-{W}*(t-{s1 - SLIDE_OUT:.3f})/{SLIDE_OUT},0))'"
+                if os.environ.get("HELLO_SLIDE") and v["name"] == "hello" else "0")
         vchain += (f";[{idx}:v]fps={FPS},scale={W}:{H},setsar=1,setpts=PTS-STARTPTS+{v['start']:.3f}/TB[c{k}];"
-                   f"[{last}][c{k}]overlay=0:0:eof_action=pass:enable='between(t,{v['start']:.3f},{v['end']:.3f})'[v{k + 1}]")
+                   f"[{last}][c{k}]overlay=x={xpos}:y=0:eof_action=pass:enable='between(t,{s0:.3f},{s1:.3f})'[v{k + 1}]")
         last = f"v{k + 1}"
         delay = round(v["start"] * 1000)
         achain += f";[{idx}:a]aformat=channel_layouts=mono,adelay={delay}:all=1[ca{k}]"
