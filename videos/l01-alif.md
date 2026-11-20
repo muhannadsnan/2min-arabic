@@ -44,7 +44,7 @@ First, listen carefully to the name of this letter.
 🔤 **On screen:** آ · *aa* · a long ah sound
 
 ```say:narrator
-Its sound is a long ah, just like the sound in the word father.
+Now listen to its sound, the same open sound you hear in the middle of the word father.
 ```
 ```say:teacher
 آ

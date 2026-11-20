@@ -59,7 +59,7 @@ favorite food in arabic, what is your favorite food in arabic, i love in arabic,
 
 | Setting | Value |
 |---|---|
-| Playlist | Arabic Questions About You: Month 2 (NEW — needs your OK) |
+| Playlist | Arabic Conversation Practice for Beginners (name approved by the owner 20 Nov; Claude creates it at the first fill) |
 | Audience | No, it's not made for kids |
 | **AI use** | **No — your own recorded Arabic (and Koki's) + your own cloned English voice, and illustrations.** |
 | Paid promotion | No |

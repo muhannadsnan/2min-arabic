@@ -92,7 +92,7 @@ Letter 1 ✅ Find the alif: write one Arabic word with ا in it 👇 (yes, أن�
 
 ## Quality check (Claude)
 
-- Gate: SHIP 7/7 — l01, 19 Nov · 1 Hook ✅ "This is the first letter of the Arabic alphabet, and you already know three words with it." · 2 Pair ✅ LETTER 1: ALIF + أنا with both alifs red · 3 Promise ✅ · 4 Length ✅ 1:09.7 (series Short) · 5 Ending ✅ subscribe, no goodbye (like the Extras) · 6 Distinct ✅ (new series) · 7 Metadata ✅
+- Gate: SHIP 7/7 — l01, 19 Nov · 1 Hook ✅ "This is the first letter of the Arabic alphabet, and you already know three words with it." · 2 Pair ✅ LETTER 1: ALIF + أنا with both alifs red · 3 Promise ✅ · 4 Length ✅ 1:10.4 (series Short) · 5 Ending ✅ subscribe, no goodbye (like the Extras) · 6 Distinct ✅ (new series) · 7 Metadata ✅
 - Your one take «ألف … آ … أنا … أهلا … كتاب» cut into 5, each part checked by transcription. Letters drawn by us (tools/images/letter_word.py), alif in red.
-- Badge 'LETTER 1' (new in assemble.py). final_check (20 Nov rebuild): 1:09.7 ✅, −14.2 LUFS, peak −2.1 dB · captions 34, 0 weak.
+- Badge 'LETTER 1' (new in assemble.py). final_check (20 Nov rebuild): 1:10.4 ✅, −14.1 LUFS, peak −2.2 dB · captions 35, 0 weak.
 - **20 Nov (owner): the English narrator says no Arabic words any more** — every transliteration in the narration was reworded into English (the Arabic is heard only from the real recordings); re-voiced, gate clean, rebuilt. The gate's 'hesitation' at line 4 is the intended 'ah'.
