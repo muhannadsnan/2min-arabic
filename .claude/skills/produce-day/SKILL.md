@@ -56,6 +56,7 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
   redo those lines. Very short lines drift most ("Subscribe so you don't break your streak." scored lowest).
 - **The approval preview includes the filmed hello/goodbye clips** (`tools/preview_audio.py`), otherwise their
   slots sound like silent gaps.
+- **Write numbers in words in narrator lines** ("Day thirty-three", not "Day 33"): the clone read "33" as "three three" (owner 2026-11-20). Check the day number in the final transcript.
 - Numbers and maths are hard to say: "one point zero one, seven times" stumbles — say it in words of meaning.
 - Fix a flagged line by **rewording**, not just more takes.
 
