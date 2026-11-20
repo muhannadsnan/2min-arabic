@@ -174,6 +174,21 @@ Put 3 hashtags max in the description (the first 3 show above the title).
   groups barely exist (searches return tiny or spam groups) — Hindi speakers sit in English/Urdu groups, Malaysians
   in the Indonesian ones.
 
+### What Facebook prefers (our numbers, owner 2026-11-20 — keep this list up to date at every Facebook check)
+Source: Business Dashboard 23 Oct–19 Nov (9,202 views, 13 follows). Small numbers = hints; re-check monthly.
+- **Facebook pushes Reels to strangers, not the Page:** 99.6 % of views from non-followers, 94 % from the Reels tab,
+  97 % of views are Reels (photos/albums 0.1 % each, groups 0.6 %). → Reels only; carousels/albums aren't worth effort here.
+- **One clear rule or a word list wins** ("Distribution" = Facebook's push vs our average): Day 5 "no word for is"
+  4.2× · Day 18 question words 4.2× · Day 10 count 1–10 3.6× · Day 14 quiz on the board 2.6× · Hindi Day 12 2.1× ·
+  Day 30 challenge 1.8× (most views, 598). **Expressions and loose topics lose:** inshallah 0.4× · Day 25 yes/no
+  questions 0.3× · Day 19 story (lost in Damascus) 0.8×. → the 12:00 hits run rule/list Reels first.
+- **The first 3 seconds decide:** only 11 % of views last 3 s (~4 s watch per view), unchanged after the hook covers
+  (11 Nov). → Shorts pace rule (no dead air, 20 Nov); next test = a Facebook-only start on the surprise sentence.
+- **Shares beat likes:** 57 shares vs 30 reactions, 0 comments — people forward lessons. Share hooks stay.
+- **Views don't become follows by themselves:** 13 follows from 9,202 views, 69 Page visits. → every Page caption
+  ends with a follow line (tools/facebook_api.py FOLLOW_LINE, from 20 Nov).
+- Our access key can post but not read statistics (no read_insights) → Facebook numbers come from the owner's screenshots.
+
 ## Learnings (dated)
 - 2026-10-06: "viral shorts" tag experiment → **dropped**. Tagged Day 3 (55 views, 38 % viewed) and Day 5 (38, 40 %) did not
   beat untagged Day 4 (86, 109 %) or the Day 2 re-upload (26 in 4 days, 61 %); content and hook matter, the tag doesn't

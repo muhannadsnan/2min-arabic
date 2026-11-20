@@ -64,6 +64,12 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
 phrase-by-phrase generation (a "shhh" at some starts, a robotic echo). Accent improvements = later (a new reference).
 
 **Pauses:** "Your turn" waits are **at most 2 s** (`make_audio.py` caps them); easy single words 1.5 s.
+**Shorts pace — no dead air (owner 2026-11-20: "slow rhythm, many silences between transitions… reduce the transition
+silence in short videos so not to bore the viewers"):** `make_audio.py` does it for every Short by itself (Days, Letters,
+Extras, Vocab; not Parts/Episodes/Stories/sleep): 0.2 s between lines (long videos 0.35), 0.3 s after the hello clip,
+a ⏸️ after an Arabic line (repeat it) → **1.0 s**, a ⏸️ after the narrator's question (Your turn / game) → **1.5 s**,
+and pauses between the narrator's own sentences shortened to 0.35 s. Write the script's ⏸️ values as before; the tool
+caps them. A Day may now land at ~1:50 — that's fine.
 
 **Voices — the same level to the ear (owner approved Day 8's sound, 2026-10-02: keep this pattern):**
 - Every clip is normalised to its target both ways (quiet clips raised, loud clips lowered): narrator −18 LUFS,
@@ -209,7 +215,7 @@ burst on its own; a loud burst that isn't part of the line (throat clearing, a c
 
 Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼️ Image`, `🔤 On screen`,
 `⏸️ Pause`, `🎥 Clip: hello` / `🎥 Clip: goodbye`). Rules that matter:
-- Length 2:00–2:40 when spoken (never over 2:59 — it's a Short). 5–8 new words, following the curriculum.
+- Length ~1:50–2:40 when spoken (Shorts pace, 2026-11-20) (never over 2:59 — it's a Short). 5–8 new words, following the curriculum.
 - Sukun on the last letter of every Arabic phrase. Arabic is only ever spoken by Arabic speakers
   (`teacher`, `teacher-slow`, `sami`, `lina`), never by the narrator.
 - From Day 6 on: no English repetition after each Arabic line (the card shows the meaning).

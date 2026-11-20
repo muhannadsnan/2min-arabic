@@ -74,9 +74,25 @@ def with_hook(path, caption):
     return out
 
 
+FOLLOW_LINE = "👉 Follow the Page: one 2-minute Arabic lesson every day."
+
+
+def with_follow(caption):
+    """Every Page caption asks for the follow (owner 2026-11-20: 9,202 views → 13 follows in 28 days). The line goes
+    before the closing hashtag block, once."""
+    caption = (caption or "").strip()
+    if FOLLOW_LINE in caption:
+        return caption
+    parts = caption.split("\n\n")
+    if len(parts) > 1 and parts[-1].lstrip().startswith("#"):
+        return "\n\n".join(parts[:-1] + [FOLLOW_LINE, parts[-1]])
+    return f"{caption}\n\n{FOLLOW_LINE}" if caption else FOLLOW_LINE
+
+
 def post_video(path, caption):
     """Upload a local video to the Page; returns the Facebook video id."""
-    path = with_hook(path, caption)
+    path = with_hook(path, caption)   # the hook picture is keyed by the caption's first line (unchanged below)
+    caption = with_follow(caption)
     pid, tok = creds(); path = pathlib.Path(path); size = path.stat().st_size
     if duration(path) <= 90:
         start = req(f"{GRAPH}/{pid}/video_reels", {"upload_phase": "start", "access_token": tok})

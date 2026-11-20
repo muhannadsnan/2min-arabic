@@ -34,7 +34,7 @@ Each gate is PASS or FAIL. Every FAIL gets **one fix, written as a command** ("R
 3. **Promise kept.** Everything the title, thumbnail and hook claim happens in the video, and the payoff starts within
    ~20 s (the "Today…" scene). The thumbnail image is a scene from this video, and its emotion matches. No shock, no
    fake stakes, no "fluent in 2 minutes". If a claim is only half true, change the words, not the video.
-4. **Length.** Day 2:00–2:40 (never over 2:59). Extra 30–75 s. Part ≈ 10–12 min. Read it from `final_check`.
+4. **Length.** Day ~1:50–2:40 (never over 2:59; shorter since the Shorts pace rule, 2026-11-20) — and no dead air: no silence over ~1.5 s except a Your-turn wait. Extra 30–75 s. Part ≈ 10–12 min. Read it from `final_check`.
 5. **Ending / loop.**
    - **Day:** "Day N done — tomorrow: …" teaser → "Subscribe so you don't break your streak." (its own block) →
      goodbye clip. Nothing after the goodbye, and no long silent tail — **the last frame is the goodbye clip's last frame**: no fade or darkening (owner 2026-10-31: "it signals the end and they scroll away"; a hard cut lets the Short loop). make_audio adds no air after a closing filmed clip.

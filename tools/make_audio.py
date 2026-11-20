@@ -48,6 +48,15 @@ SPEAKERS = ("narrator", "teacher", "teacher-slow", "sami", "tom", "omar", "lina"
 MAX_PAUSE = 2.0     # seconds — longer waits bore the viewer (easy words: 1.5 s)
 AFTER_FILMED = 0.6   # s of air after a filmed clip (hello) before the next line
 GAP = 0.35          # seconds of silence between two clips when the script has no explicit pause
+# Shorts move faster (owner 2026-11-20, watching Days 31–33 + Letter 1: "slow rhythm, many silences between
+# transitions — reduce the transition silence in short videos so not to bore the viewers"). Long videos (Parts,
+# Episodes, Stories, sleep) keep the values above.
+LONG_VIDEO = re.compile(r"^(w\d|ep\d|s\d\d|sleep)")
+SHORT_GAP = 0.2            # between two lines
+SHORT_AFTER_FILMED = 0.3   # after the filmed hello
+SHORT_REPEAT_PAUSE = 1.0   # a ⏸️ right after an Arabic line (repeat it) — the script's 1.2–2 s are capped here
+SHORT_TURN_PAUSE = 1.5     # a ⏸️ after the narrator's question, before the answer (Your turn / game: the clock ticks)
+SHORT_INNER_MAX = 0.35     # a silence inside a narrator line (between its sentences) is shortened to this
 SAMPLE_RATE = 24000
 CLIP_LUFS = -18.0   # per-clip loudness (the final video mix is brought to -14 LUFS)
 
@@ -243,6 +252,9 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
     if not any(e[0] == "say" for e in events):
         print(f"{script}: no say: blocks, skipped")
         return
+    short = not LONG_VIDEO.match(script.stem)
+    gap_default, after_filmed = (SHORT_GAP, SHORT_AFTER_FILMED) if short else (GAP, AFTER_FILMED)
+    last_speaker = None
     out_dir, cache = out_root / script.stem, out_root / ".cache"
     clips_dir = out_dir / "clips"
     shutil.rmtree(clips_dir, ignore_errors=True)
@@ -304,16 +316,16 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
     t, n, pending_gap = 0.0, 0, 0.0
     for event in events:
         if event[0] == "scene":
-            start = t + ((pending_gap or GAP) if t > 0 else 0)
+            start = t + ((pending_gap or gap_default) if t > 0 else 0)
             timeline.append(f"| **{timestamp(start)}** | **🎬 {event[1]}** |")
             data["scenes"].append({"name": event[1], "start": round(start, 3)})
         elif event[0] == "video":
             _, name, caption = event
             if t > 0:
-                gap = pending_gap or GAP
+                gap = pending_gap or gap_default
                 segments.append(("silence", gap))
                 t += gap
-            pending_gap = AFTER_FILMED   # a breath after the owner's filmed clip before the narrator speaks
+            pending_gap = after_filmed   # a breath after the owner's filmed clip before the narrator speaks
             length = duration(CLIPS_DIR / f"{name}.mp4")
             segments.append(("silence", length))
             timeline.append(f"| {timestamp(t)} | 🎥 filmed clip `{name}` ({length:.1f}s) {caption} |")
@@ -323,18 +335,27 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
             t += length
             continue
         elif event[0] == "pause":
-            pending_gap = event[1]
-            timeline.append(f"| {timestamp(t)} | ⏸️ pause {event[1]:g}s |")
-            data["pauses"].append({"start": round(t, 3), "end": round(t + event[1], 3)})
+            secs = event[1]
+            if short:   # after the narrator's question = the viewer answers; after an Arabic line = repeat it
+                secs = min(secs, SHORT_TURN_PAUSE if last_speaker and last_speaker.startswith("narrator") else SHORT_REPEAT_PAUSE)
+            pending_gap = secs
+            timeline.append(f"| {timestamp(t)} | ⏸️ pause {secs:g}s |")
+            data["pauses"].append({"start": round(t, 3), "end": round(t + secs, 3)})
         else:
             _, speaker, text = event
             cached = cache_path(speaker, text)
             n += 1
             clip = clips_dir / f"{n:02d}-{speaker}.wav"
-            shutil.copy(cached, clip)
+            if short and speaker.startswith("narrator"):   # long pauses between the narrator's sentences → 0.35 s
+                subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(cached), "-af",
+                                f"silenceremove=stop_periods=-1:stop_duration={SHORT_INNER_MAX}:"
+                                f"stop_threshold=-45dB:detection=peak", str(clip)], check=True)
+            else:
+                shutil.copy(cached, clip)
+            last_speaker = speaker
             info = json.loads(cached.with_suffix(".json").read_text(encoding="utf-8"))
             if t > 0:
-                gap = pending_gap or GAP
+                gap = pending_gap or gap_default
                 segments.append(("silence", gap))
                 t += gap
             pending_gap = 0.0
