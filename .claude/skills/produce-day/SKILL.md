@@ -63,6 +63,12 @@ Every item here cost a rebuild once. Apply them while writing the script and bui
 ~3.3 words/s, calmer for beginners and non-native English speakers, same voice and accent. The owner rejected
 phrase-by-phrase generation (a "shhh" at some starts, a robotic echo). Accent improvements = later (a new reference).
 
+**Slides, every Short (owner 2026-11-20: "the transition of intro is great… very nice and don't add to the boreness"):**
+assemble.py does both by itself (not for Parts/Episodes/Stories/sleep): the filmed **hello slides in from the right
+(0.3 s) and out to the left (0.25 s)**, and its end silence is cut to a quarter (footage/clips/hello.mp4, original kept as
+hello-before-2026-11-20.mp4). **Word cards slide in** by a fixed rotation over the scenes that have a card — right→left,
+left→right, none — never the hook card, never a card identical to the previous one; the card swoosh plays either way.
+Force one in prompts.json with `"card_slide": "rl" | "lr" | "none"`.
 **Pauses:** "Your turn" waits are **at most 2 s** (`make_audio.py` caps them); easy single words 1.5 s.
 **Shorts pace — no dead air (owner 2026-11-20: "slow rhythm, many silences between transitions… reduce the transition
 silence in short videos so not to bore the viewers"):** `make_audio.py` does it for every Short by itself (Days, Letters,

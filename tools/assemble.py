@@ -28,7 +28,13 @@ import sys
 from PIL import Image, ImageDraw, ImageFont
 
 W, H, FPS = 1080, 1920, 30
-SLIDE_IN, SLIDE_OUT = 0.3, 0.25   # s: the filmed hello sliding in / out (HELLO_SLIDE=1)
+SLIDE_IN, SLIDE_OUT = 0.3, 0.25   # s: the filmed hello sliding in / out (Shorts, owner 2026-11-20)
+# word cards slide in too (owner 2026-11-20: "some from right to left, some from left to right, some have nothing";
+# the card swoosh plays either way): a fixed rotation over the scenes that have a card, scene 1 (hook) never;
+# a card identical to the previous scene's stays put. prompts.json can force one: {"s": 7, "card_slide": "lr"|"rl"|"none"}
+CARD_SLIDE = 0.3
+CARD_PATTERN = ("rl", "lr", None)
+LONG_VIDEO = re.compile(r"^(w\d|ep\d|s\d\d|sleep)")
 FONTS = pathlib.Path("/usr/share/fonts/truetype/noto")
 LIBRARY = pathlib.Path(__file__).resolve().parent.parent / "library"   # reusable 3D clips: openers/, loops/, units/
 AR_FONT = FONTS / "NotoNaskhArabic-Bold.ttf"
@@ -256,6 +262,7 @@ def main():
     XF = 0.3 if style3d else 0.0
     xf_frames = round(XF * FPS)
     n_scenes = len(tl["scenes"])
+    n_cards = 0   # card-slide rotation counter
     for i, scene in enumerate(tl["scenes"], 1):
         frames = round(scene["end"] * FPS) - round(scene["start"] * FPS)
         extra = xf_frames if i < n_scenes else 0   # each segment runs XF longer: the next one fades in over it
@@ -331,7 +338,20 @@ def main():
             card_bottom[i] = CARD_Y + Image.open(card).getbbox()[3]
             overlays += ["-i", str(card)]
             hook_s = float(o.get("hook", {}).get("seconds", 1.5)) if (i == 1 and o.get("hook")) else 0
-            chain += f";[b1][2:v]overlay=0:{CARD_Y}" + (f":enable='gte(t,{hook_s:.2f})'" if hook_s else "") + "[b2]"
+            slide = None
+            if i > 1 and not LONG_VIDEO.match(stem) and screens[i - 1] != screens[i - 2]:
+                slide = CARD_PATTERN[n_cards % len(CARD_PATTERN)]
+                n_cards += 1
+            if o.get("card_slide"):
+                slide = None if o["card_slide"] == "none" else o["card_slide"]
+            cx = "0"
+            if slide:   # ease-out: fast in, gentle stop
+                sign = "" if slide == "rl" else "-"
+                # with the 0.3-s cross-fade the old card is still fading out at the scene start → wait for it,
+                # otherwise both cards overlap (20 Nov frames, Day 32 + Letter 1)
+                cx = (f"'if(lt(t,{XF}),{sign}{W},if(lt(t,{XF + CARD_SLIDE}),"
+                      f"{sign}{W}*pow(1-(t-{XF})/{CARD_SLIDE},2),0))'")
+            chain += f";[b1][2:v]overlay=x={cx}:y={CARD_Y}" + (f":enable='gte(t,{hook_s:.2f})'" if hook_s else "") + "[b2]"
             last = "b2"
         seg = seg_dir / f"s{i:02d}.mp4"
         run(["ffmpeg", "-v", "error", "-y", *src, *overlays, "-filter_complex", chain,
@@ -411,11 +431,11 @@ def main():
     for k, v in enumerate(tl.get("videos", [])):   # filmed clips: full screen with their own sound
         idx = 3 + k
         inputs += ["-i", str(CLIPS_DIR / f"{v['name']}.mp4")]
-        # the hello clip slides in from the right and out to the left (owner 2026-11-20, test on Day 31: HELLO_SLIDE=1)
+        # the hello clip slides in from the right and out to the left — every Short (owner 2026-11-20: "great!")
         s0, s1 = v["start"], v["end"]
         xpos = (f"'if(lt(t,{s0 + SLIDE_IN:.3f}),{W}*(1-(t-{s0:.3f})/{SLIDE_IN}),"
                 f"if(gt(t,{s1 - SLIDE_OUT:.3f}),-{W}*(t-{s1 - SLIDE_OUT:.3f})/{SLIDE_OUT},0))'"
-                if os.environ.get("HELLO_SLIDE") and v["name"] == "hello" else "0")
+                if not LONG_VIDEO.match(stem) and v["name"] == "hello" else "0")
         vchain += (f";[{idx}:v]fps={FPS},scale={W}:{H},setsar=1,setpts=PTS-STARTPTS+{v['start']:.3f}/TB[c{k}];"
                    f"[{last}][c{k}]overlay=x={xpos}:y=0:eof_action=pass:enable='between(t,{s0:.3f},{s1:.3f})'[v{k + 1}]")
         last = f"v{k + 1}"

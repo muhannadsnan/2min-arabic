@@ -96,4 +96,5 @@ Day 32 ✅ What's your favorite food? Write it in Arabic: Ta'aami al-mufaddal…
 - Koki's two clips had a click/breath ~1 s before she speaks → trimmed (originals kept). Bread picture redrawn (the first was a plain disc).
 - 2 narrator lines reworded → gate clean. final_check (20 Nov rebuild): 2:06.5 ✅, −14.2 LUFS, peak −2.1 dB · captions 53, 0 weak.
 - **20 Nov, Shorts pace rule (owner: "slow rhythm, many silences"):** gaps 0.2 s, repeat waits 1.0 s, Your-turn waits 1.5 s, narrator's inner pauses 0.35 s → final_check: 1:54.4 ✅, −14.1 LUFS, peak −2.1 dB · captions 53, 0 weak. Transcript checked: no word cut.
+- **20 Nov, slides (owner approved on Day 31):** hello clip shorter (end silence ¼) and sliding in/out, word cards slide in (right→left / left→right / none) → final_check 1:53.9 ✅, frames checked (no card overlap).
 - **20 Nov (owner): the English narrator says no Arabic words any more** — every transliteration in the narration was reworded into English (the Arabic is heard only from the real recordings); re-voiced, gate clean, rebuilt.
