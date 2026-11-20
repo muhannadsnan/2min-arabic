@@ -13,7 +13,7 @@ and a chapter review in the normal rounds (option C, owner 17 Nov: spaced repeti
 line, −20 LUFS); rounds 3–N "slow" (longer pauses, no chapter lines or chapter review, dimmer text, −24 LUFS) — the slow round is
 rendered once and copied (said openly in the title).
 Static pictures (a very slow zoom shimmered), darkened; each chapter fades in/out over 1 s. Nothing flashes.
-Every 5 minutes (from minute 5 of each round) the LIKE + SUBSCRIBE + bell card plays silently at the bottom (owner 2026-11-20).
+At minute 1 and then every 5 minutes (from minute 5 of each round) the LIKE + SUBSCRIBE + bell card plays silently at the bottom (owner 2026-11-20).
 """
 import argparse, json, pathlib, re, subprocess, sys, tempfile, shutil
 import numpy as np, soundfile as sf
@@ -161,14 +161,20 @@ def build_round(stem, C, nar, clips_dir, tmp, variant, opening, fade_end, tag):
     lev = tmp / f"{tag}-lev.mp4"
     # LIKE + SUBSCRIBE + bell, silent, at the bottom every 5 minutes (owner 2026-11-20) — needs a video re-encode
     like = like_loop(tmp)
-    sh("ffmpeg", "-v", "error", "-y", "-i", str(out), "-stream_loop", "-1", "-i", str(like), "-filter_complex",
-       f"[0:v][1:v]overlay=(W-w)/2:H-h-36:enable='gte(t,{LIKE_EVERY})'[v]", "-map", "[v]", "-map", "0:a", "-t", f"{t:.3f}",
+    # the opening round also shows it once at minute 1 (owner 2026-11-20: "at the start too … from the first minute")
+    first = ["-itsoffset", str(LIKE_FIRST), "-i", str(like)] if opening else []
+    fc = f"[0:v][1:v]overlay=(W-w)/2:H-h-36:enable='gte(t,{LIKE_EVERY})'[v1]"
+    fc += (f";[v1][2:v]overlay=(W-w)/2:H-h-36:eof_action=pass:enable='between(t,{LIKE_FIRST},{LIKE_FIRST + 6})'[v]"
+           if opening else ";[v1]null[v]")
+    sh("ffmpeg", "-v", "error", "-y", "-i", str(out), "-stream_loop", "-1", "-i", str(like), *first, "-filter_complex",
+       fc, "-map", "[v]", "-map", "0:a", "-t", f"{t:.3f}",
        "-r", str(FPS), "-c:v", "libx264", "-preset", "medium", "-crf", "24", "-tune", "stillimage", "-pix_fmt", "yuv420p",
        "-af", f"volume={g:.2f}dB,alimiter=limit=0.7:level=false", "-c:a", "aac", "-b:a", "128k", "-ar", str(SR), "-ac", "1", str(lev))
     return lev, chapters, t
 
 
 LIKE_EVERY = 300   # s — the like/subscribe card appears every 5 minutes, from minute 5 of each round, no sound
+LIKE_FIRST = 60    # s — and once at minute 1 of the video (the opening round)
 LIKE_WIDTH = 810   # px of the 1920-wide frame (the card is 1080×300 for the vertical Shorts)
 LIKE_ALPHA = 0.8   # a little see-through: the picture is dark, a full-white card would flash
 
