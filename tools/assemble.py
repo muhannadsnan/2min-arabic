@@ -407,6 +407,10 @@ def main():
     # "captions": "card" (2026-11-19, Days 31–33: 3–4 line cards): right under THIS scene's card, whatever its height
     at = ",".join(f"{s['start']:.2f}-{s['end']:.2f}:{1920 - (card_bottom[i] + 135)}" for i, s in enumerate(tl["scenes"], 1)
                   if opts.get(i, {}).get("captions") == "card" and i in card_bottom)
+    # filmed clips (hello / goodbye) always keep the normal low position, on the chest — the owner's face fills the
+    # upper half (owner 2026-11-20: the goodbye caption sat on his face in a "captions": "card" outro scene)
+    filmed = ",".join(f"{v['start']:.2f}-{v['end']:.2f}:540" for v in tl.get("videos", []) if v.get("caption"))
+    at = ",".join(x for x in (filmed, at) if x)
     run([sys.executable, str(HERE / "captions" / "srt_to_burnin_ass.py"), str(en_srt), str(ass)] + ([f"high={high}"] if high else []) + ([f"top={top}"] if top else []) + ([f"at={at}"] if at else []))
 
     # 3. final: YOUR TURN during pauses, captions, voiceover at -14 LUFS (mono measured -17 → dual-mono -14)

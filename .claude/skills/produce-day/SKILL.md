@@ -73,6 +73,7 @@ assemble.py does all of it by itself (not for long videos):
   2 of every 3 cards slide. Never the hook card, never a card identical to the previous one, never a card right after a
   star chime (no swoosh there). With a cross-fade the card waits for the old one to fade first. Force one in
   prompts.json: `"card_slide": "rl" | "lr" | "none"`.
+- **Filmed-clip captions** (hello / goodbye) always stay low, on the chest, whatever the scene's "captions" setting (owner 2026-11-20: the goodbye text sat on his face).
 - **Subscribe:** the LIKE + SUBSCRIBE + bell animation (assets/like-subscribe.mov, tools/make_like_subscribe.py: like
   turns blue, SUBSCRIBED, bell rings; 3 clicks + ding) under "Subscribe so you don't break your streak." (owner
   2026-11-20; the SUBSCRIBE-only one is only a fallback).
