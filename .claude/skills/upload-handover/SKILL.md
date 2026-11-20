@@ -78,7 +78,7 @@ built from recordings we already have (no new recording). `OFF_DAYS` in tools/yo
   missing → "3 Reels left and no new public Shorts", 2 Nov).
 
 - Run the **pre-upload-gate** skill first: hand over only on SHIP (fix every FIX first; never hand over a KILL).
-- Open the sheet for him: `code -r "videos/<stem>-upload.md"`, and give the link in the reply as well.
+- **Don't hand the sheet to the owner** (owner 2026-11-20: "i don't need the upload .md file anymore as long as you are doing the refill yourself, just the related video always"). Write it anyway — `fill` reads it — but the hand-over in chat is only: the video file (opened) + **Related video: <exact title>** per video, always one that is already public so he can pick it while uploading.
 - **API fill (connected 2026-09-30):** the owner only drops the file in Studio and saves it as a draft/private. Then
   find its id (`$Y tools/youtube_api.py videos`) and run `fill <stem> <id> --publish-at next` — dry run first, then
   `--apply`. It sets title, description, tags, category, language, not-for-kids, AI label, thumbnail, captions and
