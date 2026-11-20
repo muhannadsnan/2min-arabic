@@ -59,7 +59,7 @@ arabic letter alif, alif arabic letter, arabic alphabet alif, arabic alphabet fo
 
 | Setting | Value |
 |---|---|
-| Playlist | Arabic Alphabet: Letter by Letter (NEW — needs your OK) |
+| Playlist | Arabic Alphabet Letters (created by the owner 20 Nov) |
 | Audience | No, it's not made for kids |
 | **AI use** | **No — your own recorded Arabic (and Koki's) + your own cloned English voice, and illustrations.** |
 | Paid promotion | No |
