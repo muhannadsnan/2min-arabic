@@ -33,7 +33,7 @@ In Arabic, one small sound at the start of a verb means I. Today you'll use it t
 🎥 **Clip:** hello — Welcome to 2 Minute Arabic! (مرحبا بكم)
 
 ```say:narrator
-This is Day 33. First your color, then your food, and now your weekend.
+This is Day thirty-three, so first your color, then your food, and now your weekend.
 ```
 
 ### 🎬 Scene 3 — Step 1: the question
