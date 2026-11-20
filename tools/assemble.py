@@ -263,6 +263,9 @@ def main():
     xf_frames = round(XF * FPS)
     n_scenes = len(tl["scenes"])
     n_cards = 0   # card-slide rotation counter
+    _stars = next((e["stars"] for e in entries if isinstance(e, dict) and "stars" in e), None)
+    chime_times = ([max(0.5, tl["scenes"][s_ - 1]["end"] - 0.35) for s_ in _stars]
+                   if _stars and (HERE.parent / "assets" / "stars" / "pop.mov").exists() else [])
     for i, scene in enumerate(tl["scenes"], 1):
         frames = round(scene["end"] * FPS) - round(scene["start"] * FPS)
         extra = xf_frames if i < n_scenes else 0   # each segment runs XF longer: the next one fades in over it
@@ -339,10 +342,13 @@ def main():
             overlays += ["-i", str(card)]
             hook_s = float(o.get("hook", {}).get("seconds", 1.5)) if (i == 1 and o.get("hook")) else 0
             slide = None
-            if i > 1 and not LONG_VIDEO.match(stem) and screens[i - 1] != screens[i - 2]:
+            # a card slides only when it gets the swoosh (owner 2026-11-20: "without the sound no transition, they stay
+            # together") — the swoosh is left out right after a star chime (sound effects below use the same test)
+            swoosh = not any(-0.1 < scene["start"] - c < 0.8 for c in chime_times)
+            if i > 1 and swoosh and not LONG_VIDEO.match(stem) and screens[i - 1] != screens[i - 2]:
                 slide = CARD_PATTERN[n_cards % len(CARD_PATTERN)]
                 n_cards += 1
-            if o.get("card_slide"):
+            if o.get("card_slide") and i > 1 and swoosh:
                 slide = None if o["card_slide"] == "none" else o["card_slide"]
             cx = "0"
             if slide:   # ease-out: fast in, gentle stop

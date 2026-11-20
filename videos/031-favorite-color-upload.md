@@ -97,6 +97,6 @@ Day 31 ✅ ما لونك المفضل؟ Answer me in Arabic: lawni al-mufaddal�
 - All Arabic = your sheet A + vocab03 colors + Koki (_lina-koki-7); 0 extra sounds. 3 narrator lines reworded (gap, rushed, accent slip) → gate clean.
 - final_check (20 Nov rebuild): 2:05.9 ✅, −14.1 LUFS, peak −1.9 dB, 0 overlaps · captions synced (53, 0 weak).
 - **20 Nov, Shorts pace rule (owner: "slow rhythm, many silences"):** gaps 0.2 s, repeat waits 1.0 s, Your-turn waits 1.5 s, narrator's inner pauses 0.35 s → final_check: 1:56.2 ✅, −14.2 LUFS, peak −2.2 dB · captions 53, 0 weak. Transcript checked: no word cut.
-- **20 Nov, slides (owner approved on Day 31):** hello clip shorter (end silence ¼) and sliding in/out, word cards slide in (right→left / left→right / none) → final_check 1:55.7 ✅, frames checked (no card overlap).
+- **20 Nov, slides (owner approved on Day 31):** hello clip shorter (end silence ¼) and sliding in/out, word cards with a swoosh slide in (right→left / left→right / none; after a star chime: no swoosh, no slide) → final_check 1:55.7 ✅, frames checked (no card overlap).
 - **20 Nov (owner): the English narrator says no Arabic words any more** — every transliteration in the narration was reworded into English (the Arabic is heard only from the real recordings); re-voiced, gate clean, rebuilt.
 - Your Arabic sounds brighter than the narrator (+8.5 dB above 2 kHz, sheet A came via WhatsApp — same as vocab05); processing unchanged — tell me if it sounds sharp.
