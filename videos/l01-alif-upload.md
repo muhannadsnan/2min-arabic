@@ -7,7 +7,7 @@
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
 2. Tell Claude "uploaded". Claude fills everything and schedules it (**Tue 24 Nov, 17:00 Oslo**).
-3. After it's live (desktop notification): pin the comment and set **Related video = Day 1**.
+3. After it's live (desktop notification): pin the comment and set **Related video = Day 1 (public)** while uploading.
 
 ## Title
 
@@ -63,7 +63,7 @@ arabic letter alif, alif arabic letter, arabic alphabet alif, arabic alphabet fo
 | Audience | No, it's not made for kids |
 | **AI use** | **No — your own recorded Arabic (and Koki's) + your own cloned English voice, and illustrations.** |
 | Paid promotion | No |
-| Related video | Day 1 (only after it's live) |
+| Related video | Day 1 (public) |
 | Category / Type | Education / Concept overview · Level Beginner |
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |

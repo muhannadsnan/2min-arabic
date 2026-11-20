@@ -7,7 +7,7 @@
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
 2. Tell Claude "uploaded". Claude fills everything and schedules it (**Fri 27 Nov, 17:00 Oslo**).
-3. After it's live (desktop notification): pin the comment and set **Related video = Day 32**.
+3. After it's live (desktop notification): pin the comment and set **Related video = “Arabic Verbs for Beginners: I Drink, I Eat, I Go \| Grammar · Day 20” (the same I go / I drink verbs; public now)** while uploading.
 
 ## Title
 
@@ -63,7 +63,7 @@ weekend in arabic, what do you do at the weekend in arabic, arabic verbs for beg
 | Audience | No, it's not made for kids |
 | **AI use** | **No — your own recorded Arabic (and Koki's) + your own cloned English voice, and illustrations.** |
 | Paid promotion | No |
-| Related video | Day 32 (only after it's live) |
+| Related video | “Arabic Verbs for Beginners: I Drink, I Eat, I Go \| Grammar · Day 20” (the same I go / I drink verbs; public now) |
 | Category / Type | Education / Concept overview · Level Beginner |
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |

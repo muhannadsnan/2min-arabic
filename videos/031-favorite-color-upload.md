@@ -7,7 +7,7 @@
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
 2. Tell Claude "uploaded". Claude fills everything and schedules it (**Mon 23 Nov, 17:00 Oslo**).
-3. After it's live (desktop notification): pin the comment and set **Related video = Day 30**.
+3. After it's live (desktop notification): pin the comment and set **Related video = “Colors in Arabic (10 Words) \| Vocabulary” (vocab03 — the same colors; public, so you can pick it while uploading)** while uploading.
 
 ## Title
 
@@ -63,7 +63,7 @@ favorite color in arabic, what is your favorite color in arabic, colors in arabi
 | Audience | No, it's not made for kids |
 | **AI use** | **No — your own recorded Arabic (and Koki's) + your own cloned English voice, and illustrations.** |
 | Paid promotion | No |
-| Related video | Day 30 (only after it's live) |
+| Related video | “Colors in Arabic (10 Words) \| Vocabulary” (vocab03 — the same colors; public, so you can pick it while uploading) |
 | Category / Type | Education / Concept overview · Level Beginner |
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |

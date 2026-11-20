@@ -7,7 +7,7 @@
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
 2. Tell Claude "uploaded". Claude fills everything and schedules it (**Wed 25 Nov, 17:00 Oslo**).
-3. After it's live (desktop notification): pin the comment and set **Related video = Day 31**.
+3. After it's live (desktop notification): pin the comment and set **Related video = “Food in Arabic (10 Words) \| Vocabulary” (vocab04 — the same food words; public now)** while uploading.
 
 ## Title
 
@@ -63,7 +63,7 @@ favorite food in arabic, what is your favorite food in arabic, i love in arabic,
 | Audience | No, it's not made for kids |
 | **AI use** | **No — your own recorded Arabic (and Koki's) + your own cloned English voice, and illustrations.** |
 | Paid promotion | No |
-| Related video | Day 31 (only after it's live) |
+| Related video | “Food in Arabic (10 Words) \| Vocabulary” (vocab04 — the same food words; public now) |
 | Category / Type | Education / Concept overview · Level Beginner |
 | Video + title/description language | English |
 | License, embedding, notify subscribers | Standard / ✅ / ✅ |
