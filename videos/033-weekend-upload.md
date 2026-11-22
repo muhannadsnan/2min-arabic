@@ -3,6 +3,8 @@
 **File to upload:** `output/033-weekend/what-do-you-do-at-the-weekend-in-arabic-say-i-go-i-drink.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/033-weekend/what-do-you-do-at-the-weekend-in-arabic-say-i-go-i-drink-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `M4Fs11d7tT4`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).

@@ -3,6 +3,8 @@
 **File to upload:** `output/l01-alif/arabic-letter-alif-sound-shapes-and-words.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/l01-alif/arabic-letter-alif-sound-shapes-and-words-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `4IzUjE9KSx8`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).

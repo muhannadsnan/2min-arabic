@@ -3,6 +3,8 @@
 **File to upload:** `output/031-favorite-color/what-s-your-favorite-color-in-arabic-ask-and-answer.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/031-favorite-color/what-s-your-favorite-color-in-arabic-ask-and-answer-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `tOUHRN8CXTU`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).

@@ -3,6 +3,8 @@
 **File to upload:** `output/032-favorite-food/what-s-your-favorite-food-in-arabic-i-love-i-don-t-love.mp4` (vertical → **Short**)
 **Thumbnail:** Upload file → `output/032-favorite-food/what-s-your-favorite-food-in-arabic-i-love-i-don-t-love-thumbnail.jpg`
 
+> ✅ **Uploaded + filled by Claude** — video id `A4XX-ASltWQ`
+
 ## Fast way (Claude fills everything)
 
 1. Studio → **Create → Upload** → the file above → set **Education Type = Concept overview, Level = Beginner** → close the dialog (it stays private/draft).
