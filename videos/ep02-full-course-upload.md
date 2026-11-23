@@ -26,19 +26,19 @@ All Arabic is spoken by native speakers. Every word on screen with transliterati
 0:00 What you'll learn
 0:14 Yes or no questions
 1:14 When Arabic is too fast
-2:30 Do you speak Arabic?
+2:29 Do you speak Arabic?
 3:39 Days of the week
-4:57 Making a plan
-5:49 Questions about you
-7:47 A full conversation: you are Sami
-8:39 The same conversation with a woman
-9:42 Inshallah and habibi
-11:23 Colors
-12:29 Food
-13:29 Jobs
-14:54 English words from Arabic
-15:55 The big conversation
-17:55 Final challenge
+4:58 Making a plan
+5:50 Questions about you
+7:53 A full conversation: you are Sami
+8:49 The same conversation with a woman
+9:54 Inshallah and habibi
+11:35 Colors
+12:40 Food
+13:38 Jobs
+15:08 English words from Arabic
+16:11 The big conversation
+17:56 Final challenge
 
 📝 Some of what you'll learn:
 hal tatakallamu l-'arabiyya? — do you speak Arabic? — ⁧هل تتكلم العربية؟⁩
