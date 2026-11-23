@@ -82,7 +82,7 @@ And for sister, you take brother and add one letter at the end.
 ### 🎬 Scene 6 — the "my" ending
 
 🖼️ **Image:** same as scene 4
-🔤 **On screen:** أخ ← أخي · *akh → akhii* · brother → my brother
+🔤 **On screen:** أخي · *akhii* · my brother (brother + ee)
 
 ```say:narrator
 Now the trick. Add a long ee sound at the end, and the word means my, so this is my brother.

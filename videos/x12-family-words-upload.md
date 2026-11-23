@@ -1,6 +1,6 @@
 # Arabic Extras · Upload sheet — extra12
 
-**File to upload:** `output/x12-family-words/family-members-in-arabic-how-to-say-my-father.mp4` (vertical, ~1:05 → **Short**)
+**File to upload:** `output/x12-family-words/family-members-in-arabic-how-to-say-my-father.mp4` (vertical, 1:09 → **Short**)
 **Thumbnail:** Upload file → `output/x12-family-words/family-members-in-arabic-how-to-say-my-father-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -99,3 +99,6 @@ Your turn: write one line about your family in Arabic 👇 Start with ⁧هذا 
 - No new recording: father/mother/brother/sister + "this is my brother" (your voice, sheet _1115) and Lina's four family lines (Koki, Day 13).
 - Pencil pictures checked at full size (hands, eyes, modest clothes): father · mother · brother · sister · the family (the father's left arm is hidden behind the mother).
 - Distinct from Day 13 (a story): words first, then the -ii ending, then Lina as the payoff.
+- The card for the trick reads أخي · akhii · my brother (brother + ee) (the renderer drops arrows).
+- Audio gate: the "father" line keeps a soft accent flag (0.86) after two re-voices + one rewording; the other flags are "rushed" from the fast-pace trim.
+- final_check 23 Nov: 1:08.7 ✅, −14.2 LUFS, peak −2.2 dB, 0 overlaps; captions synced (38, 0 weak).

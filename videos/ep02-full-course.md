@@ -2132,7 +2132,7 @@ Now everything together: one long story, all in Arabic, with the English on scre
 🔤 **On screen:** غَدًا امْتِحَانْ… صَعْبْ! · *ghadan imtiHaan… Sa'b!* · Sami: Tomorrow is the test… it's hard!
 
 ```say:narrator
-Here is the whole story in Arabic. It starts in the courtyard, where Sami is worried about a test.
+Here is the whole story in Arabic, and it starts in the courtyard, where Sami is worried about a test.
 ```
 ```say:sami
 غَدًا امْتِحَانْ… صَعْبْ!
@@ -2372,7 +2372,7 @@ After the coffee, Lina has to go.
 🔤 **On screen:** لَا أَفْهَمْ. بِبُطْءْ، مِنْ فَضْلِكْ · *laa afham. bi-buT', min faDlik* · I don't understand. Slowly, please.
 
 ```say:narrator
-Now the four most useful lines from the story again. Say each one after you hear it.
+Now you will hear the four most useful lines from the story again, so say each one right after you hear it.
 ```
 ```say:sami
 لَا أَفْهَمْ. بِبُطْءْ، مِنْ فَضْلِكْ.
@@ -2604,7 +2604,7 @@ How does a woman say that she is an engineer?
 🔤 **On screen:** Question 10/10 · I eat bread.
 
 ```say:narrator
-And the last one: say that you eat bread.
+And for the last question, how do you say that you eat bread?
 ```
 ⏸️ **Pause 2.5s**
 

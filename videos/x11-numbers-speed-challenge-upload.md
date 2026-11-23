@@ -102,3 +102,4 @@ Your score out of 10? 👇 Then count from 1 to 20 in Arabic here, in words — 
 - Board: a new rooftop chalkboard; each number written by us (digits.py) as our digit + the Arabic digit in the straight-top Kufi shape (owner 23 Nov: the curly ٢ looked like a 3), low on the board, clear of the card and the YOUR TURN label (checked in frames).
 - Pauses: 1.5 s → 1.2 s → 0.9 s (a no-speech pause counts as "your turn", make_audio 23 Nov).
 - Audio gate: 2 lines "rushed" (the fast-pace trim, as on Days 31–33), no accent flags.
+- final_check 23 Nov: 0:52.2 ✅, −14.2 LUFS, peak −2.4 dB, 0 overlaps; captions synced (29, 0 weak).
