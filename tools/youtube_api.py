@@ -372,6 +372,8 @@ def audit(a):
                 if c["snippet"]["trackKind"] == "standard"]
         issues = []
         if "#" in sn["title"]: issues.append("hashtag in title")
+        if "____" in sn["description"] or "[playlist link]" in sn["description"] or len(sn["description"]) < 200:
+            issues.append("TEMPLATE/empty description (Studio overwrote the fill? re-set it from videos/<stem>-description.txt)")
         if AR.search(sn["title"]): issues.append("Arabic script in title")
         if not 12 <= len(tags) <= 34: issues.append(f"{len(tags)} tags")   # 28 → 34 (2026-10-18): +10 short language tags; YouTube only limits 500 chars
         if len(", ".join(tags)) > 500: issues.append("tags > 500 chars")
