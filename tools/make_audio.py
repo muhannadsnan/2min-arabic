@@ -313,9 +313,10 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
     segments, captions, report = [], [], []
     timeline = ["| Starts at | What |", "|---|---|"]
     data = {"scenes": [], "clips": [], "pauses": [], "videos": []}
-    t, n, pending_gap = 0.0, 0, 0.0
+    t, n, pending_gap, spoken = 0.0, 0, 0.0, False
     for event in events:
         if event[0] == "scene":
+            spoken = False   # a pause in a scene with no speech = the viewer's turn (x11 speed challenge, 2026-11-23)
             start = t + ((pending_gap or gap_default) if t > 0 else 0)
             timeline.append(f"| **{timestamp(start)}** | **🎬 {event[1]}** |")
             data["scenes"].append({"name": event[1], "start": round(start, 3)})
@@ -337,7 +338,8 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
         elif event[0] == "pause":
             secs = event[1]
             if short:   # after the narrator's question = the viewer answers; after an Arabic line = repeat it
-                secs = min(secs, SHORT_TURN_PAUSE if last_speaker and last_speaker.startswith("narrator") else SHORT_REPEAT_PAUSE)
+                turn = not spoken or (last_speaker and last_speaker.startswith("narrator"))
+                secs = min(secs, SHORT_TURN_PAUSE if turn else SHORT_REPEAT_PAUSE)
             pending_gap = secs
             timeline.append(f"| {timestamp(t)} | ⏸️ pause {secs:g}s |")
             data["pauses"].append({"start": round(t, 3), "end": round(t + secs, 3)})
@@ -352,7 +354,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
                                 f"stop_threshold=-45dB:detection=peak", str(clip)], check=True)
             else:
                 shutil.copy(cached, clip)
-            last_speaker = speaker
+            last_speaker = speaker; spoken = True
             info = json.loads(cached.with_suffix(".json").read_text(encoding="utf-8"))
             if t > 0:
                 gap = pending_gap or gap_default

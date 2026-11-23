@@ -47,6 +47,19 @@ def image_of(script, n, prompts):
     return f"{script}/s{k:02d}.png", shift, f.exists()
 
 
+def clip_of(script, n, prompts):
+    """A talking-character scene without a still (Days 24–30, Extras, ep02): its looping library clip, carried over
+    as-is ({"clip", "clip_mode": "loop", "shift", "noshift"}) — loops are not lip-synced, so they fit any timing."""
+    by_s = {e["s"]: e for e in prompts if isinstance(e, dict) and "s" in e}
+    k, seen = n, set()
+    while k in by_s and "clip" not in by_s[k] and "same" in by_s[k] and k not in seen:
+        seen.add(k); k = by_s[k]["same"]
+    e = by_s.get(k, {})
+    if e.get("clip_mode") == "loop" and (ROOT / "library" / f"{e['clip']}-loop.mp4").exists():
+        return {x: e[x] for x in ("clip", "clip_mode", "shift", "noshift") if x in e}
+    return None
+
+
 def main():
     spec = json.loads(pathlib.Path(sys.argv[1]).read_text(encoding="utf-8"))
     check = "--check" in sys.argv
@@ -56,11 +69,11 @@ def main():
     prompts, n, problems, missing_img = [{"style": "semi"}], 0, [], []
     chapters = []
 
-    def add_scene(title, body, img, shift):
+    def add_scene(title, body, img, shift, clip=None):
         nonlocal n
         n += 1
         md.extend([f"### 🎬 Scene {n} — {title}", "", body.strip(), ""])
-        prompts.append({"s": n, "from": img, "shift": shift or 0})
+        prompts.append({"s": n, **clip} if clip else {"s": n, "from": img, "shift": shift or 0})
 
     for e in spec.get("intro", []):
         add_scene(e["title"], f"🖼️ **Image:** {e['image']}\n🔤 **On screen:** {e['card']}\n\n```say:narrator\n{e['line']}\n```",
@@ -93,16 +106,18 @@ def main():
                     if re.search(r"\bDay ?\d", m.group(1)):
                         problems.append(f"{it['script']} s{k} CARD: {m.group(1).strip()}")
                 img, shift, ok = image_of(it["script"], k, pr)
-                if not ok:
+                clip = None if ok else clip_of(it["script"], k, pr)
+                if not ok and not clip:
                     missing_img.append(img)
-                add_scene(title, body, img, shift)
+                add_scene(title, body, img, shift, clip)
         for cs in ch.get("custom", []):
             lines = [f"🖼️ **Image:** {cs['image']}", f"🔤 **On screen:** {cs['card']}", ""]
             for sp, t in cs["say"]:
                 lines += [f"```say:{sp}", t, "```"]
             if cs.get("pause"):
                 lines.append(f"⏸️ **Pause {cs['pause']}s**")
-            add_scene(cs["title"], "\n".join(lines), cs["image"], cs.get("shift", 0))
+            add_scene(cs["title"], "\n".join(lines), cs["image"], cs.get("shift", 0),
+                      {"clip": cs["clip"], "clip_mode": "loop", "shift": cs.get("shift", 0)} if cs.get("clip") else None)
     for e in spec.get("outro", []):
         body = f"🖼️ **Image:** {e['image']}\n🔤 **On screen:** {e['card']}\n\n" + "\n".join(
             f"```say:{sp}\n{t}\n```" for sp, t in e["say"]) + ("\n🎥 **Clip:** goodbye — Thank you, and goodbye! (مع السلامة)" if e.get("goodbye") else "")

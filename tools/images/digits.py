@@ -45,16 +45,17 @@ def font_for(text):
     return LATIN, {}
 
 
-def chalk(board, text, box):
+def chalk(board, text, box, cy=0.42):
     x0, y0, x1, y1 = box
     bw, bh = x1 - x0, y1 - y0
     lines = text.split("\n")
-    path, kw = font_for(text)
+    fonts = [font_for(ln) for ln in lines]   # per line: "20\n٢٠" = Latin + Kufi digits (the Naskh ٢ looked like a 3, owner 2026-11-23)
+    path = fonts[0][0] if len({f[0] for f in fonts}) == 1 else None
     d = ImageDraw.Draw(board)
     size = int(bh * 0.75)
     while True:   # largest size where every line fits the board's middle area
-        font = ImageFont.truetype(path, size)
-        boxes = [d.textbbox((0, 0), ln, font=font, **kw) for ln in lines]
+        fs = [ImageFont.truetype(pth, size) for pth, _ in fonts]
+        boxes = [d.textbbox((0, 0), ln, font=f, **kw) for ln, f, (_, kw) in zip(lines, fs, fonts)]
         gap = int(size * 0.25)
         total = sum(b[3] - b[1] for b in boxes) + gap * (len(lines) - 1)
         if max(b[2] - b[0] for b in boxes) <= bw * (0.62 if path == AR_FONT else 0.9) and total <= bh * (0.48 if path == AR_FONT else 0.55):
@@ -62,9 +63,9 @@ def chalk(board, text, box):
         size -= 6
     mask = Image.new("L", board.size, 0)
     md = ImageDraw.Draw(mask)
-    y = y0 + bh * 0.42 - total / 2
-    for ln, b in zip(lines, boxes):
-        md.text((x0 + (bw - (b[2] - b[0])) / 2 - b[0], y - b[1]), ln, font=font, fill=235, **kw)
+    y = y0 + bh * cy - total / 2   # cy: the text's centre on the board (prompts.json "cy"; x11 = lower, clear of card + label)
+    for ln, b, f, (_, kw) in zip(lines, boxes, fs, fonts):
+        md.text((x0 + (bw - (b[2] - b[0])) / 2 - b[0], y - b[1]), ln, font=f, fill=235, **kw)
         y += (b[3] - b[1]) + gap
     rnd = random.Random(7)
     grain = Image.new("L", board.size)
@@ -83,7 +84,7 @@ def main():
     for e in json.loads((d / "prompts.json").read_text(encoding="utf-8")):
         if "digit" in e or "chalk" in e:
             text = e.get("digit") or e["chalk"]
-            chalk(board, text, box).save(d / f"s{e['s']:02d}.png")
+            chalk(board, text, box, e.get("cy", 0.42)).save(d / f"s{e['s']:02d}.png")
             print(f"s{e['s']:02d}: {text!r}")
 
 

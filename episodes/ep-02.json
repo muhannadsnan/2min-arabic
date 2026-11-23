@@ -1,0 +1,959 @@
+{
+ "stem": "ep02-full-course",
+ "title": "Episode 2 — Learn Arabic for Beginners: Full Course",
+ "intro": [
+  {
+   "title": "What you'll learn",
+   "image": "023-days-of-the-week/s12.png",
+   "card": "Learn Arabic for beginners · Episode 2",
+   "line": "In this lesson you'll ask yes or no questions, slow down a fast waiter, learn the days of the week, make plans, answer the questions every Arab asks, have a full conversation, and learn colors, food and jobs, all in Arabic."
+  }
+ ],
+ "chapters": [
+  {
+   "title": "Yes or no questions",
+   "image": "025-yes-no-questions/s04.png",
+   "line": "First, one little word that turns any sentence into a yes or no question.",
+   "items": [
+    {
+     "script": "025-yes-no-questions",
+     "scenes": [
+      3,
+      11
+     ]
+    }
+   ]
+  },
+  {
+   "title": "When Arabic is too fast",
+   "image": "022-lifesaver-phrases/s03.png",
+   "line": "Next, three lifesaver phrases for the moment when Arabic is too fast for you.",
+   "items": [
+    {
+     "script": "022-lifesaver-phrases",
+     "scenes": [
+      3,
+      8
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Do you speak Arabic?",
+   "image": "027-do-you-speak-arabic/s01.png",
+   "line": "Now the question every Arab asks when they hear your accent, and the perfect answer to it.",
+   "items": [
+    {
+     "script": "027-do-you-speak-arabic",
+     "scenes": [
+      3,
+      10
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Days of the week",
+   "image": "023-days-of-the-week/s03.png",
+   "line": "Next, the days of the week, with a secret that makes them easy to remember.",
+   "items": [
+    {
+     "script": "023-days-of-the-week",
+     "scenes": [
+      3,
+      13
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Making a plan",
+   "image": "024-making-a-plan/s01.png",
+   "line": "With the days of the week in your pocket, let's make a plan with a friend.",
+   "items": [
+    {
+     "script": "024-making-a-plan",
+     "scenes": [
+      3,
+      11
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Questions about you",
+   "image": "026-sami-arabic-test/s03.png",
+   "line": "Next, the questions people will ask about you, and how to answer every one of them.",
+   "items": [
+    {
+     "script": "026-sami-arabic-test",
+     "scenes": [
+      3,
+      16
+     ]
+    },
+    {
+     "script": "x10-five-questions",
+     "scenes": [
+      2,
+      6
+     ]
+    }
+   ]
+  },
+  {
+   "title": "A full conversation: you are Sami",
+   "image": "028-full-conversation-you-are-sami/s01.png",
+   "line": "Now a whole conversation, and you play Sami. Lina speaks first, you answer in the pause, and then you hear Sami's answer.",
+   "items": [
+    {
+     "script": "028-full-conversation-you-are-sami",
+     "scenes": [
+      3,
+      17
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The same conversation with a woman",
+   "image": "029-full-conversation-you-are-lina/s17.png",
+   "line": "Now switch roles. This time you are Lina, so listen for the small changes when Sami talks to a woman.",
+   "items": [
+    {
+     "script": "029-full-conversation-you-are-lina",
+     "scenes": [
+      3,
+      17
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Inshallah and habibi",
+   "image": "x07-inshallah-meaning/s03.png",
+   "card": "Inshallah and habibi: what they really mean",
+   "line": "Next, two words you will hear from Arabs every single day, and what they really mean.",
+   "items": [
+    {
+     "script": "x07-inshallah-meaning",
+     "scenes": [
+      2,
+      7
+     ]
+    },
+    {
+     "script": "x08-habibi-meaning",
+     "scenes": [
+      2,
+      9
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Colors",
+   "image": "v03-colors/s02.png",
+   "line": "Now ten colors, with a little trick hidden in four of them.",
+   "items": [
+    {
+     "script": "v03-colors",
+     "scenes": [
+      2,
+      17
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Food",
+   "image": "v04-food-words/s02.png",
+   "line": "Next, ten food words from the Arab table.",
+   "items": [
+    {
+     "script": "v04-food-words",
+     "scenes": [
+      2,
+      18
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Jobs",
+   "image": "v05-jobs/s02.png",
+   "line": "And now twenty jobs, so you can answer the question about what you do.",
+   "items": [
+    {
+     "script": "v05-jobs",
+     "scenes": [
+      2,
+      26
+     ]
+    }
+   ]
+  },
+  {
+   "title": "English words from Arabic",
+   "image": "x09-secretly-arabic/s02.png",
+   "line": "To finish the words, here are ten English words that secretly come from Arabic.",
+   "items": [
+    {
+     "script": "x09-secretly-arabic",
+     "scenes": [
+      2,
+      11
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The big conversation",
+   "image": "023-days-of-the-week/s15.png",
+   "line": "Now everything together: one long story, all in Arabic, with the English on screen.",
+   "custom": [
+    {
+     "title": "The big conversation",
+     "image": "026-sami-arabic-test/s01.png",
+     "shift": 0,
+     "card": "غَدًا امْتِحَانْ… صَعْبْ! · *ghadan imtiHaan… Sa'b!* · Sami: Tomorrow is the test… it's hard!",
+     "say": [
+      [
+       "narrator",
+       "Here is the whole story in Arabic. It starts in the courtyard, where Sami is worried about a test."
+      ],
+      [
+       "sami",
+       "غَدًا امْتِحَانْ… صَعْبْ!"
+      ]
+     ],
+     "clip": "sets/scenes/d26-s07"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d26-s08 (talking loop)",
+     "shift": 0,
+     "card": "لَا، سَهْلْ! · *laa, sahl!* · Lina: No, it's easy!",
+     "say": [
+      [
+       "lina",
+       "لَا، سَهْلْ!"
+      ]
+     ],
+     "clip": "sets/scenes/d26-s08"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d26-s09 (talking loop)",
+     "shift": 0,
+     "card": "كَمْ عُمْرُكْ؟ · *kam 'umruk?* · Lina: How old are you?",
+     "say": [
+      [
+       "lina",
+       "كَمْ عُمْرُكْ؟"
+      ]
+     ],
+     "clip": "sets/scenes/d26-s09"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d26-s10 (talking loop)",
+     "shift": 0,
+     "card": "عُمْرِي عِشْرُونَ سَنَةْ · *'umrii 'ishruuna sana* · Sami: I'm twenty years old.",
+     "say": [
+      [
+       "sami",
+       "عُمْرِي عِشْرُونَ سَنَةْ."
+      ]
+     ],
+     "clip": "sets/scenes/d26-s10"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d26-s11 (talking loop)",
+     "shift": 0,
+     "card": "أَيْنَ تَسْكُنُ؟ · *ayna taskunu?* · Lina: Where do you live?",
+     "say": [
+      [
+       "lina",
+       "أَيْنَ تَسْكُنُ؟"
+      ]
+     ],
+     "clip": "sets/scenes/d26-s11"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d26-s12 (talking loop)",
+     "shift": 0,
+     "card": "أَسْكُنُ فِي دِمَشْقْ · *askunu fii dimashq* · Sami: I live in Damascus.",
+     "say": [
+      [
+       "sami",
+       "أَسْكُنُ فِي دِمَشْقْ."
+      ]
+     ],
+     "clip": "sets/scenes/d26-s12"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d26-s13 (talking loop)",
+     "shift": 0,
+     "card": "مَاذَا تَدْرُسُ؟ · *maadhaa tadrusu?* · Lina: What do you study?",
+     "say": [
+      [
+       "lina",
+       "مَاذَا تَدْرُسُ؟"
+      ]
+     ],
+     "clip": "sets/scenes/d26-s13"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d26-s14 (talking loop)",
+     "shift": 0,
+     "card": "أَدْرُسُ الْعَرَبِيَّةْ! · *adrusu l-'arabiyya!* · Sami: I study Arabic!",
+     "say": [
+      [
+       "sami",
+       "أَدْرُسُ الْعَرَبِيَّةْ!"
+      ]
+     ],
+     "clip": "sets/scenes/d26-s14"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d26-s15 (talking loop)",
+     "shift": 0,
+     "card": "مُمْتَازْ! · *mumtaaz!* · Lina: Excellent!",
+     "say": [
+      [
+       "lina",
+       "مُمْتَازْ!"
+      ]
+     ],
+     "clip": "sets/scenes/d26-s15"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d26-s16 (talking loop)",
+     "shift": 0,
+     "card": "هَذَا هُوَ الِامْتِحَانْ! · *haadhaa huwa l-imtiHaan!* · Lina: That WAS the test!",
+     "say": [
+      [
+       "lina",
+       "هَذَا هُوَ الِامْتِحَانْ!"
+      ]
+     ],
+     "clip": "sets/scenes/d26-s16"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d24-s06 (talking loop)",
+     "shift": 0,
+     "card": "هَلْ تُرِيدِينَ قَهْوَةْ غَدًا؟ · *hal turiidiina qahwa ghadan?* · Sami: Do you want coffee tomorrow?",
+     "say": [
+      [
+       "narrator",
+       "Sami is so happy that he invites Lina for a coffee."
+      ],
+      [
+       "sami",
+       "هَلْ تُرِيدِينَ قَهْوَةْ غَدًا؟"
+      ]
+     ],
+     "clip": "sets/scenes/d24-s06"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d24-s07 (talking loop)",
+     "shift": 0,
+     "card": "غَدًا؟ مَتَى؟ · *ghadan? mataa?* · Lina: Tomorrow? When?",
+     "say": [
+      [
+       "lina",
+       "غَدًا؟ مَتَى؟"
+      ]
+     ],
+     "clip": "sets/scenes/d24-s07"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d24-s08 (talking loop)",
+     "shift": 0,
+     "card": "غَدًا، بَعْدَ الدَّرْسْ · *ghadan, ba'da d-dars* · Sami: Tomorrow, after the lesson.",
+     "say": [
+      [
+       "sami",
+       "غَدًا، بَعْدَ الدَّرْسْ."
+      ]
+     ],
+     "clip": "sets/scenes/d24-s08"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d24-s09 (talking loop)",
+     "shift": 0,
+     "card": "غَدًا الْجُمُعَةْ… لَا دَرْسْ! · *ghadan al-jumu'a… laa dars!* · Lina: Tomorrow is Friday… no lesson!",
+     "say": [
+      [
+       "lina",
+       "غَدًا الْجُمُعَةْ… لَا دَرْسْ!"
+      ]
+     ],
+     "clip": "sets/scenes/d24-s09"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d24-s10 (talking loop)",
+     "shift": 0,
+     "card": "إِذًا… الْآنْ؟ · *idhan… al-aan?* · Sami: So… now?",
+     "say": [
+      [
+       "sami",
+       "إِذًا… الْآنْ؟"
+      ]
+     ],
+     "clip": "sets/scenes/d24-s10"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d24-s11 (talking loop)",
+     "shift": 0,
+     "card": "طَيِّبْ، هَيَّا! · *Tayyib, hayyaa!* · Lina: Okay, let's go!",
+     "say": [
+      [
+       "lina",
+       "طَيِّبْ، هَيَّا!"
+      ]
+     ],
+     "clip": "sets/scenes/d24-s11"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d27-s08 (talking loop)",
+     "shift": 0,
+     "card": "أَهْلًا وَسَهْلًا! شُو بِدَّكْ الْيَوْمْ؟ · *ahlan wa-sahlan! shuu biddak il-yawm?* · Waiter: Welcome! What would you like? Coffee? Tea? Juice?",
+     "say": [
+      [
+       "narrator",
+       "At the café, the waiter speaks very fast."
+      ],
+      [
+       "teacher",
+       "أَهْلًا وَسَهْلًا! شُو بِدَّكْ الْيَوْمْ؟ قَهْوِة؟ شَاي؟ عَصِير؟"
+      ]
+     ],
+     "clip": "sets/scenes/d27-s08"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d27-s09 (talking loop)",
+     "shift": 0,
+     "card": "لَا أَفْهَمْ. بِبُطْءْ، مِنْ فَضْلِكْ · *laa afham. bi-buT', min faDlik* · Sami: I don't understand. Slowly, please.",
+     "say": [
+      [
+       "sami",
+       "لَا أَفْهَمْ. بِبُطْءْ، مِنْ فَضْلِكْ."
+      ]
+     ],
+     "clip": "sets/scenes/d27-s09"
+    },
+    {
+     "title": "The big conversation",
+     "image": "022-lifesaver-phrases/s03.png",
+     "shift": 0,
+     "card": "هَلْ تُرِيدُ قَهْوَةْ؟ · *hal turiidu qahwa?* · Waiter: Do… you… want… coffee?",
+     "say": [
+      [
+       "teacher",
+       "هَلْ… تُرِيدُ… قَهْوَةْ؟"
+      ]
+     ]
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d28-s14 (talking loop)",
+     "shift": 0,
+     "card": "نَعَمْ، أُرِيدُ قَهْوَةْ مَعَ حَلِيبْ! · *na'am, uriidu qahwa ma'a Haliib!* · Sami: Yes, I want coffee with milk!",
+     "say": [
+      [
+       "sami",
+       "نَعَمْ،"
+      ],
+      [
+       "sami",
+       "أُرِيدُ قَهْوَةْ مَعَ حَلِيبْ!"
+      ]
+     ],
+     "clip": "sets/scenes/d28-s14"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d27-s06 (talking loop)",
+     "shift": 0,
+     "card": "هَلْ تَتَكَلَّمُ الْعَرَبِيَّةْ؟ · *hal tatakallamu l-'arabiyya?* · Waiter: Do you speak Arabic?",
+     "say": [
+      [
+       "teacher",
+       "هَلْ تَتَكَلَّمُ الْعَرَبِيَّةْ؟"
+      ]
+     ],
+     "clip": "sets/scenes/d27-s06"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d27-s07 (talking loop)",
+     "shift": 0,
+     "card": "نَعَمْ، قَلِيلًا · *na'am, qaliilan* · Sami: Yes, a little.",
+     "say": [
+      [
+       "sami",
+       "نَعَمْ، قَلِيلًا."
+      ]
+     ],
+     "clip": "sets/scenes/d27-s07"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d27-s10 (talking loop)",
+     "shift": 0,
+     "card": "شْوَيّ شْوَيّ! · *shwayy shwayy!* · Waiter: Little by little!",
+     "say": [
+      [
+       "teacher",
+       "شْوَيّ شْوَيّ!"
+      ]
+     ],
+     "clip": "sets/scenes/d27-s10"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d28-s15 (talking loop)",
+     "shift": 0,
+     "card": "مَعَ السَّلَامَةْ! · *ma'a s-salaama!* · Lina: Goodbye!",
+     "say": [
+      [
+       "narrator",
+       "After the coffee, Lina has to go."
+      ],
+      [
+       "lina",
+       "مَعَ السَّلَامَةْ!"
+      ]
+     ],
+     "clip": "sets/scenes/d28-s15"
+    },
+    {
+     "title": "The big conversation",
+     "image": "sets/scenes/d28-s16 (talking loop)",
+     "shift": 0,
+     "card": "إِلَى اللِّقَاءْ! · *ilaa l-liqaa'!* · Sami: See you!",
+     "say": [
+      [
+       "sami",
+       "إِلَى اللِّقَاءْ!"
+      ]
+     ],
+     "clip": "sets/scenes/d28-s16"
+    },
+    {
+     "title": "Key lines",
+     "image": "022-lifesaver-phrases/s03.png",
+     "shift": 0,
+     "card": "لَا أَفْهَمْ. بِبُطْءْ، مِنْ فَضْلِكْ · *laa afham. bi-buT', min faDlik* · I don't understand. Slowly, please.",
+     "say": [
+      [
+       "narrator",
+       "Now the four most useful lines from the story again. Say each one after you hear it."
+      ],
+      [
+       "sami",
+       "لَا أَفْهَمْ. بِبُطْءْ، مِنْ فَضْلِكْ."
+      ]
+     ],
+     "pause": 2
+    },
+    {
+     "title": "Key lines",
+     "image": "027-do-you-speak-arabic/s05.png",
+     "shift": 0,
+     "card": "نَعَمْ، قَلِيلًا · *na'am, qaliilan* · Yes, a little.",
+     "say": [
+      [
+       "sami",
+       "نَعَمْ، قَلِيلًا."
+      ]
+     ],
+     "pause": 1.5
+    },
+    {
+     "title": "Key lines",
+     "image": "024-making-a-plan/s01.png",
+     "shift": 0,
+     "card": "هَلْ تُرِيدِينَ قَهْوَةْ غَدًا؟ · *hal turiidiina qahwa ghadan?* · Do you want coffee tomorrow? (to a woman)",
+     "say": [
+      [
+       "sami",
+       "هَلْ تُرِيدِينَ قَهْوَةْ غَدًا؟"
+      ]
+     ],
+     "pause": 2
+    },
+    {
+     "title": "Key lines",
+     "image": "026-sami-arabic-test/s01.png",
+     "shift": 0,
+     "card": "أَسْكُنُ فِي دِمَشْقْ · *askunu fii dimashq* · I live in Damascus.",
+     "say": [
+      [
+       "sami",
+       "أَسْكُنُ فِي دِمَشْقْ."
+      ]
+     ],
+     "pause": 2
+    }
+   ]
+  },
+  {
+   "title": "Final challenge",
+   "image": "026-sami-arabic-test/s06.png",
+   "line": "And to finish, your challenge.",
+   "custom": [
+    {
+     "title": "Final challenge",
+     "image": "026-sami-arabic-test/s06.png",
+     "shift": 0,
+     "card": "Final challenge · 10 questions",
+     "say": [
+      [
+       "narrator",
+       "Now the final challenge: ten real situations from the whole lesson. Answer out loud before you hear the answer."
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 1",
+     "image": "022-lifesaver-phrases/s03.png",
+     "shift": 0,
+     "card": "Question 1/10 · I don't understand. Slowly, please.",
+     "say": [
+      [
+       "narrator",
+       "The waiter talks much too fast. Tell him that you don't understand, and ask him to speak slowly."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 1",
+     "image": "022-lifesaver-phrases/s03.png",
+     "shift": 0,
+     "card": "لَا أَفْهَمْ. بِبُطْءْ، مِنْ فَضْلِكْ · *laa afham. bi-buT', min faDlik* · I don't understand. Slowly, please.",
+     "say": [
+      [
+       "sami",
+       "لَا أَفْهَمْ. بِبُطْءْ، مِنْ فَضْلِكْ."
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 2",
+     "image": "022-lifesaver-phrases/s04.png",
+     "shift": 0,
+     "card": "Question 2/10 · How do I say water in Arabic?",
+     "say": [
+      [
+       "narrator",
+       "You need water, but the word is gone from your head. Ask how to say water in Arabic."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 2",
+     "image": "022-lifesaver-phrases/s04.png",
+     "shift": 0,
+     "card": "كَيْفَ أَقُولُ «water» بِالْعَرَبِيَّةْ؟ · *kayfa aquulu water bil-'arabiyya?* · How do I say water in Arabic?",
+     "say": [
+      [
+       "sami",
+       "كَيْفَ أَقُولُ «water» بِالْعَرَبِيَّةْ؟"
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 3",
+     "image": "027-do-you-speak-arabic/s05.png",
+     "shift": 0,
+     "card": "Question 3/10 · I speak English.",
+     "say": [
+      [
+       "narrator",
+       "Someone talks to you in Arabic, and you are stuck. Tell them that you speak English."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 3",
+     "image": "027-do-you-speak-arabic/s05.png",
+     "shift": 0,
+     "card": "أَتَكَلَّمُ الْإِنْجِلِيزِيَّةْ · *atakallamu l-ingliiziyya* · I speak English.",
+     "say": [
+      [
+       "teacher",
+       "أَتَكَلَّمُ الْإِنْجِلِيزِيَّةْ."
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 4",
+     "image": "025-yes-no-questions/s09.png",
+     "shift": 0,
+     "card": "Question 4/10 · Do you like coffee?",
+     "say": [
+      [
+       "narrator",
+       "Ask your friend a yes or no question: do you like coffee?"
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 4",
+     "image": "025-yes-no-questions/s09.png",
+     "shift": 0,
+     "card": "هَلْ تُحِبُّ الْقَهْوَةْ؟ · *hal tuHibbu l-qahwa?* · Do you like coffee?",
+     "say": [
+      [
+       "teacher",
+       "هَلْ تُحِبُّ الْقَهْوَةْ؟"
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 5",
+     "image": "024-making-a-plan/s01.png",
+     "shift": 0,
+     "card": "Question 5/10 · Do you want coffee tomorrow? (to a woman)",
+     "say": [
+      [
+       "narrator",
+       "Now invite Lina for a coffee tomorrow, and remember the small change when you talk to a woman."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 5",
+     "image": "024-making-a-plan/s01.png",
+     "shift": 0,
+     "card": "هَلْ تُرِيدِينَ قَهْوَةْ غَدًا؟ · *hal turiidiina qahwa ghadan?* · Do you want coffee tomorrow? (to a woman)",
+     "say": [
+      [
+       "sami",
+       "هَلْ تُرِيدِينَ قَهْوَةْ غَدًا؟"
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 6",
+     "image": "x07-inshallah-meaning/s03.png",
+     "shift": 0,
+     "card": "Question 6/10 · Yes, God willing.",
+     "say": [
+      [
+       "narrator",
+       "A friend asks if you can meet tomorrow, and you say yes. What do Arabs add when they talk about the future?"
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 6",
+     "image": "x07-inshallah-meaning/s03.png",
+     "shift": 0,
+     "card": "إِنْ شَاءَ اللهْ · *in shaa' allaah* · God willing.",
+     "say": [
+      [
+       "teacher",
+       "إِنْ شَاءَ اللهْ"
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 7",
+     "image": "026-sami-arabic-test/s01.png",
+     "shift": 0,
+     "card": "Question 7/10 · I live in Damascus.",
+     "say": [
+      [
+       "narrator",
+       "Someone asks where you live. Answer that you live in Damascus."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 7",
+     "image": "026-sami-arabic-test/s01.png",
+     "shift": 0,
+     "card": "أَسْكُنُ فِي دِمَشْقْ · *askunu fii dimashq* · I live in Damascus.",
+     "say": [
+      [
+       "sami",
+       "أَسْكُنُ فِي دِمَشْقْ."
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 8",
+     "image": "023-days-of-the-week/s04.png",
+     "shift": 0,
+     "card": "Question 8/10 · Today is Sunday.",
+     "say": [
+      [
+       "narrator",
+       "Say that today is Sunday, the first day of the Arabic week."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 8",
+     "image": "023-days-of-the-week/s04.png",
+     "shift": 0,
+     "card": "الْيَوْمْ الْأَحَدْ · *al-yawm al-aHad* · Today is Sunday.",
+     "say": [
+      [
+       "teacher",
+       "الْيَوْمْ الْأَحَدْ."
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 9",
+     "image": "v05-jobs/s07.png",
+     "shift": 0,
+     "card": "Question 9/10 · I'm an engineer. (woman)",
+     "say": [
+      [
+       "narrator",
+       "How does a woman say that she is an engineer?"
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 9",
+     "image": "v05-jobs/s07.png",
+     "shift": 0,
+     "card": "أنا مهندسة · *ana muhandisa* · I'm an engineer. (woman)",
+     "say": [
+      [
+       "teacher",
+       "أنا مهندسة."
+      ]
+     ]
+    },
+    {
+     "title": "Challenge 10",
+     "image": "v04-food-words/s02.png",
+     "shift": 0,
+     "card": "Question 10/10 · I eat bread.",
+     "say": [
+      [
+       "narrator",
+       "And the last one: say that you eat bread."
+      ]
+     ],
+     "pause": 2.5
+    },
+    {
+     "title": "Challenge answer 10",
+     "image": "v04-food-words/s02.png",
+     "shift": 0,
+     "card": "آكُلُ خُبْزْ · *aakulu khubz* · I eat bread.",
+     "say": [
+      [
+       "teacher",
+       "آكُلُ خُبْزْ."
+      ]
+     ]
+    },
+    {
+     "title": "Score",
+     "image": "026-sami-arabic-test/s06.png",
+     "shift": 0,
+     "card": "10 / 10 ?",
+     "say": [
+      [
+       "narrator",
+       "Count your answers. Ten real situations, and you can handle them in Arabic."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "rewrite": {
+  "A finjaan is the small cup your Arabic coffee comes in.": "That word means the small cup your Arabic coffee comes in.",
+  "First, the word for day. Put al in front of it, and it means today.": "First, the word for day. Put the little word for the in front of it, and it means today.",
+  "The Arabic week starts on Sunday, and Sunday is day one, from waaHid, one.": "The Arabic week starts on Sunday, and Sunday is day one, named after the number one.",
+  "Monday is day two, from ithnaan, two.": "Monday is day two, named after the number two.",
+  "Tuesday is day three, and you can hear thalaatha inside it.": "Tuesday is day three, and you can hear the number three inside it.",
+  "Wednesday is day four, from arba'a.": "Wednesday is day four, named after the number four.",
+  "And Thursday is day five, from khamsa, so that's five days from five numbers.": "And Thursday is day five, named after the number five, so that's five days from five numbers.",
+  "The word ghadan means tomorrow, so this sentence says that tomorrow is Friday.": "The first word here means tomorrow, so this sentence says that tomorrow is Friday.",
+  " · Day 1/7": " · weekday 1/7",
+  " · Day 2/7": " · weekday 2/7",
+  " · Day 3/7": " · weekday 3/7",
+  " · Day 4/7": " · weekday 4/7",
+  " · Day 5/7": " · weekday 5/7",
+  " · Days 6–7": " · weekdays 6–7",
+  "Here is the question. Notice the little question word from Day 25 at the front.": "Here is the question. Notice the little yes or no word at the front, the one you learned first.",
+  "And when you're stuck, this one says, I speak English. It starts with the same sound as I drink, from Day 20.": "And when you're stuck, this one says, I speak English. It starts with the same sound as the word for I drink.",
+  "Luckily, Sami remembers the lifesaver phrase from Day 22.": "Luckily, Sami remembers his first lifesaver phrase.",
+  "Count your answers. Seven lines, from hello to goodbye. Twenty-eight days ago, that was impossible.": "Count your answers. Seven lines, from hello to goodbye, and that is a whole conversation in Arabic.",
+  "And a female student gets the soft a at the end, just like on Day 9.": "And a female student gets the soft ah sound at the end, the one small letter for women.",
+  "And the ending is the little sound that means my, from Day 12. So it means my love, or my dear.": "And the ending is the little ee sound that means my, so it means my love, or my dear.",
+  "```say:narrator\nGiraffe.\n```": "```say:narrator\nThe tall giraffe has an Arabic name too.\n```",
+  "One. What's your name?": "Now the five questions Arabs always ask, and the first one is: what's your name?",
+  "Say ismi, and your name. Like Sami:": "Say my name is, and then your own name, just like Sami does.",
+  "Say ana min, and your country.": "Say I am from, and then your country.",
+  "Say umri, your age, and sana. Years.": "Say my age is, then your age and the word for years, like Sami.",
+  "Say ana, and your job. A student is taalib.": "Say I am, and then your job, like I am a student.",
+  "Did you notice? All six start with a, followed by three letters, like one family.": "Did you notice? All six start with the same ah sound, like one family of colors.",
+  "Now add the verb I eat from Day 20, and you have a full sentence.": "Now add the verb for I eat, and you have a full sentence.",
+  "A woman adds one small letter at the end, like on day nine.": "A woman adds one small letter at the end, the same letter that turns a student into a female student."
+ },
+ "allow": [
+  "means tomorrow"
+ ],
+ "outro": [
+  {
+   "title": "Outro",
+   "image": "023-days-of-the-week/s12.png",
+   "card": "Episode 2 · you can make plans in Arabic now",
+   "say": [
+    [
+     "narrator",
+     "If you answered most of them, you can already talk about yourself, make plans and order at a café in Arabic."
+    ],
+    [
+     "narrator",
+     "Send this to a friend who wants to learn Arabic with you."
+    ],
+    [
+     "narrator",
+     "Episode 3 brings the next month of lessons."
+    ],
+    [
+     "narrator",
+     "Subscribe so you don't break your streak."
+    ]
+   ],
+   "goodbye": true
+  }
+ ]
+}
