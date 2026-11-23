@@ -14,7 +14,7 @@
 | **Ends** | on the score question + subscribe line, no goodbye clip (Extras rule) |
 
 Distinct from Day 10 (1–10 taught in order) and extra06 (11–20 taught in order + 3 quiz items): here nothing is
-taught — the viewer answers first, in random order, against a clock that speeds up (2 s → 1.5 s → 1 s).
+taught — the viewer answers first, in random order, against a clock that speeds up (3 s → 2 s → 1 s, owner 2026-11-23).
 
 ---
 
@@ -30,12 +30,12 @@ Can you count in Arabic faster than me? Three rounds, and every round gets faste
 ### 🎬 Scene 2 — Round 1, number 3
 
 🖼️ **Image:** board — chalk 3 / ٣
-🔤 **On screen:** Round 1 · say it in Arabic · 1.5 seconds
+🔤 **On screen:** Round 1 · say it in Arabic · 3 seconds
 
 ```say:narrator
-Round one is the warm up, so take a breath and say each number before I do.
+Round one is the warm up, so you get three seconds to say each number before I do.
 ```
-⏸️ **Pause 1.5s**
+⏸️ **Pause 3s** · keep
 
 ### 🎬 Scene 3 — answer 3
 
@@ -51,7 +51,7 @@ Round one is the warm up, so take a breath and say each number before I do.
 🖼️ **Image:** board — chalk 8 / ٨
 🔤 **On screen:** Round 1 · say it in Arabic
 
-⏸️ **Pause 1.5s**
+⏸️ **Pause 3s** · keep
 
 ### 🎬 Scene 5 — answer 8
 
@@ -67,7 +67,7 @@ Round one is the warm up, so take a breath and say each number before I do.
 🖼️ **Image:** board — chalk 5 / ٥
 🔤 **On screen:** Round 1 · say it in Arabic
 
-⏸️ **Pause 1.5s**
+⏸️ **Pause 3s** · keep
 
 ### 🎬 Scene 7 — answer 5
 
@@ -81,12 +81,12 @@ Round one is the warm up, so take a breath and say each number before I do.
 ### 🎬 Scene 8 — Round 2, number 12
 
 🖼️ **Image:** board — chalk 12 / ١٢
-🔤 **On screen:** Round 2 · say it in Arabic · faster
+🔤 **On screen:** Round 2 · say it in Arabic · 2 seconds
 
 ```say:narrator
 Round two goes above ten, and here's a little help: from thirteen on, you say the small number first and then ten.
 ```
-⏸️ **Pause 1.2s**
+⏸️ **Pause 2s** · keep
 
 ### 🎬 Scene 9 — answer 12
 
@@ -102,7 +102,7 @@ Round two goes above ten, and here's a little help: from thirteen on, you say th
 🖼️ **Image:** board — chalk 17 / ١٧
 🔤 **On screen:** Round 2 · say it in Arabic
 
-⏸️ **Pause 1.2s**
+⏸️ **Pause 2s** · keep
 
 ### 🎬 Scene 11 — answer 17
 
@@ -118,7 +118,7 @@ Round two goes above ten, and here's a little help: from thirteen on, you say th
 🖼️ **Image:** board — chalk 14 / ١٤
 🔤 **On screen:** Round 2 · say it in Arabic
 
-⏸️ **Pause 1.2s**
+⏸️ **Pause 2s** · keep
 
 ### 🎬 Scene 13 — answer 14
 
@@ -132,12 +132,12 @@ Round two goes above ten, and here's a little help: from thirteen on, you say th
 ### 🎬 Scene 14 — Round 3, number 20
 
 🖼️ **Image:** board — chalk 20 / ٢٠
-🔤 **On screen:** Round 3 · say it in Arabic · under 1 second
+🔤 **On screen:** Round 3 · say it in Arabic · 1 second
 
 ```say:narrator
-Last round, and now you get less than a second for each number, so be quick.
+This is the last round, so now you only get one second for each number.
 ```
-⏸️ **Pause 0.9s**
+⏸️ **Pause 1s** · keep
 
 ### 🎬 Scene 15 — answer 20
 
@@ -153,7 +153,7 @@ Last round, and now you get less than a second for each number, so be quick.
 🖼️ **Image:** board — chalk 11 / ١١
 🔤 **On screen:** Round 3 · say it in Arabic
 
-⏸️ **Pause 0.9s**
+⏸️ **Pause 1s** · keep
 
 ### 🎬 Scene 17 — answer 11
 
@@ -169,7 +169,7 @@ Last round, and now you get less than a second for each number, so be quick.
 🖼️ **Image:** board — chalk 9 / ٩
 🔤 **On screen:** Round 3 · say it in Arabic
 
-⏸️ **Pause 0.9s**
+⏸️ **Pause 1s** · keep
 
 ### 🎬 Scene 19 — answer 9
 
@@ -185,7 +185,7 @@ Last round, and now you get less than a second for each number, so be quick.
 🖼️ **Image:** board — chalk 19 / ١٩
 🔤 **On screen:** Round 3 · say it in Arabic
 
-⏸️ **Pause 0.9s**
+⏸️ **Pause 1s** · keep
 
 ### 🎬 Scene 21 — answer 19
 

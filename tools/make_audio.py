@@ -56,6 +56,7 @@ SHORT_GAP = 0.05           # between two lines (owner 20 Nov, 2nd round: "almost
 SHORT_AFTER_FILMED = 0.15  # after the filmed hello (was 0.3)
 SHORT_REPEAT_PAUSE = 1.0   # a ⏸️ right after an Arabic line (repeat it) — the script's 1.2–2 s are capped here
 SHORT_TURN_PAUSE = 1.5     # a ⏸️ after the narrator's question, before the answer (Your turn / game: the clock ticks)
+INNER_MAX = 1.0           # any silence inside a line, every video (owner 2026-11-23)
 SHORT_INNER_MAX = 0.15     # a silence inside a narrator line (between its sentences) is shortened to this (was 0.35)
 SAMPLE_RATE = 24000
 CLIP_LUFS = -18.0   # per-clip loudness (the final video mix is brought to -14 LUFS)
@@ -90,7 +91,8 @@ def parse(script: pathlib.Path):
                 sys.exit(f"{script}:{i + 1}: filmed clip {CLIPS_DIR / m.group(1)}.mp4 not found")
             events.append(("video", m.group(1), (m.group(2) or "").strip()))
         elif m := PAUSE.search(line):   # owner, 2026-10-02: a "your turn" wait is never longer than 2 s
-            events.append(("pause", min(float(m.group(1)), MAX_PAUSE)))
+            keep = "keep" in line   # "⏸️ **Pause 3s** · keep" = exactly this long, no caps (x11 speed rounds, owner 2026-11-23)
+            events.append(("pause", float(m.group(1)) if keep else min(float(m.group(1)), MAX_PAUSE), keep))
         i += 1
     return events
 
@@ -337,7 +339,7 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
             continue
         elif event[0] == "pause":
             secs = event[1]
-            if short:   # after the narrator's question = the viewer answers; after an Arabic line = repeat it
+            if short and not event[2]:   # after the narrator's question = the viewer answers; after an Arabic line = repeat it
                 turn = not spoken or (last_speaker and last_speaker.startswith("narrator"))
                 secs = min(secs, SHORT_TURN_PAUSE if turn else SHORT_REPEAT_PAUSE)
             pending_gap = secs
@@ -348,12 +350,13 @@ def render(script: pathlib.Path, out_root: pathlib.Path, takes: int, redo=(), al
             cached = cache_path(speaker, text)
             n += 1
             clip = clips_dir / f"{n:02d}-{speaker}.wav"
-            if short and speaker.startswith("narrator"):   # long pauses between the narrator's sentences → 0.35 s
-                subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(cached), "-af",
-                                f"silenceremove=stop_periods=-1:stop_duration={SHORT_INNER_MAX}:"
-                                f"stop_threshold=-45dB:detection=peak", str(clip)], check=True)
-            else:
-                shutil.copy(cached, clip)
+            # silences INSIDE a line: Shorts' narrator → 0.15 s; every other line (recorded Arabic too, long videos too)
+            # → at most 1 s (owner 2026-11-23: Lina's "هذه أمي. … أمي معلمة" had 1.7 s in the middle)
+            narr = speaker.startswith("narrator")
+            cap, thr = (SHORT_INNER_MAX, -45) if (short and narr) else (INNER_MAX, -45 if narr else -40)
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(cached), "-af",
+                            f"silenceremove=stop_periods=-1:stop_duration={cap}:"
+                            f"stop_threshold={thr}dB:detection=peak", str(clip)], check=True)
             last_speaker = speaker; spoken = True
             info = json.loads(cached.with_suffix(".json").read_text(encoding="utf-8"))
             if t > 0:

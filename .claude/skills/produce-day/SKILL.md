@@ -88,6 +88,14 @@ narrator's question (Your turn / game) → **1.5 s**. Write the script's ⏸️ 
 at ~1:45–1:55 now — fine. The audio gate's "rushed" flag now fires on lines whose takes are fine (it counts words per
 second including the removed silences): only a line that sounds rushed TO THE EAR needs a re-take; check cut words in
 the final transcript instead. Never raise these values back without the owner.
+**No silence over 1 s INSIDE any line, every video (owner 2026-11-23: Lina's «هذه أمي. … أمي معلمة» had 1.7 s in the
+middle):** make_audio caps every in-line silence at 1.0 s (`INNER_MAX`) — recorded Arabic (owner, Koki) and the narrator
+in long videos too; the Shorts narrator keeps 0.15 s. Automatic; just don't remove it.
+**Timed challenges (x11, owner 2026-11-23):** a ⏸️ line ending in `· keep` (`⏸️ **Pause 3s** · keep`) is used exactly,
+no caps — speed rounds go 3 s → 2 s → 1 s (beginners need 3 s in round 1; 1.5 s was too short).
+**Narrator alone = big (owner 2026-11-23: "when narrator speaks alone and no card above him, make him bigger, like in
+opener"):** pencil_scene_clips.py zooms the narrator like the hook whenever his scene has no card or one short line
+without "·" (outros, "your answer in the comments"). Check the outro frame: captions above the head, not on the face.
 **Slides, every Short (owner 2026-11-20: "the transition of intro is great… very nice and don't add to the boreness"):**
 assemble.py does all of it by itself (not for long videos):
 - **Intro:** the filmed hello slides in from the right (0.3 s) and out to the left (0.25 s); its end silence is cut to a

@@ -2,105 +2,105 @@
  "video": "x11-numbers-speed-challenge",
  "hi": {
   "1": "क्या आप मुझसे तेज़ अरबी में गिन सकते हैं? तीन राउंड, हर राउंड और तेज़, तो सुनने से पहले हर नंबर बोलिए।",
-  "2": "पहला राउंड वॉर्म-अप है, तो साँस लीजिए और मुझसे पहले हर नंबर बोलिए।",
+  "2": "पहला राउंड वॉर्म-अप है, तो मुझसे पहले हर नंबर बोलने के लिए आपके पास तीन सेकंड हैं।",
   "6": "दूसरा राउंड दस से ऊपर है, और एक मदद: तेरह से आगे पहले छोटा नंबर, फिर दस।",
-  "10": "आख़िरी राउंड, अब हर नंबर के लिए एक सेकंड से कम, तो जल्दी कीजिए।",
+  "10": "यह आख़िरी राउंड है, तो अब हर नंबर के लिए सिर्फ़ एक सेकंड।",
   "15": "दस में से कितने आपने मुझसे पहले बोले? कमेंट में अपना स्कोर लिखिए, और सच बताइए।",
   "16": "सब्सक्राइब कीजिए ताकि आपकी लय न टूटे।"
  },
  "ur": {
   "1": "کیا آپ مجھ سے تیز عربی میں گن سکتے ہیں؟ تین راؤنڈ، ہر راؤنڈ اور تیز، تو سننے سے پہلے ہر نمبر بولیے۔",
-  "2": "پہلا راؤنڈ وارم اپ ہے، تو سانس لیجیے اور مجھ سے پہلے ہر نمبر بولیے۔",
+  "2": "پہلا راؤنڈ وارم اپ ہے، تو مجھ سے پہلے ہر نمبر بولنے کے لیے آپ کے پاس تین سیکنڈ ہیں۔",
   "6": "دوسرا راؤنڈ دس سے اوپر ہے، اور ایک مدد: تیرہ سے آگے پہلے چھوٹا نمبر، پھر دس۔",
-  "10": "آخری راؤنڈ، اب ہر نمبر کے لیے ایک سیکنڈ سے کم، تو جلدی کیجیے۔",
+  "10": "یہ آخری راؤنڈ ہے، تو اب ہر نمبر کے لیے صرف ایک سیکنڈ۔",
   "15": "دس میں سے کتنے آپ نے مجھ سے پہلے بولے؟ کمنٹ میں اپنا اسکور لکھیے، اور سچ بتائیے۔",
   "16": "سبسکرائب کریں تاکہ آپ کا سلسلہ نہ ٹوٹے۔"
  },
  "id": {
   "1": "Bisa hitung bahasa Arab lebih cepat dariku? Tiga ronde, makin cepat, jadi sebut angkanya sebelum kamu dengar.",
-  "2": "Ronde satu pemanasan, tarik napas dan sebut tiap angka sebelum aku.",
+  "2": "Ronde satu pemanasan, kamu punya tiga detik untuk sebut tiap angka sebelum aku.",
   "6": "Ronde dua di atas sepuluh, sedikit bantuan: mulai tiga belas, angka kecil dulu, lalu sepuluh.",
-  "10": "Ronde terakhir, kurang dari satu detik per angka, jadi cepat.",
+  "10": "Ini ronde terakhir, jadi sekarang cuma satu detik per angka.",
   "15": "Berapa dari sepuluh yang kamu sebut sebelum aku? Tulis skormu di komentar, jujur ya.",
   "16": "Subscribe supaya kebiasaanmu tidak putus."
  },
  "bn": {
   "1": "আমার চেয়ে দ্রুত আরবিতে গুনতে পারবেন? তিন রাউন্ড, প্রতি রাউন্ড আরও দ্রুত, তাই শোনার আগেই প্রতিটি সংখ্যা বলুন।",
-  "2": "প্রথম রাউন্ড ওয়ার্ম-আপ, একটু শ্বাস নিন, আর আমার আগে প্রতিটি সংখ্যা বলুন।",
+  "2": "প্রথম রাউন্ড ওয়ার্ম-আপ, তাই আমার আগে প্রতিটি সংখ্যা বলতে আপনি তিন সেকেন্ড পাবেন।",
   "6": "দ্বিতীয় রাউন্ড দশের উপরে, আর একটু সাহায্য: তেরো থেকে আগে ছোট সংখ্যা, তারপর দশ।",
-  "10": "শেষ রাউন্ড, এখন প্রতিটি সংখ্যার জন্য এক সেকেন্ডেরও কম, তাই তাড়াতাড়ি।",
+  "10": "এটাই শেষ রাউন্ড, তাই এখন প্রতিটি সংখ্যার জন্য মাত্র এক সেকেন্ড।",
   "15": "দশটির কয়টা আমার আগে বললেন? কমেন্টে আপনার স্কোর লিখুন, সত্যি করে।",
   "16": "সাবস্ক্রাইব করুন, যাতে আপনার ধারা না ভাঙে।"
  },
  "tr": {
   "1": "Arapça benden hızlı sayabilir misin? Üç tur, her tur daha hızlı, her sayıyı duymadan önce söyle.",
-  "2": "Birinci tur ısınma, bir nefes al ve her sayıyı benden önce söyle.",
+  "2": "Birinci tur ısınma, her sayıyı benden önce söylemek için üç saniyen var.",
   "6": "İkinci tur ondan yukarı, küçük bir ipucu: on üçten sonra önce küçük sayı, sonra on.",
-  "10": "Son tur, artık her sayı için bir saniyeden az var, hızlı ol.",
+  "10": "Bu son tur, artık her sayı için sadece bir saniye.",
   "15": "Ondan kaçını benden önce söyledin? Skorunu yorumlara yaz, dürüst ol.",
   "16": "Serini bozmamak için abone ol."
  },
  "fa": {
   "1": "می‌توانی به عربی از من تندتر بشماری؟ سه دور، هر دور تندتر، پس هر عدد را قبل از شنیدن بگو.",
-  "2": "دور اول گرم‌کردن است، نفسی بکش و هر عدد را قبل از من بگو.",
+  "2": "دور اول گرم کردن است، پس سه ثانیه وقت داری هر عدد را قبل از من بگویی.",
   "6": "دور دوم بالای ده است، و یک کمک: از سیزده به بعد، اول عدد کوچک، بعد ده.",
-  "10": "دور آخر، حالا برای هر عدد کمتر از یک ثانیه وقت داری، پس سریع باش.",
+  "10": "این دور آخر است، پس حالا برای هر عدد فقط یک ثانیه.",
   "15": "از ده تا، چندتا را قبل از من گفتی؟ امتیازت را در کامنت‌ها بنویس، و صادق باش.",
   "16": "سابسکرایب کن تا زنجیره‌ات نشکند."
  },
  "ms": {
   "1": "Boleh kira dalam bahasa Arab lebih laju daripada saya? Tiga pusingan, makin laju, sebut nombor sebelum awak dengar.",
-  "2": "Pusingan satu untuk memanaskan badan, tarik nafas dan sebut setiap nombor sebelum saya.",
+  "2": "Pusingan satu ialah memanaskan badan, anda ada tiga saat untuk sebut setiap nombor sebelum saya.",
   "6": "Pusingan dua melebihi sepuluh, sedikit bantuan: dari tiga belas, nombor kecil dahulu, kemudian sepuluh.",
-  "10": "Pusingan terakhir, kurang dari satu saat untuk setiap nombor, jadi cepat.",
+  "10": "Ini pusingan terakhir, jadi kini hanya satu saat untuk setiap nombor.",
   "15": "Berapa daripada sepuluh yang awak sebut sebelum saya? Tulis markah awak di komen, dan jujur.",
   "16": "Subscribe supaya rutin awak tidak terputus."
  },
  "fr": {
   "1": "Tu comptes en arabe plus vite que moi ? Trois manches, chacune plus rapide, alors dis chaque nombre avant de l'entendre.",
-  "2": "La manche un, c'est l'échauffement : respire, et dis chaque nombre avant moi.",
+  "2": "Le premier tour est un échauffement : tu as trois secondes pour dire chaque nombre avant moi.",
   "6": "La manche deux passe au-dessus de dix, petite aide : dès treize, on dit le petit nombre d'abord, puis dix.",
-  "10": "Dernière manche, moins d'une seconde par nombre, alors sois rapide.",
+  "10": "C'est le dernier tour, donc plus qu'une seconde par nombre.",
   "15": "Combien des dix as-tu dits avant moi ? Écris ton score en commentaire, et sois honnête.",
   "16": "Abonne-toi pour ne pas casser ta série."
  },
  "ru": {
   "1": "Считаешь по-арабски быстрее меня? Три раунда, каждый быстрее, так что называй число до того, как услышишь.",
-  "2": "Первый раунд — разминка, вдохни и называй каждое число раньше меня.",
+  "2": "Первый раунд — разминка: у тебя три секунды, чтобы назвать каждое число раньше меня.",
   "6": "Второй раунд — больше десяти, и подсказка: с тринадцати сначала маленькое число, потом десять.",
-  "10": "Последний раунд, теперь меньше секунды на число, так что быстрее.",
+  "10": "Это последний раунд, так что теперь только одна секунда на число.",
   "15": "Сколько из десяти ты назвал раньше меня? Напиши свой счёт в комментариях, только честно.",
   "16": "Подпишись, чтобы не прерывать серию."
  },
  "de": {
   "1": "Zählst du auf Arabisch schneller als ich? Drei Runden, jede schneller, also sag jede Zahl, bevor du sie hörst.",
-  "2": "Runde eins ist zum Aufwärmen, atme durch und sag jede Zahl vor mir.",
+  "2": "Runde eins ist zum Aufwärmen, du hast drei Sekunden, um jede Zahl vor mir zu sagen.",
   "6": "Runde zwei geht über zehn, ein kleiner Tipp: ab dreizehn sagst du erst die kleine Zahl, dann zehn.",
-  "10": "Letzte Runde, jetzt hast du unter einer Sekunde pro Zahl, also schnell.",
+  "10": "Das ist die letzte Runde, jetzt nur eine Sekunde pro Zahl.",
   "15": "Wie viele der zehn hast du vor mir gesagt? Schreib deinen Punktestand in die Kommentare, und sei ehrlich.",
   "16": "Abonniere, damit deine Serie nicht abreißt."
  },
  "so": {
   "1": "Ma iiga dhakhso badan kartaa tirinta Carabiga? Saddex wareeg, mid walba wuu ka dhakhso badan yahay, ee lambar walba dheh intaadan maqlin.",
-  "2": "Wareegga koowaad waa diyaargarow, neef qaado oo lambar walba dheh aniga ka hor.",
+  "2": "Wareegga koowaad waa diyaargarow, waxaad haysataa saddex ilbiriqsi si aad lambar kasta iiga horrayso.",
   "6": "Wareegga labaad wuu ka sarreeyaa toban, caawimaad yar: saddex iyo toban iyo wixii ka dambeeya, marka hore lambarka yar, kadib toban.",
-  "10": "Wareegga ugu dambeeya, hadda lambar walba wax ka yar ilbiriqsi ayaad haysataa, ee dhaqso.",
+  "10": "Kani waa wareeggii ugu dambeeyay, hadda hal ilbiriqsi oo keliya lambar kasta.",
   "15": "Tobanka immisa ayaad dhahday aniga ka hor? Dhibcahaaga faallooyinka ku qor, runta sheeg.",
   "16": "Subscribe si aanad u joojin socodkaaga."
  },
  "sw": {
   "1": "Unaweza kuhesabu kwa Kiarabu haraka kuliko mimi? Raundi tatu, kila moja ni kasi zaidi, kwa hiyo sema kila namba kabla ya kuisikia.",
-  "2": "Raundi ya kwanza ni ya kupasha moto, vuta pumzi useme kila namba kabla yangu.",
+  "2": "Raundi ya kwanza ni ya kupasha moto, una sekunde tatu kusema kila namba kabla yangu.",
   "6": "Raundi ya pili ni zaidi ya kumi, na msaada kidogo: kuanzia kumi na tatu, namba ndogo kwanza, kisha kumi.",
-  "10": "Raundi ya mwisho, sasa una chini ya sekunde moja kwa kila namba, kwa hiyo haraka.",
+  "10": "Hii ni raundi ya mwisho, sasa sekunde moja tu kwa kila namba.",
   "15": "Ngapi kati ya kumi ulisema kabla yangu? Andika alama zako kwenye maoni, na uwe mkweli.",
   "16": "Subscribe ili mfululizo wako usikatike."
  },
  "es": {
   "1": "¿Cuentas en árabe más rápido que yo? Tres rondas, cada una más rápida, así que di cada número antes de oírlo.",
-  "2": "La ronda uno es para calentar, respira y di cada número antes que yo.",
+  "2": "La primera ronda es de calentamiento: tienes tres segundos para decir cada número antes que yo.",
   "6": "La ronda dos pasa de diez, y una ayuda: desde el trece, dices primero el número pequeño y luego diez.",
-  "10": "Última ronda, ahora tienes menos de un segundo por número, así que rápido.",
+  "10": "Esta es la última ronda, ahora solo un segundo por número.",
   "15": "¿Cuántos de los diez dijiste antes que yo? Escribe tu puntuación en los comentarios, y sé sincero.",
   "16": "Suscríbete para no romper tu racha."
  }

@@ -60,11 +60,13 @@ def panel_image(part, segments, idx, out):
     fs = 34 if row >= 70 else max(20, int(row * 0.66))
     for k, seg in enumerate(segments):
         cur = k == idx
-        if cur:
-            d.rounded_rectangle((55, y - row * 0.14, PANEL - 55, y + row * 0.74), radius=int(row * 0.37), fill=TEAL)
-        f = fit(d, seg["title"], BOLD if cur else REG, fs, PANEL - 170)
-        if cur:   # drawn triangle (the fonts have no ▶ glyph)
-            d.polygon([(78, y + row * 0.14), (78, y + row * 0.49), (98, y + row * 0.31)], fill=(255, 255, 255))
+        f = fit(d, seg["title"], BOLD if cur else REG, fs, PANEL - 150)
+        tb = d.textbbox((112, y), seg["title"], font=f)
+        cy = (tb[1] + tb[3]) / 2
+        if cur:   # a pill that hugs the title, centred on it (owner 2026-11-23: the old full-width bar looked odd)
+            half = fs * 0.62
+            d.rounded_rectangle((66, cy - half, min(PANEL - 40, tb[2] + 26), cy + half), radius=int(half), fill=TEAL)
+            d.polygon([(82, cy - fs * 0.22), (82, cy + fs * 0.22), (100, cy)], fill=(255, 255, 255))   # fonts lack ▶
         d.text((112, y), seg["title"], font=f, fill=(255, 255, 255) if cur else CHAR)
         y += row
     # right panel: words of this segment
@@ -78,18 +80,21 @@ def panel_image(part, segments, idx, out):
         for line in segments[idx]["panel_text"]:
             d.text((x0 + 60, yy), line, font=ImageFont.truetype(str(REG), 34), fill=CHAR)
             yy += 56
-    row = min(92, (H - 190) // max(len(words), 1))
-    ar_size = min(52, int(row * 0.62))
+    # each word = a block: the Arabic on its own line (right), the English and the transliteration under it (left) —
+    # long Arabic lines no longer run into the English (owner 2026-11-23, Episode 2)
+    row = min(150, (H - 190) // max(len(words), 1))
+    ar_size = min(50, int(row * 0.36))
     y = 170
     for ar, tr, en in words:
-        fa = fit(d, ar, AR, ar_size, PANEL - 140, direction="rtl", language="ar")
+        fa = fit(d, ar, AR, ar_size, W - x0 - 120, direction="rtl", language="ar")
         b = d.textbbox((0, 0), ar, font=fa, direction="rtl", language="ar")
         d.text((W - 60 - (b[2] - b[0]) - b[0], y - b[1]), ar, font=fa, fill=TEAL, direction="rtl", language="ar")
-        room = (W - 60 - (b[2] - b[0])) - (x0 + 60) - 28      # space left of the Arabic word
-        small = fit(d, en, REG, max(22, int(ar_size * 0.6)), room)
-        d.text((x0 + 60, y), en, font=small, fill=CHAR)
-        d.text((x0 + 60, y + int(ar_size * 0.66)), tr, font=fit(d, tr, FONTS / "NotoSans-Italic.ttf",
-                                                                  max(20, int(ar_size * 0.5)), room), fill=TERRA)
+        yy = y + (b[3] - b[1]) + 10
+        room = W - x0 - 120
+        fe = fit(d, en, REG, max(22, int(ar_size * 0.56)), room)
+        d.text((x0 + 60, yy), en, font=fe, fill=CHAR)
+        yy += int(ar_size * 0.62)
+        d.text((x0 + 60, yy), tr, font=fit(d, tr, FONTS / "NotoSans-Italic.ttf", max(20, int(ar_size * 0.48)), room), fill=TERRA)
         y += row
     img.save(out)
 

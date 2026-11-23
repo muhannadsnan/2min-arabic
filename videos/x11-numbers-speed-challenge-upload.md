@@ -1,6 +1,6 @@
 # Arabic Extras · Upload sheet — extra11
 
-**File to upload:** `output/x11-numbers-speed-challenge/arabic-numbers-1-to-20-can-you-keep-up.mp4` (vertical, 0:52 → **Short**)
+**File to upload:** `output/x11-numbers-speed-challenge/arabic-numbers-1-to-20-can-you-keep-up.mp4` (vertical, 1:00 → **Short**)
 **Thumbnail:** Upload file → `output/x11-numbers-speed-challenge/arabic-numbers-1-to-20-can-you-keep-up-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -100,6 +100,6 @@ Your score out of 10? 👇 Then count from 1 to 20 in Arabic here, in words — 
 
 - No new recording: all 10 numbers from the pool (your voice: Day 10 + extra06).
 - Board: a new rooftop chalkboard; each number written by us (digits.py) as our digit + the Arabic digit in the straight-top Kufi shape (owner 23 Nov: the curly ٢ looked like a 3), low on the board, clear of the card and the YOUR TURN label (checked in frames).
-- Pauses: 1.5 s → 1.2 s → 0.9 s (a no-speech pause counts as "your turn", make_audio 23 Nov).
+- Pauses: 3 s → 2 s → 1 s (owner 23 Nov; `· keep` = exact).
 - Audio gate: 2 lines "rushed" (the fast-pace trim, as on Days 31–33), no accent flags.
-- final_check 23 Nov: 0:52.2 ✅, −14.2 LUFS, peak −2.4 dB, 0 overlaps; captions synced (29, 0 weak).
+- final_check 23 Nov: 0:59.6 ✅, −14.3 LUFS, peak −2.2 dB, 0 overlaps; captions synced (29, 0 weak).

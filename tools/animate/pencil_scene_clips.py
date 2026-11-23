@@ -28,6 +28,9 @@ def main():
     side = {int(s) for s in a.side.split(",") if s}; mirror = {int(s) for s in a.mirror.split(",") if s}
     only = {int(s) for s in a.only.split(",") if s}
     P = json.load(open(ROOT / "images" / a.video / "prompts.json"))
+    sys.path.insert(0, str(ROOT / "tools"))
+    from assemble import on_screen_by_scene
+    cards = on_screen_by_scene(ROOT / "videos" / f"{a.video}.md")
     tl = json.load(open(ROOT / "audio" / a.video / "timeline.json"))
     vo = ROOT / "audio" / a.video / "voiceover.wav"
     for o in P:
@@ -48,7 +51,9 @@ def main():
             cmd = [sys.executable, str(ROOT / "tools/animate/pencil_talk.py"), who, shot, str(wav), str(raw), "--bg", "white"]
             if s in mirror: cmd.append("--mirror")
             subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL)
-            if who == "narrator" and s == 1:      # hook: one-line card → the big narrator
+            card = (cards[s - 1] or "").strip() if s - 1 < len(cards) else ""
+            alone = who == "narrator" and "·" not in card and len(card) <= 32   # no card or one short line
+            if who == "narrator" and (s == 1 or alone):   # hook / narrator alone (owner 2026-11-23: "make him bigger") → big
                 vf = "crop=771:1371:154:549,scale=1080:1920:flags=lanczos,"
             elif shot == "side":                  # full-body side shot: smaller, head below the card (y ≈ 900)
                 vf = "scale=594:1056:flags=lanczos,pad=1080:1920:243:864:white,"

@@ -2459,7 +2459,7 @@ You need water, but the word is gone from your head. Ask how to say water in Ara
 ### 🎬 Scene 224 — Challenge answer 2
 
 🖼️ **Image:** 022-lifesaver-phrases/s04.png
-🔤 **On screen:** كَيْفَ أَقُولُ «water» بِالْعَرَبِيَّةْ؟ · *kayfa aquulu water bil-'arabiyya?* · How do I say water in Arabic?
+🔤 **On screen:** كَيْفَ أَقُولُ «واتر» بِالْعَرَبِيَّةْ؟ · *kayfa aquulu water bil-'arabiyya?* · How do I say water in Arabic?
 
 ```say:sami
 كَيْفَ أَقُولُ «water» بِالْعَرَبِيَّةْ؟
