@@ -86,6 +86,7 @@ def panel_image(part, segments, idx, out):
     ar_size = min(50, int(row * 0.36))
     y = 170
     for ar, tr, en in words:
+        ar = ar.replace("…", "...")   # the Arabic font has no ellipsis glyph → a square (owner 2026-11-24, Episode 2)
         fa = fit(d, ar, AR, ar_size, W - x0 - 120, direction="rtl", language="ar")
         b = d.textbbox((0, 0), ar, font=fa, direction="rtl", language="ar")
         d.text((W - 60 - (b[2] - b[0]) - b[0], y - b[1]), ar, font=fa, fill=TEAL, direction="rtl", language="ar")
