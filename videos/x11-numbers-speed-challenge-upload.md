@@ -1,6 +1,6 @@
 # Arabic Extras · Upload sheet — extra11
 
-**File to upload:** `output/x11-numbers-speed-challenge/arabic-numbers-1-to-20-can-you-keep-up.mp4` (vertical, 1:00 → **Short**)
+**File to upload:** `output/x11-numbers-speed-challenge/arabic-numbers-1-to-20-can-you-keep-up.mp4` (vertical, 1:02 → **Short**)
 **Thumbnail:** Upload file → `output/x11-numbers-speed-challenge/arabic-numbers-1-to-20-can-you-keep-up-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -17,12 +17,12 @@ Arabic Numbers 1 to 20: Can You Keep Up? | Numbers
 ## Description
 
 ```
-Arabic numbers 1 to 20 as a speed challenge: three rounds, the numbers in random order, and every round gets faster. Say each number before the native speaker does.
+What if you could say any Arabic number without thinking? Arabic numbers 1 to 20 as a speed challenge: three rounds, the numbers in random order, and every round gets faster. Say each number before the native speaker does.
 
 3 — thalaatha — ⁧ثلاثة⁩
 8 — thamaaniya — ⁧ثمانية⁩
 5 — khamsa — ⁧خمسة⁩
-12 — ithnaa 'ashar — ⁧اثنا عشر⁩
+16 — sittata 'ashar — ⁧ستة عشر⁩
 17 — sab'ata 'ashar — ⁧سبعة عشر⁩
 14 — arba'ata 'ashar — ⁧أربعة عشر⁩
 20 — 'ishruun — ⁧عشرون⁩
@@ -102,4 +102,5 @@ Your score out of 10? 👇 Then count from 1 to 20 in Arabic here, in words — 
 - Board: a new rooftop chalkboard; each number written by us (digits.py) as our digit + the Arabic digit in the straight-top Kufi shape (owner 23 Nov: the curly ٢ looked like a 3), low on the board, clear of the card and the YOUR TURN label (checked in frames).
 - Pauses: 3 s → 2 s → 1 s (owner 23 Nov; `· keep` = exact).
 - Audio gate: 2 lines "rushed" (the fast-pace trim, as on Days 31–33), no accent flags.
-- final_check 23 Nov: 0:59.6 ✅, −14.3 LUFS, peak −2.2 dB, 0 overlaps; captions synced (29, 0 weak).
+- 25 Nov (owner): the round-2 tip now says "from thirteen to nineteen" and round 2 is 16 · 17 · 14 (12 was outside the tip); new aspiration hook "What if you could say any number in Arabic without thinking, not just count on your fingers?".
+- final_check 25 Nov: 1:02.4 ✅, −14.3 LUFS, peak −2.3 dB, 0 overlaps; captions synced (30, 0 weak).

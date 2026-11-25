@@ -24,7 +24,7 @@ taught — the viewer answers first, in random order, against a clock that speed
 🔤 **On screen:** Numbers 1 to 20, speed challenge
 
 ```say:narrator
-Can you count in Arabic faster than me? Three rounds, and every round gets faster, so say each number before you hear it.
+What if you could say any number in Arabic without thinking, not just count on your fingers? Three rounds, every round faster, so say each number before you hear it.
 ```
 
 ### 🎬 Scene 2 — Round 1, number 3
@@ -78,23 +78,23 @@ Round one is the warm up, so you get three seconds to say each number before I d
 خَمْسَةْ
 ```
 
-### 🎬 Scene 8 — Round 2, number 12
+### 🎬 Scene 8 — Round 2, number 16
 
-🖼️ **Image:** board — chalk 12 / ١٢
+🖼️ **Image:** board — chalk 16 / ١٦
 🔤 **On screen:** Round 2 · say it in Arabic · 2 seconds
 
 ```say:narrator
-Round two goes above ten, and here's a little help: from thirteen on, you say the small number first and then ten.
+Round two goes above ten, and here's a little help: from thirteen to nineteen, you say the small number first and then ten.
 ```
 ⏸️ **Pause 2s** · keep
 
-### 🎬 Scene 9 — answer 12
+### 🎬 Scene 9 — answer 16
 
 🖼️ **Image:** same as scene 8
-🔤 **On screen:** ١٢ · *ithnaa 'ashar* · 12
+🔤 **On screen:** ١٦ · *sittata 'ashar* · 16
 
 ```say:teacher
-اِثْنَا عَشَرْ
+سِتَّةَ عَشَرْ
 ```
 
 ### 🎬 Scene 10 — Round 2, number 17

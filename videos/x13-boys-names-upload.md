@@ -1,6 +1,6 @@
 # Arabic Extras · Upload sheet — extra13
 
-**File to upload:** `output/x13-boys-names/arabic-boy-names-with-meaning-10-popular-names.mp4` (vertical, 1:03 → **Short**)
+**File to upload:** `output/x13-boys-names/arabic-boy-names-with-meaning-10-popular-names.mp4` (vertical, 1:14 → **Short**)
 **Thumbnail:** Upload file → `output/x13-boys-names/arabic-boy-names-with-meaning-10-popular-names-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
@@ -101,5 +101,6 @@ Write your name here 👇 and I'll tell you if it has an Arabic meaning. Bonus: 
 - Arabic = your recording for this video (sheet A part 3, name … meaning) + "and you, what's your name?".
 - The narrator never says a name (owner rule 20 Nov); only "our own Sami", the channel's character.
 - Pencil pictures, one per meaning, checked at full size; star, crown and gift box redrawn after your notes (23 Nov); "what's your name?" uses the handshake from extra10.
-- Names 3–8: card + your line only (fast pace, 1:36 → 1:03).
-- final_check 23 Nov: 1:03.3 ✅, −14.3 LUFS, peak −2.2 dB; Ali = a peak above the clouds (redrawn), 0 overlaps; captions synced (30, 0 weak).
+- Two rounds (owner 25 Nov): round 1 = each name (the name part of your line, cut at the pause) + its English meaning back to back; round 2 = your full line, name … its meaning in Arabic (card: name: meaning). New aspiration hook.
+- Audio gate: the round-2 intro line keeps a soft accent flag (0.87); hook + "write your name" are "rushed" (fast-pace trim).
+- final_check 25 Nov: 1:13.8 ✅, −14.4 LUFS, peak −2.2 dB, 0 overlaps; captions synced (46, 0 weak).

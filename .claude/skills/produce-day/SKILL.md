@@ -197,6 +197,17 @@ viewers right where new ones were leaving. So:
 3. **Works for a stranger:** from the hook go **straight to the first new word**. The "recall yesterday" warm-up moves
    into the "Your turn" block at the end (it still recalls due words — spaced repetition stays).
 
+**Aspiration hook — "What if you could…, not just…?" (owner 2026-11-25, from a sports video: "what if you could move like
+an athlete, not just look like one"):** every new opener (Days, Extras, Vocab, Stories, Episodes) starts with the
+viewer's wish, so it pulls in people who only *plan* to learn Arabic: **"What if you could <a real thing this video gives
+you>, not just <the passive state they are in now>?"** + one line naming this video's concrete payoff (the quests).
+Examples: "What if you could answer an Arab in Arabic, not just smile and nod? Here are the five questions you'll hear."
+· "What if you could hear an Arabic name and know what it means, not just how it sounds?" · "What if you could say any
+number in Arabic without thinking, not just count on your fingers?" The promise must be what THIS video delivers
+(pre-upload-gate 3): never "speak like a native / fluent in 2 minutes / secret method". Vary the second half every
+video; alternate with the other hook shapes (contradiction, challenge, number) so it doesn't become a template — but
+"What if…" is the default when nothing sharper fits.
+
 **One GPU job at a time (2026-10-16, three crashes in one session):** ComfyUI (images/animation), `make_audio.py`
 (Chatterbox + Whisper), `final_check.py` and `sync_captions.py` (Whisper) each need most of the 6 GB card. Run them in
 ONE serial queue; never start a check while audio or ComfyUI runs (the owner's own ComfyUI counts too — use the PID
