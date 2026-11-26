@@ -2,6 +2,7 @@
 
 **File to upload:** `output/x13-boys-names/arabic-boy-names-with-meaning-10-popular-names.mp4` (vertical, 1:14 → **Short**)
 **Thumbnail:** Upload file → `output/x13-boys-names/arabic-boy-names-with-meaning-10-popular-names-thumbnail.jpg`
+> ✅ **Uploaded + filled by Claude** — video id `a7rNr3BXwvw`
 
 ## Fast way (Claude fills everything)
 

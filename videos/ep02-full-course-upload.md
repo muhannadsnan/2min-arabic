@@ -2,6 +2,7 @@
 
 **File to upload:** `output/ep02-full-course-16x9/ep02-full-course-16x9.mp4` (16:9, ≈20 min → normal video)
 **Thumbnail:** Upload file → `output/ep02-full-course-16x9/ep02-full-course-16x9-thumbnail.jpg`
+> ✅ **Uploaded + filled by Claude** — video id `p93dlbdffJo`
 
 ## Fast way
 
@@ -81,7 +82,7 @@ learn arabic for beginners full course, arabic conversation for beginners, basic
 
 | Setting | Value |
 |---|---|
-| Playlist | Full Lessons |
+| Playlist | Full Arabic Lessons for Beginners |
 | Audience | No, it's not made for kids |
 | **AI use** | **No — your own recorded Arabic, Koki's recorded Lina lines, your own cloned English voice, illustrations.** |
 | Paid promotion | No |

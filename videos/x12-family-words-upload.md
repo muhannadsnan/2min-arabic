@@ -2,6 +2,7 @@
 
 **File to upload:** `output/x12-family-words/family-members-in-arabic-how-to-say-my-father.mp4` (vertical, 1:08 → **Short**)
 **Thumbnail:** Upload file → `output/x12-family-words/family-members-in-arabic-how-to-say-my-father-thumbnail.jpg`
+> ✅ **Uploaded + filled by Claude** — video id `aqnmeuQ-NLY`
 
 ## Fast way (Claude fills everything)
 

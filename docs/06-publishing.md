@@ -13,7 +13,7 @@ Once a month, a "whole month in one video" (~1 hour) for bingeing and review.
 After Days 5, 10, 15 … a horizontal **Part** video (≈ 10–12 min): short welcome → the 5 lessons back to back (each
 day's repeated hook / intro / subscribe / goodbye cut) → a review quiz with the recorded Arabic → outro. Side panels:
 chapter list + that day's words. Built with `tools/compile_part.py parts/part-NN.json` (review part:
-`videos/wNN-review.md`). Chapters in the description; own playlist "Full Lessons".
+`videos/wNN-review.md`). Chapters in the description; own playlist "Full Arabic Lessons for Beginners" (Parts + Episodes).
 
 ## When
 

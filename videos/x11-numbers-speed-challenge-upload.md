@@ -2,6 +2,7 @@
 
 **File to upload:** `output/x11-numbers-speed-challenge/arabic-numbers-1-to-20-can-you-keep-up.mp4` (vertical, 1:02 → **Short**)
 **Thumbnail:** Upload file → `output/x11-numbers-speed-challenge/arabic-numbers-1-to-20-can-you-keep-up-thumbnail.jpg`
+> ✅ **Uploaded + filled by Claude** — video id `2Yi3zE1hSIs`
 
 ## Fast way (Claude fills everything)
 
