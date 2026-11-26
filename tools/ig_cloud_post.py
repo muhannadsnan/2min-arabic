@@ -95,7 +95,7 @@ def main():
 
 
 def carousel(a):
-    """Carousel twice a week (owner 2026-10-30: Wed + Sun 19:00, 7–8 slides, the words of the latest Reel's video):
+    """Carousel once a week (owner 2026-11-26: Sunday only, was Wed + Sun from 2026-10-30) at 19:00, 7–8 slides, the words of the latest Reel's video):
     the next carousel-NN.bin from the `ig-carousel` release (encrypted tar of slide-*.jpg + caption.txt, made by
     tools/ig_carousel_add.py). Once per day (done-YYYY-MM-DD marker)."""
     now = datetime.datetime.now(OSLO); Q = "ig-carousel"
@@ -103,10 +103,10 @@ def carousel(a):
     marker = f"done-{now:%Y-%m-%d}"
     if marker in assets and not a.force:
         print(f"a carousel was already posted today ({marker})"); return
-    # only on Wed/Sun from 18:00 Oslo: GitHub started a Wednesday backup run at 00:41 Oslo on Thursday 5 Nov — a new
+    # only on Sundays from 18:00 Oslo: GitHub started a Wednesday backup run at 00:41 Oslo on Thursday 5 Nov — a new
     # date, no marker — and it posted a second carousel, one day of the queue gone
-    if not a.force and (now.weekday() not in (2, 6) or now.hour < 18):
-        print(f"{now:%a %H:%M} Oslo — carousels go out Wed + Sun from 19:00 (late backup run?)"); return
+    if not a.force and (now.weekday() != 6 or now.hour < 18):
+        print(f"{now:%a %H:%M} Oslo — carousels go out on Sundays from 19:00 (owner 26 Nov: Sunday only; late backup run?)"); return
     names = sorted(n for n in assets if n.startswith("carousel-") and n.endswith(".bin"))
     if not names:
         print("::warning::carousel queue is empty — ask Claude for the next carousels"); return

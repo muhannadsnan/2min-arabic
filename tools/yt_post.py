@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """The YouTube Post that goes with each Instagram carousel (owner 2026-11-04: "the same post, all 3 synced with the
-Instagram carousel"). Instagram and the Facebook Page get the carousel automatically (instagram-carousel.yml, Wed +
-Sun 19:00); the YouTube Post is made by hand in Studio (the API can't create Posts), so the groups page shows it as a
+Instagram carousel"). Instagram and the Facebook Page get the carousel automatically (instagram-carousel.yml, Sundays
+19:00); the YouTube Post is made by hand in Studio (the API can't create Posts), so the groups page shows it as a
 card on its day with the text to copy, and the pictures wait in ~/Downloads/yt-posts/<day>-<stem>/.
 
     python3 tools/yt_post.py output/carousel/<stem> [--date YYYY-MM-DD]
 
-Without --date: the next Wed/Sun after the last scheduled post (the carousel queue posts one per Wed/Sun in order).
+Without --date: the next Sunday after the last scheduled post (the carousel queue posts one per Sunday in order).
 ig_carousel_add.py --apply calls this. Slides: all but the closing one (it says "link in bio", Instagram only).
 """
 import datetime, json, pathlib, re, shutil, subprocess, sys
@@ -19,7 +19,7 @@ Y = pathlib.Path.home() / ".local/share/2min-yt/venv/bin/python"
 
 def next_day(after):
     d = after + datetime.timedelta(days=1)
-    while d.weekday() not in (2, 6): d += datetime.timedelta(days=1)   # Wed, Sun
+    while d.weekday() != 6: d += datetime.timedelta(days=1)   # Sundays only (owner 2026-11-26; was Wed + Sun)
     return d
 
 

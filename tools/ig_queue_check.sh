@@ -37,7 +37,7 @@ if t=$(count ig-trial '^trial-.*-v2[.]bin$'); then
 fi
 if c=$(count ig-carousel '^carousel-.*[.]bin$'); then
   note "carousel check: $c left"
-  [ "$c" -le 1 ] && notify-send -u critical "2 Minute Arabic" "Instagram carousels: $c left (Wed + Sun). Ask Claude for the next carousels."
+  [ "$c" -le 1 ] && notify-send -u critical "2 Minute Arabic" "Instagram carousels: $c left (Sundays). Ask Claude for the next carousels."
 fi
 h=$(grep -cv '^#\|^\s*$' data/fb-hits.txt 2>/dev/null || echo 0)
 note "facebook hits: $h left"

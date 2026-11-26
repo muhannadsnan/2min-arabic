@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Queue a carousel for the twice-weekly Instagram post (owner 2026-10-30: Wed + Sun 19:00 Oslo).
+"""Queue a carousel for the weekly Instagram post (Sundays 19:00 Oslo; owner 2026-11-26, was Wed + Sun).
 
     python3 tools/ig_carousel_add.py output/carousel/<stem> [--apply]
 
@@ -24,7 +24,7 @@ def main():
     if r.returncode != 0:
         if apply:
             subprocess.run(["gh", "release", "create", Q, "-R", REPO, "--title", "Instagram carousel queue (encrypted)",
-                            "--notes", "Encrypted carousels, Wed + Sun 19:00 Oslo (tools/ig_carousel_add.py)."], check=True)
+                            "--notes", "Encrypted carousels, Sundays 19:00 Oslo (tools/ig_carousel_add.py)."], check=True)
         existing = []
     else:
         existing = [int(m.group(1)) for m in re.finditer(r"carousel-(\d+)", r.stdout)]

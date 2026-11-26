@@ -1,10 +1,10 @@
-# Instagram carousel twice a week (owner, 2026-10-30): Wed + Sun 19:00 Oslo (18:00 UTC in winter), from the encrypted
+# Instagram carousel once a week (owner 2026-11-26: Sunday only; Wed + Sun from 2026-10-30): Sun 19:00 Oslo (18:00 UTC in winter), from the encrypted
 # `ig-carousel` release (tools/ig_carousel_add.py). Once a day (marker asset). Timing isn't
 # critical, so GitHub's own schedule is enough here.
-name: Instagram carousel (Wed + Sun)
+name: Instagram carousel (Sundays)
 on:
   schedule:
-    - cron: "15,45 18,19,20 * * 0,3"   # backups — MAIN trigger: cron-job.org at the exact time (owner's account); many chances; once a day via the done-<date> marker
+    - cron: "15,45 18,19,20 * * 0"   # backups — MAIN trigger: cron-job.org at the exact time (owner's account); many chances; once a day via the done-<date> marker
   workflow_dispatch:
     inputs:
       dry_run:

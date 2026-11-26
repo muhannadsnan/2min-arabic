@@ -81,7 +81,7 @@ Short (English line before each Arabic sentence in the story Short); pencil styl
 curly hair, beard).
 
 **Instagram/Facebook alongside (automatic unless noted):** daily Reel · daily trial (Hindi/Urdu/Turkish/Indonesian/Malay +
-Spanish/French test → drop the weakest) · carousels Wed + Sun until the 25 Nov verdict · Facebook hit of the day with the hook
+Spanish/French test → drop the weakest) · carousels on Sundays only (25 Nov verdict, owner OK 26 Nov: few saves, Reels win; Wed time → trials) · Facebook hit of the day with the hook
 cover (Claude makes the hooks ahead) + Hindi/Urdu test · YouTube Posts with the carousels.
 
 ## Backlog — after February, in this order

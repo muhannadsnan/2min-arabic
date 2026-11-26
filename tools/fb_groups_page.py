@@ -145,7 +145,7 @@ def paste_text(caption, lang):
 
 def queues():
     """How many Instagram trials / carousels are left (owner 2026-11-10: a card reminds when the trials run low).
-    Counted from the encrypted release queues; trials post one a day at ~17:37 Oslo, carousels Wed + Sun."""
+    Counted from the encrypted release queues; trials post one a day at ~17:37 Oslo, carousels on Sundays."""
     out = {}
     try:
         names = lambda tag: subprocess.run(["gh", "release", "view", tag, "--json", "assets", "--jq", ".assets[].name"],
@@ -422,7 +422,7 @@ function fill(id, day, lockEvening) {{
     box.appendChild(card(Object.assign({{}}, g), i, day, idx));
   }});
 }}
-// the YouTube Post on carousel days (Wed + Sun; owner 2026-11-04): the same pictures + text as the Instagram carousel,
+// the YouTube Post on carousel days (Sundays since 2026-11-26; owner 2026-11-04): the same pictures + text as the Instagram carousel,
 // which Instagram and the Facebook Page get automatically at 19:00. Yesterday's stays until it's ticked.
 function ytCard() {{
   const today = ymd(now), yd = new Date(now); yd.setDate(yd.getDate() - 1);
