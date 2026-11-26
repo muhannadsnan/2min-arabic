@@ -570,7 +570,13 @@ def main():
         (wt / "groups.html").write_text(REDIRECT, encoding="utf-8")   # old bookmarks (owner 2026-11-10: renamed to the task page)
         run("git", "add", "tasks.html", "groups.html", cwd=wt)
         run("git", "commit", "-m", "Group posts page", cwd=wt)
-        run("git", "push", "-q", "origin", "HEAD:gh-pages", cwd=wt)
+        for attempt in range(4):   # another job may push gh-pages at the same moment (25 Nov: rejected) → rebase + retry
+            try:
+                run("git", "push", "-q", "origin", "HEAD:gh-pages", cwd=wt); break
+            except subprocess.CalledProcessError:
+                if attempt == 3: raise
+                import time; time.sleep(5 + 5 * attempt)
+                run("git", "pull", "-q", "--rebase", "origin", "gh-pages", cwd=wt)
         print("pushed")
     finally:
         run("git", "worktree", "remove", "--force", str(wt))

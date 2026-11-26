@@ -164,7 +164,13 @@ def main():
         f.write_text(out, encoding="utf-8")
         run("git", "add", "index.html", cwd=wt)
         run("git", "commit", "-m", f"Newest lessons: {latest[0][1].split(' | ')[0]}", cwd=wt)
-        run("git", "push", "-q", "origin", "HEAD:gh-pages", cwd=wt)
+        for attempt in range(4):   # another job may push gh-pages at the same moment (25 Nov: rejected) → rebase + retry
+            try:
+                run("git", "push", "-q", "origin", "HEAD:gh-pages", cwd=wt); break
+            except subprocess.CalledProcessError:
+                if attempt == 3: raise
+                import time; time.sleep(5 + 5 * attempt)
+                run("git", "pull", "-q", "--rebase", "origin", "gh-pages", cwd=wt)
         print("pushed")
     finally:
         run("git", "worktree", "remove", "--force", str(wt))

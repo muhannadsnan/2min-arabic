@@ -74,7 +74,8 @@ def panel_image(part, segments, idx, out):
     d.rectangle((x0, 0, W, H), fill=(246, 232, 214))
     words = segments[idx].get("words", [])
     heading = segments[idx].get("panel_title", "Words in this part" if words else "")
-    d.text((x0 + 60, 80), heading, font=ImageFont.truetype(str(BOLD), 40), fill=TEAL)
+    fh = ImageFont.truetype(str(BOLD), 40)
+    d.text(((x0 + W) / 2 - d.textlength(heading, font=fh) / 2, 80), heading, font=fh, fill=TEAL)
     if not words and segments[idx].get("panel_text"):
         yy = 170
         for line in segments[idx]["panel_text"]:
@@ -89,13 +90,15 @@ def panel_image(part, segments, idx, out):
         ar = ar.replace("…", "...")   # the Arabic font has no ellipsis glyph → a square (owner 2026-11-24, Episode 2)
         fa = fit(d, ar, AR, ar_size, W - x0 - 120, direction="rtl", language="ar")
         b = d.textbbox((0, 0), ar, font=fa, direction="rtl", language="ar")
-        d.text((W - 60 - (b[2] - b[0]) - b[0], y - b[1]), ar, font=fa, fill=TEAL, direction="rtl", language="ar")
+        cx = (x0 + W) / 2   # every line centred in the panel, so the Arabic and its English sit together (owner 2026-11-26)
+        d.text((cx - (b[2] - b[0]) / 2 - b[0], y - b[1]), ar, font=fa, fill=TEAL, direction="rtl", language="ar")
         yy = y + (b[3] - b[1]) + 10
         room = W - x0 - 120
         fe = fit(d, en, REG, max(22, int(ar_size * 0.56)), room)
-        d.text((x0 + 60, yy), en, font=fe, fill=CHAR)
+        d.text((cx - d.textlength(en, font=fe) / 2, yy), en, font=fe, fill=CHAR)
         yy += int(ar_size * 0.62)
-        d.text((x0 + 60, yy), tr, font=fit(d, tr, FONTS / "NotoSans-Italic.ttf", max(20, int(ar_size * 0.48)), room), fill=TERRA)
+        ft = fit(d, tr, FONTS / "NotoSans-Italic.ttf", max(20, int(ar_size * 0.48)), room)
+        d.text((cx - d.textlength(tr, font=ft) / 2, yy), tr, font=ft, fill=TERRA)
         y += row
     img.save(out)
 
