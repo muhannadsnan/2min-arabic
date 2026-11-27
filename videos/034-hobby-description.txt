@@ -2,7 +2,7 @@ Month 2, Day 4 — ask «what's your hobby?» in Arabic and answer «my hobby is
 
 🎨 Ask and answer:
 maa hiwaayatuk? — What's your hobby? — ⁧ما هوايتك؟⁩
-maa hiya hiwaayatuki? — What's your hobby? (to a woman) — ⁧ما هي هوايتكِ؟⁩
+maa hiwaayatuki? — What's your hobby? (to a woman) — ⁧ما هوايتكِ؟⁩
 hiwaayatii al-qiraa'a — My hobby is reading. — ⁧هوايتي القراءة⁩
 uHibbu r-rasm wa-l-muusiiqaa — I love drawing and music. — ⁧أحب الرسم والموسيقى⁩
 

@@ -1,7 +1,7 @@
 # Day 34 (Month 2, Day 4) · Upload sheet
 
-**File to upload:** `output/034-hobby/what-s-your-hobby-in-arabic-6-hobbies-my-hobby-is.mp4` (vertical → **Short**)
-**Thumbnail:** Upload file → `output/034-hobby/what-s-your-hobby-in-arabic-6-hobbies-my-hobby-is-thumbnail.jpg`
+**File to upload:** `output/034-hobby/your-hobby-in-arabic-6-hobbies-my-hobby-is.mp4` (vertical → **Short**)
+**Thumbnail:** Upload file → `output/034-hobby/your-hobby-in-arabic-6-hobbies-my-hobby-is-thumbnail.jpg`
 
 ## Fast way (Claude fills everything)
 
@@ -22,7 +22,7 @@ Month 2, Day 4 — ask «what's your hobby?» in Arabic and answer «my hobby is
 
 🎨 Ask and answer:
 maa hiwaayatuk? — What's your hobby? — ⁧ما هوايتك؟⁩
-maa hiya hiwaayatuki? — What's your hobby? (to a woman) — ⁧ما هي هوايتكِ؟⁩
+maa hiwaayatuki? — What's your hobby? (to a woman) — ⁧ما هوايتكِ؟⁩
 hiwaayatii al-qiraa'a — My hobby is reading. — ⁧هوايتي القراءة⁩
 uHibbu r-rasm wa-l-muusiiqaa — I love drawing and music. — ⁧أحب الرسم والموسيقى⁩
 

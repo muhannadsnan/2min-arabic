@@ -56,16 +56,16 @@ Here is the question you will hear, and its first word means what, so, what is y
 ### 🎬 Scene 4 — To a woman
 
 🖼️ **Image:** the hobby corner
-🔤 **On screen:** ما هي هوايتكِ؟ · *maa hiya hiwaayatuki?* · What's your hobby? (to a woman)
+🔤 **On screen:** ما هوايتكِ؟ · *maa hiwaayatuki?* · What's your hobby? (to a woman)
 
 ```say:narrator
-Now, if you are asking a woman, you add one more little word in the middle.
+And when you are talking to a woman, you use almost the same question.
 ```
 ```say:narrator
-And the ending changes to a soft ee sound.
+Only the ending changes, to a soft ee sound at the very end.
 ```
 ```say:teacher
-ما هي هوايتكِ؟
+ما هوايتكِ؟
 ```
 ⏸️ **Pause 1.5s**
 
