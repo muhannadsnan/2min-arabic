@@ -30,7 +30,7 @@ comments".
   challenge · backlog 7 ("How to say…" one-question Shorts: thank you, what is your name) · "you can already say this"
   recaps of a Part's words · one-word "What does X mean?" from recorded words.
 - **One story week a month:** the monthly Story (long) + its 5 Shorts take that week's 5 slots (template: story-episode skill).
-- **New style:** new videos use the pencil characters (approved 10 Nov); the 3D style stays for older series.
+- **Style: back to semi-3D for every new video (owner 27 Nov)** — pencil lost reach on Instagram/Facebook (docs/12, 27 Nov), YouTube doesn't mind; one style for all. Pencil videos already built stay; carousels stay pencil until the 11 Dec check.
 - **Recording:** one sheet every 2 weeks (owner; Koki for Lina) — dates in the table.
 
 ## The 13 weeks
@@ -77,7 +77,7 @@ owner says go · 25 Nov carousel verdict (→ Sundays only) · **Fri 11 Dec Inst
 - **Story 4 — Sami's first day at work** (Feb): he mixes up the jobs (thinks the boss is the waiter). Re-uses the 20
   jobs (vocab05).
 Each: one place, two characters, one twist, ≤ 4 new words; story text to the owner first; English guidance in every
-Short (English line before each Arabic sentence in the story Short); pencil style, Sami recognisable (red hoodie,
+Short (English line before each Arabic sentence in the story Short); semi-3D style (owner 27 Nov), Sami recognisable (red hoodie,
 curly hair, beard).
 
 **Instagram/Facebook alongside (automatic unless noted):** daily Reel · daily trial (Hindi/Urdu/Turkish/Indonesian/Malay +

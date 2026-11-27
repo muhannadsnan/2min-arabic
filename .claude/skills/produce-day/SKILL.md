@@ -93,6 +93,12 @@ middle):** make_audio caps every in-line silence at 1.0 s (`INNER_MAX`) — reco
 in long videos too; the Shorts narrator keeps 0.15 s. Automatic; just don't remove it.
 **Timed challenges (x11, owner 2026-11-23):** a ⏸️ line ending in `· keep` (`⏸️ **Pause 3s** · keep`) is used exactly,
 no caps — speed rounds go 3 s → 2 s → 1 s (beginners need 3 s in round 1; 1.5 s was too short).
+**Style = semi-3D again (owner 2026-11-27):** every new video uses `{"style": "semi"}` pictures (generate.py STYLE_SEMI,
+refs assets/characters/*-semi.png / *-3d.png), 3D openers from library/openers (rotation, owner approves new ones) and
+the 3D talk sets in library/sets/v2 (Sami, Lina, Omar, waiter; tools/animate/compose_talk.py). Pencil (pencil_scene_clips,
+pencil_frame) is no longer used for videos — pencil lost about half the reach on Instagram + Facebook while YouTube was
+indifferent (docs/12, 27 Nov). Carousels stay pencil until the 11 Dec check. The full-size image check (eyes, arms,
+hands, clothing) applies to every 3D picture again.
 **Narrator alone = big (owner 2026-11-23: "when narrator speaks alone and no card above him, make him bigger, like in
 opener"):** pencil_scene_clips.py zooms the narrator like the hook whenever his scene has no card or one short line
 without "·" (outros, "your answer in the comments"). Check the outro frame: captions above the head, not on the face.

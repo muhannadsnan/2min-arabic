@@ -11,7 +11,8 @@ Shorts cut from it promote it and fill days.
 
 ## The signature (owner's words — keep it every month)
 - **Simplicity is the key and the signature.**
-- **Pictures:** drawn and painted in a drawing book — a children's picture-book look, pencil + soft watercolour; the
+- **Style from Story 2 on (owner 2026-11-27): semi-3D like every video** (`{"style": "semi"}`, the 3D Sami/Lina refs) — one style for the whole channel; the picture-book look below was Story 1's.
+- **Pictures (Story 1):** drawn and painted in a drawing book — a children's picture-book look, pencil + soft watercolour; the
   **centre is detailed and colourful and fades out to sketchy lines and bare white paper** at the edges. One picture
   per story sentence, the same animal characters every time (a name each: رامي الحصان, ماهر السلحفاة …).
   Clean animals only (horse, sheep, camel, fox, turtle, rabbit, birds — no dogs, no pigs). Every picture checked at full

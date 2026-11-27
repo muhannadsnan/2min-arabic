@@ -25,6 +25,8 @@ verdict counts Facebook too (pencil vs 3D plays after 3 days).
 **Owner 27 Nov: one style for everything** (two looks per video is too much work). YouTube doesn't mind the style, so
 **Instagram + Facebook decide on 11 Dec**: pencil clearly behind there (≤ half of 3D on comparable Reels) → back to 3D
 for all videos; otherwise keep pencil.
+**Owner 27 Nov (same day): switch to semi-3D now** — YouTube loses nothing, Meta can only gain; the queued pencil
+Reels vs the first new 3D Reels make the 11 Dec comparison cleaner (new vs new).
 
 **Decisions (owner OK 27 Nov):**
 1. Keep the pencil style.
