@@ -187,7 +187,7 @@ Source: Business Dashboard 23 Oct–19 Nov (9,202 views, 13 follows). Small numb
 - **Shares beat likes:** 57 shares vs 30 reactions, 0 comments — people forward lessons. Share hooks stay.
 - **Views don't become follows by themselves:** 13 follows from 9,202 views, 69 Page visits. → every Page caption
   ends with a follow line (tools/facebook_api.py FOLLOW_LINE, from 20 Nov).
-- Our access key can post but not read statistics (no read_insights) → Facebook numbers come from the owner's screenshots.
+- Our access key can post but not read statistics (no read_insights) → Facebook numbers come from the owner's screenshots until he adds read_insights (Meta app → Use cases → Pages, asked 27 Nov) and fb_page_setup.py saves the new key.
 
 ## Learnings (dated)
 - 2026-10-06: "viral shorts" tag experiment → **dropped**. Tagged Day 3 (55 views, 38 % viewed) and Day 5 (38, 40 %) did not

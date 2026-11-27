@@ -62,7 +62,7 @@ Fillers marked (t) are tentative — fixed when that week is planned (words of t
 **Sleep / listening-practice videos (owner 2026-11-17):** a long "Arabic listening practice while you sleep" video built only from recorded lines (English line → Arabic → pause → Arabic; dark calm picture; no new recording) — source: learning/notes/2026-11-17-sanji-sleep-videos.md. **Pilot sleep01 published Wed 18 Nov 12:00** (owner moved it up from Sat 21 Nov); verdict ~5 Dec (watch hours, average view duration, subs). If it works: one a month in the story weeks' free Saturday (14 Dec, 18 Jan), then the 3/7/8-hour versions people search for and a Levantine edition. If not, those Saturdays stay empty or take a Part.
 
 Also: Story 1 Short with English guidance went out Sun 15 Nov · Koki's Lina lines ~19 Nov · Day 31 on hold until the
-owner says go · 25 Nov carousel verdict · ~5 Dec drop the weakest trial language · recording sessions: B end of Nov
+owner says go · 25 Nov carousel verdict (→ Sundays only) · **Fri 11 Dec Instagram style verdict** (pencil vs 3D word lists, docs/12 27 Nov) · Month 2 as a series from Day 34 · ~5 Dec drop the weakest trial language · recording sessions: B end of Nov
 (+ Story 2 lines, Koki as Lina) · C 14 Dec (numbers) · D early Jan (Ramadan + travel + Story 3) · E late Jan (+ Story 4)
 · Story 4 Shorts the week of 15 Feb · plan the next 3 months in early Feb.
 

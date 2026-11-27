@@ -32,6 +32,9 @@ def main():
         sys.exit("This token is short-lived — extend it first (Access Token Tool → Extend Access Token).")
     if "pages_manage_posts" not in dbg.get("scopes", []):
         sys.exit("The token lacks pages_manage_posts — add it in Graph API Explorer and generate again.")
+    if "read_insights" not in dbg.get("scopes", []):   # 27 Nov: the weekly review reads Reel stats itself
+        print("⚠️  no read_insights in this token — posting works, but Facebook stats stay screenshots-only. Add it under the"
+              " app's Use cases → Pages → Customize, then generate the token again.")
     if len(user) < 50:
         sys.exit("That doesn't look like a token (too short) — nothing saved.")
     pages = get("me/accounts", access_token=user, fields="id,name,access_token,tasks").get("data", [])

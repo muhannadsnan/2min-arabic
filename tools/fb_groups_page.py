@@ -138,7 +138,7 @@ def paste_text(caption, lang):
             if not re.search(r"#|🌍|link|bio|लिंक|لنک|profil|YouTube", p, re.I)]
     tail = [CLOSE[lang], "▶️ Full lessons: 2 Minute Arabic on YouTube" if lang == "en" else "▶️ YouTube: 2 Minute Arabic"]   # name only, no URL (group rules)
     if lang == "en":   # a shared Reel already shows its own caption (owner 2026-11-03): only the hook + who we are
-        hook = re.sub(r"^Day \d+ of 30 — ", "", keep[0].splitlines()[0]) if keep else ""
+        hook = re.sub(r"^(Day \d+ of 30|Month \d+, Day \d+) — ", "", keep[0].splitlines()[0]) if keep else ""
         return "\n\n".join([hook[:1].upper() + hook[1:]] + tail)
     return "\n\n".join(keep + tail)
 

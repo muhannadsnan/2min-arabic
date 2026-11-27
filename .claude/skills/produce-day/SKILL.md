@@ -294,6 +294,13 @@ Copy the markup of the previous day (`say:<speaker>` blocks, `🎬 Scene`, `🖼
   - full, relaxed sentences; listen for rushed or flat delivery in the report and re-voice it.
 
 Then render the cards: `python3 tools/check_cards.py videos/NNN-….md` → look at `output/<video>/cards-sheet.png`.
+**Month 2 = a series again (owner 2026-11-27, docs/12 review of 27 Nov):** after Day 30 the views from subscribers fell
+476 → 135 a week — the daily "Day N of 30" habit was gone. From Day 34 on: the badge reads `MONTH 2 · DAY 4` (assemble.py
+does it for every Day > 30), the description's first line starts `Month 2, Day 4 — …` (it becomes the Instagram/Facebook
+caption), the title ends `| <Category> · Month 2` (no "Day 34": it tells a stranger from search they missed 33 lessons),
+and the "next lesson" line (after the share hook, before Subscribe) is a **curiosity teaser for the next Month 2 day** ("Next lesson: the one
+question every Arab asks before dinner…"), never a flat topic name ("Next lesson, your hobby.").
+
 **Harakat rule (owner 2026-11-03):** Arabic for learners is shown WITHOUT harakat, except where the plain word would be read as another word (مَن/مِن, أنتَ/أنتِ, final ـكِ) — `tools/arabic_text.py minimal()` for every card, slide and caption from Month 2 on (published videos stay).
 Fonts lack `…`, `_` (Arabic font) and `→`, `▶` (bold Latin) — they show as □.
 **Never put Arabic inside the English part of a card** (2026-10-31, Days 29/30 + x08): `before (≠ بَعْدَ after)` or

@@ -1,5 +1,35 @@
 # 12 — Channel reviews (newest on top)
 
+## 2026-11-27 (YouTube API to 24 Nov · Instagram API · Facebook: no read access yet)
+
+**Owner's question:** "YouTube is having a dip — the new hand-drawn style?"
+
+**YouTube — the total isn't dipping; the subscriber habit is.** Weekly views 1,183 (30 Oct–5 Nov) → 861 → 880 →
+810 in 5 days (20–24 Nov, ≈ 1,130 a week). By source: **subscribers 476 → 311 → 285 → 135** (the daily "Day N of 30"
+ended 8 Nov) · search 141 → 129 → 163 → **231 (best week)** · Shorts feed 381 → 253 → 165 → 269. New subs 23 → 11 → 19
+→ 6 (5 days). The Story 1 week (animal story) was weak: 4 of 6 Shorts at 24–33 views.
+**Pencil vs 3D (views in the first 3 days):** 3D Shorts 1–10 Nov median 88 (9) · pencil 20–24 Nov median **104** (5:
+jobs 60, Q&A 120, English words 113, Alif 104, Day 31 34). → **The style is not the cause on YouTube.** Day 31
+(favourite colour, 37 views) is the weak one — the Month 2 "life question" format, still a hint.
+
+**Instagram — English Reels did drop:** Days 21–28 (5–14 Nov) median ~1,200 → since 16 Nov median ~400 (11 Reels).
+3D in that time: food words 1,359 · habibi 628 · Day 30 341. Pencil: jobs 414 · Q&A 286 · English words 396 (1 day).
+Too few pencil Reels to separate style from topic. Trials steady: Hindi/Urdu/Turkish 1,350–1,530; Indonesian/Malay
+110–130 (→ the ~5 Dec drop). Carousels 350–630 views, 1–4 saves (→ Sunday only from 26 Nov).
+
+**Facebook:** the Page key has no read_insights → owner adds the permission (Meta app → Use cases → Pages) so the
+weekly check reads it; until then screenshots.
+
+**Decisions (owner OK 27 Nov):**
+1. Keep the pencil style.
+2. Month 2 = a series again from Day 34: badge `MONTH 2 · DAY 4`, caption `Month 2, Day 4 — …`, title `… | <Category> ·
+   Month 2`, a curiosity teaser for the next Month 2 day (produce-day skill).
+3. **Style test on Instagram, word list vs word list** (no 3D Short is left unposted on Instagram, so no 3D control
+   Reel): the pencil word-list Reels in the queue (jobs 414, English words, numbers 1–20, family words, boys' names) vs
+   the 3D word lists already posted (colors 1,819 · food 1,359 · café 830 · body 791 → median ~1,100). **Verdict Fri
+   11 Dec:** pencil word lists median < 600 → make Instagram's next word list in 3D (same words, 3D pictures) as the
+   control; ≥ 800 → the style is fine and the drop was the course ending.
+
 ## 2026-11-15 (YouTube, Studio screenshots to 13 Nov + API to 12 Nov)
 
 **28 days to 13 Nov: 3 590 views · 32.8 watch hours · +56 subscribers → 80** (20 Oct: 1 715 views total, 27 subs).

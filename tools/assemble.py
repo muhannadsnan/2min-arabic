@@ -215,7 +215,8 @@ def main():
 
     stem = args.script.stem
     if stem[:3].isdigit():
-        badge_label = f"DAY {int(stem[:3])}"
+        n = int(stem[:3])   # Month 2 on (owner 27 Nov: a series again for returning viewers): MONTH 2 · DAY 3, not DAY 33
+        badge_label = f"DAY {n}" if n <= 30 else f"MONTH {(n - 1) // 30 + 1} · DAY {(n - 1) % 30 + 1}"
     elif stem.startswith("x"):   # extras outside the day count: x01-…, x02-…
         badge_label = "ARABIC EXTRAS"
     elif stem.startswith("ep"):   # monthly Episode (docs/21): no day numbers anywhere
