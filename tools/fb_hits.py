@@ -44,7 +44,16 @@ def main():
         if not todo:
             print("fb-hits.txt is empty — nothing to post"); return
         ROOT_DONE.write_text("")
-    i = todo[0]; mid = lines[i].split()[0]
+    # Instagram gives no media_url for Reels with Instagram-library music (27 Nov: the "2 minutes a day" Reel failed
+    # the run) → mark such a line "# no file:" and take the next one, so one Reel never blocks the daily post
+    while True:
+        i = todo[0]; mid = lines[i].split()[0]
+        if mid.startswith("release:") or "media_url" in ig.call(mid, fields="media_url"):
+            break
+        print(f"{mid}: Instagram gives no video file (licensed music?) — skipped")
+        lines[i] = "# no file: " + lines[i]; todo = todo[1:]
+        if not todo:
+            LIST.write_text("\n".join(lines) + "\n", encoding="utf-8"); print("nothing postable left"); return
     tmp = pathlib.Path(_scratch()) / "v.mp4"
     if mid.startswith("release:"):
         # a video made only for the Page (owner 2026-11-11: a fresh-look version instead of reposting the same Reel):
