@@ -31,7 +31,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIVE = "2026-10-30T13:00:00+0000"   # Meta app switched to Live: Reels before this were visible to app roles only
-TEMPLATE_VERSION = "2026-11-18b"   # bump when the page layout/script changes, so the next run republishes
+TEMPLATE_VERSION = "2026-11-27a"   # bump when the page layout/script changes, so the next run republishes
 START = "2026-11-01"                # day 0 of the rotation
 # 2026-11-09 (owner 2026-11-08: "more groups so the circle gets bigger" — admins approve slowly, a post every 4 days was
 # too often): 23 → 47 groups, still 6 a day ≈ 8 days a round. Days before EPOCH keep the old rotation of the first
@@ -384,8 +384,8 @@ function card(g, i, day, enIdx) {{
   const c = document.createElement("div"); c.className = "card" + (done ? " done" : "");
   c.innerHTML = `<div class="top"><button class="name">Copy name</button>
     ${{g.url ? `<a class="g" href="${{g.url}}" target="_blank" rel="noopener">${{esc(g.name)}}</a>` : `<span class="g">${{esc(g.name)}}</span>`}}
-    <span class="right">${{st === 2 && !pendNow ? "" : `<button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? (dead(g.name) ? "Pending — leave it" : "Pending — skipped") : st === 4 ? "Still pending → leave" : "Still pending"}}</button>`}}<label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{day === dayNo || day === dayNo - 1 ? i + 1 : "+"}}</span></span></div>` +
-    (pendOld ? `<p class="note">${{st === 2 ? `Paused 3 weeks because your post stayed pending. Post this one anyway, even if Facebook says a post is pending — the admin gets a fresh one to approve. Then tick Posted.`
+    <span class="right"><button class="pend${{pendNow ? " on" : ""}}" type="button">${{pendNow ? (dead(g.name) ? "Pending — leave it" : "Pending — skipped") : st === 4 ? "Still pending → leave" : st === 2 ? "Can't post — still pending" : "Still pending"}}</button><label class="tick"><input type="checkbox" ${{done && !pendNow ? "checked" : ""}}> Posted</label><span class="num">${{day === dayNo || day === dayNo - 1 ? i + 1 : "+"}}</span></span></div>` +
+    (pendOld ? `<p class="note">${{st === 2 ? `Paused 3 weeks because your post stayed pending. Post this one anyway, even if Facebook says a post is pending — the admin gets a fresh one to approve. Then tick Posted. Facebook won't let you post (a post is still pending)? Tap "Can't post — still pending": the group is skipped today and its second 3-week wait starts now.`
       : st === 4 ? `Last check (pending, paused twice): open the group. Did the admin publish one of your posts? Yes → post this one and tick Posted. Still pending → tap "Still pending → leave": the group goes on the leave list for good.`
       : pendOld.posted ? `You posted here anyway on ${{pendOld.date}}. Open the group first: if Facebook says a post is pending, tap Still pending.`
       : `Your last post here is still waiting for approval (pending since ${{since}}, ${{(d => d < 14 ? d + " days" : Math.floor(d / 7) + " weeks")(Math.round((Date.parse(ymd(now)) - Date.parse(since)) / 864e5))}}). Open the group first: if Facebook says a post is pending, tap Still pending.${{st === 3 ? " After 3 weeks it pauses once more, then one last check." : " After 3 weeks the group pauses for 3 weeks, then you post again anyway."}}`}}</p>` : "") +
@@ -395,9 +395,10 @@ function card(g, i, day, enIdx) {{
   if (b) b.onclick = () => navigator.clipboard.writeText(text).then(() => {{ b.textContent = "Copied ✓"; setTimeout(() => b.textContent = "Copy text", 1500); }});
   c.querySelector("input").onchange = e => {{ tick(key, e.target.checked); logSent(key, e.target.checked ? shown : null); setPend(g.name, !e.target.checked ? pendOld : st === 2 ? {{day, date: ymd(now), n: 0, stage: 3, since: ymd(now), posted: true}} : null); c.classList.toggle("done", e.target.checked); render(); }};
   if (c.querySelector("button.pend")) c.querySelector("button.pend").onclick = () => {{
-    if (pendNow) {{ setPend(g.name, pendOld); tick(key, false); }}                       // tapped by mistake: undo
-    else {{ const today = ymd(now), v = {{day, date: today, n: (pendOld ? pendOld.n : 0) + 1, stage: st || 1, since: since || postDate(g.name) || today}};
+    if (pendNow) {{ setPend(g.name, pr.prev || null); tick(key, false); }}               // tapped by mistake: undo (back to the record before the tap)
+    else {{ const today = ymd(now), v = {{day, date: today, n: (pendOld ? pendOld.n : 0) + 1, stage: st || 1, since: since || postDate(g.name) || today, prev: pendOld ? Object.assign({{}}, pendOld, {{prev: undefined}}) : null}};
       if (st === 4) v.stage = 5;                                                       // the last check: leave for good
+      else if (st === 2) {{ v.stage = 3; v.since = today; }}   // owner 2026-11-27: "post anyway" impossible (Facebook blocks a 2nd pending post) → the second 3-week wait starts now, as if posted
       else if ((v.stage === 1 || v.stage === 3) && today >= plus(v.since, WAIT)) {{ v.stage++; v.until = plus(today, WAIT); }}   // 3 weeks pending → 3 weeks paused
       setPend(g.name, v); tick(key, true); }}   // counts as done, so the session can finish
     render();
