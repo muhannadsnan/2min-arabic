@@ -1,0 +1,32 @@
+{
+ "layers": [
+  {
+   "still": "library/sets/v2/sami_cB.png",
+   "x": 0.5,
+   "h": 0.7232,
+   "talk": [
+    "library/sets/v2/sami_cB_talk1.png",
+    "library/sets/v2/sami_cB_talk2.png",
+    "library/sets/v2/sami_cB_talk3.png",
+    "library/sets/v2/sami_cB_talk4.png",
+    "library/sets/v2/sami_cB_talk5.png"
+   ],
+   "speak": [
+    [
+     1.83,
+     3.42
+    ],
+    [
+     3.62,
+     4.95
+    ],
+    [
+     5.14,
+     7.57
+    ]
+   ]
+  }
+ ],
+ "bg": "library/backgrounds/hobby-corner.png",
+ "seconds": 7.62
+}

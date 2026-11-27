@@ -1,0 +1,29 @@
+{
+ "layers": [
+  {
+   "still": "library/sets/v2/sami_side_free.png",
+   "x": 0.27,
+   "h": 0.66
+  },
+  {
+   "still": "library/sets/v2/lina_side.png",
+   "x": 0.73,
+   "h": 0.66,
+   "talk": [
+    "library/sets/v2/lina_side_talk1.png",
+    "library/sets/v2/lina_side_talk2.png",
+    "library/sets/v2/lina_side_talk3.png",
+    "library/sets/v2/lina_side_talk4.png",
+    "library/sets/v2/lina_side_talk5.png"
+   ],
+   "speak": [
+    [
+     0.1,
+     1.3
+    ]
+   ]
+  }
+ ],
+ "bg": "library/backgrounds/home-living.png",
+ "seconds": 1.45
+}
