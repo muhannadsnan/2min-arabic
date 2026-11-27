@@ -17,8 +17,11 @@ jobs 60, Q&A 120, English words 113, Alif 104, Day 31 34). → **The style is no
 Too few pencil Reels to separate style from topic. Trials steady: Hindi/Urdu/Turkish 1,350–1,530; Indonesian/Malay
 110–130 (→ the ~5 Dec drop). Carousels 350–630 views, 1–4 saves (→ Sunday only from 26 Nov).
 
-**Facebook:** the Page key has no read_insights → owner adds the permission (Meta app → Use cases → Pages) so the
-weekly check reads it; until then screenshots.
+**Facebook (read_insights added 27 Nov → `tools/facebook_api.py stats`):** almost every Reel gets **~200 plays and
+then stops**, average watch 1.5–3 s, ~1 follow a week — Facebook tries each Reel on ~200 people and pushes none further.
+**Pencil hint, same days:** jobs 73 plays (3 days) vs Day 13 (3D, same day) 197 · Q&A 26 (2 days) vs Day 11 (3D) 178 ·
+English words 3 (1 day) vs Hindi trial (3D) 198. Small numbers, but Instagram points the same way → the 11 Dec
+verdict counts Facebook too (pencil vs 3D plays after 3 days).
 
 **Decisions (owner OK 27 Nov):**
 1. Keep the pencil style.

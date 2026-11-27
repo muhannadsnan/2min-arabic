@@ -174,11 +174,29 @@ def backfill(a):
     if not a.apply: print("dry run — add --apply to post")
 
 
+def stats(a):
+    """Reel numbers on the Page (read_insights since 2026-11-27): plays, average seconds watched, follows, reactions /
+    comments / shares — newest first. Same view as Business Dashboard → Content, for the weekly review (docs/12)."""
+    pid, tok = creds()
+    reels = req(f"{GRAPH}/{pid}/video_reels?" + urllib.parse.urlencode({"fields": "id,description,created_time", "limit": a.limit, "access_token": tok}))
+    print(f"{'date':10} {'plays':>6} {'avg s':>6} {'follow':>6} {'react':>5} {'shares':>6}  caption")
+    for v in reels.get("data", []):
+        ins = req(f"{GRAPH}/{v['id']}/video_insights?" + urllib.parse.urlencode(
+            {"metric": "blue_reels_play_count,post_video_avg_time_watched,post_video_followers,post_video_social_actions", "access_token": tok}))
+        m = {x["name"]: x["values"][0]["value"] for x in ins.get("data", [])}
+        soc = m.get("post_video_social_actions") or {}
+        soc = soc if isinstance(soc, dict) else {}
+        print(f"{v['created_time'][:10]} {m.get('blue_reels_play_count', 0):>6} {(m.get('post_video_avg_time_watched') or 0) / 1000:>6.1f} "
+              f"{m.get('post_video_followers') or 0:>6} {soc.get('REACTION', 0) + soc.get('LIKE', 0):>5} {soc.get('SHARE', 0):>6}  "
+              f"{(v.get('description') or '').splitlines()[0][:60] if v.get('description') else ''}")
+
+
 def main():
     ap = argparse.ArgumentParser(); sub = ap.add_subparsers(required=True)
     p = sub.add_parser("reel"); p.add_argument("video"); p.add_argument("--caption-file", required=True); p.set_defaults(fn=reel)
     p = sub.add_parser("backfill"); p.add_argument("--gap", type=int, default=300); p.add_argument("--apply", action="store_true")
     p.set_defaults(fn=backfill)
+    p = sub.add_parser("stats"); p.add_argument("--limit", type=int, default=60); p.set_defaults(fn=stats)
     a = ap.parse_args(); a.fn(a)
 
 
