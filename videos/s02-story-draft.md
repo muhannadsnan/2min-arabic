@@ -3,7 +3,7 @@
 **When:** long video **Sat 12 Dec, 12:00** · its 5 Shorts the week of **14 Dec** (docs/24) · recorded in the
 end-of-November session (sheet B) — the owner + **Koki as Lina**.
 **Shape:** the same as Story 1 (story-episode skill): the story read in full → sentence by sentence with easy
-questions → word pairs (opposites) → the story in the past → in the future · pencil pictures · Arabic without
+questions → word pairs (opposites) → the story in the past → in the future · **semi-3D pictures** (owner 27 Nov: back to 3D; nothing of Story 2 was drawn in pencil, so nothing is redone) · Arabic without
 harakat on screen · English guidance before every Arabic line in the Shorts (as Story Shorts 2–5).
 **Rules kept:** one place (Sami and Lina's home + the market seen through Lina's day), two characters, one twist, few
 new words — it re-uses Days 31–33 (favourite colour / food / weekend), Story 1's opposites (sleeps ↔ wakes up,

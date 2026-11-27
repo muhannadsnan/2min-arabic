@@ -623,5 +623,125 @@
   ],
   "approved": true,
   "note": "approved by the owner 2026-10-25"
+ },
+ {
+  "name": "backgrounds/home-living",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "Syrian family living room, sofa with patterned cushions, afternoon sun",
+  "green": false,
+  "file": "library/backgrounds/home-living.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/bedroom-morning",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "simple bedroom, blue blanket, morning sun (Story 2: Sami sleeps)",
+  "green": false,
+  "file": "library/backgrounds/bedroom-morning.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/market-street",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "open-air Levantine fruit and vegetable market street",
+  "green": false,
+  "file": "library/backgrounds/market-street.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/falafel-stall",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "falafel counter with pita bread, plain stone wall (Story 2)",
+  "green": false,
+  "file": "library/backgrounds/falafel-stall.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/clothes-stall",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "market rail of coloured shirts, blue one in front (Story 2: the shirt)",
+  "green": false,
+  "file": "library/backgrounds/clothes-stall.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/cafe-terrace",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "sunny café terrace with jasmine and tea glasses",
+  "green": false,
+  "file": "library/backgrounds/cafe-terrace.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/home-door-evening",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "apartment entrance in the evening, lamp, sunset window (Story 2: Lina comes home)",
+  "green": false,
+  "file": "library/backgrounds/home-door-evening.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/hobby-corner",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "living-room corner with guitar, books, easel, soccer ball (Day 34 hobbies)",
+  "green": false,
+  "file": "library/backgrounds/hobby-corner.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/bedroom-night",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "bedroom at night, moon in the window (Day 35 sleep early or late)",
+  "green": false,
+  "file": "library/backgrounds/bedroom-night.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/sports-field",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "neighbourhood football pitch with palm trees (Day 36 sport)",
+  "green": false,
+  "file": "library/backgrounds/sports-field.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/city-balcony",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "balcony over a Middle Eastern city at golden hour (Day 37 where do you live)",
+  "green": false,
+  "file": "library/backgrounds/city-balcony.png",
+  "created": "2026-11-27",
+  "used_in": []
+ },
+ {
+  "name": "backgrounds/kitchen-lunch",
+  "kind": "backgrounds",
+  "character": null,
+  "action": "family kitchen with lunch on the table (Day 38 it's lunchtime)",
+  "green": false,
+  "file": "library/backgrounds/kitchen-lunch.png",
+  "created": "2026-11-27",
+  "used_in": []
  }
 ]
