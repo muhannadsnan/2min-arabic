@@ -111,6 +111,9 @@ video, faces stay pretty, the room doesn't flicker. Owner preferred blends over 
   scale) and match it — **head top AND clothes hem on the same line** (owner 2026-11-01: "the sweater end also aligns"), so
   the bodies match, not only the faces: scale by the head→hem distance, then crop the picture's bottom so the head sits
   at the partner's height. Current: sami_side_free 0.55 · lina_side 0.55 · **omar_side4** (omar_side3 cropped to 940 rows) 0.5558 · waiter_side3 ≈0.562.
+  **Bigger from 27 Nov (owner: "the background is huge, they look too small"):** multiply those by **1.2** → sami_side_free / lina_side **0.66**,
+  omar_side4 ≈0.667, waiter_side3 ≈0.674, x ≈ 0.27 / 0.73 — faces then sit at y ≈ 780–1050, under a short card (≤ y 800) and above the
+  subtitles. Under a tall card (3+ lines) drop back to 0.55. Sample: library/work/bg-dec/pair-sizes.png.
 - **One person talking alone → often a close-up** (owner 2026-10-29), not the standing full figure; two people talking
   → the two-shot.
 - **Close-up framing (owner 2026-10-29, Day 27):** the person sits in the **lower half** of the picture (cards, badge and
