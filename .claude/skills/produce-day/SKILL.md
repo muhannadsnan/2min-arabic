@@ -221,8 +221,7 @@ that owns port 8188). Two `make_audio.py` runs at once also clash on `audio/.cac
 Never edit a shell script while it is running (bash reads it as it goes) — write a new queue file instead.
 
 **Progress stars (owner, 2026-10-17 — from Day 21 on):** three grey stars above the badge; each turns gold with a
-pop + soft chime (`assets/stars/`) at the end of a milestone scene. **Star placement (owner 2026-10-25):** star 1 early — at the first win, within ~35 s (keeps viewers from leaving); star 2 at
-the MIDDLE of the video, right after an answer the viewer is waiting for (e.g. Sami's "shukran. bikam haadhaa?");
+pop + soft chime (`assets/stars/`) at the end of a milestone scene. **Star placement (owner 2026-10-25):** star 1 early — at the first win, within ~35 s (keeps viewers from leaving); star 2 BETWEEN HALF AND TWO-THIRDS of the video (owner 2026-11-27: later is boring — Day 34 had it at 74 %, moved to 62 %), right after an answer the viewer is waiting for (e.g. Sami's "shukran. bikam haadhaa?");
 star 3 right after the very last answer / bonus word — split the scene if a reply follows (the waiter's "tikram" gets
 its own scene AFTER the star). Each star snapped to a REAL
 milestone (new words learned · story/game/conversation done · "Your turn" done) — never on a timer. In
